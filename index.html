@@ -1,84 +1,180 @@
-<script>
-  const csvUrl =
-    "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/Dec7%20CFB%20Rankings.csv";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CFB Efficiency Rankings 2025</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 20px;
+      background: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    #table-wrapper {
+      overflow-x: auto;
+      background: white;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      margin-top: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 13px;
+    }
+    thead {
+      position: sticky;
+      top: 0;
+      background: #004080;
+      color: white;
+    }
+    th, td {
+      padding: 6px 8px;
+      border: 1px solid #ddd;
+      text-align: right;
+    }
+    th:nth-child(2),
+    th:nth-child(3),
+    td:nth-child(2),
+    td:nth-child(3) {
+      text-align: left; /* Team / Conference or similar text columns */
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    tr:hover {
+      background: #e9f3ff;
+    }
+    th.sortable {
+      cursor: pointer;
+    }
+    th.sortable::after {
+      content: " ↕";
+      font-size: 0.7em;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>CFB Efficiency Rankings 2025</h1>
+  <p style="text-align:center;">Drive-based adjusted net ratings (FBS only)</p>
 
-  function parseCSV(text) {
-    const lines = text.trim().split("\n");
-    const header = lines[0].split(",");
-    const rows = lines.slice(1).map(line => line.split(","));
-    return { header, rows };
-  }
+  <div id="table-wrapper">
+    <table id="rankings">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
-  function buildTable(header, rows) {
-    const table = document.getElementById("rankings");
-    const thead = table.querySelector("thead");
-    const tbody = table.querySelector("tbody");
+  <script>
+    // Your CSV file on GitHub (RAW URL)
+    const csvUrl =
+      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/Dec7%20CFB%20Rankings.csv";
 
-    const headerRow = document.createElement("tr");
-    header.forEach((col, idx) => {
-      const th = document.createElement("th");
-      th.textContent = col;
-      th.classList.add("sortable");
-      th.dataset.index = idx;
-      headerRow.appendChild(th);
-    });
-    thead.appendChild(headerRow);
+    function parseCSV(text) {
+      // Handle Windows and Unix line endings
+      const lines = text.trim().split(/\r?\n/);
+      if (lines.length === 0) {
+        return { header: [], rows: [] };
+      }
+      const header = lines[0].split(",");
+      const rows = lines.slice(1).map(line => line.split(","));
+      return { header, rows };
+    }
 
-    rows.forEach(cells => {
-      if (!cells.join("").trim()) return;
-      const tr = document.createElement("tr");
-      cells.forEach(cell => {
-        const td = document.createElement("td");
-        td.textContent = cell;
-        tr.appendChild(td);
+    function buildTable(header, rows) {
+      const table = document.getElementById("rankings");
+      const thead = table.querySelector("thead");
+      const tbody = table.querySelector("tbody");
+
+      // Clear just in case
+      thead.innerHTML = "";
+      tbody.innerHTML = "";
+
+      // Build header row
+      const headerRow = document.createElement("tr");
+      header.forEach((col, idx) => {
+        const th = document.createElement("th");
+        th.textContent = col;
+        th.classList.add("sortable");
+        th.dataset.index = idx;
+        headerRow.appendChild(th);
       });
-      tbody.appendChild(tr);
-    });
+      thead.appendChild(headerRow);
 
-    makeSortable(table);
-  }
-
-  function makeSortable(table) {
-    const ths = table.querySelectorAll("th.sortable");
-    ths.forEach(th => {
-      th.addEventListener("click", () => {
-        const index = parseInt(th.dataset.index, 10);
-        const tbody = table.querySelector("tbody");
-        const rows = Array.from(tbody.querySelectorAll("tr"));
-        const current = th.dataset.sort || "none";
-        const next = current === "asc" ? "desc" : "asc";
-        ths.forEach(h => h.dataset.sort = "none");
-        th.dataset.sort = next;
-
-        rows.sort((a, b) => {
-          const aText = a.children[index].textContent;
-          const bText = b.children[index].textContent;
-
-          const aNum = parseFloat(aText);
-          const bNum = parseFloat(bText);
-          const bothNumeric = !Number.isNaN(aNum) && !Number.isNaN(bNum);
-
-          let cmp;
-          if (bothNumeric) {
-            cmp = aNum - bNum;
-          } else {
-            cmp = aText.localeCompare(bText);
-          }
-          return next === "asc" ? cmp : -cmp;
+      // Build data rows
+      rows.forEach(cells => {
+        if (!cells.join("").trim()) return; // skip empty lines
+        const tr = document.createElement("tr");
+        cells.forEach(cell => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          tr.appendChild(td);
         });
-
-        rows.forEach(r => tbody.appendChild(r));
+        tbody.appendChild(tr);
       });
-    });
-  }
 
-  fetch(csvUrl)
-    .then(r => r.text())
-    .then(text => {
-      const { header, rows } = parseCSV(text);
-      buildTable(header, rows);
-    })
-    .catch(err => {
-      console.error("Failed to load CSV:", err);
-    });
-</script>
+      makeSortable(table);
+    }
+
+    function makeSortable(table) {
+      const ths = table.querySelectorAll("th.sortable");
+      ths.forEach(th => {
+        th.addEventListener("click", () => {
+          const index = parseInt(th.dataset.index, 10);
+          const tbody = table.querySelector("tbody");
+          const rows = Array.from(tbody.querySelectorAll("tr"));
+
+          const current = th.dataset.sort || "none";
+          const next = current === "asc" ? "desc" : "asc";
+
+          // Reset sort state on all headers
+          ths.forEach(h => h.dataset.sort = "none");
+          th.dataset.sort = next;
+
+          rows.sort((a, b) => {
+            const aText = a.children[index].textContent;
+            const bText = b.children[index].textContent;
+
+            const aNum = parseFloat(aText);
+            const bNum = parseFloat(bText);
+            const bothNumeric = !Number.isNaN(aNum) && !Number.isNaN(bNum);
+
+            let cmp;
+            if (bothNumeric) {
+              cmp = aNum - bNum;
+            } else {
+              cmp = aText.localeCompare(bText);
+            }
+            return next === "asc" ? cmp : -cmp;
+          });
+
+          rows.forEach(r => tbody.appendChild(r));
+        });
+      });
+    }
+
+    // Fetch CSV and render table
+    fetch(csvUrl)
+      .then(r => {
+        if (!r.ok) {
+          throw new Error("HTTP " + r.status);
+        }
+        return r.text();
+      })
+      .then(text => {
+        const { header, rows } = parseCSV(text);
+        if (header.length === 0) {
+          console.error("CSV appears to be empty or malformed.");
+        }
+        buildTable(header, rows);
+      })
+      .catch(err => {
+        console.error("Failed to load CSV:", err);
+      });
+  </script>
+</body>
+</html>
