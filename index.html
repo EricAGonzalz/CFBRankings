@@ -51,9 +51,9 @@
       cursor: pointer;
     }
     th.sortable::after {
-      content: " ⬍";
+      content: " ↕";
       font-size: 0.7em;
-      opacity: 0.7;
+      opacity: 0.6;
     }
   </style>
 </head>
@@ -69,13 +69,11 @@
   </div>
 
   <script>
-    // TODO: set this to your real CSV location in the repo
     const csvUrl =
-      "https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/cfb_efficiency_2025_FBS_with_SOSAdj.csv";
+      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/cfb_efficiency_2025_FBS_with_SOSAdj.csv";
 
-    // Very simple CSV parser (works fine for your numeric/team data)
     function parseCSV(text) {
-      const lines = text.trim().split("\n");
+      const lines = text.trim().split("\\n");
       const header = lines[0].split(",");
       const rows = lines.slice(1).map(line => line.split(","));
       return { header, rows };
@@ -86,19 +84,16 @@
       const thead = table.querySelector("thead");
       const tbody = table.querySelector("tbody");
 
-      // Build header
       const headerRow = document.createElement("tr");
       header.forEach((col, idx) => {
         const th = document.createElement("th");
         th.textContent = col;
-        // make all columns sortable
         th.classList.add("sortable");
         th.dataset.index = idx;
         headerRow.appendChild(th);
       });
       thead.appendChild(headerRow);
 
-      // Build body
       rows.forEach(cells => {
         if (!cells.join("").trim()) return;
         const tr = document.createElement("tr");
@@ -120,7 +115,6 @@
           const index = parseInt(th.dataset.index, 10);
           const tbody = table.querySelector("tbody");
           const rows = Array.from(tbody.querySelectorAll("tr"));
-
           const current = th.dataset.sort || "none";
           const next = current === "asc" ? "desc" : "asc";
           ths.forEach(h => h.dataset.sort = "none");
@@ -132,7 +126,7 @@
 
             const aNum = parseFloat(aText);
             const bNum = parseFloat(bText);
-            const bothNumeric = !Number.isNaN(aNum) && !Number.isNaN(bNum);
+            const bothNumeric = !isNaN(aNum) && !isNaN(bNum);
 
             let cmp;
             if (bothNumeric) {
@@ -149,14 +143,11 @@
     }
 
     fetch(csvUrl)
-      .then(resp => resp.text())
+      .then(r => r.text())
       .then(text => {
         const { header, rows } = parseCSV(text);
         buildTable(header, rows);
       })
       .catch(err => {
-        console.error("Error loading CSV", err);
-      });
-  </script>
-</body>
-</html>
+        console.e
+::contentReference[oaicite:0]{index=0}
