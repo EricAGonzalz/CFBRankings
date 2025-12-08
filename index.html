@@ -46,7 +46,7 @@
       background: #f9f9f9;
     }
     tr:hover {
-      background: #929292ff;
+      background: #3f3f3f;
     }
     th.sortable {
       cursor: pointer;
@@ -59,7 +59,8 @@
   </style>
 </head>
 <body>
-  <h1>CFB Efficiency Rankings 2025</h1>
+  <h1>CFB Rankings 2025</h1>
+   <p style="text-align:center;">Only FBS vs FBS Games are used in calculations</p>
   <p style="text-align:center;">Data Updated 5:50pm 12/7/2025</p>
 
   <div id="table-wrapper">
@@ -69,16 +70,13 @@
     </table>
   </div>
 
-<script>
+  <script>
     // Your CSV file on GitHub (RAW URL)
     const csvUrl =
-      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/Dec7%20CFB%20Rankings.csv";
-
-    let allRows = [];
-    let currentHeader = [];
-    let conferenceIndex = -1;
+      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/refs/heads/main/Dec7%20CFB%20Rankings.csv";
 
     function parseCSV(text) {
+      // Handle Windows and Unix line endings
       const lines = text.trim().split(/\r?\n/);
       if (lines.length === 0) {
         return { header: [], rows: [] };
@@ -89,14 +87,13 @@
     }
 
     function buildTable(header, rows) {
-      currentHeader = header;
-      allRows = rows;
-      conferenceIndex = header.indexOf("Conference");
-
       const table = document.getElementById("rankings");
       const thead = table.querySelector("thead");
+      const tbody = table.querySelector("tbody");
 
+      // Clear just in case
       thead.innerHTML = "";
+      tbody.innerHTML = "";
 
       // Build header row
       const headerRow = document.createElement("tr");
@@ -109,23 +106,9 @@
       });
       thead.appendChild(headerRow);
 
-      // Initial body render (all rows)
-      renderBody(allRows);
-
-      // Init conference dropdown
-      initConferenceFilter();
-
-      // Enable sorting
-      makeSortable(table);
-    }
-
-    function renderBody(rows) {
-      const table = document.getElementById("rankings");
-      const tbody = table.querySelector("tbody");
-      tbody.innerHTML = "";
-
+      // Build data rows
       rows.forEach(cells => {
-        if (!cells.join("").trim()) return;
+        if (!cells.join("").trim()) return; // skip empty lines
         const tr = document.createElement("tr");
         cells.forEach(cell => {
           const td = document.createElement("td");
@@ -134,43 +117,8 @@
         });
         tbody.appendChild(tr);
       });
-    }
 
-    function initConferenceFilter() {
-      const select = document.getElementById("confFilter");
-      if (conferenceIndex === -1) {
-        // No "Conference" column – nothing to do
-        return;
-      }
-
-      // Build unique sorted list of conferences
-      const confSet = new Set();
-      allRows.forEach(r => {
-        const conf = r[conferenceIndex];
-        if (conf && conf.trim() !== "") {
-          confSet.add(conf.trim());
-        }
-      });
-
-      const conferences = Array.from(confSet).sort();
-      conferences.forEach(conf => {
-        const opt = document.createElement("option");
-        opt.value = conf;
-        opt.textContent = conf;
-        select.appendChild(opt);
-      });
-
-      // When user changes conference selection, filter rows
-      select.addEventListener("change", () => {
-        const value = select.value;
-        let filtered;
-        if (value === "ALL") {
-          filtered = allRows;
-        } else {
-          filtered = allRows.filter(r => r[conferenceIndex] === value);
-        }
-        renderBody(filtered);
-      });
+      makeSortable(table);
     }
 
     function makeSortable(table) {
@@ -184,6 +132,7 @@
           const current = th.dataset.sort || "none";
           const next = current === "asc" ? "desc" : "asc";
 
+          // Reset sort state on all headers
           ths.forEach(h => h.dataset.sort = "none");
           th.dataset.sort = next;
 
@@ -230,4 +179,10 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
 
