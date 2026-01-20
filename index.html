@@ -336,7 +336,6 @@
   </div>
 
   <script>
-
     const DATA_DIR = "data";
     const FIRST_SEASON = 2010;
 
@@ -350,13 +349,12 @@
     // Optional: champions file. If missing, champion highlighting just won't happen.
     const CHAMPIONS_JSON_URL = `${DATA_DIR}/champions.json`;
 
-   const RAW_BASE =
-  "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
+    const RAW_BASE =
+      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
 
-function csvForYear(year) {
-  return `${RAW_BASE}${year}%20Master.csv`;
-}
-
+    function csvForYear(year) {
+      return `${RAW_BASE}${year}%20Master.csv`;
+    }
 
     // Column grouping (edit this mapping if your CSV headers change)
     const GROUPS = [
@@ -419,6 +417,23 @@ function csvForYear(year) {
 
       if (!rows.length) return { header: [], rows: [] };
       return { header: rows[0].map(h => h.trim()), rows: rows.slice(1) };
+    }
+
+    // ---- FIX: Repair classic mojibake like "San JosÃ©" -> "San José" (display-only)
+    function fixMojibake(s) {
+      if (typeof s !== "string") return s;
+
+      // Only attempt on strings that look like classic UTF-8->Latin1 mojibake
+      if (!/[ÃÂâ€]/.test(s)) return s;
+
+      try {
+        const bytes = new Uint8Array([...s].map(ch => ch.charCodeAt(0) & 0xff));
+        const fixed = new TextDecoder("utf-8", { fatal: false }).decode(bytes);
+        if (fixed && fixed !== s) return fixed;
+      } catch {
+        // ignore
+      }
+      return s;
     }
 
     function indexByHeader(header) {
@@ -614,7 +629,9 @@ function csvForYear(year) {
 
         cells.forEach((cell, idx) => {
           const td = document.createElement("td");
-          td.textContent = cell;
+
+          // FIX: apply mojibake repair to displayed text
+          td.textContent = fixMojibake(cell);
 
           const colName = state.orderedCols[idx];
           if (colName === "Team") td.classList.add("col-team");
@@ -623,7 +640,7 @@ function csvForYear(year) {
 
           // Trophy for champion team
           if (colName === "Team" && tr.classList.contains("champion")) {
-            td.textContent = cell;
+            td.textContent = fixMojibake(cell); // FIX: also repair here
             const span = document.createElement("span");
             span.className = "trophy";
             span.textContent = "🏆";
@@ -724,12 +741,12 @@ function csvForYear(year) {
 
     // Probe which CSVs exist so you don’t have to maintain a year list
     async function discoverAvailableYears() {
-  const years = [];
-  for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
-    years.push(String(y));
-  }
-  return years;
-}
+      const years = [];
+      for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
+        years.push(String(y));
+      }
+      return years;
+    }
 
     function populateYearSelect(years) {
       const sel = document.getElementById("yearSelect");
@@ -875,7 +892,3 @@ function csvForYear(year) {
   </script>
 </body>
 </html>
-
-
-
-
