@@ -2,67 +2,131 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CFB Rankings 2025</title>
+
   <style>
+    :root {
+      --bg: #f4f4f4;
+      --card: #ffffff;
+      --grid: #dddddd;
+      --head-bg: #000000;
+      --head-fg: #ffffff;
+      --row-alt: #f9f9f9;
+      --row-hover: #e6e6e6;
+      --shadow: 0 1px 4px rgba(0,0,0,0.12);
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 20px;
-      background: #f4f4f4;
+      background: var(--bg);
+      color: #111;
     }
+
     h1 {
       text-align: center;
+      margin: 0 0 8px 0;
     }
+
+    .subtext {
+      text-align: center;
+      margin: 4px 0;
+    }
+
     #table-wrapper {
       overflow-x: auto;
-      background: white;
+      background: var(--card);
       padding: 10px;
       border-radius: 8px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-      margin-top: 10px;
+      box-shadow: var(--shadow);
+      margin-top: 12px;
     }
+
     table {
       border-collapse: collapse;
       width: 100%;
       font-size: 13px;
     }
-    thead {
+
+    thead th {
       position: sticky;
       top: 0;
-      background: #000000;
-      color: white;
+      z-index: 2;
+      background: var(--head-bg);
+      color: var(--head-fg);
+      border: 1px solid #222;
     }
+
     th, td {
       padding: 6px 8px;
-      border: 1px solid #ddd;
+      border: 1px solid var(--grid);
       text-align: right;
+      vertical-align: middle;
     }
+
+    /* IMPORTANT: prevents header text + sort icon from wrapping (fixes "misaligned" headings) */
+    th {
+      white-space: nowrap;
+    }
+
+    /* Left-align text columns (Rk=1, Team=2, Conference=3 in your CSV) */
     th:nth-child(2),
     th:nth-child(3),
     td:nth-child(2),
     td:nth-child(3) {
-      text-align: left; /* Team / Conference or similar text columns */
+      text-align: left;
     }
-    tr:nth-child(even) {
-      background: #f9f9f9;
+
+    tbody tr:nth-child(even) {
+      background: var(--row-alt);
     }
-    tr:hover {
-      background: #808080;
+
+    tbody tr:hover {
+      background: var(--row-hover);
     }
+
+    /* Sorting UI */
     th.sortable {
       cursor: pointer;
+      position: relative;
+      padding-right: 18px; /* room for arrow */
+      user-select: none;
     }
+
     th.sortable::after {
-      content: " ↕";
-      font-size: 0.7em;
+      content: "↕";
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.75em;
       opacity: 0.6;
+    }
+
+    th.sortable[data-sort="asc"]::after {
+      content: "▲";
+      opacity: 0.9;
+    }
+
+    th.sortable[data-sort="desc"]::after {
+      content: "▼";
+      opacity: 0.9;
+    }
+
+    /* Optional: tighter columns on small screens */
+    @media (max-width: 700px) {
+      th, td { padding: 6px 6px; }
+      table { font-size: 12px; }
     }
   </style>
 </head>
+
 <body>
   <h1>CFB Rankings 2025</h1>
-   <p style="text-align:center;">Only FBS vs FBS Games are used in calculations</p>
-  <p style="text-align:center;">2025-2026 Final Rankings</p>
-  <p style="text-align:center;">Data Updated 1:18am 1/20/2026</p>
+  <p class="subtext">Only FBS vs FBS Games are used in calculations</p>
+  <p class="subtext">2025-2026 Final Rankings</p>
+  <p class="subtext">Data Updated 1:18am 1/20/2026</p>
 
   <div id="table-wrapper">
     <table id="rankings">
@@ -72,19 +136,68 @@
   </div>
 
   <script>
-    // CSV Link
     const csvUrl =
       "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/refs/heads/main/MasterSheet.csv";
 
+    // Robust CSV parser (handles quoted commas, quotes, and CRLF/LF)
     function parseCSV(text) {
-      // Handle Windows and Unix line endings
-      const lines = text.trim().split(/\r?\n/);
-      if (lines.length === 0) {
-        return { header: [], rows: [] };
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        const next = text[i + 1];
+
+        if (ch === '"') {
+          // Escaped quote inside quoted field
+          if (inQuotes && next === '"') {
+            cell += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+          continue;
+        }
+
+        if (ch === "," && !inQuotes) {
+          row.push(cell);
+          cell = "";
+          continue;
+        }
+
+        if ((ch === "\n" || ch === "\r") && !inQuotes) {
+          // Handle CRLF
+          if (ch === "\r" && next === "\n") i++;
+
+          row.push(cell);
+          cell = "";
+
+          // Skip empty trailing lines
+          if (row.length > 1 || (row.length === 1 && row[0].trim() !== "")) {
+            rows.push(row);
+          }
+
+          row = [];
+          continue;
+        }
+
+        cell += ch;
       }
-      const header = lines[0].split(",");
-      const rows = lines.slice(1).map(line => line.split(","));
-      return { header, rows };
+
+      // last cell
+      row.push(cell);
+      if (row.length > 1 || (row.length === 1 && row[0].trim() !== "")) {
+        rows.push(row);
+      }
+
+      if (rows.length === 0) return { header: [], rows: [] };
+
+      const header = rows[0].map(h => h.trim());
+      const dataRows = rows.slice(1);
+
+      return { header, rows: dataRows };
     }
 
     function buildTable(header, rows) {
@@ -92,30 +205,32 @@
       const thead = table.querySelector("thead");
       const tbody = table.querySelector("tbody");
 
-      // Clear just in case
       thead.innerHTML = "";
       tbody.innerHTML = "";
 
-      // Build header row
+      // Header
       const headerRow = document.createElement("tr");
       header.forEach((col, idx) => {
         const th = document.createElement("th");
         th.textContent = col;
         th.classList.add("sortable");
-        th.dataset.index = idx;
+        th.dataset.index = String(idx);
+        th.dataset.sort = "none";
         headerRow.appendChild(th);
       });
       thead.appendChild(headerRow);
 
-      // Build data rows
+      // Body
       rows.forEach(cells => {
-        if (!cells.join("").trim()) return; // skip empty lines
+        // Skip fully empty rows
+        if (!cells.some(v => String(v || "").trim() !== "")) return;
+
         const tr = document.createElement("tr");
-        cells.forEach(cell => {
+        for (let i = 0; i < header.length; i++) {
           const td = document.createElement("td");
-          td.textContent = cell;
+          td.textContent = (cells[i] ?? "");
           tr.appendChild(td);
-        });
+        }
         tbody.appendChild(tr);
       });
 
@@ -124,37 +239,43 @@
 
     function makeSortable(table) {
       const ths = table.querySelectorAll("th.sortable");
+      const tbody = table.querySelector("tbody");
+
       ths.forEach(th => {
         th.addEventListener("click", () => {
-          const index = parseInt(th.dataset.index, 10);
-          const tbody = table.querySelector("tbody");
-          const rows = Array.from(tbody.querySelectorAll("tr"));
-
+          const index = Number(th.dataset.index);
           const current = th.dataset.sort || "none";
           const next = current === "asc" ? "desc" : "asc";
 
-          // Reset sort state on all headers
-          ths.forEach(h => h.dataset.sort = "none");
+          // reset all
+          ths.forEach(h => (h.dataset.sort = "none"));
           th.dataset.sort = next;
 
-          rows.sort((a, b) => {
-            const aText = a.children[index].textContent;
-            const bText = b.children[index].textContent;
+          const rows = Array.from(tbody.querySelectorAll("tr"));
 
-            const aNum = parseFloat(aText);
-            const bNum = parseFloat(bText);
-            const bothNumeric = !Number.isNaN(aNum) && !Number.isNaN(bNum);
+          rows.sort((a, b) => {
+            const aText = a.children[index]?.textContent ?? "";
+            const bText = b.children[index]?.textContent ?? "";
+
+            // Try numeric compare first (handles ints/floats)
+            const aNum = Number(aText);
+            const bNum = Number(bText);
+            const aIsNum = aText.trim() !== "" && Number.isFinite(aNum);
+            const bIsNum = bText.trim() !== "" && Number.isFinite(bNum);
 
             let cmp;
-            if (bothNumeric) {
+            if (aIsNum && bIsNum) {
               cmp = aNum - bNum;
             } else {
-              cmp = aText.localeCompare(bText);
+              cmp = aText.localeCompare(bText, undefined, { numeric: true, sensitivity: "base" });
             }
+
             return next === "asc" ? cmp : -cmp;
           });
 
-          rows.forEach(r => tbody.appendChild(r));
+          const frag = document.createDocumentFragment();
+          rows.forEach(r => frag.appendChild(r));
+          tbody.appendChild(frag);
         });
       });
     }
@@ -162,15 +283,14 @@
     // Fetch CSV and render table
     fetch(csvUrl)
       .then(r => {
-        if (!r.ok) {
-          throw new Error("HTTP " + r.status);
-        }
+        if (!r.ok) throw new Error("HTTP " + r.status);
         return r.text();
       })
       .then(text => {
         const { header, rows } = parseCSV(text);
-        if (header.length === 0) {
+        if (!header.length) {
           console.error("CSV appears to be empty or malformed.");
+          return;
         }
         buildTable(header, rows);
       })
@@ -180,27 +300,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
