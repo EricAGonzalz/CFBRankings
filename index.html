@@ -724,18 +724,12 @@ function csvForYear(year) {
 
     // Probe which CSVs exist so you don’t have to maintain a year list
     async function discoverAvailableYears() {
-      const years = [];
-      for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
-        const url = csvForYear(y);
-        try {
-          const r = await fetch(url, { method: "HEAD", cache: "no-store" });
-          if (r.ok) years.push(String(y));
-        } catch {
-          // ignore
-        }
-      }
-      return years;
-    }
+  const years = [];
+  for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
+    years.push(String(y));
+  }
+  return years;
+}
 
     function populateYearSelect(years) {
       const sel = document.getElementById("yearSelect");
@@ -881,5 +875,6 @@ function csvForYear(year) {
   </script>
 </body>
 </html>
+
 
 
