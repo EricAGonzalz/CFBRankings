@@ -350,9 +350,13 @@
     // Optional: champions file. If missing, champion highlighting just won't happen.
     const CHAMPIONS_JSON_URL = `${DATA_DIR}/champions.json`;
 
-   function csvForYear(year) {
-  return `${DATA_DIR}/${year} Master.CSV`;
+   const RAW_BASE =
+  "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
+
+function csvForYear(year) {
+  return `${RAW_BASE}${year}%20Master.CSV`;
 }
+
 
     // Column grouping (edit this mapping if your CSV headers change)
     const GROUPS = [
@@ -877,4 +881,5 @@
   </script>
 </body>
 </html>
+
 
