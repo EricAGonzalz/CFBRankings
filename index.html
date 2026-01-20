@@ -3,141 +3,373 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CFB Rankings 2025</title>
+  <title>CFB Rankings</title>
 
   <style>
-    :root {
-      --bg: #f4f4f4;
-      --card: #ffffff;
-      --grid: #dddddd;
-      --head-bg: #000000;
-      --head-fg: #ffffff;
-      --row-alt: #f9f9f9;
-      --row-hover: #e6e6e6;
-      --shadow: 0 1px 4px rgba(0,0,0,0.12);
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#666;
+      --grid:#dddddd;
+
+      --head-bg:#0b0b0b;
+      --head-fg:#ffffff;
+
+      --chip:#f0f0f0;
+      --chip-border:#d6d6d6;
+
+      --row-alt:#fafafa;
+      --row-hover:#efefef;
+
+      /* Champion highlight */
+      --champ-bg:#fff7cc;
+      --champ-border:#d6b800;
+      --champ-text:#1a1a1a;
+
+      /* “KenPom-like” separators */
+      --divide:#bdbdbd;
+
+      /* Links */
+      --link:#0a58ca;
+      --link-hover:#eef5ff;
     }
 
-    body {
+    body{
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       margin: 20px;
       background: var(--bg);
-      color: #111;
+      color: var(--text);
     }
 
-    h1 {
-      text-align: center;
-      margin: 0 0 8px 0;
+    .page{
+      max-width: 1300px;
+      margin: 0 auto;
     }
 
-    .subtext {
-      text-align: center;
-      margin: 4px 0;
+    .topbar{
+      background: var(--card);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      padding: 14px 14px 10px 14px;
     }
 
-    #table-wrapper {
+    .brandrow{
+      display: flex;
+      gap: 12px;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    h1{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: 0.2px;
+    }
+
+    .subtitle{
+      margin: 6px 0 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .statusline{
+      margin: 8px 0 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .controls{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .control{
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      background: var(--chip);
+      border: 1px solid var(--chip-border);
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 13px;
+    }
+
+    .control label{
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .control input,
+    .control select{
+      border: 0;
+      background: transparent;
+      outline: none;
+      font-size: 13px;
+      min-width: 140px;
+    }
+
+    .control input::placeholder{
+      color: #888;
+    }
+
+    .links{
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .links a{
+      color: var(--link);
+      text-decoration: none;
+      padding: 2px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .links a:hover{
+      text-decoration: underline;
+      background: var(--link-hover);
+    }
+
+    .spacer{
+      flex: 1;
+    }
+
+    #table-wrapper{
+      margin-top: 14px;
       overflow-x: auto;
       background: var(--card);
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
       padding: 10px;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-      margin-top: 12px;
     }
 
-    table {
+    table{
       border-collapse: collapse;
       width: 100%;
       font-size: 13px;
     }
 
-    thead th {
+    thead th{
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 3;
       background: var(--head-bg);
       color: var(--head-fg);
       border: 1px solid #222;
     }
 
-    th, td {
+    thead tr.group th{
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.3px;
+      text-transform: none;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
+    th, td{
       padding: 6px 8px;
       border: 1px solid var(--grid);
       text-align: right;
       vertical-align: middle;
+      white-space: nowrap; /* keeps headers aligned and icons on one line */
     }
 
-    /* IMPORTANT: prevents header text + sort icon from wrapping (fixes "misaligned" headings) */
-    th {
-      white-space: nowrap;
-    }
-
-    /* Left-align text columns (Rk=1, Team=2, Conference=3 in your CSV) */
-    th:nth-child(2),
-    th:nth-child(3),
-    td:nth-child(2),
-    td:nth-child(3) {
+    /* Left align “text columns” */
+    td.col-team, th.col-team,
+    td.col-conf, th.col-conf{
       text-align: left;
     }
 
-    tbody tr:nth-child(even) {
+    tbody tr:nth-child(even){
       background: var(--row-alt);
     }
 
-    tbody tr:hover {
+    tbody tr:hover{
       background: var(--row-hover);
     }
 
-    /* Sorting UI */
-    th.sortable {
-      cursor: pointer;
-      position: relative;
-      padding-right: 18px; /* room for arrow */
-      user-select: none;
+    /* KenPom-like vertical separators between column groups */
+    .divide-left{
+      border-left: 2px solid var(--divide) !important;
     }
 
-    th.sortable::after {
+    /* Sorting UI */
+    th.sortable{
+      cursor: pointer;
+      position: relative;
+      padding-right: 18px;
+      user-select: none;
+    }
+    th.sortable::after{
       content: "↕";
       position: absolute;
       right: 6px;
       top: 50%;
       transform: translateY(-50%);
       font-size: 0.75em;
-      opacity: 0.6;
+      opacity: 0.65;
+    }
+    th.sortable[data-sort="asc"]::after{ content:"▲"; opacity:0.95; }
+    th.sortable[data-sort="desc"]::after{ content:"▼"; opacity:0.95; }
+
+    /* Champion highlight */
+    tr.champion{
+      background: var(--champ-bg) !important;
+      color: var(--champ-text);
+      font-weight: 700;
+    }
+    tr.champion td{
+      border-color: #e7da7a;
+    }
+    tr.champion td:first-child{
+      border-left: 3px solid var(--champ-border);
+    }
+    .trophy{
+      margin-left: 6px;
+      font-size: 13px;
+      opacity: 0.95;
     }
 
-    th.sortable[data-sort="asc"]::after {
-      content: "▲";
-      opacity: 0.9;
+    .note{
+      margin: 10px 2px 0 2px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.35;
+      display: none;
     }
 
-    th.sortable[data-sort="desc"]::after {
-      content: "▼";
-      opacity: 0.9;
+    .loading{
+      margin: 10px 2px 0 2px;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.35;
+      display: none;
     }
 
-    /* Optional: tighter columns on small screens */
-    @media (max-width: 700px) {
-      th, td { padding: 6px 6px; }
-      table { font-size: 12px; }
+    @media (max-width: 720px){
+      body{ margin: 12px; }
+      .control input, .control select{ min-width: 120px; }
     }
   </style>
 </head>
 
 <body>
-  <h1>CFB Rankings 2025</h1>
-  <p class="subtext">Only FBS vs FBS Games are used in calculations</p>
-  <p class="subtext">2025-2026 Final Rankings</p>
-  <p class="subtext">Data Updated 12:18pm 1/20/2026</p>
+  <div class="page">
+    <div class="topbar">
+      <div class="brandrow">
+        <div>
+          <h1 id="pageTitle">CFB Rankings</h1>
+          <p class="subtitle" id="pageSubtitle">Only FBS vs FBS games are used in calculations.</p>
+          <p class="statusline" id="statusLine"></p>
+        </div>
 
-  <div id="table-wrapper">
-    <table id="rankings">
-      <thead></thead>
-      <tbody></tbody>
-    </table>
+        <div class="spacer"></div>
+
+        <div class="control" title="Choose a season to view">
+          <label for="yearSelect">Season</label>
+          <select id="yearSelect"></select>
+        </div>
+      </div>
+
+      <div class="controls">
+        <div class="control" title="Filter by team name">
+          <label for="teamSearch">Team</label>
+          <input id="teamSearch" type="text" placeholder="Search teams..." />
+        </div>
+
+        <div class="control" title="Filter by conference">
+          <label for="confFilter">Conf</label>
+          <select id="confFilter">
+            <option value="">All</option>
+          </select>
+        </div>
+
+        <div class="control" title="Show only the top N teams by Rk">
+          <label for="topN">Filter</label>
+          <select id="topN">
+            <option value="0" selected>All</option>
+            <option value="25">Top 25</option>
+            <option value="50">Top 50</option>
+            <option value="100">Top 100</option>
+          </select>
+        </div>
+
+        <div class="control" title="Quick toggle for row striping">
+          <label for="stripeToggle">Striping</label>
+          <select id="stripeToggle">
+            <option value="on" selected>On</option>
+            <option value="off">Off</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="links" id="finalLinks">
+        <span>Final results:</span>
+        <!-- Year links are generated automatically -->
+      </div>
+    </div>
+
+    <div id="table-wrapper">
+      <table id="rankings">
+        <thead></thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="loading" id="loadingLine">Loading…</div>
+      <div class="note" id="champNote"></div>
+    </div>
   </div>
 
   <script>
-    const csvUrl =
-      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/refs/heads/main/MasterSheet.csv";
+
+    const DATA_DIR = "data";
+    const FIRST_SEASON = 2010;
+
+    // Set this to the "current live season" year (you can change once per season, or keep it automatic).
+    // Automatic uses the current year, which may be okay depending on how you name seasons.
+    const CURRENT_SEASON = new Date().getFullYear();
+
+    // Default year to open if no ?year= is provided
+    const DEFAULT_YEAR = "2025";
+
+    // Optional: champions file. If missing, champion highlighting just won't happen.
+    const CHAMPIONS_JSON_URL = `${DATA_DIR}/champions.json`;
+
+    function csvForYear(year) {
+      return `${DATA_DIR}/MasterSheet_${year}.csv`;
+    }
+
+    // Column grouping (edit this mapping if your CSV headers change)
+    const GROUPS = [
+      { title: "Team", cols: ["Rk", "Team", "Conference", "W", "L"] },
+      { title: "Ratings", cols: ["NetRtg", "AdjRtg", "AdjRk"] },
+      { title: "Wins", cols: ["Win %", "PyW %", "Luck", "Luck Z"] },
+      { title: "Efficiency", cols: ["ORtg", "DRtg"] },
+      { title: "Totals", cols: ["PF", "PA", "ODrives", "DDrives"] },
+      { title: "Schedule", cols: ["SOS"] }
+    ];
+
+    // State
+    let CHAMPIONS_BY_YEAR = {};       // loaded from champions.json (if present)
+    let ACTIVE_YEAR = null;
+    let ACTIVE_CHAMPION = null;       // string team name, or null
+    let ACTIVE_IS_FINAL = false;      // true if champion exists for that year
+    let AVAILABLE_YEARS = [];         // years with CSV found (best UX)
 
     // Robust CSV parser (handles quoted commas, quotes, and CRLF/LF)
     function parseCSV(text) {
@@ -151,7 +383,6 @@
         const next = text[i + 1];
 
         if (ch === '"') {
-          // Escaped quote inside quoted field
           if (inQuotes && next === '"') {
             cell += '"';
             i++;
@@ -168,17 +399,10 @@
         }
 
         if ((ch === "\n" || ch === "\r") && !inQuotes) {
-          // Handle CRLF
           if (ch === "\r" && next === "\n") i++;
-
           row.push(cell);
           cell = "";
-
-          // Skip empty trailing lines
-          if (row.length > 1 || (row.length === 1 && row[0].trim() !== "")) {
-            rows.push(row);
-          }
-
+          if (row.some(v => String(v).trim() !== "")) rows.push(row);
           row = [];
           continue;
         }
@@ -186,21 +410,123 @@
         cell += ch;
       }
 
-      // last cell
       row.push(cell);
-      if (row.length > 1 || (row.length === 1 && row[0].trim() !== "")) {
-        rows.push(row);
-      }
+      if (row.some(v => String(v).trim() !== "")) rows.push(row);
 
-      if (rows.length === 0) return { header: [], rows: [] };
-
-      const header = rows[0].map(h => h.trim());
-      const dataRows = rows.slice(1);
-
-      return { header, rows: dataRows };
+      if (!rows.length) return { header: [], rows: [] };
+      return { header: rows[0].map(h => h.trim()), rows: rows.slice(1) };
     }
 
-    function buildTable(header, rows) {
+    function indexByHeader(header) {
+      const map = new Map();
+      header.forEach((h, i) => map.set(h, i));
+      return map;
+    }
+
+    function buildConferenceOptions(allRows, headerMap) {
+      const confIndex = headerMap.get("Conference");
+      const select = document.getElementById("confFilter");
+      select.innerHTML = '<option value="">All</option>';
+
+      if (confIndex === undefined) return;
+
+      const set = new Set();
+      for (const r of allRows) {
+        const v = (r[confIndex] ?? "").trim();
+        if (v) set.add(v);
+      }
+
+      Array.from(set).sort().forEach(conf => {
+        const opt = document.createElement("option");
+        opt.value = conf;
+        opt.textContent = conf;
+        select.appendChild(opt);
+      });
+    }
+
+    function getGroupBoundaryStarts(headerMap, orderedCols) {
+      const starts = new Set();
+      let running = 0;
+      let firstAdded = false;
+
+      for (const group of GROUPS) {
+        const existing = group.cols.filter(c => headerMap.has(c) && orderedCols.includes(c));
+        if (!existing.length) continue;
+
+        if (!firstAdded) firstAdded = true;
+        else starts.add(running);
+
+        running += existing.length;
+      }
+
+      const groupedSet = new Set(GROUPS.flatMap(g => g.cols));
+      const leftovers = orderedCols.filter(c => !groupedSet.has(c) && headerMap.has(c));
+      if (leftovers.length && running > 0) starts.add(running);
+
+      return starts;
+    }
+
+    function inferOrderedColumns(header) {
+      const inGroups = GROUPS.flatMap(g => g.cols).filter(c => header.includes(c));
+      const leftovers = header.filter(c => !inGroups.includes(c));
+      return [...inGroups, ...leftovers];
+    }
+
+    function buildGroupedHeader(thead, header, headerMap, orderedCols) {
+      const trGroup = document.createElement("tr");
+      trGroup.className = "group";
+
+      const trCols = document.createElement("tr");
+      let currentGroupStartIndex = 0;
+
+      for (const group of GROUPS) {
+        const existing = group.cols.filter(c => headerMap.has(c) && orderedCols.includes(c));
+        if (!existing.length) continue;
+
+        const th = document.createElement("th");
+        th.textContent = group.title;
+        th.colSpan = existing.length;
+
+        if (currentGroupStartIndex !== 0) th.classList.add("divide-left");
+
+        trGroup.appendChild(th);
+        currentGroupStartIndex += existing.length;
+      }
+
+      const groupedSet = new Set(GROUPS.flatMap(g => g.cols));
+      const leftovers = orderedCols.filter(c => !groupedSet.has(c) && headerMap.has(c));
+      if (leftovers.length) {
+        const th = document.createElement("th");
+        th.textContent = "Other";
+        th.colSpan = leftovers.length;
+        th.classList.add("divide-left");
+        trGroup.appendChild(th);
+      }
+
+      const boundaryStarts = getGroupBoundaryStarts(headerMap, orderedCols);
+
+      orderedCols.forEach((col, idx) => {
+        if (!headerMap.has(col)) return;
+
+        const th = document.createElement("th");
+        th.textContent = col;
+        th.classList.add("sortable");
+        th.dataset.index = String(idx);
+        th.dataset.sort = "none";
+
+        if (col === "Team") th.classList.add("col-team");
+        if (col === "Conference") th.classList.add("col-conf");
+
+        if (boundaryStarts.has(idx)) th.classList.add("divide-left");
+
+        trCols.appendChild(th);
+      });
+
+      thead.appendChild(trGroup);
+      thead.appendChild(trCols);
+    }
+
+    function buildTable(header, allRows) {
       const table = document.getElementById("rankings");
       const thead = table.querySelector("thead");
       const tbody = table.querySelector("tbody");
@@ -208,38 +534,107 @@
       thead.innerHTML = "";
       tbody.innerHTML = "";
 
-      // Header
-      const headerRow = document.createElement("tr");
-      header.forEach((col, idx) => {
-        const th = document.createElement("th");
-        th.textContent = col;
-        th.classList.add("sortable");
-        th.dataset.index = String(idx);
-        th.dataset.sort = "none";
-        headerRow.appendChild(th);
-      });
-      thead.appendChild(headerRow);
+      const headerMap = indexByHeader(header);
+      const orderedCols = inferOrderedColumns(header);
 
-      // Body
-      rows.forEach(cells => {
-        // Skip fully empty rows
-        if (!cells.some(v => String(v || "").trim() !== "")) return;
+      buildConferenceOptions(allRows, headerMap);
+      buildGroupedHeader(thead, header, headerMap, orderedCols);
 
-        const tr = document.createElement("tr");
-        for (let i = 0; i < header.length; i++) {
-          const td = document.createElement("td");
-          td.textContent = (cells[i] ?? "");
-          tr.appendChild(td);
-        }
-        tbody.appendChild(tr);
-      });
+      const rendered = [];
+      for (const raw of allRows) {
+        if (!raw.some(v => String(v ?? "").trim() !== "")) continue;
 
+        const cells = orderedCols.map(col => {
+          const idx = headerMap.get(col);
+          return idx === undefined ? "" : (raw[idx] ?? "");
+        });
+
+        rendered.push(cells);
+      }
+
+      window.__CFB_STATE__ = {
+        header,
+        headerMap,
+        orderedCols,
+        rows: rendered
+      };
+
+      renderBody();
       makeSortable(table);
     }
 
+    function renderBody() {
+      const tbody = document.getElementById("rankings").querySelector("tbody");
+      tbody.innerHTML = "";
+
+      const state = window.__CFB_STATE__;
+      if (!state) return;
+
+      const teamSearch = document.getElementById("teamSearch").value.trim().toLowerCase();
+      const conf = document.getElementById("confFilter").value;
+      const topN = Number(document.getElementById("topN").value || 0);
+
+      const teamCol = state.orderedCols.indexOf("Team");
+      const confCol = state.orderedCols.indexOf("Conference");
+      const rkCol = state.orderedCols.indexOf("Rk");
+
+      let filtered = state.rows.slice();
+
+      if (teamSearch && teamCol >= 0) {
+        filtered = filtered.filter(r => String(r[teamCol] ?? "").toLowerCase().includes(teamSearch));
+      }
+
+      if (conf && confCol >= 0) {
+        filtered = filtered.filter(r => String(r[confCol] ?? "") === conf);
+      }
+
+      if (topN > 0 && rkCol >= 0) {
+        filtered = filtered.filter(r => {
+          const n = Number(String(r[rkCol] ?? "").trim());
+          return Number.isFinite(n) && n <= topN;
+        });
+      }
+
+      const boundaryStarts = getGroupBoundaryStarts(state.headerMap, state.orderedCols);
+
+      for (const cells of filtered) {
+        const tr = document.createElement("tr");
+
+        // Champion highlight: only if this season is final and champion is set
+        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION && teamCol >= 0) {
+          const teamName = String(cells[teamCol] ?? "").trim();
+          if (teamName.toLowerCase() === String(ACTIVE_CHAMPION).toLowerCase()) {
+            tr.classList.add("champion");
+          }
+        }
+
+        cells.forEach((cell, idx) => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+
+          const colName = state.orderedCols[idx];
+          if (colName === "Team") td.classList.add("col-team");
+          if (colName === "Conference") td.classList.add("col-conf");
+          if (boundaryStarts.has(idx)) td.classList.add("divide-left");
+
+          // Trophy for champion team
+          if (colName === "Team" && tr.classList.contains("champion")) {
+            td.textContent = cell;
+            const span = document.createElement("span");
+            span.className = "trophy";
+            span.textContent = "🏆";
+            td.appendChild(span);
+          }
+
+          tr.appendChild(td);
+        });
+
+        tbody.appendChild(tr);
+      }
+    }
+
     function makeSortable(table) {
-      const ths = table.querySelectorAll("th.sortable");
-      const tbody = table.querySelector("tbody");
+      const ths = table.querySelectorAll("thead tr:last-child th.sortable");
 
       ths.forEach(th => {
         th.addEventListener("click", () => {
@@ -247,57 +642,238 @@
           const current = th.dataset.sort || "none";
           const next = current === "asc" ? "desc" : "asc";
 
-          // reset all
           ths.forEach(h => (h.dataset.sort = "none"));
           th.dataset.sort = next;
 
-          const rows = Array.from(tbody.querySelectorAll("tr"));
+          const state = window.__CFB_STATE__;
+          if (!state) return;
 
-          rows.sort((a, b) => {
-            const aText = a.children[index]?.textContent ?? "";
-            const bText = b.children[index]?.textContent ?? "";
+          state.rows.sort((a, b) => {
+            const aText = String(a[index] ?? "");
+            const bText = String(b[index] ?? "");
 
-            // Try numeric compare first (handles ints/floats)
             const aNum = Number(aText);
             const bNum = Number(bText);
             const aIsNum = aText.trim() !== "" && Number.isFinite(aNum);
             const bIsNum = bText.trim() !== "" && Number.isFinite(bNum);
 
             let cmp;
-            if (aIsNum && bIsNum) {
-              cmp = aNum - bNum;
-            } else {
-              cmp = aText.localeCompare(bText, undefined, { numeric: true, sensitivity: "base" });
-            }
+            if (aIsNum && bIsNum) cmp = aNum - bNum;
+            else cmp = aText.localeCompare(bText, undefined, { numeric: true, sensitivity: "base" });
 
             return next === "asc" ? cmp : -cmp;
           });
 
-          const frag = document.createDocumentFragment();
-          rows.forEach(r => frag.appendChild(r));
-          tbody.appendChild(frag);
+          renderBody();
         });
       });
     }
 
-    // Fetch CSV and render table
-    fetch(csvUrl)
-      .then(r => {
+    function setStriping(on) {
+      const styleId = "no-striping-style";
+      const existing = document.getElementById(styleId);
+
+      if (on) {
+        if (existing) existing.remove();
+        return;
+      }
+
+      if (!existing) {
+        const s = document.createElement("style");
+        s.id = styleId;
+        s.textContent = `
+          tbody tr:nth-child(even){ background: transparent !important; }
+        `;
+        document.head.appendChild(s);
+      }
+    }
+
+    function setLoading(isLoading) {
+      document.getElementById("loadingLine").style.display = isLoading ? "block" : "none";
+    }
+
+    function setChampionNote() {
+      const note = document.getElementById("champNote");
+      if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
+        note.textContent = `${ACTIVE_CHAMPION} is highlighted as the national champion.`;
+        note.style.display = "block";
+      } else {
+        note.textContent = "";
+        note.style.display = "none";
+      }
+    }
+
+    function setStatusLine(extraText) {
+      document.getElementById("statusLine").textContent = extraText || "";
+    }
+
+    async function loadChampionsJson() {
+      try {
+        const r = await fetch(CHAMPIONS_JSON_URL, { cache: "no-store" });
+        if (!r.ok) return {};
+        const data = await r.json();
+        return (data && typeof data === "object") ? data : {};
+      } catch {
+        return {};
+      }
+    }
+
+    // Probe which CSVs exist so you don’t have to maintain a year list
+    async function discoverAvailableYears() {
+      const years = [];
+      for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
+        const url = csvForYear(y);
+        try {
+          const r = await fetch(url, { method: "HEAD", cache: "no-store" });
+          if (r.ok) years.push(String(y));
+        } catch {
+          // ignore
+        }
+      }
+      return years;
+    }
+
+    function populateYearSelect(years) {
+      const sel = document.getElementById("yearSelect");
+      sel.innerHTML = "";
+      years.forEach(y => {
+        const opt = document.createElement("option");
+        opt.value = y;
+        opt.textContent = y;
+        sel.appendChild(opt);
+      });
+    }
+
+    function populateFinalLinks() {
+      const wrap = document.getElementById("finalLinks");
+
+      // Remove existing generated links (keep the "Final results:" label)
+      Array.from(wrap.querySelectorAll("a.yearLink")).forEach(a => a.remove());
+
+      // Only show links for years that have a champion set
+      const finalYears = AVAILABLE_YEARS.filter(y => !!CHAMPIONS_BY_YEAR[y]);
+
+      finalYears.forEach(y => {
+        const a = document.createElement("a");
+        a.href = "#";
+        a.className = "yearLink";
+        a.dataset.year = y;
+        a.textContent = y;
+        wrap.appendChild(a);
+      });
+
+      // Wire up clicks
+      wrap.querySelectorAll("a.yearLink").forEach(a => {
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          const y = a.dataset.year;
+          document.getElementById("yearSelect").value = y;
+          loadYear(y);
+          history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
+        });
+      });
+    }
+
+    async function loadYear(year) {
+      if (!year) return;
+
+      ACTIVE_YEAR = String(year);
+      ACTIVE_CHAMPION = CHAMPIONS_BY_YEAR[ACTIVE_YEAR] || null;
+      ACTIVE_IS_FINAL = !!ACTIVE_CHAMPION; // final if champion exists
+
+      document.getElementById("pageTitle").textContent = `CFB Rankings ${ACTIVE_YEAR}`;
+
+      setChampionNote();
+
+      // Clear filters on year change (optional; comment out if you want to keep filters)
+      document.getElementById("teamSearch").value = "";
+      document.getElementById("confFilter").value = "";
+      document.getElementById("topN").value = "0";
+
+      const url = csvForYear(ACTIVE_YEAR);
+
+      setLoading(true);
+      setStatusLine(`Loading ${url}…`);
+
+      try {
+        const r = await fetch(url, { cache: "no-store" });
         if (!r.ok) throw new Error("HTTP " + r.status);
-        return r.text();
-      })
-      .then(text => {
+
+        const text = await r.text();
         const { header, rows } = parseCSV(text);
+
         if (!header.length) {
-          console.error("CSV appears to be empty or malformed.");
+          console.error("CSV appears empty or malformed.");
+          setStatusLine("CSV appears empty or malformed.");
           return;
         }
+
         buildTable(header, rows);
-      })
-      .catch(err => {
+
+        const isStriped = document.getElementById("stripeToggle").value === "on";
+        setStriping(isStriped);
+
+        // Status: show whether season is final or live
+        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
+          setStatusLine(`Final season. Champion: ${ACTIVE_CHAMPION}.`);
+        } else {
+          setStatusLine("Live season (no champion highlighted).");
+        }
+
+      } catch (err) {
         console.error("Failed to load CSV:", err);
-      });
+        setStatusLine("Failed to load this season’s CSV. Make sure the file exists in /data.");
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    // Hook up UI
+    document.getElementById("teamSearch").addEventListener("input", renderBody);
+    document.getElementById("confFilter").addEventListener("change", renderBody);
+    document.getElementById("topN").addEventListener("change", renderBody);
+
+    document.getElementById("stripeToggle").addEventListener("change", (e) => {
+      setStriping(e.target.value === "on");
+    });
+
+    document.getElementById("yearSelect").addEventListener("change", (e) => {
+      const y = e.target.value;
+      history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
+      loadYear(y);
+    });
+
+    // Boot
+    (async function init() {
+      // champions.json is optional
+      CHAMPIONS_BY_YEAR = await loadChampionsJson();
+
+      // Discover CSV years that exist
+      AVAILABLE_YEARS = await discoverAvailableYears();
+      if (!AVAILABLE_YEARS.length) {
+        // fallback: still populate something
+        AVAILABLE_YEARS = Array.from(
+          { length: CURRENT_SEASON - FIRST_SEASON + 1 },
+          (_, i) => String(CURRENT_SEASON - i)
+        );
+      }
+
+      populateYearSelect(AVAILABLE_YEARS);
+      populateFinalLinks();
+
+      // Initial year from URL param, else DEFAULT_YEAR if present, else first available
+      const params = new URLSearchParams(location.search);
+      const requested = params.get("year");
+      const initial = (requested && AVAILABLE_YEARS.includes(requested))
+        ? requested
+        : (AVAILABLE_YEARS.includes(DEFAULT_YEAR) ? DEFAULT_YEAR : AVAILABLE_YEARS[0]);
+
+      document.getElementById("yearSelect").value = initial;
+      await loadYear(initial);
+
+      // Default striping
+      setStriping(true);
+    })();
   </script>
 </body>
 </html>
-
