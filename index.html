@@ -27,7 +27,7 @@
       --champ-border:#d6b800;
       --champ-text:#1a1a1a;
 
-      /* “KenPom-like” separators */
+      /* "KenPom-like" separators */
       --divide:#bdbdbd;
 
       /* Links */
@@ -189,7 +189,7 @@
       white-space: nowrap; /* keeps headers aligned and icons on one line */
     }
 
-    /* Left align “text columns” */
+    /* Left align "text columns" */
     td.col-team, th.col-team,
     td.col-conf, th.col-conf{
       text-align: left;
@@ -316,14 +316,14 @@
     <option value="off">Off</option>
   </select>
 </div>
-      
+
       <div class="links" id="finalLinks">
         <span>Final results:</span>
         <!-- Year links are generated automatically -->
       </div>
     </div>
 
-    
+
     <div id="table-wrapper">
       <table id="rankings">
         <thead></thead>
@@ -340,7 +340,6 @@
     const FIRST_SEASON = 2009;
 
     // Set this to the "current live season" year (you can change once per season, or keep it automatic).
-    // Automatic uses the current year, which may be okay depending on how you name seasons.
     const CURRENT_SEASON = new Date().getFullYear();
 
     // Default year to open if no ?year= is provided
@@ -366,12 +365,41 @@
       { title: "Schedule", cols: ["SOS", "SOSFac"] }
     ];
 
+    // ---- Cached DOM references (avoids repeated getElementById lookups) ----
+    const els = {
+      pageTitle: document.getElementById("pageTitle"),
+      statusLine: document.getElementById("statusLine"),
+      yearSelect: document.getElementById("yearSelect"),
+      teamSearch: document.getElementById("teamSearch"),
+      confFilter: document.getElementById("confFilter"),
+      topN: document.getElementById("topN"),
+      stripeToggle: document.getElementById("stripeToggle"),
+      finalLinks: document.getElementById("finalLinks"),
+      table: document.getElementById("rankings"),
+      loadingLine: document.getElementById("loadingLine"),
+      champNote: document.getElementById("champNote"),
+    };
+    els.thead = els.table.querySelector("thead");
+    els.tbody = els.table.querySelector("tbody");
+
     // State
     let CHAMPIONS_BY_YEAR = {};       // loaded from champions.json (if present)
     let ACTIVE_YEAR = null;
     let ACTIVE_CHAMPION = null;       // string team name, or null
+    let ACTIVE_CHAMPION_LC = null;    // lowercased, precomputed once per year
     let ACTIVE_IS_FINAL = false;      // true if champion exists for that year
-    let AVAILABLE_YEARS = [];         // years with CSV found (best UX)
+    let AVAILABLE_YEARS = [];         // years to show in the season dropdown
+
+    let STATE = null; // replaces window.__CFB_STATE__
+
+    // Small debounce helper so typing in the search box doesn't re-render on every keystroke
+    function debounce(fn, wait) {
+      let t;
+      return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), wait);
+      };
+    }
 
     // Robust CSV parser (handles quoted commas, quotes, and CRLF/LF)
     function parseCSV(text) {
@@ -419,7 +447,7 @@
       return { header: rows[0].map(h => h.trim()), rows: rows.slice(1) };
     }
 
-    // ---- FIX: Repair classic mojibake like "San JosÃ©" -> "San José" (display-only)
+    // Repair classic mojibake like "San JosÃ©" -> "San José" (display-only)
     function fixMojibake(s) {
       if (typeof s !== "string") return s;
 
@@ -444,7 +472,7 @@
 
     function buildConferenceOptions(allRows, headerMap) {
       const confIndex = headerMap.get("Conference");
-      const select = document.getElementById("confFilter");
+      const select = els.confFilter;
       select.innerHTML = '<option value="">All</option>';
 
       if (confIndex === undefined) return;
@@ -455,12 +483,14 @@
         if (v) set.add(v);
       }
 
+      const frag = document.createDocumentFragment();
       Array.from(set).sort().forEach(conf => {
         const opt = document.createElement("option");
         opt.value = conf;
         opt.textContent = conf;
-        select.appendChild(opt);
+        frag.appendChild(opt);
       });
+      select.appendChild(frag);
     }
 
     function getGroupBoundaryStarts(headerMap, orderedCols) {
@@ -491,7 +521,9 @@
       return [...inGroups, ...leftovers];
     }
 
-    function buildGroupedHeader(thead, header, headerMap, orderedCols) {
+    function buildGroupedHeader(thead, header, headerMap, orderedCols, boundaryStarts) {
+      const frag = document.createDocumentFragment();
+
       const trGroup = document.createElement("tr");
       trGroup.className = "group";
 
@@ -522,8 +554,6 @@
         trGroup.appendChild(th);
       }
 
-      const boundaryStarts = getGroupBoundaryStarts(headerMap, orderedCols);
-
       orderedCols.forEach((col, idx) => {
         if (!headerMap.has(col)) return;
 
@@ -541,63 +571,70 @@
         trCols.appendChild(th);
       });
 
-      thead.appendChild(trGroup);
-      thead.appendChild(trCols);
+      frag.appendChild(trGroup);
+      frag.appendChild(trCols);
+      thead.innerHTML = "";
+      thead.appendChild(frag);
     }
 
     function buildTable(header, allRows) {
-      const table = document.getElementById("rankings");
-      const thead = table.querySelector("thead");
-      const tbody = table.querySelector("tbody");
+      const thead = els.thead;
+      const tbody = els.tbody;
 
-      thead.innerHTML = "";
       tbody.innerHTML = "";
 
       const headerMap = indexByHeader(header);
       const orderedCols = inferOrderedColumns(header);
+      const boundaryStarts = getGroupBoundaryStarts(headerMap, orderedCols);
 
       buildConferenceOptions(allRows, headerMap);
-      buildGroupedHeader(thead, header, headerMap, orderedCols);
+      buildGroupedHeader(thead, header, headerMap, orderedCols, boundaryStarts);
 
       const rendered = [];
       for (const raw of allRows) {
         if (!raw.some(v => String(v ?? "").trim() !== "")) continue;
 
-        const cells = orderedCols.map(col => {
-          const idx = headerMap.get(col);
-          return idx === undefined ? "" : (raw[idx] ?? "");
-        });
+        const cells = new Array(orderedCols.length);
+        for (let i = 0; i < orderedCols.length; i++) {
+          const idx = headerMap.get(orderedCols[i]);
+          cells[i] = idx === undefined ? "" : (raw[idx] ?? "");
+        }
 
         rendered.push(cells);
       }
 
-      window.__CFB_STATE__ = {
+      // Precompute everything renderBody() needs so it never has to recompute
+      // per-call (boundary positions, column indices, etc.) — these are fixed
+      // for the lifetime of this table/season.
+      STATE = {
         header,
         headerMap,
         orderedCols,
+        boundaryStarts,
+        teamCol: orderedCols.indexOf("Team"),
+        confCol: orderedCols.indexOf("Conference"),
+        rkCol: orderedCols.indexOf("Rk"),
         rows: rendered
       };
 
       renderBody();
-      makeSortable(table);
+      makeSortable(thead);
     }
 
     function renderBody() {
-      const tbody = document.getElementById("rankings").querySelector("tbody");
-      tbody.innerHTML = "";
+      const tbody = els.tbody;
+      if (!STATE) {
+        tbody.innerHTML = "";
+        return;
+      }
 
-      const state = window.__CFB_STATE__;
-      if (!state) return;
+      const teamSearch = els.teamSearch.value.trim().toLowerCase();
+      const conf = els.confFilter.value;
+      const topN = Number(els.topN.value || 0);
 
-      const teamSearch = document.getElementById("teamSearch").value.trim().toLowerCase();
-      const conf = document.getElementById("confFilter").value;
-      const topN = Number(document.getElementById("topN").value || 0);
+      const { teamCol, confCol, rkCol, boundaryStarts, orderedCols } = STATE;
 
-      const teamCol = state.orderedCols.indexOf("Team");
-      const confCol = state.orderedCols.indexOf("Conference");
-      const rkCol = state.orderedCols.indexOf("Rk");
-
-      let filtered = state.rows.slice();
+      let filtered = STATE.rows;
 
       if (teamSearch && teamCol >= 0) {
         filtered = filtered.filter(r => String(r[teamCol] ?? "").toLowerCase().includes(teamSearch));
@@ -614,33 +651,33 @@
         });
       }
 
-      const boundaryStarts = getGroupBoundaryStarts(state.headerMap, state.orderedCols);
+      const frag = document.createDocumentFragment();
 
       for (const cells of filtered) {
         const tr = document.createElement("tr");
 
         // Champion highlight: only if this season is final and champion is set
-        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION && teamCol >= 0) {
-          const teamName = String(cells[teamCol] ?? "").trim();
-          if (teamName.toLowerCase() === String(ACTIVE_CHAMPION).toLowerCase()) {
+        let isChampion = false;
+        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION_LC && teamCol >= 0) {
+          const teamName = String(cells[teamCol] ?? "").trim().toLowerCase();
+          if (teamName === ACTIVE_CHAMPION_LC) {
             tr.classList.add("champion");
+            isChampion = true;
           }
         }
 
-        cells.forEach((cell, idx) => {
+        for (let idx = 0; idx < cells.length; idx++) {
           const td = document.createElement("td");
+          const fixed = fixMojibake(cells[idx]);
+          td.textContent = fixed;
 
-          // FIX: apply mojibake repair to displayed text
-          td.textContent = fixMojibake(cell);
-
-          const colName = state.orderedCols[idx];
+          const colName = orderedCols[idx];
           if (colName === "Team") td.classList.add("col-team");
           if (colName === "Conference") td.classList.add("col-conf");
           if (boundaryStarts.has(idx)) td.classList.add("divide-left");
 
           // Trophy for champion team
-          if (colName === "Team" && tr.classList.contains("champion")) {
-            td.textContent = fixMojibake(cell); // FIX: also repair here
+          if (colName === "Team" && isChampion) {
             const span = document.createElement("span");
             span.className = "trophy";
             span.textContent = "🏆";
@@ -648,14 +685,17 @@
           }
 
           tr.appendChild(td);
-        });
+        }
 
-        tbody.appendChild(tr);
+        frag.appendChild(tr);
       }
+
+      tbody.innerHTML = "";
+      tbody.appendChild(frag);
     }
 
-    function makeSortable(table) {
-      const ths = table.querySelectorAll("thead tr:last-child th.sortable");
+    function makeSortable(thead) {
+      const ths = thead.querySelectorAll("tr:last-child th.sortable");
 
       ths.forEach(th => {
         th.addEventListener("click", () => {
@@ -666,10 +706,9 @@
           ths.forEach(h => (h.dataset.sort = "none"));
           th.dataset.sort = next;
 
-          const state = window.__CFB_STATE__;
-          if (!state) return;
+          if (!STATE) return;
 
-          state.rows.sort((a, b) => {
+          STATE.rows.sort((a, b) => {
             const aText = String(a[index] ?? "");
             const bText = String(b[index] ?? "");
 
@@ -690,31 +729,32 @@
       });
     }
 
+    let stripeStyleEl = null;
     function setStriping(on) {
-      const styleId = "no-striping-style";
-      const existing = document.getElementById(styleId);
-
       if (on) {
-        if (existing) existing.remove();
+        if (stripeStyleEl) {
+          stripeStyleEl.remove();
+          stripeStyleEl = null;
+        }
         return;
       }
 
-      if (!existing) {
-        const s = document.createElement("style");
-        s.id = styleId;
-        s.textContent = `
+      if (!stripeStyleEl) {
+        stripeStyleEl = document.createElement("style");
+        stripeStyleEl.id = "no-striping-style";
+        stripeStyleEl.textContent = `
           tbody tr:nth-child(even){ background: transparent !important; }
         `;
-        document.head.appendChild(s);
+        document.head.appendChild(stripeStyleEl);
       }
     }
 
     function setLoading(isLoading) {
-      document.getElementById("loadingLine").style.display = isLoading ? "block" : "none";
+      els.loadingLine.style.display = isLoading ? "block" : "none";
     }
 
     function setChampionNote() {
-      const note = document.getElementById("champNote");
+      const note = els.champNote;
       if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
         note.textContent = `${ACTIVE_CHAMPION} is highlighted as the national champion.`;
         note.style.display = "block";
@@ -725,7 +765,7 @@
     }
 
     function setStatusLine(extraText) {
-      document.getElementById("statusLine").textContent = extraText || "";
+      els.statusLine.textContent = extraText || "";
     }
 
     async function loadChampionsJson() {
@@ -739,8 +779,10 @@
       }
     }
 
-    // Probe which CSVs exist so you don’t have to maintain a year list
-    async function discoverAvailableYears() {
+    // Builds the list of selectable seasons. (No network probing is done here —
+    // that would mean one request per year just to populate a dropdown. If you
+    // want to hide years with no CSV, maintain an explicit list instead.)
+    function buildSeasonYearList() {
       const years = [];
       for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
         years.push(String(y));
@@ -749,44 +791,43 @@
     }
 
     function populateYearSelect(years) {
-      const sel = document.getElementById("yearSelect");
-      sel.innerHTML = "";
+      const sel = els.yearSelect;
+      const frag = document.createDocumentFragment();
       years.forEach(y => {
         const opt = document.createElement("option");
         opt.value = y;
         opt.textContent = y;
-        sel.appendChild(opt);
+        frag.appendChild(opt);
       });
+      sel.innerHTML = "";
+      sel.appendChild(frag);
     }
 
     function populateFinalLinks() {
-      const wrap = document.getElementById("finalLinks");
+      const wrap = els.finalLinks;
 
       // Remove existing generated links (keep the "Final results:" label)
-      Array.from(wrap.querySelectorAll("a.yearLink")).forEach(a => a.remove());
+      wrap.querySelectorAll("a.yearLink").forEach(a => a.remove());
 
       // Only show links for years that have a champion set
       const finalYears = AVAILABLE_YEARS.filter(y => !!CHAMPIONS_BY_YEAR[y]);
 
+      const frag = document.createDocumentFragment();
       finalYears.forEach(y => {
         const a = document.createElement("a");
         a.href = "#";
         a.className = "yearLink";
         a.dataset.year = y;
         a.textContent = y;
-        wrap.appendChild(a);
-      });
-
-      // Wire up clicks
-      wrap.querySelectorAll("a.yearLink").forEach(a => {
         a.addEventListener("click", (e) => {
           e.preventDefault();
-          const y = a.dataset.year;
-          document.getElementById("yearSelect").value = y;
+          els.yearSelect.value = y;
           loadYear(y);
           history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
         });
+        frag.appendChild(a);
       });
+      wrap.appendChild(frag);
     }
 
     async function loadYear(year) {
@@ -794,16 +835,17 @@
 
       ACTIVE_YEAR = String(year);
       ACTIVE_CHAMPION = CHAMPIONS_BY_YEAR[ACTIVE_YEAR] || null;
+      ACTIVE_CHAMPION_LC = ACTIVE_CHAMPION ? ACTIVE_CHAMPION.toLowerCase() : null;
       ACTIVE_IS_FINAL = !!ACTIVE_CHAMPION; // final if champion exists
 
-      document.getElementById("pageTitle").textContent = `CFB Rankings ${ACTIVE_YEAR}`;
+      els.pageTitle.textContent = `CFB Rankings ${ACTIVE_YEAR}`;
 
       setChampionNote();
 
       // Clear filters on year change (optional; comment out if you want to keep filters)
-      document.getElementById("teamSearch").value = "";
-      document.getElementById("confFilter").value = "";
-      document.getElementById("topN").value = "0";
+      els.teamSearch.value = "";
+      els.confFilter.value = "";
+      els.topN.value = "0";
 
       const url = csvForYear(ACTIVE_YEAR);
 
@@ -825,7 +867,7 @@
 
         buildTable(header, rows);
 
-        const isStriped = document.getElementById("stripeToggle").value === "on";
+        const isStriped = els.stripeToggle.value === "on";
         setStriping(isStriped);
 
         // Status: show whether season is final or live
@@ -837,22 +879,22 @@
 
       } catch (err) {
         console.error("Failed to load CSV:", err);
-        setStatusLine("Failed to load this season’s CSV. Make sure the file exists in /data.");
+        setStatusLine("Failed to load this season's CSV. Make sure the file exists in /data.");
       } finally {
         setLoading(false);
       }
     }
 
     // Hook up UI
-    document.getElementById("teamSearch").addEventListener("input", renderBody);
-    document.getElementById("confFilter").addEventListener("change", renderBody);
-    document.getElementById("topN").addEventListener("change", renderBody);
+    els.teamSearch.addEventListener("input", debounce(renderBody, 150));
+    els.confFilter.addEventListener("change", renderBody);
+    els.topN.addEventListener("change", renderBody);
 
-    document.getElementById("stripeToggle").addEventListener("change", (e) => {
+    els.stripeToggle.addEventListener("change", (e) => {
       setStriping(e.target.value === "on");
     });
 
-    document.getElementById("yearSelect").addEventListener("change", (e) => {
+    els.yearSelect.addEventListener("change", (e) => {
       const y = e.target.value;
       history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
       loadYear(y);
@@ -863,15 +905,7 @@
       // champions.json is optional
       CHAMPIONS_BY_YEAR = await loadChampionsJson();
 
-      // Discover CSV years that exist
-      AVAILABLE_YEARS = await discoverAvailableYears();
-      if (!AVAILABLE_YEARS.length) {
-        // fallback: still populate something
-        AVAILABLE_YEARS = Array.from(
-          { length: CURRENT_SEASON - FIRST_SEASON + 1 },
-          (_, i) => String(CURRENT_SEASON - i)
-        );
-      }
+      AVAILABLE_YEARS = buildSeasonYearList();
 
       populateYearSelect(AVAILABLE_YEARS);
       populateFinalLinks();
@@ -883,7 +917,7 @@
         ? requested
         : (AVAILABLE_YEARS.includes(DEFAULT_YEAR) ? DEFAULT_YEAR : AVAILABLE_YEARS[0]);
 
-      document.getElementById("yearSelect").value = initial;
+      els.yearSelect.value = initial;
       await loadYear(initial);
 
       // Default striping
@@ -892,11 +926,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
