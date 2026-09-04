@@ -261,6 +261,96 @@
       display: none;
     }
 
+    .conference-menu{
+      position: relative;
+      display: inline-block;
+    }
+
+    .conference-menu-button{
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 13px;
+      min-width: 140px;
+      text-align: left;
+      cursor: pointer;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .conference-menu-button .caret{
+      font-size: 10px;
+      transition: transform 0.15s ease;
+    }
+
+    .conference-menu.open .conference-menu-button .caret{
+      transform: rotate(180deg);
+    }
+
+    .conference-menu-list{
+      display: none;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 10px);
+      z-index: 30;
+      min-width: 230px;
+      max-height: 340px;
+      overflow-y: auto;
+      padding: 8px;
+      background: var(--card);
+      border: 1px solid var(--chip-border);
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.16);
+    }
+
+    .conference-menu.open .conference-menu-list{
+      display: block;
+    }
+
+    .conference-menu-actions{
+      display: flex;
+      gap: 6px;
+      padding-bottom: 7px;
+      margin-bottom: 5px;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .conference-menu-actions button{
+      border: 0;
+      background: var(--chip);
+      color: var(--text);
+      border-radius: 7px;
+      padding: 5px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .conference-menu-actions button:hover{
+      background: var(--link-hover);
+    }
+
+    .conference-option{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .conference-option:hover{
+      background: var(--link-hover);
+    }
+
+    .conference-option input{
+      min-width: 0;
+      margin: 0;
+    }
+
     .print-button{
       border: 1px solid var(--chip-border);
       background: var(--card);
@@ -574,11 +664,21 @@
           <input id="teamSearch" type="text" placeholder="Search teams..." />
         </div>
 
-        <div class="control" title="Filter by conference">
-          <label for="confFilter">Conf</label>
-          <select id="confFilter">
-            <option value="">All</option>
-          </select>
+        <div class="control" title="Filter by one or more conferences">
+          <label>Conf</label>
+          <div class="conference-menu" id="conferenceMenu">
+            <button id="conferenceMenuButton" class="conference-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
+              <span id="conferenceMenuText">All conferences</span>
+              <span class="caret" aria-hidden="true">▼</span>
+            </button>
+            <div class="conference-menu-list" id="conferenceMenuList">
+              <div class="conference-menu-actions">
+                <button id="conferenceSelectAll" type="button">Select all</button>
+                <button id="conferenceClear" type="button">Clear</button>
+              </div>
+              <div id="conferenceOptions"></div>
+            </div>
+          </div>
         </div>
 
         <div class="control" title="Show only the top N teams by Rk">
@@ -676,7 +776,12 @@
       statusLine: document.getElementById("statusLine"),
       yearSelect: document.getElementById("yearSelect"),
       teamSearch: document.getElementById("teamSearch"),
-      confFilter: document.getElementById("confFilter"),
+      conferenceMenu: document.getElementById("conferenceMenu"),
+      conferenceMenuButton: document.getElementById("conferenceMenuButton"),
+      conferenceMenuText: document.getElementById("conferenceMenuText"),
+      conferenceOptions: document.getElementById("conferenceOptions"),
+      conferenceSelectAll: document.getElementById("conferenceSelectAll"),
+      conferenceClear: document.getElementById("conferenceClear"),
       topN: document.getElementById("topN"),
       stripeToggle: document.getElementById("stripeToggle"),
       publishMenu: document.getElementById("publishMenu"),
@@ -781,12 +886,32 @@
       return map;
     }
 
+    function getSelectedConferences() {
+      return Array.from(els.conferenceOptions.querySelectorAll('input[type="checkbox"]:checked'))
+        .map(input => input.value);
+    }
+
+    function updateConferenceMenuText() {
+      const selected = getSelectedConferences();
+      const total = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
+
+      if (!selected.length || selected.length === total) {
+        els.conferenceMenuText.textContent = "All conferences";
+      } else if (selected.length === 1) {
+        els.conferenceMenuText.textContent = selected[0];
+      } else {
+        els.conferenceMenuText.textContent = `${selected.length} conferences`;
+      }
+    }
+
     function buildConferenceOptions(allRows, headerMap) {
       const confIndex = headerMap.get("Conference");
-      const select = els.confFilter;
-      select.innerHTML = '<option value="">All</option>';
+      els.conferenceOptions.innerHTML = "";
 
-      if (confIndex === undefined) return;
+      if (confIndex === undefined) {
+        updateConferenceMenuText();
+        return;
+      }
 
       const set = new Set();
       for (const r of allRows) {
@@ -796,12 +921,27 @@
 
       const frag = document.createDocumentFragment();
       Array.from(set).sort().forEach(conf => {
-        const opt = document.createElement("option");
-        opt.value = conf;
-        opt.textContent = conf;
-        frag.appendChild(opt);
+        const label = document.createElement("label");
+        label.className = "conference-option";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.value = conf;
+        checkbox.checked = true;
+        checkbox.addEventListener("change", () => {
+          updateConferenceMenuText();
+          renderBody();
+        });
+
+        const text = document.createElement("span");
+        text.textContent = conf;
+
+        label.appendChild(checkbox);
+        label.appendChild(text);
+        frag.appendChild(label);
       });
-      select.appendChild(frag);
+      els.conferenceOptions.appendChild(frag);
+      updateConferenceMenuText();
     }
 
     function getGroupBoundaryStarts(headerMap, orderedCols) {
@@ -940,7 +1080,8 @@
       }
 
       const teamSearch = els.teamSearch.value.trim().toLowerCase();
-      const conf = els.confFilter.value;
+      const selectedConferences = getSelectedConferences();
+      const conferenceOptionCount = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
       const topN = Number(els.topN.value || 0);
 
       const { teamCol, confCol, rkCol, boundaryStarts, orderedCols } = STATE;
@@ -951,8 +1092,11 @@
         filtered = filtered.filter(r => String(r[teamCol] ?? "").toLowerCase().includes(teamSearch));
       }
 
-      if (conf && confCol >= 0) {
-        filtered = filtered.filter(r => String(r[confCol] ?? "") === conf);
+      if (confCol >= 0 && selectedConferences.length > 0 && selectedConferences.length < conferenceOptionCount) {
+        const selectedSet = new Set(selectedConferences);
+        filtered = filtered.filter(r => selectedSet.has(String(r[confCol] ?? "")));
+      } else if (confCol >= 0 && conferenceOptionCount > 0 && selectedConferences.length === 0) {
+        filtered = [];
       }
 
       if (topN > 0 && rkCol >= 0) {
@@ -1155,7 +1299,6 @@
 
       // Clear filters on year change (optional; comment out if you want to keep filters)
       els.teamSearch.value = "";
-      els.confFilter.value = "";
       els.topN.value = "0";
 
       const url = csvForYear(ACTIVE_YEAR);
@@ -1198,7 +1341,30 @@
 
     // Hook up UI
     els.teamSearch.addEventListener("input", debounce(renderBody, 150));
-    els.confFilter.addEventListener("change", renderBody);
+    els.conferenceMenuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = els.conferenceMenu.classList.toggle("open");
+      els.conferenceMenuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    els.conferenceSelectAll.addEventListener("click", () => {
+      els.conferenceOptions.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = true);
+      updateConferenceMenuText();
+      renderBody();
+    });
+
+    els.conferenceClear.addEventListener("click", () => {
+      els.conferenceOptions.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
+      updateConferenceMenuText();
+      renderBody();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!els.conferenceMenu.contains(e.target)) {
+        els.conferenceMenu.classList.remove("open");
+        els.conferenceMenuButton.setAttribute("aria-expanded", "false");
+      }
+    });
     els.topN.addEventListener("change", renderBody);
 
     els.stripeToggle.addEventListener("change", (e) => {
@@ -1206,7 +1372,11 @@
     });
 
     function getPublishMetadata() {
-      const conf = els.confFilter.value || "All conferences";
+      const selectedConferences = getSelectedConferences();
+      const totalConferences = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
+      const conf = (!selectedConferences.length || selectedConferences.length === totalConferences)
+        ? "All conferences"
+        : selectedConferences.join(", ");
       const top = els.topN.value === "0" ? "All teams" : `Top ${els.topN.value}`;
       const team = els.teamSearch.value.trim();
       const filterParts = [conf, top];
