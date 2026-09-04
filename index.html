@@ -261,6 +261,288 @@
       display: none;
     }
 
+    .print-button{
+      border: 1px solid var(--chip-border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .print-button:hover{
+      background: var(--link-hover);
+    }
+
+    .publish-menu{
+      position: relative;
+      display: inline-block;
+    }
+
+    .publish-menu-button{
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .publish-menu-button .caret{
+      font-size: 10px;
+      transition: transform 0.15s ease;
+    }
+
+    .publish-menu.open .publish-menu-button .caret{
+      transform: rotate(180deg);
+    }
+
+    .publish-menu-list{
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 6px);
+      z-index: 20;
+      min-width: 190px;
+      padding: 5px;
+      margin: 0;
+      list-style: none;
+      background: var(--card);
+      border: 1px solid var(--chip-border);
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.16);
+    }
+
+    .publish-menu.open .publish-menu-list{
+      display: block;
+    }
+
+    .publish-menu-list button{
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      text-align: left;
+      padding: 9px 10px;
+      border-radius: 7px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .publish-menu-list button:hover{
+      background: var(--link-hover);
+    }
+
+    .png-export-stage{
+      position: fixed;
+      left: -20000px;
+      top: 0;
+      width: 1320px;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .png-report-page{
+      box-sizing: border-box;
+      width: 1320px;
+      height: 1020px;
+      padding: 46px 48px 38px 48px;
+      background: #fff;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .png-report-page .png-report-header{
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 3px solid #111;
+    }
+
+    .png-report-page .png-report-header h1{
+      margin: 0;
+      font-size: 28px;
+      letter-spacing: 0.2px;
+    }
+
+    .png-report-page .png-report-season{
+      margin: 4px 0 0 0;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .png-report-page .png-report-meta{
+      margin: 4px 0 0 0;
+      font-size: 12px;
+      color: #444;
+    }
+
+    .png-report-page table{
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+
+    .png-report-page thead th{
+      position: static;
+      background: #111;
+      color: #fff;
+      border: 1px solid #222;
+    }
+
+    .png-report-page th,
+    .png-report-page td{
+      padding: 4px 5px;
+      border: 1px solid #b9b9b9;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .png-report-page td.col-team,
+    .png-report-page th.col-team,
+    .png-report-page td.col-conf,
+    .png-report-page th.col-conf{
+      text-align: left;
+    }
+
+    .png-report-page tbody tr:nth-child(even){
+      background: #f5f5f5;
+    }
+
+    .png-report-page tr.champion{
+      background: #fff2b3 !important;
+      font-weight: 700;
+    }
+
+    .png-report-page .png-report-footer{
+      margin-top: auto;
+      padding-top: 8px;
+      border-top: 1px solid #888;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 10px;
+      color: #444;
+    }
+
+    .print-report-header,
+    .print-report-footer{
+      display: none;
+    }
+
+    @media print{
+      @page{
+        size: landscape;
+        margin: 0.45in 0.4in 0.55in 0.4in;
+      }
+
+      body{
+        margin: 0;
+        background: #fff;
+        color: #000;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .page{
+        max-width: none;
+      }
+
+      .topbar{
+        display: none !important;
+      }
+
+      .controls,
+      .links,
+      .print-button,
+      .publish-menu,
+      .loading,
+      .note{
+        display: none !important;
+      }
+
+      .print-report-header{
+        display: block !important;
+        margin: 0 0 12px 0;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #111;
+      }
+
+      .print-report-header h1{
+        margin: 0;
+        font-size: 18pt;
+        letter-spacing: 0.2px;
+      }
+
+      .print-report-header .report-season{
+        margin: 3px 0 0 0;
+        font-size: 11pt;
+        font-weight: 700;
+      }
+
+      .print-report-header .report-meta{
+        margin: 3px 0 0 0;
+        font-size: 8.5pt;
+        color: #444;
+      }
+
+      #table-wrapper{
+        margin-top: 0;
+        overflow: visible;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      table{
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 7.5pt;
+      }
+
+      thead{
+        display: table-header-group;
+      }
+
+      thead th{
+        position: static;
+        background: #111 !important;
+        color: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      th, td{
+        padding: 4px 5px;
+        border: 1px solid #b9b9b9;
+      }
+
+      tbody tr:nth-child(even){
+        background: #f5f5f5 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      tr.champion{
+        background: #fff2b3 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      tbody tr{
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .print-report-footer{
+        display: block !important;
+        margin-top: 8px;
+        padding-top: 6px;
+        border-top: 1px solid #888;
+        font-size: 7.5pt;
+        color: #444;
+      }
+    }
+
     @media (max-width: 720px){
       body{ margin: 12px; }
       .control input, .control select{ min-width: 120px; }
@@ -317,12 +599,29 @@
   </select>
 </div>
 
+        <div class="publish-menu" id="publishMenu">
+          <button id="publishMenuButton" class="print-button publish-menu-button" type="button" aria-haspopup="true" aria-expanded="false" title="Publish the currently displayed rankings">
+            Publish
+            <span class="caret" aria-hidden="true">▼</span>
+          </button>
+          <div class="publish-menu-list" role="menu" aria-label="Publish options">
+            <button id="publishPdf" type="button" role="menuitem">Publish to PDF</button>
+            <button id="publishPng" type="button" role="menuitem">Publish PNGs as ZIP</button>
+          </div>
+        </div>
+      </div>
+
       <div class="links" id="finalLinks">
         <span>Final Results:</span>
         <!-- Year links are generated automatically -->
       </div>
     </div>
 
+    <section class="print-report-header" aria-hidden="true">
+      <h1>College Football Efficiency Rankings</h1>
+      <p class="report-season" id="printReportSeason"></p>
+      <p class="report-meta" id="printReportMeta"></p>
+    </section>
 
     <div id="table-wrapper">
       <table id="rankings">
@@ -333,8 +632,14 @@
       <div class="loading" id="loadingLine">Loading…</div>
       <div class="note" id="champNote"></div>
     </div>
+
+    <footer class="print-report-footer" aria-hidden="true">
+      Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.
+    </footer>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script>
     const DATA_DIR = "data";
     const FIRST_SEASON = 2009;
@@ -374,6 +679,12 @@
       confFilter: document.getElementById("confFilter"),
       topN: document.getElementById("topN"),
       stripeToggle: document.getElementById("stripeToggle"),
+      publishMenu: document.getElementById("publishMenu"),
+      publishMenuButton: document.getElementById("publishMenuButton"),
+      publishPdf: document.getElementById("publishPdf"),
+      publishPng: document.getElementById("publishPng"),
+      printReportSeason: document.getElementById("printReportSeason"),
+      printReportMeta: document.getElementById("printReportMeta"),
       finalLinks: document.getElementById("finalLinks"),
       table: document.getElementById("rankings"),
       loadingLine: document.getElementById("loadingLine"),
@@ -892,6 +1203,168 @@
 
     els.stripeToggle.addEventListener("change", (e) => {
       setStriping(e.target.value === "on");
+    });
+
+    function getPublishMetadata() {
+      const conf = els.confFilter.value || "All conferences";
+      const top = els.topN.value === "0" ? "All teams" : `Top ${els.topN.value}`;
+      const team = els.teamSearch.value.trim();
+      const filterParts = [conf, top];
+      if (team) filterParts.push(`Team filter: ${team}`);
+
+      const seasonText = `${ACTIVE_YEAR} Season${ACTIVE_IS_FINAL ? " — Final Rankings" : " — Current Rankings"}`;
+      const metaText = `${filterParts.join(" • ")} • Generated ${new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })}`;
+      return { seasonText, metaText };
+    }
+
+    function closePublishMenu() {
+      els.publishMenu.classList.remove("open");
+      els.publishMenuButton.setAttribute("aria-expanded", "false");
+    }
+
+    els.publishMenuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const willOpen = !els.publishMenu.classList.contains("open");
+      els.publishMenu.classList.toggle("open", willOpen);
+      els.publishMenuButton.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!els.publishMenu.contains(e.target)) closePublishMenu();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closePublishMenu();
+    });
+
+    els.publishPdf.addEventListener("click", () => {
+      closePublishMenu();
+      const { seasonText, metaText } = getPublishMetadata();
+      els.printReportSeason.textContent = seasonText;
+      els.printReportMeta.textContent = metaText;
+      window.print();
+    });
+
+    function canvasToPngBlob(canvas) {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (!blob) {
+            reject(new Error("Could not create PNG image."));
+            return;
+          }
+          resolve(blob);
+        }, "image/png");
+      });
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function buildPngReportPage(rows, pageNumber, pageCount, seasonText, metaText) {
+      const page = document.createElement("section");
+      page.className = "png-report-page";
+
+      const header = document.createElement("header");
+      header.className = "png-report-header";
+      header.innerHTML = `
+        <h1>College Football Efficiency Rankings</h1>
+        <p class="png-report-season"></p>
+        <p class="png-report-meta"></p>
+      `;
+      header.querySelector(".png-report-season").textContent = seasonText;
+      header.querySelector(".png-report-meta").textContent = metaText;
+      page.appendChild(header);
+
+      const table = document.createElement("table");
+      table.innerHTML = `<thead>${els.thead.innerHTML}</thead><tbody></tbody>`;
+      const tbody = table.querySelector("tbody");
+      rows.forEach(row => tbody.appendChild(row.cloneNode(true)));
+      page.appendChild(table);
+
+      const footer = document.createElement("footer");
+      footer.className = "png-report-footer";
+      const left = document.createElement("span");
+      left.textContent = "Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.";
+      const right = document.createElement("span");
+      right.textContent = `Page ${pageNumber} of ${pageCount}`;
+      footer.append(left, right);
+      page.appendChild(footer);
+
+      return page;
+    }
+
+    els.publishPng.addEventListener("click", async () => {
+      closePublishMenu();
+
+      if (typeof html2canvas !== "function" || typeof JSZip !== "function") {
+        alert("PNG publishing could not load the export libraries. Check your internet connection and try again.");
+        return;
+      }
+
+      const visibleRows = Array.from(els.tbody.querySelectorAll("tr"));
+      if (!visibleRows.length) {
+        alert("There are no visible rankings to publish.");
+        return;
+      }
+
+      const { seasonText, metaText } = getPublishMetadata();
+      const rowsPerPage = 36;
+      const pageCount = Math.ceil(visibleRows.length / rowsPerPage);
+      const stage = document.createElement("div");
+      stage.className = "png-export-stage";
+      document.body.appendChild(stage);
+
+      const oldText = els.publishMenuButton.childNodes[0].nodeValue;
+      els.publishMenuButton.childNodes[0].nodeValue = "Publishing PNGs ";
+      els.publishMenuButton.disabled = true;
+
+      try {
+        const zip = new JSZip();
+        const safeYear = String(ACTIVE_YEAR || "rankings").replace(/[^0-9A-Za-z_-]/g, "_");
+
+        for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
+          const start = pageIndex * rowsPerPage;
+          const pageRows = visibleRows.slice(start, start + rowsPerPage);
+          const page = buildPngReportPage(pageRows, pageIndex + 1, pageCount, seasonText, metaText);
+          stage.appendChild(page);
+
+          const canvas = await html2canvas(page, {
+            backgroundColor: "#ffffff",
+            scale: 2,
+            useCORS: true,
+            logging: false,
+            width: 1320,
+            height: 1020
+          });
+
+          const pngBlob = await canvasToPngBlob(canvas);
+          const filename = `CFB_Rankings_${safeYear}_Page_${String(pageIndex + 1).padStart(2, "0")}.png`;
+          zip.file(filename, pngBlob);
+          page.remove();
+        }
+
+        const zipBlob = await zip.generateAsync({
+          type: "blob",
+          compression: "DEFLATE",
+          compressionOptions: { level: 6 }
+        });
+        downloadBlob(zipBlob, `CFB_Rankings_${safeYear}_PNGs.zip`);
+      } catch (err) {
+        console.error("PNG publishing failed:", err);
+        alert("PNG publishing failed. See the browser console for details.");
+      } finally {
+        stage.remove();
+        els.publishMenuButton.childNodes[0].nodeValue = oldText;
+        els.publishMenuButton.disabled = false;
+      }
     });
 
     els.yearSelect.addEventListener("change", (e) => {
