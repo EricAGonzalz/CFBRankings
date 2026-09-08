@@ -1092,7 +1092,7 @@
 
       els.modelConfidence.textContent = `${confidence.toFixed(0)}%`;
       els.confidenceLabel.textContent =
-        `${confidenceCategory(confidence)} • based on ${Math.min(team1.games, team2.games)} games`;
+        `${confidenceCategory(confidence)} • based on ${Math.min(team1.games, team2.games)} game(s)`;
       els.confidenceFill.style.width = `${Math.max(0, Math.min(100, confidence))}%`;
 
       els.resultCard.classList.add("visible");
