@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CFB Matchup Predictor</title>
+
+  <style>
+    :root{
+      --bg:#f1f1f1;
+      --card:#ffffff;
+      --text:#111;
+      --muted:#666;
+      --grid:#dddddd;
+      --head-bg:#0b0b0b;
+      --head-fg:#ffffff;
+      --chip:#f0f0f0;
+      --chip-border:#d6d6d6;
+      --link:#0a58ca;
+      --link-hover:#eef5ff;
+      --winner:#f2f7ff;
+      --divider:#bdbdbd;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      margin:20px;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .page{
+      max-width:1000px;
+      margin:0 auto;
+    }
+
+    .topbar,
+    .predictor-card,
+    .result-card,
+    .details-card{
+      background:var(--card);
+      border-radius:2px;
+      box-shadow:none;
+      border:1px solid #cfcfcf;
+    }
+
+    .topbar{
+      padding:14px 16px;
+      margin-bottom:14px;
+      border-top:4px solid #111;
+    }
+
+    .brandrow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    h1{
+      margin:0;
+      font-size:24px;
+      line-height:1.1;
+      letter-spacing:-.25px;
+      font-weight:800;
+    }
+
+    .subtitle,
+    .statusline{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color:var(--link);
+      text-decoration:none;
+      padding:6px 9px;
+      border-radius:7px;
+      font-size:13px;
+    }
+
+    .nav a:hover{
+      text-decoration:underline;
+      background:var(--link-hover);
+    }
+
+    .controls{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      padding:16px;
+    }
+
+    .control{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .control label{
+      font-size:12px;
+      font-weight:700;
+      color:#333;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+    }
+
+    .control select{
+      width:100%;
+      padding:10px 11px;
+      border:1px solid var(--chip-border);
+      border-radius:999px;
+      background:#fff;
+      color:var(--text);
+      font-size:14px;
+      outline:none;
+    }
+
+    .control select:focus{
+      border-color:#888;
+      box-shadow:0 0 0 2px rgba(0,0,0,.06);
+    }
+
+    .full{
+      grid-column:1 / -1;
+    }
+
+    .button-row{
+      display:flex;
+      justify-content:flex-end;
+      gap:8px;
+      padding:0 16px 16px;
+    }
+
+    button{
+      border:1px solid #111;
+      background:#111;
+      color:#fff;
+      border-radius:999px;
+      padding:9px 18px;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:normal;
+      text-transform:none;
+      cursor:pointer;
+    }
+
+    button:hover{ opacity:.9; }
+    button:disabled{ opacity:.45; cursor:not-allowed; }
+
+    .result-card{
+      margin-top:14px;
+      padding:18px;
+      display:none;
+      border-top:3px solid #111;
+    }
+
+    .result-card.visible{ display:block; }
+
+    .result-title{
+      margin:0 0 14px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.45px;
+      color:#444;
+    }
+
+    .scoreboard{
+      border-top:1px solid #aaa;
+      border-bottom:1px solid #aaa;
+      border-left:0;
+      border-right:0;
+      border-radius:0;
+      overflow:hidden;
+    }
+
+    .score-row{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) auto;
+      align-items:center;
+      gap:16px;
+      padding:11px 8px;
+      border-bottom:1px solid var(--grid);
+    }
+
+    .score-row:last-child{ border-bottom:0; }
+
+    .score-row.winner{
+      background:#f5f5f5;
+      font-weight:700;
+    }
+
+    .team-name{
+      font-size:18px;
+      font-weight:650;
+    }
+
+    .team-meta{
+      margin-top:3px;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:400;
+    }
+
+    .score{
+      font-size:32px;
+      font-weight:800;
+      font-variant-numeric:tabular-nums;
+      min-width:55px;
+      text-align:right;
+    }
+
+    .headline{
+      margin-top:14px;
+      text-align:center;
+      font-size:18px;
+      font-weight:800;
+    }
+
+    .subheadline{
+      margin-top:4px;
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .details-card{
+      margin-top:14px;
+      padding:16px;
+      display:none;
+      border-top:3px solid #111;
+    }
+
+    .details-card.visible{ display:block; }
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:0;
+      border-top:1px solid var(--grid);
+      border-bottom:1px solid var(--grid);
+    }
+
+    .metric{
+      border:0;
+      border-right:1px solid var(--grid);
+      border-radius:0;
+      padding:8px 14px;
+      min-height:74px;
+    }
+
+    .metric:last-child{
+      border-right:0;
+    }
+
+    .metric-label{
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+    }
+
+    .metric-value{
+      margin-top:5px;
+      font-size:20px;
+      font-weight:800;
+      font-variant-numeric:tabular-nums;
+    }
+
+    .confidence-label{
+      margin-top:2px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:600;
+    }
+
+    .confidence-track{
+      width:100%;
+      height:5px;
+      margin-top:8px;
+      background:#e5e5e5;
+      border-radius:0;
+      overflow:hidden;
+    }
+
+    .confidence-fill{
+      width:0%;
+      height:100%;
+      background:#111;
+      border-radius:0;
+      transition:width .25s ease;
+    }
+
+    .formula-note{
+      margin:14px 0 0;
+      padding-top:12px;
+      border-top:1px solid #e8e8e8;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .error{
+      margin-top:12px;
+      padding:10px 12px;
+      border:1px solid #d9a3a3;
+      background:#fff3f3;
+      border-radius:2px;
+      font-size:13px;
+      display:none;
+    }
+
+    .error.visible{ display:block; }
+
+    @media (max-width:720px){
+      body{ margin:12px; }
+      .controls{ grid-template-columns:1fr; }
+      .full{ grid-column:auto; }
+      .metrics{ grid-template-columns:1fr; }
+    }
+  
+    .publish-menu{
+      position:relative;
+      display:inline-block;
+    }
+
+    .publish-menu-button{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+    }
+
+    .publish-menu-button .caret{
+      font-size:10px;
+      transition:transform .15s ease;
+    }
+
+    .publish-menu.open .publish-menu-button .caret{
+      transform:rotate(180deg);
+    }
+
+    .publish-menu-list{
+      display:none;
+      position:absolute;
+      right:0;
+      top:calc(100% + 6px);
+      z-index:20;
+      min-width:190px;
+      padding:5px;
+      margin:0;
+      background:#fff;
+      border:1px solid var(--chip-border);
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.16);
+    }
+
+    .publish-menu.open .publish-menu-list{
+      display:block;
+    }
+
+    .publish-menu-list button{
+      width:100%;
+      border:0;
+      background:transparent;
+      color:var(--text);
+      text-align:left;
+      padding:9px 10px;
+      border-radius:7px;
+      font-size:13px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .publish-menu-list button:hover{
+      background:#f3f3f3;
+    }
+
+    @media print{
+      body{
+        margin:0;
+        background:#fff;
+      }
+
+      .topbar,
+      .predictor-card,
+      .error{
+        display:none !important;
+      }
+
+      .result-card,
+      .details-card{
+        display:block !important;
+        border:0 !important;
+        box-shadow:none !important;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brandrow">
+        <div>
+          <h1 id="pageTitle">CFB Matchup Predictor</h1>
+          <p class="subtitle">
+            Projects a score from each team's offensive efficiency, opposing defensive efficiency, and expected drives.
+          </p>
+          <p class="statusline" id="statusLine"></p>
+        </div>
+
+        <nav class="nav">
+          <a href="index.html">Rankings</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="predictor-card">
+      <div class="controls">
+        <div class="control">
+          <label for="yearSelect">Season</label>
+          <select id="yearSelect"></select>
+        </div>
+
+        <div class="control">
+          <label for="locationSelect">Location</label>
+          <select id="locationSelect">
+            <option value="neutral" selected>Neutral Site</option>
+            <option value="team1">Team 1 Home</option>
+            <option value="team2">Team 2 Home</option>
+          </select>
+        </div>
+
+        <div class="control">
+          <label for="team1Select">Team 1</label>
+          <select id="team1Select"></select>
+        </div>
+
+        <div class="control">
+          <label for="team2Select">Team 2</label>
+          <select id="team2Select"></select>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="predictButton" type="button" disabled>Predict Matchup</button>
+
+          <div class="publish-menu" id="publishMenu">
+            <button id="publishMenuButton" class="publish-menu-button" type="button" disabled aria-haspopup="true" aria-expanded="false">
+              Publish
+              <span class="caret" aria-hidden="true">▼</span>
+            </button>
+            <div class="publish-menu-list" id="publishMenuList" role="menu" aria-label="Publish options">
+              <button id="publishPdf" type="button" role="menuitem">Publish to PDF</button>
+              <button id="publishPng" type="button" role="menuitem">Publish to PNG</button>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <div class="error" id="errorBox"></div>
+
+    <section class="result-card" id="resultCard">
+      <h2 class="result-title">Projected Score</h2>
+
+      <div class="scoreboard">
+        <div class="score-row" id="team1ScoreRow">
+          <div>
+            <div class="team-name" id="team1Name"></div>
+            <div class="team-meta" id="team1Meta"></div>
+          </div>
+          <div class="score" id="team1Score"></div>
+        </div>
+
+        <div class="score-row" id="team2ScoreRow">
+          <div>
+            <div class="team-name" id="team2Name"></div>
+            <div class="team-meta" id="team2Meta"></div>
+          </div>
+          <div class="score" id="team2Score"></div>
+        </div>
+      </div>
+
+      <div class="headline" id="predictionHeadline"></div>
+      <div class="subheadline" id="predictionSubheadline"></div>
+    </section>
+
+    <section class="details-card" id="detailsCard">
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Expected Drives</div>
+          <div class="metric-value" id="expectedDrives"></div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label" id="team1EfficiencyLabel">Team 1 Expected Pts/Drive</div>
+          <div class="metric-value" id="team1Efficiency"></div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label" id="team2EfficiencyLabel">Team 2 Expected Pts/Drive</div>
+          <div class="metric-value" id="team2Efficiency"></div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">Win Probability</div>
+          <div class="metric-value" id="winProbability"></div>
+          <div class="confidence-label" id="winProbabilityDetail"></div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">Model Confidence</div>
+          <div class="metric-value" id="modelConfidence"></div>
+          <div class="confidence-label" id="confidenceLabel"></div>
+          <div class="confidence-track" aria-hidden="true">
+            <div class="confidence-fill" id="confidenceFill"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="formula-note">
+        Matchup efficiency is calculated relative to the season's FBS average:
+        league scoring level + offensive strength above/below average + opposing defensive allowance above/below average.
+        Expected drives combine each team's drives per game relative to the league average. Home field currently adds
+        <strong>2.5 points</strong> to the home team's projection. The model parameters
+        <code>OFFENSE_WEIGHT</code>, <code>DEFENSE_WEIGHT</code>, <code>TEMPO_WEIGHT</code>,
+        <code>HOME_FIELD_POINTS</code>, <code>CONFIDENCE_K</code>, and
+        <code>WIN_PROB_MARGIN_SCALE</code> are grouped together in the script so they can
+        be replaced with backtested values later. Win probability is currently derived
+        from projected margin with a logistic curve and is pulled toward 50% when model
+        confidence is low.
+      </p>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script>
+    const RAW_BASE =
+      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
+
+    const FIRST_SEASON = 2009;
+    const CURRENT_SEASON = new Date().getFullYear();
+    const DEFAULT_YEAR = "2026";
+    // Tunable matchup-model parameters. Historical backtesting can replace
+    // these values later without changing the projection code.
+    const OFFENSE_WEIGHT = 1.00;   // alpha
+    const DEFENSE_WEIGHT = 1.00;   // beta
+    const TEMPO_WEIGHT = 1.00;     // gamma
+    const HOME_FIELD_POINTS = 2.50;
+    const CONFIDENCE_K = 5.00;
+
+    // Controls how quickly projected margin turns into win probability.
+    // This is a provisional value and should eventually be calibrated with
+    // historical backtesting.
+    const WIN_PROB_MARGIN_SCALE = 6.5;
+
+    const els = {
+      yearSelect: document.getElementById("yearSelect"),
+      locationSelect: document.getElementById("locationSelect"),
+      team1Select: document.getElementById("team1Select"),
+      team2Select: document.getElementById("team2Select"),
+      predictButton: document.getElementById("predictButton"),
+      publishMenu: document.getElementById("publishMenu"),
+      publishMenuButton: document.getElementById("publishMenuButton"),
+      publishPdf: document.getElementById("publishPdf"),
+      publishPng: document.getElementById("publishPng"),
+      statusLine: document.getElementById("statusLine"),
+      errorBox: document.getElementById("errorBox"),
+      resultCard: document.getElementById("resultCard"),
+      detailsCard: document.getElementById("detailsCard"),
+      team1ScoreRow: document.getElementById("team1ScoreRow"),
+      team2ScoreRow: document.getElementById("team2ScoreRow"),
+      team1Name: document.getElementById("team1Name"),
+      team2Name: document.getElementById("team2Name"),
+      team1Meta: document.getElementById("team1Meta"),
+      team2Meta: document.getElementById("team2Meta"),
+      team1Score: document.getElementById("team1Score"),
+      team2Score: document.getElementById("team2Score"),
+      predictionHeadline: document.getElementById("predictionHeadline"),
+      predictionSubheadline: document.getElementById("predictionSubheadline"),
+      expectedDrives: document.getElementById("expectedDrives"),
+      team1Efficiency: document.getElementById("team1Efficiency"),
+      team2Efficiency: document.getElementById("team2Efficiency"),
+      team1EfficiencyLabel: document.getElementById("team1EfficiencyLabel"),
+      team2EfficiencyLabel: document.getElementById("team2EfficiencyLabel"),
+      winProbability: document.getElementById("winProbability"),
+      winProbabilityDetail: document.getElementById("winProbabilityDetail"),
+      modelConfidence: document.getElementById("modelConfidence"),
+      confidenceLabel: document.getElementById("confidenceLabel"),
+      confidenceFill: document.getElementById("confidenceFill")
+    };
+
+    let STATE = {
+      year: null,
+      header: [],
+      headerMap: new Map(),
+      teams: [],
+      league: null
+    };
+
+    function csvForYear(year) {
+      return `${RAW_BASE}${year}%20Master.csv`;
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        const next = text[i + 1];
+
+        if (ch === '"') {
+          if (inQuotes && next === '"') {
+            cell += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+          continue;
+        }
+
+        if (ch === "," && !inQuotes) {
+          row.push(cell);
+          cell = "";
+          continue;
+        }
+
+        if ((ch === "\n" || ch === "\r") && !inQuotes) {
+          if (ch === "\r" && next === "\n") i++;
+          row.push(cell);
+          cell = "";
+          if (row.some(v => String(v).trim() !== "")) rows.push(row);
+          row = [];
+          continue;
+        }
+
+        cell += ch;
+      }
+
+      row.push(cell);
+      if (row.some(v => String(v).trim() !== "")) rows.push(row);
+
+      if (!rows.length) return { header: [], rows: [] };
+
+      return {
+        header: rows[0].map(h => h.trim()),
+        rows: rows.slice(1)
+      };
+    }
+
+    function fixMojibake(s) {
+      if (typeof s !== "string") return s;
+      if (!/[ÃÂâ€]/.test(s)) return s;
+
+      try {
+        const bytes = new Uint8Array([...s].map(ch => ch.charCodeAt(0) & 0xff));
+        const fixed = new TextDecoder("utf-8", { fatal: false }).decode(bytes);
+        if (fixed && fixed !== s) return fixed;
+      } catch {}
+
+      return s;
+    }
+
+    function toNumber(value) {
+      const n = Number(String(value ?? "").trim());
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function average(values) {
+      const nums = values.filter(Number.isFinite);
+      if (!nums.length) return null;
+      return nums.reduce((sum, n) => sum + n, 0) / nums.length;
+    }
+
+    function findHeader(headerMap, names) {
+      for (const name of names) {
+        if (headerMap.has(name)) return name;
+      }
+      return null;
+    }
+
+    function setError(message = "") {
+      els.errorBox.textContent = message;
+      els.errorBox.classList.toggle("visible", Boolean(message));
+    }
+
+    function buildYearOptions() {
+      const years = [];
+      for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
+        years.push(String(y));
+      }
+
+      els.yearSelect.innerHTML = "";
+      for (const year of years) {
+        const option = document.createElement("option");
+        option.value = year;
+        option.textContent = year;
+        els.yearSelect.appendChild(option);
+      }
+
+      return years;
+    }
+
+    function rowValue(row, headerMap, headerName) {
+      if (!headerName) return "";
+      const idx = headerMap.get(headerName);
+      return idx === undefined ? "" : row[idx];
+    }
+
+    function makeTeamObjects(header, rows) {
+      const headerMap = new Map(header.map((h, i) => [h, i]));
+
+      const teamHeader = findHeader(headerMap, ["Team"]);
+      const confHeader = findHeader(headerMap, ["Conference", "Conf"]);
+      const winsHeader = findHeader(headerMap, ["W", "Wins"]);
+      const lossesHeader = findHeader(headerMap, ["L", "Losses"]);
+
+      // Prefer the separate schedule-adjusted ratings produced by the Python
+      // model. Raw ORtg/DRtg remain fallbacks for older CSV files.
+      const offenseHeader = findHeader(headerMap, ["AdjO", "AdjORtg", "ORtg", "Ortg"]);
+      const defenseHeader = findHeader(headerMap, ["AdjD", "AdjDRtg", "DRtg"]);
+      const oDrivesHeader = findHeader(headerMap, ["ODrives"]);
+      const dDrivesHeader = findHeader(headerMap, ["DDrives"]);
+
+      const missing = [];
+      if (!teamHeader) missing.push("Team");
+      if (!offenseHeader) missing.push("ORtg (or AdjORtg)");
+      if (!defenseHeader) missing.push("DRtg (or AdjDRtg)");
+      if (!oDrivesHeader) missing.push("ODrives");
+      if (!dDrivesHeader) missing.push("DDrives");
+      if (!winsHeader) missing.push("W");
+      if (!lossesHeader) missing.push("L");
+
+      if (missing.length) {
+        throw new Error(`The CSV is missing required columns: ${missing.join(", ")}`);
+      }
+
+      const teams = [];
+
+      for (const row of rows) {
+        const name = fixMojibake(String(rowValue(row, headerMap, teamHeader) ?? "").trim());
+        if (!name) continue;
+
+        const wins = toNumber(rowValue(row, headerMap, winsHeader));
+        const losses = toNumber(rowValue(row, headerMap, lossesHeader));
+        const offense = toNumber(rowValue(row, headerMap, offenseHeader));
+        const defense = toNumber(rowValue(row, headerMap, defenseHeader));
+        const oDrives = toNumber(rowValue(row, headerMap, oDrivesHeader));
+        const dDrives = toNumber(rowValue(row, headerMap, dDrivesHeader));
+
+        if (![wins, losses, offense, defense, oDrives, dDrives].every(Number.isFinite)) {
+          continue;
+        }
+
+        const games = wins + losses;
+        if (games <= 0) continue;
+
+        const offensiveDrivesPerGame = oDrives / games;
+        const defensiveDrivesPerGame = dDrives / games;
+        const tempo = (offensiveDrivesPerGame + defensiveDrivesPerGame) / 2;
+
+        teams.push({
+          name,
+          conference: fixMojibake(String(rowValue(row, headerMap, confHeader) ?? "").trim()),
+          wins,
+          losses,
+          games,
+          offense,
+          defense,
+          offensiveDrivesPerGame,
+          defensiveDrivesPerGame,
+          tempo
+        });
+      }
+
+      return {
+        headerMap,
+        teams,
+        offenseHeader,
+        defenseHeader
+      };
+    }
+
+    function calculateLeagueAverages(teams) {
+      return {
+        offense: average(teams.map(t => t.offense)),
+        defense: average(teams.map(t => t.defense)),
+        tempo: average(teams.map(t => t.tempo))
+      };
+    }
+
+    function populateTeamSelect(select, teams, previousValue = "") {
+      select.innerHTML = "";
+
+      const blank = document.createElement("option");
+      blank.value = "";
+      blank.textContent = "Select a team...";
+      select.appendChild(blank);
+
+      const sorted = [...teams].sort((a, b) =>
+        a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+      );
+
+      for (const team of sorted) {
+        const option = document.createElement("option");
+        option.value = team.name;
+        option.textContent = team.conference
+          ? `${team.name} (${team.conference})`
+          : team.name;
+        select.appendChild(option);
+      }
+
+      if (previousValue && teams.some(t => t.name === previousValue)) {
+        select.value = previousValue;
+      }
+    }
+
+    function updatePredictButton() {
+      const valid =
+        STATE.teams.length > 0 &&
+        els.team1Select.value &&
+        els.team2Select.value &&
+        els.team1Select.value !== els.team2Select.value;
+
+      els.predictButton.disabled = !valid;
+    }
+
+    async function loadYear(year) {
+      setError("");
+      els.resultCard.classList.remove("visible");
+      els.detailsCard.classList.remove("visible");
+      els.predictButton.disabled = true;
+      els.publishMenuButton.disabled = true;
+
+      const previousTeam1 = els.team1Select.value;
+      const previousTeam2 = els.team2Select.value;
+
+      els.statusLine.textContent = `Loading ${year} data…`;
+
+      try {
+        const response = await fetch(csvForYear(year), { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+        const text = await response.text();
+        const { header, rows } = parseCSV(text);
+
+        if (!header.length) throw new Error("CSV appears empty or malformed.");
+
+        const parsed = makeTeamObjects(header, rows);
+        const league = calculateLeagueAverages(parsed.teams);
+
+        if (!parsed.teams.length || !league ||
+            !Number.isFinite(league.offense) ||
+            !Number.isFinite(league.defense) ||
+            !Number.isFinite(league.tempo)) {
+          throw new Error("Not enough valid team data was found to build matchup projections.");
+        }
+
+        STATE = {
+          year: String(year),
+          header,
+          headerMap: parsed.headerMap,
+          teams: parsed.teams,
+          league,
+          offenseHeader: parsed.offenseHeader,
+          defenseHeader: parsed.defenseHeader
+        };
+
+        populateTeamSelect(els.team1Select, STATE.teams, previousTeam1);
+        populateTeamSelect(els.team2Select, STATE.teams, previousTeam2);
+
+        els.statusLine.textContent =
+          `${STATE.teams.length} teams loaded. Using ${STATE.offenseHeader} and ${STATE.defenseHeader}.`;
+
+        updatePredictButton();
+
+      } catch (err) {
+        console.error(err);
+        STATE.teams = [];
+        populateTeamSelect(els.team1Select, []);
+        populateTeamSelect(els.team2Select, []);
+        els.statusLine.textContent = "";
+        setError(
+          `Could not load ${year} matchup data. Make sure "${year} Master.csv" exists and contains Team, W, L, ORtg/DRtg, ODrives, and DDrives.`
+        );
+      }
+    }
+
+    function findTeam(name) {
+      return STATE.teams.find(t => t.name === name) || null;
+    }
+
+    function matchupExpectedRating(offenseTeam, defenseTeam) {
+      // Ratings are points per 100 drives.
+      //
+      // Example:
+      // league level = 220
+      // offense = 250  -> +30 above average
+      // defense = 200  -> allows 20 fewer than average
+      // expected = league + alpha(offense deviation) + beta(defense deviation)
+      //
+      // When AdjO/AdjD are present in the CSV, those schedule-adjusted values
+      // are used automatically.
+      const leagueScoringLevel = (STATE.league.offense + STATE.league.defense) / 2;
+
+      return (
+        leagueScoringLevel +
+        OFFENSE_WEIGHT * (offenseTeam.offense - STATE.league.offense) +
+        DEFENSE_WEIGHT * (defenseTeam.defense - STATE.league.defense)
+      );
+    }
+
+    function expectedDrives(team1, team2) {
+      // Combine both teams' pace tendencies relative to the league.
+      // If both are exactly average, the result is the league-average drives/game.
+      return (
+        STATE.league.tempo +
+        TEMPO_WEIGHT * (
+          (team1.tempo - STATE.league.tempo) +
+          (team2.tempo - STATE.league.tempo)
+        )
+      );
+    }
+
+    function applyHomeField(score1, score2, location) {
+      if (location === "team1") score1 += HOME_FIELD_POINTS;
+      if (location === "team2") score2 += HOME_FIELD_POINTS;
+      return { score1, score2 };
+    }
+
+    function formatRecord(team) {
+      return `${team.wins}-${team.losses}${team.conference ? ` • ${team.conference}` : ""}`;
+    }
+
+    function calculateConfidence(team1, team2) {
+      // Confidence represents sample-size maturity, not win probability.
+      // Use the team with fewer games because the matchup is constrained
+      // by the less-established sample.
+      const games1 = team1.wins + team1.losses;
+      const games2 = team2.wins + team2.losses;
+      const games = Math.min(games1, games2);
+
+      // Saturating exponential curve:
+      // Confidence = 100 * (1 - e^(-games / k))
+      //
+      // k = 5 gives approximately:
+      // 1 game  = 18%
+      // 3 games = 45%
+      // 6 games = 70%
+      // 10 games = 86%
+      // 12 games = 91%
+      return 100 * (1 - Math.exp(-games / CONFIDENCE_K));
+    }
+
+    function confidenceCategory(confidence) {
+      if (confidence < 40) return "Low";
+      if (confidence < 65) return "Moderate";
+      if (confidence < 85) return "High";
+      return "Very High";
+    }
+
+    function calculateWinProbability(score1, score2, confidence) {
+      // Convert projected scoring margin to a baseline win probability using
+      // a logistic curve, then shrink it toward 50% when model confidence is low.
+      //
+      // Baseline:
+      //   P1 = 1 / (1 + exp(-(margin / scale)))
+      //
+      // Confidence shrinkage:
+      //   P1_final = 0.5 + (P1 - 0.5) * (confidence / 100)
+      //
+      // This prevents a tiny early-season sample from creating an unrealistically
+      // strong win probability.
+      const margin = score1 - score2;
+
+      const baselineTeam1 =
+        1 / (1 + Math.exp(-(margin / WIN_PROB_MARGIN_SCALE)));
+
+      const confidenceWeight = Math.max(0, Math.min(1, confidence / 100));
+
+      const team1 =
+        0.5 + (baselineTeam1 - 0.5) * confidenceWeight;
+
+      return {
+        team1: team1 * 100,
+        team2: (1 - team1) * 100
+      };
+    }
+
+    function predictMatchup() {
+      setError("");
+
+      const team1 = findTeam(els.team1Select.value);
+      const team2 = findTeam(els.team2Select.value);
+
+      if (!team1 || !team2) {
+        setError("Select two teams.");
+        return;
+      }
+
+      if (team1.name === team2.name) {
+        setError("Select two different teams.");
+        return;
+      }
+
+      const drives = expectedDrives(team1, team2);
+      const team1Rating = matchupExpectedRating(team1, team2);
+      const team2Rating = matchupExpectedRating(team2, team1);
+
+      let score1 = drives * team1Rating / 100;
+      let score2 = drives * team2Rating / 100;
+
+      const adjusted = applyHomeField(score1, score2, els.locationSelect.value);
+      score1 = adjusted.score1;
+      score2 = adjusted.score2;
+
+      // Keep one decimal internally for a little more transparency,
+      // then show football-like whole-number projected scores.
+      const displayScore1 = Math.round(score1);
+      const displayScore2 = Math.round(score2);
+
+      els.team1Name.textContent = team1.name;
+      els.team2Name.textContent = team2.name;
+      els.team1Meta.textContent = formatRecord(team1);
+      els.team2Meta.textContent = formatRecord(team2);
+      els.team1Score.textContent = displayScore1;
+      els.team2Score.textContent = displayScore2;
+
+      els.team1ScoreRow.classList.remove("winner");
+      els.team2ScoreRow.classList.remove("winner");
+
+      if (displayScore1 > displayScore2) {
+        els.team1ScoreRow.classList.add("winner");
+        els.predictionHeadline.textContent =
+          `${team1.name} ${displayScore1} - ${team2.name} ${displayScore2}`;
+      } else if (displayScore2 > displayScore1) {
+        els.team2ScoreRow.classList.add("winner");
+        els.predictionHeadline.textContent =
+          `${team2.name} ${displayScore2} - ${team1.name} ${displayScore1}`;
+      } else {
+        els.predictionHeadline.textContent =
+          `${team1.name} ${displayScore1} - ${team2.name} ${displayScore2}`;
+      }
+
+      const margin = Math.abs(score1 - score2);
+      els.predictionSubheadline.textContent =
+        `Projected margin: ${margin.toFixed(1)} points`;
+
+      els.expectedDrives.textContent = drives.toFixed(1);
+      els.team1Efficiency.textContent = (team1Rating / 100).toFixed(2);
+      els.team2Efficiency.textContent = (team2Rating / 100).toFixed(2);
+      els.team1EfficiencyLabel.textContent = `${team1.name} Expected Pts/Drive`;
+      els.team2EfficiencyLabel.textContent = `${team2.name} Expected Pts/Drive`;
+
+      const confidence = calculateConfidence(team1, team2);
+
+      const winProbability = calculateWinProbability(score1, score2, confidence);
+      const favoredTeam =
+        winProbability.team1 >= winProbability.team2 ? team1 : team2;
+      const favoredProbability =
+        winProbability.team1 >= winProbability.team2
+          ? winProbability.team1
+          : winProbability.team2;
+      const underdogProbability =
+        100 - favoredProbability;
+
+      els.winProbability.textContent = `${favoredProbability.toFixed(0)}%`;
+      els.winProbabilityDetail.textContent =
+        `${favoredTeam.name} • ${underdogProbability.toFixed(0)}% opponent`;
+
+      els.modelConfidence.textContent = `${confidence.toFixed(0)}%`;
+      els.confidenceLabel.textContent =
+        `${confidenceCategory(confidence)} • based on ${Math.min(team1.games, team2.games)} games`;
+      els.confidenceFill.style.width = `${Math.max(0, Math.min(100, confidence))}%`;
+
+      els.resultCard.classList.add("visible");
+      els.detailsCard.classList.add("visible");
+      els.publishMenuButton.disabled = false;
+    }
+
+
+    function closePublishMenu() {
+      els.publishMenu.classList.remove("open");
+      els.publishMenuButton.setAttribute("aria-expanded", "false");
+    }
+
+    els.publishMenuButton.addEventListener("click", e => {
+      e.stopPropagation();
+      if (els.publishMenuButton.disabled) return;
+      const willOpen = !els.publishMenu.classList.contains("open");
+      els.publishMenu.classList.toggle("open", willOpen);
+      els.publishMenuButton.setAttribute("aria-expanded", String(willOpen));
+    });
+
+    document.addEventListener("click", e => {
+      if (!els.publishMenu.contains(e.target)) closePublishMenu();
+    });
+
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closePublishMenu();
+    });
+
+    els.publishPdf.addEventListener("click", () => {
+      closePublishMenu();
+      window.print();
+    });
+
+    els.publishPng.addEventListener("click", async () => {
+      closePublishMenu();
+
+      if (typeof html2canvas !== "function") {
+        alert("PNG publishing could not load. Check your internet connection and try again.");
+        return;
+      }
+
+      const exportArea = document.createElement("div");
+      exportArea.style.position = "fixed";
+      exportArea.style.left = "-20000px";
+      exportArea.style.top = "0";
+      exportArea.style.width = "980px";
+      exportArea.style.padding = "28px";
+      exportArea.style.background = "#fff";
+
+      const resultClone = els.resultCard.cloneNode(true);
+      const detailsClone = els.detailsCard.cloneNode(true);
+      resultClone.classList.add("visible");
+      detailsClone.classList.add("visible");
+      exportArea.append(resultClone, detailsClone);
+      document.body.appendChild(exportArea);
+
+      try {
+        const canvas = await html2canvas(exportArea, {
+          backgroundColor: "#ffffff",
+          scale: 2,
+          useCORS: true,
+          logging: false
+        });
+
+        const link = document.createElement("a");
+        const team1 = (els.team1Select.value || "Team1").replace(/[^0-9A-Za-z_-]+/g, "_");
+        const team2 = (els.team2Select.value || "Team2").replace(/[^0-9A-Za-z_-]+/g, "_");
+        link.download = `CFB_Matchup_${team1}_vs_${team2}_${STATE.year}.png`;
+        link.href = canvas.toDataURL("image/png");
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      } catch (err) {
+        console.error("PNG publishing failed:", err);
+        alert("PNG publishing failed. See the browser console for details.");
+      } finally {
+        exportArea.remove();
+      }
+    });
+
+    els.yearSelect.addEventListener("change", e => {
+      const year = e.target.value;
+      history.replaceState({}, "", `?year=${encodeURIComponent(year)}`);
+      loadYear(year);
+    });
+
+    els.team1Select.addEventListener("change", updatePredictButton);
+    els.team2Select.addEventListener("change", updatePredictButton);
+    els.predictButton.addEventListener("click", predictMatchup);
+
+    (async function init() {
+      const years = buildYearOptions();
+      const params = new URLSearchParams(location.search);
+      const requested = params.get("year");
+
+      const initial =
+        requested && years.includes(requested)
+          ? requested
+          : years.includes(DEFAULT_YEAR)
+            ? DEFAULT_YEAR
+            : years[0];
+
+      els.yearSelect.value = initial;
+      await loadYear(initial);
+    })();
+  </script>
+</body>
+</html>
