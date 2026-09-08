@@ -915,11 +915,15 @@
       // are used automatically.
       const leagueScoringLevel = (STATE.league.offense + STATE.league.defense) / 2;
 
-      return (
+      const expectedRating =
         leagueScoringLevel +
         OFFENSE_WEIGHT * (offenseTeam.offense - STATE.league.offense) +
-        DEFENSE_WEIGHT * (defenseTeam.defense - STATE.league.defense)
-      );
+        DEFENSE_WEIGHT * (defenseTeam.defense - STATE.league.defense);
+
+      // A football team cannot score fewer than zero points. Extreme early-season
+      // offense/defense differences can make the linear matchup formula negative,
+      // so constrain expected scoring efficiency to a physical minimum of zero.
+      return Math.max(0, expectedRating);
     }
 
     function expectedDrives(team1, team2) {
@@ -1025,6 +1029,12 @@
       const adjusted = applyHomeField(score1, score2, els.locationSelect.value);
       score1 = adjusted.score1;
       score2 = adjusted.score2;
+
+      // Final safeguard: projected football scores cannot be negative. This also
+      // ensures the margin and win-probability calculations below use the same
+      // non-negative scores shown to the user.
+      score1 = Math.max(0, score1);
+      score2 = Math.max(0, score2);
 
       // Keep one decimal internally for a little more transparency,
       // then show football-like whole-number projected scores.
