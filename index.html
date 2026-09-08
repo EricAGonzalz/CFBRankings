@@ -49,8 +49,10 @@
 
     .topbar{
       background: var(--card);
-      border-radius: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      border: 1px solid #cfcfcf;
+      border-top: 4px solid #111;
+      border-radius: 2px;
+      box-shadow: none;
       padding: 14px 14px 10px 14px;
     }
 
@@ -148,12 +150,27 @@
       flex: 1;
     }
 
+    .header-link{
+      color: var(--link);
+      text-decoration: none;
+      padding: 6px 9px;
+      border-radius: 7px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .header-link:hover{
+      text-decoration: underline;
+      background: var(--link-hover);
+    }
+
     #table-wrapper{
       margin-top: 14px;
       overflow-x: auto;
       background: var(--card);
-      border-radius: 10px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+      border: 1px solid #cfcfcf;
+      border-radius: 2px;
+      box-shadow: none;
       padding: 10px;
     }
 
@@ -651,6 +668,8 @@
         </div>
 
         <div class="spacer"></div>
+
+        <a class="header-link" href="matchup.html">Matchup Predictor</a>
 
         <div class="control" title="Choose a season to view">
           <label for="yearSelect">Season</label>
