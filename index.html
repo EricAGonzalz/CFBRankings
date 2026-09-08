@@ -1079,7 +1079,12 @@
         return;
       }
 
-      const teamSearch = els.teamSearch.value.trim().toLowerCase();
+      const teamSearches = els.teamSearch.value
+        .toLowerCase()
+        .split(/[,;\n]+/)
+        .map(team => team.trim())
+        .filter(Boolean);
+
       const selectedConferences = getSelectedConferences();
       const conferenceOptionCount = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
       const topN = Number(els.topN.value || 0);
@@ -1088,8 +1093,11 @@
 
       let filtered = STATE.rows;
 
-      if (teamSearch && teamCol >= 0) {
-        filtered = filtered.filter(r => String(r[teamCol] ?? "").toLowerCase().includes(teamSearch));
+      if (teamSearches.length && teamCol >= 0) {
+        filtered = filtered.filter(r => {
+          const teamName = String(r[teamCol] ?? "").toLowerCase();
+          return teamSearches.some(search => teamName.includes(search));
+        });
       }
 
       if (confCol >= 0 && selectedConferences.length > 0 && selectedConferences.length < conferenceOptionCount) {
