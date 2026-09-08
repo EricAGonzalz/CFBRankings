@@ -535,11 +535,7 @@
         Matchup efficiency is calculated relative to the season's FBS average:
         league scoring level + offensive strength above/below average + opposing defensive allowance above/below average.
         Expected drives combine each team's drives per game relative to the league average. Home field currently adds
-        <strong>2.5 points</strong> to the home team's projection. The model parameters
-        <code>OFFENSE_WEIGHT</code>, <code>DEFENSE_WEIGHT</code>, <code>TEMPO_WEIGHT</code>,
-        <code>HOME_FIELD_POINTS</code>, <code>CONFIDENCE_K</code>, and
-        <code>WIN_PROB_MARGIN_SCALE</code> are grouped together in the script so they can
-        be replaced with backtested values later. Win probability is currently derived
+        <strong>2.5 points</strong> to the home team's projection. Win probability is currently derived
         from projected margin with a logistic curve and is pulled toward 50% when model
         confidence is low.
       </p>
