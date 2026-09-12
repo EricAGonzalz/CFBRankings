@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T19:10:38.292054+00:00",
+  "updatedAt": "2026-09-12T19:20:36.093529+00:00",
   "liveGames": [
     {
       "id": 401856679,
@@ -9,13 +9,13 @@
       "awayTeam": "Oklahoma",
       "homeConference": "Big Ten",
       "awayConference": "SEC",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "08:49",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "clock": "07:06",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856683,
@@ -24,13 +24,13 @@
       "awayTeam": "Arizona State",
       "homeConference": "SEC",
       "awayConference": "Big 12",
-      "homePoints": 38.0,
+      "homePoints": 48.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "08:08",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
+      "clock": "04:25",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401856781,
@@ -42,10 +42,10 @@
       "homePoints": 27.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "04:51",
-      "completedDrives": 15,
+      "clock": "00:00",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856782,
@@ -57,9 +57,9 @@
       "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "00:30",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "00:00",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -70,12 +70,12 @@
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
       "homePoints": 44.0,
-      "awayPoints": 13.0,
+      "awayPoints": 19.0,
       "period": 4,
-      "clock": "10:29",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 11
+      "clock": "07:49",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858224,
@@ -84,28 +84,13 @@
       "awayTeam": "Wake Forest",
       "homeConference": "Big Ten",
       "awayConference": "ACC",
-      "homePoints": 20.0,
-      "awayPoints": 23.0,
-      "period": 4,
+      "homePoints": 23.0,
+      "awayPoints": 30.0,
+      "period": 5,
       "clock": "00:00",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 7
-    },
-    {
-      "id": 401862702,
-      "status": "in_progress",
-      "homeTeam": "Army",
-      "awayTeam": "South Florida",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 24.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "00:19",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "completedDrives": 18,
+      "homeOffensiveDrives": 10,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401864571,
@@ -117,10 +102,10 @@
       "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "08:31",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "clock": "05:34",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401856673,
@@ -129,19 +114,18 @@
       "awayTeam": "Western Kentucky",
       "homeConference": "SEC",
       "awayConference": "Conference USA",
-      "homePoints": 56.0,
+      "homePoints": 63.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "09:07",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "clock": "04:08",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 11
     }
   ],
   "liveTeams": [
     "App State",
     "Arizona State",
-    "Army",
     "East Carolina",
     "Georgia",
     "Kansas State",
@@ -151,7 +135,6 @@
     "Old Dominion",
     "Oregon",
     "Purdue",
-    "South Florida",
     "Texas A&M",
     "Virginia Tech",
     "Wake Forest",
