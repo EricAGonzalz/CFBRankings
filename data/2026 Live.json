@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T22:50:31.877051+00:00",
+  "updatedAt": "2026-09-12T23:01:49.651121+00:00",
   "liveGames": [
     {
       "id": 401856674,
@@ -12,10 +12,10 @@
       "homePoints": 17.0,
       "awayPoints": 38.0,
       "period": 4,
-      "clock": "09:08",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "clock": "04:32",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856677,
@@ -27,10 +27,10 @@
       "homePoints": 13.0,
       "awayPoints": 38.0,
       "period": 4,
-      "clock": "03:37",
-      "completedDrives": 16,
+      "clock": "01:43",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856790,
@@ -42,25 +42,10 @@
       "homePoints": 12.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "02:54",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401856810,
-      "status": "in_progress",
-      "homeTeam": "BYU",
-      "awayTeam": "Arizona",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 28.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "03:51",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
+      "clock": "00:00",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858216,
@@ -70,12 +55,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 18.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 4,
-      "clock": "07:36",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "clock": "04:09",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858217,
@@ -87,25 +72,10 @@
       "homePoints": 27.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "06:13",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "01:54",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401858446,
-      "status": "in_progress",
-      "homeTeam": "Washington",
-      "awayTeam": "Utah State",
-      "homeConference": "Big Ten",
-      "awayConference": "Pac-12",
-      "homePoints": 16.0,
-      "awayPoints": 14.0,
-      "period": 4,
-      "clock": "00:28",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
     },
     {
       "id": 401860884,
@@ -114,12 +84,12 @@
       "awayTeam": "UTSA",
       "homeConference": "Pac-12",
       "awayConference": "American Athletic",
-      "homePoints": 23.0,
+      "homePoints": 26.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "07:01",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "04:02",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -129,12 +99,12 @@
       "awayTeam": "UNLV",
       "homeConference": "American Athletic",
       "awayConference": "Mountain West",
-      "homePoints": 34.0,
+      "homePoints": 41.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "10:09",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "07:26",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -144,12 +114,12 @@
       "awayTeam": "Delaware",
       "homeConference": "SEC",
       "awayConference": "Conference USA",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 17.0,
-      "period": 3,
-      "clock": "04:27",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "period": 4,
+      "clock": "14:56",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -161,10 +131,10 @@
       "awayConference": "American Athletic",
       "homePoints": 3.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "02:14",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "02:34",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -177,7 +147,7 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "13:50",
+      "clock": "10:03",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -189,19 +159,17 @@
       "awayTeam": "Jacksonville State",
       "homeConference": "Mid-American",
       "awayConference": "Conference USA",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "14:36",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "07:28",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
     "Alabama",
-    "Arizona",
-    "BYU",
     "Boise State",
     "Buffalo",
     "California",
@@ -222,8 +190,6 @@
     "UCF",
     "UNLV",
     "UTSA",
-    "Utah State",
-    "Vanderbilt",
-    "Washington"
+    "Vanderbilt"
   ]
 }
