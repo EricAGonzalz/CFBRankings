@@ -288,6 +288,78 @@
       margin:0;
     }
 
+    .print-button{
+      border:1px solid var(--chip-border);
+      background:var(--card);
+      color:var(--text);
+      border-radius:999px;
+      padding:7px 14px;
+      font-size:13px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    .print-button:hover{
+      background:var(--link-hover);
+    }
+
+    .publish-menu{
+      position:relative;
+      display:inline-block;
+    }
+
+    .publish-menu-button{
+      display:inline-flex;
+      align-items:center;
+      gap:7px;
+      height:36px;
+    }
+
+    .publish-menu-button .caret{
+      font-size:10px;
+      transition:transform .15s ease;
+    }
+
+    .publish-menu.open .publish-menu-button .caret{
+      transform:rotate(180deg);
+    }
+
+    .publish-menu-list{
+      display:none;
+      position:absolute;
+      right:0;
+      top:calc(100% + 8px);
+      z-index:30;
+      min-width:190px;
+      padding:5px;
+      margin:0;
+      list-style:none;
+      background:var(--card);
+      border:1px solid var(--chip-border);
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.16);
+    }
+
+    .publish-menu.open .publish-menu-list{
+      display:block;
+    }
+
+    .publish-menu-list button{
+      width:100%;
+      border:0;
+      background:transparent;
+      color:var(--text);
+      border-radius:8px;
+      padding:9px 10px;
+      text-align:left;
+      font-size:13px;
+      cursor:pointer;
+    }
+
+    .publish-menu-list button:hover{
+      background:var(--link-hover);
+    }
+
     .table-wrap{
       margin-top:14px;
       overflow-x:auto;
@@ -408,6 +480,17 @@
             <option value="SOS">Strength of Schedule</option>
           </select>
         </div>
+
+        <div class="publish-menu" id="publishMenu">
+          <button id="publishMenuButton" class="print-button publish-menu-button" type="button" aria-haspopup="true" aria-expanded="false" title="Export only the current graph">
+            Publish
+            <span class="caret" aria-hidden="true">▼</span>
+          </button>
+          <div class="publish-menu-list" role="menu" aria-label="Publish graph options">
+            <button id="publishPdf" type="button" role="menuitem">Export graph to PDF</button>
+            <button id="publishPng" type="button" role="menuitem">Export graph to PNG</button>
+          </div>
+        </div>
       </div>
 
       <div class="summary">
@@ -459,6 +542,7 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
 
   <script>
     const RAW_BASE =
@@ -482,6 +566,10 @@
       conferenceSelectAll: document.getElementById("conferenceSelectAll"),
       conferenceClear: document.getElementById("conferenceClear"),
       metricSelect: document.getElementById("metricSelect"),
+      publishMenu: document.getElementById("publishMenu"),
+      publishMenuButton: document.getElementById("publishMenuButton"),
+      publishPdf: document.getElementById("publishPdf"),
+      publishPng: document.getElementById("publishPng"),
       conferenceChart: document.getElementById("conferenceChart"),
       teamsShown: document.getElementById("teamsShown"),
       conferencesShown: document.getElementById("conferencesShown"),
@@ -1096,6 +1184,123 @@
       }
     }
 
+    function getConferenceSelectionLabel() {
+      const selected = getSelectedConferences();
+      const total =
+        els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
+
+      if (!selected.length || selected.length === total) {
+        return "all-conferences";
+      }
+
+      if (selected.length === 1) {
+        return selected[0];
+      }
+
+      return `${selected.length}-conferences`;
+    }
+
+    function sanitizeFilenamePart(value) {
+      return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "") || "export";
+    }
+
+    function buildExportFilename(extension) {
+      const metric = METRIC_LABELS[els.metricSelect.value] || els.metricSelect.value;
+      const conferenceLabel = getConferenceSelectionLabel();
+      return [
+        "cfb-conference-comparison",
+        sanitizeFilenamePart(ACTIVE_YEAR),
+        sanitizeFilenamePart(metric),
+        sanitizeFilenamePart(conferenceLabel)
+      ].join("-") + `.${extension}`;
+    }
+
+    function closePublishMenu() {
+      els.publishMenu.classList.remove("open");
+      els.publishMenuButton.setAttribute("aria-expanded", "false");
+    }
+
+    function downloadBlob(blob, filename) {
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+
+    function createExportCanvas() {
+      if (!CHART || !CHART.canvas) {
+        throw new Error("The graph is not ready to export yet.");
+      }
+
+      const sourceCanvas = CHART.canvas;
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = sourceCanvas.width;
+      exportCanvas.height = sourceCanvas.height;
+
+      const ctx = exportCanvas.getContext("2d");
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+      ctx.drawImage(sourceCanvas, 0, 0);
+
+      return exportCanvas;
+    }
+
+    function canvasToBlob(canvas, type = "image/png") {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob(blob => {
+          if (!blob) {
+            reject(new Error("Could not create the image export."));
+            return;
+          }
+
+          resolve(blob);
+        }, type);
+      });
+    }
+
+    async function exportChartPng() {
+      const exportCanvas = createExportCanvas();
+      const blob = await canvasToBlob(exportCanvas, "image/png");
+      downloadBlob(blob, buildExportFilename("png"));
+    }
+
+    async function exportChartPdf() {
+      const exportCanvas = createExportCanvas();
+      const width = exportCanvas.width;
+      const height = exportCanvas.height;
+      const orientation = width >= height ? "landscape" : "portrait";
+
+      const jspdf = window.jspdf;
+      if (!jspdf || !jspdf.jsPDF) {
+        throw new Error("The PDF library could not be loaded.");
+      }
+
+      const pdf = new jspdf.jsPDF({
+        orientation,
+        unit: "pt",
+        format: [width, height]
+      });
+
+      pdf.addImage(
+        exportCanvas.toDataURL("image/png"),
+        "PNG",
+        0,
+        0,
+        width,
+        height
+      );
+
+      pdf.save(buildExportFilename("pdf"));
+    }
+
     function updateUrl() {
       const url = new URL(location.href);
       url.searchParams.set("year", String(ACTIVE_YEAR));
@@ -1243,6 +1448,46 @@
 
     els.metricSelect.addEventListener("change", () => {
       renderChart();
+    });
+
+    els.publishMenuButton.addEventListener("click", event => {
+      event.stopPropagation();
+      const isOpen = els.publishMenu.classList.toggle("open");
+      els.publishMenuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", event => {
+      if (!els.publishMenu.contains(event.target)) {
+        closePublishMenu();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closePublishMenu();
+      }
+    });
+
+    els.publishPdf.addEventListener("click", async () => {
+      closePublishMenu();
+
+      try {
+        await exportChartPdf();
+      } catch (err) {
+        console.error(err);
+        setError(err.message || "Could not export the graph to PDF.");
+      }
+    });
+
+    els.publishPng.addEventListener("click", async () => {
+      closePublishMenu();
+
+      try {
+        await exportChartPng();
+      } catch (err) {
+        console.error(err);
+        setError(err.message || "Could not export the graph to PNG.");
+      }
     });
 
     async function init() {
