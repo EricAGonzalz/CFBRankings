@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T18:43:28.368736+00:00",
+  "updatedAt": "2026-09-12T18:48:25.110301+00:00",
   "liveGames": [
     {
       "id": 401856679,
@@ -12,9 +12,9 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "03:29",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "01:16",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -24,12 +24,12 @@
       "awayTeam": "Arizona State",
       "homeConference": "SEC",
       "awayConference": "Big 12",
-      "homePoints": 24.0,
+      "homePoints": 31.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "14:20",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -39,13 +39,13 @@
       "awayTeam": "Washington State",
       "homeConference": "Big 12",
       "awayConference": "Pac-12",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "14:06",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "clock": "13:54",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856782,
@@ -55,12 +55,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big Ten",
       "homePoints": 17.0,
-      "awayPoints": 7.0,
+      "awayPoints": 13.0,
       "period": 2,
-      "clock": "06:07",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "clock": "05:26",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858221,
@@ -70,9 +70,9 @@
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
       "homePoints": 37.0,
-      "awayPoints": 12.0,
+      "awayPoints": 13.0,
       "period": 3,
-      "clock": "01:14",
+      "clock": "01:10",
       "completedDrives": 17,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 10
@@ -84,12 +84,12 @@
       "awayTeam": "Wake Forest",
       "homeConference": "Big Ten",
       "awayConference": "ACC",
-      "homePoints": 13.0,
+      "homePoints": 19.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "05:44",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 7,
+      "clock": "03:53",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 6
     },
     {
@@ -102,7 +102,7 @@
       "homePoints": 3.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "03:06",
+      "clock": "04:42",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -114,7 +114,7 @@
       "awayTeam": "South Florida",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 23.0,
+      "homePoints": 24.0,
       "awayPoints": 14.0,
       "period": 4,
       "clock": "04:59",
@@ -132,9 +132,9 @@
       "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "03:26",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "02:11",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -148,8 +148,8 @@
       "awayPoints": 6.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 9,
+      "completedDrives": 18,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 8
     }
   ],
