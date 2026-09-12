@@ -49,10 +49,8 @@
 
     .topbar{
       background: var(--card);
-      border: 1px solid #cfcfcf;
-      border-top: 4px solid #111;
-      border-radius: 2px;
-      box-shadow: none;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
       padding: 14px 14px 10px 14px;
     }
 
@@ -150,27 +148,12 @@
       flex: 1;
     }
 
-    .header-link{
-      color: var(--link);
-      text-decoration: none;
-      padding: 6px 9px;
-      border-radius: 7px;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .header-link:hover{
-      text-decoration: underline;
-      background: var(--link-hover);
-    }
-
     #table-wrapper{
       margin-top: 14px;
       overflow-x: auto;
       background: var(--card);
-      border: 1px solid #cfcfcf;
-      border-radius: 2px;
-      box-shadow: none;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.12);
       padding: 10px;
     }
 
@@ -554,11 +537,6 @@
         max-width: none;
       }
 
-      .team-link{
-        color: inherit !important;
-        text-decoration: none !important;
-      }
-
       .topbar{
         display: none !important;
       }
@@ -659,46 +637,6 @@
       body{ margin: 12px; }
       .control input, .control select{ min-width: 120px; }
     }
-  
-    .team-link{
-      color: var(--link);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .team-link:hover{
-      text-decoration: underline;
-      background: var(--link-hover);
-      border-radius: 4px;
-    }
-
-    .team-link:focus-visible{
-      outline: 2px solid var(--link);
-      outline-offset: 2px;
-      border-radius: 3px;
-    }
-
-    .live-dot{
-      display:inline-block;
-      width:8px;
-      height:8px;
-      margin-left:7px;
-      border-radius:50%;
-      background:#d71920;
-      box-shadow:0 0 0 2px rgba(215,25,32,.12);
-      vertical-align:middle;
-      animation:livePulse 1.5s ease-in-out infinite;
-    }
-
-    @keyframes livePulse{
-      0%,100%{ opacity:1; }
-      50%{ opacity:.38; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .live-dot{ animation:none; }
-    }
-
   </style>
 </head>
 
@@ -713,8 +651,6 @@
         </div>
 
         <div class="spacer"></div>
-
-        <a class="header-link" href="matchup.html">Matchup Predictor</a>
 
         <div class="control" title="Choose a season to view">
           <label for="yearSelect">Season</label>
@@ -824,6 +760,10 @@
       return `${RAW_BASE}${year}%20Master.csv`;
     }
 
+    function liveJsonForYear(year) {
+      return `${RAW_BASE}${year}%20Live.json?t=${Date.now()}`;
+    }
+
     // Column grouping (edit this mapping if your CSV headers change)
     const GROUPS = [
       { title: "Team", cols: ["Rk", "Team", "Conference", "W", "L"] },
@@ -869,14 +809,6 @@
     let ACTIVE_CHAMPION_LC = null;    // lowercased, precomputed once per year
     let ACTIVE_IS_FINAL = false;      // true if champion exists for that year
     let AVAILABLE_YEARS = [];         // years to show in the season dropdown
-
-    // Companion live metadata written by autostat.py.
-    let LIVE_META = {
-      updatedAt: null,
-      liveGames: [],
-      liveTeams: new Set(),
-      gameByTeam: new Map()
-    };
 
     let STATE = null; // replaces window.__CFB_STATE__
 
@@ -1151,12 +1083,7 @@
         return;
       }
 
-      const teamSearches = els.teamSearch.value
-        .toLowerCase()
-        .split(/[,;\n]+/)
-        .map(team => team.trim())
-        .filter(Boolean);
-
+      const teamSearch = els.teamSearch.value.trim().toLowerCase();
       const selectedConferences = getSelectedConferences();
       const conferenceOptionCount = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
       const topN = Number(els.topN.value || 0);
@@ -1165,11 +1092,8 @@
 
       let filtered = STATE.rows;
 
-      if (teamSearches.length && teamCol >= 0) {
-        filtered = filtered.filter(r => {
-          const teamName = String(r[teamCol] ?? "").toLowerCase();
-          return teamSearches.some(search => teamName.includes(search));
-        });
+      if (teamSearch && teamCol >= 0) {
+        filtered = filtered.filter(r => String(r[teamCol] ?? "").toLowerCase().includes(teamSearch));
       }
 
       if (confCol >= 0 && selectedConferences.length > 0 && selectedConferences.length < conferenceOptionCount) {
@@ -1204,38 +1128,12 @@
         for (let idx = 0; idx < cells.length; idx++) {
           const td = document.createElement("td");
           const fixed = fixMojibake(cells[idx]);
+          td.textContent = fixed;
 
           const colName = orderedCols[idx];
           if (colName === "Team") td.classList.add("col-team");
           if (colName === "Conference") td.classList.add("col-conf");
           if (boundaryStarts.has(idx)) td.classList.add("divide-left");
-
-          // Team names link to a single reusable team page. The selected
-          // season is included so historical seasons can open the same page.
-          if (colName === "Team" && String(fixed ?? "").trim()) {
-            const teamLink = document.createElement("a");
-            teamLink.className = "team-link";
-            teamLink.textContent = fixed;
-            teamLink.href =
-              `team.html?team=${encodeURIComponent(String(fixed).trim())}` +
-              `&year=${encodeURIComponent(String(ACTIVE_YEAR || DEFAULT_YEAR))}`;
-            teamLink.title = `View ${fixed} team profile`;
-            td.appendChild(teamLink);
-          } else {
-            td.textContent = fixed;
-          }
-
-          // ESPN-style live light beside teams currently playing.
-          if (colName === "Team") {
-            const teamKey = String(fixed ?? "").trim().toLowerCase();
-            if (LIVE_META.liveTeams.has(teamKey)) {
-              const dot = document.createElement("span");
-              dot.className = "live-dot";
-              dot.title = buildLiveTooltip(fixed);
-              dot.setAttribute("aria-label", "Live game in progress");
-              td.appendChild(dot);
-            }
-          }
 
           // Trophy for champion team
           if (colName === "Team" && isChampion) {
@@ -1329,99 +1227,40 @@
       els.statusLine.textContent = extraText || "";
     }
 
-    function liveJsonForYear(year) {
-      return `${RAW_BASE}${year}%20Live.json`;
-    }
-
-    function formatUpdatedAt(isoString) {
+    function formatLastUpdated(isoString) {
       if (!isoString) return null;
-      const dt = new Date(isoString);
-      if (Number.isNaN(dt.getTime())) return null;
 
-      return new Intl.DateTimeFormat("en-US", {
-        timeZone: "America/New_York",
+      const date = new Date(isoString);
+      if (Number.isNaN(date.getTime())) return null;
+
+      return date.toLocaleString(undefined, {
+        year: "numeric",
         month: "short",
         day: "numeric",
-        year: "numeric",
         hour: "numeric",
         minute: "2-digit",
+        second: "2-digit",
         timeZoneName: "short"
-      }).format(dt);
-    }
-
-    function buildLiveTooltip(teamName) {
-      const game = LIVE_META.gameByTeam.get(String(teamName || "").toLowerCase());
-      if (!game) return "Live game in progress";
-
-      const home = game.homeTeam || "Home";
-      const away = game.awayTeam || "Away";
-      const hp = game.homePoints ?? 0;
-      const ap = game.awayPoints ?? 0;
-      const period = game.period ? `Q${game.period}` : "Live";
-      const clock = game.clock ? ` ${game.clock}` : "";
-
-      return `${away} ${ap} - ${home} ${hp} • ${period}${clock}`;
+      });
     }
 
     async function loadLiveMetadata(year) {
-      LIVE_META = {
-        updatedAt: null,
-        liveGames: [],
-        liveTeams: new Set(),
-        gameByTeam: new Map()
-      };
-
       try {
-        const url = `${liveJsonForYear(year)}?t=${Date.now()}`;
-        const r = await fetch(url, { cache: "no-store" });
-        if (!r.ok) return LIVE_META;
+        const response = await fetch(liveJsonForYear(year), {
+          cache: "no-store"
+        });
 
-        const data = await r.json();
-        const games = Array.isArray(data?.liveGames) ? data.liveGames : [];
-        const teams = new Set(
-          (Array.isArray(data?.liveTeams) ? data.liveTeams : [])
-            .map(t => String(t).toLowerCase())
-        );
+        if (!response.ok) return null;
 
-        const gameByTeam = new Map();
-        for (const game of games) {
-          for (const team of [game.homeTeam, game.awayTeam]) {
-            if (team) gameByTeam.set(String(team).toLowerCase(), game);
-          }
-        }
+        const data = await response.json();
 
-        LIVE_META = {
-          updatedAt: data?.updatedAt || null,
-          liveGames: games,
-          liveTeams: teams,
-          gameByTeam
-        };
+        return (data && typeof data === "object")
+          ? data
+          : null;
       } catch (err) {
-        console.warn("Live metadata could not be loaded:", err);
+        console.warn(`Could not load ${year} Live.json:`, err);
+        return null;
       }
-
-      return LIVE_META;
-    }
-
-    function currentStatusText() {
-      if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
-        return `Final season. Champion: ${ACTIVE_CHAMPION}.`;
-      }
-
-      const parts = [];
-      const updated = formatUpdatedAt(LIVE_META.updatedAt);
-
-      if (updated) parts.push(`Last updated: ${updated}`);
-      else parts.push("Live season");
-
-      const liveCount = LIVE_META.liveGames.length;
-      if (liveCount > 0) {
-        parts.push(`${liveCount} live FBS game${liveCount === 1 ? "" : "s"} included`);
-      } else {
-        parts.push("No live FBS games currently in progress");
-      }
-
-      return parts.join(" • ");
     }
 
     async function loadChampionsJson() {
@@ -1514,9 +1353,6 @@
         const text = await r.text();
         const { header, rows } = parseCSV(text);
 
-        // Load live metadata before rendering rows so live teams get their red dot.
-        await loadLiveMetadata(ACTIVE_YEAR);
-
         if (!header.length) {
           console.error("CSV appears empty or malformed.");
           setStatusLine("CSV appears empty or malformed.");
@@ -1528,8 +1364,31 @@
         const isStriped = els.stripeToggle.value === "on";
         setStriping(isStriped);
 
-        // Status includes the generated-file timestamp and live-game count.
-        setStatusLine(currentStatusText());
+        // Status: show whether the season is final or live.
+        // For the current/live season, also read updatedAt from YEAR Live.json.
+        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
+          setStatusLine(`Final season. Champion: ${ACTIVE_CHAMPION}.`);
+        } else {
+          const liveMetadata = await loadLiveMetadata(ACTIVE_YEAR);
+          const updatedText = formatLastUpdated(liveMetadata?.updatedAt);
+          const liveGameCount = Array.isArray(liveMetadata?.liveGames)
+            ? liveMetadata.liveGames.length
+            : 0;
+
+          const liveText = liveGameCount === 1
+            ? "1 live FBS game"
+            : `${liveGameCount} live FBS games`;
+
+          if (updatedText) {
+            setStatusLine(
+              `Live season • Last updated: ${updatedText} • ${liveText}`
+            );
+          } else {
+            setStatusLine(
+              `Live season • Update timestamp unavailable • ${liveText}`
+            );
+          }
+        }
 
       } catch (err) {
         console.error("Failed to load CSV:", err);
