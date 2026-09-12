@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T16:30:26.990399+00:00",
+  "updatedAt": "2026-09-12T17:02:21.732427+00:00",
   "liveGames": [
     {
       "id": 401856679,
@@ -9,13 +9,13 @@
       "awayTeam": "Oklahoma",
       "homeConference": "Big Ten",
       "awayConference": "SEC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "08:03",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "period": 2,
+      "clock": "15:00",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401856683,
@@ -24,13 +24,13 @@
       "awayTeam": "Arizona State",
       "homeConference": "SEC",
       "awayConference": "Big 12",
-      "homePoints": 0.0,
-      "awayPoints": 0.0,
-      "period": 1,
-      "clock": "05:48",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "homePoints": 7.0,
+      "awayPoints": 7.0,
+      "period": 2,
+      "clock": "09:31",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856781,
@@ -39,13 +39,13 @@
       "awayTeam": "Washington State",
       "homeConference": "Big 12",
       "awayConference": "Pac-12",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:20",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "period": 2,
+      "clock": "04:17",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858221,
@@ -54,13 +54,13 @@
       "awayTeam": "Old Dominion",
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
-      "homePoints": 3.0,
-      "awayPoints": 0.0,
-      "period": 1,
-      "clock": "06:13",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "homePoints": 17.0,
+      "awayPoints": 3.0,
+      "period": 2,
+      "clock": "13:03",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401858224,
@@ -70,12 +70,12 @@
       "homeConference": "Big Ten",
       "awayConference": "ACC",
       "homePoints": 7.0,
-      "awayPoints": 7.0,
-      "period": 1,
-      "clock": "03:34",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayPoints": 10.0,
+      "period": 2,
+      "clock": "05:17",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858442,
@@ -84,13 +84,13 @@
       "awayTeam": "Penn State",
       "homeConference": "American Athletic",
       "awayConference": "Big Ten",
-      "homePoints": 0.0,
-      "awayPoints": 0.0,
-      "period": 1,
-      "clock": "02:56",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 3
+      "homePoints": 3.0,
+      "awayPoints": 3.0,
+      "period": 2,
+      "clock": "06:45",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401862702,
@@ -99,13 +99,13 @@
       "awayTeam": "South Florida",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "03:01",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 2
+      "period": 2,
+      "clock": "02:00",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401864571,
@@ -115,9 +115,24 @@
       "homeConference": "American Athletic",
       "awayConference": "Sun Belt",
       "homePoints": 7.0,
+      "awayPoints": 10.0,
+      "period": 2,
+      "clock": "12:35",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401856673,
+      "status": "in_progress",
+      "homeTeam": "Georgia",
+      "awayTeam": "Western Kentucky",
+      "homeConference": "SEC",
+      "awayConference": "Conference USA",
+      "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:11",
+      "clock": "11:28",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -128,6 +143,7 @@
     "Arizona State",
     "Army",
     "East Carolina",
+    "Georgia",
     "Kansas State",
     "Michigan",
     "Oklahoma",
@@ -139,6 +155,7 @@
     "Texas A&M",
     "Virginia Tech",
     "Wake Forest",
-    "Washington State"
+    "Washington State",
+    "Western Kentucky"
   ]
 }
