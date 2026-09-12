@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+  <title>CFB Conference Comparison</title>
+
+  <style>
+    :root{
+      --bg:#f4f4f4;
+      --card:#ffffff;
+      --text:#111111;
+      --muted:#666666;
+      --grid:#dddddd;
+      --head-bg:#0b0b0b;
+      --head-fg:#ffffff;
+      --chip:#f0f0f0;
+      --chip-border:#d6d6d6;
+      --link:#0a58ca;
+      --link-hover:#eef5ff;
+      --danger:#9b1c1c;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:20px;
+      background:var(--bg);
+      color:var(--text);
+      font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+
+    .page{
+      max-width:1450px;
+      margin:0 auto;
+    }
+
+    .topbar,
+    .card{
+      background:var(--card);
+      border:1px solid #cfcfcf;
+      border-radius:2px;
+    }
+
+    .topbar{
+      border-top:4px solid #111;
+      padding:14px;
+    }
+
+    .brandrow{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+
+    h1{
+      margin:0;
+      font-size:25px;
+      letter-spacing:.2px;
+    }
+
+    .subtitle,
+    .statusline{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .nav a{
+      color:var(--link);
+      text-decoration:none;
+      padding:6px 9px;
+      border-radius:7px;
+      font-size:13px;
+    }
+
+    .nav a:hover{
+      text-decoration:underline;
+      background:var(--link-hover);
+    }
+
+    .section{
+      margin-top:14px;
+    }
+
+    .card{
+      padding:16px;
+    }
+
+    .section-title{
+      margin:0 0 12px;
+      font-size:15px;
+      letter-spacing:.2px;
+    }
+
+    .controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:end;
+      margin-bottom:14px;
+      padding-bottom:14px;
+      border-bottom:1px solid var(--grid);
+    }
+
+    .control{
+      display:flex;
+      flex-direction:column;
+      gap:5px;
+    }
+
+    .control label{
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+      color:var(--muted);
+      font-weight:700;
+    }
+
+    select{
+      min-width:160px;
+      border:1px solid var(--chip-border);
+      background:#fff;
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:13px;
+    }
+
+    .summary{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-bottom:10px;
+    }
+
+    .summary-item span{
+      display:block;
+      color:var(--muted);
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:.35px;
+    }
+
+    .summary-item strong{
+      display:block;
+      margin-top:2px;
+      font-size:18px;
+      font-variant-numeric:tabular-nums;
+    }
+
+    .chart-wrap{
+      position:relative;
+      height:720px;
+    }
+
+    .note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .error{
+      display:none;
+      margin-top:14px;
+      padding:12px;
+      border:1px solid #d9a3a3;
+      background:#fff3f3;
+      color:var(--danger);
+      font-size:13px;
+    }
+
+    .error.visible{
+      display:block;
+    }
+
+    .loading{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+
+    .conference-menu{
+      position:relative;
+      display:inline-block;
+    }
+
+    .conference-menu-button{
+      min-width:160px;
+      height:36px;
+      border:1px solid var(--chip-border);
+      background:#fff;
+      color:var(--text);
+      border-radius:999px;
+      padding:7px 11px;
+      font-size:13px;
+      text-align:left;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+    }
+
+    .conference-menu-button .caret{
+      font-size:10px;
+      transition:transform .15s ease;
+    }
+
+    .conference-menu.open .conference-menu-button .caret{
+      transform:rotate(180deg);
+    }
+
+    .conference-menu-list{
+      display:none;
+      position:absolute;
+      left:0;
+      top:calc(100% + 10px);
+      z-index:30;
+      min-width:230px;
+      max-height:340px;
+      overflow-y:auto;
+      padding:8px;
+      background:var(--card);
+      border:1px solid var(--chip-border);
+      border-radius:10px;
+      box-shadow:0 6px 20px rgba(0,0,0,.16);
+    }
+
+    .conference-menu.open .conference-menu-list{
+      display:block;
+    }
+
+    .conference-menu-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:6px;
+      padding-bottom:7px;
+      margin-bottom:5px;
+      border-bottom:1px solid #e8e8e8;
+    }
+
+    .conference-menu-actions button{
+      border:0;
+      background:var(--chip);
+      color:var(--text);
+      border-radius:7px;
+      padding:5px 8px;
+      font-size:12px;
+      cursor:pointer;
+    }
+
+    .conference-menu-actions button:hover{
+      background:var(--link-hover);
+    }
+
+    .conference-option{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:6px 5px;
+      border-radius:6px;
+      cursor:pointer;
+      white-space:nowrap;
+    }
+
+    .conference-option:hover{
+      background:var(--link-hover);
+    }
+
+    .conference-option input{
+      min-width:0;
+      margin:0;
+    }
+
+    .table-wrap{
+      margin-top:14px;
+      overflow-x:auto;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:13px;
+    }
+
+    th,
+    td{
+      border:1px solid var(--grid);
+      padding:7px 8px;
+      white-space:nowrap;
+      text-align:right;
+    }
+
+    th{
+      background:var(--head-bg);
+      color:var(--head-fg);
+      border-color:#222;
+      font-size:12px;
+    }
+
+    th.left,
+    td.left{
+      text-align:left;
+    }
+
+    tbody tr:nth-child(even){
+      background:#fafafa;
+    }
+
+    tbody tr:hover{
+      background:#efefef;
+    }
+
+    .team-link{
+      color:var(--link);
+      text-decoration:none;
+    }
+
+    .team-link:hover{
+      text-decoration:underline;
+    }
+
+    @media (max-width:900px){
+      body{ margin:12px; }
+      .chart-wrap{ height:620px; }
+    }
+
+    @media (max-width:650px){
+      .chart-wrap{ height:520px; }
+      select{ min-width:135px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div class="brandrow">
+        <div>
+          <h1>Conference Comparison</h1>
+          <p class="subtitle">
+            FBS teams ranked within their conference and plotted against current efficiency rating.
+          </p>
+          <p class="statusline" id="statusLine"></p>
+        </div>
+
+        <nav class="nav">
+          <a id="rankingsLink" href="index.html">Rankings</a>
+          <a id="matchupLink" href="matchup.html">Matchup Predictor</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="error" id="errorBox"></div>
+    <div class="loading" id="loadingLine">Loading conference data…</div>
+
+    <section class="section card" id="chartCard" hidden>
+      <h2 class="section-title">All Teams Rating Comparison</h2>
+
+      <div class="controls">
+        <div class="control">
+          <label for="yearSelect">Season</label>
+          <select id="yearSelect"></select>
+        </div>
+
+        <div class="control" title="Filter by one or more conferences">
+          <label>Conf</label>
+          <div class="conference-menu" id="conferenceMenu">
+            <button id="conferenceMenuButton" class="conference-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
+              <span id="conferenceMenuText">All conferences</span>
+              <span class="caret" aria-hidden="true">▼</span>
+            </button>
+            <div class="conference-menu-list" id="conferenceMenuList">
+              <div class="conference-menu-actions">
+                <button id="conferencePower4" type="button">Power 4</button>
+                <button id="conferenceGroup6" type="button">Group of 6</button>
+                <button id="conferenceSelectAll" type="button">Select all</button>
+                <button id="conferenceClear" type="button">Clear</button>
+              </div>
+              <div id="conferenceOptions"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="control">
+          <label for="metricSelect">Rating</label>
+          <select id="metricSelect">
+            <option value="AdjRtg">Adjusted Rating</option>
+            <option value="NetRtg">Net Rating</option>
+            <option value="Ortg">Offensive Rating</option>
+            <option value="DRtg">Defensive Rating</option>
+            <option value="SOS">Strength of Schedule</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="summary">
+        <div class="summary-item">
+          <span>Teams shown</span>
+          <strong id="teamsShown">—</strong>
+        </div>
+
+        <div class="summary-item">
+          <span>Conferences shown</span>
+          <strong id="conferencesShown">—</strong>
+        </div>
+
+        <div class="summary-item">
+          <span>Selected metric</span>
+          <strong id="metricSummary">—</strong>
+        </div>
+      </div>
+
+      <div class="chart-wrap">
+        <canvas id="conferenceChart"></canvas>
+      </div>
+
+      <p class="note">
+        X-axis position is each team's rank within its own conference using the selected metric.
+        Teams from the same conference are connected in conference-rank order.
+        Click a team label or point to open that team's profile.
+      </p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Conf. Rank</th>
+              <th class="left">Team</th>
+              <th class="left">Conference</th>
+              <th>Overall Rank</th>
+              <th>AdjRtg</th>
+              <th>NetRtg</th>
+              <th>ORtg</th>
+              <th>DRtg</th>
+              <th>SOS</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+  <script>
+    const RAW_BASE =
+      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
+
+    const DEFAULT_YEAR = 2026;
+    const FIRST_YEAR = 2009;
+
+    const els = {
+      statusLine: document.getElementById("statusLine"),
+      errorBox: document.getElementById("errorBox"),
+      loadingLine: document.getElementById("loadingLine"),
+      chartCard: document.getElementById("chartCard"),
+      yearSelect: document.getElementById("yearSelect"),
+      conferenceMenu: document.getElementById("conferenceMenu"),
+      conferenceMenuButton: document.getElementById("conferenceMenuButton"),
+      conferenceMenuText: document.getElementById("conferenceMenuText"),
+      conferenceOptions: document.getElementById("conferenceOptions"),
+      conferencePower4: document.getElementById("conferencePower4"),
+      conferenceGroup6: document.getElementById("conferenceGroup6"),
+      conferenceSelectAll: document.getElementById("conferenceSelectAll"),
+      conferenceClear: document.getElementById("conferenceClear"),
+      metricSelect: document.getElementById("metricSelect"),
+      conferenceChart: document.getElementById("conferenceChart"),
+      teamsShown: document.getElementById("teamsShown"),
+      conferencesShown: document.getElementById("conferencesShown"),
+      metricSummary: document.getElementById("metricSummary"),
+      comparisonBody: document.getElementById("comparisonBody"),
+      rankingsLink: document.getElementById("rankingsLink"),
+      matchupLink: document.getElementById("matchupLink")
+    };
+
+    const params = new URLSearchParams(location.search);
+    let ACTIVE_YEAR = Number(params.get("year")) || DEFAULT_YEAR;
+    let ROWS = [];
+    let CHART = null;
+    let DISPLAY_TEAMS = [];
+
+    const CONFERENCE_COLORS = [
+      "#0057b8",
+      "#d62728",
+      "#2ca02c",
+      "#9467bd",
+      "#ff7f0e",
+      "#17becf",
+      "#8c564b",
+      "#e377c2",
+      "#7f7f7f",
+      "#bcbd22",
+      "#1f77b4",
+      "#c51b8a",
+      "#238b45",
+      "#6a51a3",
+      "#cb181d"
+    ];
+
+    const METRIC_LABELS = {
+      AdjRtg: "Adjusted Rating",
+      NetRtg: "Net Rating",
+      Ortg: "Offensive Rating",
+      DRtg: "Defensive Rating",
+      SOS: "Strength of Schedule"
+    };
+
+    function setError(message = "") {
+      els.errorBox.textContent = message;
+      els.errorBox.classList.toggle("visible", Boolean(message));
+    }
+
+    function n(value) {
+      const text = String(value ?? "").trim();
+      if (text === "") return null;
+      const num = Number(text);
+      return Number.isFinite(num) ? num : null;
+    }
+
+    function csvUrl(year) {
+      return `${RAW_BASE}${year}%20Master.csv?t=${Date.now()}`;
+    }
+
+    function parseCSV(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let inQuotes = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        const next = text[i + 1];
+
+        if (ch === '"') {
+          if (inQuotes && next === '"') {
+            cell += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+          continue;
+        }
+
+        if (ch === "," && !inQuotes) {
+          row.push(cell);
+          cell = "";
+          continue;
+        }
+
+        if ((ch === "\n" || ch === "\r") && !inQuotes) {
+          if (ch === "\r" && next === "\n") i++;
+          row.push(cell);
+          cell = "";
+
+          if (row.some(v => String(v).trim() !== "")) {
+            rows.push(row);
+          }
+
+          row = [];
+          continue;
+        }
+
+        cell += ch;
+      }
+
+      row.push(cell);
+
+      if (row.some(v => String(v).trim() !== "")) {
+        rows.push(row);
+      }
+
+      if (!rows.length) return [];
+
+      const headers = rows[0].map(v => v.trim());
+
+      return rows.slice(1).map(values => {
+        const obj = {};
+        headers.forEach((header, index) => {
+          obj[header] = values[index] ?? "";
+        });
+        return obj;
+      });
+    }
+
+    async function loadMaster(year) {
+      const response = await fetch(csvUrl(year), { cache: "no-store" });
+
+      if (!response.ok) {
+        throw new Error(`Could not load ${year} Master.csv (HTTP ${response.status}).`);
+      }
+
+      return parseCSV(await response.text());
+    }
+
+    function getMetricValue(row, metric) {
+      if (metric === "Ortg") {
+        return n(row["Ortg"]) ?? n(row["ORtg"]);
+      }
+
+      return n(row[metric]);
+    }
+
+    function normalizeRows(rows) {
+      return rows
+        .map(row => ({
+          raw: row,
+          team: String(row["Team"] || "").trim(),
+          conference: String(row["Conference"] || "Independent").trim() || "Independent",
+          overallRank: n(row["Rk"]),
+          adjRank: n(row["AdjRk"]),
+          AdjRtg: n(row["AdjRtg"]),
+          NetRtg: n(row["NetRtg"]),
+          Ortg: n(row["Ortg"]) ?? n(row["ORtg"]),
+          DRtg: n(row["DRtg"]),
+          SOS: n(row["SOS"])
+        }))
+        .filter(team => team.team);
+    }
+
+    function buildConferenceRanks(teams, metric) {
+      const grouped = new Map();
+
+      for (const team of teams) {
+        const value = team[metric];
+
+        if (!Number.isFinite(value)) continue;
+
+        if (!grouped.has(team.conference)) {
+          grouped.set(team.conference, []);
+        }
+
+        grouped.get(team.conference).push(team);
+      }
+
+      const ranked = [];
+
+      for (const [conference, conferenceTeams] of grouped.entries()) {
+        conferenceTeams.sort((a, b) => {
+          const metricDiff = b[metric] - a[metric];
+          if (metricDiff !== 0) return metricDiff;
+
+          const rankA = Number.isFinite(a.overallRank) ? a.overallRank : 999;
+          const rankB = Number.isFinite(b.overallRank) ? b.overallRank : 999;
+          return rankA - rankB;
+        });
+
+        conferenceTeams.forEach((team, index) => {
+          ranked.push({
+            ...team,
+            conferenceRank: index + 1
+          });
+        });
+      }
+
+      return ranked;
+    }
+
+    function shortTeamName(name) {
+      const cleaned = String(name)
+        .replace(/\bUniversity\b/gi, "")
+        .replace(/\bState University\b/gi, "State")
+        .replace(/\s+/g, " ")
+        .trim();
+
+      const words = cleaned.split(" ");
+
+      if (words.length === 1) {
+        return cleaned.slice(0, 7);
+      }
+
+      const initials = words
+        .filter(word => !["of", "the", "at"].includes(word.toLowerCase()))
+        .map(word => word[0])
+        .join("");
+
+      return initials.length >= 2 && initials.length <= 5
+        ? initials.toUpperCase()
+        : cleaned.slice(0, 8);
+    }
+
+    function populateYearSelect() {
+      els.yearSelect.innerHTML = "";
+
+      for (let year = DEFAULT_YEAR; year >= FIRST_YEAR; year--) {
+        const option = document.createElement("option");
+        option.value = String(year);
+        option.textContent = String(year);
+        option.selected = year === ACTIVE_YEAR;
+        els.yearSelect.appendChild(option);
+      }
+    }
+
+    function getSelectedConferences() {
+      return Array.from(
+        els.conferenceOptions.querySelectorAll('input[type="checkbox"]:checked')
+      ).map(input => input.value);
+    }
+
+    function updateConferenceMenuText() {
+      const selected = getSelectedConferences();
+      const total =
+        els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
+
+      if (!selected.length || selected.length === total) {
+        els.conferenceMenuText.textContent = "All conferences";
+      } else if (selected.length === 1) {
+        els.conferenceMenuText.textContent = selected[0];
+      } else {
+        els.conferenceMenuText.textContent =
+          `${selected.length} conferences`;
+      }
+    }
+
+    function buildConferenceOptions(teams) {
+      const previouslySelected = new Set(getSelectedConferences());
+      const hadExistingOptions =
+        els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length > 0;
+
+      const conferences = [...new Set(teams.map(team => team.conference))]
+        .sort((a, b) => a.localeCompare(b));
+
+      els.conferenceOptions.innerHTML = "";
+
+      const frag = document.createDocumentFragment();
+
+      conferences.forEach(conf => {
+        const label = document.createElement("label");
+        label.className = "conference-option";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.value = conf;
+        checkbox.checked =
+          !hadExistingOptions || previouslySelected.has(conf);
+
+        checkbox.addEventListener("change", () => {
+          updateConferenceMenuText();
+          renderChart();
+        });
+
+        const text = document.createElement("span");
+        text.textContent = conf;
+
+        label.appendChild(checkbox);
+        label.appendChild(text);
+        frag.appendChild(label);
+      });
+
+      els.conferenceOptions.appendChild(frag);
+      updateConferenceMenuText();
+    }
+
+    const teamLabelsPlugin = {
+      id: "teamLabels",
+
+      afterDatasetsDraw(chart) {
+        const ctx = chart.ctx;
+
+        ctx.save();
+        ctx.font =
+          '700 10px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif';
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+
+        chart.data.datasets.forEach((dataset, datasetIndex) => {
+          const meta = chart.getDatasetMeta(datasetIndex);
+
+          if (meta.hidden) return;
+
+          meta.data.forEach((element, pointIndex) => {
+            const point = dataset.data[pointIndex];
+            if (!point || !point.team) return;
+
+            ctx.fillStyle = dataset.borderColor;
+            ctx.fillText(
+              shortTeamName(point.team),
+              element.x,
+              element.y - 7
+            );
+          });
+        });
+
+        ctx.restore();
+      }
+    };
+
+    Chart.register(teamLabelsPlugin);
+
+    function renderChart() {
+      const metric = els.metricSelect.value;
+      const selectedConferences = getSelectedConferences();
+      const conferenceOptionCount =
+        els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
+
+      const normalized = normalizeRows(ROWS);
+      const ranked = buildConferenceRanks(normalized, metric);
+
+      let filtered = ranked;
+
+      if (
+        selectedConferences.length > 0 &&
+        selectedConferences.length < conferenceOptionCount
+      ) {
+        const selectedSet = new Set(selectedConferences);
+        filtered = ranked.filter(team => selectedSet.has(team.conference));
+      } else if (
+        conferenceOptionCount > 0 &&
+        selectedConferences.length === 0
+      ) {
+        filtered = [];
+      }
+
+      DISPLAY_TEAMS = filtered
+        .sort((a, b) => {
+          const confCompare = a.conference.localeCompare(b.conference);
+          if (confCompare !== 0) return confCompare;
+          return a.conferenceRank - b.conferenceRank;
+        });
+
+      const conferenceGroups = new Map();
+
+      for (const team of DISPLAY_TEAMS) {
+        if (!conferenceGroups.has(team.conference)) {
+          conferenceGroups.set(team.conference, []);
+        }
+
+        conferenceGroups.get(team.conference).push(team);
+      }
+
+      const datasets = [];
+      let colorIndex = 0;
+
+      for (const [conference, conferenceTeams] of conferenceGroups.entries()) {
+        conferenceTeams.sort((a, b) => a.conferenceRank - b.conferenceRank);
+
+        const color =
+          CONFERENCE_COLORS[colorIndex % CONFERENCE_COLORS.length];
+        colorIndex++;
+
+        datasets.push({
+          label: conference,
+          data: conferenceTeams.map(team => ({
+            x: team.conferenceRank,
+            y: team[metric],
+            team: team.team,
+            conference: team.conference,
+            conferenceRank: team.conferenceRank,
+            overallRank: team.overallRank,
+            adjRank: team.adjRank,
+            AdjRtg: team.AdjRtg,
+            NetRtg: team.NetRtg,
+            Ortg: team.Ortg,
+            DRtg: team.DRtg,
+            SOS: team.SOS
+          })),
+          borderColor: color,
+          backgroundColor: color,
+          pointBackgroundColor: color,
+          pointBorderColor: "#ffffff",
+          pointBorderWidth: 1.5,
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          borderWidth: 2,
+          tension: 0.15,
+          showLine: true
+        });
+      }
+
+      const maxConferenceRank =
+        DISPLAY_TEAMS.length
+          ? Math.max(...DISPLAY_TEAMS.map(team => team.conferenceRank))
+          : 1;
+
+      if (CHART) CHART.destroy();
+
+      CHART = new Chart(els.conferenceChart, {
+        type: "scatter",
+        data: {
+          datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+
+          interaction: {
+            mode: "nearest",
+            intersect: false
+          },
+
+          onHover(event, activeElements) {
+            event.native.target.style.cursor =
+              activeElements.length ? "pointer" : "default";
+          },
+
+          onClick(event, activeElements) {
+            if (!activeElements.length) return;
+
+            const hit = activeElements[0];
+            const point =
+              CHART.data.datasets[hit.datasetIndex].data[hit.index];
+
+            if (!point || !point.team) return;
+
+            location.href =
+              `team.html?team=${encodeURIComponent(point.team)}` +
+              `&year=${encodeURIComponent(String(ACTIVE_YEAR))}`;
+          },
+
+          plugins: {
+            title: {
+              display: true,
+              text:
+                `${ACTIVE_YEAR} ${METRIC_LABELS[metric]} by Rank Within Conference`,
+              font: {
+                size: 20,
+                weight: "700"
+              },
+              color: "#111",
+              padding: {
+                bottom: 18
+              }
+            },
+
+            legend: {
+              display: true,
+              position: "top",
+              labels: {
+                usePointStyle: true,
+                boxWidth: 10,
+                padding: 14,
+                font: {
+                  size: 11
+                }
+              }
+            },
+
+            tooltip: {
+              callbacks: {
+                title(items) {
+                  if (!items.length) return "";
+                  return items[0].raw.team;
+                },
+
+                label(context) {
+                  const p = context.raw;
+                  const lines = [
+                    `Conference: ${p.conference}`,
+                    `Conference rank: ${p.conferenceRank}`,
+                    `Overall rank: ${Number.isFinite(p.overallRank) ? p.overallRank : "—"}`,
+                    `${METRIC_LABELS[metric]}: ${Number.isFinite(p[metric]) ? p[metric].toFixed(3) : "—"}`,
+                    `AdjRtg: ${Number.isFinite(p.AdjRtg) ? p.AdjRtg.toFixed(3) : "—"}`,
+                    `ORtg: ${Number.isFinite(p.Ortg) ? p.Ortg.toFixed(3) : "—"}`,
+                    `DRtg: ${Number.isFinite(p.DRtg) ? p.DRtg.toFixed(3) : "—"}`,
+                    `SOS: ${Number.isFinite(p.SOS) ? p.SOS.toFixed(3) : "—"}`
+                  ];
+
+                  return lines;
+                }
+              }
+            }
+          },
+
+          scales: {
+            x: {
+              type: "linear",
+              min: 1,
+              max: Math.max(2, maxConferenceRank),
+              title: {
+                display: true,
+                text: "Rank Within Conference",
+                color: "#111",
+                font: {
+                  size: 14,
+                  weight: "700"
+                }
+              },
+              ticks: {
+                stepSize: 1,
+                precision: 0
+              },
+              grid: {
+                color: "rgba(0,0,0,0.08)"
+              }
+            },
+
+            y: {
+              title: {
+                display: true,
+                text: METRIC_LABELS[metric],
+                color: "#111",
+                font: {
+                  size: 14,
+                  weight: "700"
+                }
+              },
+              grid: {
+                color: "rgba(0,0,0,0.08)"
+              }
+            }
+          }
+        }
+      });
+
+      els.teamsShown.textContent = String(DISPLAY_TEAMS.length);
+      els.conferencesShown.textContent =
+        String(conferenceGroups.size);
+      els.metricSummary.textContent =
+        METRIC_LABELS[metric];
+
+      renderTable();
+    }
+
+    function fmt(value, decimals = 3) {
+      return Number.isFinite(value)
+        ? value.toFixed(decimals)
+        : "—";
+    }
+
+    function renderTable() {
+      els.comparisonBody.innerHTML = "";
+
+      for (const team of DISPLAY_TEAMS) {
+        const tr = document.createElement("tr");
+
+        const confRank = document.createElement("td");
+        confRank.textContent = team.conferenceRank;
+
+        const teamTd = document.createElement("td");
+        teamTd.className = "left";
+
+        const link = document.createElement("a");
+        link.className = "team-link";
+        link.textContent = team.team;
+        link.href =
+          `team.html?team=${encodeURIComponent(team.team)}` +
+          `&year=${encodeURIComponent(String(ACTIVE_YEAR))}`;
+
+        teamTd.appendChild(link);
+
+        const conference = document.createElement("td");
+        conference.className = "left";
+        conference.textContent = team.conference;
+
+        const overallRank = document.createElement("td");
+        overallRank.textContent =
+          Number.isFinite(team.overallRank)
+            ? String(Math.round(team.overallRank))
+            : "—";
+
+        const adj = document.createElement("td");
+        adj.textContent = fmt(team.AdjRtg);
+
+        const net = document.createElement("td");
+        net.textContent = fmt(team.NetRtg);
+
+        const ortg = document.createElement("td");
+        ortg.textContent = fmt(team.Ortg);
+
+        const drtg = document.createElement("td");
+        drtg.textContent = fmt(team.DRtg);
+
+        const sos = document.createElement("td");
+        sos.textContent = fmt(team.SOS);
+
+        tr.append(
+          confRank,
+          teamTd,
+          conference,
+          overallRank,
+          adj,
+          net,
+          ortg,
+          drtg,
+          sos
+        );
+
+        els.comparisonBody.appendChild(tr);
+      }
+    }
+
+    function updateUrl() {
+      const url = new URL(location.href);
+      url.searchParams.set("year", String(ACTIVE_YEAR));
+      history.replaceState(null, "", url);
+    }
+
+    async function loadYear(year) {
+      els.loadingLine.hidden = false;
+      els.chartCard.hidden = true;
+      setError("");
+
+      try {
+        ACTIVE_YEAR = Number(year);
+        updateUrl();
+
+        els.rankingsLink.href =
+          `index.html?year=${encodeURIComponent(String(ACTIVE_YEAR))}`;
+
+        els.matchupLink.href =
+          `matchup.html?year=${encodeURIComponent(String(ACTIVE_YEAR))}`;
+
+        ROWS = await loadMaster(ACTIVE_YEAR);
+
+        const normalized = normalizeRows(ROWS);
+        buildConferenceOptions(normalized);
+        renderChart();
+
+        els.statusLine.textContent =
+          `${ROWS.length} ranked teams loaded from ${ACTIVE_YEAR} Master.csv`;
+
+        els.chartCard.hidden = false;
+      } catch (err) {
+        console.error(err);
+        setError(err.message || "Could not load conference comparison data.");
+      } finally {
+        els.loadingLine.hidden = true;
+      }
+    }
+
+    els.yearSelect.addEventListener("change", () => {
+      loadYear(els.yearSelect.value);
+    });
+
+    els.conferenceMenuButton.addEventListener("click", event => {
+      event.stopPropagation();
+      const isOpen = els.conferenceMenu.classList.toggle("open");
+      els.conferenceMenuButton.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+    });
+
+    function normalizeConferenceName(value) {
+      return String(value || "")
+        .trim()
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, " ")
+        .trim();
+    }
+
+    function conferencePresetMatches(value, preset) {
+      const conf = normalizeConferenceName(value);
+
+      const power4 = new Set([
+        "acc",
+        "atlantic coast",
+        "atlantic coast conference",
+        "big ten",
+        "big 10",
+        "big 12",
+        "sec",
+        "southeastern",
+        "southeastern conference"
+      ]);
+
+      const group6 = new Set([
+        "aac",
+        "american",
+        "american athletic",
+        "american athletic conference",
+        "c usa",
+        "conference usa",
+        "mac",
+        "mid american",
+        "mid american conference",
+        "mountain west",
+        "mountain west conference",
+        "pac 12",
+        "pac 12 conference",
+        "sun belt",
+        "sun belt conference"
+      ]);
+
+      return preset === "power4"
+        ? power4.has(conf)
+        : group6.has(conf);
+    }
+
+    function applyConferencePreset(preset) {
+      els.conferenceOptions
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(input => {
+          input.checked = conferencePresetMatches(input.value, preset);
+        });
+
+      updateConferenceMenuText();
+      renderChart();
+    }
+
+    els.conferencePower4.addEventListener("click", () => {
+      applyConferencePreset("power4");
+    });
+
+    els.conferenceGroup6.addEventListener("click", () => {
+      applyConferencePreset("group6");
+    });
+
+    els.conferenceSelectAll.addEventListener("click", () => {
+      els.conferenceOptions
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(input => input.checked = true);
+
+      updateConferenceMenuText();
+      renderChart();
+    });
+
+    els.conferenceClear.addEventListener("click", () => {
+      els.conferenceOptions
+        .querySelectorAll('input[type="checkbox"]')
+        .forEach(input => input.checked = false);
+
+      updateConferenceMenuText();
+      renderChart();
+    });
+
+    document.addEventListener("click", event => {
+      if (!els.conferenceMenu.contains(event.target)) {
+        els.conferenceMenu.classList.remove("open");
+        els.conferenceMenuButton.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+      }
+    });
+
+    els.metricSelect.addEventListener("change", () => {
+      renderChart();
+    });
+
+    async function init() {
+      populateYearSelect();
+      await loadYear(ACTIVE_YEAR);
+    }
+
+    init();
+  </script>
+</body>
+</html>
