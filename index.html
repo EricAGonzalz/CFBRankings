@@ -167,6 +167,161 @@
       background: var(--link-hover);
     }
 
+    .page-menu{
+      position: relative;
+      display: inline-block;
+    }
+
+    .page-menu-button{
+      border: 1px solid var(--chip-border);
+      background: var(--card);
+      color: var(--text);
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 650;
+      white-space: nowrap;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+
+    .page-menu-button:hover{
+      background: var(--link-hover);
+      border-color: #bfcbe0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    }
+
+    .page-menu-button:focus-visible{
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+    }
+
+    .page-menu-button .menu-icon{
+      width: 15px;
+      height: 15px;
+      display: inline-grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 2px;
+    }
+
+    .page-menu-button .menu-icon span{
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 2px;
+      background: currentColor;
+      opacity: .75;
+    }
+
+    .page-menu-button .caret{
+      font-size: 9px;
+      margin-left: 1px;
+      transition: transform 0.15s ease;
+    }
+
+    .page-menu.open .page-menu-button .caret{
+      transform: rotate(180deg);
+    }
+
+    .page-menu-list{
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 9px);
+      z-index: 40;
+      min-width: 290px;
+      padding: 8px;
+      background: var(--card);
+      border: 1px solid var(--chip-border);
+      border-radius: 14px;
+      box-shadow: 0 14px 34px rgba(0,0,0,0.16);
+    }
+
+    .page-menu.open .page-menu-list{
+      display: block;
+      animation: pageMenuIn .12s ease-out;
+    }
+
+    @keyframes pageMenuIn{
+      from{ opacity:0; transform:translateY(-4px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    .page-menu-title{
+      padding: 6px 9px 8px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .45px;
+      text-transform: uppercase;
+    }
+
+    .page-menu-list a{
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+      color: var(--text);
+      text-decoration: none;
+      padding: 9px;
+      border-radius: 10px;
+      white-space: normal;
+      transition: background .12s ease, color .12s ease;
+    }
+
+    .page-menu-list a + a{
+      margin-top: 2px;
+    }
+
+    .page-menu-list a:hover{
+      background: var(--link-hover);
+      color: var(--text);
+    }
+
+    .page-menu-list a[aria-current="page"]{
+      background: var(--chip);
+    }
+
+    .page-menu-item-icon{
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--chip);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .page-menu-list a[aria-current="page"] .page-menu-item-icon{
+      background: #e9edf3;
+    }
+
+    .page-menu-item-copy{
+      min-width: 0;
+    }
+
+    .page-menu-item-title{
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .page-menu-item-subtitle{
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 11.5px;
+      line-height: 1.3;
+      font-weight: 400;
+    }
+
     #table-wrapper{
       margin-top: 14px;
       overflow-x: auto;
@@ -717,7 +872,43 @@
 
         <div class="spacer"></div>
 
-        <a class="header-link" href="matchup.html">Matchup Predictor</a>
+        <div class="page-menu" id="pageMenu">
+          <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
+            <span class="menu-icon" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </span>
+            Explore
+            <span class="caret" aria-hidden="true">▼</span>
+          </button>
+
+          <div class="page-menu-list" id="pageMenuList" role="menu" aria-label="Site pages">
+            <div class="page-menu-title">Tools & views</div>
+
+            <a href="index.html" aria-current="page" role="menuitem">
+              <span class="page-menu-item-icon" aria-hidden="true">▤</span>
+              <span class="page-menu-item-copy">
+                <span class="page-menu-item-title">Rankings</span>
+                <span class="page-menu-item-subtitle">Full FBS efficiency rankings and filters</span>
+              </span>
+            </a>
+
+            <a href="matchup.html" role="menuitem">
+              <span class="page-menu-item-icon" aria-hidden="true">↔</span>
+              <span class="page-menu-item-copy">
+                <span class="page-menu-item-title">Matchup Predictor</span>
+                <span class="page-menu-item-subtitle">Compare two teams and project the score</span>
+              </span>
+            </a>
+
+            <a href="conference.html" role="menuitem">
+              <span class="page-menu-item-icon" aria-hidden="true">⌁</span>
+              <span class="page-menu-item-copy">
+                <span class="page-menu-item-title">Conference Comparison</span>
+                <span class="page-menu-item-subtitle">Compare teams and ratings across conferences</span>
+              </span>
+            </a>
+          </div>
+        </div>
 
         <div class="control" title="Choose a season to view">
           <label for="yearSelect">Season</label>
@@ -842,6 +1033,8 @@
       pageTitle: document.getElementById("pageTitle"),
       statusLine: document.getElementById("statusLine"),
       yearSelect: document.getElementById("yearSelect"),
+      pageMenu: document.getElementById("pageMenu"),
+      pageMenuButton: document.getElementById("pageMenuButton"),
       teamSearch: document.getElementById("teamSearch"),
       conferenceMenu: document.getElementById("conferenceMenu"),
       conferenceMenuButton: document.getElementById("conferenceMenuButton"),
@@ -1543,6 +1736,26 @@
     }
 
     // Hook up UI
+    els.pageMenuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const isOpen = els.pageMenu.classList.toggle("open");
+      els.pageMenuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!els.pageMenu.contains(e.target)) {
+        els.pageMenu.classList.remove("open");
+        els.pageMenuButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        els.pageMenu.classList.remove("open");
+        els.pageMenuButton.setAttribute("aria-expanded", "false");
+      }
+    });
+
     els.teamSearch.addEventListener("input", debounce(renderBody, 150));
     els.conferenceMenuButton.addEventListener("click", (e) => {
       e.stopPropagation();
