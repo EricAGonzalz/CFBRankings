@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T21:10:55.677059+00:00",
+  "updatedAt": "2026-09-12T21:20:57.672605+00:00",
   "liveGames": [
-    {
-      "id": 401856782,
-      "status": "in_progress",
-      "homeTeam": "Oklahoma State",
-      "awayTeam": "Oregon",
-      "homeConference": "Big 12",
-      "awayConference": "Big Ten",
-      "homePoints": 39.0,
-      "awayPoints": 31.0,
-      "period": 4,
-      "clock": "01:44",
-      "completedDrives": 27,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 13
-    },
     {
       "id": 401856674,
       "status": "in_progress",
@@ -27,10 +12,10 @@
       "homePoints": 14.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "01:05",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "clock": "00:29",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856677,
@@ -56,11 +41,11 @@
       "awayConference": "Big 12",
       "homePoints": 3.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:04",
-      "completedDrives": 5,
+      "period": 2,
+      "clock": "13:28",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856810,
@@ -72,10 +57,10 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "00:52",
-      "completedDrives": 10,
+      "clock": "00:00",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858216,
@@ -87,10 +72,10 @@
       "homePoints": 12.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:55",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "clock": "00:00",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858217,
@@ -100,11 +85,11 @@
       "homeConference": "Big Ten",
       "awayConference": "ACC",
       "homePoints": 24.0,
-      "awayPoints": 14.0,
-      "period": 2,
-      "clock": "00:42",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "awayPoints": 21.0,
+      "period": 3,
+      "clock": "15:00",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -177,10 +162,10 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "03:42",
-      "completedDrives": 11,
+      "clock": "01:24",
+      "completedDrives": 12,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401862708,
@@ -190,9 +175,9 @@
       "homeConference": "American Athletic",
       "awayConference": "Sun Belt",
       "homePoints": 10.0,
-      "awayPoints": 17.0,
-      "period": 2,
-      "clock": "00:00",
+      "awayPoints": 20.0,
+      "period": 3,
+      "clock": "10:24",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -204,12 +189,12 @@
       "awayTeam": "UNLV",
       "homeConference": "American Athletic",
       "awayConference": "Mountain West",
-      "homePoints": 13.0,
+      "homePoints": 20.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "01:11",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -222,9 +207,9 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "12:51",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "10:26",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     }
   ],
@@ -244,8 +229,6 @@
     "Mississippi State",
     "North Texas",
     "Notre Dame",
-    "Oklahoma State",
-    "Oregon",
     "Pittsburgh",
     "Rice",
     "Syracuse",
