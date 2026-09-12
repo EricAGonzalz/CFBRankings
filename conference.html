@@ -282,7 +282,7 @@
 
     .chart-wrap{
       position:relative;
-      height:720px;
+      height:800px;
     }
 
     .note{
@@ -528,11 +528,11 @@
 
     @media (max-width:900px){
       body{ margin:12px; }
-      .chart-wrap{ height:620px; }
+      .chart-wrap{ height:680px; }
     }
 
     @media (max-width:650px){
-      .chart-wrap{ height:520px; }
+      .chart-wrap{ height:580px; }
       select{ min-width:135px; }
     }
   </style>
@@ -911,26 +911,10 @@
     }
 
     function shortTeamName(name) {
-      const cleaned = String(name)
-        .replace(/\bUniversity\b/gi, "")
-        .replace(/\bState University\b/gi, "State")
-        .replace(/\s+/g, " ")
-        .trim();
-
-      const words = cleaned.split(" ");
-
-      if (words.length === 1) {
-        return cleaned.slice(0, 7);
-      }
-
-      const initials = words
-        .filter(word => !["of", "the", "at"].includes(word.toLowerCase()))
-        .map(word => word[0])
-        .join("");
-
-      return initials.length >= 2 && initials.length <= 5
-        ? initials.toUpperCase()
-        : cleaned.slice(0, 8);
+      // Use the full team name exactly as it appears in the rankings data.
+      // Do not create automatic initials or truncate names, since that can
+      // produce confusing labels such as "MS" or chopped-off school names.
+      return String(name ?? "").replace(/\s+/g, " ").trim();
     }
 
     function populateYearSelect() {
@@ -1010,30 +994,136 @@
 
       afterDatasetsDraw(chart) {
         const ctx = chart.ctx;
+        const area = chart.chartArea;
+        const placed = [];
+        const labels = [];
 
         ctx.save();
         ctx.font =
-          '700 10px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif';
+          '700 11px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif';
         ctx.textAlign = "center";
-        ctx.textBaseline = "bottom";
+        ctx.textBaseline = "middle";
+        ctx.lineJoin = "round";
 
+        // Gather every visible team label first so placement can account for
+        // labels from all conferences rather than only one line at a time.
         chart.data.datasets.forEach((dataset, datasetIndex) => {
           const meta = chart.getDatasetMeta(datasetIndex);
-
           if (meta.hidden) return;
 
           meta.data.forEach((element, pointIndex) => {
             const point = dataset.data[pointIndex];
             if (!point || !point.team) return;
 
-            ctx.fillStyle = dataset.borderColor;
-            ctx.fillText(
-              shortTeamName(point.team),
-              element.x,
-              element.y - 7
-            );
+            const text = shortTeamName(point.team);
+            const width = ctx.measureText(text).width + 8;
+
+            labels.push({
+              text,
+              color: dataset.borderColor,
+              pointX: element.x,
+              pointY: element.y,
+              width,
+              height: 15,
+              datasetIndex,
+              pointIndex
+            });
           });
         });
+
+        // Put higher points first. This tends to keep the most crowded upper
+        // portion of the chart orderly before lower labels are positioned.
+        labels.sort((a, b) => a.pointY - b.pointY);
+
+        function overlaps(a, b) {
+          const padding = 3;
+          return !(
+            a.right + padding < b.left ||
+            a.left - padding > b.right ||
+            a.bottom + padding < b.top ||
+            a.top - padding > b.bottom
+          );
+        }
+
+        function candidateBox(label, x, y) {
+          return {
+            left: x - label.width / 2,
+            right: x + label.width / 2,
+            top: y - label.height / 2,
+            bottom: y + label.height / 2
+          };
+        }
+
+        for (const label of labels) {
+          // Try several nearby positions above and below the point. The small
+          // horizontal shifts help separate teams with nearly identical ratings.
+          const candidates = [
+            [0, -13],
+            [0, 14],
+            [8, -25],
+            [-8, 26],
+            [14, -37],
+            [-14, 38],
+            [22, -49],
+            [-22, 50]
+          ];
+
+          let chosen = null;
+
+          for (const [dx, dy] of candidates) {
+            let x = label.pointX + dx;
+            let y = label.pointY + dy;
+
+            // Keep the full label inside the plotting area.
+            const halfWidth = label.width / 2;
+            x = Math.max(area.left + halfWidth + 2, Math.min(area.right - halfWidth - 2, x));
+            y = Math.max(area.top + 9, Math.min(area.bottom - 9, y));
+
+            const box = candidateBox(label, x, y);
+            const collision = placed.some(existing => overlaps(box, existing));
+
+            if (!collision) {
+              chosen = { x, y, box };
+              break;
+            }
+          }
+
+          // In extremely dense areas, use the least disruptive default rather
+          // than hiding the team name entirely.
+          if (!chosen) {
+            const halfWidth = label.width / 2;
+            const x = Math.max(
+              area.left + halfWidth + 2,
+              Math.min(area.right - halfWidth - 2, label.pointX)
+            );
+            const y = Math.max(area.top + 9, Math.min(area.bottom - 9, label.pointY - 13));
+            chosen = { x, y, box: candidateBox(label, x, y) };
+          }
+
+          placed.push(chosen.box);
+
+          // A subtle leader line makes it obvious which point belongs to a
+          // displaced label without adding much visual clutter.
+          const distance = Math.hypot(chosen.x - label.pointX, chosen.y - label.pointY);
+          if (distance > 18) {
+            ctx.save();
+            ctx.strokeStyle = "rgba(90,90,90,.35)";
+            ctx.lineWidth = 0.8;
+            ctx.beginPath();
+            ctx.moveTo(label.pointX, label.pointY);
+            ctx.lineTo(chosen.x, chosen.y);
+            ctx.stroke();
+            ctx.restore();
+          }
+
+          // White halo keeps colored text legible over grid lines and nearby
+          // conference lines, then the conference color is drawn on top.
+          ctx.lineWidth = 4;
+          ctx.strokeStyle = "rgba(255,255,255,.96)";
+          ctx.strokeText(label.text, chosen.x, chosen.y);
+          ctx.fillStyle = label.color;
+          ctx.fillText(label.text, chosen.x, chosen.y);
+        }
 
         ctx.restore();
       }
