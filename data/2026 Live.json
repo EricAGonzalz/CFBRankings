@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T03:20:59.664233+00:00",
+  "updatedAt": "2026-09-12T03:23:23.784146+00:00",
   "liveGames": [
-    {
-      "id": 401858214,
-      "status": "in_progress",
-      "homeTeam": "Boston College Eagles",
-      "awayTeam": "Rutgers Scarlet Knights",
-      "homeConference": "ACC",
-      "awayConference": "Big Ten",
-      "homePoints": 28.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "00:32",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
-    },
     {
       "id": 401856678,
       "status": "in_progress",
@@ -27,16 +12,14 @@
       "homePoints": 21.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "08:57",
-      "completedDrives": 21,
+      "clock": "08:17",
+      "completedDrives": 22,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
-    "Boston College Eagles",
     "Kansas Jayhawks",
-    "Missouri Tigers",
-    "Rutgers Scarlet Knights"
+    "Missouri Tigers"
   ]
 }
