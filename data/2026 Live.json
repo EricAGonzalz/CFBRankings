@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T19:01:36.817854+00:00",
+  "updatedAt": "2026-09-12T19:10:38.292054+00:00",
   "liveGames": [
     {
       "id": 401856679,
@@ -12,9 +12,9 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "11:49",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "08:49",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -27,10 +27,10 @@
       "homePoints": 38.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "08:38",
-      "completedDrives": 22,
+      "clock": "08:08",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401856781,
@@ -42,10 +42,10 @@
       "homePoints": 27.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "09:31",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "clock": "04:51",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856782,
@@ -55,12 +55,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big Ten",
       "homePoints": 24.0,
-      "awayPoints": 14.0,
+      "awayPoints": 17.0,
       "period": 2,
-      "clock": "01:56",
-      "completedDrives": 13,
+      "clock": "00:30",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858221,
@@ -69,13 +69,13 @@
       "awayTeam": "Old Dominion",
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
-      "homePoints": 37.0,
+      "homePoints": 44.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "11:12",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 10
+      "clock": "10:29",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858224,
@@ -87,25 +87,10 @@
       "homePoints": 20.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
-    },
-    {
-      "id": 401858442,
-      "status": "in_progress",
-      "homeTeam": "Temple",
-      "awayTeam": "Penn State",
-      "homeConference": "American Athletic",
-      "awayConference": "Big Ten",
-      "homePoints": 9.0,
-      "awayPoints": 27.0,
-      "period": 4,
-      "clock": "01:52",
-      "completedDrives": 17,
+      "clock": "00:00",
+      "completedDrives": 16,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401862702,
@@ -117,10 +102,10 @@
       "homePoints": 24.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "01:46",
-      "completedDrives": 16,
+      "clock": "00:19",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401864571,
@@ -132,10 +117,10 @@
       "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "12:20",
-      "completedDrives": 20,
+      "clock": "08:31",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856673,
@@ -147,10 +132,10 @@
       "homePoints": 56.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "11:14",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "clock": "09:07",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 10
     }
   ],
   "liveTeams": [
@@ -165,10 +150,8 @@
     "Oklahoma State",
     "Old Dominion",
     "Oregon",
-    "Penn State",
     "Purdue",
     "South Florida",
-    "Temple",
     "Texas A&M",
     "Virginia Tech",
     "Wake Forest",
