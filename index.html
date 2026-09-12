@@ -149,6 +149,19 @@
       background: var(--link-hover);
     }
 
+    .season-links a.active{
+      background:#111;
+      color:#fff;
+      font-weight:700;
+      text-decoration:none;
+    }
+
+    .season-links a.active:hover{
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+    }
+
     .spacer{
       flex: 1;
     }
@@ -200,24 +213,6 @@
       outline-offset: 2px;
     }
 
-    .page-menu-button .menu-icon{
-      width: 15px;
-      height: 15px;
-      display: inline-grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(2, 1fr);
-      gap: 2px;
-    }
-
-    .page-menu-button .menu-icon span{
-      display: block;
-      width: 6px;
-      height: 6px;
-      border-radius: 2px;
-      background: currentColor;
-      opacity: .75;
-    }
-
     .page-menu-button .caret{
       font-size: 9px;
       margin-left: 1px;
@@ -262,10 +257,7 @@
     }
 
     .page-menu-list a{
-      display: grid;
-      grid-template-columns: 34px 1fr;
-      gap: 10px;
-      align-items: center;
+      display: block;
       color: var(--text);
       text-decoration: none;
       padding: 9px;
@@ -285,21 +277,6 @@
 
     .page-menu-list a[aria-current="page"]{
       background: var(--chip);
-    }
-
-    .page-menu-item-icon{
-      width: 34px;
-      height: 34px;
-      border-radius: 9px;
-      background: var(--chip);
-      display: grid;
-      place-items: center;
-      font-size: 16px;
-      line-height: 1;
-    }
-
-    .page-menu-list a[aria-current="page"] .page-menu-item-icon{
-      background: #e9edf3;
     }
 
     .page-menu-item-copy{
@@ -874,9 +851,6 @@
 
         <div class="page-menu" id="pageMenu">
           <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
-            <span class="menu-icon" aria-hidden="true">
-              <span></span><span></span><span></span><span></span>
-            </span>
             Explore
             <span class="caret" aria-hidden="true">▼</span>
           </button>
@@ -885,7 +859,6 @@
             <div class="page-menu-title">Tools & views</div>
 
             <a href="index.html" aria-current="page" role="menuitem">
-              <span class="page-menu-item-icon" aria-hidden="true">▤</span>
               <span class="page-menu-item-copy">
                 <span class="page-menu-item-title">Rankings</span>
                 <span class="page-menu-item-subtitle">Full FBS efficiency rankings and filters</span>
@@ -893,7 +866,6 @@
             </a>
 
             <a href="matchup.html" role="menuitem">
-              <span class="page-menu-item-icon" aria-hidden="true">↔</span>
               <span class="page-menu-item-copy">
                 <span class="page-menu-item-title">Matchup Predictor</span>
                 <span class="page-menu-item-subtitle">Compare two teams and project the score</span>
@@ -901,7 +873,6 @@
             </a>
 
             <a href="conference.html" role="menuitem">
-              <span class="page-menu-item-icon" aria-hidden="true">⌁</span>
               <span class="page-menu-item-copy">
                 <span class="page-menu-item-title">Conference Comparison</span>
                 <span class="page-menu-item-subtitle">Compare teams and ratings across conferences</span>
@@ -910,10 +881,6 @@
           </div>
         </div>
 
-        <div class="control" title="Choose a season to view">
-          <label for="yearSelect">Season</label>
-          <select id="yearSelect"></select>
-        </div>
       </div>
 
       <div class="controls">
@@ -969,9 +936,9 @@
         </div>
       </div>
 
-      <div class="links" id="finalLinks">
-        <span>Final Results:</span>
-        <!-- Year links are generated automatically -->
+      <div class="links season-links" id="seasonLinks">
+        <span>Seasons:</span>
+        <!-- Current and previous season links are generated automatically -->
       </div>
     </div>
 
@@ -1032,7 +999,6 @@
     const els = {
       pageTitle: document.getElementById("pageTitle"),
       statusLine: document.getElementById("statusLine"),
-      yearSelect: document.getElementById("yearSelect"),
       pageMenu: document.getElementById("pageMenu"),
       pageMenuButton: document.getElementById("pageMenuButton"),
       teamSearch: document.getElementById("teamSearch"),
@@ -1050,7 +1016,7 @@
       publishPng: document.getElementById("publishPng"),
       printReportSeason: document.getElementById("printReportSeason"),
       printReportMeta: document.getElementById("printReportMeta"),
-      finalLinks: document.getElementById("finalLinks"),
+      seasonLinks: document.getElementById("seasonLinks"),
       table: document.getElementById("rankings"),
       loadingLine: document.getElementById("loadingLine"),
       champNote: document.getElementById("champNote"),
@@ -1642,50 +1608,48 @@
       return years;
     }
 
-    function populateYearSelect(years) {
-      const sel = els.yearSelect;
-      const frag = document.createDocumentFragment();
-      years.forEach(y => {
-        const opt = document.createElement("option");
-        opt.value = y;
-        opt.textContent = y;
-        frag.appendChild(opt);
-      });
-      sel.innerHTML = "";
-      sel.appendChild(frag);
-    }
+    function populateSeasonLinks(years) {
+      const wrap = els.seasonLinks;
 
-    function populateFinalLinks() {
-      const wrap = els.finalLinks;
-
-      // Remove existing generated links (keep the "Final results:" label)
       wrap.querySelectorAll("a.yearLink").forEach(a => a.remove());
 
-      // Only show links for years that have a champion set
-      const finalYears = AVAILABLE_YEARS.filter(y => !!CHAMPIONS_BY_YEAR[y]);
-
       const frag = document.createDocumentFragment();
-      finalYears.forEach(y => {
+
+      years.forEach(y => {
         const a = document.createElement("a");
-        a.href = "#";
+        a.href = `?year=${encodeURIComponent(y)}`;
         a.className = "yearLink";
         a.dataset.year = y;
         a.textContent = y;
+        a.title = y === String(CURRENT_SEASON)
+          ? `View current ${y} rankings`
+          : `View ${y} final rankings`;
+
         a.addEventListener("click", (e) => {
           e.preventDefault();
-          els.yearSelect.value = y;
-          loadYear(y);
           history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
+          loadYear(y);
         });
+
         frag.appendChild(a);
       });
+
       wrap.appendChild(frag);
+    }
+
+    function updateActiveSeasonLink() {
+      els.seasonLinks.querySelectorAll("a.yearLink").forEach(a => {
+        const isActive = a.dataset.year === String(ACTIVE_YEAR);
+        a.classList.toggle("active", isActive);
+        a.setAttribute("aria-current", isActive ? "page" : "false");
+      });
     }
 
     async function loadYear(year) {
       if (!year) return;
 
       ACTIVE_YEAR = String(year);
+      updateActiveSeasonLink();
       ACTIVE_CHAMPION = CHAMPIONS_BY_YEAR[ACTIVE_YEAR] || null;
       ACTIVE_CHAMPION_LC = ACTIVE_CHAMPION ? ACTIVE_CHAMPION.toLowerCase() : null;
       ACTIVE_IS_FINAL = !!ACTIVE_CHAMPION; // final if champion exists
@@ -1953,12 +1917,6 @@
       }
     });
 
-    els.yearSelect.addEventListener("change", (e) => {
-      const y = e.target.value;
-      history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
-      loadYear(y);
-    });
-
     // Boot
     (async function init() {
       // champions.json is optional
@@ -1966,8 +1924,7 @@
 
       AVAILABLE_YEARS = buildSeasonYearList();
 
-      populateYearSelect(AVAILABLE_YEARS);
-      populateFinalLinks();
+      populateSeasonLinks(AVAILABLE_YEARS);
 
       // Initial year from URL param, else DEFAULT_YEAR if present, else first available
       const params = new URLSearchParams(location.search);
@@ -1976,7 +1933,6 @@
         ? requested
         : (AVAILABLE_YEARS.includes(DEFAULT_YEAR) ? DEFAULT_YEAR : AVAILABLE_YEARS[0]);
 
-      els.yearSelect.value = initial;
       await loadYear(initial);
 
       // Default striping
