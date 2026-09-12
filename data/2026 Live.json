@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T18:40:34.929305+00:00",
+  "updatedAt": "2026-09-12T18:43:28.368736+00:00",
   "liveGames": [
     {
       "id": 401856679,
@@ -12,7 +12,7 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "04:23",
+      "clock": "03:29",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -26,8 +26,8 @@
       "awayConference": "Big 12",
       "homePoints": 24.0,
       "awayPoints": 20.0,
-      "period": 3,
-      "clock": "00:19",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -41,8 +41,8 @@
       "awayConference": "Pac-12",
       "homePoints": 17.0,
       "awayPoints": 7.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:06",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -57,7 +57,7 @@
       "homePoints": 17.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "06:13",
+      "clock": "06:07",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -70,12 +70,12 @@
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
       "homePoints": 37.0,
-      "awayPoints": 6.0,
+      "awayPoints": 12.0,
       "period": 3,
-      "clock": "03:43",
-      "completedDrives": 16,
+      "clock": "01:14",
+      "completedDrives": 17,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858224,
@@ -87,7 +87,7 @@
       "homePoints": 13.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "07:14",
+      "clock": "05:44",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
@@ -114,10 +114,10 @@
       "awayTeam": "South Florida",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 17.0,
+      "homePoints": 23.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "05:00",
+      "clock": "04:59",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -132,7 +132,7 @@
       "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "03:57",
+      "clock": "03:26",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
