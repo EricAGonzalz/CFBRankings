@@ -654,6 +654,28 @@
       body{ margin: 12px; }
       .control input, .control select{ min-width: 120px; }
     }
+  
+    .live-dot{
+      display:inline-block;
+      width:8px;
+      height:8px;
+      margin-left:7px;
+      border-radius:50%;
+      background:#d71920;
+      box-shadow:0 0 0 2px rgba(215,25,32,.12);
+      vertical-align:middle;
+      animation:livePulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes livePulse{
+      0%,100%{ opacity:1; }
+      50%{ opacity:.38; }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .live-dot{ animation:none; }
+    }
+
   </style>
 </head>
 
@@ -824,6 +846,14 @@
     let ACTIVE_CHAMPION_LC = null;    // lowercased, precomputed once per year
     let ACTIVE_IS_FINAL = false;      // true if champion exists for that year
     let AVAILABLE_YEARS = [];         // years to show in the season dropdown
+
+    // Companion live metadata written by autostat.py.
+    let LIVE_META = {
+      updatedAt: null,
+      liveGames: [],
+      liveTeams: new Set(),
+      gameByTeam: new Map()
+    };
 
     let STATE = null; // replaces window.__CFB_STATE__
 
@@ -1158,6 +1188,18 @@
           if (colName === "Conference") td.classList.add("col-conf");
           if (boundaryStarts.has(idx)) td.classList.add("divide-left");
 
+          // ESPN-style live light beside teams currently playing.
+          if (colName === "Team") {
+            const teamKey = String(fixed ?? "").trim().toLowerCase();
+            if (LIVE_META.liveTeams.has(teamKey)) {
+              const dot = document.createElement("span");
+              dot.className = "live-dot";
+              dot.title = buildLiveTooltip(fixed);
+              dot.setAttribute("aria-label", "Live game in progress");
+              td.appendChild(dot);
+            }
+          }
+
           // Trophy for champion team
           if (colName === "Team" && isChampion) {
             const span = document.createElement("span");
@@ -1250,6 +1292,101 @@
       els.statusLine.textContent = extraText || "";
     }
 
+    function liveJsonForYear(year) {
+      return `${RAW_BASE}${year}%20Live.json`;
+    }
+
+    function formatUpdatedAt(isoString) {
+      if (!isoString) return null;
+      const dt = new Date(isoString);
+      if (Number.isNaN(dt.getTime())) return null;
+
+      return new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/New_York",
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short"
+      }).format(dt);
+    }
+
+    function buildLiveTooltip(teamName) {
+      const game = LIVE_META.gameByTeam.get(String(teamName || "").toLowerCase());
+      if (!game) return "Live game in progress";
+
+      const home = game.homeTeam || "Home";
+      const away = game.awayTeam || "Away";
+      const hp = game.homePoints ?? 0;
+      const ap = game.awayPoints ?? 0;
+      const period = game.period ? `Q${game.period}` : "Live";
+      const clock = game.clock ? ` ${game.clock}` : "";
+
+      return `${away} ${ap} - ${home} ${hp} • ${period}${clock}`;
+    }
+
+    async function loadLiveMetadata(year) {
+      LIVE_META = {
+        updatedAt: null,
+        liveGames: [],
+        liveTeams: new Set(),
+        gameByTeam: new Map()
+      };
+
+      try {
+        const url = `${liveJsonForYear(year)}?t=${Date.now()}`;
+        const r = await fetch(url, { cache: "no-store" });
+        if (!r.ok) return LIVE_META;
+
+        const data = await r.json();
+        const games = Array.isArray(data?.liveGames) ? data.liveGames : [];
+        const teams = new Set(
+          (Array.isArray(data?.liveTeams) ? data.liveTeams : [])
+            .map(t => String(t).toLowerCase())
+        );
+
+        const gameByTeam = new Map();
+        for (const game of games) {
+          for (const team of [game.homeTeam, game.awayTeam]) {
+            if (team) gameByTeam.set(String(team).toLowerCase(), game);
+          }
+        }
+
+        LIVE_META = {
+          updatedAt: data?.updatedAt || null,
+          liveGames: games,
+          liveTeams: teams,
+          gameByTeam
+        };
+      } catch (err) {
+        console.warn("Live metadata could not be loaded:", err);
+      }
+
+      return LIVE_META;
+    }
+
+    function currentStatusText() {
+      if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
+        return `Final season. Champion: ${ACTIVE_CHAMPION}.`;
+      }
+
+      const parts = [];
+      const updated = formatUpdatedAt(LIVE_META.updatedAt);
+
+      if (updated) parts.push(`Last updated: ${updated}`);
+      else parts.push("Live season");
+
+      const liveCount = LIVE_META.liveGames.length;
+      if (liveCount > 0) {
+        parts.push(`${liveCount} live FBS game${liveCount === 1 ? "" : "s"} included`);
+      } else {
+        parts.push("No live FBS games currently in progress");
+      }
+
+      return parts.join(" • ");
+    }
+
     async function loadChampionsJson() {
       try {
         const r = await fetch(CHAMPIONS_JSON_URL, { cache: "no-store" });
@@ -1340,6 +1477,9 @@
         const text = await r.text();
         const { header, rows } = parseCSV(text);
 
+        // Load live metadata before rendering rows so live teams get their red dot.
+        await loadLiveMetadata(ACTIVE_YEAR);
+
         if (!header.length) {
           console.error("CSV appears empty or malformed.");
           setStatusLine("CSV appears empty or malformed.");
@@ -1351,12 +1491,8 @@
         const isStriped = els.stripeToggle.value === "on";
         setStriping(isStriped);
 
-        // Status: show whether season is final or live
-        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
-          setStatusLine(`Final season. Champion: ${ACTIVE_CHAMPION}.`);
-        } else {
-          setStatusLine("Live season (no champion highlighted).");
-        }
+        // Status includes the generated-file timestamp and live-game count.
+        setStatusLine(currentStatusText());
 
       } catch (err) {
         console.error("Failed to load CSV:", err);
