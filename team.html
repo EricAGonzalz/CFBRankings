@@ -640,11 +640,15 @@
     function matchupExpectedRating(offenseTeam, defenseTeam) {
       const leagueScoringLevel = (LEAGUE.offense + LEAGUE.defense) / 2;
 
-      return (
+      const expectedRating =
         leagueScoringLevel +
         OFFENSE_WEIGHT * (offenseTeam.offense - LEAGUE.offense) +
-        DEFENSE_WEIGHT * (defenseTeam.defense - LEAGUE.defense)
-      );
+        DEFENSE_WEIGHT * (defenseTeam.defense - LEAGUE.defense);
+
+      // A matchup adjustment can mathematically push an expected offensive
+      // rating below zero. An offense cannot score negative points, so floor
+      // the projected efficiency at zero before converting it into points.
+      return Math.max(0, expectedRating);
     }
 
     function expectedDrives(team1, team2) {
@@ -695,6 +699,10 @@
 
       if (location === "Home") teamScore += HOME_FIELD_POINTS;
       if (location === "Away") oppScore += HOME_FIELD_POINTS;
+
+      // Final safeguard: never allow a projected score below zero.
+      teamScore = Math.max(0, teamScore);
+      oppScore = Math.max(0, oppScore);
 
       const confidence = calculateConfidence(team, opponent);
       const prob = calculateWinProbability(teamScore, oppScore, confidence);
