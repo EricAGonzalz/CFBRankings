@@ -577,7 +577,13 @@
     }
 
     function n(value) {
-      const num = Number(String(value ?? "").trim());
+      // Number("") is 0 in JavaScript, so blank CSV cells must be handled
+      // before numeric conversion. This lets the projection code correctly
+      // fall back from missing AdjO/AdjD fields to ORtg/DRtg.
+      const text = String(value ?? "").trim();
+      if (text === "") return null;
+
+      const num = Number(text);
       return Number.isFinite(num) ? num : null;
     }
 
