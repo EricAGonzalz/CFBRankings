@@ -96,6 +96,124 @@
       background:var(--link-hover);
     }
 
+
+    .page-menu{
+      position:relative;
+      display:inline-block;
+    }
+
+    .page-menu-button{
+      border:1px solid var(--chip-border);
+      background:var(--card);
+      color:var(--text);
+      padding:7px 12px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:650;
+      white-space:nowrap;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      box-shadow:0 1px 2px rgba(0,0,0,.04);
+      transition:border-color .15s ease, background .15s ease, box-shadow .15s ease;
+    }
+
+    .page-menu-button:hover{
+      background:var(--link-hover);
+      border-color:#bfcbe0;
+      box-shadow:0 2px 5px rgba(0,0,0,.08);
+      opacity:1;
+    }
+
+    .page-menu-button:focus-visible{
+      outline:2px solid var(--link);
+      outline-offset:2px;
+    }
+
+    .page-menu-button .caret{
+      font-size:9px;
+      margin-left:1px;
+      transition:transform .15s ease;
+    }
+
+    .page-menu.open .page-menu-button .caret{
+      transform:rotate(180deg);
+    }
+
+    .page-menu-list{
+      display:none;
+      position:absolute;
+      right:0;
+      top:calc(100% + 9px);
+      z-index:40;
+      min-width:290px;
+      padding:8px;
+      background:var(--card);
+      border:1px solid var(--chip-border);
+      border-radius:14px;
+      box-shadow:0 14px 34px rgba(0,0,0,.16);
+    }
+
+    .page-menu.open .page-menu-list{
+      display:block;
+      animation:pageMenuIn .12s ease-out;
+    }
+
+    @keyframes pageMenuIn{
+      from{ opacity:0; transform:translateY(-4px); }
+      to{ opacity:1; transform:translateY(0); }
+    }
+
+    .page-menu-title{
+      padding:6px 9px 8px;
+      color:var(--muted);
+      font-size:11px;
+      font-weight:700;
+      letter-spacing:.45px;
+      text-transform:uppercase;
+    }
+
+    .page-menu-list a{
+      display:block;
+      color:var(--text);
+      text-decoration:none;
+      padding:9px;
+      border-radius:10px;
+      white-space:normal;
+      transition:background .12s ease, color .12s ease;
+    }
+
+    .page-menu-list a + a{
+      margin-top:2px;
+    }
+
+    .page-menu-list a:hover{
+      background:var(--link-hover);
+      color:var(--text);
+      text-decoration:none;
+    }
+
+    .page-menu-list a[aria-current="page"]{
+      background:var(--chip);
+    }
+
+    .page-menu-item-title{
+      display:block;
+      font-size:13px;
+      font-weight:700;
+      line-height:1.25;
+    }
+
+    .page-menu-item-subtitle{
+      display:block;
+      margin-top:2px;
+      color:var(--muted);
+      font-size:11.5px;
+      line-height:1.3;
+      font-weight:400;
+    }
+
     .controls{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -422,9 +540,38 @@
           <p class="statusline" id="statusLine"></p>
         </div>
 
-        <nav class="nav">
-          <a href="index.html">Rankings</a>
-        </nav>
+        <div class="page-menu" id="pageMenu">
+          <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
+            Explore
+            <span class="caret" aria-hidden="true">▼</span>
+          </button>
+
+          <div class="page-menu-list" id="pageMenuList" role="menu" aria-label="Site pages">
+            <div class="page-menu-title">Tools & views</div>
+
+            <a id="pageRankingsLink" href="index.html" role="menuitem">
+              <span class="page-menu-item-copy">
+                <span class="page-menu-item-title">Rankings</span>
+                <span class="page-menu-item-subtitle">Full FBS efficiency rankings and filters</span>
+              </span>
+            </a>
+
+            <a id="pageMatchupLink" href="matchup.html" aria-current="page" role="menuitem">
+              <span class="page-menu-item-copy">
+                <span class="page-menu-item-title">Matchup Predictor</span>
+                <span class="page-menu-item-subtitle">Compare two teams and project the score</span>
+              </span>
+            </a>
+
+            <a id="pageConferenceLink" href="conference.html" role="menuitem">
+              <span class="page-menu-item-copy">
+                <span class="page-menu-item-title">Conference Comparison</span>
+                <span class="page-menu-item-subtitle">Compare teams and ratings across conferences</span>
+              </span>
+            </a>
+
+          </div>
+        </div>
       </div>
     </header>
 
@@ -564,6 +711,11 @@
     const WIN_PROB_MARGIN_SCALE = 6.5;
 
     const els = {
+      pageMenu: document.getElementById("pageMenu"),
+      pageMenuButton: document.getElementById("pageMenuButton"),
+      pageRankingsLink: document.getElementById("pageRankingsLink"),
+      pageMatchupLink: document.getElementById("pageMatchupLink"),
+      pageConferenceLink: document.getElementById("pageConferenceLink"),
       yearSelect: document.getElementById("yearSelect"),
       locationSelect: document.getElementById("locationSelect"),
       team1Select: document.getElementById("team1Select"),
@@ -839,6 +991,10 @@
 
     async function loadYear(year) {
       setError("");
+
+      els.pageRankingsLink.href = `index.html?year=${encodeURIComponent(year)}`;
+      els.pageMatchupLink.href = `matchup.html?year=${encodeURIComponent(year)}`;
+      els.pageConferenceLink.href = `conference.html?year=${encodeURIComponent(year)}`;
       els.resultCard.classList.remove("visible");
       els.detailsCard.classList.remove("visible");
       els.predictButton.disabled = true;
@@ -1171,6 +1327,30 @@
         alert("PNG publishing failed. See the browser console for details.");
       } finally {
         exportArea.remove();
+      }
+    });
+
+
+    function closePageMenu() {
+      els.pageMenu.classList.remove("open");
+      els.pageMenuButton.setAttribute("aria-expanded", "false");
+    }
+
+    els.pageMenuButton.addEventListener("click", event => {
+      event.stopPropagation();
+      const isOpen = els.pageMenu.classList.toggle("open");
+      els.pageMenuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", event => {
+      if (!els.pageMenu.contains(event.target)) {
+        closePageMenu();
+      }
+    });
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closePageMenu();
       }
     });
 
