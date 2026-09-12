@@ -554,6 +554,11 @@
         max-width: none;
       }
 
+      .team-link{
+        color: inherit !important;
+        text-decoration: none !important;
+      }
+
       .topbar{
         display: none !important;
       }
@@ -655,6 +660,24 @@
       .control input, .control select{ min-width: 120px; }
     }
   
+    .team-link{
+      color: var(--link);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .team-link:hover{
+      text-decoration: underline;
+      background: var(--link-hover);
+      border-radius: 4px;
+    }
+
+    .team-link:focus-visible{
+      outline: 2px solid var(--link);
+      outline-offset: 2px;
+      border-radius: 3px;
+    }
+
     .live-dot{
       display:inline-block;
       width:8px;
@@ -1181,12 +1204,26 @@
         for (let idx = 0; idx < cells.length; idx++) {
           const td = document.createElement("td");
           const fixed = fixMojibake(cells[idx]);
-          td.textContent = fixed;
 
           const colName = orderedCols[idx];
           if (colName === "Team") td.classList.add("col-team");
           if (colName === "Conference") td.classList.add("col-conf");
           if (boundaryStarts.has(idx)) td.classList.add("divide-left");
+
+          // Team names link to a single reusable team page. The selected
+          // season is included so historical seasons can open the same page.
+          if (colName === "Team" && String(fixed ?? "").trim()) {
+            const teamLink = document.createElement("a");
+            teamLink.className = "team-link";
+            teamLink.textContent = fixed;
+            teamLink.href =
+              `team.html?team=${encodeURIComponent(String(fixed).trim())}` +
+              `&year=${encodeURIComponent(String(ACTIVE_YEAR || DEFAULT_YEAR))}`;
+            teamLink.title = `View ${fixed} team profile`;
+            td.appendChild(teamLink);
+          } else {
+            td.textContent = fixed;
+          }
 
           // ESPN-style live light beside teams currently playing.
           if (colName === "Team") {
