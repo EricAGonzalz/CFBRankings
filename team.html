@@ -378,18 +378,10 @@
       <h2 class="section-title">Weekly Trends</h2>
 
       <div class="trend-controls">
-        <label for="metricSelect">Metric</label>
-        <select id="metricSelect">
-          <option value="AdjRtg" selected>Adjusted Rating</option>
-          <option value="NetRtg">Net Rating</option>
-          <option value="Ortg">Offensive Rating</option>
-          <option value="DRtg">Defensive Rating</option>
-          <option value="Rk">Raw Rank</option>
-          <option value="AdjRk">Adjusted Rank</option>
-          <option value="SOS">Strength of Schedule</option>
-          <option value="PyW %">Pythagorean Win %</option>
-          <option value="Luck">Luck</option>
-        </select>
+        <span>
+          All metrics are overlaid. Each line uses its own hidden vertical scale
+          so the full week-to-week movement remains visible.
+        </span>
       </div>
 
       <div class="chart-wrap" id="chartWrap">
@@ -481,7 +473,6 @@
       drtgValue: document.getElementById("drtgValue"),
       sosValue: document.getElementById("sosValue"),
       pywValue: document.getElementById("pywValue"),
-      metricSelect: document.getElementById("metricSelect"),
       historyEmpty: document.getElementById("historyEmpty"),
       chartWrap: document.getElementById("chartWrap"),
       trendChart: document.getElementById("trendChart"),
@@ -755,9 +746,68 @@
       els.chartWrap.hidden = false;
       els.historyEmpty.hidden = true;
 
-      const metric = els.metricSelect.value;
       const labels = teamHistory.map(r => `Week ${r["Week"]}`);
-      const values = teamHistory.map(r => n(r[metric]));
+
+      // Every metric gets its own hidden Y-axis. This lets ratings, ranks,
+      // percentages, and SOS occupy the same chart without one metric's
+      // numeric range flattening the others.
+      const metrics = [
+        { key: "AdjRtg", label: "Adjusted Rating", color: "#0057b8" },
+        { key: "NetRtg", label: "Net Rating", color: "#d62728" },
+        { key: "Ortg", label: "Offensive Rating", color: "#2ca02c" },
+        { key: "DRtg", label: "Defensive Rating", color: "#9467bd" },
+        { key: "Rk", label: "Raw Rank", color: "#ff7f0e", reverse: true },
+        { key: "AdjRk", label: "Adjusted Rank", color: "#17becf", reverse: true },
+        { key: "SOS", label: "Strength of Schedule", color: "#8c564b" },
+        { key: "PyW %", label: "Pythagorean Win %", color: "#e377c2" },
+        { key: "Luck", label: "Luck", color: "#7f7f7f" }
+      ];
+
+      const availableMetrics = metrics.filter(metric =>
+        teamHistory.some(row => Number.isFinite(n(row[metric.key])))
+      );
+
+      if (!availableMetrics.length) {
+        els.chartWrap.hidden = true;
+        els.historyEmpty.hidden = false;
+        els.trendCard.hidden = false;
+        return;
+      }
+
+      const datasets = availableMetrics.map((metric, index) => ({
+        label: metric.label,
+        data: teamHistory.map(row => n(row[metric.key])),
+        yAxisID: `trendAxis${index}`,
+        borderColor: metric.color,
+        backgroundColor: metric.color,
+        borderWidth: 2,
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        tension: 0.15,
+        spanGaps: true
+      }));
+
+      const scales = {
+        x: {
+          title: {
+            display: true,
+            text: "Week"
+          }
+        }
+      };
+
+      availableMetrics.forEach((metric, index) => {
+        scales[`trendAxis${index}`] = {
+          type: "linear",
+          display: false,
+          position: "left",
+          reverse: Boolean(metric.reverse),
+          grace: "8%",
+          grid: {
+            drawOnChartArea: index === 0
+          }
+        };
+      });
 
       if (TREND_CHART) TREND_CHART.destroy();
 
@@ -765,14 +815,7 @@
         type: "line",
         data: {
           labels,
-          datasets: [{
-            label: metric,
-            data: values,
-            borderWidth: 2,
-            pointRadius: 4,
-            pointHoverRadius: 5,
-            tension: 0.15
-          }]
+          datasets
         },
         options: {
           responsive: true,
@@ -783,31 +826,37 @@
           },
           plugins: {
             legend: {
-              display: true
+              display: true,
+              position: "top",
+              labels: {
+                usePointStyle: true,
+                boxWidth: 10
+              }
             },
             tooltip: {
               callbacks: {
                 label(context) {
-                  const v = context.parsed.y;
-                  if (!Number.isFinite(v)) return `${metric}: —`;
-                  if (metric === "PyW %") return `${metric}: ${(v * 100).toFixed(1)}%`;
-                  if (metric === "Rk" || metric === "AdjRk") return `${metric}: ${Math.round(v)}`;
-                  return `${metric}: ${v.toFixed(3)}`;
+                  const metric = availableMetrics[context.datasetIndex];
+                  const value = context.raw;
+
+                  if (!Number.isFinite(value)) {
+                    return `${metric.label}: —`;
+                  }
+
+                  if (metric.key === "PyW %") {
+                    return `${metric.label}: ${(value * 100).toFixed(1)}%`;
+                  }
+
+                  if (metric.key === "Rk" || metric.key === "AdjRk") {
+                    return `${metric.label}: ${Math.round(value)}`;
+                  }
+
+                  return `${metric.label}: ${value.toFixed(3)}`;
                 }
               }
             }
           },
-          scales: {
-            y: {
-              reverse: metric === "Rk" || metric === "AdjRk",
-              ticks: {
-                callback(value) {
-                  if (metric === "PyW %") return `${(value * 100).toFixed(0)}%`;
-                  return value;
-                }
-              }
-            }
-          }
+          scales
         }
       });
 
@@ -1006,8 +1055,6 @@
         els.loadingLine.hidden = true;
       }
     }
-
-    els.metricSelect.addEventListener("change", renderTrend);
 
     init();
   </script>
