@@ -1,25 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-12T03:25:53.835720+00:00",
+  "updatedAt": "2026-09-12T03:30:34.573511+00:00",
   "liveGames": [
     {
       "id": 401856678,
       "status": "in_progress",
-      "homeTeam": "Kansas Jayhawks",
-      "awayTeam": "Missouri Tigers",
+      "homeTeam": "Kansas",
+      "awayTeam": "Missouri",
       "homeConference": "Big 12",
       "awayConference": "SEC",
       "homePoints": 21.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "08:17",
+      "clock": "05:31",
       "completedDrives": 22,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 11
     }
   ],
   "liveTeams": [
-    "Kansas Jayhawks",
-    "Missouri Tigers"
+    "Kansas",
+    "Missouri"
   ]
 }
