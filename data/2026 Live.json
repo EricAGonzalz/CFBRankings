@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T03:31:35.747782+00:00",
+  "updatedAt": "2026-09-13T03:36:26.344035+00:00",
   "liveGames": [
     {
       "id": 401858219,
@@ -24,12 +24,12 @@
       "awayTeam": "Southern Miss",
       "homeConference": "SEC",
       "awayConference": "Sun Belt",
-      "homePoints": 36.0,
+      "homePoints": 43.0,
       "awayPoints": 8.0,
       "period": 3,
-      "clock": "02:34",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "00:09",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -39,10 +39,10 @@
       "awayTeam": "North Dakota State",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "00:48",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -57,7 +57,7 @@
       "homePoints": 15.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "09:15",
+      "clock": "06:33",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -69,13 +69,13 @@
       "awayTeam": "Sacramento State",
       "homeConference": "Pac-12",
       "awayConference": "Mid-American",
-      "homePoints": 7.0,
+      "homePoints": 15.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "12:42",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "clock": "11:58",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858445,
@@ -87,7 +87,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "03:10",
+      "clock": "01:25",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
