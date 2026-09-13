@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T05:26:25.645454+00:00",
+  "updatedAt": "2026-09-13T05:31:28.187380+00:00",
   "liveGames": [
-    {
-      "id": 401864502,
-      "status": "in_progress",
-      "homeTeam": "Air Force",
-      "awayTeam": "North Dakota State",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 32.0,
-      "awayPoints": 38.0,
-      "period": 4,
-      "clock": "00:48",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401856670,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 43.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "10:37",
+      "clock": "08:19",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -42,10 +27,10 @@
       "homePoints": 46.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 17,
+      "clock": "13:02",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858445,
@@ -57,10 +42,10 @@
       "homePoints": 35.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "01:40",
-      "completedDrives": 14,
+      "clock": "15:00",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401864578,
@@ -72,20 +57,18 @@
       "homePoints": 16.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "01:17",
+      "clock": "00:26",
       "completedDrives": 11,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 6
     }
   ],
   "liveTeams": [
-    "Air Force",
     "Arkansas",
     "Fresno State",
     "Hawai'i",
     "Louisiana",
     "New Mexico State",
-    "North Dakota State",
     "Sacramento State",
     "USC",
     "Utah"
