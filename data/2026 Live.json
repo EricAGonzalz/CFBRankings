@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T05:06:25.956984+00:00",
+  "updatedAt": "2026-09-13T05:11:27.291553+00:00",
   "liveGames": [
-    {
-      "id": 401858219,
-      "status": "in_progress",
-      "homeTeam": "Clemson",
-      "awayTeam": "Georgia Southern",
-      "homeConference": "ACC",
-      "awayConference": "Sun Belt",
-      "homePoints": 22.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "01:14",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401864502,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 25.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "04:24",
+      "clock": "02:39",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -41,8 +26,8 @@
       "awayConference": "SEC",
       "homePoints": 36.0,
       "awayPoints": 3.0,
-      "period": 3,
-      "clock": "01:14",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -54,12 +39,12 @@
       "awayTeam": "Sacramento State",
       "homeConference": "Pac-12",
       "awayConference": "Mid-American",
-      "homePoints": 39.0,
+      "homePoints": 45.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "04:50",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "02:43",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -72,7 +57,7 @@
       "homePoints": 35.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "08:29",
+      "clock": "05:02",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -87,18 +72,16 @@
       "homePoints": 16.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "08:10",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "05:20",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     }
   ],
   "liveTeams": [
     "Air Force",
     "Arkansas",
-    "Clemson",
     "Fresno State",
-    "Georgia Southern",
     "Hawai'i",
     "Louisiana",
     "New Mexico State",
