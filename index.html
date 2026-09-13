@@ -171,6 +171,30 @@
     .schedule-summary span{color:var(--muted);font-size:12px}.schedule-summary strong{font-size:18px}
     .result-win{color:var(--good);font-weight:800}.result-loss{color:var(--bad);font-weight:800}
 
+    .team-publish-toolbar{margin-top:14px;margin-bottom:0}
+    .team-publish-menu-list{min-width:280px;padding:8px}
+    .team-publish-menu-list .publish-section-title{padding:5px 8px 7px;font-size:10px;font-weight:800;letter-spacing:.45px;text-transform:uppercase;color:var(--muted)}
+    .team-print-options{display:grid;gap:2px;padding:0 0 7px;border-bottom:1px solid var(--grid);margin-bottom:7px}
+    .team-print-option{display:flex;align-items:center;gap:9px;padding:8px;border-radius:6px;font-size:12px;font-weight:650;cursor:pointer}
+    .team-print-option:hover{background:var(--link-hover)}
+    .team-print-option input{margin:0;width:15px;height:15px;accent-color:#111}
+    .team-print-actions{display:flex;gap:6px;padding:0 0 7px;border-bottom:1px solid var(--grid);margin-bottom:7px}
+    .team-print-actions button{flex:1;border:1px solid var(--grid);background:#fff;border-radius:6px;padding:6px 8px;font-size:11px;font-weight:700;cursor:pointer}
+    .team-print-actions button:hover{background:var(--link-hover)}
+    .team-publish-message{display:none;margin:7px 4px 2px;color:var(--bad);font-size:11px}.team-publish-message.visible{display:block}
+    .team-print-report{position:absolute;left:-10000px;top:0;width:1100px;background:#fff;color:#111;padding:38px 42px;font-family:Arial,Helvetica,sans-serif;box-sizing:border-box;z-index:-1}
+    .team-print-header{border-bottom:3px solid #111;padding-bottom:12px;margin-bottom:18px}
+    .team-print-header h1{margin:0;font-size:28px;line-height:1.15}.team-print-header p{margin:5px 0 0;color:#555;font-size:13px}
+    .team-print-report .card{margin:0 0 20px!important;border:1px solid #ccc!important;padding:18px!important;break-inside:avoid;background:#fff}
+    .team-print-report .section-title{font-size:17px;margin-bottom:12px}
+    .team-print-report .summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .team-print-report .trend-wrap{height:auto!important;min-height:0}
+    .team-print-report .trend-wrap img{display:block;width:100%;height:auto}
+    .team-print-report .table-wrap{overflow:visible!important;border:0!important}
+    .team-print-report table{font-size:10px}.team-print-report th,.team-print-report td{padding:5px 6px}
+    .team-print-report .note{font-size:10px}.team-print-report a{color:inherit;text-decoration:none}
+    .team-print-footer{margin-top:12px;padding-top:8px;border-top:1px solid #aaa;color:#666;font-size:9px}
+
     @media(max-width:1000px){.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chart-wrap{height:620px}}
     @media(max-width:720px){
       body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
@@ -183,6 +207,10 @@
 
     @media print{
       body{margin:0;background:#fff}.topbar,.view-toolbar,.note,.page-menu,.season-links{display:none!important}.view{display:none!important}.view.active{display:block!important}.card,.table-wrap{border:0!important;padding:0!important}.app-content{margin:0}.chart-wrap{height:650px}
+      body.team-printing .page{display:none!important}
+      body.team-printing .team-print-report{display:block!important;position:static!important;left:auto!important;top:auto!important;width:auto!important;padding:.35in .4in!important;z-index:auto!important}
+      body.team-printing .team-print-report .card{border:1px solid #bbb!important;padding:14px!important;margin-bottom:14px!important}
+      body.team-printing .team-print-report .table-wrap{padding:0!important}
     }
   </style>
 </head>
@@ -273,12 +301,13 @@
             <div class="controls">
               <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
               <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
+              <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="smart" selected>Smart</option><option value="top3">Top 3 / conference</option><option value="all">All teams</option><option value="none">None</option></select></div>
             </div>
             <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
           </div>
           <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
           <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
-          <p class="note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Click a point to open that team profile.</p>
+          <p class="note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Label density can be adjusted with the Labels menu; Smart shows every team when the chart is lightly populated and only the top three teams per conference when many conferences are displayed. Hover for full team details or click a point to open that team profile.</p>
         </div>
       </section>
 
@@ -287,13 +316,33 @@
         <div id="teamError" class="error"></div>
         <div id="teamPrompt" class="card"><h2 class="section-title">Team Profile</h2><p class="note">Choose a team from the rankings table or search below.</p><div class="control column" style="max-width:420px"><label for="teamPicker">Team</label><select id="teamPicker"></select></div></div>
         <div id="teamContent" class="hidden">
-          <section class="card" style="margin-top:14px"><h2 class="section-title">Current Team Summary</h2><div class="summary-grid"><div class="metric"><div class="metric-label">Record</div><div class="metric-value" id="teamRecord">—</div></div><div class="metric"><div class="metric-label">Rank</div><div class="metric-value" id="teamRank">—</div></div><div class="metric"><div class="metric-label">Adj Rank</div><div class="metric-value" id="teamAdjRank">—</div></div><div class="metric"><div class="metric-label">AdjRtg</div><div class="metric-value" id="teamAdjRtg">—</div></div><div class="metric"><div class="metric-label">ORtg</div><div class="metric-value" id="teamORtg">—</div></div><div class="metric"><div class="metric-label">DRtg</div><div class="metric-value" id="teamDRtg">—</div></div><div class="metric"><div class="metric-label">SOS</div><div class="metric-value" id="teamSOS">—</div></div><div class="metric"><div class="metric-label">PyW %</div><div class="metric-value" id="teamPyW">—</div></div></div></section>
-          <section class="card" style="margin-top:14px"><h2 class="section-title">Weekly Trends</h2><div class="trend-wrap" id="teamTrendWrap"><canvas id="teamTrendChart"></canvas></div><div id="teamTrendEmpty" class="note hidden">Weekly history is not available yet.</div></section>
-          <section class="card" style="margin-top:14px"><h2 class="section-title">Season Schedule & Projections</h2><div class="schedule-summary"><div><span>Current FBS record</span><br><strong id="teamCurrentRecord">—</strong></div><div><span>Projected remaining</span><br><strong id="teamRemaining">—</strong></div><div><span>Projected final FBS record</span><br><strong id="teamProjected">—</strong></div></div><div class="table-wrap"><table><thead><tr><th>Week</th><th class="left">Opponent</th><th>Site</th><th>Status</th><th>Score / Projection</th><th>Win Prob.</th><th>Result</th><th>Opp. AdjRtg</th></tr></thead><tbody id="teamScheduleBody"></tbody></table></div><p class="note">Future scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.</p></section>
+          <div class="view-toolbar team-publish-toolbar">
+            <div></div>
+            <div class="publish-menu" id="teamPublishMenu">
+              <button class="print-button" id="teamPublishButton" type="button" aria-haspopup="true" aria-expanded="false">Publish <span class="caret">▼</span></button>
+              <div class="publish-menu-list team-publish-menu-list" role="menu" aria-label="Team publish options">
+                <div class="publish-section-title">Include in report</div>
+                <div class="team-print-options">
+                  <label class="team-print-option"><input id="teamPrintSummary" type="checkbox" checked> Current Team Summary</label>
+                  <label class="team-print-option"><input id="teamPrintTrend" type="checkbox" checked> Weekly Trends</label>
+                  <label class="team-print-option"><input id="teamPrintSchedule" type="checkbox" checked> Schedule &amp; Projections</label>
+                </div>
+                <div class="team-print-actions"><button id="teamPrintAll" type="button">Select all</button><button id="teamPrintNone" type="button">Clear</button></div>
+                <button id="teamPublishPdf" type="button" role="menuitem">Print / Save as PDF</button>
+                <button id="teamPublishPng" type="button" role="menuitem">Export selected report to PNG</button>
+                <div class="team-publish-message" id="teamPublishMessage">Select at least one section to publish.</div>
+              </div>
+            </div>
+          </div>
+          <section id="teamSummarySection" class="card" style="margin-top:14px"><h2 class="section-title">Current Team Summary</h2><div class="summary-grid"><div class="metric"><div class="metric-label">Record</div><div class="metric-value" id="teamRecord">—</div></div><div class="metric"><div class="metric-label">Rank</div><div class="metric-value" id="teamRank">—</div></div><div class="metric"><div class="metric-label">Adj Rank</div><div class="metric-value" id="teamAdjRank">—</div></div><div class="metric"><div class="metric-label">AdjRtg</div><div class="metric-value" id="teamAdjRtg">—</div></div><div class="metric"><div class="metric-label">ORtg</div><div class="metric-value" id="teamORtg">—</div></div><div class="metric"><div class="metric-label">DRtg</div><div class="metric-value" id="teamDRtg">—</div></div><div class="metric"><div class="metric-label">SOS</div><div class="metric-value" id="teamSOS">—</div></div><div class="metric"><div class="metric-label">PyW %</div><div class="metric-value" id="teamPyW">—</div></div></div></section>
+          <section id="teamTrendSection" class="card" style="margin-top:14px"><h2 class="section-title">Weekly Trends</h2><div class="trend-wrap" id="teamTrendWrap"><canvas id="teamTrendChart"></canvas></div><div id="teamTrendEmpty" class="note hidden">Weekly history is not available yet.</div></section>
+          <section id="teamScheduleSection" class="card" style="margin-top:14px"><h2 class="section-title">Season Schedule & Projections</h2><div class="schedule-summary"><div><span>Current FBS record</span><br><strong id="teamCurrentRecord">—</strong></div><div><span>Projected remaining</span><br><strong id="teamRemaining">—</strong></div><div><span>Projected final FBS record</span><br><strong id="teamProjected">—</strong></div></div><div class="table-wrap"><table><thead><tr><th>Week</th><th class="left">Opponent</th><th>Site</th><th>Status</th><th>Score / Projection</th><th>Win Prob.</th><th>Result</th><th>Opp. AdjRtg</th></tr></thead><tbody id="teamScheduleBody"></tbody></table></div><p class="note">Future scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.</p></section>
         </div>
       </section>
     </main>
   </div>
+
+  <div id="teamPrintReport" class="team-print-report" aria-hidden="true"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
@@ -330,8 +379,9 @@
       pageTitle:$("pageTitle"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
       rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
       matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchError:$("matchError"),matchResult:$("matchResult"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
-      confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
-      teamError:$("teamError"),teamPrompt:$("teamPrompt"),teamPicker:$("teamPicker"),teamContent:$("teamContent"),teamRecord:$("teamRecord"),teamRank:$("teamRank"),teamAdjRank:$("teamAdjRank"),teamAdjRtg:$("teamAdjRtg"),teamORtg:$("teamORtg"),teamDRtg:$("teamDRtg"),teamSOS:$("teamSOS"),teamPyW:$("teamPyW"),teamTrendWrap:$("teamTrendWrap"),teamTrendChart:$("teamTrendChart"),teamTrendEmpty:$("teamTrendEmpty"),teamCurrentRecord:$("teamCurrentRecord"),teamRemaining:$("teamRemaining"),teamProjected:$("teamProjected"),teamScheduleBody:$("teamScheduleBody")
+      confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confLabels:$("confLabels"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
+      teamError:$("teamError"),teamPrompt:$("teamPrompt"),teamPicker:$("teamPicker"),teamContent:$("teamContent"),teamRecord:$("teamRecord"),teamRank:$("teamRank"),teamAdjRank:$("teamAdjRank"),teamAdjRtg:$("teamAdjRtg"),teamORtg:$("teamORtg"),teamDRtg:$("teamDRtg"),teamSOS:$("teamSOS"),teamPyW:$("teamPyW"),teamTrendWrap:$("teamTrendWrap"),teamTrendChart:$("teamTrendChart"),teamTrendEmpty:$("teamTrendEmpty"),teamCurrentRecord:$("teamCurrentRecord"),teamRemaining:$("teamRemaining"),teamProjected:$("teamProjected"),teamScheduleBody:$("teamScheduleBody"),
+      teamPublishMenu:$("teamPublishMenu"),teamPublishButton:$("teamPublishButton"),teamPrintSummary:$("teamPrintSummary"),teamPrintTrend:$("teamPrintTrend"),teamPrintSchedule:$("teamPrintSchedule"),teamPrintAll:$("teamPrintAll"),teamPrintNone:$("teamPrintNone"),teamPublishPdf:$("teamPublishPdf"),teamPublishPng:$("teamPublishPng"),teamPublishMessage:$("teamPublishMessage"),teamPrintReport:$("teamPrintReport"),teamSummarySection:$("teamSummarySection"),teamTrendSection:$("teamTrendSection"),teamScheduleSection:$("teamScheduleSection")
     };
 
     function parseCSV(text){
@@ -478,7 +528,58 @@
     function buildConferenceOptions(){buildCheckboxOptions(els.confOptions,els.confMenuText,renderConferenceChart)}
     function normalizedConferenceName(v){return String(v||"").toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
     function applyConferencePreset(type){const p4=new Set(["acc","atlantic coast","atlantic coast conference","big ten","big 10","big 12","sec","southeastern","southeastern conference"]),g6=new Set(["aac","american","american athletic","american athletic conference","c usa","conference usa","mac","mid american","mid american conference","mountain west","mountain west conference","pac 12","pac 12 conference","sun belt","sun belt conference"]);els.confOptions.querySelectorAll('input').forEach(i=>i.checked=(type==='p4'?p4:g6).has(normalizedConferenceName(i.value)));updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()}
-    const readableLabels={id:'readableLabels',afterDatasetsDraw(chart){const ctx=chart.ctx,placed=[];ctx.save();ctx.font='700 11px system-ui';ctx.textAlign='center';ctx.textBaseline='bottom';chart.data.datasets.forEach((ds,di)=>{const meta=chart.getDatasetMeta(di);if(meta.hidden)return;meta.data.forEach((el,pi)=>{const p=ds.data[pi];if(!p?.team)return;const text=p.team,w=ctx.measureText(text).width+6,h=14;let x=el.x,y=el.y-8;for(let step=0;step<12;step++){const box={l:x-w/2,r:x+w/2,t:y-h,b:y};if(!placed.some(q=>!(box.r<q.l||box.l>q.r||box.b<q.t||box.t>q.b))){placed.push(box);break}y-=13;if(step===5){x+=w*.35;y=el.y-8}}ctx.lineWidth=4;ctx.strokeStyle='rgba(255,255,255,.95)';ctx.strokeText(text,x,y);ctx.fillStyle=ds.borderColor;ctx.fillText(text,x,y)})});ctx.restore()}};Chart.register(readableLabels);
+    const readableLabels={
+      id:'readableLabels',
+      afterDatasetsDraw(chart){
+        const mode=els.confLabels?.value||'smart';
+        if(mode==='none')return;
+        const visibleDatasets=chart.data.datasets.filter((_,i)=>!chart.getDatasetMeta(i).hidden);
+        const total=visibleDatasets.reduce((sum,ds)=>sum+ds.data.length,0);
+        const effective=(mode==='smart'?(total<=30?'all':'top3'):mode);
+        const ctx=chart.ctx,placed=[];
+        ctx.save();
+        ctx.font='700 11px system-ui';
+        ctx.textBaseline='middle';
+        chart.data.datasets.forEach((ds,di)=>{
+          const meta=chart.getDatasetMeta(di);
+          if(meta.hidden)return;
+          meta.data.forEach((el,pi)=>{
+            const p=ds.data[pi];
+            if(!p?.team)return;
+            if(effective==='top3' && p.conferenceRank>3)return;
+            const text=p.team;
+            const textW=ctx.measureText(text).width;
+            const padX=5,boxW=textW+padX*2,boxH=16;
+            const candidates=[
+              {x:el.x,y:el.y-14,align:'center'},
+              {x:el.x+10+boxW/2,y:el.y,align:'center'},
+              {x:el.x-10-boxW/2,y:el.y,align:'center'},
+              {x:el.x,y:el.y+15,align:'center'},
+              {x:el.x+8+boxW/2,y:el.y-12,align:'center'},
+              {x:el.x-8-boxW/2,y:el.y-12,align:'center'}
+            ];
+            let choice=null,box=null;
+            for(const c of candidates){
+              const b={l:c.x-boxW/2,r:c.x+boxW/2,t:c.y-boxH/2,b:c.y+boxH/2};
+              const within=b.l>=chart.chartArea.left && b.r<=chart.chartArea.right && b.t>=chart.chartArea.top && b.b<=chart.chartArea.bottom;
+              const overlaps=placed.some(q=>!(b.r<q.l||b.l>q.r||b.b<q.t||b.t>q.b));
+              if(within&&!overlaps){choice=c;box=b;break;}
+            }
+            if(!choice)return;
+            placed.push(box);
+            const moved=Math.hypot(choice.x-el.x,choice.y-el.y)>18;
+            if(moved){
+              ctx.beginPath();ctx.moveTo(el.x,el.y);ctx.lineTo(choice.x,choice.y);ctx.strokeStyle='rgba(90,90,90,.35)';ctx.lineWidth=1;ctx.stroke();
+            }
+            ctx.textAlign='center';
+            ctx.lineWidth=4;ctx.strokeStyle='rgba(255,255,255,.98)';ctx.strokeText(text,choice.x,choice.y);
+            ctx.fillStyle=ds.borderColor;ctx.fillText(text,choice.x,choice.y);
+          });
+        });
+        ctx.restore();
+      }
+    };
+    Chart.register(readableLabels);
     function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>b[metric]-a[metric]||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=CONF_COLORS[ci++%CONF_COLORS.length];datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:color,pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{callbacks:{title:i=>i[0]?.raw.team||'',label:c=>[`Conference: ${c.raw.conference}`,`Conference rank: ${c.raw.conferenceRank}`,`${METRIC_LABELS[metric]}: ${c.raw[metric].toFixed(3)}`]}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
 
     // ---------- Team ----------
@@ -497,6 +598,32 @@
     async function chartToPng(chart,name){const c=document.createElement('canvas');c.width=chart.canvas.width;c.height=chart.canvas.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(chart.canvas,0,0);c.toBlob(b=>b&&downloadBlob(b,name),'image/png')}
     async function chartToPdf(chart,name){const src=chart.canvas,c=document.createElement('canvas');c.width=src.width;c.height=src.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(src,0,0);const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:c.width>=c.height?'landscape':'portrait',unit:'pt',format:[c.width,c.height]});pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,c.width,c.height);pdf.save(name)}
 
+    function teamPrintSelection(){return {summary:els.teamPrintSummary.checked,trend:els.teamPrintTrend.checked,schedule:els.teamPrintSchedule.checked}}
+    function stripIds(root){root.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));root.removeAttribute?.('id');return root}
+    function selectedTeamRow(){return APP.rows.find(r=>String(r.Team||'').toLowerCase()===String(APP.team||'').toLowerCase())||null}
+    function buildTeamPrintReport(){
+      const selected=teamPrintSelection();
+      if(!selected.summary&&!selected.trend&&!selected.schedule){els.teamPublishMessage.classList.add('visible');return null}
+      els.teamPublishMessage.classList.remove('visible');
+      const row=selectedTeamRow();if(!row)return null;
+      const report=els.teamPrintReport;report.innerHTML='';
+      const header=document.createElement('header');header.className='team-print-header';
+      header.innerHTML=`<h1>${escapeHtml(row.Team)} — ${escapeHtml(APP.year)}</h1><p>${escapeHtml(row.Conference||'FBS')} • Current FBS-vs-FBS efficiency profile • Record ${escapeHtml(`${row.W||0}-${row.L||0}`)}</p>`;
+      report.appendChild(header);
+      if(selected.summary){report.appendChild(stripIds(els.teamSummarySection.cloneNode(true)))}
+      if(selected.trend){
+        const clone=stripIds(els.teamTrendSection.cloneNode(true));
+        const canvas=clone.querySelector('canvas');
+        if(canvas&&APP.teamTrendChart){const img=document.createElement('img');img.src=APP.teamTrendChart.toBase64Image('image/png',1);img.alt=`${row.Team} weekly trends`;canvas.replaceWith(img)}
+        report.appendChild(clone);
+      }
+      if(selected.schedule){report.appendChild(stripIds(els.teamScheduleSection.cloneNode(true)))}
+      const footer=document.createElement('div');footer.className='team-print-footer';footer.textContent=`CFB Efficiency • ${row.Team} • ${APP.year} season • Generated ${new Date().toLocaleString('en-US',{timeZone:'America/New_York',timeZoneName:'short'})}`;report.appendChild(footer);
+      return report;
+    }
+    function printTeamReport(){const report=buildTeamPrintReport();if(!report)return;closeMenus();document.body.classList.add('team-printing');const done=()=>{document.body.classList.remove('team-printing');window.removeEventListener('afterprint',done)};window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60)}
+    async function exportTeamReportPng(){const report=buildTeamPrintReport();if(!report)return;closeMenus();const team=(APP.team||'team').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');await elementToPng(report,`${team}-${APP.year}-team-report.png`)}
+
     async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':renderRankings();break;case'matchup':updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
 
     // ---------- Events ----------
@@ -506,8 +633,14 @@
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
     els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankStriping.onchange=applyStriping;
     els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;
-    els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;
+    els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;els.confLabels.onchange=renderConferenceChart;
     els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
+    els.teamPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.teamPublishMenu,els.teamPublishButton)};
+    els.teamPrintAll.onclick=e=>{e.stopPropagation();[els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.checked=true);els.teamPublishMessage.classList.remove('visible')};
+    els.teamPrintNone.onclick=e=>{e.stopPropagation();[els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.checked=false)};
+    [els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.onchange=()=>els.teamPublishMessage.classList.remove('visible'));
+    els.teamPublishPdf.onclick=e=>{e.stopPropagation();printTeamReport()};
+    els.teamPublishPng.onclick=async e=>{e.stopPropagation();await exportTeamReportPng()};
     els.rankPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankPublishMenu,els.rankPublishButton)};els.rankPublishPdf.onclick=()=>{closeMenus();window.print()};els.rankPublishPng.onclick=()=>{closeMenus();elementToPng($("rankingsCapture"),`cfb-rankings-${APP.year}.png`)};
     els.confPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confPublishMenu,els.confPublishButton)};els.confPublishPng.onclick=()=>{closeMenus();if(APP.conferenceChart)chartToPng(APP.conferenceChart,`conference-comparison-${APP.year}.png`)};els.confPublishPdf.onclick=()=>{closeMenus();if(APP.conferenceChart)chartToPdf(APP.conferenceChart,`conference-comparison-${APP.year}.pdf`)};
 
