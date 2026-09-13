@@ -3,1941 +3,429 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <title>CFB Rankings</title>
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>CFB Efficiency</title>
 
   <style>
     :root{
       --bg:#f4f4f4;
-      --card:#ffffff;
+      --card:#fff;
       --text:#111;
       --muted:#666;
-      --grid:#dddddd;
-
-      --head-bg:#0b0b0b;
-      --head-fg:#ffffff;
-
+      --grid:#ddd;
       --chip:#f0f0f0;
       --chip-border:#d6d6d6;
-
-      --row-alt:#fafafa;
-      --row-hover:#efefef;
-
-      /* Champion highlight */
-      --champ-bg:#fff7cc;
-      --champ-border:#d6b800;
-      --champ-text:#1a1a1a;
-
-      /* "KenPom-like" separators */
-      --divide:#bdbdbd;
-
-      /* Links */
       --link:#0a58ca;
       --link-hover:#eef5ff;
-    }
-
-    body{
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      margin: 20px;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    .page{
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .topbar{
-      background: var(--card);
-      border: 1px solid #cfcfcf;
-      border-top: 4px solid #111;
-      border-radius: 2px;
-      box-shadow: none;
-      padding: 14px 14px 10px 14px;
-    }
-
-    .brandrow{
-      display: flex;
-      gap: 12px;
-      align-items: baseline;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-
-    h1{
-      margin: 0;
-      font-size: 22px;
-      letter-spacing: 0.2px;
-    }
-
-    .subtitle{
-      margin: 6px 0 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .statusline{
-      margin: 8px 0 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.35;
-    }
-
-    .controls{
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #e8e8e8;
-    }
-
-    .control{
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      background: var(--chip);
-      border: 1px solid var(--chip-border);
-      border-radius: 999px;
-      padding: 6px 10px;
-      font-size: 13px;
-    }
-
-    .control label{
-      color: #333;
-      white-space: nowrap;
-    }
-
-    .control input,
-    .control select{
-      border: 0;
-      background: transparent;
-      outline: none;
-      font-size: 13px;
-      min-width: 140px;
-    }
-
-    .control input::placeholder{
-      color: #888;
-    }
-
-    .links{
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .links a{
-      color: var(--link);
-      text-decoration: none;
-      padding: 2px 6px;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    .links a:hover{
-      text-decoration: underline;
-      background: var(--link-hover);
-    }
-
-    .season-links a.active{
-      background:#111;
-      color:#fff;
-      font-weight:700;
-      text-decoration:none;
-    }
-
-    .season-links a.active:hover{
-      background:#111;
-      color:#fff;
-      text-decoration:none;
-    }
-
-    .spacer{
-      flex: 1;
-    }
-
-    .header-link{
-      color: var(--link);
-      text-decoration: none;
-      padding: 6px 9px;
-      border-radius: 7px;
-      font-size: 13px;
-      white-space: nowrap;
-    }
-
-    .header-link:hover{
-      text-decoration: underline;
-      background: var(--link-hover);
-    }
-
-    .page-menu{
-      position: relative;
-      display: inline-block;
-    }
-
-    .page-menu-button{
-      border: 1px solid var(--chip-border);
-      background: var(--card);
-      color: var(--text);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 650;
-      white-space: nowrap;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
-      transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
-    }
-
-    .page-menu-button:hover{
-      background: var(--link-hover);
-      border-color: #bfcbe0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
-    }
-
-    .page-menu-button:focus-visible{
-      outline: 2px solid var(--link);
-      outline-offset: 2px;
-    }
-
-    .page-menu-button .caret{
-      font-size: 9px;
-      margin-left: 1px;
-      transition: transform 0.15s ease;
-    }
-
-    .page-menu.open .page-menu-button .caret{
-      transform: rotate(180deg);
-    }
-
-    .page-menu-list{
-      display: none;
-      position: absolute;
-      right: 0;
-      top: calc(100% + 9px);
-      z-index: 40;
-      min-width: 290px;
-      padding: 8px;
-      background: var(--card);
-      border: 1px solid var(--chip-border);
-      border-radius: 14px;
-      box-shadow: 0 14px 34px rgba(0,0,0,0.16);
-    }
-
-    .page-menu.open .page-menu-list{
-      display: block;
-      animation: pageMenuIn .12s ease-out;
-    }
-
-    @keyframes pageMenuIn{
-      from{ opacity:0; transform:translateY(-4px); }
-      to{ opacity:1; transform:translateY(0); }
-    }
-
-    .page-menu-title{
-      padding: 6px 9px 8px;
-      color: var(--muted);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .45px;
-      text-transform: uppercase;
-    }
-
-    .page-menu-list a{
-      display: block;
-      color: var(--text);
-      text-decoration: none;
-      padding: 9px;
-      border-radius: 10px;
-      white-space: normal;
-      transition: background .12s ease, color .12s ease;
-    }
-
-    .page-menu-list a + a{
-      margin-top: 2px;
-    }
-
-    .page-menu-list a:hover{
-      background: var(--link-hover);
-      color: var(--text);
-    }
-
-    .page-menu-list a[aria-current="page"]{
-      background: var(--chip);
-    }
-
-    .page-menu-item-copy{
-      min-width: 0;
-    }
-
-    .page-menu-item-title{
-      display: block;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.25;
-    }
-
-    .page-menu-item-subtitle{
-      display: block;
-      margin-top: 2px;
-      color: var(--muted);
-      font-size: 11.5px;
-      line-height: 1.3;
-      font-weight: 400;
-    }
-
-    #table-wrapper{
-      margin-top: 14px;
-      overflow-x: auto;
-      background: var(--card);
-      border: 1px solid #cfcfcf;
-      border-radius: 2px;
-      box-shadow: none;
-      padding: 10px;
-    }
-
-    table{
-      border-collapse: collapse;
-      width: 100%;
-      font-size: 13px;
-    }
-
-    thead th{
-      position: sticky;
-      top: 0;
-      z-index: 3;
-      background: var(--head-bg);
-      color: var(--head-fg);
-      border: 1px solid #222;
-    }
-
-    thead tr.group th{
-      font-weight: 700;
-      font-size: 12px;
-      letter-spacing: 0.3px;
-      text-transform: none;
-      padding-top: 8px;
-      padding-bottom: 8px;
-    }
-
-    th, td{
-      padding: 6px 8px;
-      border: 1px solid var(--grid);
-      text-align: right;
-      vertical-align: middle;
-      white-space: nowrap; /* keeps headers aligned and icons on one line */
-    }
-
-    /* Left align "text columns" */
-    td.col-team, th.col-team,
-    td.col-conf, th.col-conf{
-      text-align: left;
-    }
-
-    tbody tr:nth-child(even){
-      background: var(--row-alt);
-    }
-
-    tbody tr:hover{
-      background: var(--row-hover);
-    }
-
-    /* KenPom-like vertical separators between column groups */
-    .divide-left{
-      border-left: 2px solid var(--divide) !important;
-    }
-
-    /* Sorting UI */
-    th.sortable{
-      cursor: pointer;
-      position: relative;
-      padding-right: 18px;
-      user-select: none;
-    }
-    th.sortable::after{
-      content: "↕";
-      position: absolute;
-      right: 6px;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 0.75em;
-      opacity: 0.65;
-    }
-    th.sortable[data-sort="asc"]::after{ content:"▲"; opacity:0.95; }
-    th.sortable[data-sort="desc"]::after{ content:"▼"; opacity:0.95; }
-
-    /* Champion highlight */
-    tr.champion{
-      background: var(--champ-bg) !important;
-      color: var(--champ-text);
-      font-weight: 700;
-    }
-    tr.champion td{
-      border-color: #e7da7a;
-    }
-    tr.champion td:first-child{
-      border-left: 3px solid var(--champ-border);
-    }
-    .trophy{
-      margin-left: 6px;
-      font-size: 13px;
-      opacity: 0.95;
-    }
-
-    .note{
-      margin: 10px 2px 0 2px;
-      color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.35;
-      display: none;
-    }
-
-    .loading{
-      margin: 10px 2px 0 2px;
-      color: var(--muted);
-      font-size: 12.5px;
-      line-height: 1.35;
-      display: none;
-    }
-
-    .conference-menu{
-      position: relative;
-      display: inline-block;
-    }
-
-    .conference-menu-button{
-      border: 0;
-      background: transparent;
-      color: var(--text);
-      font-size: 13px;
-      min-width: 140px;
-      text-align: left;
-      cursor: pointer;
-      padding: 0;
-      display: inline-flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-    }
-
-    .conference-menu-button .caret{
-      font-size: 10px;
-      transition: transform 0.15s ease;
-    }
-
-    .conference-menu.open .conference-menu-button .caret{
-      transform: rotate(180deg);
-    }
-
-    .conference-menu-list{
-      display: none;
-      position: absolute;
-      left: 0;
-      top: calc(100% + 10px);
-      z-index: 30;
-      min-width: 230px;
-      max-height: 340px;
-      overflow-y: auto;
-      padding: 8px;
-      background: var(--card);
-      border: 1px solid var(--chip-border);
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.16);
-    }
-
-    .conference-menu.open .conference-menu-list{
-      display: block;
-    }
-
-    .conference-menu-actions{
-      display: flex;
-      gap: 6px;
-      padding-bottom: 7px;
-      margin-bottom: 5px;
-      border-bottom: 1px solid #e8e8e8;
-    }
-
-    .conference-menu-actions button{
-      border: 0;
-      background: var(--chip);
-      color: var(--text);
-      border-radius: 7px;
-      padding: 5px 8px;
-      font-size: 12px;
-      cursor: pointer;
-    }
-
-    .conference-menu-actions button:hover{
-      background: var(--link-hover);
-    }
-
-    .conference-option{
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 5px;
-      border-radius: 6px;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .conference-option:hover{
-      background: var(--link-hover);
-    }
-
-    .conference-option input{
-      min-width: 0;
-      margin: 0;
-    }
-
-    .print-button{
-      border: 1px solid var(--chip-border);
-      background: var(--card);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 7px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-
-    .print-button:hover{
-      background: var(--link-hover);
-    }
-
-    .publish-menu{
-      position: relative;
-      display: inline-block;
-    }
-
-    .publish-menu-button{
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .publish-menu-button .caret{
-      font-size: 10px;
-      transition: transform 0.15s ease;
-    }
-
-    .publish-menu.open .publish-menu-button .caret{
-      transform: rotate(180deg);
-    }
-
-    .publish-menu-list{
-      display: none;
-      position: absolute;
-      right: 0;
-      top: calc(100% + 6px);
-      z-index: 20;
-      min-width: 190px;
-      padding: 5px;
-      margin: 0;
-      list-style: none;
-      background: var(--card);
-      border: 1px solid var(--chip-border);
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.16);
-    }
-
-    .publish-menu.open .publish-menu-list{
-      display: block;
-    }
-
-    .publish-menu-list button{
-      width: 100%;
-      border: 0;
-      background: transparent;
-      color: var(--text);
-      text-align: left;
-      padding: 9px 10px;
-      border-radius: 7px;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    .publish-menu-list button:hover{
-      background: var(--link-hover);
-    }
-
-    .png-export-stage{
-      position: fixed;
-      left: -20000px;
-      top: 0;
-      width: 1320px;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .png-report-page{
-      box-sizing: border-box;
-      width: 1320px;
-      height: 1020px;
-      padding: 46px 48px 38px 48px;
-      background: #fff;
-      color: #000;
-      font-family: Arial, Helvetica, sans-serif;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .png-report-page .png-report-header{
-      margin-bottom: 14px;
-      padding-bottom: 10px;
-      border-bottom: 3px solid #111;
-    }
-
-    .png-report-page .png-report-header h1{
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 0.2px;
-    }
-
-    .png-report-page .png-report-season{
-      margin: 4px 0 0 0;
-      font-size: 17px;
-      font-weight: 700;
-    }
-
-    .png-report-page .png-report-meta{
-      margin: 4px 0 0 0;
-      font-size: 12px;
-      color: #444;
-    }
-
-    .png-report-page table{
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 11px;
-    }
-
-    .png-report-page thead th{
-      position: static;
-      background: #111;
-      color: #fff;
-      border: 1px solid #222;
-    }
-
-    .png-report-page th,
-    .png-report-page td{
-      padding: 4px 5px;
-      border: 1px solid #b9b9b9;
-      text-align: right;
-      white-space: nowrap;
-    }
-
-    .png-report-page td.col-team,
-    .png-report-page th.col-team,
-    .png-report-page td.col-conf,
-    .png-report-page th.col-conf{
-      text-align: left;
-    }
-
-    .png-report-page tbody tr:nth-child(even){
-      background: #f5f5f5;
-    }
-
-    .png-report-page tr.champion{
-      background: #fff2b3 !important;
-      font-weight: 700;
-    }
-
-    .png-report-page .png-report-footer{
-      margin-top: auto;
-      padding-top: 8px;
-      border-top: 1px solid #888;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      font-size: 10px;
-      color: #444;
-    }
-
-    .print-report-header,
-    .print-report-footer{
-      display: none;
+      --head:#0b0b0b;
+      --row-alt:#fafafa;
+      --row-hover:#efefef;
+      --champ:#fff7cc;
+      --champ-border:#d6b800;
+      --good:#176b37;
+      --bad:#9b1c1c;
+      --live:#d71920;
+    }
+
+    *{box-sizing:border-box}
+    body{margin:20px;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    button,input,select{font:inherit}
+    .page{max-width:1450px;margin:0 auto}
+    .topbar,.card{background:var(--card);border:1px solid #cfcfcf;border-radius:2px}
+    .topbar{border-top:4px solid #111;padding:14px}
+    .brandrow{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    h1{margin:0;font-size:24px;letter-spacing:.1px}
+    .subtitle,.statusline{margin:6px 0 0;color:var(--muted);font-size:13px;line-height:1.4}
+    .spacer{flex:1}
+
+    .page-menu{position:relative;display:inline-block}
+    .page-menu-button,.print-button{
+      border:1px solid var(--chip-border);background:var(--card);color:var(--text);border-radius:999px;
+      padding:7px 13px;font-size:13px;font-weight:650;cursor:pointer;display:inline-flex;align-items:center;gap:8px
+    }
+    .page-menu-button:hover,.print-button:hover{background:var(--link-hover)}
+    .caret{font-size:9px;transition:transform .15s ease}
+    .page-menu.open .caret,.publish-menu.open .caret{transform:rotate(180deg)}
+    .page-menu-list,.publish-menu-list{
+      display:none;position:absolute;right:0;top:calc(100% + 8px);z-index:50;min-width:270px;padding:6px;
+      background:var(--card);border:1px solid var(--chip-border);border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.16)
+    }
+    .page-menu.open .page-menu-list,.publish-menu.open .publish-menu-list{display:block}
+    .page-menu-title{padding:7px 10px;color:var(--muted);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}
+    .page-menu-list button,.publish-menu-list button{
+      width:100%;border:0;background:transparent;color:var(--text);text-align:left;padding:10px;border-radius:8px;cursor:pointer
+    }
+    .page-menu-list button:hover,.publish-menu-list button:hover{background:var(--link-hover)}
+    .page-menu-list button.active{background:#f1f1f1}
+    .page-menu-item-title{display:block;font-size:13px;font-weight:750}
+    .page-menu-item-subtitle{display:block;margin-top:2px;color:var(--muted);font-size:11px;line-height:1.3}
+
+    .season-links{display:flex;gap:5px;flex-wrap:wrap;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid #e8e8e8;color:var(--muted);font-size:12px}
+    .season-links button{border:0;background:transparent;color:var(--link);padding:3px 6px;border-radius:6px;cursor:pointer}
+    .season-links button:hover{background:var(--link-hover);text-decoration:underline}
+    .season-links button.active{background:#111;color:#fff;font-weight:800;text-decoration:none}
+
+    .app-content{margin-top:14px}
+    .view{display:none}
+    .view.active{display:block}
+    .card{padding:16px}
+    .view-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+    .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .control{display:flex;align-items:center;gap:6px;background:var(--chip);border:1px solid var(--chip-border);border-radius:999px;padding:6px 10px;font-size:13px}
+    .control.column{flex-direction:column;align-items:flex-start;border-radius:10px;background:transparent;padding:0;border:0;gap:4px}
+    .control label{color:#333;white-space:nowrap}
+    .control.column label{font-size:11px;text-transform:uppercase;font-weight:800;color:var(--muted);letter-spacing:.35px}
+    .control input,.control select{border:0;background:transparent;outline:none;font-size:13px;min-width:130px}
+    .control.column select{border:1px solid var(--chip-border);background:#fff;border-radius:999px;padding:8px 11px;min-width:170px}
+
+    .conference-menu{position:relative;display:inline-block}
+    .conference-menu-button{border:0;background:transparent;color:var(--text);padding:0;min-width:140px;text-align:left;cursor:pointer;display:inline-flex;justify-content:space-between;align-items:center;gap:8px}
+    .conference-menu-list{display:none;position:absolute;left:0;top:calc(100% + 10px);z-index:40;min-width:240px;max-height:360px;overflow-y:auto;padding:8px;background:var(--card);border:1px solid var(--chip-border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.16)}
+    .conference-menu.open .conference-menu-list{display:block}
+    .conference-menu-actions{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:7px;margin-bottom:5px;border-bottom:1px solid #e8e8e8}
+    .conference-menu-actions button{border:0;background:var(--chip);padding:5px 8px;border-radius:7px;font-size:12px;cursor:pointer}
+    .conference-option{display:flex;align-items:center;gap:8px;padding:6px 5px;border-radius:6px;cursor:pointer;white-space:nowrap}
+    .conference-option:hover{background:var(--link-hover)}
+
+    .table-wrap{overflow-x:auto;background:var(--card);border:1px solid #cfcfcf;border-radius:2px;padding:10px}
+    table{border-collapse:collapse;width:100%;font-size:13px}
+    th,td{padding:6px 8px;border:1px solid var(--grid);text-align:right;vertical-align:middle;white-space:nowrap}
+    th{background:var(--head);color:#fff;border-color:#222;font-size:12px}
+    th.left,td.left{text-align:left}
+    tbody tr:nth-child(even){background:var(--row-alt)}
+    tbody tr:hover{background:var(--row-hover)}
+    tr.champion{background:var(--champ)!important;font-weight:700}
+    tr.champion td:first-child{border-left:3px solid var(--champ-border)}
+    th.sortable{cursor:pointer;user-select:none}
+    .team-link,.opponent-link{color:var(--link);text-decoration:none;font-weight:650;cursor:pointer}
+    .team-link:hover,.opponent-link:hover{text-decoration:underline}
+    .live-dot{display:inline-block;width:8px;height:8px;margin-left:7px;border-radius:50%;background:var(--live);animation:pulse 1.5s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+
+    .publish-menu{position:relative;display:inline-block}
+    .publish-menu-list{min-width:195px}
+
+    .section-title{margin:0 0 12px;font-size:15px}
+    .summary-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border-top:1px solid var(--grid);border-bottom:1px solid var(--grid)}
+    .metric{padding:10px 12px;border-right:1px solid var(--grid);min-height:76px}
+    .metric:last-child{border-right:0}
+    .metric-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.35px}
+    .metric-value{margin-top:5px;font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
+    .metric-sub{margin-top:2px;color:var(--muted);font-size:11px}
+
+    .matchup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .matchup-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
+    .primary{border:1px solid #111;background:#111;color:#fff;border-radius:999px;padding:9px 18px;font-size:13px;font-weight:750;cursor:pointer}
+    .primary:disabled{opacity:.45;cursor:not-allowed}
+    .result-card{margin-top:14px;border-top:3px solid #111}
+    .scoreboard{border-top:1px solid #aaa;border-bottom:1px solid #aaa}
+    .score-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:11px 8px;border-bottom:1px solid var(--grid)}
+    .score-row:last-child{border-bottom:0}.score-row.winner{background:#f5f5f5;font-weight:700}
+    .team-name{font-size:18px;font-weight:700}.team-meta{margin-top:3px;font-size:12px;color:var(--muted)}
+    .score{font-size:32px;font-weight:800;min-width:55px;text-align:right}
+    .headline{text-align:center;margin-top:14px;font-size:18px;font-weight:800}.subheadline{text-align:center;margin-top:4px;color:var(--muted);font-size:13px}
+
+    .chart-card{padding:16px}
+    .chart-wrap{position:relative;height:720px}
+    .trend-wrap{position:relative;height:360px}
+    .conference-summary{display:flex;gap:20px;flex-wrap:wrap;margin:10px 0}
+    .conference-summary span{display:block;font-size:11px;text-transform:uppercase;color:var(--muted)}
+    .conference-summary strong{display:block;margin-top:2px;font-size:18px}
+    .note{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.45}
+    .error{display:none;margin-top:12px;padding:11px;border:1px solid #d9a3a3;background:#fff3f3;color:var(--bad);font-size:13px}.error.visible{display:block}
+    .loading{color:var(--muted);font-size:13px;padding:10px 2px}
+    .hidden{display:none!important}
+    .schedule-summary{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:12px;padding:10px 0;border-top:1px solid var(--grid);border-bottom:1px solid var(--grid)}
+    .schedule-summary span{color:var(--muted);font-size:12px}.schedule-summary strong{font-size:18px}
+    .result-win{color:var(--good);font-weight:800}.result-loss{color:var(--bad);font-weight:800}
+
+    @media(max-width:1000px){.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chart-wrap{height:620px}}
+    @media(max-width:720px){
+      body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
+      .season-links{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.season-links span{flex:0 0 auto}.season-links button{flex:0 0 auto}
+      .controls{align-items:stretch}.control{width:100%}.control input,.control select,.conference-menu-button{width:100%;min-width:0}
+      .matchup-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .chart-wrap{height:540px}.trend-wrap{height:300px}.view-toolbar{align-items:stretch}.publish-menu{width:100%}.print-button{width:100%;justify-content:center}
     }
 
     @media print{
-      @page{
-        size: landscape;
-        margin: 0.45in 0.4in 0.55in 0.4in;
-      }
-
-      body{
-        margin: 0;
-        background: #fff;
-        color: #000;
-        font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .page{
-        max-width: none;
-      }
-
-      .team-link{
-        color: inherit !important;
-        text-decoration: none !important;
-      }
-
-      .topbar{
-        display: none !important;
-      }
-
-      .controls,
-      .links,
-      .print-button,
-      .publish-menu,
-      .loading,
-      .note{
-        display: none !important;
-      }
-
-      .print-report-header{
-        display: block !important;
-        margin: 0 0 12px 0;
-        padding-bottom: 8px;
-        border-bottom: 2px solid #111;
-      }
-
-      .print-report-header h1{
-        margin: 0;
-        font-size: 18pt;
-        letter-spacing: 0.2px;
-      }
-
-      .print-report-header .report-season{
-        margin: 3px 0 0 0;
-        font-size: 11pt;
-        font-weight: 700;
-      }
-
-      .print-report-header .report-meta{
-        margin: 3px 0 0 0;
-        font-size: 8.5pt;
-        color: #444;
-      }
-
-      #table-wrapper{
-        margin-top: 0;
-        overflow: visible;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 0;
-      }
-
-      table{
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 7.5pt;
-      }
-
-      thead{
-        display: table-header-group;
-      }
-
-      thead th{
-        position: static;
-        background: #111 !important;
-        color: #fff !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      th, td{
-        padding: 4px 5px;
-        border: 1px solid #b9b9b9;
-      }
-
-      tbody tr:nth-child(even){
-        background: #f5f5f5 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      tr.champion{
-        background: #fff2b3 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
-
-      tbody tr{
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-
-      .print-report-footer{
-        display: block !important;
-        margin-top: 8px;
-        padding-top: 6px;
-        border-top: 1px solid #888;
-        font-size: 7.5pt;
-        color: #444;
-      }
+      body{margin:0;background:#fff}.topbar,.view-toolbar,.note,.page-menu,.season-links{display:none!important}.view{display:none!important}.view.active{display:block!important}.card,.table-wrap{border:0!important;padding:0!important}.app-content{margin:0}.chart-wrap{height:650px}
     }
-
-    @media (max-width: 720px){
-      body{ margin: 12px; }
-      .control input, .control select{ min-width: 120px; }
-    }
-  
-    .team-link{
-      color: var(--link);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .team-link:hover{
-      text-decoration: underline;
-      background: var(--link-hover);
-      border-radius: 4px;
-    }
-
-    .team-link:focus-visible{
-      outline: 2px solid var(--link);
-      outline-offset: 2px;
-      border-radius: 3px;
-    }
-
-    .live-dot{
-      display:inline-block;
-      width:8px;
-      height:8px;
-      margin-left:7px;
-      border-radius:50%;
-      background:#d71920;
-      box-shadow:0 0 0 2px rgba(215,25,32,.12);
-      vertical-align:middle;
-      animation:livePulse 1.5s ease-in-out infinite;
-    }
-
-    @keyframes livePulse{
-      0%,100%{ opacity:1; }
-      50%{ opacity:.38; }
-    }
-
-    @media (prefers-reduced-motion: reduce){
-      .live-dot{ animation:none; }
-    }
-
   </style>
 </head>
-
 <body>
   <div class="page">
-    <div class="topbar">
+    <header class="topbar">
       <div class="brandrow">
         <div>
           <h1 id="pageTitle">CFB Rankings</h1>
           <p class="subtitle" id="pageSubtitle">Only FBS vs FBS games are used in calculations.</p>
           <p class="statusline" id="statusLine"></p>
         </div>
-
         <div class="spacer"></div>
-
         <div class="page-menu" id="pageMenu">
-          <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
-            Explore
-            <span class="caret" aria-hidden="true">▼</span>
-          </button>
-
-          <div class="page-menu-list" id="pageMenuList" role="menu" aria-label="Site pages">
+          <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret">▼</span></button>
+          <div class="page-menu-list" role="menu">
             <div class="page-menu-title">Tools & views</div>
-
-            <a href="index.html" aria-current="page" role="menuitem">
-              <span class="page-menu-item-copy">
-                <span class="page-menu-item-title">Rankings</span>
-                <span class="page-menu-item-subtitle">Full FBS efficiency rankings and filters</span>
-              </span>
-            </a>
-
-            <a href="matchup.html" role="menuitem">
-              <span class="page-menu-item-copy">
-                <span class="page-menu-item-title">Matchup Predictor</span>
-                <span class="page-menu-item-subtitle">Compare two teams and project the score</span>
-              </span>
-            </a>
-
-            <a href="conference.html" role="menuitem">
-              <span class="page-menu-item-copy">
-                <span class="page-menu-item-title">Conference Comparison</span>
-                <span class="page-menu-item-subtitle">Compare teams and ratings across conferences</span>
-              </span>
-            </a>
+            <button data-route="rankings"><span class="page-menu-item-title">Rankings</span><span class="page-menu-item-subtitle">Full FBS efficiency rankings and filters</span></button>
+            <button data-route="matchup"><span class="page-menu-item-title">Matchup Predictor</span><span class="page-menu-item-subtitle">Compare two teams and project the score</span></button>
+            <button data-route="conferences"><span class="page-menu-item-title">Conference Comparison</span><span class="page-menu-item-subtitle">Compare teams and ratings across conferences</span></button>
           </div>
         </div>
-
       </div>
+      <div id="seasonLinks" class="season-links"><span>Seasons:</span></div>
+    </header>
 
-      <div class="controls">
-        <div class="control" title="Filter by team name">
-          <label for="teamSearch">Team</label>
-          <input id="teamSearch" type="text" placeholder="Search teams..." />
+    <main class="app-content" id="appContent">
+      <!-- Rankings -->
+      <section id="view-rankings" class="view">
+        <div class="view-toolbar">
+          <div class="controls">
+            <div class="control"><label for="rankTeamSearch">Team</label><input id="rankTeamSearch" placeholder="Search teams..." /></div>
+            <div class="control"><label>Conf</label><div class="conference-menu" id="rankConfMenu"><button class="conference-menu-button" id="rankConfButton" type="button"><span id="rankConfText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="rankConfAll" type="button">Select all</button><button id="rankConfClear" type="button">Clear</button></div><div id="rankConfOptions"></div></div></div></div>
+            <div class="control"><label for="rankTopN">Filter</label><select id="rankTopN"><option value="0">All</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option></select></div>
+            <div class="control"><label for="rankStriping">Striping</label><select id="rankStriping"><option value="on">On</option><option value="off">Off</option></select></div>
+          </div>
+          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish to PNG</button></div></div>
         </div>
+        <div class="table-wrap" id="rankingsCapture"><table id="rankingsTable"><thead></thead><tbody></tbody></table><div id="rankLoading" class="loading">Loading…</div><div id="rankNote" class="note"></div></div>
+      </section>
 
-        <div class="control" title="Filter by one or more conferences">
-          <label>Conf</label>
-          <div class="conference-menu" id="conferenceMenu">
-            <button id="conferenceMenuButton" class="conference-menu-button" type="button" aria-haspopup="true" aria-expanded="false">
-              <span id="conferenceMenuText">All conferences</span>
-              <span class="caret" aria-hidden="true">▼</span>
-            </button>
-            <div class="conference-menu-list" id="conferenceMenuList">
-              <div class="conference-menu-actions">
-                <button id="conferenceSelectAll" type="button">Select all</button>
-                <button id="conferenceClear" type="button">Clear</button>
-              </div>
-              <div id="conferenceOptions"></div>
+      <!-- Matchup -->
+      <section id="view-matchup" class="view">
+        <div class="card">
+          <h2 class="section-title">Matchup Predictor</h2>
+          <div class="matchup-grid">
+            <div class="control column"><label for="matchLocation">Location</label><select id="matchLocation"><option value="neutral">Neutral Site</option><option value="team1">Team 1 Home</option><option value="team2">Team 2 Home</option></select></div>
+            <div></div>
+            <div class="control column"><label for="matchTeam1">Team 1</label><select id="matchTeam1"></select></div>
+            <div class="control column"><label for="matchTeam2">Team 2</label><select id="matchTeam2"></select></div>
+          </div>
+          <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Predict Matchup</button></div>
+        </div>
+        <div id="matchError" class="error"></div>
+        <div id="matchResult" class="card result-card hidden">
+          <h2 class="section-title">Projected Score</h2>
+          <div class="scoreboard"><div class="score-row" id="matchRow1"><div><div class="team-name" id="matchName1"></div><div class="team-meta" id="matchMeta1"></div></div><div class="score" id="matchScore1"></div></div><div class="score-row" id="matchRow2"><div><div class="team-name" id="matchName2"></div><div class="team-meta" id="matchMeta2"></div></div><div class="score" id="matchScore2"></div></div></div>
+          <div class="headline" id="matchHeadline"></div><div class="subheadline" id="matchSubheadline"></div>
+        </div>
+        <div id="matchDetails" class="card hidden" style="margin-top:14px"><div class="summary-grid" style="grid-template-columns:repeat(5,minmax(0,1fr))"><div class="metric"><div class="metric-label">Expected Drives</div><div class="metric-value" id="matchDrives"></div></div><div class="metric"><div class="metric-label">Team 1 Pts/Drive</div><div class="metric-value" id="matchEff1"></div></div><div class="metric"><div class="metric-label">Team 2 Pts/Drive</div><div class="metric-value" id="matchEff2"></div></div><div class="metric"><div class="metric-label">Win Probability</div><div class="metric-value" id="matchWinProb"></div></div><div class="metric"><div class="metric-label">Model Confidence</div><div class="metric-value" id="matchConfidence"></div></div></div></div>
+      </section>
+
+      <!-- Conferences -->
+      <section id="view-conferences" class="view">
+        <div class="card chart-card">
+          <div class="view-toolbar">
+            <div class="controls">
+              <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
+              <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
             </div>
+            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
           </div>
+          <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
+          <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
+          <p class="note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Click a point to open that team profile.</p>
         </div>
+      </section>
 
-        <div class="control" title="Show only the top N teams by Rk">
-          <label for="topN">Filter</label>
-          <select id="topN">
-            <option value="0" selected>All</option>
-            <option value="25">Top 25</option>
-            <option value="50">Top 50</option>
-            <option value="100">Top 100</option>
-          </select>
+      <!-- Team -->
+      <section id="view-team" class="view">
+        <div id="teamError" class="error"></div>
+        <div id="teamPrompt" class="card"><h2 class="section-title">Team Profile</h2><p class="note">Choose a team from the rankings table or search below.</p><div class="control column" style="max-width:420px"><label for="teamPicker">Team</label><select id="teamPicker"></select></div></div>
+        <div id="teamContent" class="hidden">
+          <section class="card" style="margin-top:14px"><h2 class="section-title">Current Team Summary</h2><div class="summary-grid"><div class="metric"><div class="metric-label">Record</div><div class="metric-value" id="teamRecord">—</div></div><div class="metric"><div class="metric-label">Rank</div><div class="metric-value" id="teamRank">—</div></div><div class="metric"><div class="metric-label">Adj Rank</div><div class="metric-value" id="teamAdjRank">—</div></div><div class="metric"><div class="metric-label">AdjRtg</div><div class="metric-value" id="teamAdjRtg">—</div></div><div class="metric"><div class="metric-label">ORtg</div><div class="metric-value" id="teamORtg">—</div></div><div class="metric"><div class="metric-label">DRtg</div><div class="metric-value" id="teamDRtg">—</div></div><div class="metric"><div class="metric-label">SOS</div><div class="metric-value" id="teamSOS">—</div></div><div class="metric"><div class="metric-label">PyW %</div><div class="metric-value" id="teamPyW">—</div></div></div></section>
+          <section class="card" style="margin-top:14px"><h2 class="section-title">Weekly Trends</h2><div class="trend-wrap" id="teamTrendWrap"><canvas id="teamTrendChart"></canvas></div><div id="teamTrendEmpty" class="note hidden">Weekly history is not available yet.</div></section>
+          <section class="card" style="margin-top:14px"><h2 class="section-title">Season Schedule & Projections</h2><div class="schedule-summary"><div><span>Current FBS record</span><br><strong id="teamCurrentRecord">—</strong></div><div><span>Projected remaining</span><br><strong id="teamRemaining">—</strong></div><div><span>Projected final FBS record</span><br><strong id="teamProjected">—</strong></div></div><div class="table-wrap"><table><thead><tr><th>Week</th><th class="left">Opponent</th><th>Site</th><th>Status</th><th>Score / Projection</th><th>Win Prob.</th><th>Result</th><th>Opp. AdjRtg</th></tr></thead><tbody id="teamScheduleBody"></tbody></table></div><p class="note">Future scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.</p></section>
         </div>
-
-<div class="control" title="Quick toggle for row striping">
-  <label for="stripeToggle">Striping</label>
-  <select id="stripeToggle">
-    <option value="on" selected>On</option>
-    <option value="off">Off</option>
-  </select>
-</div>
-
-        <div class="publish-menu" id="publishMenu">
-          <button id="publishMenuButton" class="print-button publish-menu-button" type="button" aria-haspopup="true" aria-expanded="false" title="Publish the currently displayed rankings">
-            Publish
-            <span class="caret" aria-hidden="true">▼</span>
-          </button>
-          <div class="publish-menu-list" role="menu" aria-label="Publish options">
-            <button id="publishPdf" type="button" role="menuitem">Publish to PDF</button>
-            <button id="publishPng" type="button" role="menuitem">Publish PNGs as ZIP</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="links season-links" id="seasonLinks">
-        <span>Seasons:</span>
-        <!-- Current and previous season links are generated automatically -->
-      </div>
-    </div>
-
-    <section class="print-report-header" aria-hidden="true">
-      <h1>College Football Efficiency Rankings</h1>
-      <p class="report-season" id="printReportSeason"></p>
-      <p class="report-meta" id="printReportMeta"></p>
-    </section>
-
-    <div id="table-wrapper">
-      <table id="rankings">
-        <thead></thead>
-        <tbody></tbody>
-      </table>
-
-      <div class="loading" id="loadingLine">Loading…</div>
-      <div class="note" id="champNote"></div>
-    </div>
-
-    <footer class="print-report-footer" aria-hidden="true">
-      Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.
-    </footer>
+      </section>
+    </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   <script>
+    const RAW_BASE = "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
     const DATA_DIR = "data";
     const FIRST_SEASON = 2009;
-
-    // Set this to the "current live season" year (you can change once per season, or keep it automatic).
-    const CURRENT_SEASON = new Date().getFullYear();
-
-    // Default year to open if no ?year= is provided
     const DEFAULT_YEAR = "2026";
+    const CURRENT_SEASON = Math.max(new Date().getFullYear(), Number(DEFAULT_YEAR));
+    const OFFENSE_WEIGHT = 1;
+    const DEFENSE_WEIGHT = 1;
+    const TEMPO_WEIGHT = 1;
+    const HOME_FIELD_POINTS = 2.5;
+    const CONFIDENCE_K = 5;
+    const WIN_PROB_MARGIN_SCALE = 6.5;
 
-    // Optional: champions file. If missing, champion highlighting just won't happen.
-    const CHAMPIONS_JSON_URL = `${DATA_DIR}/champions.json`;
+    const APP = {
+      view:"rankings",
+      year:DEFAULT_YEAR,
+      team:null,
+      masterCache:new Map(),
+      liveCache:new Map(),
+      champions:{},
+      rows:[],
+      header:[],
+      headerMap:new Map(),
+      conferenceChart:null,
+      teamTrendChart:null
+    };
 
-    const RAW_BASE =
-      "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
-
-    function csvForYear(year) {
-      return `${RAW_BASE}${year}%20Master.csv`;
-    }
-
-    // Column grouping (edit this mapping if your CSV headers change)
-    const GROUPS = [
-      { title: "Team", cols: ["Rk", "Team", "Conference", "W", "L"] },
-      { title: "Ratings", cols: ["NetRtg", "AdjRtg", "AdjRk"] },
-      { title: "Wins", cols: ["Win %", "PyW %", "Luck", "Luck Z"] },
-      { title: "Efficiency", cols: ["ORtg", "Ortg" , "DRtg"] },
-      { title: "Totals", cols: ["PF", "PA", "ODrives", "DDrives"] },
-      { title: "Schedule", cols: ["SOS", "SOSFac"] }
-    ];
-
-    // ---- Cached DOM references (avoids repeated getElementById lookups) ----
+    const $ = id => document.getElementById(id);
     const els = {
-      pageTitle: document.getElementById("pageTitle"),
-      statusLine: document.getElementById("statusLine"),
-      pageMenu: document.getElementById("pageMenu"),
-      pageMenuButton: document.getElementById("pageMenuButton"),
-      teamSearch: document.getElementById("teamSearch"),
-      conferenceMenu: document.getElementById("conferenceMenu"),
-      conferenceMenuButton: document.getElementById("conferenceMenuButton"),
-      conferenceMenuText: document.getElementById("conferenceMenuText"),
-      conferenceOptions: document.getElementById("conferenceOptions"),
-      conferenceSelectAll: document.getElementById("conferenceSelectAll"),
-      conferenceClear: document.getElementById("conferenceClear"),
-      topN: document.getElementById("topN"),
-      stripeToggle: document.getElementById("stripeToggle"),
-      publishMenu: document.getElementById("publishMenu"),
-      publishMenuButton: document.getElementById("publishMenuButton"),
-      publishPdf: document.getElementById("publishPdf"),
-      publishPng: document.getElementById("publishPng"),
-      printReportSeason: document.getElementById("printReportSeason"),
-      printReportMeta: document.getElementById("printReportMeta"),
-      seasonLinks: document.getElementById("seasonLinks"),
-      table: document.getElementById("rankings"),
-      loadingLine: document.getElementById("loadingLine"),
-      champNote: document.getElementById("champNote"),
-    };
-    els.thead = els.table.querySelector("thead");
-    els.tbody = els.table.querySelector("tbody");
-
-    // State
-    let CHAMPIONS_BY_YEAR = {};       // loaded from champions.json (if present)
-    let ACTIVE_YEAR = null;
-    let ACTIVE_CHAMPION = null;       // string team name, or null
-    let ACTIVE_CHAMPION_LC = null;    // lowercased, precomputed once per year
-    let ACTIVE_IS_FINAL = false;      // true if champion exists for that year
-    let AVAILABLE_YEARS = [];         // years to show in the season dropdown
-
-    // Companion live metadata written by autostat.py.
-    let LIVE_META = {
-      updatedAt: null,
-      liveGames: [],
-      liveTeams: new Set(),
-      gameByTeam: new Map()
+      pageTitle:$("pageTitle"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
+      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
+      matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchError:$("matchError"),matchResult:$("matchResult"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
+      confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
+      teamError:$("teamError"),teamPrompt:$("teamPrompt"),teamPicker:$("teamPicker"),teamContent:$("teamContent"),teamRecord:$("teamRecord"),teamRank:$("teamRank"),teamAdjRank:$("teamAdjRank"),teamAdjRtg:$("teamAdjRtg"),teamORtg:$("teamORtg"),teamDRtg:$("teamDRtg"),teamSOS:$("teamSOS"),teamPyW:$("teamPyW"),teamTrendWrap:$("teamTrendWrap"),teamTrendChart:$("teamTrendChart"),teamTrendEmpty:$("teamTrendEmpty"),teamCurrentRecord:$("teamCurrentRecord"),teamRemaining:$("teamRemaining"),teamProjected:$("teamProjected"),teamScheduleBody:$("teamScheduleBody")
     };
 
-    let STATE = null; // replaces window.__CFB_STATE__
-
-    // Small debounce helper so typing in the search box doesn't re-render on every keystroke
-    function debounce(fn, wait) {
-      let t;
-      return (...args) => {
-        clearTimeout(t);
-        t = setTimeout(() => fn(...args), wait);
-      };
-    }
-
-    // Robust CSV parser (handles quoted commas, quotes, and CRLF/LF)
-    function parseCSV(text) {
-      const rows = [];
-      let row = [];
-      let cell = "";
-      let inQuotes = false;
-
-      for (let i = 0; i < text.length; i++) {
-        const ch = text[i];
-        const next = text[i + 1];
-
-        if (ch === '"') {
-          if (inQuotes && next === '"') {
-            cell += '"';
-            i++;
-          } else {
-            inQuotes = !inQuotes;
-          }
-          continue;
-        }
-
-        if (ch === "," && !inQuotes) {
-          row.push(cell);
-          cell = "";
-          continue;
-        }
-
-        if ((ch === "\n" || ch === "\r") && !inQuotes) {
-          if (ch === "\r" && next === "\n") i++;
-          row.push(cell);
-          cell = "";
-          if (row.some(v => String(v).trim() !== "")) rows.push(row);
-          row = [];
-          continue;
-        }
-
-        cell += ch;
+    function parseCSV(text){
+      const rows=[];let row=[],cell="",quotes=false;
+      for(let i=0;i<text.length;i++){
+        const ch=text[i],next=text[i+1];
+        if(ch==='"'){if(quotes&&next==='"'){cell+='"';i++;}else quotes=!quotes;continue;}
+        if(ch===','&&!quotes){row.push(cell);cell="";continue;}
+        if((ch==='\n'||ch==='\r')&&!quotes){if(ch==='\r'&&next==='\n')i++;row.push(cell);cell="";if(row.some(v=>String(v).trim()!==""))rows.push(row);row=[];continue;}
+        cell+=ch;
       }
-
-      row.push(cell);
-      if (row.some(v => String(v).trim() !== "")) rows.push(row);
-
-      if (!rows.length) return { header: [], rows: [] };
-      return { header: rows[0].map(h => h.trim()), rows: rows.slice(1) };
+      row.push(cell);if(row.some(v=>String(v).trim()!==""))rows.push(row);if(!rows.length)return {header:[],rows:[],objects:[]};
+      const header=rows[0].map(h=>h.trim());
+      const body=rows.slice(1);
+      const objects=body.map(r=>Object.fromEntries(header.map((h,i)=>[h,r[i]??""])));
+      return {header,rows:body,objects};
     }
 
-    // Repair classic mojibake like "San JosÃ©" -> "San José" (display-only)
-    function fixMojibake(s) {
-      if (typeof s !== "string") return s;
+    function n(v){const s=String(v??"").trim();if(!s)return null;const x=Number(s);return Number.isFinite(x)?x:null}
+    function fmt(v,d=3){const x=n(v);return Number.isFinite(x)?x.toFixed(d):"—"}
+    function pct(v){const x=n(v);return Number.isFinite(x)?`${(x*100).toFixed(1)}%`:"—"}
+    function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+    function csvUrl(year){return `${RAW_BASE}${year}%20Master.csv?t=${Date.now()}`}
+    function dataUrl(filename){return `${RAW_BASE}${filename.replaceAll(" ","%20")}?t=${Date.now()}`}
 
-      // Only attempt on strings that look like classic UTF-8->Latin1 mojibake
-      if (!/[ÃÂâ€]/.test(s)) return s;
+    async function fetchMaster(year){
+      year=String(year);if(APP.masterCache.has(year))return APP.masterCache.get(year);
+      const r=await fetch(csvUrl(year),{cache:"no-store"});if(!r.ok)throw new Error(`Could not load ${year} Master.csv (HTTP ${r.status}).`);
+      const parsed=parseCSV(await r.text());APP.masterCache.set(year,parsed);return parsed;
+    }
+    async function fetchOptionalCSV(filename){try{const r=await fetch(dataUrl(filename),{cache:"no-store"});if(!r.ok)return [];return parseCSV(await r.text()).objects}catch{return []}}
+    async function fetchLive(year){
+      year=String(year);if(APP.liveCache.has(year))return APP.liveCache.get(year);
+      try{const r=await fetch(`${RAW_BASE}${year}%20Live.json?t=${Date.now()}`,{cache:"no-store"});if(!r.ok)throw 0;const data=await r.json();APP.liveCache.set(year,data);return data}catch{return {updatedAt:null,liveGames:[],liveTeams:[]}}
+    }
+    async function fetchChampions(){try{const r=await fetch(`${DATA_DIR}/champions.json`,{cache:"no-store"});APP.champions=r.ok?await r.json():{}}catch{APP.champions={}}}
 
-      try {
-        const bytes = new Uint8Array([...s].map(ch => ch.charCodeAt(0) & 0xff));
-        const fixed = new TextDecoder("utf-8", { fatal: false }).decode(bytes);
-        if (fixed && fixed !== s) return fixed;
-      } catch {
-        // ignore
-      }
-      return s;
+    function closeMenus(){document.querySelectorAll('.page-menu.open,.conference-menu.open,.publish-menu.open').forEach(el=>el.classList.remove('open'));document.querySelectorAll('[aria-expanded="true"]').forEach(el=>el.setAttribute('aria-expanded','false'))}
+    function toggleMenu(container,button){const willOpen=!container.classList.contains('open');closeMenus();container.classList.toggle('open',willOpen);button?.setAttribute('aria-expanded',String(willOpen))}
+
+    function buildSeasonLinks(){
+      els.seasonLinks.querySelectorAll('button').forEach(b=>b.remove());
+      for(let y=CURRENT_SEASON;y>=FIRST_SEASON;y--){const b=document.createElement('button');b.textContent=String(y);b.className=String(y)===APP.year?'active':'';b.onclick=()=>setYear(String(y));els.seasonLinks.appendChild(b)}
     }
 
-    function indexByHeader(header) {
-      const map = new Map();
-      header.forEach((h, i) => map.set(h, i));
-      return map;
+    function urlForState(){const u=new URL(location.href);u.search="";if(APP.view!=="rankings")u.searchParams.set("view",APP.view);u.searchParams.set("year",APP.year);if(APP.view==="team"&&APP.team)u.searchParams.set("team",APP.team);return u}
+    function syncUrl(replace=false){history[replace?'replaceState':'pushState']({},"",urlForState())}
+
+    function setView(view,{push=true,team=null}={}){
+      if(!["rankings","matchup","conferences","team"].includes(view))view="rankings";
+      APP.view=view;if(team!==null)APP.team=team;
+      document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${view}`));
+      document.querySelectorAll('.page-menu-list [data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===view));
+      const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from current offensive efficiency, opposing defensive efficiency, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
+      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];els.statusLine.textContent="";closeMenus();if(push)syncUrl(false);renderCurrentView();
     }
 
-    function getSelectedConferences() {
-      return Array.from(els.conferenceOptions.querySelectorAll('input[type="checkbox"]:checked'))
-        .map(input => input.value);
+    async function setYear(year){APP.year=String(year);buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView()}
+
+    async function loadCurrentYear(){
+      els.statusLine.textContent=`Loading ${APP.year} data…`;
+      try{const parsed=await fetchMaster(APP.year);APP.header=parsed.header;APP.rows=parsed.objects;APP.headerMap=new Map(parsed.header.map((h,i)=>[h,i]));const live=await fetchLive(APP.year);const updated=live.updatedAt?new Date(live.updatedAt).toLocaleString(undefined,{timeZone:"America/New_York"}):null;els.statusLine.textContent=updated?`Last updated: ${updated}`:`${APP.rows.length} teams loaded.`;populateSharedTeamPickers();buildRankConferenceOptions();buildConferenceOptions();}catch(err){console.error(err);els.statusLine.textContent=err.message}}
+
+    function populateSharedTeamPickers(){
+      const teams=APP.rows.map(r=>r.Team).filter(Boolean).sort((a,b)=>a.localeCompare(b));
+      [els.matchTeam1,els.matchTeam2,els.teamPicker].forEach(sel=>{const prev=sel.value;sel.innerHTML='<option value="">Select a team...</option>';teams.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;sel.appendChild(o)});if(teams.includes(prev))sel.value=prev});
+      if(APP.team&&teams.includes(APP.team))els.teamPicker.value=APP.team;
+      updateMatchButton();
     }
 
-    function updateConferenceMenuText() {
-      const selected = getSelectedConferences();
-      const total = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
-
-      if (!selected.length || selected.length === total) {
-        els.conferenceMenuText.textContent = "All conferences";
-      } else if (selected.length === 1) {
-        els.conferenceMenuText.textContent = selected[0];
-      } else {
-        els.conferenceMenuText.textContent = `${selected.length} conferences`;
-      }
+    // ---------- Rankings ----------
+    function selectedCheckboxValues(root){return [...root.querySelectorAll('input[type="checkbox"]:checked')].map(x=>x.value)}
+    function updateMultiText(root,textEl){const all=root.querySelectorAll('input[type="checkbox"]').length,sel=selectedCheckboxValues(root);textEl.textContent=!sel.length||sel.length===all?"All conferences":sel.length===1?sel[0]:`${sel.length} conferences`}
+    function buildCheckboxOptions(root,textEl,onChange){const selected=new Set(selectedCheckboxValues(root));const had=root.querySelectorAll('input[type="checkbox"]').length>0;root.innerHTML="";[...new Set(APP.rows.map(r=>r.Conference).filter(Boolean))].sort().forEach(conf=>{const label=document.createElement('label');label.className='conference-option';const cb=document.createElement('input');cb.type='checkbox';cb.value=conf;cb.checked=!had||selected.has(conf);cb.onchange=()=>{updateMultiText(root,textEl);onChange()};label.append(cb,document.createTextNode(conf));root.appendChild(label)});updateMultiText(root,textEl)}
+    function buildRankConferenceOptions(){buildCheckboxOptions(els.rankConfOptions,els.rankConfText,renderRankings)}
+    function rankColumns(){const pref=["Rk","Team","Conference","W","L","NetRtg","AdjRtg","AdjRk","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","PF","PA","ODrives","DDrives","SOS","SOS rank"];return pref.filter(c=>APP.header.includes(c))}
+    async function renderRankings(){
+      if(!APP.rows.length)return;els.rankLoading.classList.add('hidden');const live=await fetchLive(APP.year);const liveSet=new Set((live.liveTeams||[]).map(t=>String(t).toLowerCase()));
+      const cols=rankColumns();const selected=selectedCheckboxValues(els.rankConfOptions),all=els.rankConfOptions.querySelectorAll('input').length;const search=els.rankTeamSearch.value.trim().toLowerCase();const top=Number(els.rankTopN.value||0);
+      let rows=APP.rows.filter(r=>{if(search&&!String(r.Team||"").toLowerCase().includes(search))return false;if(selected.length===0&&all>0)return false;if(selected.length&&selected.length<all&&!selected.includes(r.Conference))return false;if(top>0&&(n(r.Rk)??999)>top)return false;return true});
+      const thead=els.rankingsTable.tHead,tbody=els.rankingsTable.tBodies[0];thead.innerHTML='<tr>'+cols.map(c=>`<th class="${["Team","Conference"].includes(c)?'left':''}" data-col="${escapeHtml(c)}">${escapeHtml(c)}</th>`).join('')+'</tr>';tbody.innerHTML="";
+      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
+      els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";els.rankNote.style.display=champ?'block':'none';applyStriping();
+      thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
     }
+    let rankSort={index:0,dir:1};function sortRankingTable(index){rankSort.dir=rankSort.index===index?-rankSort.dir:1;rankSort.index=index;const tbody=els.rankingsTable.tBodies[0];const rows=[...tbody.rows];rows.sort((a,b)=>{const av=a.cells[index].innerText.trim(),bv=b.cells[index].innerText.trim(),an=Number(av),bn=Number(bv);const cmp=Number.isFinite(an)&&Number.isFinite(bn)?an-bn:av.localeCompare(bv,undefined,{numeric:true});return cmp*rankSort.dir});rows.forEach(r=>tbody.appendChild(r))}
+    function applyStriping(){let st=$("dynamicStriping");if(els.rankStriping.value==='off'){if(!st){st=document.createElement('style');st.id='dynamicStriping';document.head.appendChild(st)}st.textContent='#rankingsTable tbody tr:nth-child(even){background:transparent!important}'}else st?.remove()}
 
-    function buildConferenceOptions(allRows, headerMap) {
-      const confIndex = headerMap.get("Conference");
-      els.conferenceOptions.innerHTML = "";
+    // ---------- Matchup model ----------
+    function teamObject(row){if(!row)return null;const wins=n(row.W),losses=n(row.L),off=n(row.AdjO)??n(row.AdjORtg)??n(row.ORtg)??n(row.Ortg),def=n(row.AdjD)??n(row.AdjDRtg)??n(row.DRtg),od=n(row.ODrives),dd=n(row.DDrives);if(![wins,losses,off,def,od,dd].every(Number.isFinite))return null;const games=wins+losses,sample=Math.max(games,1);return {name:row.Team,conference:row.Conference||"",wins,losses,games,offense:off,defense:def,tempo:((od/sample)+(dd/sample))/2}}
+    function league(){const teams=APP.rows.map(teamObject).filter(Boolean);const avg=a=>a.reduce((s,x)=>s+x,0)/a.length;return teams.length?{offense:avg(teams.map(t=>t.offense)),defense:avg(teams.map(t=>t.defense)),tempo:avg(teams.map(t=>t.tempo))}:null}
+    function expectedRating(off,def,l){return Math.max(0,(l.offense+l.defense)/2+OFFENSE_WEIGHT*(off.offense-l.offense)+DEFENSE_WEIGHT*(def.defense-l.defense))}
+    function expectedDrives(a,b,l){return l.tempo+TEMPO_WEIGHT*((a.tempo-l.tempo)+(b.tempo-l.tempo))}
+    function confidence(a,b){return 100*(1-Math.exp(-Math.min(a.games,b.games)/CONFIDENCE_K))}
+    function winProb(s1,s2,conf){const base=1/(1+Math.exp(-((s1-s2)/WIN_PROB_MARGIN_SCALE))),w=Math.max(0,Math.min(1,conf/100));return (0.5+(base-0.5)*w)*100}
+    function predictTeams(name1,name2,location){const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2),a=teamObject(r1),b=teamObject(r2),l=league();if(!a||!b||!l)return null;const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);let s1=drives*ra/100,s2=drives*rb/100;if(location==='team1')s1+=HOME_FIELD_POINTS;if(location==='team2')s2+=HOME_FIELD_POINTS;s1=Math.max(0,s1);s2=Math.max(0,s2);const conf=confidence(a,b);return {a,b,drives,ra,rb,s1,s2,conf,p1:winProb(s1,s2,conf)}}
+    function updateMatchButton(){els.matchPredict.disabled=!(els.matchTeam1.value&&els.matchTeam2.value&&els.matchTeam1.value!==els.matchTeam2.value)}
+    function renderMatchup(){const p=predictTeams(els.matchTeam1.value,els.matchTeam2.value,els.matchLocation.value);if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=d1;els.matchScore2.textContent=d2;els.matchRow1.classList.toggle('winner',d1>d2);els.matchRow2.classList.toggle('winner',d2>d1);const winner=d1===d2?"Projected tie":`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchHeadline.textContent=winner;els.matchSubheadline.textContent=`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${p.p1.toFixed(1)}%`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`}
 
-      if (confIndex === undefined) {
-        updateConferenceMenuText();
-        return;
-      }
+    // ---------- Conference chart ----------
+    const CONF_COLORS=["#0057b8","#d62728","#2ca02c","#9467bd","#ff7f0e","#17becf","#8c564b","#e377c2","#7f7f7f","#bcbd22","#1f77b4","#c51b8a","#238b45","#6a51a3"];
+    const METRIC_LABELS={AdjRtg:"Adjusted Rating",NetRtg:"Net Rating",Ortg:"Offensive Rating",DRtg:"Defensive Rating",SOS:"Strength of Schedule"};
+    function buildConferenceOptions(){buildCheckboxOptions(els.confOptions,els.confMenuText,renderConferenceChart)}
+    function normalizedConferenceName(v){return String(v||"").toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
+    function applyConferencePreset(type){const p4=new Set(["acc","atlantic coast","atlantic coast conference","big ten","big 10","big 12","sec","southeastern","southeastern conference"]),g6=new Set(["aac","american","american athletic","american athletic conference","c usa","conference usa","mac","mid american","mid american conference","mountain west","mountain west conference","pac 12","pac 12 conference","sun belt","sun belt conference"]);els.confOptions.querySelectorAll('input').forEach(i=>i.checked=(type==='p4'?p4:g6).has(normalizedConferenceName(i.value)));updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()}
+    const readableLabels={id:'readableLabels',afterDatasetsDraw(chart){const ctx=chart.ctx,placed=[];ctx.save();ctx.font='700 11px system-ui';ctx.textAlign='center';ctx.textBaseline='bottom';chart.data.datasets.forEach((ds,di)=>{const meta=chart.getDatasetMeta(di);if(meta.hidden)return;meta.data.forEach((el,pi)=>{const p=ds.data[pi];if(!p?.team)return;const text=p.team,w=ctx.measureText(text).width+6,h=14;let x=el.x,y=el.y-8;for(let step=0;step<12;step++){const box={l:x-w/2,r:x+w/2,t:y-h,b:y};if(!placed.some(q=>!(box.r<q.l||box.l>q.r||box.b<q.t||box.t>q.b))){placed.push(box);break}y-=13;if(step===5){x+=w*.35;y=el.y-8}}ctx.lineWidth=4;ctx.strokeStyle='rgba(255,255,255,.95)';ctx.strokeText(text,x,y);ctx.fillStyle=ds.borderColor;ctx.fillText(text,x,y)})});ctx.restore()}};Chart.register(readableLabels);
+    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>b[metric]-a[metric]||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=CONF_COLORS[ci++%CONF_COLORS.length];datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:color,pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{callbacks:{title:i=>i[0]?.raw.team||'',label:c=>[`Conference: ${c.raw.conference}`,`Conference rank: ${c.raw.conferenceRank}`,`${METRIC_LABELS[metric]}: ${c.raw[metric].toFixed(3)}`]}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
 
-      const set = new Set();
-      for (const r of allRows) {
-        const v = (r[confIndex] ?? "").trim();
-        if (v) set.add(v);
-      }
-
-      const frag = document.createDocumentFragment();
-      Array.from(set).sort().forEach(conf => {
-        const label = document.createElement("label");
-        label.className = "conference-option";
-
-        const checkbox = document.createElement("input");
-        checkbox.type = "checkbox";
-        checkbox.value = conf;
-        checkbox.checked = true;
-        checkbox.addEventListener("change", () => {
-          updateConferenceMenuText();
-          renderBody();
-        });
-
-        const text = document.createElement("span");
-        text.textContent = conf;
-
-        label.appendChild(checkbox);
-        label.appendChild(text);
-        frag.appendChild(label);
-      });
-      els.conferenceOptions.appendChild(frag);
-      updateConferenceMenuText();
+    // ---------- Team ----------
+    async function renderTeam(){
+      if(!APP.team){els.teamContent.classList.add('hidden');els.teamPicker.value='';return}
+      const row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(APP.team).toLowerCase());if(!row){els.teamError.textContent=`${APP.team} was not found in ${APP.year}.`;els.teamError.classList.add('visible');return}els.teamError.classList.remove('visible');els.teamContent.classList.remove('hidden');els.teamPicker.value=row.Team;els.pageTitle.textContent=`${row.Team} — ${APP.year}`;els.pageSubtitle.textContent=`${row.Conference||'FBS'} • Current FBS-vs-FBS efficiency profile`;els.teamRecord.textContent=`${row.W||0}-${row.L||0}`;els.teamRank.textContent=row.Rk||'—';els.teamAdjRank.textContent=row.AdjRk||'—';els.teamAdjRtg.textContent=fmt(row.AdjRtg);els.teamORtg.textContent=fmt(row.Ortg||row.ORtg);els.teamDRtg.textContent=fmt(row.DRtg);els.teamSOS.textContent=fmt(row.SOS);els.teamPyW.textContent=pct(row['PyW %']);els.teamCurrentRecord.textContent=`${row.W||0}-${row.L||0}`;
+      const history=await fetchOptionalCSV(`${APP.year} History.csv`);renderTeamTrend(history,row.Team);const schedule=await fetchOptionalCSV(`${APP.year} Schedule.csv`);renderTeamSchedule(schedule,row);
     }
+    function renderTeamTrend(history,team){const rows=history.filter(r=>String(r.Season||APP.year)===String(APP.year)&&String(r.Team||'').toLowerCase()===String(team).toLowerCase()).sort((a,b)=>(n(a.Week)??0)-(n(b.Week)??0));if(!rows.length){els.teamTrendWrap.classList.add('hidden');els.teamTrendEmpty.classList.remove('hidden');APP.teamTrendChart?.destroy();return}els.teamTrendWrap.classList.remove('hidden');els.teamTrendEmpty.classList.add('hidden');const metrics=[['AdjRtg','Adjusted Rating','#0057b8'],['NetRtg','Net Rating','#d62728'],['Ortg','Offensive Rating','#2ca02c'],['DRtg','Defensive Rating','#9467bd'],['Rk','Overall Rank','#ff7f0e'],['SOS','Strength of Schedule','#8c564b'],['Win %','Win %','#111'],['PyW %','Pythagorean Win %','#e377c2']];const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(n(r[k]))));const scales={x:{title:{display:true,text:'Week'}}};available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});APP.teamTrendChart?.destroy();APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:rows.map(r=>`Week ${r.Week}`),datasets:available.map(([k,label,color],i)=>({label,data:rows.map(r=>n(r[k])),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:3,tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}}},scales}})}
+    function scheduleFields(r){return {week:r.Week??r.week??'',team:r.Team??r.team??'',opp:r.Opponent??r.Opp??r.opponent??'',site:r.Site??r.Location??r.site??'',status:r.Status??r.status??'',score:r.Score??r.score??'',result:r.Result??r.result??''}}
+    function renderTeamSchedule(schedule,row){els.teamScheduleBody.innerHTML='';const rows=schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase());let pw=0,pl=0;rows.forEach(s=>{const oppRow=APP.rows.find(r=>String(r.Team).toLowerCase()===String(s.opp).toLowerCase());let score=s.score||'',prob='—',result=s.result||'',status=s.status||'';const isFuture=!score&&!/final/i.test(status);if(isFuture&&oppRow){const loc=/home/i.test(s.site)?'team1':/away/i.test(s.site)?'team2':'neutral';const p=predictTeams(row.Team,oppRow.Team,loc);if(p){const a=Math.round(p.s1),b=Math.round(p.s2);score=`${a}-${b}`;prob=`${p.p1.toFixed(1)}%`;if(a>b){result='W';pw++}else if(a<b){result='L';pl++}}}const tr=document.createElement('tr');const oppCell=oppRow?`<a href="#" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);tr.innerHTML=`<td>${escapeHtml(s.week)}</td><td class="left">${oppCell}</td><td>${escapeHtml(s.site)}</td><td>${escapeHtml(status|| (isFuture?'Scheduled':''))}</td><td>${escapeHtml(score)}</td><td>${escapeHtml(prob)}</td><td class="${result==='W'?'result-win':result==='L'?'result-loss':''}">${escapeHtml(result)}</td><td>${oppRow?fmt(oppRow.AdjRtg):'—'}</td>`;els.teamScheduleBody.appendChild(tr)});els.teamRemaining.textContent=`${pw}-${pl}`;els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>a.onclick=e=>{e.preventDefault();APP.team=a.dataset.team;setView('team',{team:APP.team})})}
 
-    function getGroupBoundaryStarts(headerMap, orderedCols) {
-      const starts = new Set();
-      let running = 0;
-      let firstAdded = false;
+    // ---------- Publishing ----------
+    function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
+    async function elementToPng(el,name){const canvas=await html2canvas(el,{backgroundColor:'#fff',scale:2});canvas.toBlob(b=>b&&downloadBlob(b,name),'image/png')}
+    async function chartToPng(chart,name){const c=document.createElement('canvas');c.width=chart.canvas.width;c.height=chart.canvas.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(chart.canvas,0,0);c.toBlob(b=>b&&downloadBlob(b,name),'image/png')}
+    async function chartToPdf(chart,name){const src=chart.canvas,c=document.createElement('canvas');c.width=src.width;c.height=src.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(src,0,0);const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:c.width>=c.height?'landscape':'portrait',unit:'pt',format:[c.width,c.height]});pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,c.width,c.height);pdf.save(name)}
 
-      for (const group of GROUPS) {
-        const existing = group.cols.filter(c => headerMap.has(c) && orderedCols.includes(c));
-        if (!existing.length) continue;
+    async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':renderRankings();break;case'matchup':updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
 
-        if (!firstAdded) firstAdded = true;
-        else starts.add(running);
+    // ---------- Events ----------
+    els.pageMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.pageMenu,els.pageMenuButton)};
+    document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>setView(b.dataset.route));
+    document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
+    els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankStriping.onchange=applyStriping;
+    els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;
+    els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;
+    els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
+    els.rankPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankPublishMenu,els.rankPublishButton)};els.rankPublishPdf.onclick=()=>{closeMenus();window.print()};els.rankPublishPng.onclick=()=>{closeMenus();elementToPng($("rankingsCapture"),`cfb-rankings-${APP.year}.png`)};
+    els.confPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confPublishMenu,els.confPublishButton)};els.confPublishPng.onclick=()=>{closeMenus();if(APP.conferenceChart)chartToPng(APP.conferenceChart,`conference-comparison-${APP.year}.png`)};els.confPublishPdf.onclick=()=>{closeMenus();if(APP.conferenceChart)chartToPdf(APP.conferenceChart,`conference-comparison-${APP.year}.pdf`)};
 
-        running += existing.length;
-      }
+    window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);APP.year=p.get('year')||DEFAULT_YEAR;APP.team=p.get('team');setView(p.get('view')||'rankings',{push:false,team:APP.team});buildSeasonLinks();loadCurrentYear()});
 
-      const groupedSet = new Set(GROUPS.flatMap(g => g.cols));
-      const leftovers = orderedCols.filter(c => !groupedSet.has(c) && headerMap.has(c));
-      if (leftovers.length && running > 0) starts.add(running);
-
-      return starts;
+    async function init(){
+      await fetchChampions();
+      const p=new URLSearchParams(location.search);APP.year=p.get('year')||DEFAULT_YEAR;APP.team=p.get('team');APP.view=p.get('view')||(APP.team?'team':'rankings');
+      buildSeasonLinks();await loadCurrentYear();setView(APP.view,{push:false,team:APP.team});syncUrl(true);
     }
-
-    function inferOrderedColumns(header) {
-      const inGroups = GROUPS.flatMap(g => g.cols).filter(c => header.includes(c));
-      const leftovers = header.filter(c => !inGroups.includes(c));
-      return [...inGroups, ...leftovers];
-    }
-
-    function buildGroupedHeader(thead, header, headerMap, orderedCols, boundaryStarts) {
-      const frag = document.createDocumentFragment();
-
-      const trGroup = document.createElement("tr");
-      trGroup.className = "group";
-
-      const trCols = document.createElement("tr");
-      let currentGroupStartIndex = 0;
-
-      for (const group of GROUPS) {
-        const existing = group.cols.filter(c => headerMap.has(c) && orderedCols.includes(c));
-        if (!existing.length) continue;
-
-        const th = document.createElement("th");
-        th.textContent = group.title;
-        th.colSpan = existing.length;
-
-        if (currentGroupStartIndex !== 0) th.classList.add("divide-left");
-
-        trGroup.appendChild(th);
-        currentGroupStartIndex += existing.length;
-      }
-
-      const groupedSet = new Set(GROUPS.flatMap(g => g.cols));
-      const leftovers = orderedCols.filter(c => !groupedSet.has(c) && headerMap.has(c));
-      if (leftovers.length) {
-        const th = document.createElement("th");
-        th.textContent = "Other";
-        th.colSpan = leftovers.length;
-        th.classList.add("divide-left");
-        trGroup.appendChild(th);
-      }
-
-      orderedCols.forEach((col, idx) => {
-        if (!headerMap.has(col)) return;
-
-        const th = document.createElement("th");
-        th.textContent = col;
-        th.classList.add("sortable");
-        th.dataset.index = String(idx);
-        th.dataset.sort = "none";
-
-        if (col === "Team") th.classList.add("col-team");
-        if (col === "Conference") th.classList.add("col-conf");
-
-        if (boundaryStarts.has(idx)) th.classList.add("divide-left");
-
-        trCols.appendChild(th);
-      });
-
-      frag.appendChild(trGroup);
-      frag.appendChild(trCols);
-      thead.innerHTML = "";
-      thead.appendChild(frag);
-    }
-
-    function buildTable(header, allRows) {
-      const thead = els.thead;
-      const tbody = els.tbody;
-
-      tbody.innerHTML = "";
-
-      const headerMap = indexByHeader(header);
-      const orderedCols = inferOrderedColumns(header);
-      const boundaryStarts = getGroupBoundaryStarts(headerMap, orderedCols);
-
-      buildConferenceOptions(allRows, headerMap);
-      buildGroupedHeader(thead, header, headerMap, orderedCols, boundaryStarts);
-
-      const rendered = [];
-      for (const raw of allRows) {
-        if (!raw.some(v => String(v ?? "").trim() !== "")) continue;
-
-        const cells = new Array(orderedCols.length);
-        for (let i = 0; i < orderedCols.length; i++) {
-          const idx = headerMap.get(orderedCols[i]);
-          cells[i] = idx === undefined ? "" : (raw[idx] ?? "");
-        }
-
-        rendered.push(cells);
-      }
-
-      // Precompute everything renderBody() needs so it never has to recompute
-      // per-call (boundary positions, column indices, etc.) — these are fixed
-      // for the lifetime of this table/season.
-      STATE = {
-        header,
-        headerMap,
-        orderedCols,
-        boundaryStarts,
-        teamCol: orderedCols.indexOf("Team"),
-        confCol: orderedCols.indexOf("Conference"),
-        rkCol: orderedCols.indexOf("Rk"),
-        rows: rendered
-      };
-
-      renderBody();
-      makeSortable(thead);
-    }
-
-    function renderBody() {
-      const tbody = els.tbody;
-      if (!STATE) {
-        tbody.innerHTML = "";
-        return;
-      }
-
-      const teamSearches = els.teamSearch.value
-        .toLowerCase()
-        .split(/[,;\n]+/)
-        .map(team => team.trim())
-        .filter(Boolean);
-
-      const selectedConferences = getSelectedConferences();
-      const conferenceOptionCount = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
-      const topN = Number(els.topN.value || 0);
-
-      const { teamCol, confCol, rkCol, boundaryStarts, orderedCols } = STATE;
-
-      let filtered = STATE.rows;
-
-      if (teamSearches.length && teamCol >= 0) {
-        filtered = filtered.filter(r => {
-          const teamName = String(r[teamCol] ?? "").toLowerCase();
-          return teamSearches.some(search => teamName.includes(search));
-        });
-      }
-
-      if (confCol >= 0 && selectedConferences.length > 0 && selectedConferences.length < conferenceOptionCount) {
-        const selectedSet = new Set(selectedConferences);
-        filtered = filtered.filter(r => selectedSet.has(String(r[confCol] ?? "")));
-      } else if (confCol >= 0 && conferenceOptionCount > 0 && selectedConferences.length === 0) {
-        filtered = [];
-      }
-
-      if (topN > 0 && rkCol >= 0) {
-        filtered = filtered.filter(r => {
-          const n = Number(String(r[rkCol] ?? "").trim());
-          return Number.isFinite(n) && n <= topN;
-        });
-      }
-
-      const frag = document.createDocumentFragment();
-
-      for (const cells of filtered) {
-        const tr = document.createElement("tr");
-
-        // Champion highlight: only if this season is final and champion is set
-        let isChampion = false;
-        if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION_LC && teamCol >= 0) {
-          const teamName = String(cells[teamCol] ?? "").trim().toLowerCase();
-          if (teamName === ACTIVE_CHAMPION_LC) {
-            tr.classList.add("champion");
-            isChampion = true;
-          }
-        }
-
-        for (let idx = 0; idx < cells.length; idx++) {
-          const td = document.createElement("td");
-          const fixed = fixMojibake(cells[idx]);
-
-          const colName = orderedCols[idx];
-          if (colName === "Team") td.classList.add("col-team");
-          if (colName === "Conference") td.classList.add("col-conf");
-          if (boundaryStarts.has(idx)) td.classList.add("divide-left");
-
-          // Team names link to a single reusable team page. The selected
-          // season is included so historical seasons can open the same page.
-          if (colName === "Team" && String(fixed ?? "").trim()) {
-            const teamLink = document.createElement("a");
-            teamLink.className = "team-link";
-            teamLink.textContent = fixed;
-            teamLink.href =
-              `team.html?team=${encodeURIComponent(String(fixed).trim())}` +
-              `&year=${encodeURIComponent(String(ACTIVE_YEAR || DEFAULT_YEAR))}`;
-            teamLink.title = `View ${fixed} team profile`;
-            td.appendChild(teamLink);
-          } else {
-            td.textContent = fixed;
-          }
-
-          // ESPN-style live light beside teams currently playing.
-          if (colName === "Team") {
-            const teamKey = String(fixed ?? "").trim().toLowerCase();
-            if (LIVE_META.liveTeams.has(teamKey)) {
-              const dot = document.createElement("span");
-              dot.className = "live-dot";
-              dot.title = buildLiveTooltip(fixed);
-              dot.setAttribute("aria-label", "Live game in progress");
-              td.appendChild(dot);
-            }
-          }
-
-          // Trophy for champion team
-          if (colName === "Team" && isChampion) {
-            const span = document.createElement("span");
-            span.className = "trophy";
-            span.textContent = "🏆";
-            td.appendChild(span);
-          }
-
-          tr.appendChild(td);
-        }
-
-        frag.appendChild(tr);
-      }
-
-      tbody.innerHTML = "";
-      tbody.appendChild(frag);
-    }
-
-    function makeSortable(thead) {
-      const ths = thead.querySelectorAll("tr:last-child th.sortable");
-
-      ths.forEach(th => {
-        th.addEventListener("click", () => {
-          const index = Number(th.dataset.index);
-          const current = th.dataset.sort || "none";
-          const next = current === "asc" ? "desc" : "asc";
-
-          ths.forEach(h => (h.dataset.sort = "none"));
-          th.dataset.sort = next;
-
-          if (!STATE) return;
-
-          STATE.rows.sort((a, b) => {
-            const aText = String(a[index] ?? "");
-            const bText = String(b[index] ?? "");
-
-            const aNum = Number(aText);
-            const bNum = Number(bText);
-            const aIsNum = aText.trim() !== "" && Number.isFinite(aNum);
-            const bIsNum = bText.trim() !== "" && Number.isFinite(bNum);
-
-            let cmp;
-            if (aIsNum && bIsNum) cmp = aNum - bNum;
-            else cmp = aText.localeCompare(bText, undefined, { numeric: true, sensitivity: "base" });
-
-            return next === "asc" ? cmp : -cmp;
-          });
-
-          renderBody();
-        });
-      });
-    }
-
-    let stripeStyleEl = null;
-    function setStriping(on) {
-      if (on) {
-        if (stripeStyleEl) {
-          stripeStyleEl.remove();
-          stripeStyleEl = null;
-        }
-        return;
-      }
-
-      if (!stripeStyleEl) {
-        stripeStyleEl = document.createElement("style");
-        stripeStyleEl.id = "no-striping-style";
-        stripeStyleEl.textContent = `
-          tbody tr:nth-child(even){ background: transparent !important; }
-        `;
-        document.head.appendChild(stripeStyleEl);
-      }
-    }
-
-    function setLoading(isLoading) {
-      els.loadingLine.style.display = isLoading ? "block" : "none";
-    }
-
-    function setChampionNote() {
-      const note = els.champNote;
-      if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
-        note.textContent = `${ACTIVE_CHAMPION} is highlighted as the national champion.`;
-        note.style.display = "block";
-      } else {
-        note.textContent = "";
-        note.style.display = "none";
-      }
-    }
-
-    function setStatusLine(extraText) {
-      els.statusLine.textContent = extraText || "";
-    }
-
-    function liveJsonForYear(year) {
-      return `${RAW_BASE}${year}%20Live.json`;
-    }
-
-    function formatUpdatedAt(isoString) {
-      if (!isoString) return null;
-      const dt = new Date(isoString);
-      if (Number.isNaN(dt.getTime())) return null;
-
-      return new Intl.DateTimeFormat("en-US", {
-        timeZone: "America/New_York",
-        month: "short",
-        day: "numeric",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        timeZoneName: "short"
-      }).format(dt);
-    }
-
-    function buildLiveTooltip(teamName) {
-      const game = LIVE_META.gameByTeam.get(String(teamName || "").toLowerCase());
-      if (!game) return "Live game in progress";
-
-      const home = game.homeTeam || "Home";
-      const away = game.awayTeam || "Away";
-      const hp = game.homePoints ?? 0;
-      const ap = game.awayPoints ?? 0;
-      const period = game.period ? `Q${game.period}` : "Live";
-      const clock = game.clock ? ` ${game.clock}` : "";
-
-      return `${away} ${ap} - ${home} ${hp} • ${period}${clock}`;
-    }
-
-    async function loadLiveMetadata(year) {
-      LIVE_META = {
-        updatedAt: null,
-        liveGames: [],
-        liveTeams: new Set(),
-        gameByTeam: new Map()
-      };
-
-      try {
-        const url = `${liveJsonForYear(year)}?t=${Date.now()}`;
-        const r = await fetch(url, { cache: "no-store" });
-        if (!r.ok) return LIVE_META;
-
-        const data = await r.json();
-        const games = Array.isArray(data?.liveGames) ? data.liveGames : [];
-        const teams = new Set(
-          (Array.isArray(data?.liveTeams) ? data.liveTeams : [])
-            .map(t => String(t).toLowerCase())
-        );
-
-        const gameByTeam = new Map();
-        for (const game of games) {
-          for (const team of [game.homeTeam, game.awayTeam]) {
-            if (team) gameByTeam.set(String(team).toLowerCase(), game);
-          }
-        }
-
-        LIVE_META = {
-          updatedAt: data?.updatedAt || null,
-          liveGames: games,
-          liveTeams: teams,
-          gameByTeam
-        };
-      } catch (err) {
-        console.warn("Live metadata could not be loaded:", err);
-      }
-
-      return LIVE_META;
-    }
-
-    function currentStatusText() {
-      if (ACTIVE_IS_FINAL && ACTIVE_CHAMPION) {
-        return `Final season. Champion: ${ACTIVE_CHAMPION}.`;
-      }
-
-      const parts = [];
-      const updated = formatUpdatedAt(LIVE_META.updatedAt);
-
-      if (updated) parts.push(`Last updated: ${updated}`);
-      else parts.push("Live season");
-
-      const liveCount = LIVE_META.liveGames.length;
-      if (liveCount > 0) {
-        parts.push(`${liveCount} live FBS game${liveCount === 1 ? "" : "s"} included`);
-      } else {
-        parts.push("No live FBS games currently in progress");
-      }
-
-      return parts.join(" • ");
-    }
-
-    async function loadChampionsJson() {
-      try {
-        const r = await fetch(CHAMPIONS_JSON_URL, { cache: "no-store" });
-        if (!r.ok) return {};
-        const data = await r.json();
-        return (data && typeof data === "object") ? data : {};
-      } catch {
-        return {};
-      }
-    }
-
-    // Builds the list of selectable seasons. (No network probing is done here —
-    // that would mean one request per year just to populate a dropdown. If you
-    // want to hide years with no CSV, maintain an explicit list instead.)
-    function buildSeasonYearList() {
-      const years = [];
-      for (let y = CURRENT_SEASON; y >= FIRST_SEASON; y--) {
-        years.push(String(y));
-      }
-      return years;
-    }
-
-    function populateSeasonLinks(years) {
-      const wrap = els.seasonLinks;
-
-      wrap.querySelectorAll("a.yearLink").forEach(a => a.remove());
-
-      const frag = document.createDocumentFragment();
-
-      years.forEach(y => {
-        const a = document.createElement("a");
-        a.href = `?year=${encodeURIComponent(y)}`;
-        a.className = "yearLink";
-        a.dataset.year = y;
-        a.textContent = y;
-        a.title = y === String(CURRENT_SEASON)
-          ? `View current ${y} rankings`
-          : `View ${y} final rankings`;
-
-        a.addEventListener("click", (e) => {
-          e.preventDefault();
-          history.replaceState({}, "", `?year=${encodeURIComponent(y)}`);
-          loadYear(y);
-        });
-
-        frag.appendChild(a);
-      });
-
-      wrap.appendChild(frag);
-    }
-
-    function updateActiveSeasonLink() {
-      els.seasonLinks.querySelectorAll("a.yearLink").forEach(a => {
-        const isActive = a.dataset.year === String(ACTIVE_YEAR);
-        a.classList.toggle("active", isActive);
-        a.setAttribute("aria-current", isActive ? "page" : "false");
-      });
-    }
-
-    async function loadYear(year) {
-      if (!year) return;
-
-      ACTIVE_YEAR = String(year);
-      updateActiveSeasonLink();
-      ACTIVE_CHAMPION = CHAMPIONS_BY_YEAR[ACTIVE_YEAR] || null;
-      ACTIVE_CHAMPION_LC = ACTIVE_CHAMPION ? ACTIVE_CHAMPION.toLowerCase() : null;
-      ACTIVE_IS_FINAL = !!ACTIVE_CHAMPION; // final if champion exists
-
-      els.pageTitle.textContent = `CFB Rankings ${ACTIVE_YEAR}`;
-
-      setChampionNote();
-
-      // Clear filters on year change (optional; comment out if you want to keep filters)
-      els.teamSearch.value = "";
-      els.topN.value = "0";
-
-      const url = `${csvForYear(ACTIVE_YEAR)}?t=${Date.now()}`;
-
-      setLoading(true);
-      setStatusLine(`Loading ${url}…`);
-
-      try {
-        const r = await fetch(url, { cache: "no-store" });
-        if (!r.ok) throw new Error("HTTP " + r.status);
-
-        const text = await r.text();
-        const { header, rows } = parseCSV(text);
-
-        // Load live metadata before rendering rows so live teams get their red dot.
-        await loadLiveMetadata(ACTIVE_YEAR);
-
-        if (!header.length) {
-          console.error("CSV appears empty or malformed.");
-          setStatusLine("CSV appears empty or malformed.");
-          return;
-        }
-
-        buildTable(header, rows);
-
-        const isStriped = els.stripeToggle.value === "on";
-        setStriping(isStriped);
-
-        // Status includes the generated-file timestamp and live-game count.
-        setStatusLine(currentStatusText());
-
-      } catch (err) {
-        console.error("Failed to load CSV:", err);
-        setStatusLine("Failed to load this season's CSV. Make sure the file exists in /data.");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    // Hook up UI
-    els.pageMenuButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = els.pageMenu.classList.toggle("open");
-      els.pageMenuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!els.pageMenu.contains(e.target)) {
-        els.pageMenu.classList.remove("open");
-        els.pageMenuButton.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        els.pageMenu.classList.remove("open");
-        els.pageMenuButton.setAttribute("aria-expanded", "false");
-      }
-    });
-
-    els.teamSearch.addEventListener("input", debounce(renderBody, 150));
-    els.conferenceMenuButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const isOpen = els.conferenceMenu.classList.toggle("open");
-      els.conferenceMenuButton.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    els.conferenceSelectAll.addEventListener("click", () => {
-      els.conferenceOptions.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = true);
-      updateConferenceMenuText();
-      renderBody();
-    });
-
-    els.conferenceClear.addEventListener("click", () => {
-      els.conferenceOptions.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
-      updateConferenceMenuText();
-      renderBody();
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!els.conferenceMenu.contains(e.target)) {
-        els.conferenceMenu.classList.remove("open");
-        els.conferenceMenuButton.setAttribute("aria-expanded", "false");
-      }
-    });
-    els.topN.addEventListener("change", renderBody);
-
-    els.stripeToggle.addEventListener("change", (e) => {
-      setStriping(e.target.value === "on");
-    });
-
-    function getPublishMetadata() {
-      const selectedConferences = getSelectedConferences();
-      const totalConferences = els.conferenceOptions.querySelectorAll('input[type="checkbox"]').length;
-      const conf = (!selectedConferences.length || selectedConferences.length === totalConferences)
-        ? "All conferences"
-        : selectedConferences.join(", ");
-      const top = els.topN.value === "0" ? "All teams" : `Top ${els.topN.value}`;
-      const team = els.teamSearch.value.trim();
-      const filterParts = [conf, top];
-      if (team) filterParts.push(`Team filter: ${team}`);
-
-      const seasonText = `${ACTIVE_YEAR} Season${ACTIVE_IS_FINAL ? " — Final Rankings" : " — Current Rankings"}`;
-      const metaText = `${filterParts.join(" • ")} • Generated ${new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })}`;
-      return { seasonText, metaText };
-    }
-
-    function closePublishMenu() {
-      els.publishMenu.classList.remove("open");
-      els.publishMenuButton.setAttribute("aria-expanded", "false");
-    }
-
-    els.publishMenuButton.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const willOpen = !els.publishMenu.classList.contains("open");
-      els.publishMenu.classList.toggle("open", willOpen);
-      els.publishMenuButton.setAttribute("aria-expanded", String(willOpen));
-    });
-
-    document.addEventListener("click", (e) => {
-      if (!els.publishMenu.contains(e.target)) closePublishMenu();
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closePublishMenu();
-    });
-
-    els.publishPdf.addEventListener("click", () => {
-      closePublishMenu();
-      const { seasonText, metaText } = getPublishMetadata();
-      els.printReportSeason.textContent = seasonText;
-      els.printReportMeta.textContent = metaText;
-      window.print();
-    });
-
-    function canvasToPngBlob(canvas) {
-      return new Promise((resolve, reject) => {
-        canvas.toBlob((blob) => {
-          if (!blob) {
-            reject(new Error("Could not create PNG image."));
-            return;
-          }
-          resolve(blob);
-        }, "image/png");
-      });
-    }
-
-    function downloadBlob(blob, filename) {
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    }
-
-    function buildPngReportPage(rows, pageNumber, pageCount, seasonText, metaText) {
-      const page = document.createElement("section");
-      page.className = "png-report-page";
-
-      const header = document.createElement("header");
-      header.className = "png-report-header";
-      header.innerHTML = `
-        <h1>College Football Efficiency Rankings</h1>
-        <p class="png-report-season"></p>
-        <p class="png-report-meta"></p>
-      `;
-      header.querySelector(".png-report-season").textContent = seasonText;
-      header.querySelector(".png-report-meta").textContent = metaText;
-      page.appendChild(header);
-
-      const table = document.createElement("table");
-      table.innerHTML = `<thead>${els.thead.innerHTML}</thead><tbody></tbody>`;
-      const tbody = table.querySelector("tbody");
-      rows.forEach(row => tbody.appendChild(row.cloneNode(true)));
-      page.appendChild(table);
-
-      const footer = document.createElement("footer");
-      footer.className = "png-report-footer";
-      const left = document.createElement("span");
-      left.textContent = "Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.";
-      const right = document.createElement("span");
-      right.textContent = `Page ${pageNumber} of ${pageCount}`;
-      footer.append(left, right);
-      page.appendChild(footer);
-
-      return page;
-    }
-
-    els.publishPng.addEventListener("click", async () => {
-      closePublishMenu();
-
-      if (typeof html2canvas !== "function" || typeof JSZip !== "function") {
-        alert("PNG publishing could not load the export libraries. Check your internet connection and try again.");
-        return;
-      }
-
-      const visibleRows = Array.from(els.tbody.querySelectorAll("tr"));
-      if (!visibleRows.length) {
-        alert("There are no visible rankings to publish.");
-        return;
-      }
-
-      const { seasonText, metaText } = getPublishMetadata();
-      const rowsPerPage = 36;
-      const pageCount = Math.ceil(visibleRows.length / rowsPerPage);
-      const stage = document.createElement("div");
-      stage.className = "png-export-stage";
-      document.body.appendChild(stage);
-
-      const oldText = els.publishMenuButton.childNodes[0].nodeValue;
-      els.publishMenuButton.childNodes[0].nodeValue = "Publishing PNGs ";
-      els.publishMenuButton.disabled = true;
-
-      try {
-        const zip = new JSZip();
-        const safeYear = String(ACTIVE_YEAR || "rankings").replace(/[^0-9A-Za-z_-]/g, "_");
-
-        for (let pageIndex = 0; pageIndex < pageCount; pageIndex++) {
-          const start = pageIndex * rowsPerPage;
-          const pageRows = visibleRows.slice(start, start + rowsPerPage);
-          const page = buildPngReportPage(pageRows, pageIndex + 1, pageCount, seasonText, metaText);
-          stage.appendChild(page);
-
-          const canvas = await html2canvas(page, {
-            backgroundColor: "#ffffff",
-            scale: 2,
-            useCORS: true,
-            logging: false,
-            width: 1320,
-            height: 1020
-          });
-
-          const pngBlob = await canvasToPngBlob(canvas);
-          const filename = `CFB_Rankings_${safeYear}_Page_${String(pageIndex + 1).padStart(2, "0")}.png`;
-          zip.file(filename, pngBlob);
-          page.remove();
-        }
-
-        const zipBlob = await zip.generateAsync({
-          type: "blob",
-          compression: "DEFLATE",
-          compressionOptions: { level: 6 }
-        });
-        downloadBlob(zipBlob, `CFB_Rankings_${safeYear}_PNGs.zip`);
-      } catch (err) {
-        console.error("PNG publishing failed:", err);
-        alert("PNG publishing failed. See the browser console for details.");
-      } finally {
-        stage.remove();
-        els.publishMenuButton.childNodes[0].nodeValue = oldText;
-        els.publishMenuButton.disabled = false;
-      }
-    });
-
-    // Boot
-    (async function init() {
-      // champions.json is optional
-      CHAMPIONS_BY_YEAR = await loadChampionsJson();
-
-      AVAILABLE_YEARS = buildSeasonYearList();
-
-      populateSeasonLinks(AVAILABLE_YEARS);
-
-      // Initial year from URL param, else DEFAULT_YEAR if present, else first available
-      const params = new URLSearchParams(location.search);
-      const requested = params.get("year");
-      const initial = (requested && AVAILABLE_YEARS.includes(requested))
-        ? requested
-        : (AVAILABLE_YEARS.includes(DEFAULT_YEAR) ? DEFAULT_YEAR : AVAILABLE_YEARS[0]);
-
-      await loadYear(initial);
-
-      // Default striping
-      setStriping(true);
-    })();
+    init();
   </script>
 </body>
 </html>
