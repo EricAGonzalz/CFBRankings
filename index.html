@@ -386,14 +386,55 @@
       document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${view}`));
       document.querySelectorAll('.page-menu-list [data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===view));
       const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from current offensive efficiency, opposing defensive efficiency, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
-      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];els.statusLine.textContent="";closeMenus();if(push)syncUrl(false);renderCurrentView();
+      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);renderCurrentView();
     }
 
     async function setYear(year){APP.year=String(year);buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView()}
 
+    function formatUpdatedAt(isoString){
+      if(!isoString)return null;
+      const dt=new Date(isoString);
+      if(Number.isNaN(dt.getTime()))return null;
+      return new Intl.DateTimeFormat("en-US",{
+        timeZone:"America/New_York",
+        month:"short",
+        day:"numeric",
+        year:"numeric",
+        hour:"numeric",
+        minute:"2-digit",
+        timeZoneName:"short"
+      }).format(dt);
+    }
+
     async function loadCurrentYear(){
       els.statusLine.textContent=`Loading ${APP.year} data…`;
-      try{const parsed=await fetchMaster(APP.year);APP.header=parsed.header;APP.rows=parsed.objects;APP.headerMap=new Map(parsed.header.map((h,i)=>[h,i]));const live=await fetchLive(APP.year);const updated=live.updatedAt?new Date(live.updatedAt).toLocaleString(undefined,{timeZone:"America/New_York"}):null;els.statusLine.textContent=updated?`Last updated: ${updated}`:`${APP.rows.length} teams loaded.`;populateSharedTeamPickers();buildRankConferenceOptions();buildConferenceOptions();}catch(err){console.error(err);els.statusLine.textContent=err.message}}
+      try{
+        const parsed=await fetchMaster(APP.year);
+        APP.header=parsed.header;
+        APP.rows=parsed.objects;
+        APP.headerMap=new Map(parsed.header.map((h,i)=>[h,i]));
+
+        const live=await fetchLive(APP.year);
+        const updated=formatUpdatedAt(live.updatedAt);
+        const liveCount=Array.isArray(live.liveGames)?live.liveGames.length:0;
+
+        if(updated){
+          const liveText=liveCount>0
+            ? `${liveCount} live FBS game${liveCount===1?"":"s"} included`
+            : "No live FBS games currently in progress";
+          els.statusLine.textContent=`Last updated: ${updated} • ${liveText}`;
+        }else{
+          els.statusLine.textContent=`${APP.rows.length} teams loaded.`;
+        }
+
+        populateSharedTeamPickers();
+        buildRankConferenceOptions();
+        buildConferenceOptions();
+      }catch(err){
+        console.error(err);
+        els.statusLine.textContent=err.message;
+      }
+    }
 
     function populateSharedTeamPickers(){
       const teams=APP.rows.map(r=>r.Team).filter(Boolean).sort((a,b)=>a.localeCompare(b));
