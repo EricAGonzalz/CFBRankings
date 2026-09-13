@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T03:02:18.956053+00:00",
+  "updatedAt": "2026-09-13T03:06:56.689057+00:00",
   "liveGames": [
     {
       "id": 401856682,
@@ -12,7 +12,7 @@
       "homePoints": 17.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "01:30",
+      "clock": "00:36",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -27,7 +27,7 @@
       "homePoints": 24.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "03:49",
+      "clock": "02:00",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
@@ -42,7 +42,7 @@
       "homePoints": 13.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "01:33",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -57,25 +57,10 @@
       "homePoints": 38.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "01:35",
+      "clock": "00:00",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401867796,
-      "status": "in_progress",
-      "homeTeam": "LSU",
-      "awayTeam": "Louisiana Tech",
-      "homeConference": "SEC",
-      "awayConference": "Sun Belt",
-      "homePoints": 45.0,
-      "awayPoints": 14.0,
-      "period": 4,
-      "clock": "12:00",
-      "completedDrives": 30,
-      "homeOffensiveDrives": 15,
-      "awayOffensiveDrives": 15
     },
     {
       "id": 401856671,
@@ -87,7 +72,7 @@
       "homePoints": 34.0,
       "awayPoints": 8.0,
       "period": 3,
-      "clock": "00:19",
+      "clock": "08:57",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -102,10 +87,10 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "12:10",
-      "completedDrives": 4,
+      "clock": "10:48",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856670,
@@ -117,7 +102,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "01:22",
+      "clock": "00:41",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -132,10 +117,25 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:36",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "04:35",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858445,
+      "status": "in_progress",
+      "homeTeam": "USC",
+      "awayTeam": "Louisiana",
+      "homeConference": "Big Ten",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:24",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -146,8 +146,7 @@
     "Florida Atlantic",
     "Fresno State",
     "Georgia Southern",
-    "LSU",
-    "Louisiana Tech",
+    "Louisiana",
     "Navy",
     "North Dakota State",
     "Ohio State",
@@ -156,6 +155,7 @@
     "Southern Miss",
     "Texas",
     "Texas Tech",
+    "USC",
     "Utah"
   ]
 }
