@@ -195,6 +195,32 @@
     .team-print-report .note{font-size:10px}.team-print-report a{color:inherit;text-decoration:none}
     .team-print-footer{margin-top:12px;padding-top:8px;border-top:1px solid #aaa;color:#666;font-size:9px}
 
+
+
+    /* ---------- Paginated report exports ---------- */
+    .report-render-root{position:absolute;left:-20000px;top:0;z-index:-1000;background:#e9e9e9}
+    .report-page{background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif;box-sizing:border-box;overflow:hidden;display:flex;flex-direction:column}
+    .report-page.legal-landscape{width:1344px;height:816px;padding:30px 36px 24px}
+    .report-page.letter-landscape{width:1056px;height:816px;padding:34px 40px 26px}
+    .report-page.letter-portrait{width:816px;height:1056px;padding:38px 42px 30px}
+    .report-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;border-bottom:3px solid #111;padding-bottom:10px;margin-bottom:12px;flex:0 0 auto}
+    .report-head h1{margin:0;font-size:24px;line-height:1.1}.report-head p{margin:4px 0 0;color:#555;font-size:11px;line-height:1.35}
+    .report-head-meta{text-align:right;color:#555;font-size:10px;line-height:1.45;white-space:nowrap}
+    .report-body{flex:1 1 auto;min-height:0;overflow:hidden}
+    .report-footer{flex:0 0 auto;display:flex;justify-content:space-between;gap:12px;border-top:1px solid #aaa;margin-top:10px;padding-top:6px;color:#666;font-size:8px}
+    .report-table{border-collapse:collapse;width:100%;table-layout:auto;font-size:8px}
+    .report-table th,.report-table td{border:1px solid #cfcfcf;padding:3px 4px;white-space:nowrap;text-align:right;height:21px;line-height:1.15}
+    .report-table th{background:#111;color:#fff;border-color:#222;font-size:7.5px}
+    .report-table th.left,.report-table td.left{text-align:left}.report-table tbody tr:nth-child(even){background:#f7f7f7}
+    .report-table tr.champion{background:#fff4b8!important;font-weight:700}.report-table a{color:inherit;text-decoration:none}
+    .report-filterline{font-size:9px;color:#555;margin:0 0 9px;line-height:1.35}
+    .report-kpis{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #d0d0d0;margin-bottom:14px}
+    .report-kpi{padding:11px 12px;border-right:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0;min-height:68px}.report-kpi:nth-child(4n){border-right:0}.report-kpi:nth-last-child(-n+4){border-bottom:0}
+    .report-kpi-label{font-size:9px;color:#666;text-transform:uppercase;font-weight:700;letter-spacing:.3px}.report-kpi-value{margin-top:5px;font-size:19px;font-weight:800}
+    .report-section-title{font-size:15px;font-weight:800;margin:0 0 10px}.report-note{font-size:9px;line-height:1.45;color:#666;margin:8px 0 0}
+    .report-chart{display:block;width:100%;height:auto;max-height:620px;object-fit:contain}
+    .report-conference-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.report-summary-box{border:1px solid #d0d0d0;padding:9px 11px}.report-summary-box span{display:block;font-size:8px;text-transform:uppercase;color:#666;font-weight:700}.report-summary-box strong{display:block;margin-top:3px;font-size:16px}
+    .report-schedule-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.report-schedule-summary>div{border:1px solid #d0d0d0;padding:9px 10px}.report-schedule-summary span{font-size:8px;text-transform:uppercase;color:#666;font-weight:700}.report-schedule-summary strong{display:block;margin-top:3px;font-size:15px}
     @media(max-width:1000px){.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chart-wrap{height:620px}}
     @media(max-width:720px){
       body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
@@ -247,7 +273,7 @@
             <div class="control"><label for="rankTopN">Filter</label><select id="rankTopN"><option value="0">All</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option></select></div>
             <div class="control"><label for="rankStriping">Striping</label><select id="rankStriping"><option value="on">On</option><option value="off">Off</option></select></div>
           </div>
-          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish to PNG</button></div></div>
+          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Generate PDF</button><button id="rankPublishPng">Export to PNGs</button></div></div>
         </div>
         <div class="table-wrap" id="rankingsCapture"><table id="rankingsTable"><thead></thead><tbody></tbody></table><div id="rankLoading" class="loading">Loading…</div><div id="rankNote" class="note"></div></div>
       </section>
@@ -303,7 +329,7 @@
               <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
               <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="top3">Top 3 / conference</option><option value="top5">Top 5 / conference</option><option value="all" selected>All teams</option><option value="none">None</option></select></div>
             </div>
-            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
+            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Generate PDF</button><button id="confPublishPng">Export to PNGs</button></div></div>
           </div>
           <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
           <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
@@ -328,8 +354,8 @@
                   <label class="team-print-option"><input id="teamPrintSchedule" type="checkbox" checked> Schedule &amp; Projections</label>
                 </div>
                 <div class="team-print-actions"><button id="teamPrintAll" type="button">Select all</button><button id="teamPrintNone" type="button">Clear</button></div>
-                <button id="teamPublishPdf" type="button" role="menuitem">Print / Save as PDF</button>
-                <button id="teamPublishPng" type="button" role="menuitem">Export selected report to PNG</button>
+                <button id="teamPublishPdf" type="button" role="menuitem">Generate PDF</button>
+                <button id="teamPublishPng" type="button" role="menuitem">Export selected report to PNGs</button>
                 <div class="team-publish-message" id="teamPublishMessage">Select at least one section to publish.</div>
               </div>
             </div>
@@ -600,36 +626,64 @@
     function renderTeamSchedule(schedule,row){els.teamScheduleBody.innerHTML='';const rows=schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase());let pw=0,pl=0;rows.forEach(s=>{const oppRow=APP.rows.find(r=>String(r.Team).toLowerCase()===String(s.opp).toLowerCase());let score=s.score||'',prob='—',result=s.result||'',status=s.status||'';const isFuture=!score&&!/final/i.test(status);if(isFuture&&oppRow){const loc=/home/i.test(s.site)?'team1':/away/i.test(s.site)?'team2':'neutral';const p=predictTeams(row.Team,oppRow.Team,loc);if(p){const a=Math.round(p.s1),b=Math.round(p.s2);score=`${a}-${b}`;prob=`${p.p1.toFixed(1)}%`;if(a>b){result='W';pw++}else if(a<b){result='L';pl++}}}const tr=document.createElement('tr');const oppCell=oppRow?`<a href="#" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);tr.innerHTML=`<td>${escapeHtml(s.week)}</td><td class="left">${oppCell}</td><td>${escapeHtml(s.site)}</td><td>${escapeHtml(status|| (isFuture?'Scheduled':''))}</td><td>${escapeHtml(score)}</td><td>${escapeHtml(prob)}</td><td class="${result==='W'?'result-win':result==='L'?'result-loss':''}">${escapeHtml(result)}</td><td>${oppRow?fmt(oppRow.AdjRtg):'—'}</td>`;els.teamScheduleBody.appendChild(tr)});els.teamRemaining.textContent=`${pw}-${pl}`;els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>a.onclick=e=>{e.preventDefault();APP.team=a.dataset.team;setView('team',{team:APP.team})})}
 
     // ---------- Publishing ----------
-    function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1000)}
-    async function elementToPng(el,name){const canvas=await html2canvas(el,{backgroundColor:'#fff',scale:2});canvas.toBlob(b=>b&&downloadBlob(b,name),'image/png')}
-    async function chartToPng(chart,name){const c=document.createElement('canvas');c.width=chart.canvas.width;c.height=chart.canvas.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(chart.canvas,0,0);c.toBlob(b=>b&&downloadBlob(b,name),'image/png')}
-    async function chartToPdf(chart,name){const src=chart.canvas,c=document.createElement('canvas');c.width=src.width;c.height=src.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(src,0,0);const {jsPDF}=window.jspdf;const pdf=new jsPDF({orientation:c.width>=c.height?'landscape':'portrait',unit:'pt',format:[c.width,c.height]});pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,c.width,c.height);pdf.save(name)}
+    function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)}
+    function safeSlug(v){return String(v||'report').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')}
+    function reportTimestamp(){return new Date().toLocaleString('en-US',{timeZone:'America/New_York',timeZoneName:'short'})}
+    function makeReportRoot(){document.querySelectorAll('.report-render-root').forEach(x=>x.remove());const root=document.createElement('div');root.className='report-render-root';document.body.appendChild(root);return root}
+    function makeReportPage(root,{orientation='portrait',format='letter',title='',subtitle='',meta=''}){
+      const page=document.createElement('section');page.className=`report-page ${format}-${orientation}`;page.dataset.orientation=orientation;page.dataset.format=format;
+      page.innerHTML=`<header class="report-head"><div><h1>${escapeHtml(title)}</h1><p>${escapeHtml(subtitle)}</p></div><div class="report-head-meta">${meta}</div></header><div class="report-body"></div><footer class="report-footer"><span>CFB Efficiency • ${escapeHtml(APP.year)} season</span><span class="report-page-number"></span></footer>`;
+      root.appendChild(page);return page
+    }
+    function finalizeReportPages(root){const pages=[...root.querySelectorAll('.report-page')];pages.forEach((p,i)=>{const n=p.querySelector('.report-page-number');if(n)n.textContent=`Page ${i+1} of ${pages.length} • Generated ${reportTimestamp()}`});return pages}
+    function distributeRows(rows,maxPerPage){const pageCount=Math.max(1,Math.ceil(rows.length/maxPerPage));const base=Math.floor(rows.length/pageCount),extra=rows.length%pageCount,out=[];let at=0;for(let i=0;i<pageCount;i++){const count=base+(i<extra?1:0);out.push(rows.slice(at,at+count));at+=count}return out}
+    async function renderReportCanvases(pages){const canvases=[];for(const page of pages){canvases.push(await html2canvas(page,{backgroundColor:'#fff',scale:2,useCORS:true,logging:false}))}return canvases}
+    async function saveReportPdf(pages,name){
+      if(!pages.length)return;const canvases=await renderReportCanvases(pages);const {jsPDF}=window.jspdf;
+      const first=pages[0],pdf=new jsPDF({orientation:first.dataset.orientation,unit:'pt',format:first.dataset.format,compress:true});
+      canvases.forEach((c,i)=>{const page=pages[i];if(i>0)pdf.addPage(page.dataset.format,page.dataset.orientation);const w=pdf.internal.pageSize.getWidth(),h=pdf.internal.pageSize.getHeight();pdf.addImage(c.toDataURL('image/jpeg',0.94),'JPEG',0,0,w,h,undefined,'FAST')});
+      pdf.save(name)
+    }
+    async function saveReportPngs(pages,baseName){
+      if(!pages.length)return;const canvases=await renderReportCanvases(pages),digits=String(canvases.length).length;
+      for(let i=0;i<canvases.length;i++){const blob=await new Promise(resolve=>canvases[i].toBlob(resolve,'image/png'));if(blob)downloadBlob(blob,`${baseName}-page-${String(i+1).padStart(digits,'0')}.png`);await new Promise(r=>setTimeout(r,90))}
+    }
+    function cleanupReport(root){setTimeout(()=>root?.remove(),300)}
+
+    function buildRankingsReport(){
+      const root=makeReportRoot(),source=els.rankingsTable,head=source.tHead?.cloneNode(true),rows=[...source.tBodies[0].rows];
+      const chunks=distributeRows(rows,24),search=els.rankTeamSearch.value.trim()||'None',top=Number(els.rankTopN.value||0),confs=selectedCheckboxValues(els.rankConfOptions);
+      const allCount=els.rankConfOptions.querySelectorAll('input').length,confText=!confs.length?'None':confs.length===allCount?'All conferences':confs.join(', ');
+      chunks.forEach((chunk,i)=>{
+        const page=makeReportPage(root,{orientation:'landscape',format:'legal',title:`CFB Rankings — ${APP.year}`,subtitle:'FBS-vs-FBS efficiency rankings',meta:`Rows ${rows.length?rows.indexOf(chunk[0])+1:0}–${rows.length?rows.indexOf(chunk[chunk.length-1])+1:0} of ${rows.length}<br>${escapeHtml(els.statusLine.textContent||'')}`});
+        const body=page.querySelector('.report-body');const filters=document.createElement('div');filters.className='report-filterline';filters.textContent=`Filters — Team search: ${search} • Conferences: ${confText} • Ranking filter: ${top?`Top ${top}`:'All'} • Sorted as displayed`;body.appendChild(filters);
+        const table=document.createElement('table');table.className='report-table';table.appendChild(head.cloneNode(true));const tb=document.createElement('tbody');chunk.forEach(r=>{const clone=r.cloneNode(true);clone.querySelectorAll('.live-dot').forEach(x=>x.remove());tb.appendChild(clone)});table.appendChild(tb);body.appendChild(table);
+        if(i===chunks.length-1&&els.rankNote.textContent){const note=document.createElement('p');note.className='report-note';note.textContent=els.rankNote.textContent;body.appendChild(note)}
+      });
+      return {root,pages:finalizeReportPages(root)}
+    }
+    async function publishRankings(type){closeMenus();const report=buildRankingsReport();try{if(type==='pdf')await saveReportPdf(report.pages,`cfb-rankings-${APP.year}.pdf`);else await saveReportPngs(report.pages,`cfb-rankings-${APP.year}`)}finally{cleanupReport(report.root)}}
+
+    function buildConferenceReport(){
+      if(!APP.conferenceChart)return null;const root=makeReportRoot(),page=makeReportPage(root,{orientation:'landscape',format:'letter',title:`Conference Comparison — ${APP.year}`,subtitle:`${METRIC_LABELS[els.confMetric.value]||els.confMetric.value} by rank within conference`,meta:`${escapeHtml(els.confMenuText.textContent||'')}<br>Labels: ${escapeHtml(els.confLabels.options[els.confLabels.selectedIndex]?.text||'')}`});
+      const body=page.querySelector('.report-body');body.innerHTML=`<div class="report-conference-summary"><div class="report-summary-box"><span>Teams shown</span><strong>${escapeHtml(els.confTeamsShown.textContent)}</strong></div><div class="report-summary-box"><span>Conferences shown</span><strong>${escapeHtml(els.confConfsShown.textContent)}</strong></div><div class="report-summary-box"><span>Selected metric</span><strong>${escapeHtml(els.confMetricSummary.textContent)}</strong></div></div>`;
+      const img=document.createElement('img');img.className='report-chart';img.src=APP.conferenceChart.toBase64Image('image/png',1);img.style.maxHeight='585px';body.appendChild(img);const note=document.createElement('p');note.className='report-note';note.textContent='X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order.';body.appendChild(note);
+      return {root,pages:finalizeReportPages(root)}
+    }
+    async function publishConference(type){closeMenus();const report=buildConferenceReport();if(!report)return;try{if(type==='pdf')await saveReportPdf(report.pages,`conference-comparison-${APP.year}.pdf`);else await saveReportPngs(report.pages,`conference-comparison-${APP.year}`)}finally{cleanupReport(report.root)}}
 
     function teamPrintSelection(){return {summary:els.teamPrintSummary.checked,trend:els.teamPrintTrend.checked,schedule:els.teamPrintSchedule.checked}}
-    function stripIds(root){root.querySelectorAll('[id]').forEach(el=>el.removeAttribute('id'));root.removeAttribute?.('id');return root}
     function selectedTeamRow(){return APP.rows.find(r=>String(r.Team||'').toLowerCase()===String(APP.team||'').toLowerCase())||null}
-    function buildTeamPrintReport(){
-      const selected=teamPrintSelection();
-      if(!selected.summary&&!selected.trend&&!selected.schedule){els.teamPublishMessage.classList.add('visible');return null}
-      els.teamPublishMessage.classList.remove('visible');
-      const row=selectedTeamRow();if(!row)return null;
-      const report=els.teamPrintReport;report.innerHTML='';
-      const header=document.createElement('header');header.className='team-print-header';
-      header.innerHTML=`<h1>${escapeHtml(row.Team)} — ${escapeHtml(APP.year)}</h1><p>${escapeHtml(row.Conference||'FBS')} • Current FBS-vs-FBS efficiency profile • Record ${escapeHtml(`${row.W||0}-${row.L||0}`)}</p>`;
-      report.appendChild(header);
-      if(selected.summary){report.appendChild(stripIds(els.teamSummarySection.cloneNode(true)))}
-      if(selected.trend){
-        const clone=stripIds(els.teamTrendSection.cloneNode(true));
-        const canvas=clone.querySelector('canvas');
-        if(canvas&&APP.teamTrendChart){const img=document.createElement('img');img.src=APP.teamTrendChart.toBase64Image('image/png',1);img.alt=`${row.Team} weekly trends`;canvas.replaceWith(img)}
-        report.appendChild(clone);
-      }
-      if(selected.schedule){report.appendChild(stripIds(els.teamScheduleSection.cloneNode(true)))}
-      const footer=document.createElement('div');footer.className='team-print-footer';footer.textContent=`CFB Efficiency • ${row.Team} • ${APP.year} season • Generated ${new Date().toLocaleString('en-US',{timeZone:'America/New_York',timeZoneName:'short'})}`;report.appendChild(footer);
-      return report;
+    function teamReportHeader(row){return {title:`${row.Team} — ${APP.year}`,subtitle:`${row.Conference||'FBS'} • FBS-vs-FBS team efficiency report`,meta:`Record ${row.W||0}-${row.L||0}<br>Generated ${reportTimestamp()}`}}
+    function buildTeamReport(){
+      const selected=teamPrintSelection();if(!selected.summary&&!selected.trend&&!selected.schedule){els.teamPublishMessage.classList.add('visible');return null}els.teamPublishMessage.classList.remove('visible');
+      const row=selectedTeamRow();if(!row)return null;const root=makeReportRoot(),header=teamReportHeader(row);
+      if(selected.summary){const page=makeReportPage(root,{orientation:'portrait',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent='Current Team Summary';body.appendChild(title);const grid=document.createElement('div');grid.className='report-kpis';els.teamSummarySection.querySelectorAll('.metric').forEach(m=>{const x=document.createElement('div');x.className='report-kpi';x.innerHTML=`<div class="report-kpi-label">${escapeHtml(m.querySelector('.metric-label')?.textContent||'')}</div><div class="report-kpi-value">${escapeHtml(m.querySelector('.metric-value')?.textContent||'—')}</div>`;grid.appendChild(x)});body.appendChild(grid);const note=document.createElement('p');note.className='report-note';note.textContent='Current efficiency profile based on FBS-vs-FBS games in the selected season.';body.appendChild(note)}
+      if(selected.trend){const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent='Weekly Trends';body.appendChild(title);if(APP.teamTrendChart){const img=document.createElement('img');img.className='report-chart';img.src=APP.teamTrendChart.toBase64Image('image/png',1);img.style.maxHeight='650px';body.appendChild(img)}else{const n=document.createElement('p');n.className='report-note';n.textContent='Weekly history is not available yet.';body.appendChild(n)}}
+      if(selected.schedule){const sourceRows=[...els.teamScheduleBody.rows],chunks=distributeRows(sourceRows,22);chunks.forEach((chunk,idx)=>{const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent=`Season Schedule & Projections${chunks.length>1?` — ${idx+1} of ${chunks.length}`:''}`;body.appendChild(title);if(idx===0){const sum=document.createElement('div');sum.className='report-schedule-summary';sum.innerHTML=`<div><span>Current FBS record</span><strong>${escapeHtml(els.teamCurrentRecord.textContent)}</strong></div><div><span>Projected remaining</span><strong>${escapeHtml(els.teamRemaining.textContent)}</strong></div><div><span>Projected final FBS record</span><strong>${escapeHtml(els.teamProjected.textContent)}</strong></div>`;body.appendChild(sum)}const table=document.createElement('table');table.className='report-table';const sourceTable=els.teamScheduleSection.querySelector('table');table.appendChild(sourceTable.tHead.cloneNode(true));const tb=document.createElement('tbody');chunk.forEach(r=>tb.appendChild(r.cloneNode(true)));table.appendChild(tb);body.appendChild(table);const note=document.createElement('p');note.className='report-note';note.textContent='Future scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.';body.appendChild(note)})}
+      return {root,pages:finalizeReportPages(root),row}
     }
-    function printTeamReport(){const report=buildTeamPrintReport();if(!report)return;closeMenus();document.body.classList.add('team-printing');const done=()=>{document.body.classList.remove('team-printing');window.removeEventListener('afterprint',done)};window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60)}
-    async function exportTeamReportPng(){const report=buildTeamPrintReport();if(!report)return;closeMenus();const team=(APP.team||'team').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');await elementToPng(report,`${team}-${APP.year}-team-report.png`)}
+    async function publishTeam(type){const report=buildTeamReport();if(!report)return;closeMenus();const base=`${safeSlug(report.row.Team)}-${APP.year}-team-report`;try{if(type==='pdf')await saveReportPdf(report.pages,`${base}.pdf`);else await saveReportPngs(report.pages,base)}finally{cleanupReport(report.root)}}
 
     async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':renderRankings();break;case'matchup':updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
 
@@ -646,10 +700,10 @@
     els.teamPrintAll.onclick=e=>{e.stopPropagation();[els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.checked=true);els.teamPublishMessage.classList.remove('visible')};
     els.teamPrintNone.onclick=e=>{e.stopPropagation();[els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.checked=false)};
     [els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.onchange=()=>els.teamPublishMessage.classList.remove('visible'));
-    els.teamPublishPdf.onclick=e=>{e.stopPropagation();printTeamReport()};
-    els.teamPublishPng.onclick=async e=>{e.stopPropagation();await exportTeamReportPng()};
-    els.rankPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankPublishMenu,els.rankPublishButton)};els.rankPublishPdf.onclick=()=>{closeMenus();window.print()};els.rankPublishPng.onclick=()=>{closeMenus();elementToPng($("rankingsCapture"),`cfb-rankings-${APP.year}.png`)};
-    els.confPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confPublishMenu,els.confPublishButton)};els.confPublishPng.onclick=()=>{closeMenus();if(APP.conferenceChart)chartToPng(APP.conferenceChart,`conference-comparison-${APP.year}.png`)};els.confPublishPdf.onclick=()=>{closeMenus();if(APP.conferenceChart)chartToPdf(APP.conferenceChart,`conference-comparison-${APP.year}.pdf`)};
+    els.teamPublishPdf.onclick=async e=>{e.stopPropagation();await publishTeam('pdf')};
+    els.teamPublishPng.onclick=async e=>{e.stopPropagation();await publishTeam('png')};
+    els.rankPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankPublishMenu,els.rankPublishButton)};els.rankPublishPdf.onclick=async()=>await publishRankings('pdf');els.rankPublishPng.onclick=async()=>await publishRankings('png');
+    els.confPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confPublishMenu,els.confPublishButton)};els.confPublishPng.onclick=async()=>await publishConference('png');els.confPublishPdf.onclick=async()=>await publishConference('pdf');
 
     window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);APP.year=p.get('year')||DEFAULT_YEAR;APP.team=p.get('team');setView(p.get('view')||'rankings',{push:false,team:APP.team});buildSeasonLinks();loadCurrentYear()});
 
