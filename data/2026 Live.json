@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T03:16:21.740258+00:00",
+  "updatedAt": "2026-09-13T03:21:28.266655+00:00",
   "liveGames": [
     {
       "id": 401856783,
@@ -10,12 +10,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Big 12",
       "homePoints": 24.0,
-      "awayPoints": 28.0,
+      "awayPoints": 35.0,
       "period": 4,
-      "clock": "01:14",
-      "completedDrives": 26,
+      "clock": "00:52",
+      "completedDrives": 27,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 13
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401858219,
@@ -27,25 +27,10 @@
       "homePoints": 13.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:02",
+      "clock": "00:00",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
-    },
-    {
-      "id": 401862703,
-      "status": "in_progress",
-      "homeTeam": "Florida Atlantic",
-      "awayTeam": "Navy",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 38.0,
-      "awayPoints": 30.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
     },
     {
       "id": 401856671,
@@ -57,9 +42,9 @@
       "homePoints": 34.0,
       "awayPoints": 8.0,
       "period": 3,
-      "clock": "05:39",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "04:05",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -72,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "08:14",
-      "completedDrives": 6,
+      "clock": "05:28",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856670,
@@ -87,7 +72,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "12:17",
+      "clock": "11:23",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -99,12 +84,12 @@
       "awayTeam": "Sacramento State",
       "homeConference": "Pac-12",
       "awayConference": "Mid-American",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "14:53",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -114,10 +99,10 @@
       "awayTeam": "Louisiana",
       "homeConference": "Big Ten",
       "awayConference": "Sun Belt",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "08:19",
+      "clock": "04:57",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -128,11 +113,9 @@
     "Arkansas",
     "Auburn",
     "Clemson",
-    "Florida Atlantic",
     "Fresno State",
     "Georgia Southern",
     "Louisiana",
-    "Navy",
     "North Dakota State",
     "Oregon State",
     "Sacramento State",
