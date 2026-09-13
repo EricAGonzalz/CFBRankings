@@ -164,7 +164,6 @@
     .conference-summary span{display:block;font-size:11px;text-transform:uppercase;color:var(--muted)}
     .conference-summary strong{display:block;margin-top:2px;font-size:18px}
     .note{margin-top:10px;color:var(--muted);font-size:12px;line-height:1.45}
-    .mobile-chart-note{display:none}
     .error{display:none;margin-top:12px;padding:11px;border:1px solid #d9a3a3;background:#fff3f3;color:var(--bad);font-size:13px}.error.visible{display:block}
     .loading{color:var(--muted);font-size:13px;padding:10px 2px}
     .hidden{display:none!important}
@@ -174,108 +173,12 @@
 
     @media(max-width:1000px){.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chart-wrap{height:620px}}
     @media(max-width:720px){
-      html{overflow-x:hidden}
-      body{margin:0;background:#fff;overflow-x:hidden}
-      .page{width:100%;max-width:none}
-
-      /* App shell */
-      .topbar{border-left:0;border-right:0;border-radius:0;padding:12px 12px 10px;position:relative}
-      .brandrow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:start;gap:10px;flex-wrap:nowrap}
-      .brandrow>div:first-child{min-width:0}
-      .spacer{display:none}
-      h1{font-size:21px;line-height:1.15}
-      .subtitle,.statusline{font-size:12px;line-height:1.35;max-width:100%}
-      .statusline{margin-top:5px}
-      .page-menu{justify-self:end}
-      .page-menu-button{padding:7px 11px;font-size:12px;white-space:nowrap}
-      .page-menu-list{right:0;left:auto;min-width:min(290px,calc(100vw - 24px));max-width:calc(100vw - 24px)}
-
-      .season-links{margin:10px -12px 0;padding:9px 12px 2px;border-top:1px solid #e8e8e8;overflow-x:auto;overflow-y:hidden;flex-wrap:nowrap;gap:3px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-      .season-links::-webkit-scrollbar{display:none}
-      .season-links span,.season-links button{flex:0 0 auto}
-      .season-links button{padding:5px 7px;min-height:30px}
-
-      .app-content{margin-top:8px}
-      .view-toolbar{display:block;margin-bottom:8px;padding:0 10px}
-      .card{border-left:0;border-right:0;border-radius:0;padding:13px 12px}
-
-      /* Mobile filter panel */
-      .controls{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;align-items:stretch}
-      .control{width:100%;min-width:0;border-radius:10px;padding:8px 10px;gap:5px;background:#f6f6f6}
-      .control label{font-size:11px;color:var(--muted)}
-      .control input,.control select,.conference-menu-button{width:100%;min-width:0;font-size:13px}
-      .controls>.control:first-child{grid-column:1/-1}
-      .controls>.control:first-child input{min-height:24px}
-      .conference-menu{width:100%}
-      .conference-menu-list{left:0;right:auto;width:min(300px,calc(100vw - 28px));max-height:50vh}
-      .publish-menu{width:100%;margin-top:8px}
-      .print-button{width:100%;justify-content:center;min-height:40px}
-
-      /* Rankings table: compact, smooth horizontal scroll, sticky identity columns */
-      .table-wrap{border-left:0;border-right:0;border-radius:0;padding:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-      #rankingsTable{width:max-content;min-width:100%;font-size:12px}
-      #rankingsTable th,#rankingsTable td{padding:7px 8px}
-      #rankingsTable th{font-size:11px}
-      #rankingsTable th:nth-child(1),#rankingsTable td:nth-child(1){position:sticky;left:0;z-index:3;min-width:44px;width:44px;background:inherit}
-      #rankingsTable th:nth-child(2),#rankingsTable td:nth-child(2){position:sticky;left:44px;z-index:3;min-width:145px;max-width:170px;background:inherit;box-shadow:2px 0 0 #ddd}
-      #rankingsTable thead th:nth-child(1),#rankingsTable thead th:nth-child(2){z-index:5;background:var(--head)}
-      #rankingsTable tbody tr:nth-child(odd) td:nth-child(1),#rankingsTable tbody tr:nth-child(odd) td:nth-child(2){background:#fff}
-      #rankingsTable tbody tr:nth-child(even) td:nth-child(1),#rankingsTable tbody tr:nth-child(even) td:nth-child(2){background:var(--row-alt)}
-      #rankingsTable tbody tr:hover td:nth-child(1),#rankingsTable tbody tr:hover td:nth-child(2){background:var(--row-hover)}
-      #rankingsTable tr.champion td:nth-child(1),#rankingsTable tr.champion td:nth-child(2){background:var(--champ)!important}
-      .loading,.note{padding-left:10px;padding-right:10px}
-
-      /* Matchup */
-      .matchup-shell{padding:13px 12px}
-      .matchup-title{font-size:19px}
-      .matchup-intro{font-size:12px}
-      .matchup-builder{padding-top:12px}
-      .matchup-location{margin-bottom:10px}
-      .matchup-location .control.column{width:100%}
-      .matchup-location .control.column select{width:100%;min-width:0}
-      .matchup-grid{grid-template-columns:1fr;gap:7px}
-      .matchup-vs{padding:0;font-size:10px;height:20px}
-      .matchup-team-card{min-height:96px;padding:13px 12px;border-radius:8px}
-      .matchup-actions{margin-top:10px}
-      .matchup-actions .primary{width:100%;min-height:42px}
-      .result-card{padding:13px 12px}
-      .scoreboard{grid-template-columns:1fr}
-      .score-divider{height:1px;margin:0 8px}
-      .score-row{min-height:122px;padding:14px 10px}
-      .team-name{font-size:16px}
-      .score{font-size:38px;margin-top:5px}
-      .headline{font-size:15px}
-
-      /* Summary cards and team profile */
-      .summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .metric{min-height:68px;padding:9px 10px;border-bottom:1px solid var(--grid)}
-      .metric:nth-child(2n){border-right:0}
-      .metric-value{font-size:18px}
-      .schedule-summary{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;padding:10px 0}
-      .schedule-summary>div:last-child{grid-column:1/-1}
-      .schedule-summary strong{font-size:17px}
-
-      /* Charts */
-      .desktop-chart-note{display:none}.mobile-chart-note{display:inline}
-      .chart-card{padding:12px 8px;border-left:0;border-right:0;overflow:hidden}
-      .chart-wrap{height:460px;min-height:460px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-      #conferenceChart{min-width:760px!important;width:760px!important;max-width:none!important;height:440px!important}
-      .trend-wrap{height:260px}
-      .conference-summary{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin:8px 0}
-      .conference-summary strong{font-size:16px}
-
-      /* Improve touch behavior */
-      button,select,input{min-height:36px}
-      .season-links button,.page-menu-button,.conference-menu-button{touch-action:manipulation}
-    }
-
-    @media(max-width:390px){
-      .controls{grid-template-columns:1fr}
-      .controls>.control:first-child{grid-column:auto}
-      .summary-grid{grid-template-columns:1fr 1fr}
-      #rankingsTable th:nth-child(2),#rankingsTable td:nth-child(2){min-width:130px;max-width:145px}
-      .chart-wrap{height:440px;min-height:440px}
-      #conferenceChart{min-width:720px!important;width:720px!important;height:420px!important}
+      body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
+      .season-links{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.season-links span{flex:0 0 auto}.season-links button{flex:0 0 auto}
+      .controls{align-items:stretch}.control{width:100%}.control input,.control select,.conference-menu-button{width:100%;min-width:0}
+      .matchup-title{font-size:19px}.matchup-builder{padding-top:14px}
+      .matchup-grid{grid-template-columns:1fr;gap:8px}.matchup-vs{padding:2px 0;font-size:11px}.matchup-team-card{min-height:105px}.scoreboard{grid-template-columns:1fr}.score-divider{height:1px;margin:0 12px}.score-row{min-height:135px;padding:18px 12px}.score{font-size:40px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .chart-wrap{height:540px}.trend-wrap{height:300px}.view-toolbar{align-items:stretch}.publish-menu{width:100%}.print-button{width:100%;justify-content:center}
     }
 
     @media print{
@@ -375,7 +278,7 @@
           </div>
           <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
           <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
-          <p class="note"><span class="desktop-chart-note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Click a point to open that team profile.</span><span class="mobile-chart-note">Swipe horizontally to explore the chart. To keep team names readable, only the highest-ranked teams in each conference are labeled; tap any point to open that team profile.</span></p>
+          <p class="note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Click a point to open that team profile.</p>
         </div>
       </section>
 
@@ -575,8 +478,8 @@
     function buildConferenceOptions(){buildCheckboxOptions(els.confOptions,els.confMenuText,renderConferenceChart)}
     function normalizedConferenceName(v){return String(v||"").toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
     function applyConferencePreset(type){const p4=new Set(["acc","atlantic coast","atlantic coast conference","big ten","big 10","big 12","sec","southeastern","southeastern conference"]),g6=new Set(["aac","american","american athletic","american athletic conference","c usa","conference usa","mac","mid american","mid american conference","mountain west","mountain west conference","pac 12","pac 12 conference","sun belt","sun belt conference"]);els.confOptions.querySelectorAll('input').forEach(i=>i.checked=(type==='p4'?p4:g6).has(normalizedConferenceName(i.value)));updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()}
-    const readableLabels={id:'readableLabels',afterDatasetsDraw(chart){const ctx=chart.ctx,placed=[],mobile=window.matchMedia('(max-width:720px)').matches,narrow=window.matchMedia('(max-width:390px)').matches;ctx.save();ctx.font=`700 ${mobile?10:11}px system-ui`;ctx.textAlign='center';ctx.textBaseline='bottom';chart.data.datasets.forEach((ds,di)=>{const meta=chart.getDatasetMeta(di);if(meta.hidden)return;meta.data.forEach((el,pi)=>{const p=ds.data[pi];if(!p?.team)return;if(mobile&&p.conferenceRank>(narrow?1:2))return;const text=p.team,w=ctx.measureText(text).width+6,h=mobile?13:14;let x=el.x,y=el.y-8;for(let step=0;step<(mobile?8:12);step++){const box={l:x-w/2,r:x+w/2,t:y-h,b:y};if(!placed.some(q=>!(box.r<q.l||box.l>q.r||box.b<q.t||box.t>q.b))){placed.push(box);break}y-=mobile?12:13;if(step===(mobile?3:5)){x+=w*.35;y=el.y-8}}ctx.lineWidth=mobile?3:4;ctx.strokeStyle='rgba(255,255,255,.96)';ctx.strokeText(text,x,y);ctx.fillStyle=ds.borderColor;ctx.fillText(text,x,y)})});ctx.restore()}};Chart.register(readableLabels);
-    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>b[metric]-a[metric]||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=CONF_COLORS[ci++%CONF_COLORS.length];datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:color,pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:window.matchMedia('(max-width:720px)').matches?15:20,weight:'700'},padding:{bottom:10}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:8,padding:window.matchMedia('(max-width:720px)').matches?10:14,font:{size:window.matchMedia('(max-width:720px)').matches?9:11}}},tooltip:{callbacks:{title:i=>i[0]?.raw.team||'',label:c=>[`Conference: ${c.raw.conference}`,`Conference rank: ${c.raw.conferenceRank}`,`${METRIC_LABELS[metric]}: ${c.raw[metric].toFixed(3)}`]}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
+    const readableLabels={id:'readableLabels',afterDatasetsDraw(chart){const ctx=chart.ctx,placed=[];ctx.save();ctx.font='700 11px system-ui';ctx.textAlign='center';ctx.textBaseline='bottom';chart.data.datasets.forEach((ds,di)=>{const meta=chart.getDatasetMeta(di);if(meta.hidden)return;meta.data.forEach((el,pi)=>{const p=ds.data[pi];if(!p?.team)return;const text=p.team,w=ctx.measureText(text).width+6,h=14;let x=el.x,y=el.y-8;for(let step=0;step<12;step++){const box={l:x-w/2,r:x+w/2,t:y-h,b:y};if(!placed.some(q=>!(box.r<q.l||box.l>q.r||box.b<q.t||box.t>q.b))){placed.push(box);break}y-=13;if(step===5){x+=w*.35;y=el.y-8}}ctx.lineWidth=4;ctx.strokeStyle='rgba(255,255,255,.95)';ctx.strokeText(text,x,y);ctx.fillStyle=ds.borderColor;ctx.fillText(text,x,y)})});ctx.restore()}};Chart.register(readableLabels);
+    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>b[metric]-a[metric]||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=CONF_COLORS[ci++%CONF_COLORS.length];datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:color,pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{callbacks:{title:i=>i[0]?.raw.team||'',label:c=>[`Conference: ${c.raw.conference}`,`Conference rank: ${c.raw.conferenceRank}`,`${METRIC_LABELS[metric]}: ${c.raw[metric].toFixed(3)}`]}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
 
     // ---------- Team ----------
     async function renderTeam(){
