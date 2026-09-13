@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T06:11:21.343925+00:00",
+  "updatedAt": "2026-09-13T06:16:28.386522+00:00",
   "liveGames": [
-    {
-      "id": 401858445,
-      "status": "in_progress",
-      "homeTeam": "USC",
-      "awayTeam": "Louisiana",
-      "homeConference": "Big Ten",
-      "awayConference": "Sun Belt",
-      "homePoints": 49.0,
-      "awayPoints": 30.0,
-      "period": 4,
-      "clock": "01:11",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401864578,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 19.0,
       "awayPoints": 19.0,
       "period": 3,
-      "clock": "09:51",
+      "clock": "09:44",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -35,8 +20,6 @@
   ],
   "liveTeams": [
     "Hawai'i",
-    "Louisiana",
-    "New Mexico State",
-    "USC"
+    "New Mexico State"
   ]
 }
