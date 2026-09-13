@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T05:11:27.291553+00:00",
+  "updatedAt": "2026-09-13T05:17:00.408553+00:00",
   "liveGames": [
     {
       "id": 401864502,
@@ -10,12 +10,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 25.0,
-      "awayPoints": 35.0,
+      "awayPoints": 38.0,
       "period": 4,
-      "clock": "02:39",
-      "completedDrives": 18,
+      "clock": "01:58",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856670,
@@ -27,9 +27,9 @@
       "homePoints": 36.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "13:19",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -39,7 +39,7 @@
       "awayTeam": "Sacramento State",
       "homeConference": "Pac-12",
       "awayConference": "Mid-American",
-      "homePoints": 45.0,
+      "homePoints": 46.0,
       "awayPoints": 3.0,
       "period": 3,
       "clock": "02:43",
@@ -55,12 +55,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Sun Belt",
       "homePoints": 35.0,
-      "awayPoints": 10.0,
+      "awayPoints": 17.0,
       "period": 3,
-      "clock": "05:02",
-      "completedDrives": 12,
+      "clock": "04:07",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401864578,
@@ -72,10 +72,10 @@
       "homePoints": 16.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "05:20",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "clock": "03:28",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
+      "awayOffensiveDrives": 5
     }
   ],
   "liveTeams": [
