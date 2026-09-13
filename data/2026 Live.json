@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T02:56:32.479720+00:00",
+  "updatedAt": "2026-09-13T03:02:18.956053+00:00",
   "liveGames": [
-    {
-      "id": 401856681,
-      "status": "in_progress",
-      "homeTeam": "Georgia Tech",
-      "awayTeam": "Tennessee",
-      "homeConference": "ACC",
-      "awayConference": "SEC",
-      "homePoints": 24.0,
-      "awayPoints": 45.0,
-      "period": 4,
-      "clock": "01:16",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401856682,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 17.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "01:30",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -42,9 +27,9 @@
       "homePoints": 24.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "03:53",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "03:49",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -55,9 +40,9 @@
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
       "homePoints": 13.0,
-      "awayPoints": 6.0,
+      "awayPoints": 7.0,
       "period": 2,
-      "clock": "03:03",
+      "clock": "02:00",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -70,12 +55,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 38.0,
-      "awayPoints": 22.0,
+      "awayPoints": 30.0,
       "period": 4,
-      "clock": "01:56",
-      "completedDrives": 22,
+      "clock": "01:35",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401867796,
@@ -87,10 +72,10 @@
       "homePoints": 45.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "01:42",
-      "completedDrives": 29,
+      "clock": "12:00",
+      "completedDrives": 30,
       "homeOffensiveDrives": 15,
-      "awayOffensiveDrives": 14
+      "awayOffensiveDrives": 15
     },
     {
       "id": 401856671,
@@ -99,28 +84,13 @@
       "awayTeam": "Southern Miss",
       "homeConference": "SEC",
       "awayConference": "Sun Belt",
-      "homePoints": 27.0,
+      "homePoints": 34.0,
       "awayPoints": 8.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "period": 3,
+      "clock": "00:19",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
-    },
-    {
-      "id": 401856676,
-      "status": "in_progress",
-      "homeTeam": "Ole Miss",
-      "awayTeam": "Charlotte",
-      "homeConference": "SEC",
-      "awayConference": "American Athletic",
-      "homePoints": 41.0,
-      "awayPoints": 9.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401864502,
@@ -132,9 +102,9 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "13:34",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "12:10",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -147,10 +117,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "03:39",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "clock": "01:22",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401860883,
@@ -172,22 +142,18 @@
     "Air Force",
     "Arkansas",
     "Auburn",
-    "Charlotte",
     "Clemson",
     "Florida Atlantic",
     "Fresno State",
     "Georgia Southern",
-    "Georgia Tech",
     "LSU",
     "Louisiana Tech",
     "Navy",
     "North Dakota State",
     "Ohio State",
-    "Ole Miss",
     "Oregon State",
     "Sacramento State",
     "Southern Miss",
-    "Tennessee",
     "Texas",
     "Texas Tech",
     "Utah"
