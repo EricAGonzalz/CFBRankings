@@ -301,13 +301,13 @@
             <div class="controls">
               <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
               <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
-              <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="smart" selected>Smart</option><option value="top3">Top 3 / conference</option><option value="all">All teams</option><option value="none">None</option></select></div>
+              <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="top3">Top 3 / conference</option><option value="top5">Top 5 / conference</option><option value="all" selected>All teams</option><option value="none">None</option></select></div>
             </div>
             <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
           </div>
           <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
           <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
-          <p class="note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Label density can be adjusted with the Labels menu; Smart shows every team when the chart is lightly populated and only the top three teams per conference when many conferences are displayed. Hover for full team details or click a point to open that team profile.</p>
+          <p class="note">X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order. Label density can be adjusted with the Labels menu. Hover for full team details or click a point to open that team profile.</p>
         </div>
       </section>
 
@@ -531,49 +531,56 @@
     const readableLabels={
       id:'readableLabels',
       afterDatasetsDraw(chart){
-        const mode=els.confLabels?.value||'smart';
+        const mode=els.confLabels?.value||'all';
         if(mode==='none')return;
-        const visibleDatasets=chart.data.datasets.filter((_,i)=>!chart.getDatasetMeta(i).hidden);
-        const total=visibleDatasets.reduce((sum,ds)=>sum+ds.data.length,0);
-        const effective=(mode==='smart'?(total<=30?'all':'top3'):mode);
-        const ctx=chart.ctx,placed=[];
+
+        const limit=mode==='top3'?3:mode==='top5'?5:Infinity;
+        const ctx=chart.ctx;
+        const area=chart.chartArea;
+
         ctx.save();
         ctx.font='700 11px system-ui';
         ctx.textBaseline='middle';
+
         chart.data.datasets.forEach((ds,di)=>{
           const meta=chart.getDatasetMeta(di);
           if(meta.hidden)return;
+
           meta.data.forEach((el,pi)=>{
             const p=ds.data[pi];
-            if(!p?.team)return;
-            if(effective==='top3' && p.conferenceRank>3)return;
+            if(!p?.team || p.conferenceRank>limit)return;
+
             const text=p.team;
-            const textW=ctx.measureText(text).width;
-            const padX=5,boxW=textW+padX*2,boxH=16;
-            const candidates=[
-              {x:el.x,y:el.y-14,align:'center'},
-              {x:el.x+10+boxW/2,y:el.y,align:'center'},
-              {x:el.x-10-boxW/2,y:el.y,align:'center'},
-              {x:el.x,y:el.y+15,align:'center'},
-              {x:el.x+8+boxW/2,y:el.y-12,align:'center'},
-              {x:el.x-8-boxW/2,y:el.y-12,align:'center'}
-            ];
-            let choice=null,box=null;
-            for(const c of candidates){
-              const b={l:c.x-boxW/2,r:c.x+boxW/2,t:c.y-boxH/2,b:c.y+boxH/2};
-              const within=b.l>=chart.chartArea.left && b.r<=chart.chartArea.right && b.t>=chart.chartArea.top && b.b<=chart.chartArea.bottom;
-              const overlaps=placed.some(q=>!(b.r<q.l||b.l>q.r||b.b<q.t||b.t>q.b));
-              if(within&&!overlaps){choice=c;box=b;break;}
-            }
-            if(!choice)return;
-            placed.push(box);
-            const moved=Math.hypot(choice.x-el.x,choice.y-el.y)>18;
-            if(moved){
-              ctx.beginPath();ctx.moveTo(el.x,el.y);ctx.lineTo(choice.x,choice.y);ctx.strokeStyle='rgba(90,90,90,.35)';ctx.lineWidth=1;ctx.stroke();
-            }
-            ctx.textAlign='center';
-            ctx.lineWidth=4;ctx.strokeStyle='rgba(255,255,255,.98)';ctx.strokeText(text,choice.x,choice.y);
-            ctx.fillStyle=ds.borderColor;ctx.fillText(text,choice.x,choice.y);
+            const w=ctx.measureText(text).width;
+
+            // Stagger labels by conference and rank instead of discarding them when
+            // two labels overlap. This guarantees the selected labels remain visible.
+            const direction=((di+pi)%2===0)?-1:1;
+            const tier=((di+pi)%3);
+            let x=el.x;
+            let y=el.y + direction*(13+tier*9);
+            let align='center';
+
+            // At the plot edges, push the label inward so full team names stay visible.
+            if(x-w/2 < area.left+3){x=el.x+8;align='left';}
+            else if(x+w/2 > area.right-3){x=el.x-8;align='right';}
+            y=Math.max(area.top+8,Math.min(area.bottom-8,y));
+
+            // Small connector makes it clear which point a displaced name belongs to.
+            ctx.beginPath();
+            ctx.moveTo(el.x,el.y);
+            ctx.lineTo(x,y-direction*5);
+            ctx.strokeStyle='rgba(90,90,90,.28)';
+            ctx.lineWidth=1;
+            ctx.stroke();
+
+            ctx.textAlign=align;
+            ctx.lineJoin='round';
+            ctx.lineWidth=4;
+            ctx.strokeStyle='rgba(255,255,255,.98)';
+            ctx.strokeText(text,x,y);
+            ctx.fillStyle=ds.borderColor;
+            ctx.fillText(text,x,y);
           });
         });
         ctx.restore();
