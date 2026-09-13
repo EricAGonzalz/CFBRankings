@@ -373,6 +373,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script>
     const RAW_BASE = "https://raw.githubusercontent.com/EricAGonzalz/CFBRankings/main/data/";
     const DATA_DIR = "data";
@@ -637,6 +638,7 @@
     }
     function finalizeReportPages(root){const pages=[...root.querySelectorAll('.report-page')];pages.forEach((p,i)=>{const n=p.querySelector('.report-page-number');if(n)n.textContent=`Page ${i+1} of ${pages.length} • Generated ${reportTimestamp()}`});return pages}
     function distributeRows(rows,maxPerPage){const pageCount=Math.max(1,Math.ceil(rows.length/maxPerPage));const base=Math.floor(rows.length/pageCount),extra=rows.length%pageCount,out=[];let at=0;for(let i=0;i<pageCount;i++){const count=base+(i<extra?1:0);out.push(rows.slice(at,at+count));at+=count}return out}
+    function fixedPageRows(rows,perPage){const out=[];for(let i=0;i<rows.length;i+=perPage)out.push(rows.slice(i,i+perPage));return out.length?out:[[]]}
     async function renderReportCanvases(pages){const canvases=[];for(const page of pages){canvases.push(await html2canvas(page,{backgroundColor:'#fff',scale:2,useCORS:true,logging:false}))}return canvases}
     async function saveReportPdf(pages,name){
       if(!pages.length)return;const canvases=await renderReportCanvases(pages);const {jsPDF}=window.jspdf;
@@ -645,14 +647,35 @@
       pdf.save(name)
     }
     async function saveReportPngs(pages,baseName){
-      if(!pages.length)return;const canvases=await renderReportCanvases(pages),digits=String(canvases.length).length;
-      for(let i=0;i<canvases.length;i++){const blob=await new Promise(resolve=>canvases[i].toBlob(resolve,'image/png'));if(blob)downloadBlob(blob,`${baseName}-page-${String(i+1).padStart(digits,'0')}.png`);await new Promise(r=>setTimeout(r,90))}
+      if(!pages.length)return;
+      const canvases=await renderReportCanvases(pages);
+      const blobs=[];
+      for(const canvas of canvases){
+        const blob=await new Promise(resolve=>canvas.toBlob(resolve,'image/png'));
+        if(blob)blobs.push(blob);
+      }
+      if(!blobs.length)return;
+
+      // A one-page report should behave like a normal image export.
+      if(blobs.length===1){
+        downloadBlob(blobs[0],`${baseName}.png`);
+        return;
+      }
+
+      // Multi-page reports are bundled into one ZIP so the user receives
+      // a single distributable download instead of many browser downloads.
+      if(typeof JSZip==='undefined')throw new Error('ZIP export library failed to load.');
+      const zip=new JSZip();
+      const digits=Math.max(2,String(blobs.length).length);
+      blobs.forEach((blob,i)=>zip.file(`${baseName}-page-${String(i+1).padStart(digits,'0')}.png`,blob));
+      const zipBlob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6}});
+      downloadBlob(zipBlob,`${baseName}.zip`);
     }
     function cleanupReport(root){setTimeout(()=>root?.remove(),300)}
 
     function buildRankingsReport(){
       const root=makeReportRoot(),source=els.rankingsTable,head=source.tHead?.cloneNode(true),rows=[...source.tBodies[0].rows];
-      const chunks=distributeRows(rows,24),search=els.rankTeamSearch.value.trim()||'None',top=Number(els.rankTopN.value||0),confs=selectedCheckboxValues(els.rankConfOptions);
+      const chunks=fixedPageRows(rows,30),search=els.rankTeamSearch.value.trim()||'None',top=Number(els.rankTopN.value||0),confs=selectedCheckboxValues(els.rankConfOptions);
       const allCount=els.rankConfOptions.querySelectorAll('input').length,confText=!confs.length?'None':confs.length===allCount?'All conferences':confs.join(', ');
       chunks.forEach((chunk,i)=>{
         const page=makeReportPage(root,{orientation:'landscape',format:'legal',title:`CFB Rankings — ${APP.year}`,subtitle:'FBS-vs-FBS efficiency rankings',meta:`Rows ${rows.length?rows.indexOf(chunk[0])+1:0}–${rows.length?rows.indexOf(chunk[chunk.length-1])+1:0} of ${rows.length}<br>${escapeHtml(els.statusLine.textContent||'')}`});
