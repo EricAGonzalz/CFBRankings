@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T03:56:21.576162+00:00",
+  "updatedAt": "2026-09-13T04:02:17.682753+00:00",
   "liveGames": [
     {
       "id": 401858219,
@@ -13,9 +13,9 @@
       "awayPoints": 7.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 17,
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856671,
@@ -27,7 +27,7 @@
       "homePoints": 43.0,
       "awayPoints": 8.0,
       "period": 4,
-      "clock": "10:10",
+      "clock": "06:22",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -54,12 +54,12 @@
       "awayTeam": "Arkansas",
       "homeConference": "Big 12",
       "awayConference": "SEC",
-      "homePoints": 22.0,
+      "homePoints": 29.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "01:32",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "00:27",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -72,7 +72,7 @@
       "homePoints": 22.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "05:15",
+      "clock": "02:00",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -85,12 +85,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Sun Belt",
       "homePoints": 14.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "00:56",
-      "completedDrives": 5,
+      "clock": "07:57",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
