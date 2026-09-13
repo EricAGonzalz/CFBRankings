@@ -212,7 +212,7 @@
     .report-table th,.report-table td{border:1px solid #cfcfcf;padding:2px 4px;white-space:nowrap;text-align:right;height:19px;line-height:1.1}
     .report-table th{background:#111;color:#fff;border-color:#222;font-size:7.5px}
     .report-table th.left,.report-table td.left{text-align:left}.report-table tbody tr:nth-child(even){background:#f7f7f7}
-    .report-table tr.champion{background:#fff4b8!important;font-weight:700}.report-table a{color:inherit;text-decoration:none}
+    .report-table tr.champion{background:#fff4b8!important;font-weight:700}.report-table a{color:inherit;text-decoration:none}.report-table .live-dot{display:inline-block;width:7px;height:7px;margin-left:5px;border-radius:50%;background:#d71920;animation:none!important;vertical-align:middle}
     .report-filterline{font-size:9px;color:#555;margin:0 0 7px;line-height:1.3}
     .report-kpis{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #d0d0d0;margin-bottom:14px}
     .report-kpi{padding:11px 12px;border-right:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0;min-height:68px}.report-kpi:nth-child(4n){border-right:0}.report-kpi:nth-last-child(-n+4){border-bottom:0}
@@ -680,7 +680,7 @@
       chunks.forEach((chunk,i)=>{
         const page=makeReportPage(root,{orientation:'landscape',format:'legal',title:`CFB Rankings — ${APP.year}`,subtitle:'FBS-vs-FBS efficiency rankings',meta:`Rows ${rows.length?rows.indexOf(chunk[0])+1:0}–${rows.length?rows.indexOf(chunk[chunk.length-1])+1:0} of ${rows.length}<br>${escapeHtml(els.statusLine.textContent||'')}`});
         const body=page.querySelector('.report-body');const filters=document.createElement('div');filters.className='report-filterline';filters.textContent=`Filters — Team search: ${search} • Conferences: ${confText} • Ranking filter: ${top?`Top ${top}`:'All'} • Sorted as displayed`;body.appendChild(filters);
-        const table=document.createElement('table');table.className='report-table';table.appendChild(head.cloneNode(true));const tb=document.createElement('tbody');chunk.forEach(r=>{const clone=r.cloneNode(true);clone.querySelectorAll('.live-dot').forEach(x=>x.remove());tb.appendChild(clone)});table.appendChild(tb);body.appendChild(table);
+        const table=document.createElement('table');table.className='report-table';table.appendChild(head.cloneNode(true));const tb=document.createElement('tbody');chunk.forEach(r=>{const clone=r.cloneNode(true);tb.appendChild(clone)});table.appendChild(tb);body.appendChild(table);
         if(i===chunks.length-1&&els.rankNote.textContent){const note=document.createElement('p');note.className='report-note';note.textContent=els.rankNote.textContent;body.appendChild(note)}
       });
       return {root,pages:finalizeReportPages(root)}
