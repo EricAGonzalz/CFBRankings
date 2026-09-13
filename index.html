@@ -221,6 +221,40 @@
     .report-chart{display:block;width:100%;height:auto;max-height:620px;object-fit:contain}
     .report-conference-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.report-summary-box{border:1px solid #d0d0d0;padding:9px 11px}.report-summary-box span{display:block;font-size:8px;text-transform:uppercase;color:#666;font-weight:700}.report-summary-box strong{display:block;margin-top:3px;font-size:16px}
     .report-schedule-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.report-schedule-summary>div{border:1px solid #d0d0d0;padding:9px 10px}.report-schedule-summary span{font-size:8px;text-transform:uppercase;color:#666;font-weight:700}.report-schedule-summary strong{display:block;margin-top:3px;font-size:15px}
+    /* ---------- Legacy page-specific publishing ---------- */
+    .legacy-rank-print-header,.legacy-rank-print-footer{display:none}
+    .legacy-png-stage{position:fixed;left:-20000px;top:0;width:1320px;pointer-events:none;z-index:-1}
+    .legacy-rank-png-page{box-sizing:border-box;width:1320px;height:1020px;padding:46px 48px 38px;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column}
+    .legacy-rank-png-header{margin-bottom:14px;padding-bottom:10px;border-bottom:3px solid #111}
+    .legacy-rank-png-header h1{margin:0;font-size:28px;letter-spacing:.2px}.legacy-rank-png-season{margin:4px 0 0;font-size:17px;font-weight:700}.legacy-rank-png-meta{margin:4px 0 0;font-size:12px;color:#444}
+    .legacy-rank-png-page table{width:100%;border-collapse:collapse;font-size:11px}.legacy-rank-png-page thead th{position:static;background:#111;color:#fff;border:1px solid #222}
+    .legacy-rank-png-page th,.legacy-rank-png-page td{padding:4px 5px;border:1px solid #b9b9b9;text-align:right;white-space:nowrap}.legacy-rank-png-page th.left,.legacy-rank-png-page td.left{text-align:left}
+    .legacy-rank-png-page tbody tr:nth-child(even){background:#f5f5f5}.legacy-rank-png-page tr.champion{background:#fff2b3!important;font-weight:700}
+    .legacy-rank-png-page .live-dot{display:inline-block!important;width:8px!important;height:8px!important;margin-left:7px!important;border-radius:50%!important;background:#d71920!important;vertical-align:middle!important;animation:none!important}
+    .legacy-rank-png-footer{margin-top:auto;padding-top:8px;border-top:1px solid #888;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#444}
+
+    @media print{
+      body.rankings-printing{margin:0;background:#fff;color:#000;font-family:Arial,Helvetica,sans-serif}
+      body.rankings-printing .topbar,body.rankings-printing .view-toolbar,body.rankings-printing .season-links,body.rankings-printing .note{display:none!important}
+      body.rankings-printing .view{display:none!important}body.rankings-printing #view-rankings{display:block!important}
+      body.rankings-printing .legacy-rank-print-header{display:block!important;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid #111}
+      body.rankings-printing .legacy-rank-print-header h1{margin:0;font-size:18pt;letter-spacing:.2px}.legacy-rank-print-header .report-season{margin:3px 0 0;font-size:11pt;font-weight:700}.legacy-rank-print-header .report-meta{margin:3px 0 0;font-size:8.5pt;color:#444}
+      body.rankings-printing #rankingsCapture{margin-top:0;overflow:visible!important;box-shadow:none;border:0!important;border-radius:0;padding:0!important}
+      body.rankings-printing #rankingsTable{width:100%;border-collapse:collapse;font-size:7.5pt}
+      body.rankings-printing #rankingsTable thead{display:table-header-group}body.rankings-printing #rankingsTable thead th{position:static;background:#111!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body.rankings-printing #rankingsTable th,body.rankings-printing #rankingsTable td{padding:4px 5px;border:1px solid #b9b9b9}
+      body.rankings-printing #rankingsTable tbody tr:nth-child(even){background:#f5f5f5!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body.rankings-printing #rankingsTable tr.champion{background:#fff2b3!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body.rankings-printing #rankingsTable tbody tr{break-inside:avoid;page-break-inside:avoid}
+      body.rankings-printing .live-dot{display:inline-block!important;width:8px!important;height:8px!important;background:#d71920!important;animation:none!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      body.rankings-printing .legacy-rank-print-footer{display:block!important;margin-top:8px;padding-top:6px;border-top:1px solid #888;font-size:7.5pt;color:#444}
+
+      body.matchup-printing{margin:0;background:#fff}
+      body.matchup-printing .topbar,body.matchup-printing .season-links,body.matchup-printing .view-toolbar,body.matchup-printing .matchup-shell,body.matchup-printing .error{display:none!important}
+      body.matchup-printing .view{display:none!important}body.matchup-printing #view-matchup{display:block!important}
+      body.matchup-printing #matchResult,body.matchup-printing #matchDetails{display:block!important;border:0!important;box-shadow:none!important}
+    }
+
     @media(max-width:1000px){.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chart-wrap{height:620px}}
     @media(max-width:720px){
       body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
@@ -273,9 +307,11 @@
             <div class="control"><label for="rankTopN">Filter</label><select id="rankTopN"><option value="0">All</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option></select></div>
             <div class="control"><label for="rankStriping">Striping</label><select id="rankStriping"><option value="on">On</option><option value="off">Off</option></select></div>
           </div>
-          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Generate PDF</button><button id="rankPublishPng">Export to PNGs</button></div></div>
+          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish PNGs as ZIP</button></div></div>
         </div>
+        <section class="legacy-rank-print-header" aria-hidden="true"><h1>College Football Efficiency Rankings</h1><p class="report-season" id="legacyRankPrintSeason"></p><p class="report-meta" id="legacyRankPrintMeta"></p></section>
         <div class="table-wrap" id="rankingsCapture"><table id="rankingsTable"><thead></thead><tbody></tbody></table><div id="rankLoading" class="loading">Loading…</div><div id="rankNote" class="note"></div></div>
+        <footer class="legacy-rank-print-footer" aria-hidden="true">Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.</footer>
       </section>
 
       <!-- Matchup -->
@@ -301,7 +337,7 @@
                 <div class="control column"><label for="matchTeam2">Choose Team 2</label><select id="matchTeam2"></select></div>
               </div>
             </div>
-            <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button></div>
+            <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button><div class="publish-menu" id="matchPublishMenu"><button class="print-button" id="matchPublishButton" type="button" disabled aria-haspopup="true" aria-expanded="false">Publish <span class="caret">▼</span></button><div class="publish-menu-list" role="menu"><button id="matchPublishPdf" type="button">Publish to PDF</button><button id="matchPublishPng" type="button">Publish to PNG</button></div></div></div>
           </div>
         </div>
         <div id="matchError" class="error"></div>
@@ -329,7 +365,7 @@
               <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
               <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="top3">Top 3 / conference</option><option value="top5">Top 5 / conference</option><option value="all" selected>All teams</option><option value="none">None</option></select></div>
             </div>
-            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Generate PDF</button><button id="confPublishPng">Export to PNGs</button></div></div>
+            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
           </div>
           <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
           <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
@@ -404,8 +440,8 @@
     const $ = id => document.getElementById(id);
     const els = {
       pageTitle:$("pageTitle"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
-      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
-      matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchError:$("matchError"),matchResult:$("matchResult"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
+      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),legacyRankPrintSeason:$("legacyRankPrintSeason"),legacyRankPrintMeta:$("legacyRankPrintMeta"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
+      matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchPublishMenu:$("matchPublishMenu"),matchPublishButton:$("matchPublishButton"),matchPublishPdf:$("matchPublishPdf"),matchPublishPng:$("matchPublishPng"),matchError:$("matchError"),matchResult:$("matchResult"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
       confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confLabels:$("confLabels"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
       teamError:$("teamError"),teamPrompt:$("teamPrompt"),teamPicker:$("teamPicker"),teamContent:$("teamContent"),teamRecord:$("teamRecord"),teamRank:$("teamRank"),teamAdjRank:$("teamAdjRank"),teamAdjRtg:$("teamAdjRtg"),teamORtg:$("teamORtg"),teamDRtg:$("teamDRtg"),teamSOS:$("teamSOS"),teamPyW:$("teamPyW"),teamTrendWrap:$("teamTrendWrap"),teamTrendChart:$("teamTrendChart"),teamTrendEmpty:$("teamTrendEmpty"),teamCurrentRecord:$("teamCurrentRecord"),teamRemaining:$("teamRemaining"),teamProjected:$("teamProjected"),teamScheduleBody:$("teamScheduleBody"),
       teamPublishMenu:$("teamPublishMenu"),teamPublishButton:$("teamPublishButton"),teamPrintSummary:$("teamPrintSummary"),teamPrintTrend:$("teamPrintTrend"),teamPrintSchedule:$("teamPrintSchedule"),teamPrintAll:$("teamPrintAll"),teamPrintNone:$("teamPrintNone"),teamPublishPdf:$("teamPublishPdf"),teamPublishPng:$("teamPublishPng"),teamPublishMessage:$("teamPublishMessage"),teamPrintReport:$("teamPrintReport"),teamSummarySection:$("teamSummarySection"),teamTrendSection:$("teamTrendSection"),teamScheduleSection:$("teamScheduleSection")
@@ -546,8 +582,8 @@
     function confidence(a,b){return 100*(1-Math.exp(-Math.min(a.games,b.games)/CONFIDENCE_K))}
     function winProb(s1,s2,conf){const base=1/(1+Math.exp(-((s1-s2)/WIN_PROB_MARGIN_SCALE))),w=Math.max(0,Math.min(1,conf/100));return (0.5+(base-0.5)*w)*100}
     function predictTeams(name1,name2,location){const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2),a=teamObject(r1),b=teamObject(r2),l=league();if(!a||!b||!l)return null;const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);let s1=drives*ra/100,s2=drives*rb/100;if(location==='team1')s1+=HOME_FIELD_POINTS;if(location==='team2')s2+=HOME_FIELD_POINTS;s1=Math.max(0,s1);s2=Math.max(0,s2);const conf=confidence(a,b);return {a,b,drives,ra,rb,s1,s2,conf,p1:winProb(s1,s2,conf)}}
-    function updateMatchButton(){els.matchPredict.disabled=!(els.matchTeam1.value&&els.matchTeam2.value&&els.matchTeam1.value!==els.matchTeam2.value)}
-    function renderMatchup(){const p=predictTeams(els.matchTeam1.value,els.matchTeam2.value,els.matchLocation.value);if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=d1;els.matchScore2.textContent=d2;els.matchRow1.classList.toggle('winner',d1>d2);els.matchRow2.classList.toggle('winner',d2>d1);const winner=d1===d2?"Projected tie":`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchHeadline.textContent=winner;els.matchSubheadline.textContent=`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${p.p1.toFixed(1)}%`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${p.p1}%`;bar2.style.width=`${100-p.p1}%`}}
+    function updateMatchButton(){const ready=!!(els.matchTeam1.value&&els.matchTeam2.value&&els.matchTeam1.value!==els.matchTeam2.value);els.matchPredict.disabled=!ready;if(els.matchPublishButton)els.matchPublishButton.disabled=true}
+    function renderMatchup(){const p=predictTeams(els.matchTeam1.value,els.matchTeam2.value,els.matchLocation.value);if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=d1;els.matchScore2.textContent=d2;els.matchRow1.classList.toggle('winner',d1>d2);els.matchRow2.classList.toggle('winner',d2>d1);const winner=d1===d2?"Projected tie":`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchHeadline.textContent=winner;els.matchSubheadline.textContent=`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${p.p1.toFixed(1)}%`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${p.p1}%`;bar2.style.width=`${100-p.p1}%`}if(els.matchPublishButton)els.matchPublishButton.disabled=false}
 
     // ---------- Conference chart ----------
     const CONF_COLORS=["#0057b8","#d62728","#2ca02c","#9467bd","#ff7f0e","#17becf","#8c564b","#e377c2","#7f7f7f","#bcbd22","#1f77b4","#c51b8a","#238b45","#6a51a3"];
@@ -673,27 +709,42 @@
     }
     function cleanupReport(root){setTimeout(()=>root?.remove(),300)}
 
-    function buildRankingsReport(){
-      const root=makeReportRoot(),source=els.rankingsTable,head=source.tHead?.cloneNode(true),rows=[...source.tBodies[0].rows];
-      const chunks=fixedPageRows(rows,30),search=els.rankTeamSearch.value.trim()||'None',top=Number(els.rankTopN.value||0),confs=selectedCheckboxValues(els.rankConfOptions);
-      const allCount=els.rankConfOptions.querySelectorAll('input').length,confText=!confs.length?'None':confs.length===allCount?'All conferences':confs.join(', ');
-      chunks.forEach((chunk,i)=>{
-        const page=makeReportPage(root,{orientation:'landscape',format:'legal',title:`CFB Rankings — ${APP.year}`,subtitle:'FBS-vs-FBS efficiency rankings',meta:`Rows ${rows.length?rows.indexOf(chunk[0])+1:0}–${rows.length?rows.indexOf(chunk[chunk.length-1])+1:0} of ${rows.length}<br>${escapeHtml(els.statusLine.textContent||'')}`});
-        const body=page.querySelector('.report-body');const filters=document.createElement('div');filters.className='report-filterline';filters.textContent=`Filters — Team search: ${search} • Conferences: ${confText} • Ranking filter: ${top?`Top ${top}`:'All'} • Sorted as displayed`;body.appendChild(filters);
-        const table=document.createElement('table');table.className='report-table';table.appendChild(head.cloneNode(true));const tb=document.createElement('tbody');chunk.forEach(r=>{const clone=r.cloneNode(true);tb.appendChild(clone)});table.appendChild(tb);body.appendChild(table);
-        if(i===chunks.length-1&&els.rankNote.textContent){const note=document.createElement('p');note.className='report-note';note.textContent=els.rankNote.textContent;body.appendChild(note)}
-      });
-      return {root,pages:finalizeReportPages(root)}
+    function legacyRankPublishMetadata(){
+      const confs=selectedCheckboxValues(els.rankConfOptions),total=els.rankConfOptions.querySelectorAll('input[type="checkbox"]').length;
+      const conf=(!confs.length||confs.length===total)?'All conferences':confs.join(', '),top=els.rankTopN.value==='0'?'All teams':`Top ${els.rankTopN.value}`,team=els.rankTeamSearch.value.trim();
+      const parts=[conf,top];if(team)parts.push(`Team filter: ${team}`);
+      return {seasonText:`${APP.year} Season — Current Rankings`,metaText:`${parts.join(' • ')} • Generated ${new Date().toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})}`};
     }
-    async function publishRankings(type){closeMenus();const report=buildRankingsReport();try{if(type==='pdf')await saveReportPdf(report.pages,`cfb-rankings-${APP.year}.pdf`);else await saveReportPngs(report.pages,`cfb-rankings-${APP.year}`)}finally{cleanupReport(report.root)}}
+    function withTemporaryPageRule(rule,fn){const st=document.createElement('style');st.dataset.tempPageRule='1';st.textContent=`@page{${rule}}`;document.head.appendChild(st);const cleanup=()=>st.remove();try{return fn(cleanup)}catch(e){cleanup();throw e}}
+    function publishRankingsPdf(){
+      closeMenus();const {seasonText,metaText}=legacyRankPublishMetadata();els.legacyRankPrintSeason.textContent=seasonText;els.legacyRankPrintMeta.textContent=metaText;
+      document.body.classList.add('rankings-printing');
+      withTemporaryPageRule('size:landscape;margin:.45in .4in .55in .4in',cleanup=>{const done=()=>{document.body.classList.remove('rankings-printing');cleanup();window.removeEventListener('afterprint',done)};window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60)});
+    }
+    function canvasToPngBlob(canvas){return new Promise((resolve,reject)=>canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Could not create PNG image.')),'image/png'))}
+    function buildLegacyRankPngPage(rows,pageNumber,pageCount,seasonText,metaText){
+      const page=document.createElement('section');page.className='legacy-rank-png-page';
+      const header=document.createElement('header');header.className='legacy-rank-png-header';header.innerHTML='<h1>College Football Efficiency Rankings</h1><p class="legacy-rank-png-season"></p><p class="legacy-rank-png-meta"></p>';header.querySelector('.legacy-rank-png-season').textContent=seasonText;header.querySelector('.legacy-rank-png-meta').textContent=metaText;page.appendChild(header);
+      const table=document.createElement('table');table.innerHTML=`<thead>${els.rankingsTable.tHead.innerHTML}</thead><tbody></tbody>`;const tb=table.querySelector('tbody');rows.forEach(row=>tb.appendChild(row.cloneNode(true)));page.appendChild(table);
+      const footer=document.createElement('footer');footer.className='legacy-rank-png-footer';footer.innerHTML=`<span>Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.</span><span>Page ${pageNumber} of ${pageCount}</span>`;page.appendChild(footer);return page;
+    }
+    async function publishRankingsPng(){
+      closeMenus();if(typeof html2canvas!=='function')throw new Error('PNG export library failed to load.');const rows=[...els.rankingsTable.tBodies[0].rows];if(!rows.length)return;
+      const {seasonText,metaText}=legacyRankPublishMetadata(),rowsPerPage=36,pageCount=Math.ceil(rows.length/rowsPerPage),stage=document.createElement('div');stage.className='legacy-png-stage';document.body.appendChild(stage);const blobs=[];
+      try{for(let i=0;i<pageCount;i++){const page=buildLegacyRankPngPage(rows.slice(i*rowsPerPage,(i+1)*rowsPerPage),i+1,pageCount,seasonText,metaText);stage.appendChild(page);const canvas=await html2canvas(page,{backgroundColor:'#fff',scale:2,useCORS:true,logging:false,width:1320,height:1020});blobs.push(await canvasToPngBlob(canvas));page.remove()}
+        const base=`CFB_Rankings_${String(APP.year).replace(/[^0-9A-Za-z_-]/g,'_')}`;if(typeof JSZip==='undefined')throw new Error('ZIP export library failed to load.');const zip=new JSZip();blobs.forEach((b,i)=>zip.file(`${base}_Page_${String(i+1).padStart(2,'0')}.png`,b));downloadBlob(await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6}}),`${base}_PNGs.zip`)}
+      finally{stage.remove()}
+    }
+    function conferenceExportCanvas(){if(!APP.conferenceChart?.canvas)throw new Error('The graph is not ready to export yet.');const src=APP.conferenceChart.canvas,c=document.createElement('canvas');c.width=src.width;c.height=src.height;const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(src,0,0);return c}
+    function conferenceExportName(ext){return `cfb-conference-comparison-${APP.year}-${safeSlug(METRIC_LABELS[els.confMetric.value]||els.confMetric.value)}-${safeSlug(els.confMenuText.textContent||'all-conferences')}.${ext}`}
+    async function publishConferencePng(){closeMenus();const c=conferenceExportCanvas();downloadBlob(await new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(new Error('Could not create image export.')),'image/png')),conferenceExportName('png'))}
+    async function publishConferencePdf(){closeMenus();const c=conferenceExportCanvas(),{jsPDF}=window.jspdf;if(!jsPDF)throw new Error('The PDF library could not be loaded.');const pdf=new jsPDF({orientation:c.width>=c.height?'landscape':'portrait',unit:'pt',format:[c.width,c.height]});pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,c.width,c.height);pdf.save(conferenceExportName('pdf'))}
 
-    function buildConferenceReport(){
-      if(!APP.conferenceChart)return null;const root=makeReportRoot(),page=makeReportPage(root,{orientation:'landscape',format:'letter',title:`Conference Comparison — ${APP.year}`,subtitle:`${METRIC_LABELS[els.confMetric.value]||els.confMetric.value} by rank within conference`,meta:`${escapeHtml(els.confMenuText.textContent||'')}<br>Labels: ${escapeHtml(els.confLabels.options[els.confLabels.selectedIndex]?.text||'')}`});
-      const body=page.querySelector('.report-body');body.innerHTML=`<div class="report-conference-summary"><div class="report-summary-box"><span>Teams shown</span><strong>${escapeHtml(els.confTeamsShown.textContent)}</strong></div><div class="report-summary-box"><span>Conferences shown</span><strong>${escapeHtml(els.confConfsShown.textContent)}</strong></div><div class="report-summary-box"><span>Selected metric</span><strong>${escapeHtml(els.confMetricSummary.textContent)}</strong></div></div>`;
-      const img=document.createElement('img');img.className='report-chart';img.src=APP.conferenceChart.toBase64Image('image/png',1);img.style.maxHeight='585px';body.appendChild(img);const note=document.createElement('p');note.className='report-note';note.textContent='X-axis position is rank within each conference using the selected metric. Teams from the same conference are connected in conference-rank order.';body.appendChild(note);
-      return {root,pages:finalizeReportPages(root)}
+    function publishMatchupPdf(){if(els.matchPublishButton.disabled)return;closeMenus();document.body.classList.add('matchup-printing');withTemporaryPageRule('margin:.5in',cleanup=>{const done=()=>{document.body.classList.remove('matchup-printing');cleanup();window.removeEventListener('afterprint',done)};window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60)})}
+    async function publishMatchupPng(){
+      if(els.matchPublishButton.disabled)return;closeMenus();if(typeof html2canvas!=='function')throw new Error('PNG export library failed to load.');const area=document.createElement('div');Object.assign(area.style,{position:'fixed',left:'-20000px',top:'0',width:'980px',padding:'28px',background:'#fff'});const r=els.matchResult.cloneNode(true),d=els.matchDetails.cloneNode(true);r.classList.remove('hidden');d.classList.remove('hidden');area.append(r,d);document.body.appendChild(area);
+      try{const canvas=await html2canvas(area,{backgroundColor:'#fff',scale:2,useCORS:true,logging:false});const t1=safeSlug(els.matchTeam1.value||'team1'),t2=safeSlug(els.matchTeam2.value||'team2');downloadBlob(await canvasToPngBlob(canvas),`CFB_Matchup_${t1}_vs_${t2}_${APP.year}.png`)}finally{area.remove()}
     }
-    async function publishConference(type){closeMenus();const report=buildConferenceReport();if(!report)return;try{if(type==='pdf')await saveReportPdf(report.pages,`conference-comparison-${APP.year}.pdf`);else await saveReportPngs(report.pages,`conference-comparison-${APP.year}`)}finally{cleanupReport(report.root)}}
 
     function teamPrintSelection(){return {summary:els.teamPrintSummary.checked,trend:els.teamPrintTrend.checked,schedule:els.teamPrintSchedule.checked}}
     function selectedTeamRow(){return APP.rows.find(r=>String(r.Team||'').toLowerCase()===String(APP.team||'').toLowerCase())||null}
@@ -716,7 +767,7 @@
     document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
     els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankStriping.onchange=applyStriping;
-    els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;
+    els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;els.matchPublishButton.onclick=e=>{e.stopPropagation();if(!els.matchPublishButton.disabled)toggleMenu(els.matchPublishMenu,els.matchPublishButton)};els.matchPublishPdf.onclick=e=>{e.stopPropagation();publishMatchupPdf()};els.matchPublishPng.onclick=async e=>{e.stopPropagation();await publishMatchupPng()};
     els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;els.confLabels.onchange=renderConferenceChart;
     els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
     els.teamPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.teamPublishMenu,els.teamPublishButton)};
@@ -725,8 +776,8 @@
     [els.teamPrintSummary,els.teamPrintTrend,els.teamPrintSchedule].forEach(x=>x.onchange=()=>els.teamPublishMessage.classList.remove('visible'));
     els.teamPublishPdf.onclick=async e=>{e.stopPropagation();await publishTeam('pdf')};
     els.teamPublishPng.onclick=async e=>{e.stopPropagation();await publishTeam('png')};
-    els.rankPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankPublishMenu,els.rankPublishButton)};els.rankPublishPdf.onclick=async()=>await publishRankings('pdf');els.rankPublishPng.onclick=async()=>await publishRankings('png');
-    els.confPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confPublishMenu,els.confPublishButton)};els.confPublishPng.onclick=async()=>await publishConference('png');els.confPublishPdf.onclick=async()=>await publishConference('pdf');
+    els.rankPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankPublishMenu,els.rankPublishButton)};els.rankPublishPdf.onclick=()=>publishRankingsPdf();els.rankPublishPng.onclick=async()=>await publishRankingsPng();
+    els.confPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confPublishMenu,els.confPublishButton)};els.confPublishPng.onclick=async()=>await publishConferencePng();els.confPublishPdf.onclick=async()=>await publishConferencePdf();
 
     window.addEventListener('popstate',()=>{const p=new URLSearchParams(location.search);APP.year=p.get('year')||DEFAULT_YEAR;APP.team=p.get('team');setView(p.get('view')||'rankings',{push:false,team:APP.team});buildSeasonLinks();loadCurrentYear()});
 
