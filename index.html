@@ -115,17 +115,47 @@
     .metric-value{margin-top:5px;font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}
     .metric-sub{margin-top:2px;color:var(--muted);font-size:11px}
 
-    .matchup-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-    .matchup-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:14px}
-    .primary{border:1px solid #111;background:#111;color:#fff;border-radius:999px;padding:9px 18px;font-size:13px;font-weight:750;cursor:pointer}
-    .primary:disabled{opacity:.45;cursor:not-allowed}
-    .result-card{margin-top:14px;border-top:3px solid #111}
-    .scoreboard{border-top:1px solid #aaa;border-bottom:1px solid #aaa}
-    .score-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:11px 8px;border-bottom:1px solid var(--grid)}
-    .score-row:last-child{border-bottom:0}.score-row.winner{background:#f5f5f5;font-weight:700}
-    .team-name{font-size:18px;font-weight:700}.team-meta{margin-top:3px;font-size:12px;color:var(--muted)}
-    .score{font-size:32px;font-weight:800;min-width:55px;text-align:right}
-    .headline{text-align:center;margin-top:14px;font-size:18px;font-weight:800}.subheadline{text-align:center;margin-top:4px;color:var(--muted);font-size:13px}
+    /* Matchup Predictor — uses the same restrained visual language as the rest of the site */
+    .matchup-shell{padding:16px;border-radius:2px;box-shadow:none;overflow:visible}
+    .matchup-hero{background:transparent;color:var(--text);padding:0 0 14px;border-bottom:1px solid var(--grid);position:static;overflow:visible}
+    .matchup-hero::after{display:none}
+    .matchup-kicker{font-size:11px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;color:var(--muted)}
+    .matchup-title{margin:4px 0 0;font-size:20px;line-height:1.2;font-weight:800;letter-spacing:0}
+    .matchup-intro{margin:5px 0 0;max-width:760px;color:var(--muted);font-size:13px;line-height:1.45}
+    .matchup-builder{padding:16px 0 0;background:transparent}
+    .matchup-location{display:flex;justify-content:flex-start;margin-bottom:14px}
+    .matchup-location .control.column{align-items:flex-start}
+    .matchup-location .control.column select{min-width:190px;text-align:left;font-weight:650;background:#fff}
+    .matchup-grid{display:grid;grid-template-columns:minmax(0,1fr) 54px minmax(0,1fr);gap:12px;align-items:stretch}
+    .matchup-team-card{position:relative;min-height:118px;padding:16px;border:1px solid var(--grid);border-radius:2px;background:#fafafa;box-shadow:none;display:flex;flex-direction:column;justify-content:center}
+    .matchup-team-card::before{display:none}
+    .matchup-team-number{font-size:10px;font-weight:800;letter-spacing:.45px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+    .matchup-team-card .control.column{width:100%}
+    .matchup-team-card .control.column label{font-size:11px;color:var(--muted)}
+    .matchup-team-card .control.column select{width:100%;min-width:0;border-radius:999px;padding:8px 11px;font-size:13px;font-weight:650;background:#fff}
+    .matchup-vs{align-self:center;justify-self:center;width:auto;height:auto;border-radius:0;display:flex;align-items:center;justify-content:center;background:transparent;color:#777;border:0;box-shadow:none;font-size:12px;font-weight:850;letter-spacing:.7px}
+    .matchup-actions{display:flex;justify-content:flex-start;gap:8px;margin-top:14px}
+    .primary{border:1px solid #111;background:#111;color:#fff;border-radius:999px;padding:9px 17px;font-size:13px;font-weight:800;cursor:pointer}
+    .matchup-actions .primary{min-width:0;padding:9px 18px;letter-spacing:0;box-shadow:none;transition:background .15s ease}
+    .matchup-actions .primary:not(:disabled):hover{transform:none;box-shadow:none;background:#2a2a2a}
+    .primary:disabled{opacity:.38;cursor:not-allowed;box-shadow:none}
+    .result-card{margin-top:14px;padding:16px;overflow:visible;border-radius:2px;border:1px solid #cfcfcf;box-shadow:none}
+    .result-banner{background:transparent;color:var(--text);text-align:left;padding:0 0 10px;border-bottom:1px solid var(--grid);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px}
+    .scoreboard{display:grid;grid-template-columns:1fr 1px 1fr;border:0;background:#fff;margin-top:4px}
+    .score-divider{background:var(--grid);margin:14px 0}
+    .score-row{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;padding:20px 14px 18px;border:0;text-align:center;min-height:150px}
+    .score-row.winner{background:#f7f7f7;font-weight:700}
+    .score-row.winner::after{content:"Projected winner";margin-top:7px;font-size:9px;letter-spacing:.5px;font-weight:800;text-transform:uppercase;color:var(--muted)}
+    .team-name{font-size:17px;font-weight:800;line-height:1.2}.team-meta{margin-top:2px;font-size:11px;color:var(--muted)}
+    .score{font-size:44px;line-height:1;font-weight:850;min-width:0;text-align:center;letter-spacing:-1px;margin-top:8px}
+    .matchup-verdict{padding:14px 0 0;border-top:1px solid var(--grid);background:transparent}
+    .headline{text-align:left;margin-top:0;font-size:16px;font-weight:800}.subheadline{text-align:left;margin-top:4px;color:var(--muted);font-size:12px}
+    .probability-track{display:flex;height:7px;max-width:none;margin:12px 0 0;border-radius:999px;overflow:hidden;background:#ddd;border:0}
+    .probability-team1{height:100%;background:#111;transition:width .35s ease}
+    .probability-team2{height:100%;background:#8d8d8d;transition:width .35s ease}
+    .match-details-card{margin-top:14px;padding:16px;overflow:visible;border-radius:2px}
+    .match-details-title{padding:0 0 10px;border-bottom:1px solid var(--grid);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);background:transparent}
+    .match-details-card .summary-grid{border-top:0}
 
     .chart-card{padding:16px}
     .chart-wrap{position:relative;height:720px}
@@ -146,7 +176,8 @@
       body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
       .season-links{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.season-links span{flex:0 0 auto}.season-links button{flex:0 0 auto}
       .controls{align-items:stretch}.control{width:100%}.control input,.control select,.conference-menu-button{width:100%;min-width:0}
-      .matchup-grid{grid-template-columns:1fr}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .matchup-title{font-size:19px}.matchup-builder{padding-top:14px}
+      .matchup-grid{grid-template-columns:1fr;gap:8px}.matchup-vs{padding:2px 0;font-size:11px}.matchup-team-card{min-height:105px}.scoreboard{grid-template-columns:1fr}.score-divider{height:1px;margin:0 12px}.score-row{min-height:135px;padding:18px 12px}.score{font-size:40px}.summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .chart-wrap{height:540px}.trend-wrap{height:300px}.view-toolbar{align-items:stretch}.publish-menu{width:100%}.print-button{width:100%;justify-content:center}
     }
 
@@ -195,23 +226,44 @@
 
       <!-- Matchup -->
       <section id="view-matchup" class="view">
-        <div class="card">
-          <h2 class="section-title">Matchup Predictor</h2>
-          <div class="matchup-grid">
-            <div class="control column"><label for="matchLocation">Location</label><select id="matchLocation"><option value="neutral">Neutral Site</option><option value="team1">Team 1 Home</option><option value="team2">Team 2 Home</option></select></div>
-            <div></div>
-            <div class="control column"><label for="matchTeam1">Team 1</label><select id="matchTeam1"></select></div>
-            <div class="control column"><label for="matchTeam2">Team 2</label><select id="matchTeam2"></select></div>
+        <div class="card matchup-shell">
+          <div class="matchup-hero">
+            <div class="matchup-kicker">Matchup Predictor</div>
+            <h2 class="matchup-title">Compare two teams</h2>
+            <p class="matchup-intro">Project a score using current efficiency ratings, expected drives, and game location.</p>
           </div>
-          <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Predict Matchup</button></div>
+          <div class="matchup-builder">
+            <div class="matchup-location">
+              <div class="control column"><label for="matchLocation">Game Location</label><select id="matchLocation"><option value="neutral">Neutral Site</option><option value="team1">Team 1 Home</option><option value="team2">Team 2 Home</option></select></div>
+            </div>
+            <div class="matchup-grid">
+              <div class="matchup-team-card">
+                <div class="matchup-team-number">Side A</div>
+                <div class="control column"><label for="matchTeam1">Choose Team 1</label><select id="matchTeam1"></select></div>
+              </div>
+              <div class="matchup-vs" aria-hidden="true">VS</div>
+              <div class="matchup-team-card">
+                <div class="matchup-team-number">Side B</div>
+                <div class="control column"><label for="matchTeam2">Choose Team 2</label><select id="matchTeam2"></select></div>
+              </div>
+            </div>
+            <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button></div>
+          </div>
         </div>
         <div id="matchError" class="error"></div>
         <div id="matchResult" class="card result-card hidden">
-          <h2 class="section-title">Projected Score</h2>
-          <div class="scoreboard"><div class="score-row" id="matchRow1"><div><div class="team-name" id="matchName1"></div><div class="team-meta" id="matchMeta1"></div></div><div class="score" id="matchScore1"></div></div><div class="score-row" id="matchRow2"><div><div class="team-name" id="matchName2"></div><div class="team-meta" id="matchMeta2"></div></div><div class="score" id="matchScore2"></div></div></div>
-          <div class="headline" id="matchHeadline"></div><div class="subheadline" id="matchSubheadline"></div>
+          <div class="result-banner">Projected Final</div>
+          <div class="scoreboard">
+            <div class="score-row" id="matchRow1"><div class="team-name" id="matchName1"></div><div class="team-meta" id="matchMeta1"></div><div class="score" id="matchScore1"></div></div>
+            <div class="score-divider" aria-hidden="true"></div>
+            <div class="score-row" id="matchRow2"><div class="team-name" id="matchName2"></div><div class="team-meta" id="matchMeta2"></div><div class="score" id="matchScore2"></div></div>
+          </div>
+          <div class="matchup-verdict">
+            <div class="headline" id="matchHeadline"></div><div class="subheadline" id="matchSubheadline"></div>
+            <div class="probability-track" aria-label="Projected win probability"><div id="matchProbBar1" class="probability-team1"></div><div id="matchProbBar2" class="probability-team2"></div></div>
+          </div>
         </div>
-        <div id="matchDetails" class="card hidden" style="margin-top:14px"><div class="summary-grid" style="grid-template-columns:repeat(5,minmax(0,1fr))"><div class="metric"><div class="metric-label">Expected Drives</div><div class="metric-value" id="matchDrives"></div></div><div class="metric"><div class="metric-label">Team 1 Pts/Drive</div><div class="metric-value" id="matchEff1"></div></div><div class="metric"><div class="metric-label">Team 2 Pts/Drive</div><div class="metric-value" id="matchEff2"></div></div><div class="metric"><div class="metric-label">Win Probability</div><div class="metric-value" id="matchWinProb"></div></div><div class="metric"><div class="metric-label">Model Confidence</div><div class="metric-value" id="matchConfidence"></div></div></div></div>
+        <div id="matchDetails" class="card match-details-card hidden"><div class="match-details-title">Model Breakdown</div><div class="summary-grid" style="grid-template-columns:repeat(5,minmax(0,1fr))"><div class="metric"><div class="metric-label">Expected Drives</div><div class="metric-value" id="matchDrives"></div></div><div class="metric"><div class="metric-label">Team 1 Pts/Drive</div><div class="metric-value" id="matchEff1"></div></div><div class="metric"><div class="metric-label">Team 2 Pts/Drive</div><div class="metric-value" id="matchEff2"></div></div><div class="metric"><div class="metric-label">Win Probability</div><div class="metric-value" id="matchWinProb"></div></div><div class="metric"><div class="metric-label">Model Confidence</div><div class="metric-value" id="matchConfidence"></div></div></div></div>
       </section>
 
       <!-- Conferences -->
@@ -377,7 +429,7 @@
     function winProb(s1,s2,conf){const base=1/(1+Math.exp(-((s1-s2)/WIN_PROB_MARGIN_SCALE))),w=Math.max(0,Math.min(1,conf/100));return (0.5+(base-0.5)*w)*100}
     function predictTeams(name1,name2,location){const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2),a=teamObject(r1),b=teamObject(r2),l=league();if(!a||!b||!l)return null;const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);let s1=drives*ra/100,s2=drives*rb/100;if(location==='team1')s1+=HOME_FIELD_POINTS;if(location==='team2')s2+=HOME_FIELD_POINTS;s1=Math.max(0,s1);s2=Math.max(0,s2);const conf=confidence(a,b);return {a,b,drives,ra,rb,s1,s2,conf,p1:winProb(s1,s2,conf)}}
     function updateMatchButton(){els.matchPredict.disabled=!(els.matchTeam1.value&&els.matchTeam2.value&&els.matchTeam1.value!==els.matchTeam2.value)}
-    function renderMatchup(){const p=predictTeams(els.matchTeam1.value,els.matchTeam2.value,els.matchLocation.value);if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=d1;els.matchScore2.textContent=d2;els.matchRow1.classList.toggle('winner',d1>d2);els.matchRow2.classList.toggle('winner',d2>d1);const winner=d1===d2?"Projected tie":`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchHeadline.textContent=winner;els.matchSubheadline.textContent=`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${p.p1.toFixed(1)}%`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`}
+    function renderMatchup(){const p=predictTeams(els.matchTeam1.value,els.matchTeam2.value,els.matchLocation.value);if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=d1;els.matchScore2.textContent=d2;els.matchRow1.classList.toggle('winner',d1>d2);els.matchRow2.classList.toggle('winner',d2>d1);const winner=d1===d2?"Projected tie":`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchHeadline.textContent=winner;els.matchSubheadline.textContent=`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${p.p1.toFixed(1)}%`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${p.p1}%`;bar2.style.width=`${100-p.p1}%`}}
 
     // ---------- Conference chart ----------
     const CONF_COLORS=["#0057b8","#d62728","#2ca02c","#9467bd","#ff7f0e","#17becf","#8c564b","#e377c2","#7f7f7f","#bcbd22","#1f77b4","#c51b8a","#238b45","#6a51a3"];
