@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-13T03:21:28.266655+00:00",
+  "updatedAt": "2026-09-13T03:26:22.233984+00:00",
   "liveGames": [
-    {
-      "id": 401856783,
-      "status": "in_progress",
-      "homeTeam": "Oregon State",
-      "awayTeam": "Texas Tech",
-      "homeConference": "Pac-12",
-      "awayConference": "Big 12",
-      "homePoints": 24.0,
-      "awayPoints": 35.0,
-      "period": 4,
-      "clock": "00:52",
-      "completedDrives": 27,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401858219,
       "status": "in_progress",
@@ -42,10 +27,10 @@
       "homePoints": 34.0,
       "awayPoints": 8.0,
       "period": 3,
-      "clock": "04:05",
-      "completedDrives": 16,
+      "clock": "03:26",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401864502,
@@ -55,11 +40,11 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 7.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 2,
-      "clock": "05:28",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "03:31",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -69,13 +54,13 @@
       "awayTeam": "Arkansas",
       "homeConference": "Big 12",
       "awayConference": "SEC",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "11:23",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "clock": "09:23",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401860883,
@@ -87,7 +72,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:53",
+      "clock": "14:11",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -117,10 +102,8 @@
     "Georgia Southern",
     "Louisiana",
     "North Dakota State",
-    "Oregon State",
     "Sacramento State",
     "Southern Miss",
-    "Texas Tech",
     "USC",
     "Utah"
   ]
