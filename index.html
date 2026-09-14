@@ -656,11 +656,60 @@
     async function renderTeam(){
       if(!APP.team){els.teamContent.classList.add('hidden');els.teamPicker.value='';return}
       const row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(APP.team).toLowerCase());if(!row){els.teamError.textContent=`${APP.team} was not found in ${APP.year}.`;els.teamError.classList.add('visible');return}els.teamError.classList.remove('visible');els.teamContent.classList.remove('hidden');els.teamPicker.value=row.Team;els.pageTitle.textContent=`${row.Team} — ${APP.year}`;els.pageSubtitle.textContent=`${row.Conference||'FBS'} • Current FBS-vs-FBS efficiency profile`;els.teamRecord.textContent=`${row.W||0}-${row.L||0}`;els.teamRank.textContent=row.Rk||'—';els.teamAdjRank.textContent=row.AdjRk||'—';els.teamAdjRtg.textContent=fmt(row.AdjRtg);els.teamORtg.textContent=fmt(row.Ortg||row.ORtg);els.teamDRtg.textContent=fmt(row.DRtg);els.teamSOS.textContent=fmt(row.SOS);els.teamPyW.textContent=pct(row['PyW %']);els.teamCurrentRecord.textContent=`${row.W||0}-${row.L||0}`;
-      const history=await fetchOptionalCSV(`${APP.year} History.csv`);renderTeamTrend(history,row.Team);const schedule=await fetchOptionalCSV(`${APP.year} Schedule.csv`);renderTeamSchedule(schedule,row);
+      const history=await fetchOptionalCSV(`${APP.year} History.csv`);renderTeamTrend(history,row.Team);const [schedule,live]=await Promise.all([fetchOptionalCSV(`${APP.year} Schedule.csv`),fetchLive(APP.year)]);renderTeamSchedule(schedule,row,live);
     }
     function renderTeamTrend(history,team){const rows=history.filter(r=>String(r.Season||APP.year)===String(APP.year)&&String(r.Team||'').toLowerCase()===String(team).toLowerCase()).sort((a,b)=>(n(a.Week)??0)-(n(b.Week)??0));if(!rows.length){els.teamTrendWrap.classList.add('hidden');els.teamTrendEmpty.classList.remove('hidden');APP.teamTrendChart?.destroy();return}els.teamTrendWrap.classList.remove('hidden');els.teamTrendEmpty.classList.add('hidden');const metrics=[['AdjRtg','Adjusted Rating','#0057b8'],['NetRtg','Net Rating','#d62728'],['Ortg','Offensive Rating','#2ca02c'],['DRtg','Defensive Rating','#9467bd'],['Rk','Overall Rank','#ff7f0e'],['SOS','Strength of Schedule','#8c564b'],['Win %','Win %','#111'],['PyW %','Pythagorean Win %','#e377c2']];const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(n(r[k]))));const scales={x:{title:{display:true,text:'Week'}}};available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});APP.teamTrendChart?.destroy();APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:rows.map(r=>`Week ${r.Week}`),datasets:available.map(([k,label,color],i)=>({label,data:rows.map(r=>n(r[k])),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:3,tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}}},scales}})}
-    function scheduleFields(r){return {week:r.Week??r.week??'',team:r.Team??r.team??'',opp:r.Opponent??r.Opp??r.opponent??'',site:r.Site??r.Location??r.site??'',status:r.Status??r.status??'',score:r.Score??r.score??'',result:r.Result??r.result??''}}
-    function renderTeamSchedule(schedule,row){els.teamScheduleBody.innerHTML='';const rows=schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase());let pw=0,pl=0;rows.forEach(s=>{const oppRow=APP.rows.find(r=>String(r.Team).toLowerCase()===String(s.opp).toLowerCase());let score=s.score||'',prob='—',result=s.result||'',status=s.status||'';const isFuture=!score&&!/final/i.test(status);if(isFuture&&oppRow){const loc=/home/i.test(s.site)?'team1':/away/i.test(s.site)?'team2':'neutral';const p=predictTeams(row.Team,oppRow.Team,loc);if(p){const a=Math.round(p.s1),b=Math.round(p.s2);score=`${a}-${b}`;prob=`${p.p1.toFixed(1)}%`;if(a>b){result='W';pw++}else if(a<b){result='L';pl++}}}const tr=document.createElement('tr');const oppCell=oppRow?`<a href="#" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);tr.innerHTML=`<td>${escapeHtml(s.week)}</td><td class="left">${oppCell}</td><td>${escapeHtml(s.site)}</td><td>${escapeHtml(status|| (isFuture?'Scheduled':''))}</td><td>${escapeHtml(score)}</td><td>${escapeHtml(prob)}</td><td class="${result==='W'?'result-win':result==='L'?'result-loss':''}">${escapeHtml(result)}</td><td>${oppRow?fmt(oppRow.AdjRtg):'—'}</td>`;els.teamScheduleBody.appendChild(tr)});els.teamRemaining.textContent=`${pw}-${pl}`;els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>a.onclick=e=>{e.preventDefault();APP.team=a.dataset.team;setView('team',{team:APP.team})})}
+    function boolish(v){const x=String(v??'').trim().toLowerCase();return v===true||x==='true'||x==='1'||x==='yes'||x==='y'}
+    function scheduleFields(r){
+      const teamPoints=n(r.TeamPoints??r.teamPoints??r.team_points),oppPoints=n(r.OpponentPoints??r.opponentPoints??r.opponent_points);
+      const completed=boolish(r.Completed??r.completed),live=boolish(r.Live??r.live);
+      let score=r.Score??r.score??'';
+      if(!score&&Number.isFinite(teamPoints)&&Number.isFinite(oppPoints))score=`${Math.trunc(teamPoints)}-${Math.trunc(oppPoints)}`;
+      return {week:r.Week??r.week??'',gameId:r.GameId??r.gameId??r.gameID??'',team:r.Team??r.team??'',opp:r.Opponent??r.Opp??r.opponent??'',site:r.Site??r.Location??r.location??r.site??'',status:r.Status??r.status??'',score,result:r.Result??r.result??'',completed,live,teamPoints,oppPoints}
+    }
+    function findLiveScheduleGame(s,live){
+      const games=Array.isArray(live?.liveGames)?live.liveGames:[];
+      if(s.gameId){const byId=games.find(g=>String(g.id??g.gameId??'')===String(s.gameId));if(byId)return byId}
+      const team=String(s.team||'').toLowerCase(),opp=String(s.opp||'').toLowerCase();
+      return games.find(g=>{const h=String(g.homeTeam||'').toLowerCase(),a=String(g.awayTeam||'').toLowerCase();return (h===team&&a===opp)||(a===team&&h===opp)})||null
+    }
+    function liveScoreForTeam(game,team){
+      if(!game)return null;const name=String(team||'').toLowerCase(),home=String(game.homeTeam||'').toLowerCase(),away=String(game.awayTeam||'').toLowerCase();const hp=n(game.homePoints),ap=n(game.awayPoints);if(!Number.isFinite(hp)||!Number.isFinite(ap))return null;if(name===home)return {forPts:hp,againstPts:ap};if(name===away)return {forPts:ap,againstPts:hp};return null
+    }
+    function liveStatusText(game){
+      if(!game)return 'Live';const period=game.period,clock=game.clock;let p='';if(period!==undefined&&period!==null&&period!==''){const num=Number(period);p=Number.isFinite(num)?(num<=4?`Q${num}`:`OT${Math.max(1,num-4)}`):String(period)}const c=clock===undefined||clock===null?'':String(clock).trim();return [p,c].filter(Boolean).join(' ')||'Live'
+    }
+    function renderTeamSchedule(schedule,row,live){
+      els.teamScheduleBody.innerHTML='';
+      const rows=schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase());
+      let pw=0,pl=0;
+      rows.forEach(s=>{
+        const oppRow=APP.rows.find(r=>String(r.Team).toLowerCase()===String(s.opp).toLowerCase());
+        const liveGame=findLiveScheduleGame(s,live),liveScore=liveScoreForTeam(liveGame,row.Team);
+        let score=s.score||'',prob='—',result=s.result||'',status=s.status||'';
+        let isFuture=false;
+        if(s.completed){
+          status='Final';
+          if(!score&&Number.isFinite(s.teamPoints)&&Number.isFinite(s.oppPoints))score=`${Math.trunc(s.teamPoints)}-${Math.trunc(s.oppPoints)}`;
+          if(!result&&Number.isFinite(s.teamPoints)&&Number.isFinite(s.oppPoints))result=s.teamPoints>s.oppPoints?'W':s.teamPoints<s.oppPoints?'L':'T';
+        }else if(liveGame&&liveScore){
+          status=liveStatusText(liveGame);
+          score=`${Math.trunc(liveScore.forPts)}-${Math.trunc(liveScore.againstPts)}`;
+          result='LIVE';
+        }else{
+          isFuture=true;
+          status=status||'Scheduled';
+          if(oppRow){const loc=/home/i.test(s.site)?'team1':/away/i.test(s.site)?'team2':'neutral';const p=predictTeams(row.Team,oppRow.Team,loc);if(p){const a=Math.round(p.s1),b=Math.round(p.s2);score=`${a}-${b}`;prob=`${p.p1.toFixed(1)}%`;if(a>b){result='W';pw++}else if(a<b){result='L';pl++}}}
+        }
+        const tr=document.createElement('tr');
+        const oppCell=oppRow?`<a href="#" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);
+        tr.innerHTML=`<td>${escapeHtml(s.week)}</td><td class="left">${oppCell}</td><td>${escapeHtml(s.site)}</td><td>${escapeHtml(status)}</td><td>${escapeHtml(score)}</td><td>${escapeHtml(prob)}</td><td class="${result==='W'?'result-win':result==='L'?'result-loss':''}">${escapeHtml(result)}</td><td>${oppRow?fmt(oppRow.AdjRtg):'—'}</td>`;
+        els.teamScheduleBody.appendChild(tr)
+      });
+      els.teamRemaining.textContent=`${pw}-${pl}`;
+      els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;
+      els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>a.onclick=e=>{e.preventDefault();APP.team=a.dataset.team;setView('team',{team:APP.team})})
+    }
 
     // ---------- Publishing ----------
     function downloadBlob(blob,name){const u=URL.createObjectURL(blob),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1500)}
