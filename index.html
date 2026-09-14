@@ -775,7 +775,7 @@
         // this only adds a temporary visual lift while they grow into focus.
         refs.forEach(r=>{
           const ds=chart.data.datasets[r.di];
-          if(!ds?._focus)return;
+          if(!ds?._focusIndexes?.includes(r.pi))return;
           const progress=Number.isFinite(r.el.$focusProgress)?r.el.$focusProgress:1;
           r.el.y+=(1-progress)*12;
         });
@@ -959,13 +959,12 @@
     function scheduleComparisonTeamData(r){
       return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
     }
-    function animateFocusedComparison(chart,focusSets){
-      if(!chart||!focusSets?.length)return;
+    function animateFocusedComparison(chart,focusRefs){
+      if(!chart||!focusRefs?.length)return;
       const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-      const focusIndexes=focusSets.map(ds=>chart.data.datasets.indexOf(ds)).filter(i=>i>=0);
       const setFrame=(progress)=>{
-        focusIndexes.forEach(i=>{
-          const el=chart.getDatasetMeta(i)?.data?.[0];
+        focusRefs.forEach(({datasetIndex,pointIndex})=>{
+          const el=chart.getDatasetMeta(datasetIndex)?.data?.[pointIndex];
           if(!el)return;
           el.$focusProgress=progress;
           if(el.options){
@@ -993,21 +992,45 @@
       const wantedConfs=new Set([teamRow.Conference||'Independent',oppRow.Conference||'Independent']);
       const teams=APP.rows.map(scheduleComparisonTeamData).filter(t=>t.team&&wantedConfs.has(t.conference)&&Number.isFinite(t[metric]));
       const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});
-      const datasets=[];let ci=0,maxRank=1;const byTeam=new Map();
+      const datasets=[];let ci=0,maxRank=1;
+      const focusColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
+      const focusRefs=[];
+      const team1Key=String(teamRow.Team).toLowerCase(),team2Key=String(oppRow.Team).toLowerCase();
+
       for(const [conf,arr] of groups){
         arr.sort((a,b)=>b[metric]-a[metric]||((a.Rk??999)-(b.Rk??999)));
-        arr.forEach((t,i)=>{t.conferenceRank=i+1;byTeam.set(String(t.team).toLowerCase(),t)});
-        maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);
-        datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:withAlpha(color,.34),backgroundColor:withAlpha(color,.20),pointBackgroundColor:arr.map(t=>withAlpha(teamPrimaryColor(t.team),.48)),pointBorderColor:'#fff',pointBorderWidth:1,pointRadius:3,pointHoverRadius:5,borderWidth:1.25,tension:0,showLine:true,order:3});
+        arr.forEach((t,i)=>t.conferenceRank=i+1);
+        maxRank=Math.max(maxRank,arr.length);
+        const color=conferenceColor(conf,ci++);
+        const pointColors=arr.map(t=>{
+          const key=String(t.team).toLowerCase();
+          if(key===team1Key)return focusColors.team1;
+          if(key===team2Key)return focusColors.team2;
+          return withAlpha(teamPrimaryColor(t.team),.48);
+        });
+        const focusIndexes=[];
+        arr.forEach((t,i)=>{
+          const key=String(t.team).toLowerCase();
+          if(key===team1Key||key===team2Key)focusIndexes.push(i);
+        });
+        const datasetIndex=datasets.length;
+        datasets.push({
+          label:conf,
+          data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),
+          borderColor:withAlpha(color,.34),backgroundColor:withAlpha(color,.20),
+          pointBackgroundColor:pointColors,
+          pointBorderColor:arr.map((t,i)=>focusIndexes.includes(i)?'#fff':'#fff'),
+          pointBorderWidth:arr.map((t,i)=>focusIndexes.includes(i)?2:1),
+          pointRadius:arr.map(()=>3),
+          pointHoverRadius:arr.map((t,i)=>focusIndexes.includes(i)?13:5),
+          borderWidth:1.25,tension:0,showLine:true,order:3,_focusIndexes:focusIndexes
+        });
+        focusIndexes.forEach(pointIndex=>focusRefs.push({datasetIndex,pointIndex}));
       }
-      const a=byTeam.get(String(teamRow.Team).toLowerCase()),b=byTeam.get(String(oppRow.Team).toLowerCase());
-      const focusColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
-      const focusSets=[];
-      if(a){const ds={label:teamRow.Team,data:[{x:a.conferenceRank,y:a[metric],...a}],showLine:false,backgroundColor:focusColors.team1,borderColor:focusColors.team1,pointBackgroundColor:focusColors.team1,pointBorderColor:'#fff',pointBorderWidth:2,pointRadius:3,pointHoverRadius:13,order:0,_focus:true,_targetRadius:11};datasets.push(ds);focusSets.push(ds)}
-      if(b){const ds={label:oppRow.Team,data:[{x:b.conferenceRank,y:b[metric],...b}],showLine:false,backgroundColor:focusColors.team2,borderColor:focusColors.team2,pointBackgroundColor:focusColors.team2,pointBorderColor:'#fff',pointBorderWidth:2,pointRadius:3,pointHoverRadius:13,order:0,_focus:true,_targetRadius:11};datasets.push(ds);focusSets.push(ds)}
-      const chart=new Chart(canvas,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,font:{size:10},filter:(item,data)=>!data.datasets[item.datasetIndex]?._focus}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1,font:{size:10}},title:{display:true,text:'Rank Within Conference'}},y:{ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
-      // Keep the conference geometry fixed, then animate only the two focus markers.
-      requestAnimationFrame(()=>animateFocusedComparison(chart,focusSets));
+
+      const chart=new Chart(canvas,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:9,font:{size:10}}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1,font:{size:10}},title:{display:true,text:'Rank Within Conference'}},y:{ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
+      // Animate the original conference points themselves into focus. No duplicate overlay datasets.
+      requestAnimationFrame(()=>animateFocusedComparison(chart,focusRefs));
       return chart
     }
     function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null){
