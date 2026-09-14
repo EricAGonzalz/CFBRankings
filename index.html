@@ -656,16 +656,121 @@
     async function renderTeam(){
       if(!APP.team){els.teamContent.classList.add('hidden');els.teamPicker.value='';return}
       const row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(APP.team).toLowerCase());if(!row){els.teamError.textContent=`${APP.team} was not found in ${APP.year}.`;els.teamError.classList.add('visible');return}els.teamError.classList.remove('visible');els.teamContent.classList.remove('hidden');els.teamPicker.value=row.Team;els.pageTitle.textContent=`${row.Team} — ${APP.year}`;els.pageSubtitle.textContent=`${row.Conference||'FBS'} • Current FBS-vs-FBS efficiency profile`;els.teamRecord.textContent=`${row.W||0}-${row.L||0}`;els.teamRank.textContent=row.Rk||'—';els.teamAdjRank.textContent=row.AdjRk||'—';els.teamAdjRtg.textContent=fmt(row.AdjRtg);els.teamORtg.textContent=fmt(row.Ortg||row.ORtg);els.teamDRtg.textContent=fmt(row.DRtg);els.teamSOS.textContent=fmt(row.SOS);els.teamPyW.textContent=pct(row['PyW %']);els.teamCurrentRecord.textContent=`${row.W||0}-${row.L||0}`;
-      const history=await fetchOptionalCSV(`${APP.year} History.csv`);renderTeamTrend(history,row.Team);const [schedule,live]=await Promise.all([fetchOptionalCSV(`${APP.year} Schedule.csv`),fetchLive(APP.year)]);renderTeamSchedule(schedule,row,live);
+      const [history,schedule,live]=await Promise.all([fetchOptionalCSV(`${APP.year} History.csv`),fetchOptionalCSV(`${APP.year} Schedule.csv`),fetchLive(APP.year)]);
+      renderTeamTrend(history,row,schedule,live);
+      renderTeamSchedule(schedule,row,live);
     }
-    function renderTeamTrend(history,team){const rows=history.filter(r=>String(r.Season||APP.year)===String(APP.year)&&String(r.Team||'').toLowerCase()===String(team).toLowerCase()).sort((a,b)=>(n(a.Week)??0)-(n(b.Week)??0));if(!rows.length){els.teamTrendWrap.classList.add('hidden');els.teamTrendEmpty.classList.remove('hidden');APP.teamTrendChart?.destroy();return}els.teamTrendWrap.classList.remove('hidden');els.teamTrendEmpty.classList.add('hidden');const metrics=[['AdjRtg','Adjusted Rating','#0057b8'],['NetRtg','Net Rating','#d62728'],['Ortg','Offensive Rating','#2ca02c'],['DRtg','Defensive Rating','#9467bd'],['Rk','Overall Rank','#ff7f0e'],['SOS','Strength of Schedule','#8c564b'],['Win %','Win %','#111'],['PyW %','Pythagorean Win %','#e377c2']];const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(n(r[k]))));const scales={x:{title:{display:true,text:'Week'}}};available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});APP.teamTrendChart?.destroy();APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:rows.map(r=>`Week ${r.Week}`),datasets:available.map(([k,label,color],i)=>({label,data:rows.map(r=>n(r[k])),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:3,tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}}},scales}})}
+    function latestPlayedWeek(schedule,team,live){
+      const teamName=String(team||'').toLowerCase();
+      let latest=null;
+      schedule.map(scheduleFields).filter(s=>String(s.team||'').toLowerCase()===teamName).forEach(s=>{
+        const week=n(s.week);
+        if(!Number.isFinite(week))return;
+        const hasLiveOverlay=!!findLiveScheduleGame(s,live);
+        if(s.completed||s.live||hasLiveOverlay)latest=latest===null?week:Math.max(latest,week);
+      });
+      return latest;
+    }
+    function currentTrendRow(masterRow,week){
+      return {
+        Season:APP.year,Week:week,Team:masterRow.Team,
+        AdjRtg:masterRow.AdjRtg,NetRtg:masterRow.NetRtg,
+        Ortg:masterRow.Ortg??masterRow.ORtg,DRtg:masterRow.DRtg,Rk:masterRow.Rk,SOS:masterRow.SOS,
+        'Win %':masterRow['Win %'],'PyW %':masterRow['PyW %'],_current:true
+      };
+    }
+    function renderTeamTrend(history,masterRow,schedule=[],live=null){
+      const team=masterRow.Team;
+      const rows=history.filter(r=>String(r.Season||APP.year)===String(APP.year)&&String(r.Team||'').toLowerCase()===String(team).toLowerCase()).sort((a,b)=>(n(a.Week)??0)-(n(b.Week)??0));
+
+      // A history row is a snapshot of the FBS-vs-FBS model, so its W + L total
+      // tells us exactly how many qualifying FBS games were included. This is a
+      // much safer key than the raw CFBD Week field, which can skip weeks, repeat
+      // values, or reset during bowl/playoff season.
+      const currentFbsGames=(n(masterRow.W)??0)+(n(masterRow.L)??0);
+      const archivedFbsCounts=new Set(rows.map(r=>(n(r.W)??0)+(n(r.L)??0)).filter(x=>x>0));
+      if(currentFbsGames>0&&!archivedFbsCounts.has(currentFbsGames)){
+        rows.push(currentTrendRow(masterRow,currentFbsGames));
+      }
+      if(!rows.length){els.teamTrendWrap.classList.add('hidden');els.teamTrendEmpty.classList.remove('hidden');APP.teamTrendChart?.destroy();return}
+      els.teamTrendWrap.classList.remove('hidden');els.teamTrendEmpty.classList.add('hidden');
+
+      const metrics=[['AdjRtg','Adjusted Rating','#0057b8'],['NetRtg','Net Rating','#d62728'],['Ortg','Offensive Rating','#2ca02c'],['DRtg','Defensive Rating','#9467bd'],['Rk','Overall Rank','#ff7f0e'],['SOS','Strength of Schedule','#8c564b'],['Win %','Win %','#111'],['PyW %','Pythagorean Win %','#e377c2']];
+      const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(n(r[k]))));
+      const teamName=String(team||'').toLowerCase();
+      const allTeamGames=sortScheduleChronologically(schedule.map(scheduleFields).filter(s=>String(s.team||'').toLowerCase()===teamName));
+
+      // Keep every regular-season game in the counter, including FCS games. Once
+      // December/postseason begins, append only games that this team has actually
+      // played or is currently playing, so unused bowl/CFP rounds stay collapsed.
+      const seasonYear=Number(APP.year);
+      const postseasonStart=Number.isFinite(seasonYear)?Date.parse(`${seasonYear}-12-01T00:00:00Z`):NaN;
+      const displayGames=allTeamGames.filter(s=>{
+        const t=scheduleTimeValue(s);
+        const isPostseason=Number.isFinite(postseasonStart)&&Number.isFinite(t)&&t>=postseasonStart;
+        return !isPostseason||s.completed||s.live||!!findLiveScheduleGame(s,live);
+      });
+
+      // Determine which scheduled opponents are FBS by checking whether they are
+      // present in the season's master rankings. FCS opponents still occupy a game
+      // slot but do not advance the FBS-game counter used by History.csv.
+      const fbsTeams=new Set(APP.rows.map(r=>String(r.Team||'').toLowerCase()));
+      let fbsCount=0;
+      const fbsCountAtSlot=[];
+      displayGames.forEach(g=>{
+        if(fbsTeams.has(String(g.opp||'').toLowerCase()))fbsCount++;
+        fbsCountAtSlot.push(fbsCount);
+      });
+
+      // Keep only the newest archived snapshot for each FBS-game count. This
+      // removes duplicate no-change archive weeks while preserving the actual
+      // post-game rating state.
+      const rowByFbsCount=new Map();
+      rows.forEach(r=>{
+        const count=r._current?currentFbsGames:((n(r.W)??0)+(n(r.L)??0));
+        if(count>0)rowByFbsCount.set(count,r);
+      });
+
+      const weekSlots=displayGames.map((_,index)=>index+1);
+      const plottedRows=displayGames.map((game,index)=>{
+        const count=fbsCountAtSlot[index];
+        const previous=index>0?fbsCountAtSlot[index-1]:0;
+        // Only plot a new efficiency snapshot when this game advanced the FBS
+        // model. FCS games remain visible as empty counter slots.
+        if(count===previous)return null;
+        return rowByFbsCount.get(count)||null;
+      });
+
+      // Older seasons without schedule data fall back to the archived snapshots.
+      if(!weekSlots.length){
+        rows.forEach((r,index)=>{weekSlots.push(index+1);plottedRows.push(r)});
+      }
+
+      const scales={x:{title:{display:true,text:'Week'}}};
+      available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});
+      APP.teamTrendChart?.destroy();
+      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:weekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({label,data:plottedRows.map(r=>r?n(r[k]):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:plottedRows.map(r=>r?(r._current?4:3):0),pointStyle:plottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return plottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
+    }
     function boolish(v){const x=String(v??'').trim().toLowerCase();return v===true||x==='true'||x==='1'||x==='yes'||x==='y'}
     function scheduleFields(r){
       const teamPoints=n(r.TeamPoints??r.teamPoints??r.team_points),oppPoints=n(r.OpponentPoints??r.opponentPoints??r.opponent_points);
       const completed=boolish(r.Completed??r.completed),live=boolish(r.Live??r.live);
       let score=r.Score??r.score??'';
       if(!score&&Number.isFinite(teamPoints)&&Number.isFinite(oppPoints))score=`${Math.trunc(teamPoints)}-${Math.trunc(oppPoints)}`;
-      return {week:r.Week??r.week??'',gameId:r.GameId??r.gameId??r.gameID??'',team:r.Team??r.team??'',opp:r.Opponent??r.Opp??r.opponent??'',site:r.Site??r.Location??r.location??r.site??'',status:r.Status??r.status??'',score,result:r.Result??r.result??'',completed,live,teamPoints,oppPoints}
+      return {week:r.Week??r.week??'',gameId:r.GameId??r.gameId??r.gameID??'',team:r.Team??r.team??'',opp:r.Opponent??r.Opp??r.opponent??'',site:r.Site??r.Location??r.location??r.site??'',status:r.Status??r.status??'',startDate:r.StartDate??r.startDate??r.start_date??r.Date??r.date??'',score,result:r.Result??r.result??'',completed,live,teamPoints,oppPoints}
+    }
+    function scheduleTimeValue(s){
+      const t=Date.parse(String(s?.startDate||''));
+      return Number.isFinite(t)?t:Number.POSITIVE_INFINITY;
+    }
+    function sortScheduleChronologically(rows){
+      return [...rows].sort((a,b)=>{
+        const da=scheduleTimeValue(a),db=scheduleTimeValue(b);
+        if(da!==db)return da-db;
+        const wa=n(a.week),wb=n(b.week);
+        if(Number.isFinite(wa)&&Number.isFinite(wb)&&wa!==wb)return wa-wb;
+        return String(a.opp||'').localeCompare(String(b.opp||''));
+      });
     }
     function findLiveScheduleGame(s,live){
       const games=Array.isArray(live?.liveGames)?live.liveGames:[];
@@ -681,7 +786,7 @@
     }
     function renderTeamSchedule(schedule,row,live){
       els.teamScheduleBody.innerHTML='';
-      const rows=schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase());
+      const rows=sortScheduleChronologically(schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase()));
       let pw=0,pl=0;
       rows.forEach(s=>{
         const oppRow=APP.rows.find(r=>String(r.Team).toLowerCase()===String(s.opp).toLowerCase());
