@@ -603,7 +603,7 @@
     // ---------- Rankings ----------
     function selectedCheckboxValues(root){return [...root.querySelectorAll('input[type="checkbox"]:checked')].map(x=>x.value)}
     function updateMultiText(root,textEl){const all=root.querySelectorAll('input[type="checkbox"]').length,sel=selectedCheckboxValues(root);textEl.textContent=!sel.length||sel.length===all?"All conferences":sel.length===1?sel[0]:`${sel.length} conferences`}
-    function buildCheckboxOptions(root,textEl,onChange){const selected=new Set(selectedCheckboxValues(root));const had=root.querySelectorAll('input[type="checkbox"]').length>0;root.innerHTML="";[...new Set(APP.rows.map(r=>r.Conference).filter(Boolean))].sort().forEach(conf=>{const label=document.createElement('label');label.className='conference-option';const cb=document.createElement('input');cb.type='checkbox';cb.value=conf;cb.checked=!had||selected.has(conf);cb.onchange=()=>{updateMultiText(root,textEl);onChange()};label.append(cb,document.createTextNode(conf));root.appendChild(label)});updateMultiText(root,textEl)}
+    function buildCheckboxOptions(root,textEl,onChange){const previous=[...root.querySelectorAll('input[type="checkbox"]')];const selected=new Set(previous.filter(x=>x.checked).map(x=>x.value));const had=previous.length>0;const hadAll=had&&selected.size===previous.length;root.innerHTML="";[...new Set(APP.rows.map(r=>r.Conference).filter(Boolean))].sort().forEach(conf=>{const label=document.createElement('label');label.className='conference-option';const cb=document.createElement('input');cb.type='checkbox';cb.value=conf;cb.checked=!had||hadAll||selected.has(conf);cb.onchange=()=>{updateMultiText(root,textEl);onChange()};label.append(cb,document.createTextNode(conf));root.appendChild(label)});updateMultiText(root,textEl)}
     function buildRankConferenceOptions(){buildCheckboxOptions(els.rankConfOptions,els.rankConfText,renderRankings)}
     function rankColumns(){const pref=["Rk","Team","Conference","W","L","NetRtg","AdjRtg","AdjRk","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","PF","PA","ODrives","DDrives","SOS","SOS rank"];return pref.filter(c=>APP.header.includes(c))}
     async function renderRankings(){
@@ -705,7 +705,17 @@
     }
     function buildConferenceOptions(){buildCheckboxOptions(els.confOptions,els.confMenuText,renderConferenceChart)}
     function normalizedConferenceName(v){return String(v||"").toLowerCase().replace(/[^a-z0-9]+/g,' ').trim()}
-    function applyConferencePreset(type){const p4=new Set(["acc","atlantic coast","atlantic coast conference","big ten","big 10","big 12","sec","southeastern","southeastern conference"]),g6=new Set(["aac","american","american athletic","american athletic conference","c usa","conference usa","mac","mid american","mid american conference","mountain west","mountain west conference","pac 12","pac 12 conference","sun belt","sun belt conference"]);els.confOptions.querySelectorAll('input').forEach(i=>i.checked=(type==='p4'?p4:g6).has(normalizedConferenceName(i.value)));updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()}
+    function applyConferencePreset(type){
+      const p4=new Set(["acc","atlantic coast","atlantic coast conference","big ten","big 10","big 12","sec","southeastern","southeastern conference"]);
+      const g6=new Set(["aac","american","american athletic","american athletic conference","c usa","conference usa","mac","mid american","mid american conference","mountain west","mountain west conference","pac 12","pac 12 conference","sun belt","sun belt conference"]);
+      const season=Number(APP.year);
+      if(Number.isFinite(season)&&season>=2009&&season<=2012){
+        ["wac","western athletic","western athletic conference"].forEach(name=>g6.add(name));
+      }
+      els.confOptions.querySelectorAll('input').forEach(i=>i.checked=(type==='p4'?p4:g6).has(normalizedConferenceName(i.value)));
+      updateMultiText(els.confOptions,els.confMenuText);
+      renderConferenceChart();
+    }
     const readableLabels={
       id:'readableLabels',
       afterDatasetsDraw(chart){
