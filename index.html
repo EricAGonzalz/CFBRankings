@@ -90,6 +90,11 @@
     .conference-option:hover{background:var(--link-hover)}
 
     .table-wrap{overflow-x:auto;background:var(--card);border:1px solid #cfcfcf;border-radius:2px;padding:10px}
+    /* Rankings sticky header is rendered as a fixed synchronized clone so the
+       real table never changes layout when the page scrolls. */
+    .rank-sticky-header{position:fixed;top:0;z-index:120;overflow:hidden;background:var(--card);display:none;pointer-events:auto}
+    .rank-sticky-header table{margin:0;width:auto;table-layout:fixed;border-collapse:collapse}
+    .rank-sticky-header th{background:var(--head);color:#fff;border-color:#222;font-size:12px;white-space:nowrap}
     table{border-collapse:collapse;width:100%;font-size:13px}
     th,td{padding:6px 8px;border:1px solid var(--grid);text-align:right;vertical-align:middle;white-space:nowrap}
     th{background:var(--head);color:#fff;border-color:#222;font-size:12px}
@@ -273,6 +278,8 @@
     }
 
     @media(max-width:1000px){.summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.chart-wrap{height:620px}}
+    @media(max-width:1000px){#rankingsCapture{overflow-x:auto;overflow-y:visible}}
+
     @media(max-width:720px){
       body{margin:10px}.brandrow{align-items:center}.page-menu-list{right:0;min-width:min(300px,90vw)}
       .season-links{overflow-x:auto;flex-wrap:nowrap;padding-bottom:4px}.season-links span{flex:0 0 auto}.season-links button{flex:0 0 auto}
@@ -416,7 +423,7 @@
           </div>
           <section id="teamSummarySection" class="card" style="margin-top:14px"><h2 class="section-title">Current Team Summary</h2><div class="summary-grid"><div class="metric"><div class="metric-label">Record</div><div class="metric-value" id="teamRecord">—</div></div><div class="metric"><div class="metric-label">Rank</div><div class="metric-value" id="teamRank">—</div></div><div class="metric"><div class="metric-label">Adj Rank</div><div class="metric-value" id="teamAdjRank">—</div></div><div class="metric"><div class="metric-label">AdjRtg</div><div class="metric-value" id="teamAdjRtg">—</div></div><div class="metric"><div class="metric-label">ORtg</div><div class="metric-value" id="teamORtg">—</div></div><div class="metric"><div class="metric-label">DRtg</div><div class="metric-value" id="teamDRtg">—</div></div><div class="metric"><div class="metric-label">SOS</div><div class="metric-value" id="teamSOS">—</div></div><div class="metric"><div class="metric-label">PyW % Wins</div><div class="metric-value" id="teamPyW">—</div></div></div></section>
           <section id="teamTrendSection" class="card" style="margin-top:14px"><h2 class="section-title">Weekly Trends</h2><div class="trend-wrap" id="teamTrendWrap"><canvas id="teamTrendChart"></canvas></div><div id="teamTrendEmpty" class="note hidden">Weekly history is not available yet.</div></section>
-          <section id="teamScheduleSection" class="card" style="margin-top:14px"><h2 class="section-title">Season Schedule & Projections</h2><div class="schedule-summary"><div><span>Current FBS record</span><br><strong id="teamCurrentRecord">—</strong></div><div><span>Projected remaining</span><br><strong id="teamRemaining">—</strong></div><div><span>Projected final FBS record</span><br><strong id="teamProjected">—</strong></div></div><div class="table-wrap"><table><thead><tr><th>Week</th><th class="left">Opponent</th><th>Site</th><th>Status</th><th>Score / Projection</th><th>Win Prob.</th><th>Result</th><th>Opp. AdjRtg</th></tr></thead><tbody id="teamScheduleBody"></tbody></table></div><p class="note">FCS games are shown for schedule completeness but are not used in the FBS-only ratings or record. Future FBS scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.</p></section>
+          <section id="teamScheduleSection" class="card" style="margin-top:14px"><h2 class="section-title">Season Schedule & Projections</h2><div class="schedule-summary"><div><span>Current FBS record</span><br><strong id="teamCurrentRecord">—</strong></div><div><span>Projected remaining</span><br><strong id="teamRemaining">—</strong></div><div><span>Projected final FBS record</span><br><strong id="teamProjected">—</strong></div></div><div class="table-wrap"><table><thead><tr><th>Week</th><th class="left">Opponent</th><th>Site</th><th>Status</th><th>Score / Projection</th><th>Win Prob.</th><th>Result</th><th>Opp. AdjRtg</th></tr></thead><tbody id="teamScheduleBody"></tbody></table></div><p class="note">Future FBS scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.</p></section>
         </div>
       </section>
     </main>
@@ -536,7 +543,7 @@
       document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${view}`));
       document.querySelectorAll('.page-menu-list [data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===view));
       const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from current offensive efficiency, opposing defensive efficiency, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
-      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);renderCurrentView();
+      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);renderCurrentView();requestAnimationFrame(syncRankStickyHeader);
     }
 
     async function setYear(year){APP.year=String(year);buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView()}
@@ -607,9 +614,40 @@
       const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
       els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";els.rankNote.style.display=champ?'block':'none';applyStriping();
       thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
+      requestAnimationFrame(syncRankStickyHeader);
     }
     let rankSort={index:0,dir:1};function sortRankingTable(index){rankSort.dir=rankSort.index===index?-rankSort.dir:1;rankSort.index=index;const tbody=els.rankingsTable.tBodies[0];const rows=[...tbody.rows];rows.sort((a,b)=>{const av=a.cells[index].innerText.trim(),bv=b.cells[index].innerText.trim(),an=Number(av),bn=Number(bv);const cmp=Number.isFinite(an)&&Number.isFinite(bn)?an-bn:av.localeCompare(bv,undefined,{numeric:true});return cmp*rankSort.dir});rows.forEach(r=>tbody.appendChild(r))}
     function applyStriping(){let st=$("dynamicStriping");if(els.rankStriping.value==='off'){if(!st){st=document.createElement('style');st.id='dynamicStriping';document.head.appendChild(st)}st.textContent='#rankingsTable tbody tr:nth-child(even){background:transparent!important}'}else st?.remove()}
+
+    let rankStickyHeader=null;
+    function ensureRankStickyHeader(){
+      if(rankStickyHeader)return rankStickyHeader;
+      const shell=document.createElement('div');shell.className='rank-sticky-header';shell.setAttribute('aria-hidden','true');
+      const table=document.createElement('table');table.innerHTML='<thead></thead>';shell.appendChild(table);document.body.appendChild(shell);
+      shell.addEventListener('click',e=>{const th=e.target.closest('th[data-col]');if(!th)return;const original=els.rankingsTable.tHead?.querySelector(`th[data-col="${CSS.escape(th.dataset.col)}"]`);original?.click()});
+      rankStickyHeader=shell;return shell;
+    }
+    function syncRankStickyHeader(){
+      const shell=ensureRankStickyHeader();
+      if(APP.view!=='rankings'||!els.rankingsTable.tHead?.rows.length){shell.style.display='none';return}
+      const wrap=$('rankingsCapture'),table=els.rankingsTable;
+      const wrapRect=wrap.getBoundingClientRect(),tableRect=table.getBoundingClientRect(),headRect=table.tHead.getBoundingClientRect();
+      const headHeight=headRect.height;
+      const active=tableRect.top<0&&tableRect.bottom>headHeight;
+      if(!active){shell.style.display='none';return}
+      const cs=getComputedStyle(wrap),padL=parseFloat(cs.paddingLeft)||0,padR=parseFloat(cs.paddingRight)||0,borderL=parseFloat(cs.borderLeftWidth)||0;
+      const left=wrapRect.left+borderL+padL;
+      const width=Math.max(0,wrap.clientWidth-padL-padR);
+      shell.style.left=`${left}px`;shell.style.width=`${width}px`;shell.style.height=`${headHeight}px`;shell.style.display='block';
+      const cloneHead=shell.querySelector('thead');cloneHead.innerHTML=table.tHead.innerHTML;
+      const originals=[...table.tHead.rows[0].cells],clones=[...cloneHead.rows[0].cells];
+      let total=0;
+      originals.forEach((th,i)=>{const w=th.getBoundingClientRect().width;total+=w;const c=clones[i];if(c){c.style.width=`${w}px`;c.style.minWidth=`${w}px`;c.style.maxWidth=`${w}px`}});
+      const cloneTable=shell.querySelector('table');cloneTable.style.width=`${total}px`;cloneTable.style.transform=`translateX(${-wrap.scrollLeft}px)`;
+    }
+    window.addEventListener('scroll',syncRankStickyHeader,{passive:true});
+    window.addEventListener('resize',syncRankStickyHeader);
+    $('rankingsCapture').addEventListener('scroll',syncRankStickyHeader,{passive:true});
 
     // ---------- Matchup model ----------
     function teamObject(row){if(!row)return null;const wins=n(row.W),losses=n(row.L),off=n(row.AdjO)??n(row.AdjORtg)??n(row.ORtg)??n(row.Ortg),def=n(row.AdjD)??n(row.AdjDRtg)??n(row.DRtg),od=n(row.ODrives),dd=n(row.DDrives);if(![wins,losses,off,def,od,dd].every(Number.isFinite))return null;const games=wins+losses,sample=Math.max(games,1);return {name:row.Team,conference:row.Conference||"",wins,losses,games,offense:off,defense:def,tempo:((od/sample)+(dd/sample))/2}}
@@ -1233,7 +1271,7 @@
       const row=selectedTeamRow();if(!row)return null;const root=makeReportRoot(),header=teamReportHeader(row);
       if(selected.summary){const page=makeReportPage(root,{orientation:'portrait',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent='Current Team Summary';body.appendChild(title);const grid=document.createElement('div');grid.className='report-kpis';els.teamSummarySection.querySelectorAll('.metric').forEach(m=>{const x=document.createElement('div');x.className='report-kpi';x.innerHTML=`<div class="report-kpi-label">${escapeHtml(m.querySelector('.metric-label')?.textContent||'')}</div><div class="report-kpi-value">${escapeHtml(m.querySelector('.metric-value')?.textContent||'—')}</div>`;grid.appendChild(x)});body.appendChild(grid);const note=document.createElement('p');note.className='report-note';note.textContent='Current efficiency profile based on FBS-vs-FBS games in the selected season.';body.appendChild(note)}
       if(selected.trend){const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent='Weekly Trends';body.appendChild(title);if(APP.teamTrendChart){const img=document.createElement('img');img.className='report-chart';img.src=APP.teamTrendChart.toBase64Image('image/png',1);img.style.maxHeight='650px';body.appendChild(img)}else{const n=document.createElement('p');n.className='report-note';n.textContent='Weekly history is not available yet.';body.appendChild(n)}}
-      if(selected.schedule){const sourceRows=[...els.teamScheduleBody.rows].filter(r=>!r.classList.contains('schedule-detail-row')),chunks=distributeRows(sourceRows,22);chunks.forEach((chunk,idx)=>{const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent=`Season Schedule & Projections${chunks.length>1?` — ${idx+1} of ${chunks.length}`:''}`;body.appendChild(title);if(idx===0){const sum=document.createElement('div');sum.className='report-schedule-summary';sum.innerHTML=`<div><span>Current FBS record</span><strong>${escapeHtml(els.teamCurrentRecord.textContent)}</strong></div><div><span>Projected remaining</span><strong>${escapeHtml(els.teamRemaining.textContent)}</strong></div><div><span>Projected final FBS record</span><strong>${escapeHtml(els.teamProjected.textContent)}</strong></div>`;body.appendChild(sum)}const table=document.createElement('table');table.className='report-table';const sourceTable=els.teamScheduleSection.querySelector('table'),head=sourceTable.tHead.cloneNode(true);table.appendChild(head);const tb=document.createElement('tbody');chunk.forEach(r=>{const clone=r.cloneNode(true);clone.querySelectorAll('.schedule-expand-button').forEach(x=>x.remove());tb.appendChild(clone)});table.appendChild(tb);body.appendChild(table);const note=document.createElement('p');note.className='report-note';note.textContent='FCS games are shown for schedule completeness but are not used in the FBS-only ratings or record. Future FBS scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.';body.appendChild(note)})}
+      if(selected.schedule){const sourceRows=[...els.teamScheduleBody.rows].filter(r=>!r.classList.contains('schedule-detail-row')),chunks=distributeRows(sourceRows,22);chunks.forEach((chunk,idx)=>{const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});const body=page.querySelector('.report-body');const title=document.createElement('h2');title.className='report-section-title';title.textContent=`Season Schedule & Projections${chunks.length>1?` — ${idx+1} of ${chunks.length}`:''}`;body.appendChild(title);if(idx===0){const sum=document.createElement('div');sum.className='report-schedule-summary';sum.innerHTML=`<div><span>Current FBS record</span><strong>${escapeHtml(els.teamCurrentRecord.textContent)}</strong></div><div><span>Projected remaining</span><strong>${escapeHtml(els.teamRemaining.textContent)}</strong></div><div><span>Projected final FBS record</span><strong>${escapeHtml(els.teamProjected.textContent)}</strong></div>`;body.appendChild(sum)}const table=document.createElement('table');table.className='report-table';const sourceTable=els.teamScheduleSection.querySelector('table'),head=sourceTable.tHead.cloneNode(true);table.appendChild(head);const tb=document.createElement('tbody');chunk.forEach(r=>{const clone=r.cloneNode(true);clone.querySelectorAll('.schedule-expand-button').forEach(x=>x.remove());tb.appendChild(clone)});table.appendChild(tb);body.appendChild(table);const note=document.createElement('p');note.className='report-note';note.textContent='Future FBS scores and win probabilities use the same current-rating matchup model as the Matchup Predictor.';body.appendChild(note)})}
       return {root,pages:finalizeReportPages(root),row}
     }
     async function publishTeam(type){const report=buildTeamReport();if(!report)return;closeMenus();const base=`${safeSlug(report.row.Team)}-${APP.year}-team-report`;try{if(type==='pdf')await saveReportPdf(report.pages,`${base}.pdf`);else await saveReportPngs(report.pages,base)}finally{cleanupReport(report.root)}}
