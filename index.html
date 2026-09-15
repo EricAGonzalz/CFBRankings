@@ -188,6 +188,9 @@
     .schedule-team-chip{border:1px solid var(--grid);background:#fff;padding:7px 10px;font-size:11px;font-weight:700;color:#111}
     .schedule-team-chip.current{border-left:4px solid #111}.schedule-team-chip.opponent{border-left:4px solid #d71920}
     .schedule-comparison-chart{position:relative;height:340px;background:#fff;border:1px solid var(--grid);padding:8px}
+    .schedule-comparison-actions{display:flex;justify-content:flex-end;margin-top:8px}
+    .schedule-export-btn{appearance:none;border:1px solid var(--grid);background:#fff;color:#111;border-radius:999px;padding:5px 10px;font-size:11px;font-weight:700;line-height:1;cursor:pointer}
+    .schedule-export-btn:hover{background:#f3f3f3}.schedule-export-btn:active{transform:translateY(1px)}
     .schedule-comparison-empty{padding:18px;border:1px solid var(--grid);background:#fff;color:var(--muted);font-size:12px;line-height:1.45}
     .match-comparison-card{margin-top:14px;padding:0;overflow:hidden}
     .match-comparison-card .schedule-comparison{border-top:0;border-bottom:0}
@@ -243,6 +246,7 @@
     .report-chart{display:block;width:100%;height:auto;max-height:620px;object-fit:contain}
     .report-conference-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.report-summary-box{border:1px solid #d0d0d0;padding:9px 11px}.report-summary-box span{display:block;font-size:8px;text-transform:uppercase;color:#666;font-weight:700}.report-summary-box strong{display:block;margin-top:3px;font-size:16px}
     .report-schedule-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}.report-schedule-summary>div{border:1px solid #d0d0d0;padding:9px 10px}.report-schedule-summary span{font-size:8px;text-transform:uppercase;color:#666;font-weight:700}.report-schedule-summary strong{display:block;margin-top:3px;font-size:15px}
+    .report-match-scoreboard{display:grid;grid-template-columns:1fr 1px 1fr;border:1px solid #d0d0d0;margin-bottom:14px;background:#fff}.report-match-divider{background:#d0d0d0}.report-match-team{padding:26px 18px;text-align:center;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center}.report-match-team.winner{background:#f7f7f7}.report-match-team-name{font-size:18px;font-weight:800}.report-match-team-meta{margin-top:4px;color:#666;font-size:10px}.report-match-score{margin-top:12px;font-size:44px;font-weight:850;line-height:1}.report-match-winner{margin-top:8px;color:#666;font-size:8px;font-weight:800;letter-spacing:.45px;text-transform:uppercase}.report-match-verdict{border:1px solid #d0d0d0;padding:14px 16px;margin-bottom:14px}.report-match-verdict strong{display:block;font-size:15px}.report-match-verdict span{display:block;margin-top:4px;color:#666;font-size:10px}.report-probability-track{display:flex;height:8px;margin-top:12px;border-radius:999px;overflow:hidden;background:#ddd}.report-probability-track i{display:block;height:100%;font-style:normal}.report-match-chart-frame{border:1px solid #d0d0d0;padding:12px;background:#fff}.report-match-chart-frame img{display:block;width:100%;height:auto;max-height:600px;object-fit:contain}.report-match-chart-meta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}.report-match-team-chip{border:1px solid #d0d0d0;border-left:4px solid #111;padding:7px 9px;font-size:9px;font-weight:700;background:#fff}.report-match-breakdown{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid #d0d0d0;margin-top:14px}.report-match-breakdown>div{padding:12px;border-right:1px solid #d0d0d0}.report-match-breakdown>div:last-child{border-right:0}.report-match-breakdown span{display:block;color:#666;font-size:8px;text-transform:uppercase;font-weight:700;letter-spacing:.25px}.report-match-breakdown strong{display:block;margin-top:5px;font-size:17px}.report-match-layout{display:grid;grid-template-columns:430px minmax(0,1fr);gap:18px;height:100%}.report-match-col{min-width:0;display:flex;flex-direction:column}.report-match-layout .report-match-scoreboard{margin-bottom:12px}.report-match-layout .report-match-team{padding:18px 14px;min-height:150px}.report-match-layout .report-match-team-name{font-size:17px}.report-match-layout .report-match-score{font-size:52px}.report-match-layout .report-match-verdict{margin-bottom:12px}.report-match-layout .report-match-breakdown{margin-top:12px}.report-match-chart-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:10px}.report-match-chart-head .report-section-title{margin:0}.report-match-metric{font-size:10px;color:#666;text-align:right}.report-match-chart-col .report-match-chart-frame{height:500px;flex:0 0 500px;min-height:0;display:flex;align-items:center;justify-content:center}.report-match-chart-col .report-match-chart-frame img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain}.report-card{border:1px solid #d0d0d0;background:#fff}.report-card-head{padding:10px 12px;border-bottom:1px solid #d0d0d0}.report-card-head .report-section-title{margin:0;font-size:13px}.report-card-body{padding:12px}.report-card.compact .report-card-body{padding:0}.report-card.flush .report-card-body{padding:0}.report-game-preview{display:flex;flex-direction:column;height:100%;min-height:0}.report-game-preview-top{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;align-items:stretch;flex:0 0 auto;margin-bottom:12px}.report-game-preview-top>.report-card{height:100%}.report-game-preview-top>.report-card>.report-card-body{height:100%}.report-game-preview .report-match-scoreboard{margin:0;height:100%}.report-game-preview .report-match-team{min-height:118px;padding:13px 12px}.report-game-preview .report-match-team-name{font-size:16px}.report-game-preview .report-match-score{font-size:42px;margin-top:8px}.report-game-preview-side{display:flex;flex-direction:column;gap:12px;height:100%}.report-game-preview-side .report-match-verdict{margin:0;padding:0;border:0}.report-game-preview-side .report-match-breakdown{margin:0;grid-template-columns:repeat(5,minmax(0,1fr));border:0}.report-game-preview-side .report-match-breakdown>div{padding:8px 6px}.report-game-preview-side .report-match-breakdown span{font-size:7px;line-height:1.1}.report-game-preview-side .report-match-breakdown strong{font-size:13px;line-height:1.15}.report-game-preview-chart{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}.report-game-preview-chart .report-match-chart-head{margin-bottom:6px}.report-game-preview-chart .report-match-chart-meta{margin-bottom:6px}.report-game-preview-chart .report-match-chart-frame{flex:0 0 330px;height:330px;min-height:330px;display:flex;align-items:center;justify-content:center;padding:8px}.report-game-preview-chart .report-match-chart-frame img{display:block;width:100%;height:auto;max-height:100%;object-fit:contain}.report-game-preview-chart .report-note{margin:8px 2px 0;padding:0 2px 2px}.report-game-preview-chart .report-card-body{padding:8px 10px 12px}.report-game-preview-chart .report-card-head{padding:10px 12px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.report-game-preview-chart .report-card-head .report-match-metric{margin-left:auto;flex:0 0 auto}.report-game-preview-chart .report-chart-title-group{display:flex;flex-direction:column;gap:7px;min-width:0}.report-game-preview-chart .report-chart-title-group .report-section-title{margin:0}.report-game-preview-chart .report-chart-title-group .report-match-chart-meta{margin:0;gap:8px}.report-game-preview-chart .report-chart-title-group .report-match-team-chip{padding:5px 8px;font-size:8px}.report-game-preview-chart .report-card-body{padding-top:8px}
     /* ---------- Legacy page-specific publishing ---------- */
     .legacy-rank-print-header,.legacy-rank-print-footer{display:none}
     .legacy-png-stage{position:fixed;left:-20000px;top:0;width:1320px;pointer-events:none;z-index:-1}
@@ -1129,16 +1133,96 @@
       requestAnimationFrame(()=>animateFocusedComparison(chart,focusRefs));
       return chart
     }
-    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null){
+    function scheduleGameHeader(teamRow,oppRow,game){
+      const parts=[];
+      if(game?.week!==undefined&&game?.week!==null&&String(game.week)!=='')parts.push(`Week ${game.week}`);
+      const dateText=String(game?.startDate||'').trim();
+      if(dateText){const d=new Date(dateText);parts.push(Number.isNaN(d.getTime())?dateText:d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}))}
+      if(game?.site)parts.push(game.site);
+      return {title:`${teamRow.Team} vs. ${oppRow.Team}`,subtitle:`${APP.year} game preview report`,meta:parts.join(' • ')}
+    }
+
+    function makeReportCard(title='',className=''){
+      const card=document.createElement('section');
+      card.className=`report-card ${className}`.trim();
+      if(title){
+        const head=document.createElement('div');head.className='report-card-head';
+        const h=document.createElement('h3');h.className='report-section-title';h.textContent=title;
+        head.appendChild(h);card.appendChild(head);
+      }
+      const body=document.createElement('div');body.className='report-card-body';card.appendChild(body);
+      return {card,body};
+    }
+
+    function buildScheduleGameReport(teamRow,oppRow,game,metricValue,awayTeamName=null,sourceChart=null){
+      if(!oppRow)return null;
+      const root=makeReportRoot();
+      const header=scheduleGameHeader(teamRow,oppRow,game);
+      const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});
+      const body=page.querySelector('.report-body');
+      const preview=document.createElement('div');preview.className='report-game-preview';body.appendChild(preview);
+      const focusColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
+
+      const scoreTitle=document.createElement('h2');scoreTitle.className='report-section-title';scoreTitle.textContent=String(game?.status||'').toLowerCase()==='scheduled' || (game?.prob&&game?.prob!=='—') ? 'Projected Matchup' : 'Game Snapshot';preview.appendChild(scoreTitle);
+      const top=document.createElement('div');top.className='report-game-preview-top';preview.appendChild(top);
+      const scoreParts=String(game?.score||'').split('-');
+      const score1=scoreParts[0]??'—',score2=scoreParts[1]??'—';
+      const winner=(game?.result==='W')?teamRow.Team:(game?.result==='L')?oppRow.Team:null;
+
+      const scoreCard=makeReportCard('', 'compact flush');
+      const board=document.createElement('div');board.className='report-match-scoreboard';
+      board.innerHTML=`<div class="report-match-team${winner===teamRow.Team?' winner':''}"><div class="report-match-team-name">${escapeHtml(teamRow.Team)}</div><div class="report-match-team-meta">${escapeHtml(teamRow.Conference||'Independent')} • ${escapeHtml(`${teamRow.W??0}-${teamRow.L??0}`)}</div><div class="report-match-score">${escapeHtml(score1||'—')}</div>${winner===teamRow.Team?'<div class="report-match-winner">Favored side</div>':''}</div><div class="report-match-divider"></div><div class="report-match-team${winner===oppRow.Team?' winner':''}"><div class="report-match-team-name">${escapeHtml(oppRow.Team)}</div><div class="report-match-team-meta">${escapeHtml(oppRow.Conference||'Independent')} • ${escapeHtml(`${oppRow.W??0}-${oppRow.L??0}`)}</div><div class="report-match-score">${escapeHtml(score2||'—')}</div>${winner===oppRow.Team?'<div class="report-match-winner">Favored side</div>':''}</div>`;
+      scoreCard.body.appendChild(board);top.appendChild(scoreCard.card);
+
+      const side=document.createElement('div');side.className='report-game-preview-side';
+      const statusText=game?.status||'Scheduled';
+      const headline=statusText==='Final'?`${winner||'Game'} result`:statusText==='LIVE'||/^Q\d|^OT|Live/i.test(statusText)?'Live game snapshot':`${winner||oppRow.Team} ${String(game?.prob||'').trim()?'projected':''}`.trim();
+      const sublineParts=[];if(statusText)sublineParts.push(statusText);if(game?.prob&&game.prob!=='—')sublineParts.push(`${teamRow.Team} ${game.prob}`);if(Number.isFinite(n(game?.oppProb)))sublineParts.push(`${oppRow.Team} ${Number(game.oppProb).toFixed(1)}%`);
+      const verdictCard=makeReportCard('');
+      const verdict=document.createElement('div');verdict.className='report-match-verdict';verdict.innerHTML=`<strong>${escapeHtml(game?.headline||headline||'Matchup overview')}</strong><span>${escapeHtml(sublineParts.join(' • ')||'Current schedule matchup')}</span>`;
+      if(game?.prob&&game.prob!=='—'){const p1=Math.max(0,Math.min(100,n(String(game.prob).replace('%',''))||0)),p2=100-p1;verdict.innerHTML+=`<div class="report-probability-track"><i style="width:${p1}%;background:#111"></i><i style="width:${p2}%;background:#999"></i></div>`}
+      verdictCard.body.appendChild(verdict);side.appendChild(verdictCard.card);
+
+      const notesCard=makeReportCard('Game Notes', 'compact');
+      const breakdown=document.createElement('div');breakdown.className='report-match-breakdown';breakdown.innerHTML=`<div><span>Week</span><strong>${escapeHtml(game?.week||'—')}</strong></div><div><span>Site</span><strong>${escapeHtml(game?.site||'—')}</strong></div><div><span>Status</span><strong>${escapeHtml(statusText)}</strong></div><div><span>Win Prob.</span><strong>${escapeHtml(game?.prob||'—')}</strong></div><div><span>Opp. AdjRtg</span><strong>${escapeHtml(fmt(oppRow.AdjRtg))}</strong></div>`;
+      notesCard.body.appendChild(breakdown);side.appendChild(notesCard.card);top.appendChild(side);
+
+      const chartSection=document.createElement('div');chartSection.className='report-game-preview-chart';preview.appendChild(chartSection);
+      const chartCard=makeReportCard('Conference Position Comparison', 'compact');
+      const chartCardHead=chartCard.card.querySelector('.report-card-head');
+      if(chartCardHead){
+        const title=chartCardHead.querySelector('.report-section-title');
+        const titleGroup=document.createElement('div');titleGroup.className='report-chart-title-group';
+        if(title)titleGroup.appendChild(title);
+        const chips=document.createElement('div');chips.className='report-match-chart-meta';chips.innerHTML=`<div class="report-match-team-chip" style="border-left-color:${focusColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</div><div class="report-match-team-chip" style="border-left-color:${focusColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</div>`;
+        titleGroup.appendChild(chips);
+        chartCardHead.prepend(titleGroup);
+        const metric=document.createElement('div');metric.className='report-match-metric';metric.innerHTML=`Comparison metric<br><strong>${escapeHtml(METRIC_LABELS[metricValue]||metricValue)}</strong>`;chartCardHead.appendChild(metric);
+      }
+      const frame=document.createElement('div');frame.className='report-match-chart-frame';
+      if(sourceChart?.canvas){sourceChart.draw();const img=document.createElement('img');img.src=sourceChart.toBase64Image('image/png',1);img.alt='Conference position comparison';frame.appendChild(img)}else{const empty=document.createElement('p');empty.className='report-note';empty.textContent='Comparison chart is not available.';frame.appendChild(empty)}
+      chartCard.body.appendChild(frame);
+      chartSection.appendChild(chartCard.card);
+      return {root,pages:finalizeReportPages(root),base:`${safeSlug(teamRow.Team)}-vs-${safeSlug(oppRow.Team)}-${APP.year}-preview`};
+    }
+
+    async function exportScheduleComparisonPng(teamRow,oppRow,game,metricValue,awayTeamName=null,sourceChart=null){
+      const report=buildScheduleGameReport(teamRow,oppRow,game,metricValue,awayTeamName,sourceChart);
+      if(!report)return;
+      try{await saveReportPngs(report.pages,report.base)}finally{cleanupReport(report.root)}
+    }
+
+    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null){
       detailCell.innerHTML='';
       const wrap=document.createElement('div');wrap.className='schedule-comparison';
       if(!oppRow){wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(gameLabel)} comparison</h3><p class="schedule-comparison-subtitle">Current season ratings</p></div></div><div class="schedule-comparison-empty">${escapeHtml(gameLabel)} is not present in the ${escapeHtml(APP.year)} FBS rankings dataset, so a two-team conference comparison is not available for this game.</div>`;detailCell.appendChild(wrap);return}
       const id=`schedule-chart-${Math.random().toString(36).slice(2)}`;
       const headingColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
       detailCell.appendChild(wrap);
-      const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select');let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart);
+      const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart);
       select.onchange=()=>{chart?.destroy();chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart)};
+      exportBtn.onclick=async()=>{try{await exportScheduleComparisonPng(teamRow,oppRow,gameContext||{},select.value,awayTeamName,chart)}catch(err){alert(err?.message||'Could not create PNG export.')}};
     }
     function renderMatchupComparison(team1Name,team2Name){
       const team1Row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(team1Name).toLowerCase());
@@ -1182,7 +1266,7 @@
         const detail=document.createElement('tr');detail.className='schedule-detail-row hidden';const td=document.createElement('td');td.colSpan=8;detail.appendChild(td);
         els.teamScheduleBody.append(tr,detail);
         const btn=tr.querySelector('.schedule-expand-button');
-        btn.onclick=()=>{const opening=detail.classList.contains('hidden');detail.classList.toggle('hidden',!opening);btn.setAttribute('aria-expanded',String(opening));btn.setAttribute('aria-label',`${opening?'Hide':'Show'} ${row.Team} vs ${s.opp} comparison`);if(opening&&!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName)}};
+        btn.onclick=()=>{const opening=detail.classList.contains('hidden');detail.classList.toggle('hidden',!opening);btn.setAttribute('aria-expanded',String(opening));btn.setAttribute('aria-label',`${opening?'Hide':'Show'} ${row.Team} vs ${s.opp} comparison`);if(opening&&!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext)}};
       });
       els.teamRemaining.textContent=`${pw}-${pl}`;
       els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;
@@ -1267,11 +1351,80 @@
     async function publishConferencePng(){closeMenus();const c=conferenceExportCanvas();downloadBlob(await new Promise((resolve,reject)=>c.toBlob(b=>b?resolve(b):reject(new Error('Could not create image export.')),'image/png')),conferenceExportName('png'))}
     async function publishConferencePdf(){closeMenus();const c=conferenceExportCanvas(),{jsPDF}=window.jspdf;if(!jsPDF)throw new Error('The PDF library could not be loaded.');const pdf=new jsPDF({orientation:c.width>=c.height?'landscape':'portrait',unit:'pt',format:[c.width,c.height]});pdf.addImage(c.toDataURL('image/png'),'PNG',0,0,c.width,c.height);pdf.save(conferenceExportName('pdf'))}
 
-    function publishMatchupPdf(){if(els.matchPublishButton.disabled)return;closeMenus();document.body.classList.add('matchup-printing');withTemporaryPageRule('margin:.5in',cleanup=>{const done=()=>{document.body.classList.remove('matchup-printing');cleanup();window.removeEventListener('afterprint',done)};window.addEventListener('afterprint',done);setTimeout(()=>window.print(),60)})}
-    async function publishMatchupPng(){
-      if(els.matchPublishButton.disabled)return;closeMenus();if(typeof html2canvas!=='function')throw new Error('PNG export library failed to load.');const area=document.createElement('div');Object.assign(area.style,{position:'fixed',left:'-20000px',top:'0',width:'980px',padding:'28px',background:'#fff'});const r=els.matchResult.cloneNode(true),c=els.matchComparison.cloneNode(true),d=els.matchDetails.cloneNode(true);r.classList.remove('hidden');c.classList.remove('hidden');d.classList.remove('hidden');area.append(r,c,d);document.body.appendChild(area);
-      try{const canvas=await html2canvas(area,{backgroundColor:'#fff',scale:2,useCORS:true,logging:false});const t1=safeSlug(els.matchTeam1.value||'team1'),t2=safeSlug(els.matchTeam2.value||'team2');downloadBlob(await canvasToPngBlob(canvas),`CFB_Matchup_${t1}_vs_${t2}_${APP.year}.png`)}finally{area.remove()}
+    function matchupReportHeader(){
+      const t1=els.matchTeam1.value||'Team 1',t2=els.matchTeam2.value||'Team 2';
+      return {title:`${t1} vs. ${t2}`,subtitle:`${APP.year} matchup prediction report`,meta:`${escapeHtml(els.matchLocation.options[els.matchLocation.selectedIndex]?.text||'Neutral Site')}<br>Generated ${reportTimestamp()}`}
     }
+    function buildMatchupReport(){
+      if(els.matchPublishButton.disabled)return null;
+      const root=makeReportRoot(),header=matchupReportHeader();
+      const t1=els.matchTeam1.value||'Team 1',t2=els.matchTeam2.value||'Team 2';
+      const row1=APP.rows.find(r=>String(r.Team||'').toLowerCase()===String(t1).toLowerCase());
+      const row2=APP.rows.find(r=>String(r.Team||'').toLowerCase()===String(t2).toLowerCase());
+      const score1=els.matchScore1.textContent||'—',score2=els.matchScore2.textContent||'—';
+      const pText=els.matchSubheadline.textContent||'';
+      const probs=[...pText.matchAll(/([0-9]+(?:\.[0-9]+)?)%/g)].map(m=>Number(m[1]));
+      const p1=Number.isFinite(probs[0])?probs[0]:50,p2=Number.isFinite(probs[1])?probs[1]:100-p1;
+      const winner1=els.matchRow1.classList.contains('winner'),winner2=els.matchRow2.classList.contains('winner');
+      const metricSelect=els.matchComparison?.querySelector('select');
+      const metricValue=metricSelect?.value||'AdjRtg';
+      const metricLabel=METRIC_LABELS[metricValue]||metricValue;
+      const focusColors=matchupTeamColors(t1,t2,els.matchLocation.value==='team1'?t2:(els.matchLocation.value==='team2'?t1:null));
+
+      const page=makeReportPage(root,{orientation:'landscape',format:'letter',...header});
+      const body=page.querySelector('.report-body');
+      const preview=document.createElement('div');preview.className='report-game-preview';body.appendChild(preview);
+
+      const title=document.createElement('h2');title.className='report-section-title';title.textContent='Projected Matchup';preview.appendChild(title);
+      const top=document.createElement('div');top.className='report-game-preview-top';preview.appendChild(top);
+
+      const scoreCard=makeReportCard('', 'compact flush');
+      const board=document.createElement('div');board.className='report-match-scoreboard';
+      board.innerHTML=`<div class="report-match-team${winner1?' winner':''}"><div class="report-match-team-name">${escapeHtml(t1)}</div><div class="report-match-team-meta">${escapeHtml(row1?.Conference||'FBS')} • ${escapeHtml(`${row1?.W??0}-${row1?.L??0}`)}</div><div class="report-match-score">${escapeHtml(score1)}</div>${winner1?'<div class="report-match-winner">Favored side</div>':''}</div><div class="report-match-divider"></div><div class="report-match-team${winner2?' winner':''}"><div class="report-match-team-name">${escapeHtml(t2)}</div><div class="report-match-team-meta">${escapeHtml(row2?.Conference||'FBS')} • ${escapeHtml(`${row2?.W??0}-${row2?.L??0}`)}</div><div class="report-match-score">${escapeHtml(score2)}</div>${winner2?'<div class="report-match-winner">Favored side</div>':''}</div>`;
+      scoreCard.body.appendChild(board);
+      top.appendChild(scoreCard.card);
+
+      const side=document.createElement('div');side.className='report-game-preview-side';
+      const verdictCard=makeReportCard('');
+      const verdict=document.createElement('div');verdict.className='report-match-verdict';
+      verdict.innerHTML=`<strong>${escapeHtml(els.matchHeadline.textContent||'Projected result')}</strong><span>${escapeHtml(pText)}</span><div class="report-probability-track"><i style="width:${Math.max(0,Math.min(100,p1))}%;background:#111"></i><i style="width:${Math.max(0,Math.min(100,p2))}%;background:#999"></i></div>`;
+      verdictCard.body.appendChild(verdict);
+      side.appendChild(verdictCard.card);
+
+      const breakdownCard=makeReportCard('Model Breakdown', 'compact');
+      const breakdown=document.createElement('div');breakdown.className='report-match-breakdown';
+      breakdown.innerHTML=`<div><span>Expected Drives</span><strong>${escapeHtml(els.matchDrives.textContent||'—')}</strong></div><div><span>${escapeHtml(t1)} Pts/Drive</span><strong>${escapeHtml(els.matchEff1.textContent||'—')}</strong></div><div><span>${escapeHtml(t2)} Pts/Drive</span><strong>${escapeHtml(els.matchEff2.textContent||'—')}</strong></div><div><span>${escapeHtml(t1)} Win Prob.</span><strong>${escapeHtml(els.matchWinProb.textContent||'—')}</strong></div><div><span>Model Confidence</span><strong>${escapeHtml(els.matchConfidence.textContent||'—')}</strong></div>`;
+      breakdownCard.body.appendChild(breakdown);
+      side.appendChild(breakdownCard.card);
+      top.appendChild(side);
+
+      const chartSection=document.createElement('div');chartSection.className='report-game-preview-chart';preview.appendChild(chartSection);
+      const chartCard=makeReportCard('Conference Position Comparison', 'compact');
+      const chartCardHead=chartCard.card.querySelector('.report-card-head');
+      if(chartCardHead){
+        const title=chartCardHead.querySelector('.report-section-title');
+        const titleGroup=document.createElement('div');titleGroup.className='report-chart-title-group';
+        if(title)titleGroup.appendChild(title);
+        const chips=document.createElement('div');chips.className='report-match-chart-meta';chips.innerHTML=`<div class="report-match-team-chip" style="border-left-color:${focusColors.team1}">${escapeHtml(t1)} • ${escapeHtml(row1?.Conference||'Independent')}</div><div class="report-match-team-chip" style="border-left-color:${focusColors.team2}">${escapeHtml(t2)} • ${escapeHtml(row2?.Conference||'Independent')}</div>`;
+        titleGroup.appendChild(chips);
+        chartCardHead.prepend(titleGroup);
+        const metric=document.createElement('div');metric.className='report-match-metric';metric.innerHTML=`Comparison metric<br><strong>${escapeHtml(METRIC_LABELS[metricValue]||metricValue)}</strong>`;chartCardHead.appendChild(metric);
+      }
+      const frame=document.createElement('div');frame.className='report-match-chart-frame';
+      if(APP.matchComparisonChart?.canvas){APP.matchComparisonChart.draw();const img=document.createElement('img');img.src=APP.matchComparisonChart.toBase64Image('image/png',1);img.alt='Matchup conference position comparison';frame.appendChild(img)}else{const empty=document.createElement('p');empty.className='report-note';empty.textContent='Comparison chart is not available.';frame.appendChild(empty)}
+      chartCard.body.appendChild(frame);
+      chartSection.appendChild(chartCard.card);
+
+      const note=document.createElement('p');note.className='report-note';note.textContent='Projection uses current offensive efficiency, opposing defensive efficiency, expected drives, and selected game location.';preview.appendChild(note);
+      return {root,pages:finalizeReportPages(root),team1:t1,team2:t2};
+    }
+    async function publishMatchup(type){
+      const report=buildMatchupReport();if(!report)return;closeMenus();
+      const base=`CFB_Matchup_${safeSlug(report.team1)}_vs_${safeSlug(report.team2)}_${APP.year}`;
+      try{if(type==='pdf')await saveReportPdf(report.pages,`${base}.pdf`);else await saveReportPngs(report.pages,base)}finally{cleanupReport(report.root)}
+    }
+    async function publishMatchupPdf(){return publishMatchup('pdf')}
+    async function publishMatchupPng(){return publishMatchup('png')}
 
     function teamPrintSelection(){return {summary:els.teamPrintSummary.checked,trend:els.teamPrintTrend.checked,schedule:els.teamPrintSchedule.checked}}
     function selectedTeamRow(){return APP.rows.find(r=>String(r.Team||'').toLowerCase()===String(APP.team||'').toLowerCase())||null}
