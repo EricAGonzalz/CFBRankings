@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-17T23:36:07.111487+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-09-17T23:41:08.217496+00:00",
+  "liveGames": [
+    {
+      "id": 401858225,
+      "status": "in_progress",
+      "homeTeam": "Pittsburgh",
+      "awayTeam": "Syracuse",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:52",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Pittsburgh",
+    "Syracuse"
+  ]
 }
