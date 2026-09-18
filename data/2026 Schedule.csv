@@ -657,7 +657,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401862834,Memphis,American Athletic,Navy,American Athletic,Away,2026-11-21T17:00:00.000Z,False,False,,,,85,117,-134.596
 2026,13,401862838,Memphis,American Athletic,Temple,American Athletic,Home,2026-11-27T05:00:00.000Z,False,False,,,,113,77,-38.578
 2026,1,401858206,Miami,ACC,Stanford,ACC,Away,2026-09-05T01:00:00.000Z,True,False,45,6,W,96,130,-193.346
-2026,3,401858226,Miami,ACC,Wake Forest,ACC,Away,2026-09-18T23:30:00.000Z,False,False,,,,34,33,98.316
+2026,3,401858226,Miami,ACC,Wake Forest,ACC,Away,2026-09-18T23:30:00.000Z,False,True,0,0,,34,33,98.316
 2026,4,401858238,Miami,ACC,Central Michigan,Mid-American,Home,2026-09-26T22:30:00.000Z,False,False,,,,127,120,-140.000
 2026,5,401858249,Miami,ACC,Clemson,ACC,Away,2026-10-03T04:00:00.000Z,False,False,,,,99,85,-51.330
 2026,7,401858263,Miami,ACC,Florida State,ACC,Home,2026-10-17T04:00:00.000Z,False,False,,,,49,131,-198.437
@@ -1436,7 +1436,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,13,401858317,Virginia Tech,ACC,Virginia,ACC,Home,2026-11-28T05:00:00.000Z,False,False,,,,21,29,108.333
 2026,1,401858204,Wake Forest,ACC,Akron,Mid-American,Home,2026-09-03T23:00:00.000Z,True,False,38,16,W,112,107,-101.684
 2026,2,401858224,Wake Forest,ACC,Purdue,Big Ten,Away,2026-09-12T16:00:00.000Z,True,False,38,36,W,93,67,3.367
-2026,3,401858226,Wake Forest,ACC,Miami,ACC,Home,2026-09-18T23:30:00.000Z,False,False,,,,6,51,61.200
+2026,3,401858226,Wake Forest,ACC,Miami,ACC,Home,2026-09-18T23:30:00.000Z,False,True,0,0,,6,51,61.200
 2026,4,401858243,Wake Forest,ACC,Louisville,ACC,Away,2026-09-26T16:00:00.000Z,False,False,,,,77,48,64.029
 2026,5,401858251,Wake Forest,ACC,Stanford,ACC,Home,2026-10-03T04:00:00.000Z,False,False,,,,96,130,-193.346
 2026,6,401858260,Wake Forest,ACC,NC State,ACC,Away,2026-10-10T04:00:00.000Z,False,False,,,,116,109,-108.333
