@@ -452,6 +452,7 @@
     const CONFIDENCE_K = 5;
     const WIN_PROB_MARGIN_SCALE = 6.5;
     const RANKINGS_UPDATE_CHECK_MS = 60000;
+    const LIVE_UPDATE_CHECK_MS = 20000;
 
     const APP = {
       view:"rankings",
@@ -472,7 +473,11 @@
       rankingsUpdatePendingYears:new Set(),
       rankingsCheckInProgress:false,
       rankingsRefreshInProgress:false,
-      rankingsUpdateTimer:null
+      rankingsUpdateTimer:null,
+      liveFingerprints:new Map(),
+      liveCheckInProgress:false,
+      liveRefreshInProgress:false,
+      liveUpdateTimer:null
     };
 
     const $ = id => document.getElementById(id);
@@ -518,6 +523,11 @@
       if(!r.ok)throw new Error(`Could not check ${year} rankings for updates (HTTP ${r.status}).`);
       return rankingsFingerprint(await r.text());
     }
+    async function fetchLiveFingerprint(year){
+      const r=await fetch(`${RAW_BASE}${year}%20Live.json?t=${Date.now()}`,{cache:"no-store"});
+      if(!r.ok)throw new Error(`Could not check ${year} live data for updates (HTTP ${r.status}).`);
+      return rankingsFingerprint(await r.text());
+    }
     async function refreshRankingsData(year=APP.year){
       year=String(year);
       if(APP.rankingsRefreshInProgress||year!==String(APP.year))return;
@@ -527,11 +537,34 @@
         APP.liveCache.delete(year);
         await loadCurrentYear();
         APP.rankingsUpdatePendingYears.delete(year);
-        if(APP.view==="rankings")await renderRankings();
+        await renderCurrentView();
       }catch(err){
         console.warn("Could not refresh rankings data:",err);
       }finally{
         APP.rankingsRefreshInProgress=false;
+      }
+    }
+    async function refreshLiveData(year=APP.year){
+      year=String(year);
+      if(APP.liveRefreshInProgress||APP.rankingsRefreshInProgress||year!==String(APP.year))return;
+      APP.liveRefreshInProgress=true;
+      try{
+        APP.liveCache.delete(year);
+        const live=await fetchLive(year);
+        const updated=formatUpdatedAt(live.updatedAt);
+        const liveCount=Array.isArray(live.liveGames)?live.liveGames.length:0;
+        if(updated){
+          const liveText=liveCount>0
+            ? `${liveCount} live FBS game${liveCount===1?"":"s"} included`
+            : "No live FBS games currently in progress";
+          els.statusLine.textContent=`Last updated: ${updated} • ${liveText}`;
+        }
+        if(APP.view==="rankings")await renderRankings();
+        else if(APP.view==="team")await renderTeam();
+      }catch(err){
+        console.warn("Could not refresh live data:",err);
+      }finally{
+        APP.liveRefreshInProgress=false;
       }
     }
     async function checkForRankingUpdate(){
@@ -547,18 +580,40 @@
         }
         if(previous===fingerprint)return;
         APP.rankingsFingerprints.set(year,fingerprint);
-        if(APP.view==="rankings")await refreshRankingsData(year);
-        else APP.rankingsUpdatePendingYears.add(year);
+        await refreshRankingsData(year);
       }catch(err){
         console.warn("Rankings update check failed:",err);
       }finally{
         APP.rankingsCheckInProgress=false;
       }
     }
+    async function checkForLiveUpdate(){
+      if(document.hidden||APP.liveCheckInProgress||APP.rankingsRefreshInProgress)return;
+      APP.liveCheckInProgress=true;
+      const year=String(APP.year);
+      try{
+        const fingerprint=await fetchLiveFingerprint(year);
+        const previous=APP.liveFingerprints.get(year);
+        if(!previous){
+          APP.liveFingerprints.set(year,fingerprint);
+          return;
+        }
+        if(previous===fingerprint)return;
+        APP.liveFingerprints.set(year,fingerprint);
+        await refreshLiveData(year);
+      }catch(err){
+        console.warn("Live data update check failed:",err);
+      }finally{
+        APP.liveCheckInProgress=false;
+      }
+    }
     function startRankingsUpdateWatcher(){
       if(APP.rankingsUpdateTimer)clearInterval(APP.rankingsUpdateTimer);
+      if(APP.liveUpdateTimer)clearInterval(APP.liveUpdateTimer);
       checkForRankingUpdate();
+      checkForLiveUpdate();
       APP.rankingsUpdateTimer=setInterval(checkForRankingUpdate,RANKINGS_UPDATE_CHECK_MS);
+      APP.liveUpdateTimer=setInterval(checkForLiveUpdate,LIVE_UPDATE_CHECK_MS);
     }
 
     async function fetchMaster(year){
@@ -612,7 +667,7 @@
       requestAnimationFrame(syncRankStickyHeader);
     }
 
-    async function setYear(year){APP.year=String(year);if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate()}
+    async function setYear(year){APP.year=String(year);if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
 
     function formatUpdatedAt(isoString){
       if(!isoString)return null;
@@ -1508,7 +1563,7 @@
     }
     async function publishTeam(type){const report=buildTeamReport();if(!report)return;closeMenus();const base=`${safeSlug(report.row.Team)}-${APP.year}-team-report`;try{if(type==='pdf')await saveReportPdf(report.pages,`${base}.pdf`);else await saveReportPngs(report.pages,base)}finally{cleanupReport(report.root)}}
 
-    async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':renderRankings();break;case'matchup':updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
+    async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':await renderRankings();break;case'matchup':if(!els.matchResult.classList.contains('hidden'))renderMatchup();else updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
 
     // ---------- Events ----------
     els.pageMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.pageMenu,els.pageMenuButton)};
