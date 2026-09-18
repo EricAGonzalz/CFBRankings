@@ -78,6 +78,13 @@
     .control label{color:#333;white-space:nowrap}
     .control.column label{font-size:11px;text-transform:uppercase;font-weight:800;color:var(--muted);letter-spacing:.35px}
     .control input,.control select{border:0;background:transparent;outline:none;font-size:13px;min-width:130px}
+    .toggle-switch{position:relative;display:inline-flex;align-items:center;width:38px;height:22px;flex:0 0 auto}
+    .toggle-switch input{position:absolute;opacity:0;width:0;height:0;min-width:0}
+    .toggle-switch-slider{position:absolute;inset:0;border-radius:999px;background:#c9c9c9;cursor:pointer;transition:background .18s ease}
+    .toggle-switch-slider::after{content:"";position:absolute;width:16px;height:16px;left:3px;top:3px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .18s ease}
+    .toggle-switch input:checked+.toggle-switch-slider{background:#111}
+    .toggle-switch input:checked+.toggle-switch-slider::after{transform:translateX(16px)}
+    .toggle-switch input:focus-visible+.toggle-switch-slider{outline:2px solid #555;outline-offset:2px}
     .control.column select{border:1px solid var(--chip-border);background:#fff;border-radius:999px;padding:8px 11px;min-width:170px}
 
     .conference-menu{position:relative;display:inline-block}
@@ -95,6 +102,9 @@
     .rank-sticky-header{position:fixed;top:0;z-index:120;overflow:hidden;background:var(--card);display:none;pointer-events:auto}
     .rank-sticky-header table{margin:0;width:auto;table-layout:fixed;border-collapse:collapse}
     .rank-sticky-header th{background:var(--head);color:#fff;border-color:#222;font-size:12px;white-space:nowrap}
+    .rank-movement{display:inline-flex;align-items:center;gap:2px;margin-left:8px;font-size:11px;font-weight:800;white-space:nowrap;vertical-align:middle}
+    .rank-movement.up{color:#16833b}.rank-movement.down{color:#b42318}.rank-movement.same{color:#777}
+    .rank-movement-arrow{font-size:11px;line-height:1}
     table{border-collapse:collapse;width:100%;font-size:13px}
     th,td{padding:6px 8px;border:1px solid var(--grid);text-align:right;vertical-align:middle;white-space:nowrap}
     th{background:var(--head);color:#fff;border-color:#222;font-size:12px}
@@ -330,10 +340,11 @@
       <section id="view-rankings" class="view">
         <div class="view-toolbar">
           <div class="controls">
-            <div class="control"><label for="rankTeamSearch">Team</label><input id="rankTeamSearch" placeholder="Search teams..." /></div>
+            <div class="control"><label for="rankTeamSearch">Team</label><input id="rankTeamSearch" placeholder="Search teams (comma-separated)..." /></div>
             <div class="control"><label>Conf</label><div class="conference-menu" id="rankConfMenu"><button class="conference-menu-button" id="rankConfButton" type="button"><span id="rankConfText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="rankConfAll" type="button">Select all</button><button id="rankConfClear" type="button">Clear</button></div><div id="rankConfOptions"></div></div></div></div>
             <div class="control"><label for="rankTopN">Filter</label><select id="rankTopN"><option value="0">All</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option></select></div>
             <div class="control"><label for="rankStriping">Striping</label><select id="rankStriping"><option value="on">On</option><option value="off">Off</option></select></div>
+            <div class="control"><label for="rankMovement">Movement</label><label class="toggle-switch" aria-label="Show rank movement"><input id="rankMovement" type="checkbox" checked><span class="toggle-switch-slider"></span></label></div>
           </div>
           <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish PNGs as ZIP</button></div></div>
         </div>
@@ -382,7 +393,7 @@
           </div>
         </div>
         <div id="matchComparison" class="card match-comparison-card hidden"></div>
-        <div id="matchDetails" class="card match-details-card hidden"><div class="match-details-title">Model Breakdown</div><div class="summary-grid" style="grid-template-columns:repeat(5,minmax(0,1fr))"><div class="metric"><div class="metric-label">Expected Drives</div><div class="metric-value" id="matchDrives"></div></div><div class="metric"><div class="metric-label">Team 1 Pts/Drive</div><div class="metric-value" id="matchEff1"></div></div><div class="metric"><div class="metric-label">Team 2 Pts/Drive</div><div class="metric-value" id="matchEff2"></div></div><div class="metric"><div class="metric-label">Team 1 Win Probability</div><div class="metric-value" id="matchWinProb"></div></div><div class="metric"><div class="metric-label">Model Confidence</div><div class="metric-value" id="matchConfidence"></div></div></div></div>
+        <div id="matchDetails" class="card match-details-card hidden"><div class="match-details-title">Model Breakdown</div><div class="summary-grid" style="grid-template-columns:repeat(5,minmax(0,1fr))"><div class="metric"><div class="metric-label">Expected Drives</div><div class="metric-value" id="matchDrives"></div></div><div class="metric"><div class="metric-label">Team 1 Pts/Drive</div><div class="metric-value" id="matchEff1"></div></div><div class="metric"><div class="metric-label">Team 2 Pts/Drive</div><div class="metric-value" id="matchEff2"></div></div><div class="metric"><div class="metric-label">Win Probability</div><div class="metric-value" id="matchWinProb"></div></div><div class="metric"><div class="metric-label">Model Confidence</div><div class="metric-value" id="matchConfidence"></div></div></div></div>
       </section>
 
       <!-- Conferences -->
@@ -451,6 +462,7 @@
     const HOME_FIELD_POINTS = 2.5;
     const CONFIDENCE_K = 5;
     const WIN_PROB_MARGIN_SCALE = 6.5;
+    const RANKINGS_UPDATE_CHECK_MS = 60000;
 
     const APP = {
       view:"rankings",
@@ -466,13 +478,20 @@
       conferenceChart:null,
       teamTrendChart:null,
       scheduleComparisonCharts:new Map(),
-      matchComparisonChart:null
+      matchComparisonChart:null,
+      rankingsFingerprints:new Map(),
+      previousRanksByYear:new Map(),
+      rankMovementByYear:new Map(),
+      rankingsUpdatePendingYears:new Set(),
+      rankingsCheckInProgress:false,
+      rankingsRefreshInProgress:false,
+      rankingsUpdateTimer:null
     };
 
     const $ = id => document.getElementById(id);
     const els = {
       pageTitle:$("pageTitle"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
-      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),legacyRankPrintSeason:$("legacyRankPrintSeason"),legacyRankPrintMeta:$("legacyRankPrintMeta"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
+      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankMovement:$("rankMovement"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),legacyRankPrintSeason:$("legacyRankPrintSeason"),legacyRankPrintMeta:$("legacyRankPrintMeta"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
       matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchPublishMenu:$("matchPublishMenu"),matchPublishButton:$("matchPublishButton"),matchPublishPdf:$("matchPublishPdf"),matchPublishPng:$("matchPublishPng"),matchError:$("matchError"),matchResult:$("matchResult"),matchComparison:$("matchComparison"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
       confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confLabels:$("confLabels"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
       teamError:$("teamError"),teamPrompt:$("teamPrompt"),teamPicker:$("teamPicker"),teamContent:$("teamContent"),teamRecord:$("teamRecord"),teamRank:$("teamRank"),teamAdjRank:$("teamAdjRank"),teamAdjRtg:$("teamAdjRtg"),teamORtg:$("teamORtg"),teamDRtg:$("teamDRtg"),teamSOS:$("teamSOS"),teamPyW:$("teamPyW"),teamTrendWrap:$("teamTrendWrap"),teamTrendChart:$("teamTrendChart"),teamTrendEmpty:$("teamTrendEmpty"),teamCurrentRecord:$("teamCurrentRecord"),teamRemaining:$("teamRemaining"),teamProjected:$("teamProjected"),teamScheduleBody:$("teamScheduleBody"),
@@ -501,6 +520,87 @@
     function escapeHtml(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
     function csvUrl(year){return `${RAW_BASE}${year}%20Master.csv?t=${Date.now()}`}
     function dataUrl(filename){return `${RAW_BASE}${filename.replaceAll(" ","%20")}?t=${Date.now()}`}
+
+    function rankingsFingerprint(text){
+      let hash=2166136261;
+      for(let i=0;i<text.length;i++){hash^=text.charCodeAt(i);hash=Math.imul(hash,16777619)}
+      return `${text.length}:${hash>>>0}`;
+    }
+    async function fetchRankingsFingerprint(year){
+      const r=await fetch(csvUrl(year),{cache:"no-store"});
+      if(!r.ok)throw new Error(`Could not check ${year} rankings for updates (HTTP ${r.status}).`);
+      return rankingsFingerprint(await r.text());
+    }
+    function rankSnapshot(rows=APP.rows){
+      const snap=new Map();
+      (rows||[]).forEach(r=>{const rank=n(r?.Rk);if(r?.Team&&Number.isFinite(rank))snap.set(String(r.Team).toLowerCase(),rank)});
+      return snap;
+    }
+    function calculateRankMovement(year,previousRows,currentRows){
+      const previous=rankSnapshot(previousRows),movement=new Map();
+      (currentRows||[]).forEach(r=>{
+        const current=n(r?.Rk),old=previous.get(String(r?.Team||'').toLowerCase());
+        if(Number.isFinite(current)&&Number.isFinite(old))movement.set(String(r.Team).toLowerCase(),old-current);
+      });
+      APP.previousRanksByYear.set(String(year),previous);
+      APP.rankMovementByYear.set(String(year),movement);
+    }
+    function publishedRankMovement(row){
+      const direct=n(row?.RankChange);
+      if(Number.isFinite(direct))return direct;
+      const previous=n(row?.PreviousRk),current=n(row?.Rk);
+      if(Number.isFinite(previous)&&Number.isFinite(current))return previous-current;
+      return null;
+    }
+    function rankMovementForRow(row){
+      const published=publishedRankMovement(row);
+      if(Number.isFinite(published))return published;
+      return APP.rankMovementByYear.get(String(APP.year))?.get(String(row?.Team||'').toLowerCase())??null;
+    }
+    async function refreshRankingsData(year=APP.year){
+      year=String(year);
+      if(APP.rankingsRefreshInProgress||year!==String(APP.year))return;
+      APP.rankingsRefreshInProgress=true;
+      try{
+        const previousRows=String(APP.year)===year?APP.rows.map(r=>({...r})):[];
+        APP.masterCache.delete(year);
+        APP.liveCache.delete(year);
+        await loadCurrentYear();
+        calculateRankMovement(year,previousRows,APP.rows);
+        APP.rankingsUpdatePendingYears.delete(year);
+        if(APP.view==="rankings")await renderRankings();
+      }catch(err){
+        console.warn("Could not refresh rankings data:",err);
+      }finally{
+        APP.rankingsRefreshInProgress=false;
+      }
+    }
+    async function checkForRankingUpdate(){
+      if(document.hidden||APP.rankingsCheckInProgress)return;
+      APP.rankingsCheckInProgress=true;
+      const year=String(APP.year);
+      try{
+        const fingerprint=await fetchRankingsFingerprint(year);
+        const previous=APP.rankingsFingerprints.get(year);
+        if(!previous){
+          APP.rankingsFingerprints.set(year,fingerprint);
+          return;
+        }
+        if(previous===fingerprint)return;
+        APP.rankingsFingerprints.set(year,fingerprint);
+        if(APP.view==="rankings")await refreshRankingsData(year);
+        else APP.rankingsUpdatePendingYears.add(year);
+      }catch(err){
+        console.warn("Rankings update check failed:",err);
+      }finally{
+        APP.rankingsCheckInProgress=false;
+      }
+    }
+    function startRankingsUpdateWatcher(){
+      if(APP.rankingsUpdateTimer)clearInterval(APP.rankingsUpdateTimer);
+      checkForRankingUpdate();
+      APP.rankingsUpdateTimer=setInterval(checkForRankingUpdate,RANKINGS_UPDATE_CHECK_MS);
+    }
 
     async function fetchMaster(year){
       year=String(year);if(APP.masterCache.has(year))return APP.masterCache.get(year);
@@ -547,10 +647,13 @@
       document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${view}`));
       document.querySelectorAll('.page-menu-list [data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===view));
       const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from current offensive efficiency, opposing defensive efficiency, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
-      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);renderCurrentView();requestAnimationFrame(syncRankStickyHeader);
+      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);
+      if(view==="rankings"&&APP.rankingsUpdatePendingYears.has(String(APP.year)))refreshRankingsData(APP.year);
+      else renderCurrentView();
+      requestAnimationFrame(syncRankStickyHeader);
     }
 
-    async function setYear(year){APP.year=String(year);buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView()}
+    async function setYear(year){APP.year=String(year);if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate()}
 
     function formatUpdatedAt(isoString){
       if(!isoString)return null;
@@ -622,7 +725,7 @@
       const cols=rankColumns();const selected=selectedCheckboxValues(els.rankConfOptions),all=els.rankConfOptions.querySelectorAll('input').length;const searchTerms=teamSearchTerms(els.rankTeamSearch.value);const top=Number(els.rankTopN.value||0);
       let rows=APP.rows.filter(r=>{if(!teamMatchesSearch(r.Team,searchTerms))return false;if(selected.length===0&&all>0)return false;if(selected.length&&selected.length<all&&!selected.includes(r.Conference))return false;if(top>0&&(n(r.Rk)??999)>top)return false;return true});
       const thead=els.rankingsTable.tHead,tbody=els.rankingsTable.tBodies[0];thead.innerHTML='<tr>'+cols.map(c=>`<th class="${["Team","Conference"].includes(c)?'left':''}" data-col="${escapeHtml(c)}">${escapeHtml(c)}</th>`).join('')+'</tr>';tbody.innerHTML="";
-      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
+      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);const move=rankMovementForRow(r);if(els.rankMovement.checked&&Number.isFinite(move)&&move!==0){const badge=document.createElement('span');badge.className=`rank-movement ${move>0?'up':'down'}`;badge.innerHTML=`<span class="rank-movement-arrow">${move>0?'▲':'▼'}</span>${Math.abs(move)}`;badge.title=`Moved ${Math.abs(move)} spot${Math.abs(move)===1?'':'s'} ${move>0?'up':'down'} since the previous rankings update`;td.appendChild(badge)}if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
       els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";els.rankNote.style.display=champ?'block':'none';applyStriping();
       thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
       requestAnimationFrame(syncRankStickyHeader);
@@ -1453,7 +1556,7 @@
     document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>setView(b.dataset.route));
     document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
-    els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankStriping.onchange=applyStriping;
+    els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankStriping.onchange=applyStriping;els.rankMovement.onchange=()=>{localStorage.setItem('cfb-rank-movement-visible',els.rankMovement.checked?'on':'off');renderRankings()};
     els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;els.matchPublishButton.onclick=e=>{e.stopPropagation();if(!els.matchPublishButton.disabled)toggleMenu(els.matchPublishMenu,els.matchPublishButton)};els.matchPublishPdf.onclick=e=>{e.stopPropagation();publishMatchupPdf()};els.matchPublishPng.onclick=async e=>{e.stopPropagation();await publishMatchupPng()};
     els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;els.confLabels.onchange=renderConferenceChart;
     els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
@@ -1471,7 +1574,8 @@
     async function init(){
       await Promise.all([fetchChampions(),fetchColors()]);
       const p=new URLSearchParams(location.search);APP.year=p.get('year')||DEFAULT_YEAR;APP.team=p.get('team');APP.view=p.get('view')||(APP.team?'team':'rankings');
-      buildSeasonLinks();await loadCurrentYear();setView(APP.view,{push:false,team:APP.team});syncUrl(true);
+      els.rankMovement.checked=localStorage.getItem('cfb-rank-movement-visible')!=='off';
+      buildSeasonLinks();await loadCurrentYear();setView(APP.view,{push:false,team:APP.team});syncUrl(true);startRankingsUpdateWatcher();
     }
     init();
   </script>
