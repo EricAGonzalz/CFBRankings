@@ -307,7 +307,7 @@
     <header class="topbar">
       <div class="brandrow">
         <div>
-          <h1 id="pageTitle">CFB Rankings</h1>
+          <h1 id="pageTitle" role="link" tabindex="0" aria-label="Back to rankings">CFB Rankings</h1>
           <p class="subtitle" id="pageSubtitle">Only FBS vs FBS games are used in calculations.</p>
           <p class="statusline" id="statusLine"></p>
         </div>
@@ -644,7 +644,10 @@
       APP.colors={conferences:{},teams:{}};
     }
 
-    function closeMenus(){document.querySelectorAll('.page-menu.open,.conference-menu.open,.publish-menu.open').forEach(el=>el.classList.remove('open'));document.querySelectorAll('[aria-expanded="true"]').forEach(el=>el.setAttribute('aria-expanded','false'))}
+    function closeMenus(){
+      document.querySelectorAll('.page-menu.open,.conference-menu.open,.publish-menu.open').forEach(el=>el.classList.remove('open'));
+      document.querySelectorAll('.page-menu-button[aria-expanded="true"],.publish-menu .print-button[aria-expanded="true"],.conference-menu-button[aria-expanded="true"]').forEach(el=>el.setAttribute('aria-expanded','false'));
+    }
     function toggleMenu(container,button){const willOpen=!container.classList.contains('open');closeMenus();container.classList.toggle('open',willOpen);button?.setAttribute('aria-expanded',String(willOpen))}
 
     function buildSeasonLinks(){
@@ -1370,12 +1373,11 @@
     function renderTeamSchedule(schedule,row,live){
       const expandedComparisons=new Map();
       [...els.teamScheduleBody.querySelectorAll('.schedule-game-row')].forEach(existingRow=>{
-        const btn=existingRow.querySelector('.schedule-expand-button');
-        if(btn?.getAttribute('aria-expanded')!=='true')return;
         const key=existingRow.dataset.scheduleKey;
         if(!key)return;
         const detail=existingRow.nextElementSibling;
-        const metric=detail?.querySelector('.schedule-metric-select')?.value||'AdjRtg';
+        if(!detail||detail.classList.contains('hidden'))return;
+        const metric=detail.querySelector('.schedule-metric-select')?.value||'AdjRtg';
         expandedComparisons.set(key,metric);
       });
       APP.scheduleComparisonCharts.forEach(c=>c?.destroy());APP.scheduleComparisonCharts.clear();
@@ -1581,6 +1583,8 @@
     async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':await renderRankings();break;case'matchup':if(!els.matchResult.classList.contains('hidden'))renderMatchup();else updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
 
     // ---------- Events ----------
+    els.pageTitle.onclick=()=>setView('rankings');
+    els.pageTitle.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setView('rankings')}};
     els.pageMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.pageMenu,els.pageMenuButton)};
     document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>setView(b.dataset.route));
     document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
