@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T18:41:17.316214+00:00",
+  "updatedAt": "2026-09-19T18:46:19.326345+00:00",
   "liveGames": [
-    {
-      "id": 401869940,
-      "status": "in_progress",
-      "homeTeam": "Delaware",
-      "awayTeam": "Coastal Carolina",
-      "homeConference": "Conference USA",
-      "awayConference": "Sun Belt",
-      "homePoints": 22.0,
-      "awayPoints": 14.0,
-      "period": 4,
-      "clock": "00:57",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401856686,
       "status": "in_progress",
@@ -25,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 3.0,
-      "awayPoints": 31.0,
+      "awayPoints": 38.0,
       "period": 4,
-      "clock": "12:52",
-      "completedDrives": 16,
+      "clock": "12:42",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856792,
@@ -42,7 +27,7 @@
       "homePoints": 24.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "13:05",
+      "clock": "09:54",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -57,7 +42,7 @@
       "homePoints": 45.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "05:43",
+      "clock": "04:42",
       "completedDrives": 20,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 12
@@ -72,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "03:25",
+      "clock": "01:13",
       "completedDrives": 20,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
@@ -87,7 +72,7 @@
       "homePoints": 15.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "00:42",
+      "clock": "00:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -101,8 +86,8 @@
       "awayConference": "Mid-American",
       "homePoints": 27.0,
       "awayPoints": 0.0,
-      "period": 3,
-      "clock": "01:31",
+      "period": 4,
+      "clock": "14:01",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -117,7 +102,7 @@
       "homePoints": 42.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "06:31",
+      "clock": "03:51",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -131,8 +116,8 @@
       "awayConference": "Mid-American",
       "homePoints": 48.0,
       "awayPoints": 6.0,
-      "period": 3,
-      "clock": "03:16",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 25,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 13
@@ -144,12 +129,12 @@
       "awayTeam": "North Texas",
       "homeConference": "Pac-12",
       "awayConference": "American Athletic",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "04:36",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "04:05",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -162,10 +147,10 @@
       "homePoints": 38.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "12:59",
-      "completedDrives": 15,
+      "clock": "11:31",
+      "completedDrives": 16,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856695,
@@ -176,8 +161,8 @@
       "awayConference": "ACC",
       "homePoints": 7.0,
       "awayPoints": 17.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:50",
       "completedDrives": 11,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 6
@@ -191,8 +176,8 @@
       "awayConference": "Mountain West",
       "homePoints": 17.0,
       "awayPoints": 0.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:08",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -206,8 +191,6 @@
     "Buffalo",
     "Central Michigan",
     "Clemson",
-    "Coastal Carolina",
-    "Delaware",
     "Eastern Michigan",
     "Georgia",
     "Iowa State",
