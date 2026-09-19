@@ -1336,7 +1336,7 @@
       try{await saveReportPngs(report.pages,report.base)}finally{cleanupReport(report.root)}
     }
 
-    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null){
+    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='AdjRtg'){
       detailCell.innerHTML='';
       const wrap=document.createElement('div');wrap.className='schedule-comparison';
       if(!oppRow){wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(gameLabel)} comparison</h3><p class="schedule-comparison-subtitle">Current season ratings</p></div></div><div class="schedule-comparison-empty">${escapeHtml(gameLabel)} is not present in the ${escapeHtml(APP.year)} FBS rankings dataset, so a two-team conference comparison is not available for this game.</div>`;detailCell.appendChild(wrap);return}
@@ -1344,7 +1344,9 @@
       const headingColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
       wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
       detailCell.appendChild(wrap);
-      const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart);
+      const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');
+      if([...select.options].some(o=>o.value===initialMetric))select.value=initialMetric;
+      let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart);
       select.onchange=()=>{chart?.destroy();chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart)};
       exportBtn.onclick=async()=>{try{await exportScheduleComparisonPng(teamRow,oppRow,gameContext||{},select.value,awayTeamName,chart)}catch(err){alert(err?.message||'Could not create PNG export.')}};
     }
@@ -1366,6 +1368,16 @@
     }
 
     function renderTeamSchedule(schedule,row,live){
+      const expandedComparisons=new Map();
+      [...els.teamScheduleBody.querySelectorAll('.schedule-game-row')].forEach(existingRow=>{
+        const btn=existingRow.querySelector('.schedule-expand-button');
+        if(btn?.getAttribute('aria-expanded')!=='true')return;
+        const key=existingRow.dataset.scheduleKey;
+        if(!key)return;
+        const detail=existingRow.nextElementSibling;
+        const metric=detail?.querySelector('.schedule-metric-select')?.value||'AdjRtg';
+        expandedComparisons.set(key,metric);
+      });
       APP.scheduleComparisonCharts.forEach(c=>c?.destroy());APP.scheduleComparisonCharts.clear();
       els.teamScheduleBody.innerHTML='';
       const rows=sortScheduleChronologically(schedule.map(scheduleFields).filter(r=>String(r.team).toLowerCase()===String(row.Team).toLowerCase()));
@@ -1385,12 +1397,15 @@
           if(oppRow){const loc=/home/i.test(s.site)?'team1':/away/i.test(s.site)?'team2':'neutral';const p=predictTeams(row.Team,oppRow.Team,loc);if(p){const a=Math.round(p.s1),b=Math.round(p.s2);score=`${a}-${b}`;prob=`${p.p1.toFixed(1)}%`;if(a>b){result='W';pw++}else if(a<b){result='L';pl++}}}
         }
         const tr=document.createElement('tr');tr.className='schedule-game-row';
+        const scheduleKey=`${s.week||''}|${s.opp||''}|${s.startDate||''}|${s.site||''}`;tr.dataset.scheduleKey=scheduleKey;
         const oppCell=oppRow?`<a href="#" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);
         tr.innerHTML=`<td>${escapeHtml(s.week)}</td><td class="left schedule-opponent-cell">${oppCell}<button type="button" class="schedule-expand-button" aria-expanded="false" aria-label="Show ${escapeHtml(row.Team)} vs ${escapeHtml(s.opp)} comparison" title="Show matchup comparison">›</button></td><td>${escapeHtml(s.site)}</td><td>${escapeHtml(status)}</td><td>${escapeHtml(score)}</td><td>${escapeHtml(prob)}</td><td class="${result==='W'?'result-win':result==='L'?'result-loss':''}">${escapeHtml(result)}</td><td>${oppRow?fmt(oppRow.AdjRtg):'—'}</td>`;
         const detail=document.createElement('tr');detail.className='schedule-detail-row hidden';const td=document.createElement('td');td.colSpan=8;detail.appendChild(td);
         els.teamScheduleBody.append(tr,detail);
         const btn=tr.querySelector('.schedule-expand-button');
-        btn.onclick=()=>{const opening=detail.classList.contains('hidden');detail.classList.toggle('hidden',!opening);btn.setAttribute('aria-expanded',String(opening));btn.setAttribute('aria-label',`${opening?'Hide':'Show'} ${row.Team} vs ${s.opp} comparison`);if(opening&&!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext)}};
+        const openComparison=(initialMetric='AdjRtg')=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric)}};
+        btn.onclick=()=>{const opening=detail.classList.contains('hidden');if(opening)openComparison();else{detail.classList.add('hidden');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label',`Show ${row.Team} vs ${s.opp} comparison`)}};
+        if(expandedComparisons.has(scheduleKey))openComparison(expandedComparisons.get(scheduleKey));
       });
       els.teamRemaining.textContent=`${pw}-${pl}`;
       els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;
