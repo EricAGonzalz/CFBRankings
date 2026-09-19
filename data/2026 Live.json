@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T20:01:55.828358+00:00",
+  "updatedAt": "2026-09-19T20:05:57.829524+00:00",
   "liveGames": [
     {
       "id": 401858229,
@@ -27,25 +27,10 @@
       "homePoints": 28.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "02:52",
+      "clock": "02:09",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401864508,
-      "status": "in_progress",
-      "homeTeam": "Central Michigan",
-      "awayTeam": "Wyoming",
-      "homeConference": "Mid-American",
-      "awayConference": "Mountain West",
-      "homePoints": 24.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "00:58",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401862774,
@@ -55,12 +40,12 @@
       "homeConference": "Mid-American",
       "awayConference": "American Athletic",
       "homePoints": 7.0,
-      "awayPoints": 10.0,
+      "awayPoints": 16.0,
       "period": 2,
-      "clock": "06:56",
-      "completedDrives": 6,
+      "clock": "06:48",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856694,
@@ -72,10 +57,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:27",
-      "completedDrives": 1,
+      "clock": "05:56",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856797,
@@ -87,7 +72,7 @@
       "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "06:07",
+      "clock": "05:06",
       "completedDrives": 4,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 1
@@ -102,7 +87,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:40",
+      "clock": "05:57",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -114,7 +99,7 @@
       "awayTeam": "SMU",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 6.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
       "clock": "05:19",
@@ -132,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:35",
+      "clock": "04:43",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -145,19 +130,35 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 1,
-      "clock": "09:30",
-      "completedDrives": 1,
+      "clock": "08:07",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401866422,
+      "status": "in_progress",
+      "homeTeam": "Liberty",
+      "awayTeam": "Ball State",
+      "homeConference": "Conference USA",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
-    "Central Michigan",
+    "Ball State",
     "Cincinnati",
     "Clemson",
     "Kentucky",
+    "Liberty",
     "Louisville",
     "Miami (OH)",
     "Michigan",
@@ -172,7 +173,6 @@
     "UTEP",
     "Utah",
     "Utah State",
-    "Vanderbilt",
-    "Wyoming"
+    "Vanderbilt"
   ]
 }
