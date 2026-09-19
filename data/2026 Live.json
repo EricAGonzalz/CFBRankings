@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T17:46:13.597586+00:00",
+  "updatedAt": "2026-09-19T17:51:16.012869+00:00",
   "liveGames": [
     {
       "id": 401869940,
@@ -12,10 +12,10 @@
       "homePoints": 15.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "03:47",
-      "completedDrives": 14,
+      "clock": "02:48",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856686,
@@ -57,10 +57,10 @@
       "homePoints": 35.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 9
+      "clock": "00:37",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856812,
@@ -114,12 +114,12 @@
       "awayTeam": "Kent State",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "00:03",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "00:00",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -133,9 +133,9 @@
       "awayPoints": 6.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 18,
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401860889,
@@ -147,9 +147,9 @@
       "homePoints": 28.0,
       "awayPoints": 28.0,
       "period": 2,
-      "clock": "00:03",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "00:00",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -162,10 +162,10 @@
       "homePoints": 17.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "05:00",
-      "completedDrives": 9,
+      "clock": "03:37",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856695,
@@ -177,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "08:09",
+      "clock": "06:55",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -189,12 +189,12 @@
       "awayTeam": "Wyoming",
       "homeConference": "Mid-American",
       "awayConference": "Mountain West",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "08:51",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "08:00",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     }
   ],
