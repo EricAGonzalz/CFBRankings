@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T02:01:27.267268+00:00",
+  "updatedAt": "2026-09-19T02:06:05.020002+00:00",
   "liveGames": [
     {
       "id": 401858226,
@@ -12,10 +12,10 @@
       "homePoints": 13.0,
       "awayPoints": 31.0,
       "period": 3,
-      "clock": "04:06",
-      "completedDrives": 12,
+      "clock": "01:30",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856811,
@@ -26,10 +26,10 @@
       "awayConference": "Big 12",
       "homePoints": 14.0,
       "awayPoints": 17.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "period": 3,
+      "clock": "13:13",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     }
   ],
