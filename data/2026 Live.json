@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T16:06:10.030122+00:00",
+  "updatedAt": "2026-09-19T16:11:09.985524+00:00",
   "liveGames": [
     {
       "id": 401869940,
@@ -12,10 +12,25 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:12",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "clock": "00:00",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401856686,
+      "status": "in_progress",
+      "homeTeam": "Arkansas",
+      "awayTeam": "Georgia",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:49",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401856792,
@@ -27,10 +42,40 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:12",
+      "clock": "11:56",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856798,
+      "status": "in_progress",
+      "homeTeam": "Iowa State",
+      "awayTeam": "Bowling Green",
+      "homeConference": "Big 12",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:39",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858229,
+      "status": "in_progress",
+      "homeTeam": "Clemson",
+      "awayTeam": "North Carolina",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:50",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858451,
@@ -39,12 +84,12 @@
       "awayTeam": "Akron",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:16",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "12:14",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -69,25 +114,48 @@
       "awayTeam": "Buffalo",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
+      "homePoints": 3.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:53",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401860889,
+      "status": "in_progress",
+      "homeTeam": "Texas State",
+      "awayTeam": "North Texas",
+      "homeConference": "Pac-12",
+      "awayConference": "American Athletic",
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
-      "completedDrives": 1,
+      "clock": "14:42",
+      "completedDrives": 0,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Akron",
+    "Arkansas",
+    "Bowling Green",
     "Buffalo",
+    "Clemson",
     "Coastal Carolina",
     "Delaware",
+    "Georgia",
+    "Iowa State",
     "Kansas State",
     "Kent State",
     "Minnesota",
+    "North Carolina",
+    "North Texas",
     "Ohio State",
     "Penn State",
+    "Texas State",
     "Tulane"
   ]
 }
