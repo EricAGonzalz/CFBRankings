@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T19:36:07.207987+00:00",
+  "updatedAt": "2026-09-19T19:41:11.875929+00:00",
   "liveGames": [
     {
       "id": 401856812,
@@ -12,10 +12,10 @@
       "homePoints": 14.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "06:01",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 12
+      "clock": "03:56",
+      "completedDrives": 28,
+      "homeOffensiveDrives": 15,
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401858229,
@@ -33,21 +33,6 @@
       "awayOffensiveDrives": 9
     },
     {
-      "id": 401858454,
-      "status": "in_progress",
-      "homeTeam": "Ohio State",
-      "awayTeam": "Kent State",
-      "homeConference": "Big Ten",
-      "awayConference": "Mid-American",
-      "homePoints": 59.0,
-      "awayPoints": 3.0,
-      "period": 4,
-      "clock": "01:56",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
-    },
-    {
       "id": 401860889,
       "status": "in_progress",
       "homeTeam": "Texas State",
@@ -58,9 +43,9 @@
       "awayPoints": 35.0,
       "period": 4,
       "clock": "02:10",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858460,
@@ -73,8 +58,8 @@
       "awayPoints": 10.0,
       "period": 4,
       "clock": "04:44",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 8,
+      "completedDrives": 19,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
     },
     {
@@ -87,9 +72,9 @@
       "homePoints": 21.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "14:11",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "11:51",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -102,10 +87,10 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "11:25",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "clock": "04:45",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401862774,
@@ -115,12 +100,12 @@
       "homeConference": "Mid-American",
       "awayConference": "American Athletic",
       "homePoints": 7.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 1,
-      "clock": "04:42",
-      "completedDrives": 4,
+      "clock": "01:29",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856797,
@@ -132,7 +117,37 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "14:46",
+      "clock": "12:48",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858230,
+      "status": "in_progress",
+      "homeTeam": "Louisville",
+      "awayTeam": "SMU",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:17",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858450,
+      "status": "in_progress",
+      "homeTeam": "Michigan",
+      "awayTeam": "UTEP",
+      "homeConference": "Big Ten",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:52",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -145,15 +160,17 @@
     "Clemson",
     "Eastern Michigan",
     "Kansas",
-    "Kent State",
+    "Louisville",
     "Miami (OH)",
+    "Michigan",
     "NC State",
     "North Carolina",
     "North Texas",
-    "Ohio State",
+    "SMU",
     "Temple",
     "Texas State",
     "Toledo",
+    "UTEP",
     "Vanderbilt",
     "Wisconsin",
     "Wyoming"
