@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T19:51:08.043181+00:00",
+  "updatedAt": "2026-09-19T19:55:59.932037+00:00",
   "liveGames": [
     {
       "id": 401858229,
@@ -18,48 +18,18 @@
       "awayOffensiveDrives": 9
     },
     {
-      "id": 401860889,
-      "status": "in_progress",
-      "homeTeam": "Texas State",
-      "awayTeam": "North Texas",
-      "homeConference": "Pac-12",
-      "awayConference": "American Athletic",
-      "homePoints": 49.0,
-      "awayPoints": 35.0,
-      "period": 4,
-      "clock": "00:26",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858460,
-      "status": "in_progress",
-      "homeTeam": "Wisconsin",
-      "awayTeam": "Eastern Michigan",
-      "homeConference": "Big Ten",
-      "awayConference": "Mid-American",
-      "homePoints": 48.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "00:02",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 11
-    },
-    {
       "id": 401856695,
       "status": "in_progress",
       "homeTeam": "Vanderbilt",
       "awayTeam": "NC State",
       "homeConference": "SEC",
       "awayConference": "ACC",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "08:02",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "06:18",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -72,7 +42,7 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "01:55",
+      "clock": "01:22",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -87,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "00:14",
+      "clock": "10:50",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -102,9 +72,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:17",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "09:14",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -117,7 +87,7 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "07:32",
+      "clock": "06:23",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -129,12 +99,12 @@
       "awayTeam": "Utah State",
       "homeConference": "Big 12",
       "awayConference": "Pac-12",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:19",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "10:37",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -147,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "10:57",
+      "clock": "07:25",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -162,10 +132,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:05",
-      "completedDrives": 1,
+      "clock": "07:11",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858457,
@@ -177,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:50",
+      "clock": "10:08",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -187,26 +157,22 @@
     "Central Michigan",
     "Cincinnati",
     "Clemson",
-    "Eastern Michigan",
     "Kentucky",
     "Louisville",
     "Miami (OH)",
     "Michigan",
     "NC State",
     "North Carolina",
-    "North Texas",
     "Rutgers",
     "SMU",
     "Temple",
     "Texas A&M",
-    "Texas State",
     "Toledo",
     "USC",
     "UTEP",
     "Utah",
     "Utah State",
     "Vanderbilt",
-    "Wisconsin",
     "Wyoming"
   ]
 }
