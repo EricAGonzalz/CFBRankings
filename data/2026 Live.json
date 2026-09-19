@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T16:01:48.457612+00:00",
+  "updatedAt": "2026-09-19T16:06:10.030122+00:00",
   "liveGames": [
     {
       "id": 401869940,
@@ -12,10 +12,40 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "04:38",
+      "clock": "03:12",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401856792,
+      "status": "in_progress",
+      "homeTeam": "Kansas State",
+      "awayTeam": "Tulane",
+      "homeConference": "Big 12",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:12",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858451,
+      "status": "in_progress",
+      "homeTeam": "Minnesota",
+      "awayTeam": "Akron",
+      "homeConference": "Big Ten",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:16",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858454,
@@ -31,12 +61,33 @@
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858456,
+      "status": "in_progress",
+      "homeTeam": "Penn State",
+      "awayTeam": "Buffalo",
+      "homeConference": "Big Ten",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
+    "Akron",
+    "Buffalo",
     "Coastal Carolina",
     "Delaware",
+    "Kansas State",
     "Kent State",
-    "Ohio State"
+    "Minnesota",
+    "Ohio State",
+    "Penn State",
+    "Tulane"
   ]
 }
