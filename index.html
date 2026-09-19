@@ -1233,7 +1233,26 @@
       const teamName=String(team||'').toLowerCase();
       const allTeamGames=sortScheduleChronologically(schedule.map(scheduleFields).filter(s=>String(s.team||'').toLowerCase()===teamName));
 
-      // Keep every regular-season game in the counter, including FCS games. Once
+      // Determine the current football week from the schedule dates, not from
+      // the largest completed Week value in the file. Some schedule feeds can
+      // contain completed-looking rows or postseason placeholders with larger
+      // week numbers, which would incorrectly extend the trend into the future.
+      // A week becomes current once its first scheduled game has reached its
+      // start time. Live/completed rows remain a fallback when a date is absent.
+      let currentScheduleWeek=null;
+      const now=Date.now();
+      schedule.map(scheduleFields).forEach(s=>{
+        const week=n(s.week);
+        if(!Number.isFinite(week))return;
+        const start=scheduleTimeValue(s);
+        const hasLiveOverlay=!!findLiveScheduleGame(s,live);
+        const weekHasStarted=(Number.isFinite(start)&&start<=now)||s.completed||s.live||hasLiveOverlay;
+        if(weekHasStarted){
+          currentScheduleWeek=currentScheduleWeek===null?week:Math.max(currentScheduleWeek,week);
+        }
+      });
+
+      // Keep regular-season games only through the current football week. Once
       // December/postseason begins, append only games that this team has actually
       // played or is currently playing, so unused bowl/CFP rounds stay collapsed.
       const seasonYear=Number(APP.year);
@@ -1241,7 +1260,11 @@
       const displayGames=allTeamGames.filter(s=>{
         const t=scheduleTimeValue(s);
         const isPostseason=Number.isFinite(postseasonStart)&&Number.isFinite(t)&&t>=postseasonStart;
-        return !isPostseason||s.completed||s.live||!!findLiveScheduleGame(s,live);
+        const hasLiveOverlay=!!findLiveScheduleGame(s,live);
+        if(isPostseason)return s.completed||s.live||hasLiveOverlay;
+        const week=n(s.week);
+        if(currentScheduleWeek===null)return s.completed||s.live||hasLiveOverlay;
+        return !Number.isFinite(week)||week<=currentScheduleWeek;
       });
 
       // Determine which scheduled opponents are FBS by checking whether they are
@@ -1264,7 +1287,13 @@
         if(count>0)rowByFbsCount.set(count,r);
       });
 
-      const weekSlots=displayGames.map((_,index)=>index+1);
+      // Use the actual schedule week number on the x-axis rather than the
+      // team's game sequence. For example, if a team's second game is played
+      // in Week 3, its rating point should appear at Week 3 rather than Week 2.
+      const weekSlots=displayGames.map((game,index)=>{
+        const week=n(game.week);
+        return Number.isFinite(week)?week:index+1;
+      });
       const plottedRows=displayGames.map((game,index)=>{
         const count=fbsCountAtSlot[index];
         const previous=index>0?fbsCountAtSlot[index-1]:0;
@@ -1276,13 +1305,59 @@
 
       // Older seasons without schedule data fall back to the archived snapshots.
       if(!weekSlots.length){
-        rows.forEach((r,index)=>{weekSlots.push(index+1);plottedRows.push(r)});
+        rows.forEach((r,index)=>{
+          const week=n(r.Week);
+          weekSlots.push(Number.isFinite(week)?week:index+1);
+          plottedRows.push(r);
+        });
+      }
+
+      // Fill true bye-week gaps with the most recent rating snapshot. For
+      // example, if a team plays in Week 1 and then Week 3, Week 2 should show
+      // the same rating as Week 1 instead of visually jumping straight to Week 3.
+      // This only fills missing schedule weeks; an actual scheduled game still
+      // keeps its existing plotted value/null behavior.
+      const filledWeekSlots=[];
+      const filledPlottedRows=[];
+      for(let i=0;i<weekSlots.length;i++){
+        const currentWeek=n(weekSlots[i]);
+        const previousWeek=i>0?n(weekSlots[i-1]):null;
+
+        if(i>0&&Number.isInteger(previousWeek)&&Number.isInteger(currentWeek)&&currentWeek>previousWeek+1){
+          let carry=filledPlottedRows.length?filledPlottedRows[filledPlottedRows.length-1]:null;
+          if(!carry){
+            for(let j=i-1;j>=0&&!carry;j--)carry=plottedRows[j]||null;
+          }
+          for(let gapWeek=previousWeek+1;gapWeek<currentWeek;gapWeek++){
+            filledWeekSlots.push(gapWeek);
+            filledPlottedRows.push(carry);
+          }
+        }
+
+        filledWeekSlots.push(weekSlots[i]);
+        filledPlottedRows.push(plottedRows[i]);
+      }
+
+      // If the team is currently on a bye, carry its most recent rating forward
+      // only through the current football week. Do not extend into future weeks.
+      if(filledWeekSlots.length&&Number.isInteger(currentScheduleWeek)){
+        const lastWeek=n(filledWeekSlots[filledWeekSlots.length-1]);
+        let carry=filledPlottedRows.length?filledPlottedRows[filledPlottedRows.length-1]:null;
+        if(!carry){
+          for(let j=filledPlottedRows.length-1;j>=0&&!carry;j--)carry=filledPlottedRows[j]||null;
+        }
+        if(Number.isInteger(lastWeek)&&carry){
+          for(let gapWeek=lastWeek+1;gapWeek<=currentScheduleWeek;gapWeek++){
+            filledWeekSlots.push(gapWeek);
+            filledPlottedRows.push(carry);
+          }
+        }
       }
 
       const scales={x:{title:{display:true,text:'Week'}}};
       available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});
       APP.teamTrendChart?.destroy();
-      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:weekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({label,data:plottedRows.map(r=>r?n(r[k]):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:plottedRows.map(r=>r?(r._current?4:3):0),pointStyle:plottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return plottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
+      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:filledWeekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({label,data:filledPlottedRows.map(r=>r?n(r[k]):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:filledPlottedRows.map(r=>r?(r._current?4:3):0),pointStyle:filledPlottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return filledPlottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
     }
     function boolish(v){const x=String(v??'').trim().toLowerCase();return v===true||x==='true'||x==='1'||x==='yes'||x==='y'}
     function scheduleFields(r){
