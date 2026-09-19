@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T00:51:03.111982+00:00",
+  "updatedAt": "2026-09-19T00:56:04.185640+00:00",
   "liveGames": [
     {
       "id": 401858226,
@@ -12,9 +12,9 @@
       "homePoints": 7.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "04:28",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "02:00",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -24,12 +24,12 @@
       "awayTeam": "Houston",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 10.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "14:08",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     }
   ],
