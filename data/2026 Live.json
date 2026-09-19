@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T22:51:15.306322+00:00",
+  "updatedAt": "2026-09-19T22:56:02.545615+00:00",
   "liveGames": [
     {
       "id": 401856685,
@@ -27,10 +27,10 @@
       "homePoints": 21.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "03:39",
-      "completedDrives": 18,
+      "clock": "01:57",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856797,
@@ -39,10 +39,10 @@
       "awayTeam": "Miami (OH)",
       "homeConference": "Big 12",
       "awayConference": "Mid-American",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "01:59",
+      "clock": "01:07",
       "completedDrives": 23,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 10
@@ -57,7 +57,7 @@
       "homePoints": 33.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "06:31",
+      "clock": "02:00",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -69,27 +69,12 @@
       "awayTeam": "SMU",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 35.0,
+      "homePoints": 41.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "06:18",
+      "clock": "05:32",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858450,
-      "status": "in_progress",
-      "homeTeam": "Michigan",
-      "awayTeam": "UTEP",
-      "homeConference": "Big Ten",
-      "awayConference": "Mountain West",
-      "homePoints": 52.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "01:53",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
     },
     {
@@ -100,12 +85,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 28.0,
-      "awayPoints": 35.0,
+      "awayPoints": 42.0,
       "period": 4,
-      "clock": "09:51",
-      "completedDrives": 16,
+      "clock": "08:41",
+      "completedDrives": 17,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401858231,
@@ -114,12 +99,12 @@
       "awayTeam": "Stanford",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "09:11",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 10,
+      "clock": "08:20",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 8
     },
     {
@@ -132,9 +117,9 @@
       "homePoints": 31.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "00:38",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "11:06",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -147,10 +132,10 @@
       "homePoints": 44.0,
       "awayPoints": 15.0,
       "period": 4,
-      "clock": "07:29",
-      "completedDrives": 18,
+      "clock": "07:10",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401867804,
@@ -160,12 +145,12 @@
       "homeConference": "Big 12",
       "awayConference": "Sun Belt",
       "homePoints": 29.0,
-      "awayPoints": 7.0,
+      "awayPoints": 13.0,
       "period": 4,
-      "clock": "00:27",
-      "completedDrives": 19,
+      "clock": "08:18",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856691,
@@ -175,12 +160,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 16.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 2,
-      "clock": "06:09",
-      "completedDrives": 9,
+      "clock": "04:48",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401862710,
@@ -207,7 +192,7 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:27",
+      "clock": "10:43",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -219,12 +204,12 @@
       "awayTeam": "Marshall",
       "homeConference": "Conference USA",
       "awayConference": "Sun Belt",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:59",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "05:45",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
@@ -245,7 +230,6 @@
     "Louisville",
     "Marshall",
     "Miami (OH)",
-    "Michigan",
     "Mississippi State",
     "Missouri State",
     "Old Dominion",
@@ -255,7 +239,6 @@
     "Stanford",
     "Texas A&M",
     "USC",
-    "UTEP",
     "Utah",
     "Utah State",
     "Western Kentucky"
