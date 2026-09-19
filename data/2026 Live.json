@@ -1,7 +1,22 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T15:31:23.528409+00:00",
+  "updatedAt": "2026-09-19T15:36:12.572474+00:00",
   "liveGames": [
+    {
+      "id": 401869940,
+      "status": "in_progress",
+      "homeTeam": "Delaware",
+      "awayTeam": "Coastal Carolina",
+      "homeConference": "Conference USA",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:45",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
     {
       "id": 401858454,
       "status": "in_progress",
@@ -19,6 +34,8 @@
     }
   ],
   "liveTeams": [
+    "Coastal Carolina",
+    "Delaware",
     "Kent State",
     "Ohio State"
   ]
