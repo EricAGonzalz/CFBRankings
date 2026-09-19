@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T19:06:08.376720+00:00",
+  "updatedAt": "2026-09-19T19:14:18.150586+00:00",
   "liveGames": [
     {
       "id": 401856686,
@@ -12,7 +12,7 @@
       "homePoints": 10.0,
       "awayPoints": 38.0,
       "period": 4,
-      "clock": "06:44",
+      "clock": "03:05",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -27,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "02:42",
+      "clock": "01:20",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -39,12 +39,12 @@
       "awayTeam": "Bowling Green",
       "homeConference": "Big 12",
       "awayConference": "Mid-American",
-      "homePoints": 45.0,
+      "homePoints": 52.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "10:35",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 9,
+      "clock": "08:27",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 13
     },
     {
@@ -57,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "11:47",
+      "clock": "10:19",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -87,7 +87,7 @@
       "homePoints": 41.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "09:38",
+      "clock": "08:52",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -102,7 +102,7 @@
       "homePoints": 56.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "14:19",
+      "clock": "11:58",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -115,9 +115,9 @@
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
       "homePoints": 55.0,
-      "awayPoints": 6.0,
+      "awayPoints": 13.0,
       "period": 4,
-      "clock": "07:40",
+      "clock": "05:01",
       "completedDrives": 28,
       "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 14
@@ -132,7 +132,7 @@
       "homePoints": 35.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "13:37",
+      "clock": "11:20",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -144,13 +144,13 @@
       "awayTeam": "Eastern Michigan",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 41.0,
+      "homePoints": 47.0,
       "awayPoints": 7.0,
-      "period": 3,
-      "clock": "01:47",
-      "completedDrives": 17,
+      "period": 4,
+      "clock": "14:49",
+      "completedDrives": 18,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856695,
@@ -162,7 +162,7 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "08:45",
+      "clock": "06:55",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -174,12 +174,12 @@
       "awayTeam": "Wyoming",
       "homeConference": "Mid-American",
       "awayConference": "Mountain West",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "05:30",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "02:34",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -190,12 +190,12 @@
       "homeConference": "Mid-American",
       "awayConference": "American Athletic",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "13:49",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "12:10",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
