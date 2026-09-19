@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T17:02:10.092499+00:00",
+  "updatedAt": "2026-09-19T17:06:28.701157+00:00",
   "liveGames": [
     {
       "id": 401869940,
@@ -12,10 +12,10 @@
       "homePoints": 15.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "00:01",
-      "completedDrives": 11,
+      "clock": "00:00",
+      "completedDrives": 12,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401856686,
@@ -27,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "08:45",
+      "clock": "05:39",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -42,7 +42,7 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "09:16",
+      "clock": "08:25",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -54,13 +54,13 @@
       "awayTeam": "Bowling Green",
       "homeConference": "Big 12",
       "awayConference": "Mid-American",
-      "homePoints": 14.0,
+      "homePoints": 20.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "01:22",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 5
+      "clock": "00:19",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401856812,
@@ -72,10 +72,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "10:57",
-      "completedDrives": 6,
+      "clock": "10:08",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401858229,
@@ -87,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "10:21",
+      "clock": "08:51",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -99,10 +99,10 @@
       "awayTeam": "Akron",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "10:56",
+      "clock": "10:50",
       "completedDrives": 11,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
@@ -114,12 +114,12 @@
       "awayTeam": "Kent State",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "12:58",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "09:29",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -129,12 +129,12 @@
       "awayTeam": "Buffalo",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 20.0,
+      "homePoints": 27.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "12:41",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "10:47",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -147,7 +147,7 @@
       "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "12:13",
+      "clock": "10:46",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -162,7 +162,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "07:26",
+      "clock": "04:48",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -177,10 +177,25 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:23",
+      "clock": "07:03",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401864508,
+      "status": "in_progress",
+      "homeTeam": "Central Michigan",
+      "awayTeam": "Wyoming",
+      "homeConference": "Mid-American",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:42",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -189,6 +204,7 @@
     "Arkansas",
     "Bowling Green",
     "Buffalo",
+    "Central Michigan",
     "Clemson",
     "Coastal Carolina",
     "Delaware",
@@ -207,6 +223,7 @@
     "Texas State",
     "Tulane",
     "Vanderbilt",
-    "Wisconsin"
+    "Wisconsin",
+    "Wyoming"
   ]
 }
