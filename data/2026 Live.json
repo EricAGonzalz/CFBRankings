@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T16:46:47.285867+00:00",
+  "updatedAt": "2026-09-19T16:51:12.055278+00:00",
   "liveGames": [
     {
       "id": 401869940,
@@ -12,10 +12,10 @@
       "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "01:58",
-      "completedDrives": 9,
+      "clock": "01:38",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856686,
@@ -27,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "14:03",
+      "clock": "12:13",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -42,9 +42,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "14:53",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "11:31",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -55,12 +55,12 @@
       "homeConference": "Big 12",
       "awayConference": "Mid-American",
       "homePoints": 7.0,
-      "awayPoints": 6.0,
+      "awayPoints": 7.0,
       "period": 1,
       "clock": "03:58",
-      "completedDrives": 5,
+      "completedDrives": 6,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856812,
@@ -72,7 +72,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "01:02",
+      "clock": "00:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -87,10 +87,10 @@
       "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "00:20",
-      "completedDrives": 5,
+      "clock": "00:00",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858451,
@@ -102,9 +102,9 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:53",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "13:49",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -114,10 +114,10 @@
       "awayTeam": "Kent State",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:18",
+      "clock": "00:44",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -132,7 +132,7 @@
       "homePoints": 17.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "01:39",
+      "clock": "00:00",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -144,10 +144,10 @@
       "awayTeam": "North Texas",
       "homeConference": "Pac-12",
       "awayConference": "American Athletic",
-      "homePoints": 20.0,
+      "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "00:42",
+      "clock": "00:00",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -160,11 +160,26 @@
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
+      "awayPoints": 7.0,
+      "period": 1,
+      "clock": "09:24",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856695,
+      "status": "in_progress",
+      "homeTeam": "Vanderbilt",
+      "awayTeam": "NC State",
+      "homeConference": "SEC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:29",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 1,
+      "clock": "13:44",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
@@ -184,12 +199,14 @@
     "Kansas State",
     "Kent State",
     "Minnesota",
+    "NC State",
     "North Carolina",
     "North Texas",
     "Ohio State",
     "Penn State",
     "Texas State",
     "Tulane",
+    "Vanderbilt",
     "Wisconsin"
   ]
 }
