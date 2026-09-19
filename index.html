@@ -879,6 +879,7 @@
         const limit=mode==='top3'?3:mode==='top5'?5:Infinity;
         const ctx=chart.ctx;
         const area=chart.chartArea;
+        const isMainConferenceChart=chart.canvas?.id==='conferenceChart';
         const items=[];
 
         chart.data.datasets.forEach((ds,di)=>{
@@ -895,36 +896,68 @@
         const labelPlacements=new Map();
         const boxesOverlap=(a,b)=>!(a.right<b.left||a.left>b.right||a.bottom<b.top||a.top>b.bottom);
 
-        const chooseLabelPlacement=({ds,di,el,pi,p,isFocus})=>{
+        // When two team markers are close together, preserve their visual vertical
+        // ordering in the labels: the higher marker labels above and the lower
+        // marker labels below. Collision avoidance may move a label farther away
+        // or sideways, but it must not swap those two labels across the points.
+        const nearbyVerticalSide=item=>{
+          let best=null,bestScore=Infinity;
+          for(const other of items){
+            if(other===item)continue;
+            const dx=Math.abs(other.el.x-item.el.x);
+            const dy=Math.abs(other.el.y-item.el.y);
+            if(dx>48||dy>60||dy<3)continue;
+            const score=dx+dy*.35;
+            if(score<bestScore){best=other;bestScore=score;}
+          }
+          if(!best)return null;
+          return item.el.y<best.el.y?-1:1;
+        };
+
+        const chooseLabelPlacement=item=>{
+          const {ds,di,el,pi,p,isFocus}=item;
           const text=p.team;
           ctx.font=isFocus?'800 12px system-ui':'700 11px system-ui';
           const w=ctx.measureText(text).width;
           const h=isFocus?14:13;
-          const direction=((di+pi)%2===0)?-1:1;
+          const nearbySide=nearbyVerticalSide(item);
+          const direction=nearbySide??(((di+pi)%2===0)?-1:1);
           const baseTier=((di+pi)%3);
           const candidates=[];
 
           // Focused matchup teams get first choice of positions close to their marker.
-          // Background labels are placed afterward and must route around these boxes.
+          // For neighboring markers, candidates stay strictly on the correct vertical side.
           if(isFocus){
-            [14,20,26].forEach(offset=>{
-              candidates.push({x:el.x,y:el.y-offset,align:'center'});
-              candidates.push({x:el.x,y:el.y+offset,align:'center'});
+            [14,20,26,34].forEach(offset=>{
+              candidates.push({x:el.x,y:el.y+direction*offset,align:'center'});
+              if(nearbySide===null)candidates.push({x:el.x,y:el.y-direction*offset,align:'center'});
             });
-            candidates.push({x:el.x+10,y:el.y-14,align:'left'});
-            candidates.push({x:el.x-10,y:el.y+14,align:'right'});
+            candidates.push({x:el.x+10,y:el.y+direction*14,align:'left'});
+            candidates.push({x:el.x-10,y:el.y+direction*14,align:'right'});
           }else{
-            const verticalOffsets=[13+baseTier*9,22+baseTier*9,31+baseTier*9,40+baseTier*9];
+            // On the full Conference Comparison page, keep labels visually tied
+            // to their marker. It is better to accept a little crowding than to
+            // send a school name a long distance away from its dot.
+            const verticalOffsets=isMainConferenceChart
+              ? [12,18,24]
+              : [13+baseTier*9,22+baseTier*9,31+baseTier*9,40+baseTier*9];
             verticalOffsets.forEach(offset=>{
               candidates.push({x:el.x,y:el.y+direction*offset,align:'center'});
-              candidates.push({x:el.x,y:el.y-direction*offset,align:'center'});
+              if(nearbySide===null)candidates.push({x:el.x,y:el.y-direction*offset,align:'center'});
             });
-            candidates.push({x:el.x+10,y:el.y+direction*22,align:'left'});
-            candidates.push({x:el.x-10,y:el.y-direction*22,align:'right'});
+            const sideY=isMainConferenceChart?18:22;
+            const sideX=isMainConferenceChart?8:10;
+            candidates.push({x:el.x+sideX,y:el.y+direction*sideY,align:'left'});
+            candidates.push({x:el.x-sideX,y:el.y+direction*sideY,align:'right'});
           }
 
           let chosen=null;
-          for(const candidate of candidates){
+
+          if(isMainConferenceChart){
+            // Preserve the original/standard conference-page label position.
+            // Direct overlaps are corrected in one small pass after every label
+            // has been placed; unrelated labels are never searched or displaced.
+            const candidate=candidates[0];
             let x=candidate.x,y=Math.max(area.top+8,Math.min(area.bottom-8,candidate.y)),align=candidate.align;
             if(align==='center'){
               if(x-w/2 < area.left+3){x=el.x+8;align='left';}
@@ -933,19 +966,35 @@
             let left=x-w/2,right=x+w/2;
             if(align==='left'){left=x;right=x+w;}
             else if(align==='right'){left=x-w;right=x;}
-            const box={left:left-3,right:right+3,top:y-h/2-2,bottom:y+h/2+2};
-            if(!placedLabelBoxes.some(other=>boxesOverlap(box,other))){chosen={x,y,align,box};break;}
-          }
-
-          if(!chosen){
-            const offset=isFocus?14:(13+baseTier*9);
-            let x=el.x,y=Math.max(area.top+8,Math.min(area.bottom-8,el.y+direction*offset)),align='center';
-            if(x-w/2 < area.left+3){x=el.x+8;align='left';}
-            else if(x+w/2 > area.right-3){x=el.x-8;align='right';}
-            let left=x-w/2,right=x+w/2;
-            if(align==='left'){left=x;right=x+w;}
-            else if(align==='right'){left=x-w;right=x;}
-            chosen={x,y,align,box:{left:left-3,right:right+3,top:y-h/2-2,bottom:y+h/2+2}};
+            chosen={x,y,align,box:{left:left-3,right:right+3,top:y-h/2-2,bottom:y+h/2+2},standardY:y,h};
+          }else{
+            const evaluated=[];
+            for(const candidate of candidates){
+              let x=candidate.x,y=Math.max(area.top+8,Math.min(area.bottom-8,candidate.y)),align=candidate.align;
+              if(align==='center'){
+                if(x-w/2 < area.left+3){x=el.x+8;align='left';}
+                else if(x+w/2 > area.right-3){x=el.x-8;align='right';}
+              }
+              let left=x-w/2,right=x+w/2;
+              if(align==='left'){left=x;right=x+w;}
+              else if(align==='right'){left=x-w;right=x;}
+              const box={left:left-3,right:right+3,top:y-h/2-2,bottom:y+h/2+2};
+              const overlaps=placedLabelBoxes.filter(other=>boxesOverlap(box,other));
+              evaluated.push({x,y,align,box,overlapCount:overlaps.length,distance:Math.hypot(x-el.x,y-el.y)});
+              if(!overlaps.length){chosen={x,y,align,box};break;}
+            }
+            if(!chosen){
+              const offset=isFocus?14:(13+baseTier*9);
+              // Fallback uses the same required side, so a lower nearby team can
+              // never wind up labeled above a higher nearby team (or vice versa).
+              let x=el.x,y=Math.max(area.top+8,Math.min(area.bottom-8,el.y+direction*offset)),align='center';
+              if(x-w/2 < area.left+3){x=el.x+8;align='left';}
+              else if(x+w/2 > area.right-3){x=el.x-8;align='right';}
+              let left=x-w/2,right=x+w/2;
+              if(align==='left'){left=x;right=x+w;}
+              else if(align==='right'){left=x-w;right=x;}
+              chosen={x,y,align,box:{left:left-3,right:right+3,top:y-h/2-2,bottom:y+h/2+2}};
+            }
           }
           placedLabelBoxes.push(chosen.box);
           labelPlacements.set(`${di}:${pi}`,chosen);
@@ -955,6 +1004,39 @@
         items.filter(item=>item.isFocus).forEach(chooseLabelPlacement);
         // Then place all faded conference labels around those reserved boxes.
         items.filter(item=>!item.isFocus).forEach(chooseLabelPlacement);
+
+        if(isMainConferenceChart){
+          // Only correct labels that PHYSICALLY overlap in their standard positions.
+          // Each label may move at most 9 px from that standard position, so a
+          // collision can never create a long chain or pull a school name away
+          // from its dot.
+          const entries=items.map(item=>({item,placement:labelPlacements.get(`${item.di}:${item.pi}`)})).filter(e=>e.placement);
+          const originalBoxes=entries.map(e=>({...e.placement.box}));
+          const maxShift=9;
+          const separation=15;
+          const shifts=new Array(entries.length).fill(0);
+
+          for(let i=0;i<entries.length;i++){
+            for(let j=i+1;j<entries.length;j++){
+              if(!boxesOverlap(originalBoxes[i],originalBoxes[j]))continue;
+              const a=entries[i].item,b=entries[j].item;
+              let upper=i,lower=j;
+              if(a.el.y>b.el.y){upper=j;lower=i;}
+              else if(Math.abs(a.el.y-b.el.y)<2 && a.el.x>b.el.x){upper=j;lower=i;}
+              shifts[upper]=Math.max(-maxShift,shifts[upper]-separation/2);
+              shifts[lower]=Math.min(maxShift,shifts[lower]+separation/2);
+            }
+          }
+
+          entries.forEach((entry,index)=>{
+            const p=entry.placement;
+            if(!shifts[index])return;
+            const newY=Math.max(area.top+8,Math.min(area.bottom-8,p.standardY+shifts[index]));
+            const dy=newY-p.y;
+            p.y=newY;
+            p.box={...p.box,top:p.box.top+dy,bottom:p.box.bottom+dy};
+          });
+        }
 
         const drawLabel=({ds,di,el,pi,p,isFocus})=>{
           const text=p.team;
