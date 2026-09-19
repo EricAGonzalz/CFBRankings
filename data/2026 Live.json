@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T18:51:17.617682+00:00",
+  "updatedAt": "2026-09-19T18:54:45.170793+00:00",
   "liveGames": [
     {
       "id": 401856686,
@@ -27,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "09:03",
+      "clock": "07:03",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -42,10 +42,10 @@
       "homePoints": 45.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "01:25",
-      "completedDrives": 21,
+      "clock": "15:00",
+      "completedDrives": 22,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401856812,
@@ -56,8 +56,8 @@
       "awayConference": "Big 12",
       "homePoints": 7.0,
       "awayPoints": 17.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -72,9 +72,9 @@
       "homePoints": 15.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "13:00",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "12:49",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -84,10 +84,10 @@
       "awayTeam": "Akron",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 33.0,
+      "homePoints": 34.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "11:34",
+      "clock": "11:01",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -102,7 +102,7 @@
       "homePoints": 42.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "01:07",
+      "clock": "00:00",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -117,10 +117,10 @@
       "homePoints": 48.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "14:27",
-      "completedDrives": 26,
+      "clock": "12:43",
+      "completedDrives": 27,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 13
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401860889,
@@ -132,7 +132,7 @@
       "homePoints": 35.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "01:31",
+      "clock": "15:00",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -144,12 +144,12 @@
       "awayTeam": "Eastern Michigan",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 38.0,
+      "homePoints": 41.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "08:40",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "05:23",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -162,10 +162,10 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "13:33",
-      "completedDrives": 12,
+      "clock": "11:54",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401864508,
@@ -177,9 +177,9 @@
       "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "11:27",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "09:19",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     }
   ],
