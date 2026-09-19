@@ -391,7 +391,7 @@
           <div class="view-toolbar">
             <div class="controls">
               <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
-              <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
+              <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg" selected>Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
               <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="top3">Top 3 / conference</option><option value="top5">Top 5 / conference</option><option value="all" selected>All teams</option><option value="none">None</option></select></div>
             </div>
             <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
@@ -1248,7 +1248,7 @@
       });
     }
 
-    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='AdjRtg',awayTeamName=null,previousPositions=null){
+    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='NetRtg',awayTeamName=null,previousPositions=null){
       const wantedConfs=new Set([teamRow.Conference||'Independent',oppRow.Conference||'Independent']);
       const teams=APP.rows.map(scheduleComparisonTeamData).filter(t=>t.team&&wantedConfs.has(t.conference)&&Number.isFinite(t[metric]));
       const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});
@@ -1383,13 +1383,13 @@
       try{await saveReportPngs(report.pages,report.base)}finally{cleanupReport(report.root)}
     }
 
-    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='AdjRtg',previousPositions=null){
+    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='NetRtg',previousPositions=null){
       detailCell.innerHTML='';
       const wrap=document.createElement('div');wrap.className='schedule-comparison';
       if(!oppRow){wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(gameLabel)} comparison</h3><p class="schedule-comparison-subtitle">Current season ratings</p></div></div><div class="schedule-comparison-empty">${escapeHtml(gameLabel)} is not present in the ${escapeHtml(APP.year)} FBS rankings dataset, so a two-team conference comparison is not available for this game.</div>`;detailCell.appendChild(wrap);return}
       const id=`schedule-chart-${Math.random().toString(36).slice(2)}`;
       const headingColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg" selected>Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
       detailCell.appendChild(wrap);
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');
       if([...select.options].some(o=>o.value===initialMetric))select.value=initialMetric;
@@ -1407,7 +1407,7 @@
       const location=els.matchLocation.value;
       const awayTeamName=location==='team2'?team1Row.Team:team2Row.Team;
       const headingColors=matchupTeamColors(team1Row.Team,team2Row.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(team1Row.Team)} vs. ${escapeHtml(team2Row.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(team1Row.Team)} • ${escapeHtml(team1Row.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(team2Row.Team)} • ${escapeHtml(team2Row.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas></canvas></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(team1Row.Team)} vs. ${escapeHtml(team2Row.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg" selected>Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(team1Row.Team)} • ${escapeHtml(team1Row.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(team2Row.Team)} • ${escapeHtml(team2Row.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas></canvas></div>`;
       els.matchComparison.appendChild(wrap);els.matchComparison.classList.remove('hidden');
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select');
       APP.matchComparisonChart=buildScheduleComparisonChart(canvas,team1Row,team2Row,select.value,awayTeamName);
@@ -1421,7 +1421,7 @@
         if(!key)return;
         const detail=existingRow.nextElementSibling;
         if(!detail||detail.classList.contains('hidden'))return;
-        const metric=detail.querySelector('.schedule-metric-select')?.value||'AdjRtg';
+        const metric=detail.querySelector('.schedule-metric-select')?.value||'NetRtg';
         const canvas=detail.querySelector('canvas');
         const chart=canvas?Chart.getChart(canvas):null;
         expandedComparisons.set(key,{metric,positions:comparisonChartPositions(chart)});
@@ -1451,7 +1451,7 @@
         const detail=document.createElement('tr');detail.className='schedule-detail-row hidden';const td=document.createElement('td');td.colSpan=8;detail.appendChild(td);
         els.teamScheduleBody.append(tr,detail);
         const btn=tr.querySelector('.schedule-expand-button');
-        const openComparison=(initialMetric='AdjRtg',previousPositions=null)=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric,previousPositions)}};
+        const openComparison=(initialMetric='NetRtg',previousPositions=null)=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric,previousPositions)}};
         btn.onclick=()=>{const opening=detail.classList.contains('hidden');if(opening)openComparison();else{detail.classList.add('hidden');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label',`Show ${row.Team} vs ${s.opp} comparison`)}};
         if(expandedComparisons.has(scheduleKey)){
           const saved=expandedComparisons.get(scheduleKey);
@@ -1557,7 +1557,7 @@
       const p1=Number.isFinite(probs[0])?probs[0]:50,p2=Number.isFinite(probs[1])?probs[1]:100-p1;
       const winner1=els.matchRow1.classList.contains('winner'),winner2=els.matchRow2.classList.contains('winner');
       const metricSelect=els.matchComparison?.querySelector('select');
-      const metricValue=metricSelect?.value||'AdjRtg';
+      const metricValue=metricSelect?.value||'NetRtg';
       const metricLabel=METRIC_LABELS[metricValue]||metricValue;
       const focusColors=matchupTeamColors(t1,t2,els.matchLocation.value==='team1'?t2:(els.matchLocation.value==='team2'?t1:null));
 
