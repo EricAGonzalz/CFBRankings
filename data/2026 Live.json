@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T23:41:18.580619+00:00",
+  "updatedAt": "2026-09-19T23:46:13.536992+00:00",
   "liveGames": [
     {
       "id": 401856685,
@@ -10,9 +10,9 @@
       "homeConference": "SEC",
       "awayConference": "ACC",
       "homePoints": 26.0,
-      "awayPoints": 21.0,
+      "awayPoints": 28.0,
       "period": 3,
-      "clock": "11:54",
+      "clock": "08:03",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -73,9 +73,9 @@
       "awayPoints": 17.0,
       "period": 2,
       "clock": "06:10",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856687,
@@ -85,12 +85,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 3.0,
-      "awayPoints": 7.0,
+      "awayPoints": 13.0,
       "period": 1,
-      "clock": "02:07",
-      "completedDrives": 5,
+      "clock": "01:37",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856689,
@@ -207,10 +207,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:14",
-      "completedDrives": 1,
+      "clock": "11:52",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856796,
@@ -237,10 +237,25 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:06",
+      "clock": "12:58",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858232,
+      "status": "in_progress",
+      "homeTeam": "Maryland",
+      "awayTeam": "Virginia Tech",
+      "homeConference": "Big Ten",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 0,
+      "clock": "00:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858453,
@@ -252,9 +267,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:44",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "12:09",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     }
   ],
@@ -271,6 +286,7 @@
     "Georgia State",
     "Jacksonville State",
     "Marshall",
+    "Maryland",
     "Michigan State",
     "Middle Tennessee",
     "Mississippi State",
@@ -291,6 +307,7 @@
     "UCF",
     "UConn",
     "Virginia",
+    "Virginia Tech",
     "West Virginia",
     "Western Michigan"
   ]
