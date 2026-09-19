@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T21:16:01.466263+00:00",
+  "updatedAt": "2026-09-19T21:20:58.909213+00:00",
   "liveGames": [
     {
       "id": 401858229,
@@ -27,10 +27,25 @@
       "homePoints": 21.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "04:34",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 5,
+      "clock": "00:49",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
+    },
+    {
+      "id": 401856685,
+      "status": "in_progress",
+      "homeTeam": "Alabama",
+      "awayTeam": "Florida State",
+      "homeConference": "SEC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:43",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401856694,
@@ -72,10 +87,10 @@
       "homePoints": 26.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "00:33",
-      "completedDrives": 10,
+      "clock": "00:00",
+      "completedDrives": 11,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858230,
@@ -117,7 +132,7 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "00:49",
+      "clock": "00:18",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -132,7 +147,7 @@
       "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "05:29",
+      "clock": "03:20",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -147,10 +162,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "02:16",
-      "completedDrives": 6,
+      "clock": "01:41",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401866422,
@@ -162,10 +177,10 @@
       "homePoints": 16.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:26",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "clock": "00:49",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401867804,
@@ -177,18 +192,20 @@
       "homePoints": 20.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "05:48",
+      "clock": "02:50",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     }
   ],
   "liveTeams": [
+    "Alabama",
     "Ball State",
     "Baylor",
     "Cincinnati",
     "Clemson",
     "Duke",
+    "Florida State",
     "Indiana",
     "Kentucky",
     "Liberty",
