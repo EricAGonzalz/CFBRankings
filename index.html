@@ -1354,10 +1354,23 @@
         }
       }
 
+      // Always show the full 12-week regular-season frame on the x-axis, but
+      // only populate weeks that have actually occurred. Future weeks remain
+      // visible as empty graph space instead of receiving carried-forward data.
+      const graphWeekSlots=Array.from({length:12},(_,i)=>i+1);
+      const rowByDisplayedWeek=new Map();
+      filledWeekSlots.forEach((week,index)=>{
+        const weekNumber=n(week);
+        if(!Number.isInteger(weekNumber)||weekNumber<1||weekNumber>12)return;
+        const row=filledPlottedRows[index]||null;
+        if(row||!rowByDisplayedWeek.has(weekNumber))rowByDisplayedWeek.set(weekNumber,row);
+      });
+      const graphPlottedRows=graphWeekSlots.map(week=>rowByDisplayedWeek.get(week)||null);
+
       const scales={x:{title:{display:true,text:'Week'}}};
       available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});
       APP.teamTrendChart?.destroy();
-      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:filledWeekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({label,data:filledPlottedRows.map(r=>r?n(r[k]):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:filledPlottedRows.map(r=>r?(r._current?4:3):0),pointStyle:filledPlottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return filledPlottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
+      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:graphWeekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({label,data:graphPlottedRows.map(r=>r?n(r[k]):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:graphPlottedRows.map(r=>r?(r._current?4:3):0),pointStyle:graphPlottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return graphPlottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
     }
     function boolish(v){const x=String(v??'').trim().toLowerCase();return v===true||x==='true'||x==='1'||x==='yes'||x==='y'}
     function scheduleFields(r){
