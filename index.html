@@ -549,18 +549,14 @@
       if(APP.liveRefreshInProgress||APP.rankingsRefreshInProgress||year!==String(APP.year))return;
       APP.liveRefreshInProgress=true;
       try{
+        // A live-data change can also change the current efficiency ratings used
+        // by the matchup model. Refresh both sources together so projected
+        // scores, win probabilities, and projected W/L totals use the newest
+        // available ratings on the same 20-second live update cycle.
         APP.liveCache.delete(year);
-        const live=await fetchLive(year);
-        const updated=formatUpdatedAt(live.updatedAt);
-        const liveCount=Array.isArray(live.liveGames)?live.liveGames.length:0;
-        if(updated){
-          const liveText=liveCount>0
-            ? `${liveCount} live FBS game${liveCount===1?"":"s"} included`
-            : "No live FBS games currently in progress";
-          els.statusLine.textContent=`Last updated: ${updated} • ${liveText}`;
-        }
-        if(APP.view==="rankings")await renderRankings();
-        else if(APP.view==="team")await renderTeam();
+        APP.masterCache.delete(year);
+        await loadCurrentYear();
+        await renderCurrentView();
       }catch(err){
         console.warn("Could not refresh live data:",err);
       }finally{
@@ -897,7 +893,7 @@
           ctx.lineWidth=isFocus?4:4;
           ctx.strokeStyle='rgba(255,255,255,.99)';
           ctx.strokeText(text,x,y);
-          ctx.fillStyle=isFocus?(pointColor||ds.borderColor):ds.borderColor;
+          ctx.fillStyle=isFocus?(pointColor||ds.borderColor):(ds._teamLabelColors?(pointColor||ds.borderColor):ds.borderColor);
           ctx.fillText(text,x,y);
         };
 
@@ -1159,60 +1155,24 @@
     }
     function animateFocusedComparison(chart,focusRefs){
       if(!chart||!focusRefs?.length)return;
-      const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-      const persistFocusStyle=()=>{
-        focusRefs.forEach(({datasetIndex,pointIndex})=>{
-          const ds=chart.data.datasets[datasetIndex];
-          if(!ds)return;
-          const ensureArray=(value,fallback)=>Array.isArray(value)?value.slice():Array(ds.data.length).fill(value??fallback);
-          const radii=ensureArray(ds.pointRadius,3);
-          const hoverRadii=ensureArray(ds.pointHoverRadius,5);
-          const widths=ensureArray(ds.pointBorderWidth,1);
-          const hoverWidths=ensureArray(ds.pointHoverBorderWidth,1);
-          const colors=ensureArray(ds.pointBackgroundColor,'#777');
-          const hoverColors=ensureArray(ds.pointHoverBackgroundColor,null);
-          const borders=ensureArray(ds.pointBorderColor,'#fff');
-          const hoverBorders=ensureArray(ds.pointHoverBorderColor,'#fff');
-          radii[pointIndex]=11;
-          hoverRadii[pointIndex]=13;
-          widths[pointIndex]=2.5;
-          hoverWidths[pointIndex]=2.5;
-          hoverColors[pointIndex]=colors[pointIndex];
-          hoverBorders[pointIndex]=borders[pointIndex];
-          ds.pointRadius=radii;
-          ds.pointHoverRadius=hoverRadii;
-          ds.pointBorderWidth=widths;
-          ds.pointHoverBorderWidth=hoverWidths;
-          ds.pointHoverBackgroundColor=hoverColors;
-          ds.pointHoverBorderColor=hoverBorders;
-        });
-        chart.update('none');
-      };
-      const setFrame=(progress)=>{
-        focusRefs.forEach(({datasetIndex,pointIndex})=>{
-          const el=chart.getDatasetMeta(datasetIndex)?.data?.[pointIndex];
-          if(!el)return;
-          el.$focusProgress=progress;
-          if(el.options){
-            el.options.radius=3+(11-3)*progress;
-            el.options.hoverRadius=13;
-            el.options.borderWidth=1.5+(2.5-1.5)*progress;
-            el.options.hoverBorderWidth=4;
-          }
-        });
-        chart.draw();
-      };
-      if(reduceMotion){setFrame(1);persistFocusStyle();return}
-      setFrame(0);
-      const start=performance.now(),duration=720;
-      const easeOutBack=t=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2)};
-      const tick=now=>{
-        const t=Math.min(1,(now-start)/duration);
-        setFrame(easeOutBack(t));
-        if(t<1)requestAnimationFrame(tick);
-        else {setFrame(1);persistFocusStyle();}
-      };
-      requestAnimationFrame(tick);
+      focusRefs.forEach(({datasetIndex,pointIndex})=>{
+        const ds=chart.data.datasets[datasetIndex];
+        if(!ds)return;
+        const ensureArray=(value,fallback)=>Array.isArray(value)?value.slice():Array(ds.data.length).fill(value??fallback);
+        const radii=ensureArray(ds.pointRadius,3);
+        const hoverRadii=ensureArray(ds.pointHoverRadius,5);
+        const widths=ensureArray(ds.pointBorderWidth,1);
+        const hoverWidths=ensureArray(ds.pointHoverBorderWidth,1);
+        radii[pointIndex]=3;
+        hoverRadii[pointIndex]=5;
+        widths[pointIndex]=1.5;
+        hoverWidths[pointIndex]=1.5;
+        ds.pointRadius=radii;
+        ds.pointHoverRadius=hoverRadii;
+        ds.pointBorderWidth=widths;
+        ds.pointHoverBorderWidth=hoverWidths;
+      });
+      chart.update('none');
     }
 
     function comparisonChartPositions(chart){
@@ -1238,22 +1198,54 @@
       if(!hasMovement)return;
       const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
       if(reduceMotion){datasets.forEach((ds,i)=>{ds.data=targets[i]});chart.update('none');return}
-      const started=performance.now();
-      const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
-      const frame=now=>{
-        const raw=Math.min(1,(now-started)/duration),progress=ease(raw);
+
+      const lineAlpha=.34;
+      const setLineAlpha=alpha=>{
+        const a=Math.max(0,Math.min(lineAlpha,alpha));
         datasets.forEach((ds,di)=>{
-          ds.data=starts[di].map((from,pi)=>{
-            const to=targets[di]?.[pi]||from;
-            if(!Number.isFinite(from?.x)||!Number.isFinite(from?.y)||!Number.isFinite(to?.x)||!Number.isFinite(to?.y))return {...to};
-            return {...to,x:from.x+(to.x-from.x)*progress,y:from.y+(to.y-from.y)*progress};
-          });
+          const line=chart.getDatasetMeta(di)?.dataset;
+          if(line&&ds._lineBaseColor)line.options.borderColor=withAlpha(ds._lineBaseColor,a);
         });
-        chart.update('none');
-        if(raw<1)requestAnimationFrame(frame);
-        else{datasets.forEach((ds,i)=>{ds.data=targets[i]});chart.update('none')}
+        chart.draw();
       };
-      requestAnimationFrame(frame);
+      const tween=(ms,step,done)=>{
+        const started=performance.now();
+        const frame=now=>{
+          const raw=Math.min(1,(now-started)/ms);
+          step(raw);
+          if(raw<1)requestAnimationFrame(frame);
+          else done?.();
+        };
+        requestAnimationFrame(frame);
+      };
+
+      // Fade the trend lines away while leaving the points, labels, axes and
+      // background fully visible.
+      tween(160,raw=>setLineAlpha(lineAlpha*(1-raw)),()=>{
+        datasets.forEach(ds=>{if(ds._lineBaseColor)ds.borderColor=withAlpha(ds._lineBaseColor,0)});
+        setLineAlpha(0);
+
+        // Let Chart.js interpolate the actual data coordinates. Because this
+        // chart was created from the previous coordinates, its animation starts
+        // exactly where the viewer currently sees each team and slides to the
+        // newly calculated rank/rating positions without a snap or rebuild.
+        datasets.forEach((ds,i)=>{ds.data=targets[i]});
+        chart.options.animation={
+          duration,
+          easing:'easeInOutCubic',
+          onComplete:()=>{
+            chart.options.animation=false;
+            datasets.forEach(ds=>{if(ds._lineBaseColor)ds.borderColor=withAlpha(ds._lineBaseColor,0)});
+            chart.update('none');
+            setLineAlpha(0);
+            tween(220,raw=>setLineAlpha(lineAlpha*raw),()=>{
+              datasets.forEach(ds=>{if(ds._lineBaseColor)ds.borderColor=withAlpha(ds._lineBaseColor,lineAlpha)});
+              chart.update('none');
+            });
+          }
+        };
+        chart.update();
+      });
     }
 
     function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='AdjRtg',awayTeamName=null,previousPositions=null){
@@ -1291,13 +1283,13 @@
           label:conf,
           data:startData,
           _targetData:targetData,
-          borderColor:withAlpha(color,.34),backgroundColor:withAlpha(color,.20),
+          borderColor:withAlpha(color,.34),backgroundColor:withAlpha(color,.20),_lineBaseColor:color,
           pointBackgroundColor:pointColors,
           pointBorderColor:arr.map((t,i)=>focusIndexes.includes(i)?'#fff':'#fff'),
           pointBorderWidth:arr.map((t,i)=>focusIndexes.includes(i)?1.5:1),
           pointRadius:arr.map(()=>3),
-          pointHoverRadius:arr.map((t,i)=>focusIndexes.includes(i)?13:5),
-          borderWidth:1.25,tension:0,showLine:true,order:3,_focusIndexes:focusIndexes
+          pointHoverRadius:arr.map(()=>5),
+          borderWidth:1.25,tension:0,showLine:true,order:3,_focusIndexes:focusIndexes,_teamLabelColors:true
         });
         focusIndexes.forEach(pointIndex=>focusRefs.push({datasetIndex,pointIndex}));
       }
