@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T19:15:30.762305+00:00",
+  "updatedAt": "2026-09-19T19:16:06.697700+00:00",
   "liveGames": [
     {
       "id": 401856686,
@@ -13,21 +13,6 @@
       "awayPoints": 38.0,
       "period": 4,
       "clock": "03:05",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401856792,
-      "status": "in_progress",
-      "homeTeam": "Kansas State",
-      "awayTeam": "Tulane",
-      "homeConference": "Big 12",
-      "awayConference": "American Athletic",
-      "homePoints": 31.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "01:20",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -58,9 +43,9 @@
       "awayPoints": 24.0,
       "period": 4,
       "clock": "10:19",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858229,
@@ -159,10 +144,10 @@
       "awayTeam": "NC State",
       "homeConference": "SEC",
       "awayConference": "ACC",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "06:55",
+      "clock": "05:54",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -210,7 +195,6 @@
     "Georgia",
     "Iowa State",
     "Kansas",
-    "Kansas State",
     "Kent State",
     "Minnesota",
     "NC State",
@@ -221,7 +205,6 @@
     "Temple",
     "Texas State",
     "Toledo",
-    "Tulane",
     "Vanderbilt",
     "Wisconsin",
     "Wyoming"
