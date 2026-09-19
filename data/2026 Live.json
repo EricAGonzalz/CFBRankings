@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T00:06:00.514313+00:00",
+  "updatedAt": "2026-09-19T00:11:10.337644+00:00",
   "liveGames": [
     {
       "id": 401858226,
@@ -9,17 +9,34 @@
       "awayTeam": "Miami",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:58",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "01:12",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856811,
+      "status": "in_progress",
+      "homeTeam": "Texas Tech",
+      "awayTeam": "Houston",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:27",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Houston",
     "Miami",
+    "Texas Tech",
     "Wake Forest"
   ]
 }
