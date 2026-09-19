@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T17:51:16.012869+00:00",
+  "updatedAt": "2026-09-19T17:56:06.953714+00:00",
   "liveGames": [
     {
       "id": 401869940,
@@ -12,7 +12,7 @@
       "homePoints": 15.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "02:48",
+      "clock": "00:00",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -57,7 +57,7 @@
       "homePoints": 35.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:37",
+      "clock": "00:00",
       "completedDrives": 17,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 10
@@ -159,12 +159,12 @@
       "awayTeam": "Eastern Michigan",
       "homeConference": "Big Ten",
       "awayConference": "Mid-American",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "03:37",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "02:40",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -177,9 +177,9 @@
       "homePoints": 0.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "06:55",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "03:43",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -192,10 +192,10 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "08:00",
-      "completedDrives": 5,
+      "clock": "05:42",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
