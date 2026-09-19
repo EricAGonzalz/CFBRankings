@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-19T19:26:03.294607+00:00",
+  "updatedAt": "2026-09-19T19:31:08.816281+00:00",
   "liveGames": [
-    {
-      "id": 401856798,
-      "status": "in_progress",
-      "homeTeam": "Iowa State",
-      "awayTeam": "Bowling Green",
-      "homeConference": "Big 12",
-      "awayConference": "Mid-American",
-      "homePoints": 55.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401856812,
       "status": "in_progress",
@@ -24,13 +9,13 @@
       "awayTeam": "Arizona State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "08:07",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 11
+      "clock": "06:40",
+      "completedDrives": 26,
+      "homeOffensiveDrives": 14,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858229,
@@ -48,21 +33,6 @@
       "awayOffensiveDrives": 9
     },
     {
-      "id": 401858451,
-      "status": "in_progress",
-      "homeTeam": "Minnesota",
-      "awayTeam": "Akron",
-      "homeConference": "Big Ten",
-      "awayConference": "Mid-American",
-      "homePoints": 41.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "03:28",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
-    {
       "id": 401858454,
       "status": "in_progress",
       "homeTeam": "Ohio State",
@@ -72,10 +42,10 @@
       "homePoints": 59.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "05:50",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
+      "clock": "03:55",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401860889,
@@ -84,13 +54,13 @@
       "awayTeam": "North Texas",
       "homeConference": "Pac-12",
       "awayConference": "American Athletic",
-      "homePoints": 42.0,
+      "homePoints": 48.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "05:24",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "clock": "03:07",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858460,
@@ -102,7 +72,7 @@
       "homePoints": 41.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "11:16",
+      "clock": "06:45",
       "completedDrives": 18,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 10
@@ -116,11 +86,11 @@
       "awayConference": "ACC",
       "homePoints": 14.0,
       "awayPoints": 24.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 16,
+      "period": 4,
+      "clock": "14:52",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401864508,
@@ -132,9 +102,9 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "14:56",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "11:25",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -147,23 +117,19 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "08:10",
+      "clock": "05:58",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
-    "Akron",
     "Arizona State",
-    "Bowling Green",
     "Central Michigan",
     "Clemson",
     "Eastern Michigan",
-    "Iowa State",
     "Kansas",
     "Kent State",
-    "Minnesota",
     "NC State",
     "North Carolina",
     "North Texas",
