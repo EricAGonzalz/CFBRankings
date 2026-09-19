@@ -1215,7 +1215,48 @@
       requestAnimationFrame(tick);
     }
 
-    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='AdjRtg',awayTeamName=null){
+    function comparisonChartPositions(chart){
+      const positions=new Map();
+      if(!chart)return positions;
+      chart.data.datasets.forEach(ds=>{
+        (ds.data||[]).forEach(p=>{
+          if(!p?.team||!Number.isFinite(p.x)||!Number.isFinite(p.y))return;
+          positions.set(String(p.team).toLowerCase(),{x:p.x,y:p.y});
+        });
+      });
+      return positions;
+    }
+    function animateComparisonToTargets(chart,duration=1250){
+      if(!chart)return;
+      const datasets=chart.data.datasets||[];
+      const starts=datasets.map(ds=>(ds.data||[]).map(p=>({...p})));
+      const targets=datasets.map(ds=>Array.isArray(ds._targetData)?ds._targetData.map(p=>({...p})):(ds.data||[]).map(p=>({...p})));
+      const hasMovement=starts.some((points,di)=>points.some((from,pi)=>{
+        const to=targets[di]?.[pi];
+        return Number.isFinite(from?.x)&&Number.isFinite(from?.y)&&Number.isFinite(to?.x)&&Number.isFinite(to?.y)&&(from.x!==to.x||from.y!==to.y);
+      }));
+      if(!hasMovement)return;
+      const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+      if(reduceMotion){datasets.forEach((ds,i)=>{ds.data=targets[i]});chart.update('none');return}
+      const started=performance.now();
+      const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+      const frame=now=>{
+        const raw=Math.min(1,(now-started)/duration),progress=ease(raw);
+        datasets.forEach((ds,di)=>{
+          ds.data=starts[di].map((from,pi)=>{
+            const to=targets[di]?.[pi]||from;
+            if(!Number.isFinite(from?.x)||!Number.isFinite(from?.y)||!Number.isFinite(to?.x)||!Number.isFinite(to?.y))return {...to};
+            return {...to,x:from.x+(to.x-from.x)*progress,y:from.y+(to.y-from.y)*progress};
+          });
+        });
+        chart.update('none');
+        if(raw<1)requestAnimationFrame(frame);
+        else{datasets.forEach((ds,i)=>{ds.data=targets[i]});chart.update('none')}
+      };
+      requestAnimationFrame(frame);
+    }
+
+    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='AdjRtg',awayTeamName=null,previousPositions=null){
       const wantedConfs=new Set([teamRow.Conference||'Independent',oppRow.Conference||'Independent']);
       const teams=APP.rows.map(scheduleComparisonTeamData).filter(t=>t.team&&wantedConfs.has(t.conference)&&Number.isFinite(t[metric]));
       const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});
@@ -1241,9 +1282,15 @@
           if(key===team1Key||key===team2Key)focusIndexes.push(i);
         });
         const datasetIndex=datasets.length;
+        const targetData=arr.map(t=>({x:t.conferenceRank,y:t[metric],...t}));
+        const startData=targetData.map(p=>{
+          const old=previousPositions?.get?.(String(p.team).toLowerCase());
+          return old&&Number.isFinite(old.x)&&Number.isFinite(old.y)?{...p,x:old.x,y:old.y}:{...p};
+        });
         datasets.push({
           label:conf,
-          data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),
+          data:startData,
+          _targetData:targetData,
           borderColor:withAlpha(color,.34),backgroundColor:withAlpha(color,.20),
           pointBackgroundColor:pointColors,
           pointBorderColor:arr.map((t,i)=>focusIndexes.includes(i)?'#fff':'#fff'),
@@ -1256,8 +1303,13 @@
       }
 
       const chart=new Chart(canvas,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',onClick:()=>{},labels:{usePointStyle:true,boxWidth:9,font:{size:10},generateLabels:()=>[{text:teamRow.Team,fillStyle:focusColors.team1,strokeStyle:'#fff',lineWidth:1,pointStyle:'circle'},{text:oppRow.Team,fillStyle:focusColors.team2,strokeStyle:'#fff',lineWidth:1,pointStyle:'circle'}]}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1,font:{size:10}},title:{display:true,text:'Rank Within Conference'}},y:{ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
-      // Animate the original conference points themselves into focus. No duplicate overlay datasets.
-      requestAnimationFrame(()=>animateFocusedComparison(chart,focusRefs));
+      if(previousPositions?.size){
+        requestAnimationFrame(()=>animateComparisonToTargets(chart));
+      }else{
+        // Initial open keeps the existing focus animation. Real data refreshes instead
+        // slide every team from its previously displayed coordinate to its new one.
+        requestAnimationFrame(()=>animateFocusedComparison(chart,focusRefs));
+      }
       return chart
     }
     function scheduleGameHeader(teamRow,oppRow,game){
@@ -1339,7 +1391,7 @@
       try{await saveReportPngs(report.pages,report.base)}finally{cleanupReport(report.root)}
     }
 
-    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='AdjRtg'){
+    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='AdjRtg',previousPositions=null){
       detailCell.innerHTML='';
       const wrap=document.createElement('div');wrap.className='schedule-comparison';
       if(!oppRow){wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(gameLabel)} comparison</h3><p class="schedule-comparison-subtitle">Current season ratings</p></div></div><div class="schedule-comparison-empty">${escapeHtml(gameLabel)} is not present in the ${escapeHtml(APP.year)} FBS rankings dataset, so a two-team conference comparison is not available for this game.</div>`;detailCell.appendChild(wrap);return}
@@ -1349,7 +1401,7 @@
       detailCell.appendChild(wrap);
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');
       if([...select.options].some(o=>o.value===initialMetric))select.value=initialMetric;
-      let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart);
+      let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName,previousPositions);APP.scheduleComparisonCharts.set(id,chart);
       select.onchange=()=>{chart?.destroy();chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart)};
       exportBtn.onclick=async()=>{try{await exportScheduleComparisonPng(teamRow,oppRow,gameContext||{},select.value,awayTeamName,chart)}catch(err){alert(err?.message||'Could not create PNG export.')}};
     }
@@ -1378,7 +1430,9 @@
         const detail=existingRow.nextElementSibling;
         if(!detail||detail.classList.contains('hidden'))return;
         const metric=detail.querySelector('.schedule-metric-select')?.value||'AdjRtg';
-        expandedComparisons.set(key,metric);
+        const canvas=detail.querySelector('canvas');
+        const chart=canvas?Chart.getChart(canvas):null;
+        expandedComparisons.set(key,{metric,positions:comparisonChartPositions(chart)});
       });
       APP.scheduleComparisonCharts.forEach(c=>c?.destroy());APP.scheduleComparisonCharts.clear();
       els.teamScheduleBody.innerHTML='';
@@ -1405,9 +1459,12 @@
         const detail=document.createElement('tr');detail.className='schedule-detail-row hidden';const td=document.createElement('td');td.colSpan=8;detail.appendChild(td);
         els.teamScheduleBody.append(tr,detail);
         const btn=tr.querySelector('.schedule-expand-button');
-        const openComparison=(initialMetric='AdjRtg')=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric)}};
+        const openComparison=(initialMetric='AdjRtg',previousPositions=null)=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric,previousPositions)}};
         btn.onclick=()=>{const opening=detail.classList.contains('hidden');if(opening)openComparison();else{detail.classList.add('hidden');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label',`Show ${row.Team} vs ${s.opp} comparison`)}};
-        if(expandedComparisons.has(scheduleKey))openComparison(expandedComparisons.get(scheduleKey));
+        if(expandedComparisons.has(scheduleKey)){
+          const saved=expandedComparisons.get(scheduleKey);
+          openComparison(saved.metric,saved.positions);
+        }
       });
       els.teamRemaining.textContent=`${pw}-${pl}`;
       els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;
