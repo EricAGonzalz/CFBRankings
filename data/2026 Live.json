@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T04:36:16.109414+00:00",
+  "updatedAt": "2026-09-20T04:41:10.317447+00:00",
   "liveGames": [
     {
       "id": 401860887,
@@ -12,7 +12,7 @@
       "homePoints": 7.0,
       "awayPoints": 19.0,
       "period": 3,
-      "clock": "04:59",
+      "clock": "04:18",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -27,7 +27,7 @@
       "homePoints": 35.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "09:01",
+      "clock": "07:01",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -41,8 +41,8 @@
       "awayConference": "Mountain West",
       "homePoints": 3.0,
       "awayPoints": 28.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "12:22",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -54,13 +54,13 @@
       "awayTeam": "Purdue",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 21.0,
+      "homePoints": 24.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "00:12",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "clock": "00:00",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401860888,
@@ -72,10 +72,10 @@
       "homePoints": 3.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "00:50",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 7
+      "clock": "00:00",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 8
     }
   ],
   "liveTeams": [
