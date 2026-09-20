@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T00:06:23.012285+00:00",
+  "updatedAt": "2026-09-20T00:11:16.249162+00:00",
   "liveGames": [
     {
       "id": 401856685,
@@ -12,7 +12,7 @@
       "homePoints": 40.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "02:15",
+      "clock": "00:51",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -25,9 +25,9 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 23.0,
-      "awayPoints": 28.0,
+      "awayPoints": 31.0,
       "period": 3,
-      "clock": "05:02",
+      "clock": "04:30",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -41,8 +41,8 @@
       "awayConference": "American Athletic",
       "homePoints": 17.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:56",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -87,7 +87,7 @@
       "homePoints": 10.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "12:04",
+      "clock": "10:29",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -117,7 +117,7 @@
       "homePoints": 17.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "08:52",
+      "clock": "07:53",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -207,7 +207,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:54",
+      "clock": "09:11",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -237,7 +237,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:30",
+      "clock": "02:00",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -252,7 +252,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "04:09",
+      "clock": "03:04",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -267,7 +267,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:40",
+      "clock": "01:50",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -297,7 +297,37 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:32",
+      "clock": "11:22",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401856693,
+      "status": "in_progress",
+      "homeTeam": "Texas",
+      "awayTeam": "UTSA",
+      "homeConference": "SEC",
+      "awayConference": "American Athletic",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:34",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856799,
+      "status": "in_progress",
+      "homeTeam": "TCU",
+      "awayTeam": "Arkansas State",
+      "homeConference": "Big 12",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:51",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -312,7 +342,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:43",
+      "clock": "12:34",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -320,6 +350,7 @@
   ],
   "liveTeams": [
     "Alabama",
+    "Arkansas State",
     "Auburn",
     "Colorado",
     "East Carolina",
@@ -352,11 +383,14 @@
     "South Alabama",
     "South Carolina",
     "Southern Miss",
+    "TCU",
     "Tennessee",
+    "Texas",
     "Troy",
     "UAB",
     "UCF",
     "UConn",
+    "UTSA",
     "Virginia",
     "Virginia Tech",
     "West Virginia",
