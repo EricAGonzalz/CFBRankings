@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T02:21:22.731474+00:00",
+  "updatedAt": "2026-09-20T02:26:23.027081+00:00",
   "liveGames": [
     {
       "id": 401864574,
@@ -12,7 +12,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "11:26",
+      "clock": "02:20",
       "completedDrives": 8,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 5
@@ -27,10 +27,10 @@
       "homePoints": 32.0,
       "awayPoints": 41.0,
       "period": 4,
-      "clock": "04:31",
-      "completedDrives": 19,
+      "clock": "02:57",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856689,
@@ -42,10 +42,10 @@
       "homePoints": 27.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "01:12",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
+      "clock": "00:00",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401856800,
@@ -54,27 +54,12 @@
       "awayTeam": "Georgia State",
       "homeConference": "Big 12",
       "awayConference": "Sun Belt",
-      "homePoints": 37.0,
+      "homePoints": 44.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "01:35",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401861963,
-      "status": "in_progress",
-      "homeTeam": "Southern Miss",
-      "awayTeam": "UConn",
-      "homeConference": "Sun Belt",
-      "awayConference": "FBS Independents",
-      "homePoints": 20.0,
-      "awayPoints": 48.0,
-      "period": 4,
-      "clock": "00:23",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 13,
+      "clock": "01:24",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -84,12 +69,12 @@
       "awayTeam": "Ohio",
       "homeConference": "Sun Belt",
       "awayConference": "Mid-American",
-      "homePoints": 38.0,
+      "homePoints": 41.0,
       "awayPoints": 29.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "01:10",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -100,9 +85,9 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 24.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 3,
-      "clock": "03:13",
+      "clock": "02:17",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -117,7 +102,7 @@
       "homePoints": 14.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "07:36",
+      "clock": "04:43",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -130,9 +115,9 @@
       "homeConference": "Pac-12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 31.0,
+      "awayPoints": 38.0,
       "period": 3,
-      "clock": "09:33",
+      "clock": "09:05",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -147,10 +132,10 @@
       "homePoints": 38.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "11:53",
-      "completedDrives": 20,
+      "clock": "10:18",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856802,
@@ -160,12 +145,12 @@
       "homeConference": "ACC",
       "awayConference": "Big 12",
       "homePoints": 21.0,
-      "awayPoints": 28.0,
+      "awayPoints": 35.0,
       "period": 4,
-      "clock": "07:32",
-      "completedDrives": 21,
+      "clock": "05:24",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858232,
@@ -177,7 +162,7 @@
       "homePoints": 14.0,
       "awayPoints": 35.0,
       "period": 3,
-      "clock": "00:30",
+      "clock": "13:14",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -192,7 +177,7 @@
       "homePoints": 27.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "09:18",
+      "clock": "06:26",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -206,8 +191,8 @@
       "awayConference": "Conference USA",
       "homePoints": 35.0,
       "awayPoints": 3.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "13:01",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -222,10 +207,10 @@
       "homePoints": 23.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "05:54",
-      "completedDrives": 18,
+      "clock": "03:45",
+      "completedDrives": 19,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856799,
@@ -234,12 +219,12 @@
       "awayTeam": "Arkansas State",
       "homeConference": "Big 12",
       "awayConference": "Sun Belt",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "02:55",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "00:17",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -252,9 +237,9 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "04:37",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "01:56",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -265,9 +250,9 @@
       "homeConference": "Pac-12",
       "awayConference": "Sun Belt",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "12:18",
+      "clock": "12:11",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -298,14 +283,12 @@
     "Ole Miss",
     "San Diego State",
     "South Alabama",
-    "Southern Miss",
     "TCU",
     "Tennessee",
     "Texas",
     "Troy",
     "UAB",
     "UCF",
-    "UConn",
     "UTSA",
     "Virginia",
     "Virginia Tech",
