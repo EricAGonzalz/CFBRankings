@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T03:06:32.717674+00:00",
+  "updatedAt": "2026-09-20T03:11:19.360261+00:00",
   "liveGames": [
     {
       "id": 401864574,
@@ -13,9 +13,9 @@
       "awayPoints": 7.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "completedDrives": 13,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856688,
@@ -27,7 +27,7 @@
       "homePoints": 32.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "06:14",
+      "clock": "05:07",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -40,12 +40,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Big 12",
       "homePoints": 15.0,
-      "awayPoints": 38.0,
+      "awayPoints": 41.0,
       "period": 4,
-      "clock": "09:29",
-      "completedDrives": 20,
+      "clock": "06:42",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858232,
@@ -57,25 +57,10 @@
       "homePoints": 26.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "03:55",
+      "clock": "02:51",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401856692,
-      "status": "in_progress",
-      "homeTeam": "Tennessee",
-      "awayTeam": "Kennesaw State",
-      "homeConference": "SEC",
-      "awayConference": "Conference USA",
-      "homePoints": 42.0,
-      "awayPoints": 9.0,
-      "period": 4,
-      "clock": "00:23",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
     },
     {
       "id": 401856693,
@@ -87,25 +72,10 @@
       "homePoints": 30.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "03:45",
+      "clock": "02:00",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401856799,
-      "status": "in_progress",
-      "homeTeam": "TCU",
-      "awayTeam": "Arkansas State",
-      "homeConference": "Big 12",
-      "awayConference": "Sun Belt",
-      "homePoints": 30.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "01:52",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
     },
     {
       "id": 401862776,
@@ -117,10 +87,10 @@
       "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "02:31",
-      "completedDrives": 23,
+      "clock": "01:59",
+      "completedDrives": 24,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401860887,
@@ -132,7 +102,7 @@
       "homePoints": 0.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "11:11",
+      "clock": "10:11",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -147,7 +117,7 @@
       "homePoints": 7.0,
       "awayPoints": 10.0,
       "period": 1,
-      "clock": "05:15",
+      "clock": "03:13",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -162,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "07:46",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "05:36",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -174,24 +144,38 @@
       "awayTeam": "Purdue",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:56",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401860888,
+      "status": "in_progress",
+      "homeTeam": "San José State",
+      "awayTeam": "Fresno State",
+      "homeConference": "Mountain West",
+      "awayConference": "Pac-12",
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:52",
-      "completedDrives": 0,
+      "clock": "12:58",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "App State",
     "Arizona",
-    "Arkansas State",
     "BYU",
     "Charlotte",
     "Colorado State",
+    "Fresno State",
     "James Madison",
-    "Kennesaw State",
     "LSU",
     "Louisiana",
     "Maryland",
@@ -201,8 +185,7 @@
     "Purdue",
     "Sacramento State",
     "San Diego State",
-    "TCU",
-    "Tennessee",
+    "San José State",
     "Texas",
     "UAB",
     "UCLA",
