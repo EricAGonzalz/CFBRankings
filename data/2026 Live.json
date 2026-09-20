@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T03:26:26.421373+00:00",
+  "updatedAt": "2026-09-20T03:31:37.171946+00:00",
   "liveGames": [
     {
       "id": 401864574,
@@ -13,39 +13,9 @@
       "awayPoints": 7.0,
       "period": 3,
       "clock": "08:39",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
-    },
-    {
-      "id": 401856688,
-      "status": "in_progress",
-      "homeTeam": "Ole Miss",
-      "awayTeam": "LSU",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 32.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:58",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401856795,
-      "status": "in_progress",
-      "homeTeam": "Colorado State",
-      "awayTeam": "BYU",
-      "homeConference": "Pac-12",
-      "awayConference": "Big 12",
-      "homePoints": 23.0,
-      "awayPoints": 41.0,
-      "period": 4,
-      "clock": "01:58",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
     },
     {
       "id": 401860887,
@@ -57,9 +27,9 @@
       "homePoints": 0.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "05:25",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "03:19",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -87,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 1,
-      "clock": "00:04",
+      "clock": "00:00",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -102,10 +72,10 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:22",
-      "completedDrives": 3,
+      "clock": "07:43",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401860888,
@@ -117,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:13",
+      "clock": "03:22",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -126,15 +96,11 @@
   "liveTeams": [
     "App State",
     "Arizona",
-    "BYU",
     "Charlotte",
-    "Colorado State",
     "Fresno State",
     "James Madison",
-    "LSU",
     "North Dakota State",
     "Northern Illinois",
-    "Ole Miss",
     "Purdue",
     "Sacramento State",
     "San Diego State",
