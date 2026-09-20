@@ -194,6 +194,8 @@
     .schedule-comparison-empty{padding:18px;border:1px solid var(--grid);background:#fff;color:var(--muted);font-size:12px;line-height:1.45}
     .match-comparison-card{margin-top:14px;padding:0;overflow:hidden}
     .match-comparison-card .schedule-comparison{border-top:0;border-bottom:0}
+    .schedule-metric-control{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+    .schedule-metric-label{font-size:11px;color:var(--muted);font-weight:650;line-height:1}
     .schedule-metric-select{border:1px solid var(--chip-border);border-radius:999px;background:#fff;padding:6px 10px;font-size:12px}
 
     .team-publish-toolbar{margin-top:14px;margin-bottom:0}
@@ -391,7 +393,7 @@
           <div class="view-toolbar">
             <div class="controls">
               <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
-              <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="AdjRtg" selected>Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
+              <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
               <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="top3">Top 3 / conference</option><option value="top5">Top 5 / conference</option><option value="all" selected>All teams</option><option value="none">None</option></select></div>
             </div>
             <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
@@ -449,6 +451,14 @@
     const DEFENSE_WEIGHT = 1;
     const TEMPO_WEIGHT = 1;
     const HOME_FIELD_POINTS = 2.5;
+    // Backtested production model (2016–2025, selected on calibration/validation data).
+    const ADJ_SOS_WEIGHT = 0.80;
+    const MATCHUP_WEIGHT = 0.80;
+    const LEAGUE_REGRESSION_WEIGHT = 1 - MATCHUP_WEIGHT;
+    const RATING_MARGIN_SCALE = 0.65;
+    const MODEL_ADJ_WEIGHT = 0.50;
+    const MODEL_NET_WEIGHT = 1 - MODEL_ADJ_WEIGHT;
+    const RATING_MARGIN_CAP = 28;
     const CONFIDENCE_K = 5;
     const WIN_PROB_MARGIN_SCALE = 6.5;
     const OT_ADJ_RTG_SCALE = 12;
@@ -460,6 +470,7 @@
       year:DEFAULT_YEAR,
       team:null,
       masterCache:new Map(),
+      scheduleCache:new Map(),
       liveCache:new Map(),
       champions:{},
       colors:{conferences:{},teams:{}},
@@ -619,6 +630,13 @@
       const parsed=parseCSV(await r.text());APP.masterCache.set(year,parsed);return parsed;
     }
     async function fetchOptionalCSV(filename){try{const r=await fetch(dataUrl(filename),{cache:"no-store"});if(!r.ok)return [];return parseCSV(await r.text()).objects}catch{return []}}
+    async function fetchSchedule(year){
+      year=String(year);
+      if(APP.scheduleCache.has(year))return APP.scheduleCache.get(year);
+      const rows=await fetchOptionalCSV(`${year} Schedule.csv`);
+      APP.scheduleCache.set(year,rows);
+      return rows;
+    }
     async function fetchLive(year){
       year=String(year);if(APP.liveCache.has(year))return APP.liveCache.get(year);
       try{const r=await fetch(`${RAW_BASE}${year}%20Live.json?t=${Date.now()}`,{cache:"no-store"});if(!r.ok)throw 0;const data=await r.json();APP.liveCache.set(year,data);return data}catch{return {updatedAt:null,liveGames:[],liveTeams:[]}}
@@ -679,7 +697,7 @@
       requestAnimationFrame(syncRankStickyHeader);
     }
 
-    async function setYear(year){APP.year=String(year);if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
+    async function setYear(year){APP.year=String(year);if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.scheduleCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
 
     function formatUpdatedAt(isoString){
       if(!isoString)return null;
@@ -699,9 +717,10 @@
     async function loadCurrentYear(){
       els.statusLine.textContent=`Loading ${APP.year} data…`;
       try{
-        const parsed=await fetchMaster(APP.year);
+        const [parsed,schedule]=await Promise.all([fetchMaster(APP.year),fetchSchedule(APP.year)]);
         APP.header=parsed.header;
-        APP.rows=parsed.objects;
+        APP.rows=parsed.objects.map(r=>({...r}));
+        applyBacktestedAdjustedRatings(APP.rows,schedule);
         APP.headerMap=new Map(parsed.header.map((h,i)=>[h,i]));
 
         const live=await fetchLive(APP.year);
@@ -751,7 +770,8 @@
       const cols=rankColumns();const selected=selectedCheckboxValues(els.rankConfOptions),all=els.rankConfOptions.querySelectorAll('input').length;const searchTerms=teamSearchTerms(els.rankTeamSearch.value);const top=Number(els.rankTopN.value||0);
       let rows=APP.rows.filter(r=>{if(!teamMatchesSearch(r.Team,searchTerms))return false;if(selected.length===0&&all>0)return false;if(selected.length&&selected.length<all&&!selected.includes(r.Conference))return false;if(top>0&&(n(r.Rk)??999)>top)return false;return true});
       const thead=els.rankingsTable.tHead,tbody=els.rankingsTable.tBodies[0];thead.innerHTML='<tr>'+cols.map(c=>`<th class="${["Team","Conference"].includes(c)?'left':''}" data-col="${escapeHtml(c)}">${escapeHtml(c)}</th>`).join('')+'</tr>';tbody.innerHTML="";
-      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
+      const threeDecimalCols=new Set(["NetRtg","AdjRtg","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","SOS"]);
+      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else if(threeDecimalCols.has(c)){td.textContent=fmt(r[c]);}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
       els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";els.rankNote.style.display=champ?'block':'none';applyStriping();
       thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
       requestAnimationFrame(syncRankStickyHeader);
@@ -789,23 +809,66 @@
     window.addEventListener('resize',syncRankStickyHeader);
     $('rankingsCapture').addEventListener('scroll',syncRankStickyHeader,{passive:true});
 
+    // ---------- Backtested adjusted-rating model ----------
+    function isCompletedScheduleGame(s){
+      const status=String(s?.status||'').trim().toLowerCase();
+      return !!s?.completed || status==='completed' || status==='final';
+    }
+    function applyBacktestedAdjustedRatings(rows,scheduleRows){
+      if(!Array.isArray(rows)||!rows.length)return;
+      const byTeam=new Map(rows.map(r=>[String(r.Team||'').trim().toLowerCase(),r]));
+      const schedule=(Array.isArray(scheduleRows)?scheduleRows:[]).map(scheduleFields);
+
+      for(const row of rows){
+        const teamKey=String(row.Team||'').trim().toLowerCase();
+        const net=n(row.NetRtg);
+        if(!teamKey||!Number.isFinite(net))continue;
+
+        const seen=new Set(),oppNets=[];
+        for(const game of schedule){
+          if(String(game.team||'').trim().toLowerCase()!==teamKey || !isCompletedScheduleGame(game))continue;
+          const oppKey=String(game.opp||'').trim().toLowerCase();
+          const oppRow=byTeam.get(oppKey);
+          const oppNet=n(oppRow?.NetRtg);
+          if(!oppRow||!Number.isFinite(oppNet))continue; // FBS opponents only.
+          const key=String(game.gameId||`${game.week}|${oppKey}|${game.startDate}`);
+          if(seen.has(key))continue;
+          seen.add(key);
+          oppNets.push(oppNet);
+        }
+
+        const avgOppNet=oppNets.length?oppNets.reduce((a,b)=>a+b,0)/oppNets.length:0;
+        const adjusted=net + ADJ_SOS_WEIGHT*avgOppNet;
+        row.AdjRtg=String(adjusted);
+        row._AvgOppNetRtg=avgOppNet;
+        row._ScheduleAdjustment=ADJ_SOS_WEIGHT*avgOppNet;
+      }
+
+      const ranked=rows.filter(r=>Number.isFinite(n(r.AdjRtg))).sort((a,b)=>n(b.AdjRtg)-n(a.AdjRtg));
+      ranked.forEach((r,i)=>{r.AdjRk=String(i+1)});
+    }
+
     // ---------- Matchup model ----------
     function teamObject(row){if(!row)return null;const wins=n(row.W),losses=n(row.L),off=n(row.AdjO)??n(row.AdjORtg)??n(row.ORtg)??n(row.Ortg),def=n(row.AdjD)??n(row.AdjDRtg)??n(row.DRtg),od=n(row.ODrives),dd=n(row.DDrives);if(![wins,losses,off,def,od,dd].every(Number.isFinite))return null;const games=wins+losses,sample=Math.max(games,1);return {name:row.Team,conference:row.Conference||"",wins,losses,games,offense:off,defense:def,tempo:((od/sample)+(dd/sample))/2}}
     function league(){const teams=APP.rows.map(teamObject).filter(Boolean);const avg=a=>a.reduce((s,x)=>s+x,0)/a.length;return teams.length?{offense:avg(teams.map(t=>t.offense)),defense:avg(teams.map(t=>t.defense)),tempo:avg(teams.map(t=>t.tempo))}:null}
-    function expectedRating(off,def,l){return Math.max(0,(l.offense+l.defense)/2+OFFENSE_WEIGHT*(off.offense-l.offense)+DEFENSE_WEIGHT*(def.defense-l.defense))}
+    function expectedRating(off,def,l){
+      const midpoint=(l.offense+l.defense)/2;
+      const raw=midpoint+OFFENSE_WEIGHT*(off.offense-l.offense)+DEFENSE_WEIGHT*(def.defense-l.defense);
+      return Math.max(0,MATCHUP_WEIGHT*raw+LEAGUE_REGRESSION_WEIGHT*midpoint);
+    }
     function expectedDrives(a,b,l){return l.tempo+TEMPO_WEIGHT*((a.tempo-l.tempo)+(b.tempo-l.tempo))}
     function confidence(a,b){return 100*(1-Math.exp(-Math.min(a.games,b.games)/CONFIDENCE_K))}
     function winProb(s1,s2,conf){const base=1/(1+Math.exp(-((s1-s2)/WIN_PROB_MARGIN_SCALE))),w=Math.max(0,Math.min(1,conf/100));return (0.5+(base-0.5)*w)*100}
-    function overtimeWinProb(adj1,adj2,location,conf){
-      if(!Number.isFinite(adj1)||!Number.isFinite(adj2))return 50;
-      let edge=adj1-adj2;
+    function overtimeWinProb(model1,model2,location,conf){
+      if(!Number.isFinite(model1)||!Number.isFinite(model2))return 50;
+      let edge=model1-model2;
       if(location==='team1')edge+=HOME_FIELD_POINTS;
       if(location==='team2')edge-=HOME_FIELD_POINTS;
       const base=1/(1+Math.exp(-(edge/OT_ADJ_RTG_SCALE)));
       const w=Math.max(0,Math.min(1,conf/100));
       return (0.5+(base-0.5)*w)*100;
     }
-    function predictTeams(name1,name2,location){const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2),a=teamObject(r1),b=teamObject(r2),l=league();if(!a||!b||!l)return null;const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);const base1=drives*ra/100,base2=drives*rb/100,total=base1+base2,adj1=n(r1.AdjRtg),adj2=n(r2.AdjRtg);let s1,s2;if(Number.isFinite(adj1)&&Number.isFinite(adj2)){let margin=drives*(adj1-adj2)/100;if(location==='team1')margin+=HOME_FIELD_POINTS;if(location==='team2')margin-=HOME_FIELD_POINTS;s1=(total+margin)/2;s2=(total-margin)/2}else{s1=base1;s2=base2;if(location==='team1')s1+=HOME_FIELD_POINTS;if(location==='team2')s2+=HOME_FIELD_POINTS}s1=Math.max(0,s1);s2=Math.max(0,s2);const conf=confidence(a,b);const p1=winProb(s1,s2,conf),otP1=overtimeWinProb(adj1,adj2,location,conf);return {a,b,drives,ra,rb,s1,s2,conf,p1,otP1,adj1,adj2}}
+    function predictTeams(name1,name2,location){const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2),a=teamObject(r1),b=teamObject(r2),l=league();if(!a||!b||!l)return null;const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);const base1=drives*ra/100,base2=drives*rb/100,total=base1+base2,adj1=n(r1.AdjRtg),adj2=n(r2.AdjRtg),net1=n(r1.NetRtg),net2=n(r2.NetRtg),model1=Number.isFinite(adj1)&&Number.isFinite(net1)?MODEL_ADJ_WEIGHT*adj1+MODEL_NET_WEIGHT*net1:adj1,model2=Number.isFinite(adj2)&&Number.isFinite(net2)?MODEL_ADJ_WEIGHT*adj2+MODEL_NET_WEIGHT*net2:adj2;let s1,s2;if(Number.isFinite(model1)&&Number.isFinite(model2)){let margin=drives*(model1-model2)/100;margin*=RATING_MARGIN_SCALE;margin=Math.max(-RATING_MARGIN_CAP,Math.min(RATING_MARGIN_CAP,margin));if(location==='team1')margin+=HOME_FIELD_POINTS;if(location==='team2')margin-=HOME_FIELD_POINTS;s1=(total+margin)/2;s2=(total-margin)/2}else{s1=base1;s2=base2;if(location==='team1')s1+=HOME_FIELD_POINTS;if(location==='team2')s2+=HOME_FIELD_POINTS}s1=Math.max(0,s1);s2=Math.max(0,s2);const conf=confidence(a,b);const p1=winProb(s1,s2,conf),otP1=overtimeWinProb(model1,model2,location,conf);return {a,b,drives,ra,rb,s1,s2,conf,p1,otP1,adj1,adj2,net1,net2,model1,model2}}
     function projectedOvertimeFinal(reg1,reg2,otP1){
       if(reg1!==reg2)return {score1:reg1,score2:reg2,team1Wins:reg1>reg2};
       const team1Wins=otP1>=50;
@@ -816,7 +879,7 @@
 
     // ---------- Conference chart ----------
     const CONF_COLORS=["#0057b8","#d62728","#2ca02c","#9467bd","#ff7f0e","#17becf","#8c564b","#e377c2","#7f7f7f","#bcbd22","#1f77b4","#c51b8a","#238b45","#6a51a3"];
-    const METRIC_LABELS={AdjRtg:"Adjusted Rating",NetRtg:"Net Rating",Ortg:"Offensive Rating",DRtg:"Defensive Rating",SOS:"Strength of Schedule"};
+    const METRIC_LABELS={ModelRtg:"Model Rating",AdjRtg:"Adjusted Rating",NetRtg:"Net Rating",Ortg:"Offensive Rating",DRtg:"Defensive Rating",SOS:"Strength of Schedule"};
     function normalizeHexColor(value,fallback="#777777"){
       const s=String(value||"").trim();
       if(/^#[0-9a-f]{6}$/i.test(s))return s.toUpperCase();
@@ -1183,15 +1246,19 @@
       }
       return cluster.map(({element,datasetIndex,index})=>({element,datasetIndex,index}));
     };
-    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>(metric==='DRtg'?a[metric]-b[metric]:b[metric]-a[metric])||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:arr.map(t=>teamPrimaryColor(t.team)),pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000,easing:'easeOutQuart'},interaction:{mode:'proximityCluster',intersect:false,radius:12},onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{mode:'proximityCluster',intersect:false,radius:12,callbacks:{title:items=>items.map(i=>i.raw?.team).filter(Boolean).join(' + '),label:c=>{const r=c.raw;if(!r)return'';return `${r.team} — ${r.conference} • Conf rank ${r.conferenceRank} • ${METRIC_LABELS[metric]} ${Number(r[metric]).toFixed(3)}`}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
+    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:(Number.isFinite(n(r.AdjRtg))&&Number.isFinite(n(r.NetRtg)))?MODEL_ADJ_WEIGHT*n(r.AdjRtg)+MODEL_NET_WEIGHT*n(r.NetRtg):n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>(metric==='DRtg'?a[metric]-b[metric]:b[metric]-a[metric])||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:arr.map(t=>teamPrimaryColor(t.team)),pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000,easing:'easeOutQuart'},interaction:{mode:'proximityCluster',intersect:false,radius:12},onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{mode:'proximityCluster',intersect:false,radius:12,callbacks:{title:items=>items.map(i=>i.raw?.team).filter(Boolean).join(' + '),label:c=>{const r=c.raw;if(!r)return'';return `${r.team} — ${r.conference} • Conf rank ${r.conferenceRank} • ${METRIC_LABELS[metric]} ${Number(r[metric]).toFixed(3)}`}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
 
     // ---------- Team ----------
     async function renderTeam(){
       if(!APP.team){els.teamContent.classList.add('hidden');els.teamPicker.value='';return}
-      const row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(APP.team).toLowerCase());if(!row){els.teamError.textContent=`${APP.team} was not found in ${APP.year}.`;els.teamError.classList.add('visible');return}els.teamError.classList.remove('visible');els.teamContent.classList.remove('hidden');els.teamPicker.value=row.Team;els.pageTitle.textContent=`${row.Team} — ${APP.year}`;els.pageSubtitle.textContent=`${row.Conference||'FBS'} • Current FBS-vs-FBS efficiency profile`;els.teamRecord.textContent=`${row.W||0}-${row.L||0}`;els.teamRank.textContent=row.Rk||'—';els.teamAdjRank.textContent=row.AdjRk||'—';els.teamAdjRtg.textContent=fmt(row.AdjRtg);els.teamORtg.textContent=fmt(row.Ortg||row.ORtg);els.teamDRtg.textContent=fmt(row.DRtg);els.teamSOS.textContent=fmt(row.SOS);{const pyw=n(row['PyW %']);els.teamPyW.textContent=Number.isFinite(pyw)?(pyw*12).toFixed(1):'—';}els.teamCurrentRecord.textContent=`${row.W||0}-${row.L||0}`;
-      const [history,schedule,live]=await Promise.all([fetchOptionalCSV(`${APP.year} History.csv`),fetchOptionalCSV(`${APP.year} Schedule.csv`),fetchLive(APP.year)]);
+      const row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(APP.team).toLowerCase());if(!row){els.teamError.textContent=`${APP.team} was not found in ${APP.year}.`;els.teamError.classList.add('visible');return}els.teamError.classList.remove('visible');els.teamContent.classList.remove('hidden');els.teamPicker.value=row.Team;els.pageTitle.textContent=`${row.Team} — ${APP.year}`;els.pageSubtitle.textContent=`${row.Conference||'FBS'} • Current FBS-vs-FBS efficiency profile`;els.teamRank.textContent=row.Rk||'—';els.teamAdjRank.textContent=row.AdjRk||'—';els.teamAdjRtg.textContent=fmt(row.AdjRtg);els.teamORtg.textContent=fmt(row.Ortg||row.ORtg);els.teamDRtg.textContent=fmt(row.DRtg);els.teamSOS.textContent=fmt(row.SOS);{const pyw=n(row['PyW %']);els.teamPyW.textContent=Number.isFinite(pyw)?(pyw*12).toFixed(1):'—';}
+      const [history,schedule,live]=await Promise.all([fetchOptionalCSV(`${APP.year} History.csv`),fetchSchedule(APP.year),fetchLive(APP.year)]);
+      const actualRecord=completedFbsRecord(schedule,row.Team);
+      const displayRecord=actualRecord.games?`${actualRecord.wins}-${actualRecord.losses}`:`${row.W||0}-${row.L||0}`;
+      els.teamRecord.textContent=displayRecord;
+      els.teamCurrentRecord.textContent=displayRecord;
       renderTeamTrend(history,row,schedule,live);
-      renderTeamSchedule(schedule,row,live);
+      renderTeamSchedule(schedule,row,live,actualRecord);
     }
     function latestPlayedWeek(schedule,team,live){
       const teamName=String(team||'').toLowerCase();
@@ -1406,7 +1473,7 @@
       if(!game)return 'Live';const period=game.period,clock=game.clock;let p='';if(period!==undefined&&period!==null&&period!==''){const num=Number(period);p=Number.isFinite(num)?(num<=4?`Q${num}`:`OT${Math.max(1,num-4)}`):String(period)}const c=clock===undefined||clock===null?'':String(clock).trim();return [p,c].filter(Boolean).join(' ')||'Live'
     }
     function scheduleComparisonTeamData(r){
-      return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
+      return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:(Number.isFinite(n(r.AdjRtg))&&Number.isFinite(n(r.NetRtg)))?MODEL_ADJ_WEIGHT*n(r.AdjRtg)+MODEL_NET_WEIGHT*n(r.NetRtg):n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
     }
     function animateFocusedComparison(chart,focusRefs){
       if(!chart||!focusRefs?.length)return;
@@ -1503,7 +1570,7 @@
       });
     }
 
-    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='AdjRtg',awayTeamName=null,previousPositions=null){
+    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='ModelRtg',awayTeamName=null,previousPositions=null){
       const wantedConfs=new Set([teamRow.Conference||'Independent',oppRow.Conference||'Independent']);
       const teams=APP.rows.map(scheduleComparisonTeamData).filter(t=>t.team&&wantedConfs.has(t.conference)&&Number.isFinite(t[metric]));
       const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});
@@ -1638,13 +1705,13 @@
       try{await saveReportPngs(report.pages,report.base)}finally{cleanupReport(report.root)}
     }
 
-    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='AdjRtg',previousPositions=null){
+    function renderScheduleComparison(detailCell,teamRow,oppRow,gameLabel,awayTeamName=null,gameContext=null,initialMetric='ModelRtg',previousPositions=null){
       detailCell.innerHTML='';
       const wrap=document.createElement('div');wrap.className='schedule-comparison';
       if(!oppRow){wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(gameLabel)} comparison</h3><p class="schedule-comparison-subtitle">Current season ratings</p></div></div><div class="schedule-comparison-empty">${escapeHtml(gameLabel)} is not present in the ${escapeHtml(APP.year)} FBS rankings dataset, so a two-team conference comparison is not available for this game.</div>`;detailCell.appendChild(wrap);return}
       const id=`schedule-chart-${Math.random().toString(36).slice(2)}`;
       const headingColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg" selected>Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label class="schedule-metric-control"><span class="schedule-metric-label">Comparison metric</span><select class="schedule-metric-select"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
       detailCell.appendChild(wrap);
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');
       if([...select.options].some(o=>o.value===initialMetric))select.value=initialMetric;
@@ -1662,21 +1729,40 @@
       const location=els.matchLocation.value;
       const awayTeamName=location==='team2'?team1Row.Team:team2Row.Team;
       const headingColors=matchupTeamColors(team1Row.Team,team2Row.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(team1Row.Team)} vs. ${escapeHtml(team2Row.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label><span class="visually-hidden">Comparison metric</span><select class="schedule-metric-select"><option value="AdjRtg" selected>Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(team1Row.Team)} • ${escapeHtml(team1Row.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(team2Row.Team)} • ${escapeHtml(team2Row.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas></canvas></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(team1Row.Team)} vs. ${escapeHtml(team2Row.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label class="schedule-metric-control"><span class="schedule-metric-label">Comparison metric</span><select class="schedule-metric-select"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(team1Row.Team)} • ${escapeHtml(team1Row.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(team2Row.Team)} • ${escapeHtml(team2Row.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas></canvas></div>`;
       els.matchComparison.appendChild(wrap);els.matchComparison.classList.remove('hidden');
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select');
       APP.matchComparisonChart=buildScheduleComparisonChart(canvas,team1Row,team2Row,select.value,awayTeamName);
       select.onchange=()=>{APP.matchComparisonChart?.destroy();APP.matchComparisonChart=buildScheduleComparisonChart(canvas,team1Row,team2Row,select.value,awayTeamName)};
     }
 
-    function renderTeamSchedule(schedule,row,live){
+    function completedFbsRecord(schedule,teamName){
+      const teamKey=String(teamName||'').trim().toLowerCase();
+      const seen=new Set();
+      let wins=0,losses=0,ties=0;
+      for(const raw of (Array.isArray(schedule)?schedule:[])){
+        const s=scheduleFields(raw);
+        if(String(s.team||'').trim().toLowerCase()!==teamKey || !isCompletedScheduleGame(s))continue;
+        const oppRow=APP.rows.find(r=>String(r.Team||'').trim().toLowerCase()===String(s.opp||'').trim().toLowerCase());
+        if(!oppRow)continue;
+        const key=String(s.gameId||`${s.week}|${String(s.opp||'').toLowerCase()}|${s.startDate}`);
+        if(seen.has(key))continue;
+        seen.add(key);
+        let result=String(s.result||'').trim().toUpperCase();
+        if(!['W','L','T'].includes(result) && Number.isFinite(s.teamPoints) && Number.isFinite(s.oppPoints))result=s.teamPoints>s.oppPoints?'W':s.teamPoints<s.oppPoints?'L':'T';
+        if(result==='W')wins++;else if(result==='L')losses++;else if(result==='T')ties++;
+      }
+      return {wins,losses,ties,games:wins+losses+ties};
+    }
+
+    function renderTeamSchedule(schedule,row,live,actualRecord=null){
       const expandedComparisons=new Map();
       [...els.teamScheduleBody.querySelectorAll('.schedule-game-row')].forEach(existingRow=>{
         const key=existingRow.dataset.scheduleKey;
         if(!key)return;
         const detail=existingRow.nextElementSibling;
         if(!detail||detail.classList.contains('hidden'))return;
-        const metric=detail.querySelector('.schedule-metric-select')?.value||'AdjRtg';
+        const metric=detail.querySelector('.schedule-metric-select')?.value||'ModelRtg';
         const canvas=detail.querySelector('canvas');
         const chart=canvas?Chart.getChart(canvas):null;
         expandedComparisons.set(key,{metric,positions:comparisonChartPositions(chart)});
@@ -1706,15 +1792,16 @@
         const detail=document.createElement('tr');detail.className='schedule-detail-row hidden';const td=document.createElement('td');td.colSpan=8;detail.appendChild(td);
         els.teamScheduleBody.append(tr,detail);
         const btn=tr.querySelector('.schedule-expand-button');
-        const openComparison=(initialMetric='AdjRtg',previousPositions=null)=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric,previousPositions)}};
+        const openComparison=(initialMetric='ModelRtg',previousPositions=null)=>{detail.classList.remove('hidden');btn.setAttribute('aria-expanded','true');btn.setAttribute('aria-label',`Hide ${row.Team} vs ${s.opp} comparison`);if(!td.hasChildNodes()){const awayTeamName=/away/i.test(s.site)?row.Team:(oppRow?.Team||s.opp);const gameContext={week:s.week,site:s.site,status,score,prob,result,startDate:s.startDate,headline:status==='Final'?`${row.Team} ${result==='W'?'defeated':result==='L'?'fell to':'vs.'} ${s.opp}`:(result==='W'?`${row.Team} projected to win`:result==='L'?`${s.opp} projected to win`:`${row.Team} vs. ${s.opp}`),oppProb:(prob&&prob!=='—')?(100-(n(String(prob).replace('%',''))||0)):null};renderScheduleComparison(td,row,oppRow,s.opp||`Game ${index+1}`,awayTeamName,gameContext,initialMetric,previousPositions)}};
         btn.onclick=()=>{const opening=detail.classList.contains('hidden');if(opening)openComparison();else{detail.classList.add('hidden');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label',`Show ${row.Team} vs ${s.opp} comparison`)}};
         if(expandedComparisons.has(scheduleKey)){
           const saved=expandedComparisons.get(scheduleKey);
           openComparison(saved.metric,saved.positions);
         }
       });
+      const record=(actualRecord&&actualRecord.games)?actualRecord:{wins:(n(row.W)??0),losses:(n(row.L)??0),ties:0,games:(n(row.W)??0)+(n(row.L)??0)};
       els.teamRemaining.textContent=`${pw}-${pl}`;
-      els.teamProjected.textContent=`${(n(row.W)??0)+pw}-${(n(row.L)??0)+pl}`;
+      els.teamProjected.textContent=`${record.wins+pw}-${record.losses+pl}`;
       els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>a.onclick=e=>{e.preventDefault();APP.team=a.dataset.team;setView('team',{team:APP.team})})
     }
 
@@ -1812,7 +1899,7 @@
       const p1=Number.isFinite(probs[0])?probs[0]:50,p2=Number.isFinite(probs[1])?probs[1]:100-p1;
       const winner1=els.matchRow1.classList.contains('winner'),winner2=els.matchRow2.classList.contains('winner');
       const metricSelect=els.matchComparison?.querySelector('select');
-      const metricValue=metricSelect?.value||'AdjRtg';
+      const metricValue=metricSelect?.value||'ModelRtg';
       const metricLabel=METRIC_LABELS[metricValue]||metricValue;
       const focusColors=matchupTeamColors(t1,t2,els.matchLocation.value==='team1'?t2:(els.matchLocation.value==='team2'?t1:null));
 
