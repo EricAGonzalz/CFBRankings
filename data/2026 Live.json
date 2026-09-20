@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T04:21:14.509287+00:00",
+  "updatedAt": "2026-09-20T04:26:17.739072+00:00",
   "liveGames": [
     {
       "id": 401864574,
@@ -12,10 +12,10 @@
       "homePoints": 26.0,
       "awayPoints": 15.0,
       "period": 4,
-      "clock": "03:40",
-      "completedDrives": 20,
+      "clock": "02:05",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401860887,
@@ -27,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 19.0,
       "period": 3,
-      "clock": "11:06",
+      "clock": "09:18",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -41,8 +41,8 @@
       "awayConference": "Mountain West",
       "homePoints": 28.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:25",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -70,12 +70,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 21.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 2,
-      "clock": "02:55",
-      "completedDrives": 9,
+      "clock": "02:05",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401860888,
@@ -87,10 +87,10 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "03:52",
-      "completedDrives": 10,
+      "clock": "02:05",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     }
   ],
   "liveTeams": [
