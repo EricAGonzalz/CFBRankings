@@ -1,21 +1,21 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T01:31:19.835912+00:00",
+  "updatedAt": "2026-09-20T01:36:13.875258+00:00",
   "liveGames": [
     {
-      "id": 401862710,
+      "id": 401864574,
       "status": "in_progress",
-      "homeTeam": "Old Dominion",
-      "awayTeam": "East Carolina",
+      "homeTeam": "App State",
+      "awayTeam": "Charlotte",
       "homeConference": "Sun Belt",
       "awayConference": "American Athletic",
-      "homePoints": 17.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "03:50",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 12
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:23",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401871047,
@@ -27,9 +27,9 @@
       "homePoints": 24.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "09:03",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 6,
+      "clock": "06:26",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
     },
     {
@@ -42,7 +42,7 @@
       "homePoints": 17.0,
       "awayPoints": 34.0,
       "period": 3,
-      "clock": "05:32",
+      "clock": "04:04",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -57,7 +57,7 @@
       "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "03:58",
+      "clock": "01:02",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -71,8 +71,8 @@
       "awayConference": "Sun Belt",
       "homePoints": 34.0,
       "awayPoints": 27.0,
-      "period": 3,
-      "clock": "00:33",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -87,10 +87,10 @@
       "homePoints": 13.0,
       "awayPoints": 41.0,
       "period": 3,
-      "clock": "05:53",
-      "completedDrives": 17,
+      "clock": "03:51",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401862773,
@@ -100,12 +100,12 @@
       "homeConference": "American Athletic",
       "awayConference": "Mid-American",
       "homePoints": 14.0,
-      "awayPoints": 14.0,
-      "period": 3,
-      "clock": "15:00",
-      "completedDrives": 13,
+      "awayPoints": 21.0,
+      "period": 4,
+      "clock": "14:19",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401864443,
@@ -117,7 +117,7 @@
       "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "13:20",
+      "clock": "10:21",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -132,10 +132,10 @@
       "homePoints": 31.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "03:54",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 7
+      "clock": "01:14",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401869948,
@@ -144,12 +144,12 @@
       "awayTeam": "Georgia Southern",
       "homeConference": "Conference USA",
       "awayConference": "Sun Belt",
-      "homePoints": 17.0,
+      "homePoints": 23.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "12:50",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "11:17",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -177,7 +177,7 @@
       "homePoints": 7.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "09:59",
+      "clock": "09:23",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -190,12 +190,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 24.0,
+      "awayPoints": 31.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 10,
+      "clock": "01:18",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401856796,
@@ -207,10 +207,10 @@
       "homePoints": 21.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "14:50",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "clock": "11:21",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856802,
@@ -222,10 +222,10 @@
       "homePoints": 14.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "14:24",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "clock": "12:03",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401858232,
@@ -251,8 +251,8 @@
       "awayConference": "Big Ten",
       "homePoints": 17.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:07",
       "completedDrives": 11,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
@@ -297,9 +297,9 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "01:05",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "00:00",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -312,19 +312,20 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:04",
+      "clock": "00:00",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     }
   ],
   "liveTeams": [
+    "App State",
     "Arkansas State",
     "Auburn",
     "BYU",
+    "Charlotte",
     "Colorado",
     "Colorado State",
-    "East Carolina",
     "Florida",
     "Georgia Southern",
     "Georgia State",
@@ -344,7 +345,6 @@
     "Notre Dame",
     "Ohio",
     "Oklahoma",
-    "Old Dominion",
     "Ole Miss",
     "Rice",
     "South Alabama",
