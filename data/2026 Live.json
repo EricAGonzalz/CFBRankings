@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T04:06:26.681287+00:00",
+  "updatedAt": "2026-09-20T04:11:11.708406+00:00",
   "liveGames": [
     {
       "id": 401864574,
@@ -10,12 +10,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "American Athletic",
       "homePoints": 26.0,
-      "awayPoints": 7.0,
+      "awayPoints": 15.0,
       "period": 4,
-      "clock": "08:46",
-      "completedDrives": 18,
+      "clock": "07:00",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401860887,
@@ -57,7 +57,7 @@
       "homePoints": 3.0,
       "awayPoints": 28.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "01:32",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -72,10 +72,10 @@
       "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "09:55",
-      "completedDrives": 7,
+      "clock": "08:19",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401860888,
@@ -87,10 +87,10 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "10:17",
-      "completedDrives": 8,
+      "clock": "07:14",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     }
   ],
   "liveTeams": [
