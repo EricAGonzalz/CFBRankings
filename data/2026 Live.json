@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T05:36:07.702178+00:00",
+  "updatedAt": "2026-09-20T05:41:46.332486+00:00",
   "liveGames": [
     {
       "id": 401860887,
@@ -12,25 +12,10 @@
       "homePoints": 13.0,
       "awayPoints": 26.0,
       "period": 4,
-      "clock": "03:21",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401856793,
-      "status": "in_progress",
-      "homeTeam": "Arizona",
-      "awayTeam": "Northern Illinois",
-      "homeConference": "Big 12",
-      "awayConference": "Mountain West",
-      "homePoints": 42.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "00:40",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "00:46",
+      "completedDrives": 26,
+      "homeOffensiveDrives": 13,
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401864507,
@@ -42,10 +27,10 @@
       "homePoints": 10.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "07:15",
-      "completedDrives": 19,
+      "clock": "04:03",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858458,
@@ -57,7 +42,7 @@
       "homePoints": 38.0,
       "awayPoints": 31.0,
       "period": 3,
-      "clock": "04:29",
+      "clock": "02:56",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -72,18 +57,16 @@
       "homePoints": 3.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "03:47",
+      "clock": "00:53",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
     }
   ],
   "liveTeams": [
-    "Arizona",
     "Fresno State",
     "James Madison",
     "North Dakota State",
-    "Northern Illinois",
     "Purdue",
     "Sacramento State",
     "San Diego State",
