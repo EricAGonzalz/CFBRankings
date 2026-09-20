@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T05:51:07.788267+00:00",
+  "updatedAt": "2026-09-20T05:56:09.946228+00:00",
   "liveGames": [
-    {
-      "id": 401864507,
-      "status": "in_progress",
-      "homeTeam": "Sacramento State",
-      "awayTeam": "North Dakota State",
-      "homeConference": "Mid-American",
-      "awayConference": "Mountain West",
-      "homePoints": 10.0,
-      "awayPoints": 31.0,
-      "period": 4,
-      "clock": "01:45",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401858458,
       "status": "in_progress",
@@ -24,10 +9,10 @@
       "awayTeam": "Purdue",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 38.0,
+      "homePoints": 45.0,
       "awayPoints": 31.0,
-      "period": 3,
-      "clock": "05:50",
+      "period": 4,
+      "clock": "13:42",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -39,20 +24,18 @@
       "awayTeam": "Fresno State",
       "homeConference": "Mountain West",
       "awayConference": "Pac-12",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "12:35",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "12:36",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     }
   ],
   "liveTeams": [
     "Fresno State",
-    "North Dakota State",
     "Purdue",
-    "Sacramento State",
     "San José State",
     "UCLA"
   ]
