@@ -1281,90 +1281,129 @@
     }
     function renderTeamTrend(history,masterRow,schedule=[],live=null){
       const team=masterRow.Team;
-      const rows=history.filter(r=>String(r.Season||APP.year)===String(APP.year)&&String(r.Team||'').toLowerCase()===String(team).toLowerCase()).sort((a,b)=>(n(a.Week)??0)-(n(b.Week)??0));
+      // Preserve History.csv file order. Postseason feeds can reset Week back to 1,
+      // so sorting only by Week would mix a bowl/CFP snapshot into regular Week 1.
+      const rows=history.filter(r=>String(r.Season||APP.year)===String(APP.year)&&String(r.Team||'').toLowerCase()===String(team).toLowerCase());
       const teamName=String(team||'').toLowerCase();
       const allTeamGames=sortScheduleChronologically(schedule.map(scheduleFields).filter(s=>String(s.team||'').toLowerCase()===teamName));
+      const seasonYear=Number(APP.year);
+      const postseasonStart=Number.isFinite(seasonYear)?Date.parse(`${seasonYear}-12-01T00:00:00Z`):NaN;
+      const isPostseasonGame=g=>{
+        const t=scheduleTimeValue(g);
+        return Number.isFinite(postseasonStart)&&Number.isFinite(t)&&t>=postseasonStart;
+      };
 
-      // Determine the current football week from the schedule dates, not from
-      // the largest completed Week value in the file. Some schedule feeds can
-      // contain completed-looking rows or postseason placeholders with larger
-      // week numbers, which would incorrectly extend the trend into the future.
-      // A week becomes current once its first scheduled game has reached its
-      // start time. Live/completed rows remain a fallback when a date is absent.
+      // Determine the current regular-season football week. Postseason rows often
+      // reset their source Week value to 1, so they must not pull this backward.
       let currentScheduleWeek=null;
       const now=Date.now();
-      schedule.map(scheduleFields).forEach(s=>{
+      allTeamGames.filter(g=>!isPostseasonGame(g)).forEach(s=>{
         const week=n(s.week);
         if(!Number.isFinite(week))return;
         const start=scheduleTimeValue(s);
         const hasLiveOverlay=!!findLiveScheduleGame(s,live);
         const weekHasStarted=(Number.isFinite(start)&&start<=now)||s.completed||s.live||hasLiveOverlay;
-        if(weekHasStarted){
-          currentScheduleWeek=currentScheduleWeek===null?week:Math.max(currentScheduleWeek,week);
-        }
+        if(weekHasStarted)currentScheduleWeek=currentScheduleWeek===null?week:Math.max(currentScheduleWeek,week);
       });
-
-      // History.csv is a weekly archive, so Week is the authoritative key for
-      // the trend chart. W + L is only used here to determine whether the live
-      // Master.csv snapshot is newer than the latest archived snapshot. Using
-      // W + L as the graph key caused different weeks with the same FBS-game
-      // count to overwrite one another, producing flat historical trend lines.
-      const currentFbsGames=(n(masterRow.W)??0)+(n(masterRow.L)??0);
-      const maxArchivedFbsGames=rows.reduce((max,r)=>Math.max(max,(n(r.W)??0)+(n(r.L)??0)),0);
-      if(currentFbsGames>maxArchivedFbsGames&&Number.isInteger(currentScheduleWeek)&&currentScheduleWeek>0){
-        const hasCurrentWeek=rows.some(r=>n(r.Week)===currentScheduleWeek);
-        if(!hasCurrentWeek)rows.push(currentTrendRow(masterRow,currentScheduleWeek));
-      }
-      rows.sort((a,b)=>(n(a.Week)??0)-(n(b.Week)??0));
 
       if(!rows.length){els.teamTrendWrap.classList.add('hidden');els.teamTrendEmpty.classList.remove('hidden');APP.teamTrendChart?.destroy();return}
       els.teamTrendWrap.classList.remove('hidden');els.teamTrendEmpty.classList.add('hidden');
 
       const metrics=[['AdjRtg','Adjusted Rating','#0057b8'],['NetRtg','Net Rating','#d62728'],['Ortg','Offensive Rating','#2ca02c'],['DRtg','Defensive Rating','#9467bd'],['Rk','Overall Rank','#ff7f0e'],['SOS','Strength of Schedule','#8c564b'],['Win %','Win %','#111'],['PyW %','Pythagorean Win %','#e377c2']];
       const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(n(r[k]))));
+      const fbsTeams=new Set(APP.rows.map(r=>String(r.Team||'').toLowerCase()));
 
-      // Keep only the newest archived snapshot for each actual football week.
-      // Duplicate archive rows for the same week are harmless: the later row
-      // replaces the earlier one, while snapshots from different weeks can no
-      // longer collide just because W + L happened to be unchanged.
+      // The regular-season frame is Weeks 1-14. A historical postseason snapshot
+      // is identified by having more FBS results than the team accumulated before
+      // December, then appended as synthetic Week 15, 16, ... even if CFBD labels
+      // the bowl/CFP game as Week 1 again.
+      const REGULAR_SEASON_WEEKS=14;
+      const regularGames=allTeamGames.filter(g=>!isPostseasonGame(g));
+      const postseasonGames=allTeamGames.filter(g=>isPostseasonGame(g));
+      const regularFbsGames=regularGames.filter(g=>fbsTeams.has(String(g.opp||'').toLowerCase())).length;
+      const currentFbsGames=(n(masterRow.W)??0)+(n(masterRow.L)??0);
+
       const rowByWeek=new Map();
+      const postseasonRows=[];
       rows.forEach(r=>{
         const week=n(r.Week);
-        if(Number.isInteger(week)&&week>0)rowByWeek.set(week,r);
+        const fbsCount=(n(r.W)??0)+(n(r.L)??0);
+        if(fbsCount>regularFbsGames){
+          postseasonRows.push(r);
+          return;
+        }
+        if(Number.isInteger(week)&&week>=1&&week<=REGULAR_SEASON_WEEKS)rowByWeek.set(week,r);
       });
+      // Multiple archive rows can describe the same postseason state. Keep one
+      // snapshot per FBS-game count, in chronological game-count order.
+      const postseasonByCount=new Map();
+      postseasonRows.forEach(r=>{
+        const count=(n(r.W)??0)+(n(r.L)??0);
+        if(count>regularFbsGames)postseasonByCount.set(count,r);
+      });
+      const orderedPostseasonRows=[...postseasonByCount.entries()].sort((a,b)=>a[0]-b[0]).map(([,r])=>r);
 
-      // Identify weeks in which this team actually played an FBS opponent.
-      // Missing history on an FBS-game week is left blank so a data problem is
-      // visible. Missing history on a bye/FCS week carries the prior snapshot.
-      const fbsTeams=new Set(APP.rows.map(r=>String(r.Team||'').toLowerCase()));
+      // Add the live Master.csv snapshot when it represents a newer state than
+      // the archive. During postseason it is appended after Week 14; otherwise it
+      // belongs to the current regular-season week.
+      const maxArchivedFbsGames=rows.reduce((max,r)=>Math.max(max,(n(r.W)??0)+(n(r.L)??0)),0);
+      if(currentFbsGames>maxArchivedFbsGames){
+        if(currentFbsGames>regularFbsGames){
+          orderedPostseasonRows.push(currentTrendRow(masterRow,REGULAR_SEASON_WEEKS+orderedPostseasonRows.length+1));
+        }else if(Number.isInteger(currentScheduleWeek)&&currentScheduleWeek>0){
+          rowByWeek.set(currentScheduleWeek,currentTrendRow(masterRow,currentScheduleWeek));
+        }
+      }
+
+      // Identify regular weeks in which this team actually played an FBS opponent.
+      // A missing archive on an FBS-game week is left blank; a true bye/FCS week
+      // carries the previous rating forward.
       const fbsGameWeeks=new Set();
-      allTeamGames.forEach(g=>{
+      regularGames.forEach(g=>{
         const week=n(g.week);
         if(Number.isInteger(week)&&week>0&&fbsTeams.has(String(g.opp||'').toLowerCase()))fbsGameWeeks.add(week);
       });
 
-      // Always show the full 12-week regular-season frame. History.csv Week is
-      // mapped directly to the matching x-axis week. For weeks with no archived
-      // row, carry the last rating only when the team did not play an FBS game.
-      // Future weeks in the current season remain empty.
-      const graphWeekSlots=Array.from({length:12},(_,i)=>i+1);
+      const graphWeekSlots=Array.from({length:REGULAR_SEASON_WEEKS},(_,i)=>i+1);
       const graphPlottedRows=[];
       let carry=null;
-      const maxHistoricalWeek=Math.max(0,...Array.from(rowByWeek.keys()).filter(w=>w<=12));
-      const occurredThrough=Number.isInteger(currentScheduleWeek)?Math.min(12,currentScheduleWeek):Math.min(12,maxHistoricalWeek);
+      const maxHistoricalWeek=Math.max(0,...Array.from(rowByWeek.keys()));
+      const seasonComplete=Number(APP.year)<CURRENT_SEASON;
+      const occurredThrough=seasonComplete?REGULAR_SEASON_WEEKS:(Number.isInteger(currentScheduleWeek)?Math.min(REGULAR_SEASON_WEEKS,currentScheduleWeek):Math.min(REGULAR_SEASON_WEEKS,maxHistoricalWeek));
 
       graphWeekSlots.forEach(week=>{
         const archived=rowByWeek.get(week)||null;
-        if(archived){
-          graphPlottedRows.push(archived);
-          carry=archived;
-          return;
-        }
-        if(week<=occurredThrough&&!fbsGameWeeks.has(week)&&carry){
-          graphPlottedRows.push(carry);
-          return;
-        }
+        if(archived){graphPlottedRows.push(archived);carry=archived;return;}
+        if(week<=occurredThrough&&!fbsGameWeeks.has(week)&&carry){graphPlottedRows.push(carry);return;}
         graphPlottedRows.push(null);
+      });
+
+      // Append one chart slot for every postseason game that actually occurred.
+      // Postseason feeds can reuse Week 1 (or other small week numbers), so the
+      // chart continues sequentially after Week 14 with no fixed upper limit.
+      // Ratings still advance only when an FBS game creates a new History.csv
+      // snapshot; otherwise the most recent rating carries forward.
+      const completedPostseasonGames=postseasonGames.filter(g=>{
+        const hasLiveOverlay=!!findLiveScheduleGame(g,live);
+        return seasonComplete||g.completed||g.live||hasLiveOverlay;
+      });
+      let postseasonFbsCount=regularFbsGames;
+      let postseasonCarry=graphPlottedRows.length?graphPlottedRows[graphPlottedRows.length-1]:null;
+      if(!postseasonCarry){
+        for(let i=graphPlottedRows.length-1;i>=0&&!postseasonCarry;i--)postseasonCarry=graphPlottedRows[i]||null;
+      }
+      completedPostseasonGames.forEach((game,index)=>{
+        graphWeekSlots.push(REGULAR_SEASON_WEEKS+index+1);
+        let row=null;
+        if(fbsTeams.has(String(game.opp||'').toLowerCase())){
+          postseasonFbsCount++;
+          row=postseasonByCount.get(postseasonFbsCount)||null;
+          if(!row&&currentFbsGames===postseasonFbsCount&&currentFbsGames>maxArchivedFbsGames){
+            row=currentTrendRow(masterRow,REGULAR_SEASON_WEEKS+index+1);
+          }
+        }
+        if(row)postseasonCarry=row;
+        graphPlottedRows.push(row||postseasonCarry||null);
       });
 
       const scales={x:{title:{display:true,text:'Week'}}};
