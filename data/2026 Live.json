@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-20T06:46:09.613330+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-09-24T23:41:09.893738+00:00",
+  "liveGames": [
+    {
+      "id": 401869941,
+      "status": "in_progress",
+      "homeTeam": "Coastal Carolina",
+      "awayTeam": "Liberty",
+      "homeConference": "Sun Belt",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:51",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Coastal Carolina",
+    "Liberty"
+  ]
 }
