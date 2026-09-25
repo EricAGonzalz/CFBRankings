@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-25T03:46:06.863882+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-09-25T20:11:18.314809+00:00",
+  "liveGames": [
+    {
+      "id": 401862779,
+      "status": "in_progress",
+      "homeTeam": "Temple",
+      "awayTeam": "Army",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:37",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Army",
+    "Temple"
+  ]
 }
