@@ -769,7 +769,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401858304,NC State,ACC,Florida State,ACC,Away,2026-11-21T05:00:00.000Z,False,False,,,,70,66,12.746
 2026,13,401858313,NC State,ACC,North Carolina,ACC,Away,2026-11-28T05:00:00.000Z,False,False,,,,69,122,-174.337
 2026,2,401862703,Navy,American Athletic,Florida Atlantic,American Athletic,Away,2026-09-12T23:30:00.000Z,True,False,30,38,L,102,86,-45.169
-2026,4,401862778,Navy,American Athletic,UAB,American Athletic,Away,2026-09-25T23:00:00.000Z,False,False,,,,82,98,-77.530
+2026,4,401862778,Navy,American Athletic,UAB,American Athletic,Away,2026-09-25T23:00:00.000Z,False,True,0,0,,82,98,-77.530
 2026,5,401862791,Navy,American Athletic,Air Force,Mountain West,Away,2026-10-03T16:00:00.000Z,False,False,,,,75,85,-43.337
 2026,6,401862799,Navy,American Athletic,Tulsa,American Athletic,Home,2026-10-10T19:30:00.000Z,False,False,,,,41,61,23.321
 2026,7,401862804,Navy,American Athletic,UTSA,American Athletic,Away,2026-10-17T04:00:00.000Z,False,False,,,,85,70,-1.239
@@ -1281,7 +1281,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401858424,UAB,American Athletic,Illinois,Big Ten,Away,2026-09-04T01:00:00.000Z,True,False,23,42,L,40,34,105.144
 2026,2,401862708,UAB,American Athletic,UL Monroe,Sun Belt,Home,2026-09-12T19:30:00.000Z,True,False,26,20,W,129,105,-97.966
 2026,3,401862776,UAB,American Athletic,Louisiana,Sun Belt,Away,2026-09-20T00:00:00.000Z,True,False,14,21,L,89,88,-46.285
-2026,4,401862778,UAB,American Athletic,Navy,American Athletic,Home,2026-09-25T23:00:00.000Z,False,False,,,,91,109,-111.836
+2026,4,401862778,UAB,American Athletic,Navy,American Athletic,Home,2026-09-25T23:00:00.000Z,False,True,0,0,,91,109,-111.836
 2026,6,401862798,UAB,American Athletic,Memphis,American Athletic,Away,2026-10-10T04:00:00.000Z,False,False,,,,64,133,-252.843
 2026,7,401862800,UAB,American Athletic,East Carolina,American Athletic,Home,2026-10-15T23:30:00.000Z,False,False,,,,104,80,-31.264
 2026,9,401862816,UAB,American Athletic,South Florida,American Athletic,Away,2026-10-31T04:00:00.000Z,False,False,,,,42,58,36.387
