@@ -1643,7 +1643,7 @@
         const targetData=arr.map(t=>({x:t.conferenceRank,y:t[metric],...t}));
         const startData=targetData.map(p=>{
           const old=previousPositions?.get?.(String(p.team).toLowerCase());
-          return old&&Number.isFinite(old.x)&&Number.isFinite(old.y)?{...p,x:old.x,y:old.y}:{...p};
+          return old&&Number.isFinite(old.x)?{...p,x:old.x,y:p.y}:{...p};
         });
         datasets.push({
           label:conf,
@@ -1660,7 +1660,7 @@
         focusIndexes.forEach(pointIndex=>focusRefs.push({datasetIndex,pointIndex}));
       }
 
-      const chart=new Chart(canvas,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',onClick:()=>{},labels:{usePointStyle:true,boxWidth:9,font:{size:10},generateLabels:()=>[{text:teamRow.Team,fillStyle:focusColors.team1,strokeStyle:'#fff',lineWidth:1,pointStyle:'circle'},{text:oppRow.Team,fillStyle:focusColors.team2,strokeStyle:'#fff',lineWidth:1,pointStyle:'circle'}]}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1,font:{size:10}},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
+      const chart=new Chart(canvas,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',onClick:()=>{},labels:{usePointStyle:true,boxWidth:9,font:{size:10},generateLabels:()=>[{text:teamRow.Team,fillStyle:focusColors.team1,strokeStyle:'#fff',lineWidth:1,pointStyle:'circle'},{text:oppRow.Team,fillStyle:focusColors.team2,strokeStyle:'#fff',lineWidth:1,pointStyle:'circle'}]}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1,font:{size:10}},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
       if(previousPositions?.size){
         requestAnimationFrame(()=>animateComparisonToTargets(chart));
       }else{
