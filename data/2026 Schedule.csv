@@ -1,7 +1,7 @@
 Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDate,Completed,Live,TeamPoints,OpponentPoints,Result,OpponentRk,OpponentAdjRk,OpponentAdjRtg
 2026,2,401864502,Air Force,Mountain West,North Dakota State,Mountain West,Home,2026-09-13T02:00:00.000Z,True,False,32,38,L,24,73,-20.853
 2026,4,401864509,Air Force,Mountain West,Nevada,Mountain West,Away,2026-09-27T02:30:00.000Z,False,False,,,,29,57,40.973
-2026,5,401862791,Air Force,Mountain West,Navy,American Athletic,Home,2026-10-03T16:00:00.000Z,False,False,,,,82,104,-87.323
+2026,5,401862791,Air Force,Mountain West,Navy,American Athletic,Home,2026-10-03T16:00:00.000Z,False,False,,,,86,104,-87.323
 2026,6,401864516,Air Force,Mountain West,Northern Illinois,Mountain West,Away,2026-10-10T23:30:00.000Z,False,False,,,,133,128,-244.020
 2026,7,401864524,Air Force,Mountain West,UNLV,Mountain West,Home,2026-10-17T19:30:00.000Z,False,False,,,,99,137,-274.929
 2026,8,401864525,Air Force,Mountain West,Wyoming,Mountain West,Away,2026-10-24T01:00:00.000Z,False,False,,,,122,133,-253.976
@@ -97,7 +97,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401862823,Army,American Athletic,Air Force,Mountain West,Home,2026-11-08T00:30:00.000Z,False,False,,,,76,88,-46.308
 2026,12,401862831,Army,American Athletic,East Carolina,American Athletic,Home,2026-11-21T17:00:00.000Z,False,False,,,,104,77,-26.937
 2026,13,401862841,Army,American Athletic,Rice,American Athletic,Away,2026-11-28T05:00:00.000Z,False,False,,,,132,29,120.788
-2026,15,401862844,Army,American Athletic,Navy,American Athletic,Home,2026-12-12T20:00:00.000Z,False,False,,,,82,104,-87.323
+2026,15,401862844,Army,American Athletic,Navy,American Athletic,Home,2026-12-12T20:00:00.000Z,False,False,,,,86,104,-87.323
 2026,1,401856636,Auburn,SEC,Baylor,Big 12,Home,2026-09-05T19:30:00.000Z,True,False,17,16,W,54,37,89.847
 2026,2,401856671,Auburn,SEC,Southern Miss,Sun Belt,Home,2026-09-12T23:45:00.000Z,True,False,43,8,W,130,121,-164.872
 2026,3,401856687,Auburn,SEC,Florida,SEC,Home,2026-09-19T23:00:00.000Z,True,False,39,44,L,10,12,203.522
@@ -213,10 +213,10 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401862796,Charlotte,American Athletic,North Texas,American Athletic,Away,2026-10-10T04:00:00.000Z,False,False,,,,79,114,-131.755
 2026,7,401862803,Charlotte,American Athletic,Temple,American Athletic,Away,2026-10-17T04:00:00.000Z,False,False,,,,94,67,10.094
 2026,9,401862813,Charlotte,American Athletic,Tulane,American Athletic,Home,2026-10-30T23:00:00.000Z,False,False,,,,84,86,-44.148
-2026,10,401862819,Charlotte,American Athletic,UAB,American Athletic,Away,2026-11-07T05:00:00.000Z,False,False,,,,86,102,-84.021
+2026,10,401862819,Charlotte,American Athletic,UAB,American Athletic,Away,2026-11-07T05:00:00.000Z,False,False,,,,82,102,-84.021
 2026,11,401862825,Charlotte,American Athletic,East Carolina,American Athletic,Home,2026-11-14T05:00:00.000Z,False,False,,,,104,77,-26.937
 2026,12,401862832,Charlotte,American Athletic,Tulsa,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,41,63,24.307
-2026,13,401862842,Charlotte,American Athletic,Navy,American Athletic,Home,2026-11-28T05:00:00.000Z,False,False,,,,82,104,-87.323
+2026,13,401862842,Charlotte,American Athletic,Navy,American Athletic,Home,2026-11-28T05:00:00.000Z,False,False,,,,86,104,-87.323
 2026,1,401856777,Cincinnati,Big 12,Boston College,ACC,Home,2026-09-05T19:30:00.000Z,True,False,34,15,W,83,80,-30.077
 2026,3,401856797,Cincinnati,Big 12,Miami (OH),Mid-American,Home,2026-09-19T19:30:00.000Z,True,False,35,31,W,119,48,67.972
 2026,4,401856814,Cincinnati,Big 12,Kansas State,Big 12,Home,2026-09-26T23:00:00.000Z,False,False,,,,25,59,35.300
@@ -297,7 +297,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401864571,East Carolina,American Athletic,App State,Sun Belt,Home,2026-09-12T16:00:00.000Z,True,False,24,27,L,65,79,-28.858
 2026,3,401862710,East Carolina,American Athletic,Old Dominion,Sun Belt,Away,2026-09-19T22:00:00.000Z,True,False,20,17,W,109,75,-24.594
 2026,6,401862797,East Carolina,American Athletic,Rice,American Athletic,Home,2026-10-10T04:00:00.000Z,False,False,,,,132,29,120.788
-2026,7,401862800,East Carolina,American Athletic,UAB,American Athletic,Away,2026-10-15T23:30:00.000Z,False,False,,,,86,102,-84.021
+2026,7,401862800,East Carolina,American Athletic,UAB,American Athletic,Away,2026-10-15T23:30:00.000Z,False,False,,,,82,102,-84.021
 2026,8,401862807,East Carolina,American Athletic,Memphis,American Athletic,Away,2026-10-22T23:30:00.000Z,False,False,,,,64,132,-252.570
 2026,9,401862815,East Carolina,American Athletic,Temple,American Athletic,Home,2026-10-31T04:00:00.000Z,False,False,,,,94,67,10.094
 2026,10,401862818,East Carolina,American Athletic,South Florida,American Athletic,Home,2026-11-07T00:30:00.000Z,False,False,,,,42,46,69.607
@@ -327,7 +327,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401856748,Florida,SEC,Vanderbilt,SEC,Home,2026-11-21T05:00:00.000Z,False,False,,,,46,68,3.549
 2026,13,401856759,Florida,SEC,Florida State,ACC,Away,2026-11-27T20:30:00.000Z,False,False,,,,71,65,14.968
 2026,1,401856637,Florida Atlantic,American Athletic,Florida,SEC,Away,2026-09-05T23:45:00.000Z,True,False,21,66,L,10,12,203.522
-2026,2,401862703,Florida Atlantic,American Athletic,Navy,American Athletic,Home,2026-09-12T23:30:00.000Z,True,False,38,30,W,82,104,-87.323
+2026,2,401862703,Florida Atlantic,American Athletic,Navy,American Athletic,Home,2026-09-12T23:30:00.000Z,True,False,38,30,W,86,104,-87.323
 2026,3,401862771,Florida Atlantic,American Athletic,Florida International,Conference USA,Home,2026-09-19T22:00:00.000Z,True,False,16,10,W,74,84,-38.831
 2026,4,401862782,Florida Atlantic,American Athletic,UL Monroe,Sun Belt,Away,2026-09-27T00:00:00.000Z,False,False,,,,129,106,-103.447
 2026,7,401862802,Florida Atlantic,American Athletic,Army,American Athletic,Away,2026-10-17T16:00:00.000Z,False,False,,,,68,55,43.600
@@ -437,7 +437,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,11,401856860,Houston,Big 12,Colorado,Big 12,Away,2026-11-14T03:15:00.000Z,False,False,,,,111,45,75.190
 2026,12,401856868,Houston,Big 12,West Virginia,Big 12,Away,2026-11-21T05:00:00.000Z,False,False,,,,50,40,77.736
 2026,13,401856874,Houston,Big 12,Baylor,Big 12,Home,2026-11-28T05:00:00.000Z,False,False,,,,54,37,89.847
-2026,1,401858424,Illinois,Big Ten,UAB,American Athletic,Home,2026-09-04T01:00:00.000Z,True,False,42,23,W,86,102,-84.021
+2026,1,401858424,Illinois,Big Ten,UAB,American Athletic,Home,2026-09-04T01:00:00.000Z,True,False,42,23,W,82,102,-84.021
 2026,2,401858217,Illinois,Big Ten,Duke,ACC,Home,2026-09-12T19:30:00.000Z,True,False,27,31,L,33,36,91.547
 2026,4,401858465,Illinois,Big Ten,Ohio State,Big Ten,Away,2026-09-26T16:00:00.000Z,False,False,,,,5,25,137.578
 2026,5,401858472,Illinois,Big Ten,Purdue,Big Ten,Home,2026-10-03T20:15:00.000Z,False,False,,,,106,66,11.191
@@ -581,7 +581,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401871080,Liberty,Conference USA,Western Kentucky,Conference USA,Home,2026-11-21T18:00:00.000Z,False,False,,,,134,115,-134.753
 2026,13,401871063,Liberty,Conference USA,Missouri State,Conference USA,Away,2026-11-28T19:00:00.000Z,False,False,,,,128,113,-127.793
 2026,2,401858445,Louisiana,Sun Belt,USC,Big Ten,Away,2026-09-13T03:00:00.000Z,True,False,30,49,L,16,27,124.904
-2026,3,401862776,Louisiana,Sun Belt,UAB,American Athletic,Home,2026-09-20T00:00:00.000Z,True,False,21,14,W,86,102,-84.021
+2026,3,401862776,Louisiana,Sun Belt,UAB,American Athletic,Home,2026-09-20T00:00:00.000Z,True,False,21,14,W,82,102,-84.021
 2026,4,401862780,Louisiana,Sun Belt,Charlotte,American Athletic,Away,2026-09-26T22:30:00.000Z,False,False,,,,117,96,-64.778
 2026,5,401869932,Louisiana,Sun Belt,Arkansas State,Sun Belt,Home,2026-10-04T00:00:00.000Z,False,False,,,,123,138,-415.334
 2026,6,401869965,Louisiana,Sun Belt,Louisiana Tech,Sun Belt,Away,2026-10-10T04:00:00.000Z,False,False,,,,120,87,-46.297
@@ -649,12 +649,12 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401862695,Memphis,American Athletic,Arkansas State,Sun Belt,Home,2026-09-05T23:00:00.000Z,True,False,42,24,W,123,138,-415.334
 2026,2,401860881,Memphis,American Athletic,Boise State,Pac-12,Away,2026-09-12T22:00:00.000Z,True,False,20,38,L,52,101,-82.727
 2026,5,401862787,Memphis,American Athletic,Charlotte,American Athletic,Away,2026-10-03T19:30:00.000Z,False,False,,,,117,96,-64.778
-2026,6,401862798,Memphis,American Athletic,UAB,American Athletic,Home,2026-10-10T04:00:00.000Z,False,False,,,,86,102,-84.021
+2026,6,401862798,Memphis,American Athletic,UAB,American Athletic,Home,2026-10-10T04:00:00.000Z,False,False,,,,82,102,-84.021
 2026,7,401862801,Memphis,American Athletic,Tulane,American Athletic,Away,2026-10-16T23:30:00.000Z,False,False,,,,84,86,-44.148
 2026,8,401862807,Memphis,American Athletic,East Carolina,American Athletic,Home,2026-10-22T23:30:00.000Z,False,False,,,,104,77,-26.937
 2026,9,401862814,Memphis,American Athletic,Army,American Athletic,Home,2026-10-31T04:00:00.000Z,False,False,,,,68,55,43.600
 2026,11,401862824,Memphis,American Athletic,South Florida,American Athletic,Away,2026-11-13T01:00:00.000Z,False,False,,,,42,46,69.607
-2026,12,401862834,Memphis,American Athletic,Navy,American Athletic,Away,2026-11-21T17:00:00.000Z,False,False,,,,82,104,-87.323
+2026,12,401862834,Memphis,American Athletic,Navy,American Athletic,Away,2026-11-21T17:00:00.000Z,False,False,,,,86,104,-87.323
 2026,13,401862838,Memphis,American Athletic,Temple,American Athletic,Home,2026-11-27T05:00:00.000Z,False,False,,,,94,67,10.094
 2026,1,401858206,Miami,ACC,Stanford,ACC,Away,2026-09-05T01:00:00.000Z,True,False,45,6,W,113,118,-137.311
 2026,3,401858226,Miami,ACC,Wake Forest,ACC,Away,2026-09-18T23:30:00.000Z,True,False,33,20,W,48,53,47.631
@@ -769,7 +769,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401858304,NC State,ACC,Florida State,ACC,Away,2026-11-21T05:00:00.000Z,False,False,,,,71,65,14.968
 2026,13,401858313,NC State,ACC,North Carolina,ACC,Away,2026-11-28T05:00:00.000Z,False,False,,,,70,123,-172.680
 2026,2,401862703,Navy,American Athletic,Florida Atlantic,American Athletic,Away,2026-09-12T23:30:00.000Z,True,False,30,38,L,102,74,-23.958
-2026,4,401862778,Navy,American Athletic,UAB,American Athletic,Away,2026-09-25T23:00:00.000Z,False,True,0,0,,86,102,-84.021
+2026,4,401862778,Navy,American Athletic,UAB,American Athletic,Away,2026-09-25T23:00:00.000Z,False,True,0,0,,82,102,-84.021
 2026,5,401862791,Navy,American Athletic,Air Force,Mountain West,Away,2026-10-03T16:00:00.000Z,False,False,,,,76,88,-46.308
 2026,6,401862799,Navy,American Athletic,Tulsa,American Athletic,Home,2026-10-10T19:30:00.000Z,False,False,,,,41,63,24.307
 2026,7,401862804,Navy,American Athletic,UTSA,American Athletic,Away,2026-10-17T04:00:00.000Z,False,False,,,,85,70,-3.004
@@ -850,12 +850,12 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,3,401860889,North Texas,American Athletic,Texas State,Pac-12,Away,2026-09-19T16:00:00.000Z,True,False,35,49,L,121,100,-82.487
 2026,5,401862786,North Texas,American Athletic,Tulsa,American Athletic,Away,2026-10-02T01:00:00.000Z,False,False,,,,41,63,24.307
 2026,6,401862796,North Texas,American Athletic,Charlotte,American Athletic,Home,2026-10-10T04:00:00.000Z,False,False,,,,117,96,-64.778
-2026,8,401862810,North Texas,American Athletic,Navy,American Athletic,Away,2026-10-24T19:30:00.000Z,False,False,,,,82,104,-87.323
+2026,8,401862810,North Texas,American Athletic,Navy,American Athletic,Away,2026-10-24T19:30:00.000Z,False,False,,,,86,104,-87.323
 2026,9,401862812,North Texas,American Athletic,Florida Atlantic,American Athletic,Home,2026-10-29T23:30:00.000Z,False,False,,,,102,74,-23.958
 2026,10,401862821,North Texas,American Athletic,Rice,American Athletic,Home,2026-11-07T05:00:00.000Z,False,False,,,,132,29,120.788
 2026,11,401862827,North Texas,American Athletic,UTSA,American Athletic,Away,2026-11-14T05:00:00.000Z,False,False,,,,85,70,-3.004
 2026,12,401862835,North Texas,American Athletic,Tulane,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,84,86,-44.148
-2026,13,401862843,North Texas,American Athletic,UAB,American Athletic,Home,2026-11-28T05:00:00.000Z,False,False,,,,86,102,-84.021
+2026,13,401862843,North Texas,American Athletic,UAB,American Athletic,Home,2026-11-28T05:00:00.000Z,False,False,,,,82,102,-84.021
 2026,1,401858426,Northern Illinois,Mountain West,Iowa,Big Ten,Away,2026-09-05T20:15:00.000Z,True,False,0,40,L,20,72,-12.346
 2026,3,401856793,Northern Illinois,Mountain West,Arizona,Big 12,Away,2026-09-20T02:30:00.000Z,True,False,17,42,L,42,64,17.468
 2026,4,401864511,Northern Illinois,Mountain West,Georgia State,Sun Belt,Away,2026-09-26T18:00:00.000Z,False,False,,,,72,38,83.372
@@ -885,7 +885,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401858250,Notre Dame,FBS Independents,North Carolina,ACC,Away,2026-10-03T04:00:00.000Z,False,False,,,,70,123,-172.680
 2026,6,401858257,Notre Dame,FBS Independents,Stanford,ACC,Home,2026-10-10T19:30:00.000Z,False,False,,,,113,118,-137.311
 2026,7,401856809,Notre Dame,FBS Independents,BYU,Big 12,Away,2026-10-17T04:00:00.000Z,False,False,,,,32,32,111.179
-2026,9,401859185,Notre Dame,FBS Independents,Navy,American Athletic,Away,2026-10-31T16:00:00.000Z,False,False,,,,82,104,-87.323
+2026,9,401859185,Notre Dame,FBS Independents,Navy,American Athletic,Away,2026-10-31T16:00:00.000Z,False,False,,,,86,104,-87.323
 2026,10,401858291,Notre Dame,FBS Independents,Miami,ACC,Home,2026-11-08T00:30:00.000Z,False,False,,,,15,26,129.024
 2026,11,401858294,Notre Dame,FBS Independents,Boston College,ACC,Home,2026-11-14T20:30:00.000Z,False,False,,,,83,80,-30.077
 2026,12,401858307,Notre Dame,FBS Independents,SMU,ACC,Home,2026-11-22T00:30:00.000Z,False,False,,,,75,47,68.342
@@ -1118,7 +1118,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401862792,South Florida,American Athletic,Temple,American Athletic,Home,2026-10-03T23:30:00.000Z,False,False,,,,94,67,10.094
 2026,6,401862794,South Florida,American Athletic,UTSA,American Athletic,Away,2026-10-08T23:30:00.000Z,False,False,,,,85,70,-3.004
 2026,7,401862806,South Florida,American Athletic,Kent State,Mid-American,Home,2026-10-17T04:00:00.000Z,False,False,,,,138,103,-85.165
-2026,9,401862816,South Florida,American Athletic,UAB,American Athletic,Home,2026-10-31T04:00:00.000Z,False,False,,,,86,102,-84.021
+2026,9,401862816,South Florida,American Athletic,UAB,American Athletic,Home,2026-10-31T04:00:00.000Z,False,False,,,,82,102,-84.021
 2026,10,401862818,South Florida,American Athletic,East Carolina,American Athletic,Away,2026-11-07T00:30:00.000Z,False,False,,,,104,77,-26.937
 2026,11,401862824,South Florida,American Athletic,Memphis,American Athletic,Home,2026-11-13T01:00:00.000Z,False,False,,,,64,132,-252.570
 2026,12,401862833,South Florida,American Athletic,Florida Atlantic,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,102,74,-23.958
@@ -1174,8 +1174,8 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401861964,Temple,American Athletic,UConn,FBS Independents,Home,2026-10-10T04:00:00.000Z,False,False,,,,58,62,25.093
 2026,7,401862803,Temple,American Athletic,Charlotte,American Athletic,Home,2026-10-17T04:00:00.000Z,False,False,,,,117,96,-64.778
 2026,9,401862815,Temple,American Athletic,East Carolina,American Athletic,Away,2026-10-31T04:00:00.000Z,False,False,,,,104,77,-26.937
-2026,10,401862820,Temple,American Athletic,Navy,American Athletic,Away,2026-11-07T20:30:00.000Z,False,False,,,,82,104,-87.323
-2026,11,401862829,Temple,American Athletic,UAB,American Athletic,Home,2026-11-14T05:00:00.000Z,False,False,,,,86,102,-84.021
+2026,10,401862820,Temple,American Athletic,Navy,American Athletic,Away,2026-11-07T20:30:00.000Z,False,False,,,,86,104,-87.323
+2026,11,401862829,Temple,American Athletic,UAB,American Athletic,Home,2026-11-14T05:00:00.000Z,False,False,,,,82,102,-84.021
 2026,12,401862830,Temple,American Athletic,Rice,American Athletic,Home,2026-11-20T00:30:00.000Z,False,False,,,,132,29,120.788
 2026,13,401862838,Temple,American Athletic,Memphis,American Athletic,Away,2026-11-27T05:00:00.000Z,False,False,,,,64,132,-252.570
 2026,2,401856681,Tennessee,SEC,Georgia Tech,ACC,Away,2026-09-12T23:00:00.000Z,True,False,45,24,W,107,52,53.372
@@ -1271,7 +1271,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401862707,Tulsa,American Athletic,Sam Houston,Conference USA,Away,2026-09-12T23:00:00.000Z,True,False,23,17,W,77,94,-58.577
 2026,4,401856697,Tulsa,American Athletic,Arkansas,SEC,Away,2026-09-27T00:00:00.000Z,False,False,,,,131,119,-154.832
 2026,5,401862786,Tulsa,American Athletic,North Texas,American Athletic,Home,2026-10-02T01:00:00.000Z,False,False,,,,79,114,-131.755
-2026,6,401862799,Tulsa,American Athletic,Navy,American Athletic,Away,2026-10-10T19:30:00.000Z,False,False,,,,82,104,-87.323
+2026,6,401862799,Tulsa,American Athletic,Navy,American Athletic,Away,2026-10-10T19:30:00.000Z,False,False,,,,86,104,-87.323
 2026,7,401862805,Tulsa,American Athletic,Rice,American Athletic,Away,2026-10-17T04:00:00.000Z,False,False,,,,132,29,120.788
 2026,8,401862808,Tulsa,American Athletic,Army,American Athletic,Home,2026-10-24T00:30:00.000Z,False,False,,,,68,55,43.600
 2026,10,401862822,Tulsa,American Athletic,Tulane,American Athletic,Away,2026-11-07T05:00:00.000Z,False,False,,,,84,86,-44.148
@@ -1281,7 +1281,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401858424,UAB,American Athletic,Illinois,Big Ten,Away,2026-09-04T01:00:00.000Z,True,False,23,42,L,40,35,100.290
 2026,2,401862708,UAB,American Athletic,UL Monroe,Sun Belt,Home,2026-09-12T19:30:00.000Z,True,False,26,20,W,129,106,-103.447
 2026,3,401862776,UAB,American Athletic,Louisiana,Sun Belt,Away,2026-09-20T00:00:00.000Z,True,False,14,21,L,90,91,-52.123
-2026,4,401862778,UAB,American Athletic,Navy,American Athletic,Home,2026-09-25T23:00:00.000Z,False,True,0,0,,82,104,-87.323
+2026,4,401862778,UAB,American Athletic,Navy,American Athletic,Home,2026-09-25T23:00:00.000Z,False,True,0,0,,86,104,-87.323
 2026,6,401862798,UAB,American Athletic,Memphis,American Athletic,Away,2026-10-10T04:00:00.000Z,False,False,,,,64,132,-252.570
 2026,7,401862800,UAB,American Athletic,East Carolina,American Athletic,Home,2026-10-15T23:30:00.000Z,False,False,,,,104,77,-26.937
 2026,9,401862816,UAB,American Athletic,South Florida,American Athletic,Away,2026-10-31T04:00:00.000Z,False,False,,,,42,46,69.607
@@ -1324,7 +1324,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401861968,UConn,FBS Independents,Old Dominion,Sun Belt,Home,2026-11-21T20:30:00.000Z,False,False,,,,109,75,-24.594
 2026,13,401861969,UConn,FBS Independents,Wyoming,Mountain West,Away,2026-11-28T05:00:00.000Z,False,False,,,,122,133,-253.976
 2026,1,401856662,UL Monroe,Sun Belt,Mississippi State,SEC,Away,2026-09-05T23:30:00.000Z,True,False,13,62,L,14,15,181.401
-2026,2,401862708,UL Monroe,Sun Belt,UAB,American Athletic,Away,2026-09-12T19:30:00.000Z,True,False,20,26,L,86,102,-84.021
+2026,2,401862708,UL Monroe,Sun Belt,UAB,American Athletic,Away,2026-09-12T19:30:00.000Z,True,False,20,26,L,82,102,-84.021
 2026,4,401862782,UL Monroe,Sun Belt,Florida Atlantic,American Athletic,Home,2026-09-27T00:00:00.000Z,False,False,,,,102,74,-23.958
 2026,5,401871089,UL Monroe,Sun Belt,South Alabama,Sun Belt,Away,2026-10-03T23:00:00.000Z,False,False,,,,63,107,-105.744
 2026,7,401871091,UL Monroe,Sun Belt,Louisiana Tech,Sun Belt,Home,2026-10-17T04:00:00.000Z,False,False,,,,120,87,-46.297
@@ -1374,11 +1374,11 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401860896,UTSA,American Athletic,Colorado State,Pac-12,Home,2026-09-26T16:00:00.000Z,False,False,,,,61,83,-37.686
 2026,5,401862788,UTSA,American Athletic,Rice,American Athletic,Away,2026-10-03T23:00:00.000Z,False,False,,,,132,29,120.788
 2026,6,401862794,UTSA,American Athletic,South Florida,American Athletic,Home,2026-10-08T23:30:00.000Z,False,False,,,,42,46,69.607
-2026,7,401862804,UTSA,American Athletic,Navy,American Athletic,Home,2026-10-17T04:00:00.000Z,False,False,,,,82,104,-87.323
+2026,7,401862804,UTSA,American Athletic,Navy,American Athletic,Home,2026-10-17T04:00:00.000Z,False,False,,,,86,104,-87.323
 2026,8,401862811,UTSA,American Athletic,Tulane,American Athletic,Away,2026-10-24T04:00:00.000Z,False,False,,,,84,86,-44.148
 2026,10,401862817,UTSA,American Athletic,Florida Atlantic,American Athletic,Away,2026-11-06T01:00:00.000Z,False,False,,,,102,74,-23.958
 2026,11,401862827,UTSA,American Athletic,North Texas,American Athletic,Home,2026-11-14T05:00:00.000Z,False,False,,,,79,114,-131.755
-2026,12,401862836,UTSA,American Athletic,UAB,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,86,102,-84.021
+2026,12,401862836,UTSA,American Athletic,UAB,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,82,102,-84.021
 2026,13,401862840,UTSA,American Athletic,Tulsa,American Athletic,Home,2026-11-28T05:00:00.000Z,False,False,,,,41,63,24.307
 2026,2,401856670,Utah,Big 12,Arkansas,SEC,Home,2026-09-13T02:15:00.000Z,True,False,43,10,W,131,119,-154.832
 2026,3,401856801,Utah,Big 12,Utah State,Pac-12,Home,2026-09-19T19:30:00.000Z,True,False,33,0,W,114,111,-116.961
