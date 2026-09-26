@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T16:06:25.951528+00:00",
+  "updatedAt": "2026-09-26T16:11:37.546726+00:00",
   "liveGames": [
     {
       "id": 401856805,
@@ -12,10 +12,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:15",
-      "completedDrives": 0,
+      "clock": "12:24",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856813,
@@ -27,9 +27,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:14",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "12:08",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -42,10 +42,25 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:14",
+      "clock": "12:13",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858243,
+      "status": "in_progress",
+      "homeTeam": "Louisville",
+      "awayTeam": "Wake Forest",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:47",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401860893,
@@ -55,11 +70,41 @@
       "homeConference": "Mid-American",
       "awayConference": "Pac-12",
       "homePoints": 0.0,
+      "awayPoints": 3.0,
+      "period": 1,
+      "clock": "11:57",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401860896,
+      "status": "in_progress",
+      "homeTeam": "UTSA",
+      "awayTeam": "Colorado State",
+      "homeConference": "American Athletic",
+      "awayConference": "Pac-12",
+      "homePoints": 0.0,
+      "awayPoints": 6.0,
+      "period": 1,
+      "clock": "14:48",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401864512,
+      "status": "in_progress",
+      "homeTeam": "Akron",
+      "awayTeam": "UNLV",
+      "homeConference": "Mid-American",
+      "awayConference": "Mountain West",
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:31",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "11:58",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -72,22 +117,28 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:56",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "11:30",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
+    "Akron",
     "Ball State",
     "Baylor",
     "Boston College",
     "Colorado",
+    "Colorado State",
     "Kent State",
+    "Louisville",
     "Sam Houston",
     "San Diego State",
     "Texas Tech",
     "Toledo",
-    "Virginia Tech"
+    "UNLV",
+    "UTSA",
+    "Virginia Tech",
+    "Wake Forest"
   ]
 }
