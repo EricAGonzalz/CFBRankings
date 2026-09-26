@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T16:46:26.026168+00:00",
+  "updatedAt": "2026-09-26T16:51:23.450216+00:00",
   "liveGames": [
     {
       "id": 401856704,
@@ -12,7 +12,7 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:50",
+      "clock": "00:03",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -24,13 +24,13 @@
       "awayTeam": "Sam Houston",
       "homeConference": "Big 12",
       "awayConference": "Conference USA",
-      "homePoints": 7.0,
+      "homePoints": 21.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 6,
+      "period": 2,
+      "clock": "14:47",
+      "completedDrives": 8,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856813,
@@ -42,7 +42,7 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "13:28",
+      "clock": "12:41",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -57,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "10:56",
+      "clock": "09:44",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -71,8 +71,8 @@
       "awayConference": "ACC",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "14:56",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -85,12 +85,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 14.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:00",
-      "completedDrives": 3,
+      "clock": "00:07",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401860893,
@@ -101,11 +101,11 @@
       "awayConference": "Pac-12",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 6,
+      "period": 2,
+      "clock": "13:46",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401860896,
@@ -114,13 +114,13 @@
       "awayTeam": "Colorado State",
       "homeConference": "American Athletic",
       "awayConference": "Pac-12",
-      "homePoints": 14.0,
+      "homePoints": 20.0,
       "awayPoints": 14.0,
       "period": 1,
       "clock": "00:07",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 2
+      "completedDrives": 8,
+      "homeOffensiveDrives": 5,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401864512,
@@ -132,7 +132,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "12:19",
+      "clock": "09:23",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -147,10 +147,25 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "11:39",
+      "clock": "08:14",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401864576,
+      "status": "in_progress",
+      "homeTeam": "Kentucky",
+      "awayTeam": "South Alabama",
+      "homeConference": "SEC",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:13",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -162,10 +177,12 @@
     "Colorado State",
     "Illinois",
     "Kent State",
+    "Kentucky",
     "Louisville",
     "Ohio State",
     "Sam Houston",
     "San Diego State",
+    "South Alabama",
     "Tennessee",
     "Texas",
     "Texas Tech",
