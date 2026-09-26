@@ -450,7 +450,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,13,401858537,Illinois,Big Ten,Northwestern,Big Ten,Away,2026-11-28T05:00:00.000Z,False,False,,,,9,2,287.804
 2026,1,401858425,Indiana,Big Ten,North Texas,American Athletic,Home,2026-09-05T16:00:00.000Z,True,False,52,16,W,79,114,-131.417
 2026,3,401858449,Indiana,Big Ten,Western Kentucky,Conference USA,Home,2026-09-19T20:00:00.000Z,True,False,38,0,W,134,115,-135.075
-2026,4,401858461,Indiana,Big Ten,Northwestern,Big Ten,Home,2026-09-26T00:00:00.000Z,False,False,,,,9,2,287.804
+2026,4,401858461,Indiana,Big Ten,Northwestern,Big Ten,Home,2026-09-26T00:00:00.000Z,False,True,0,0,,9,2,287.804
 2026,5,401858477,Indiana,Big Ten,Rutgers,Big Ten,Away,2026-10-04T00:00:00.000Z,False,False,,,,100,80,-30.415
 2026,6,401858481,Indiana,Big Ten,Nebraska,Big Ten,Away,2026-10-10T04:00:00.000Z,False,False,,,,1,54,44.619
 2026,7,401858488,Indiana,Big Ten,Ohio State,Big Ten,Home,2026-10-17T04:00:00.000Z,False,False,,,,5,24,139.087
@@ -868,7 +868,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401864543,Northern Illinois,Mountain West,North Dakota State,Mountain West,Away,2026-11-21T21:00:00.000Z,False,False,,,,24,73,-20.398
 2026,13,401864550,Northern Illinois,Mountain West,UTEP,Mountain West,Home,2026-11-28T05:00:00.000Z,False,False,,,,136,74,-26.001
 2026,3,401856796,Northwestern,Big Ten,Colorado,Big 12,Home,2026-09-19T23:30:00.000Z,True,False,41,7,W,111,43,76.906
-2026,4,401858461,Northwestern,Big Ten,Indiana,Big Ten,Away,2026-09-26T00:00:00.000Z,False,False,,,,2,23,147.865
+2026,4,401858461,Northwestern,Big Ten,Indiana,Big Ten,Away,2026-09-26T00:00:00.000Z,False,True,0,0,,2,23,147.865
 2026,5,401858476,Northwestern,Big Ten,Penn State,Big Ten,Home,2026-10-03T00:00:00.000Z,False,False,,,,6,19,167.984
 2026,6,401858482,Northwestern,Big Ten,Ball State,Mid-American,Home,2026-10-10T04:00:00.000Z,False,False,,,,135,109,-114.269
 2026,7,401858491,Northwestern,Big Ten,Michigan State,Big Ten,Away,2026-10-17T04:00:00.000Z,False,False,,,,44,17,175.082
