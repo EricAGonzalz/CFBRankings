@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T20:02:23.668226+00:00",
+  "updatedAt": "2026-09-26T20:06:26.400708+00:00",
   "liveGames": [
     {
       "id": 401864576,
@@ -12,10 +12,10 @@
       "homePoints": 45.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 25,
+      "clock": "01:06",
+      "completedDrives": 26,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401858462,
@@ -27,7 +27,7 @@
       "homePoints": 3.0,
       "awayPoints": 34.0,
       "period": 3,
-      "clock": "02:33",
+      "clock": "01:09",
       "completedDrives": 21,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 9
@@ -42,9 +42,9 @@
       "homePoints": 0.0,
       "awayPoints": 35.0,
       "period": 3,
-      "clock": "10:49",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 7,
+      "clock": "09:48",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 6
     },
     {
@@ -57,9 +57,9 @@
       "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "08:43",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "06:59",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -84,10 +84,10 @@
       "awayTeam": "Ole Miss",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:28",
+      "clock": "10:48",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -99,12 +99,12 @@
       "awayTeam": "Oklahoma",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:40",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "03:16",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -117,7 +117,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:54",
+      "clock": "04:36",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -130,12 +130,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 0.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 1,
-      "clock": "04:06",
-      "completedDrives": 4,
+      "clock": "02:32",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858463,
@@ -147,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "06:04",
+      "clock": "05:46",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -162,9 +162,9 @@
       "homePoints": 0.0,
       "awayPoints": 8.0,
       "period": 1,
-      "clock": "02:46",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "00:42",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -177,9 +177,9 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "04:42",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "01:22",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -192,9 +192,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:15",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "05:04",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
