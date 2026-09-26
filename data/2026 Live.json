@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T18:06:34.598009+00:00",
+  "updatedAt": "2026-09-26T18:11:29.099068+00:00",
   "liveGames": [
     {
       "id": 401856704,
@@ -12,9 +12,9 @@
       "homePoints": 3.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "14:56",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "13:14",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -27,10 +27,10 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "13:41",
-      "completedDrives": 19,
+      "clock": "12:22",
+      "completedDrives": 20,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856813,
@@ -42,10 +42,10 @@
       "homePoints": 10.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "13:40",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "clock": "10:55",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401858242,
@@ -54,10 +54,10 @@
       "awayTeam": "Virginia Tech",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "11:07",
+      "clock": "08:11",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -102,10 +102,10 @@
       "homePoints": 27.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "09:53",
-      "completedDrives": 16,
+      "clock": "08:59",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401860896,
@@ -118,8 +118,8 @@
       "awayPoints": 21.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 9,
+      "completedDrives": 17,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 7
     },
     {
@@ -132,9 +132,9 @@
       "homePoints": 10.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "06:26",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "05:15",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -145,12 +145,12 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 17.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 3,
-      "clock": "08:30",
-      "completedDrives": 9,
+      "clock": "06:45",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864576,
@@ -162,7 +162,7 @@
       "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "04:15",
+      "clock": "02:09",
       "completedDrives": 11,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 6
@@ -177,10 +177,25 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "00:31",
+      "clock": "00:00",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401858467,
+      "status": "in_progress",
+      "homeTeam": "Purdue",
+      "awayTeam": "Notre Dame",
+      "homeConference": "Big Ten",
+      "awayConference": "FBS Independents",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:42",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401864511,
@@ -189,10 +204,10 @@
       "awayTeam": "Northern Illinois",
       "homeConference": "Sun Belt",
       "awayConference": "Mountain West",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:03",
+      "clock": "13:56",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -212,7 +227,9 @@
     "Louisville",
     "Maryland",
     "Northern Illinois",
+    "Notre Dame",
     "Ohio State",
+    "Purdue",
     "Sam Houston",
     "San Diego State",
     "South Alabama",
