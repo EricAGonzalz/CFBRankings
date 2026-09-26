@@ -104,6 +104,7 @@
     tr.champion{background:var(--champ)!important;font-weight:700}
     tr.champion td:first-child{border-left:3px solid var(--champ-border)}
     th.sortable{cursor:pointer;user-select:none}
+    .stat-rank-sub{font-size:.68em;color:var(--muted);vertical-align:sub;margin-left:2px;font-weight:650;line-height:0}
     .team-link,.opponent-link{color:var(--link);text-decoration:none;font-weight:650;cursor:pointer}
     .team-link:hover,.opponent-link:hover{text-decoration:underline}
     .live-dot{display:inline-block;width:8px;height:8px;margin-left:7px;border-radius:50%;background:var(--live);animation:pulse 1.5s ease-in-out infinite}
@@ -768,7 +769,7 @@
     function updateMultiText(root,textEl){const all=root.querySelectorAll('input[type="checkbox"]').length,sel=selectedCheckboxValues(root);textEl.textContent=!sel.length||sel.length===all?"All conferences":sel.length===1?sel[0]:`${sel.length} conferences`}
     function buildCheckboxOptions(root,textEl,onChange){const previous=[...root.querySelectorAll('input[type="checkbox"]')];const selected=new Set(previous.filter(x=>x.checked).map(x=>x.value));const had=previous.length>0;const hadAll=had&&selected.size===previous.length;root.innerHTML="";[...new Set(APP.rows.map(r=>r.Conference).filter(Boolean))].sort().forEach(conf=>{const label=document.createElement('label');label.className='conference-option';const cb=document.createElement('input');cb.type='checkbox';cb.value=conf;cb.checked=!had||hadAll||selected.has(conf);cb.onchange=()=>{updateMultiText(root,textEl);onChange()};label.append(cb,document.createTextNode(conf));root.appendChild(label)});updateMultiText(root,textEl)}
     function buildRankConferenceOptions(){buildCheckboxOptions(els.rankConfOptions,els.rankConfText,renderRankings)}
-    function rankColumns(){const pref=["Rk","Team","Conference","W","L","NetRtg","AdjRtg","AdjRk","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","PF","PA","ODrives","DDrives","SOS","SOS rank"];return pref.filter(c=>APP.header.includes(c))}
+    function rankColumns(){const pref=["Rk","Team","Conference","W","L","NetRtg","AdjRtg","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","PF","PA","ODrives","DDrives","SOS"];return pref.filter(c=>APP.header.includes(c))}
     function teamSearchTerms(value){return String(value||'').split(/[,;|\n]+/).map(s=>s.trim().toLowerCase()).filter(Boolean)}
     function teamMatchesSearch(team,terms){
       if(!terms.length)return true;
@@ -776,18 +777,90 @@
       const knownNames=new Set(APP.rows.map(r=>String(r.Team||'').trim().toLowerCase()).filter(Boolean));
       return terms.some(term=>knownNames.has(term)?name===term:name.includes(term));
     }
+    const STAT_RANK_DIRECTIONS={
+      "NetRtg":"desc",
+      "AdjRtg":"desc",
+      "Luck":"desc",
+      "Luck Z":"desc",
+      "ORtg":"desc",
+      "Ortg":"desc",
+      "DRtg":"asc",
+      "PF":"desc",
+      "PA":"asc",
+      "SOS":"desc"
+    };
+
+    function buildStatRankMaps(rows){
+      const maps=new Map();
+
+      for(const [column,direction] of Object.entries(STAT_RANK_DIRECTIONS)){
+        const values=rows
+          .map(r=>({
+            team:String(r.Team||""),
+            value:n(r[column])
+          }))
+          .filter(item=>item.team&&Number.isFinite(item.value))
+          .sort((a,b)=>{
+            const cmp=direction==="asc"
+              ?a.value-b.value
+              :b.value-a.value;
+            return cmp||a.team.localeCompare(b.team);
+          });
+
+        const ranks=new Map();
+        let previousValue=null;
+        let previousRank=0;
+
+        values.forEach((item,index)=>{
+          const same=
+            previousValue!==null&&
+            Math.abs(item.value-previousValue)<1e-12;
+
+          const rank=same
+            ?previousRank
+            :index+1;
+
+          ranks.set(item.team.toLowerCase(),rank);
+          previousValue=item.value;
+          previousRank=rank;
+        });
+
+        maps.set(column,ranks);
+      }
+
+      return maps;
+    }
+
+    function appendStatRank(td,row,column,rankMaps){
+      const map=rankMaps.get(column);
+      if(!map)return;
+
+      const rank=map.get(
+        String(row.Team||"").toLowerCase()
+      );
+
+      if(!Number.isFinite(rank))return;
+
+      const sub=document.createElement("sub");
+      sub.className="stat-rank-sub";
+      sub.textContent=String(rank);
+      sub.title=`FBS ${column} rank: ${rank}`;
+      td.appendChild(sub);
+    }
+
     async function renderRankings(){
       if(!APP.rows.length)return;els.rankLoading.classList.add('hidden');const live=await fetchLive(APP.year);const liveSet=new Set((live.liveTeams||[]).map(t=>String(t).toLowerCase()));
       const cols=rankColumns();const selected=selectedCheckboxValues(els.rankConfOptions),all=els.rankConfOptions.querySelectorAll('input').length;const searchTerms=teamSearchTerms(els.rankTeamSearch.value);const top=Number(els.rankTopN.value||0);
       let rows=APP.rows.filter(r=>{if(!teamMatchesSearch(r.Team,searchTerms))return false;if(selected.length===0&&all>0)return false;if(selected.length&&selected.length<all&&!selected.includes(r.Conference))return false;if(top>0&&(n(r.Rk)??999)>top)return false;return true});
       const thead=els.rankingsTable.tHead,tbody=els.rankingsTable.tBodies[0];thead.innerHTML='<tr>'+cols.map(c=>`<th class="${["Team","Conference"].includes(c)?'left':''}" data-col="${escapeHtml(c)}">${escapeHtml(c)}</th>`).join('')+'</tr>';tbody.innerHTML="";
       const threeDecimalCols=new Set(["NetRtg","AdjRtg","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","SOS"]);
-      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else if(threeDecimalCols.has(c)){td.textContent=fmt(r[c]);}else td.textContent=r[c]??"";tr.appendChild(td)});tbody.appendChild(tr)});
+      const statRankMaps=buildStatRankMaps(APP.rows);
+      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else{const rawValue=r[c];td.dataset.sortValue=rawValue??"";if(threeDecimalCols.has(c)){td.appendChild(document.createTextNode(fmt(rawValue)));}else{td.appendChild(document.createTextNode(rawValue??""));}appendStatRank(td,r,c,statRankMaps);}tr.appendChild(td)});tbody.appendChild(tr)});
       els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";els.rankNote.style.display=champ?'block':'none';applyStriping();
       thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
       requestAnimationFrame(syncRankStickyHeader);
     }
-    let rankSort={index:0,dir:1};function sortRankingTable(index){rankSort.dir=rankSort.index===index?-rankSort.dir:1;rankSort.index=index;const tbody=els.rankingsTable.tBodies[0];const rows=[...tbody.rows];rows.sort((a,b)=>{const av=a.cells[index].innerText.trim(),bv=b.cells[index].innerText.trim(),an=Number(av),bn=Number(bv);const cmp=Number.isFinite(an)&&Number.isFinite(bn)?an-bn:av.localeCompare(bv,undefined,{numeric:true});return cmp*rankSort.dir});rows.forEach(r=>tbody.appendChild(r))}
+    let rankSort={index:0,dir:1};function sortRankingTable(index){rankSort.dir=rankSort.index===index?-rankSort.dir:1;rankSort.index=index;const tbody=els.rankingsTable.tBodies[0];const rows=[...tbody.rows];rows.sort((a,b)=>{const ac=a.cells[index],bc=b.cells[index];const av=(ac.dataset.sortValue??ac.innerText).trim(),bv=(bc.dataset.sortValue??bc.innerText).trim(),an=Number(av),bn=Number(bv);const cmp=Number.isFinite(an)&&Number.isFinite(bn)?an-bn:av.localeCompare(bv,undefined,{numeric:true});return cmp*rankSort.dir});rows.forEach(r=>tbody.appendChild(r))}
     function applyStriping(){let st=$("dynamicStriping");if(els.rankStriping.value==='off'){if(!st){st=document.createElement('style');st.id='dynamicStriping';document.head.appendChild(st)}st.textContent='#rankingsTable tbody tr:nth-child(even){background:transparent!important}'}else st?.remove()}
 
     let rankStickyHeader=null;
