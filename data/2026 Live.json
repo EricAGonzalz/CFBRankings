@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T02:36:19.805623+00:00",
+  "updatedAt": "2026-09-26T02:41:28.739663+00:00",
   "liveGames": [
     {
       "id": 401858461,
@@ -10,15 +10,32 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 15.0,
-      "awayPoints": 7.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 13,
+      "awayPoints": 13.0,
+      "period": 4,
+      "clock": "14:54",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
+    },
+    {
+      "id": 401858234,
+      "status": "in_progress",
+      "homeTeam": "California",
+      "awayTeam": "Clemson",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:09",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
+    "California",
+    "Clemson",
     "Indiana",
     "Northwestern"
   ]
