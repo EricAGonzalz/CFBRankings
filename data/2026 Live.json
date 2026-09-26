@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T21:11:37.010831+00:00",
+  "updatedAt": "2026-09-26T21:16:25.722033+00:00",
   "liveGames": [
-    {
-      "id": 401858467,
-      "status": "in_progress",
-      "homeTeam": "Purdue",
-      "awayTeam": "Notre Dame",
-      "homeConference": "Big Ten",
-      "awayConference": "FBS Independents",
-      "homePoints": 9.0,
-      "awayPoints": 49.0,
-      "period": 4,
-      "clock": "00:06",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401864510,
       "status": "in_progress",
@@ -28,9 +13,9 @@
       "awayPoints": 3.0,
       "period": 3,
       "clock": "09:19",
-      "completedDrives": 9,
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856699,
@@ -39,10 +24,10 @@
       "awayTeam": "Ole Miss",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 16.0,
+      "homePoints": 17.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "02:51",
+      "clock": "02:08",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -102,7 +87,7 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:14",
+      "clock": "00:00",
       "completedDrives": 11,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
@@ -116,8 +101,8 @@
       "awayConference": "Pac-12",
       "homePoints": 0.0,
       "awayPoints": 15.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "10:45",
       "completedDrives": 8,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 5
@@ -131,8 +116,8 @@
       "awayConference": "FBS Independents",
       "homePoints": 14.0,
       "awayPoints": 14.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "15:00",
       "completedDrives": 11,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 6
@@ -160,12 +145,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Big 12",
       "homePoints": 14.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 2,
-      "clock": "06:31",
-      "completedDrives": 6,
+      "clock": "05:48",
+      "completedDrives": 7,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856698,
@@ -174,10 +159,10 @@
       "awayTeam": "Vanderbilt",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "09:12",
+      "clock": "08:56",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -192,10 +177,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
-      "completedDrives": 1,
+      "clock": "12:10",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858466,
@@ -219,12 +204,12 @@
       "awayTeam": "South Florida",
       "homeConference": "Mid-American",
       "awayConference": "American Athletic",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:03",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "10:06",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
@@ -245,11 +230,9 @@
     "Nebraska",
     "New Mexico",
     "New Mexico State",
-    "Notre Dame",
     "Oklahoma",
     "Ole Miss",
     "Penn State",
-    "Purdue",
     "South Florida",
     "TCU",
     "UCF",
