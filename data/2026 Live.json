@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-26T19:16:38.278376+00:00",
+  "updatedAt": "2026-09-26T19:21:53.235744+00:00",
   "liveGames": [
     {
       "id": 401856704,
@@ -12,9 +12,9 @@
       "homePoints": 10.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "04:57",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "04:18",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -24,10 +24,10 @@
       "awayTeam": "Sam Houston",
       "homeConference": "Big 12",
       "awayConference": "Conference USA",
-      "homePoints": 42.0,
+      "homePoints": 49.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "05:14",
+      "clock": "01:59",
       "completedDrives": 28,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 15
@@ -42,7 +42,7 @@
       "homePoints": 20.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "08:04",
+      "clock": "06:23",
       "completedDrives": 25,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 13
@@ -72,7 +72,7 @@
       "homePoints": 27.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "06:20",
+      "clock": "04:45",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -85,27 +85,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 35.0,
-      "awayPoints": 13.0,
+      "awayPoints": 19.0,
       "period": 4,
-      "clock": "06:06",
+      "clock": "05:29",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401860893,
-      "status": "in_progress",
-      "homeTeam": "Toledo",
-      "awayTeam": "San Diego State",
-      "homeConference": "Mid-American",
-      "awayConference": "Pac-12",
-      "homePoints": 41.0,
-      "awayPoints": 16.0,
-      "period": 4,
-      "clock": "00:37",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 13
     },
     {
       "id": 401860896,
@@ -132,10 +117,10 @@
       "homePoints": 31.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "03:36",
-      "completedDrives": 19,
+      "clock": "01:07",
+      "completedDrives": 20,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858462,
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 28.0,
       "period": 2,
-      "clock": "04:15",
+      "clock": "02:06",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -177,10 +162,10 @@
       "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "03:17",
-      "completedDrives": 9,
+      "clock": "02:00",
+      "completedDrives": 10,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401864510,
@@ -192,9 +177,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "11:00",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     }
   ],
@@ -214,12 +199,10 @@
     "Ohio State",
     "Purdue",
     "Sam Houston",
-    "San Diego State",
     "South Alabama",
     "Tennessee",
     "Texas",
     "Texas Tech",
-    "Toledo",
     "UCLA",
     "UTSA",
     "Virginia Tech",
