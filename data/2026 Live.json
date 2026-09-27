@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T04:21:34.902303+00:00",
+  "updatedAt": "2026-09-27T04:26:25.496888+00:00",
   "liveGames": [
     {
       "id": 401858241,
@@ -10,9 +10,9 @@
       "homeConference": "ACC",
       "awayConference": "Conference USA",
       "homePoints": 34.0,
-      "awayPoints": 18.0,
+      "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:59",
+      "clock": "01:08",
       "completedDrives": 22,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 10
@@ -24,12 +24,12 @@
       "awayTeam": "Rice",
       "homeConference": "Pac-12",
       "awayConference": "American Athletic",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "06:28",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "04:44",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -57,7 +57,7 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "14:53",
+      "clock": "09:53",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -69,12 +69,12 @@
       "awayTeam": "Minnesota",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "01:56",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     }
   ],
