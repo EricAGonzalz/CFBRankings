@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T03:02:27.142779+00:00",
+  "updatedAt": "2026-09-27T03:06:34.501209+00:00",
   "liveGames": [
     {
       "id": 401856702,
@@ -13,9 +13,9 @@
       "awayPoints": 6.0,
       "period": 4,
       "clock": "01:53",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 13
+      "completedDrives": 26,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401856804,
@@ -27,7 +27,7 @@
       "homePoints": 24.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "06:34",
+      "clock": "02:55",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -57,9 +57,9 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "05:35",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "03:57",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -72,7 +72,7 @@
       "homePoints": 34.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "02:41",
+      "clock": "02:00",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -87,9 +87,9 @@
       "homePoints": 17.0,
       "awayPoints": 45.0,
       "period": 4,
-      "clock": "06:51",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
+      "clock": "04:59",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
     },
     {
@@ -102,7 +102,7 @@
       "homePoints": 14.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "12:07",
+      "clock": "10:18",
       "completedDrives": 12,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 5
@@ -115,12 +115,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Pac-12",
       "homePoints": 7.0,
-      "awayPoints": 20.0,
+      "awayPoints": 26.0,
       "period": 3,
-      "clock": "09:22",
-      "completedDrives": 13,
+      "clock": "06:16",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401866429,
@@ -130,7 +130,7 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 6.0,
-      "awayPoints": 27.0,
+      "awayPoints": 28.0,
       "period": 3,
       "clock": "13:31",
       "completedDrives": 12,
@@ -147,7 +147,7 @@
       "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "08:34",
+      "clock": "08:28",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -160,12 +160,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 7.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 1,
-      "clock": "05:05",
-      "completedDrives": 2,
+      "clock": "03:12",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401864509,
@@ -177,10 +177,25 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "04:48",
+      "clock": "03:18",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858470,
+      "status": "in_progress",
+      "homeTeam": "Washington",
+      "awayTeam": "Minnesota",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -192,6 +207,7 @@
     "Georgia Tech",
     "LSU",
     "Massachusetts",
+    "Minnesota",
     "Mississippi State",
     "Missouri",
     "Missouri State",
@@ -207,6 +223,7 @@
     "UL Monroe",
     "USC",
     "UTEP",
+    "Washington",
     "Washington State"
   ]
 }
