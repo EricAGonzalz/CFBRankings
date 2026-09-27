@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T02:46:27.628014+00:00",
+  "updatedAt": "2026-09-27T02:51:32.029587+00:00",
   "liveGames": [
     {
       "id": 401856702,
@@ -12,7 +12,7 @@
       "homePoints": 35.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "08:10",
+      "clock": "06:01",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -25,12 +25,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Big 12",
       "homePoints": 17.0,
-      "awayPoints": 24.0,
+      "awayPoints": 31.0,
       "period": 4,
-      "clock": "11:49",
-      "completedDrives": 21,
+      "clock": "09:07",
+      "completedDrives": 22,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858469,
@@ -42,25 +42,10 @@
       "homePoints": 27.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "07:15",
+      "clock": "05:52",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401860894,
-      "status": "in_progress",
-      "homeTeam": "Utah State",
-      "awayTeam": "Troy",
-      "homeConference": "Pac-12",
-      "awayConference": "Sun Belt",
-      "homePoints": 21.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "01:38",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
     },
     {
       "id": 401864572,
@@ -69,12 +54,12 @@
       "awayTeam": "App State",
       "homeConference": "ACC",
       "awayConference": "Sun Belt",
-      "homePoints": 38.0,
+      "homePoints": 41.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 10,
+      "clock": "01:51",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
     },
     {
@@ -87,7 +72,7 @@
       "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "12:07",
+      "clock": "07:39",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -99,12 +84,12 @@
       "awayTeam": "Tulsa",
       "homeConference": "SEC",
       "awayConference": "American Athletic",
-      "homePoints": 26.0,
+      "homePoints": 32.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "10:30",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "05:44",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -115,12 +100,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "American Athletic",
       "homePoints": 17.0,
-      "awayPoints": 42.0,
+      "awayPoints": 45.0,
       "period": 4,
-      "clock": "11:22",
-      "completedDrives": 18,
+      "clock": "11:01",
+      "completedDrives": 19,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858241,
@@ -148,8 +133,8 @@
       "awayPoints": 20.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -176,11 +161,11 @@
       "awayConference": "American Athletic",
       "homePoints": 0.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "15:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "period": 2,
+      "clock": "13:29",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858240,
@@ -190,9 +175,9 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "09:45",
+      "clock": "09:02",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -235,12 +220,10 @@
     "Sacramento State",
     "Stanford",
     "Texas A&M",
-    "Troy",
     "Tulsa",
     "UL Monroe",
     "USC",
     "UTEP",
-    "Utah State",
     "Washington State"
   ]
 }
