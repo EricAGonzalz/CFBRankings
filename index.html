@@ -452,14 +452,9 @@
     const DEFENSE_WEIGHT = 1;
     const TEMPO_WEIGHT = 1;
     const HOME_FIELD_POINTS = 2.5;
-    // Backtested production model (2016–2025, selected on calibration/validation data).
-    const ADJ_SOS_WEIGHT = 0.80;
-    const MATCHUP_WEIGHT = 0.80;
-    const LEAGUE_REGRESSION_WEIGHT = 1 - MATCHUP_WEIGHT;
-    const RATING_MARGIN_SCALE = 0.65;
-    const MODEL_ADJ_WEIGHT = 0.50;
-    const MODEL_NET_WEIGHT = 1 - MODEL_ADJ_WEIGHT;
-    const RATING_MARGIN_CAP = 28;
+    // Matchup projections use the opponent-adjusted offensive and defensive
+    // ratings calculated by autostat.py. No extra NetRtg blend, SOS rewrite,
+    // league-regression shrink, or hard projected-margin cap is applied here.
     const CONFIDENCE_K = 5;
     const WIN_PROB_MARGIN_SCALE = 6.5;
     const OT_ADJ_RTG_SCALE = 12;
@@ -702,7 +697,7 @@
       APP.view=view;if(team!==null)APP.team=team;
       document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${view}`));
       document.querySelectorAll('.page-menu-list [data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===view));
-      const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from current offensive efficiency, opposing defensive efficiency, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
+      const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from opponent-adjusted offense, opponent-adjusted defense, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
       els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);
       if(view==="rankings"&&APP.rankingsUpdatePendingYears.has(String(APP.year)))refreshRankingsData(APP.year);
       else renderCurrentView();
@@ -732,7 +727,8 @@
         const [parsed,schedule]=await Promise.all([fetchMaster(APP.year),fetchSchedule(APP.year)]);
         APP.header=parsed.header;
         APP.rows=parsed.objects.map(r=>({...r}));
-        applyBacktestedAdjustedRatings(APP.rows,schedule);
+        // AdjRtg, AdjO, AdjD, and SOS come directly from autostat.py.
+        // Do not recompute or overwrite them in the browser.
         APP.headerMap=new Map(parsed.header.map((h,i)=>[h,i]));
 
         const live=await fetchLive(APP.year);
@@ -898,47 +894,21 @@
       const status=String(s?.status||'').trim().toLowerCase();
       return !!s?.completed || status==='completed' || status==='final';
     }
-    function applyBacktestedAdjustedRatings(rows,scheduleRows){
-      if(!Array.isArray(rows)||!rows.length)return;
-      const byTeam=new Map(rows.map(r=>[String(r.Team||'').trim().toLowerCase(),r]));
-      const schedule=(Array.isArray(scheduleRows)?scheduleRows:[]).map(scheduleFields);
-
-      for(const row of rows){
-        const teamKey=String(row.Team||'').trim().toLowerCase();
-        const net=n(row.NetRtg);
-        if(!teamKey||!Number.isFinite(net))continue;
-
-        const seen=new Set(),oppNets=[];
-        for(const game of schedule){
-          if(String(game.team||'').trim().toLowerCase()!==teamKey || !isCompletedScheduleGame(game))continue;
-          const oppKey=String(game.opp||'').trim().toLowerCase();
-          const oppRow=byTeam.get(oppKey);
-          const oppNet=n(oppRow?.NetRtg);
-          if(!oppRow||!Number.isFinite(oppNet))continue; // FBS opponents only.
-          const key=String(game.gameId||`${game.week}|${oppKey}|${game.startDate}`);
-          if(seen.has(key))continue;
-          seen.add(key);
-          oppNets.push(oppNet);
-        }
-
-        const avgOppNet=oppNets.length?oppNets.reduce((a,b)=>a+b,0)/oppNets.length:0;
-        const adjusted=net + ADJ_SOS_WEIGHT*avgOppNet;
-        row.AdjRtg=String(adjusted);
-        row._AvgOppNetRtg=avgOppNet;
-        row._ScheduleAdjustment=ADJ_SOS_WEIGHT*avgOppNet;
-      }
-
-      const ranked=rows.filter(r=>Number.isFinite(n(r.AdjRtg))).sort((a,b)=>n(b.AdjRtg)-n(a.AdjRtg));
-      ranked.forEach((r,i)=>{r.AdjRk=String(i+1)});
-    }
+    // Adjusted ratings are calculated once in autostat.py and loaded from Master.csv.
 
     // ---------- Matchup model ----------
     function teamObject(row){if(!row)return null;const wins=n(row.W),losses=n(row.L),off=n(row.AdjO)??n(row.AdjORtg)??n(row.ORtg)??n(row.Ortg),def=n(row.AdjD)??n(row.AdjDRtg)??n(row.DRtg),od=n(row.ODrives),dd=n(row.DDrives);if(![wins,losses,off,def,od,dd].every(Number.isFinite))return null;const games=wins+losses,sample=Math.max(games,1);return {name:row.Team,conference:row.Conference||"",wins,losses,games,offense:off,defense:def,tempo:((od/sample)+(dd/sample))/2}}
     function league(){const teams=APP.rows.map(teamObject).filter(Boolean);const avg=a=>a.reduce((s,x)=>s+x,0)/a.length;return teams.length?{offense:avg(teams.map(t=>t.offense)),defense:avg(teams.map(t=>t.defense)),tempo:avg(teams.map(t=>t.tempo))}:null}
     function expectedRating(off,def,l){
+      // Both inputs are opponent-adjusted when AdjO/AdjD are available.
+      // A strong offense facing a weak defense compounds upward; a strong
+      // defense facing a strong offense pulls the expected scoring rate down.
       const midpoint=(l.offense+l.defense)/2;
-      const raw=midpoint+OFFENSE_WEIGHT*(off.offense-l.offense)+DEFENSE_WEIGHT*(def.defense-l.defense);
-      return Math.max(0,MATCHUP_WEIGHT*raw+LEAGUE_REGRESSION_WEIGHT*midpoint);
+      return Math.max(0,
+        midpoint
+        + OFFENSE_WEIGHT*(off.offense-l.offense)
+        + DEFENSE_WEIGHT*(def.defense-l.defense)
+      );
     }
     function expectedDrives(a,b,l){return l.tempo+TEMPO_WEIGHT*((a.tempo-l.tempo)+(b.tempo-l.tempo))}
     function confidence(a,b){return 100*(1-Math.exp(-Math.min(a.games,b.games)/CONFIDENCE_K))}
@@ -952,7 +922,40 @@
       const w=Math.max(0,Math.min(1,conf/100));
       return (0.5+(base-0.5)*w)*100;
     }
-    function predictTeams(name1,name2,location){const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2),a=teamObject(r1),b=teamObject(r2),l=league();if(!a||!b||!l)return null;const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);const base1=drives*ra/100,base2=drives*rb/100,total=base1+base2,adj1=n(r1.AdjRtg),adj2=n(r2.AdjRtg),net1=n(r1.NetRtg),net2=n(r2.NetRtg),model1=Number.isFinite(adj1)&&Number.isFinite(net1)?MODEL_ADJ_WEIGHT*adj1+MODEL_NET_WEIGHT*net1:adj1,model2=Number.isFinite(adj2)&&Number.isFinite(net2)?MODEL_ADJ_WEIGHT*adj2+MODEL_NET_WEIGHT*net2:adj2;let s1,s2;if(Number.isFinite(model1)&&Number.isFinite(model2)){let margin=drives*(model1-model2)/100;margin*=RATING_MARGIN_SCALE;margin=Math.max(-RATING_MARGIN_CAP,Math.min(RATING_MARGIN_CAP,margin));if(location==='team1')margin+=HOME_FIELD_POINTS;if(location==='team2')margin-=HOME_FIELD_POINTS;s1=(total+margin)/2;s2=(total-margin)/2}else{s1=base1;s2=base2;if(location==='team1')s1+=HOME_FIELD_POINTS;if(location==='team2')s2+=HOME_FIELD_POINTS}s1=Math.max(0,s1);s2=Math.max(0,s2);const conf=confidence(a,b);const p1=winProb(s1,s2,conf),otP1=overtimeWinProb(model1,model2,location,conf);return {a,b,drives,ra,rb,s1,s2,conf,p1,otP1,adj1,adj2,net1,net2,model1,model2}}
+    function predictTeams(name1,name2,location){
+      const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2);
+      const a=teamObject(r1),b=teamObject(r2),l=league();
+      if(!a||!b||!l)return null;
+
+      const drives=expectedDrives(a,b,l);
+      const ra=expectedRating(a,b,l);
+      const rb=expectedRating(b,a,l);
+
+      // Projected points are driven directly by adjusted unit matchups.
+      // There is intentionally no separate NetRtg/AdjRtg margin overlay and
+      // no hard margin cap. Large mismatches are therefore allowed to become
+      // large projected blowouts when the on-field data supports them.
+      let s1=drives*ra/100;
+      let s2=drives*rb/100;
+
+      if(location==='team1')s1+=HOME_FIELD_POINTS;
+      if(location==='team2')s2+=HOME_FIELD_POINTS;
+
+      s1=Math.max(0,s1);
+      s2=Math.max(0,s2);
+
+      const conf=confidence(a,b);
+      const p1=winProb(s1,s2,conf);
+      const adj1=n(r1.AdjRtg),adj2=n(r2.AdjRtg);
+      const otP1=overtimeWinProb(adj1,adj2,location,conf);
+
+      return {
+        a,b,drives,ra,rb,s1,s2,conf,p1,otP1,
+        adj1,adj2,
+        model1:adj1,
+        model2:adj2
+      };
+    }
     function projectedOvertimeFinal(reg1,reg2,otP1){
       if(reg1!==reg2)return {score1:reg1,score2:reg2,team1Wins:reg1>reg2};
       const team1Wins=otP1>=50;
@@ -1330,7 +1333,7 @@
       }
       return cluster.map(({element,datasetIndex,index})=>({element,datasetIndex,index}));
     };
-    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:(Number.isFinite(n(r.AdjRtg))&&Number.isFinite(n(r.NetRtg)))?MODEL_ADJ_WEIGHT*n(r.AdjRtg)+MODEL_NET_WEIGHT*n(r.NetRtg):n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>(metric==='DRtg'?a[metric]-b[metric]:b[metric]-a[metric])||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:arr.map(t=>teamPrimaryColor(t.team)),pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000,easing:'easeOutQuart'},interaction:{mode:'proximityCluster',intersect:false,radius:12},onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{mode:'proximityCluster',intersect:false,radius:12,callbacks:{title:items=>items.map(i=>i.raw?.team).filter(Boolean).join(' + '),label:c=>{const r=c.raw;if(!r)return'';return `${r.team} — ${r.conference} • Conf rank ${r.conferenceRank} • ${METRIC_LABELS[metric]} ${Number(r[metric]).toFixed(3)}`}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
+    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>(metric==='DRtg'?a[metric]-b[metric]:b[metric]-a[metric])||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:arr.map(t=>teamPrimaryColor(t.team)),pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000,easing:'easeOutQuart'},interaction:{mode:'proximityCluster',intersect:false,radius:12},onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{mode:'proximityCluster',intersect:false,radius:12,callbacks:{title:items=>items.map(i=>i.raw?.team).filter(Boolean).join(' + '),label:c=>{const r=c.raw;if(!r)return'';return `${r.team} — ${r.conference} • Conf rank ${r.conferenceRank} • ${METRIC_LABELS[metric]} ${Number(r[metric]).toFixed(3)}`}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
 
     // ---------- Team ----------
     async function renderTeam(){
@@ -1590,7 +1593,7 @@
       if(!game)return 'Live';const period=game.period,clock=game.clock;let p='';if(period!==undefined&&period!==null&&period!==''){const num=Number(period);p=Number.isFinite(num)?(num<=4?`Q${num}`:`OT${Math.max(1,num-4)}`):String(period)}const c=clock===undefined||clock===null?'':String(clock).trim();return [p,c].filter(Boolean).join(' ')||'Live'
     }
     function scheduleComparisonTeamData(r){
-      return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:(Number.isFinite(n(r.AdjRtg))&&Number.isFinite(n(r.NetRtg)))?MODEL_ADJ_WEIGHT*n(r.AdjRtg)+MODEL_NET_WEIGHT*n(r.NetRtg):n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
+      return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
     }
     function animateFocusedComparison(chart,focusRefs){
       if(!chart||!focusRefs?.length)return;
