@@ -450,6 +450,11 @@
     const CURRENT_SEASON = Math.max(new Date().getFullYear(), Number(DEFAULT_YEAR));
     const OFFENSE_WEIGHT = 1;
     const DEFENSE_WEIGHT = 1;
+    // Model Rating blends raw performance with opponent-adjusted performance.
+    // Keeping the weights equal prevents either NetRtg or AdjRtg from fully
+    // dominating the prediction while still allowing both to matter.
+    const MODEL_NET_WEIGHT = 0.50;
+    const MODEL_ADJ_WEIGHT = 0.50;
     const TEMPO_WEIGHT = 1;
     const HOME_FIELD_POINTS = 2.5;
     // Matchup projections use the opponent-adjusted offensive and defensive
@@ -897,6 +902,16 @@
     // Adjusted ratings are calculated once in autostat.py and loaded from Master.csv.
 
     // ---------- Matchup model ----------
+    function modelRating(row){
+      if(!row)return null;
+      const net=n(row.NetRtg),adj=n(row.AdjRtg);
+      if(Number.isFinite(net)&&Number.isFinite(adj)){
+        return MODEL_NET_WEIGHT*net + MODEL_ADJ_WEIGHT*adj;
+      }
+      if(Number.isFinite(adj))return adj;
+      if(Number.isFinite(net))return net;
+      return null;
+    }
     function teamObject(row){if(!row)return null;const wins=n(row.W),losses=n(row.L),off=n(row.AdjO)??n(row.AdjORtg)??n(row.ORtg)??n(row.Ortg),def=n(row.AdjD)??n(row.AdjDRtg)??n(row.DRtg),od=n(row.ODrives),dd=n(row.DDrives);if(![wins,losses,off,def,od,dd].every(Number.isFinite))return null;const games=wins+losses,sample=Math.max(games,1);return {name:row.Team,conference:row.Conference||"",wins,losses,games,offense:off,defense:def,tempo:((od/sample)+(dd/sample))/2}}
     function league(){const teams=APP.rows.map(teamObject).filter(Boolean);const avg=a=>a.reduce((s,x)=>s+x,0)/a.length;return teams.length?{offense:avg(teams.map(t=>t.offense)),defense:avg(teams.map(t=>t.defense)),tempo:avg(teams.map(t=>t.tempo))}:null}
     function expectedRating(off,def,l){
@@ -931,29 +946,46 @@
       const ra=expectedRating(a,b,l);
       const rb=expectedRating(b,a,l);
 
-      // Projected points are driven directly by adjusted unit matchups.
-      // There is intentionally no separate NetRtg/AdjRtg margin overlay and
-      // no hard margin cap. Large mismatches are therefore allowed to become
-      // large projected blowouts when the on-field data supports them.
-      let s1=drives*ra/100;
-      let s2=drives*rb/100;
+      // AdjO vs AdjD determines the expected scoring environment. This allows
+      // elite-offense/weak-defense games to become high scoring and strong
+      // defense matchups to remain low scoring.
+      const base1=drives*ra/100;
+      const base2=drives*rb/100;
+      const total=Math.max(0,base1+base2);
 
-      if(location==='team1')s1+=HOME_FIELD_POINTS;
-      if(location==='team2')s2+=HOME_FIELD_POINTS;
+      // Model Rating is the equal-weight average of NetRtg and AdjRtg.
+      // It determines the projected scoring margin, so both what a team has
+      // actually done and the quality of the opponents it faced affect the
+      // winner and margin. There is intentionally no hard margin cap.
+      const model1=modelRating(r1);
+      const model2=modelRating(r2);
+      let s1,s2;
+
+      if(Number.isFinite(model1)&&Number.isFinite(model2)){
+        let margin=drives*(model1-model2)/100;
+        if(location==='team1')margin+=HOME_FIELD_POINTS;
+        if(location==='team2')margin-=HOME_FIELD_POINTS;
+        s1=(total+margin)/2;
+        s2=(total-margin)/2;
+      }else{
+        s1=base1;
+        s2=base2;
+        if(location==='team1')s1+=HOME_FIELD_POINTS;
+        if(location==='team2')s2+=HOME_FIELD_POINTS;
+      }
 
       s1=Math.max(0,s1);
       s2=Math.max(0,s2);
 
       const conf=confidence(a,b);
       const p1=winProb(s1,s2,conf);
-      const adj1=n(r1.AdjRtg),adj2=n(r2.AdjRtg);
-      const otP1=overtimeWinProb(adj1,adj2,location,conf);
+      const otP1=overtimeWinProb(model1,model2,location,conf);
 
       return {
         a,b,drives,ra,rb,s1,s2,conf,p1,otP1,
-        adj1,adj2,
-        model1:adj1,
-        model2:adj2
+        model1,model2,
+        net1:n(r1.NetRtg),net2:n(r2.NetRtg),
+        adj1:n(r1.AdjRtg),adj2:n(r2.AdjRtg)
       };
     }
     function projectedOvertimeFinal(reg1,reg2,otP1){
@@ -1333,7 +1365,7 @@
       }
       return cluster.map(({element,datasetIndex,index})=>({element,datasetIndex,index}));
     };
-    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>(metric==='DRtg'?a[metric]-b[metric]:b[metric]-a[metric])||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:arr.map(t=>teamPrimaryColor(t.team)),pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000,easing:'easeOutQuart'},interaction:{mode:'proximityCluster',intersect:false,radius:12},onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{mode:'proximityCluster',intersect:false,radius:12,callbacks:{title:items=>items.map(i=>i.raw?.team).filter(Boolean).join(' + '),label:c=>{const r=c.raw;if(!r)return'';return `${r.team} — ${r.conference} • Conf rank ${r.conferenceRank} • ${METRIC_LABELS[metric]} ${Number(r[metric]).toFixed(3)}`}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
+    function renderConferenceChart(){if(!APP.rows.length)return;const metric=els.confMetric.value,selected=selectedCheckboxValues(els.confOptions),count=els.confOptions.querySelectorAll('input').length,set=new Set(selected);let teams=APP.rows.map(r=>({team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:modelRating(r),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)})).filter(t=>t.team&&Number.isFinite(t[metric]));if(selected.length===0&&count>0)teams=[];else if(selected.length<count)teams=teams.filter(t=>set.has(t.conference));const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});const datasets=[];let ci=0,maxRank=1;for(const [conf,arr] of groups){arr.sort((a,b)=>(metric==='DRtg'?a[metric]-b[metric]:b[metric]-a[metric])||((a.Rk??999)-(b.Rk??999)));arr.forEach((t,i)=>t.conferenceRank=i+1);maxRank=Math.max(maxRank,arr.length);const color=conferenceColor(conf,ci++);datasets.push({label:conf,data:arr.map(t=>({x:t.conferenceRank,y:t[metric],...t})),borderColor:color,backgroundColor:color,pointBackgroundColor:arr.map(t=>teamPrimaryColor(t.team)),pointBorderColor:'#fff',pointBorderWidth:1.5,pointRadius:5,pointHoverRadius:7,borderWidth:2,tension:.15,showLine:true})}APP.conferenceChart?.destroy();APP.conferenceChart=new Chart(els.conferenceChart,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:{duration:1000,easing:'easeOutQuart'},interaction:{mode:'proximityCluster',intersect:false,radius:12},onClick(e,active){if(!active.length)return;const h=active[0],p=APP.conferenceChart.data.datasets[h.datasetIndex].data[h.index];APP.team=p.team;setView('team',{team:p.team})},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:20,weight:'700'}},legend:{position:'top',labels:{usePointStyle:true,boxWidth:10,font:{size:11}}},tooltip:{mode:'proximityCluster',intersect:false,radius:12,callbacks:{title:items=>items.map(i=>i.raw?.team).filter(Boolean).join(' + '),label:c=>{const r=c.raw;if(!r)return'';return `${r.team} — ${r.conference} • Conf rank ${r.conferenceRank} • ${METRIC_LABELS[metric]} ${Number(r[metric]).toFixed(3)}`}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',title:{display:true,text:METRIC_LABELS[metric]}}}}});els.confTeamsShown.textContent=teams.length;els.confConfsShown.textContent=groups.size;els.confMetricSummary.textContent=METRIC_LABELS[metric]}
 
     // ---------- Team ----------
     async function renderTeam(){
@@ -1593,7 +1625,7 @@
       if(!game)return 'Live';const period=game.period,clock=game.clock;let p='';if(period!==undefined&&period!==null&&period!==''){const num=Number(period);p=Number.isFinite(num)?(num<=4?`Q${num}`:`OT${Math.max(1,num-4)}`):String(period)}const c=clock===undefined||clock===null?'':String(clock).trim();return [p,c].filter(Boolean).join(' ')||'Live'
     }
     function scheduleComparisonTeamData(r){
-      return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:n(r.AdjRtg),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
+      return {team:r.Team,conference:r.Conference||'Independent',Rk:n(r.Rk),ModelRtg:modelRating(r),AdjRtg:n(r.AdjRtg),NetRtg:n(r.NetRtg),Ortg:n(r.Ortg)??n(r.ORtg),DRtg:n(r.DRtg),SOS:n(r.SOS)}
     }
     function animateFocusedComparison(chart,focusRefs){
       if(!chart||!focusRefs?.length)return;
