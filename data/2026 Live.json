@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T06:02:22.256884+00:00",
+  "updatedAt": "2026-09-27T06:18:25.808562+00:00",
   "liveGames": [
-    {
-      "id": 401858240,
-      "status": "in_progress",
-      "homeTeam": "Stanford",
-      "awayTeam": "Georgia Tech",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 34.0,
-      "awayPoints": 27.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401864509,
-      "status": "in_progress",
-      "homeTeam": "Nevada",
-      "awayTeam": "Air Force",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 30.0,
-      "awayPoints": 30.0,
-      "period": 6,
-      "clock": "00:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401858470,
       "status": "in_progress",
@@ -39,21 +9,17 @@
       "awayTeam": "Minnesota",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 17.0,
+      "homePoints": 23.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "05:36",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "clock": "01:53",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 12
     }
   ],
   "liveTeams": [
-    "Air Force",
-    "Georgia Tech",
     "Minnesota",
-    "Nevada",
-    "Stanford",
     "Washington"
   ]
 }
