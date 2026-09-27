@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T05:36:29.730250+00:00",
+  "updatedAt": "2026-09-27T05:41:32.726994+00:00",
   "liveGames": [
     {
       "id": 401858240,
@@ -10,12 +10,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 34.0,
-      "awayPoints": 20.0,
+      "awayPoints": 26.0,
       "period": 4,
-      "clock": "11:12",
-      "completedDrives": 15,
+      "clock": "09:11",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401864509,
@@ -24,10 +24,10 @@
       "awayTeam": "Air Force",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 26.0,
+      "homePoints": 27.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "01:49",
+      "clock": "00:25",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -41,11 +41,11 @@
       "awayConference": "Big Ten",
       "homePoints": 10.0,
       "awayPoints": 24.0,
-      "period": 3,
-      "clock": "15:00",
-      "completedDrives": 18,
+      "period": 4,
+      "clock": "14:47",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     }
   ],
   "liveTeams": [
