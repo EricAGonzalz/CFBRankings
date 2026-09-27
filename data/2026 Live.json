@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T04:06:32.654059+00:00",
+  "updatedAt": "2026-09-27T04:11:24.622344+00:00",
   "liveGames": [
     {
       "id": 401858241,
@@ -9,13 +9,13 @@
       "awayTeam": "Missouri State",
       "homeConference": "ACC",
       "awayConference": "Conference USA",
-      "homePoints": 28.0,
+      "homePoints": 34.0,
       "awayPoints": 18.0,
       "period": 4,
-      "clock": "05:26",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 8
+      "clock": "04:07",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401866429,
@@ -27,7 +27,7 @@
       "homePoints": 6.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "04:04",
+      "clock": "02:00",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -42,9 +42,9 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "15:00",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "10:15",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -57,9 +57,9 @@
       "homePoints": 10.0,
       "awayPoints": 20.0,
       "period": 2,
-      "clock": "00:39",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "00:00",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -84,13 +84,13 @@
       "awayTeam": "Minnesota",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 0.0,
-      "awayPoints": 14.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 8,
+      "homePoints": 7.0,
+      "awayPoints": 21.0,
+      "period": 2,
+      "clock": "05:48",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     }
   ],
   "liveTeams": [
