@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T03:21:27.542103+00:00",
+  "updatedAt": "2026-09-27T03:26:33.948322+00:00",
   "liveGames": [
-    {
-      "id": 401856804,
-      "status": "in_progress",
-      "homeTeam": "Washington State",
-      "awayTeam": "Arizona",
-      "homeConference": "Pac-12",
-      "awayConference": "Big 12",
-      "homePoints": 24.0,
-      "awayPoints": 34.0,
-      "period": 4,
-      "clock": "01:11",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 13
-    },
     {
       "id": 401856703,
       "status": "in_progress",
@@ -27,10 +12,10 @@
       "homePoints": 31.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:18",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "clock": "00:26",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858241,
@@ -42,7 +27,7 @@
       "homePoints": 21.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "06:08",
+      "clock": "02:48",
       "completedDrives": 14,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 6
@@ -55,12 +40,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Pac-12",
       "homePoints": 7.0,
-      "awayPoints": 27.0,
-      "period": 3,
-      "clock": "00:10",
-      "completedDrives": 15,
+      "awayPoints": 33.0,
+      "period": 4,
+      "clock": "14:56",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401866429,
@@ -72,7 +57,7 @@
       "homePoints": 6.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "06:52",
+      "clock": "04:53",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -87,10 +72,10 @@
       "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 9,
+      "clock": "01:37",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858240,
@@ -102,7 +87,7 @@
       "homePoints": 7.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "14:11",
+      "clock": "11:10",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -116,8 +101,8 @@
       "awayConference": "Mountain West",
       "homePoints": 10.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "11:33",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -130,17 +115,16 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 6.0,
       "period": 1,
-      "clock": "06:52",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 2
+      "clock": "06:36",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
     "Air Force",
-    "Arizona",
     "Fresno State",
     "Georgia Tech",
     "Massachusetts",
@@ -155,7 +139,6 @@
     "Sacramento State",
     "Stanford",
     "UTEP",
-    "Washington",
-    "Washington State"
+    "Washington"
   ]
 }
