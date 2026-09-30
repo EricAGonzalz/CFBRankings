@@ -336,7 +336,7 @@
             <div class="control"><label for="rankTeamSearch">Team</label><input id="rankTeamSearch" placeholder="Search teams..." /></div>
             <div class="control"><label>Conf</label><div class="conference-menu" id="rankConfMenu"><button class="conference-menu-button" id="rankConfButton" type="button"><span id="rankConfText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="rankConfAll" type="button">Select all</button><button id="rankConfClear" type="button">Clear</button></div><div id="rankConfOptions"></div></div></div></div>
             <div class="control"><label for="rankTopN">Filter</label><select id="rankTopN"><option value="0">All</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option></select></div>
-            <div class="control"><label for="rankStriping">Striping</label><select id="rankStriping"><option value="on">On</option><option value="off">Off</option></select></div>
+            <div class="control"><label for="rankWeek">Week</label><select id="rankWeek"><option value="current">Current</option></select></div>
           </div>
           <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish PNGs as ZIP</button></div></div>
         </div>
@@ -471,6 +471,8 @@
       year:DEFAULT_YEAR,
       team:null,
       masterCache:new Map(),
+      rankingWeekCache:new Map(),
+      rankingsWeek:"current",
       scheduleCache:new Map(),
       liveCache:new Map(),
       champions:{},
@@ -507,7 +509,7 @@
     const $ = id => document.getElementById(id);
     const els = {
       pageTitle:$("pageTitle"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
-      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankStriping:$("rankStriping"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),legacyRankPrintSeason:$("legacyRankPrintSeason"),legacyRankPrintMeta:$("legacyRankPrintMeta"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
+      rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankWeek:$("rankWeek"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),legacyRankPrintSeason:$("legacyRankPrintSeason"),legacyRankPrintMeta:$("legacyRankPrintMeta"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
       matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchPublishMenu:$("matchPublishMenu"),matchPublishButton:$("matchPublishButton"),matchPublishPdf:$("matchPublishPdf"),matchPublishPng:$("matchPublishPng"),matchError:$("matchError"),matchResult:$("matchResult"),matchComparison:$("matchComparison"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
       confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confLabels:$("confLabels"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
       teamError:$("teamError"),teamPrompt:$("teamPrompt"),teamPicker:$("teamPicker"),teamContent:$("teamContent"),teamRecord:$("teamRecord"),teamRank:$("teamRank"),teamAdjRank:$("teamAdjRank"),teamAdjRtg:$("teamAdjRtg"),teamORtg:$("teamORtg"),teamDRtg:$("teamDRtg"),teamSOS:$("teamSOS"),teamPyW:$("teamPyW"),teamTrendWrap:$("teamTrendWrap"),teamTrendChart:$("teamTrendChart"),teamTrendEmpty:$("teamTrendEmpty"),teamCurrentRecord:$("teamCurrentRecord"),teamRemaining:$("teamRemaining"),teamProjected:$("teamProjected"),teamScheduleBody:$("teamScheduleBody"),
@@ -641,6 +643,56 @@
       const r=await fetch(csvUrl(year),{cache:"no-store"});if(!r.ok)throw new Error(`Could not load ${year} Master.csv (HTTP ${r.status}).`);
       const parsed=parseCSV(await r.text());APP.masterCache.set(year,parsed);return parsed;
     }
+    async function fetchRankingWeek(year,week){
+      year=String(year);
+      if(String(week)==="current")return fetchMaster(year);
+      const weekNum=Number(week);
+      if(!Number.isInteger(weekNum)||weekNum<1||weekNum>14)throw new Error(`Invalid rankings week: ${week}.`);
+      const key=`${year}:${weekNum}`;
+      if(APP.rankingWeekCache.has(key))return APP.rankingWeekCache.get(key);
+      const filename=`history/${year}/Week ${String(weekNum).padStart(2,'0')}.csv`;
+      const r=await fetch(dataUrl(filename),{cache:"no-store"});
+      if(!r.ok)throw new Error(`Week ${weekNum} rankings are not available for ${year}.`);
+      const parsed=parseCSV(await r.text());
+      if(!parsed.objects.length)throw new Error(`Week ${weekNum} rankings are not available for ${year}.`);
+      APP.rankingWeekCache.set(key,parsed);
+      return parsed;
+    }
+    async function populateRankWeekPicker(){
+      const selected=String(APP.rankingsWeek||"current");
+      const year=String(APP.year);
+      els.rankWeek.disabled=true;
+      els.rankWeek.innerHTML='<option value="current">Current</option>';
+
+      // Only expose archived weeks that actually exist for the selected season.
+      // fetchRankingWeek caches any snapshots it successfully loads, so changing
+      // weeks afterward does not require a second network request.
+      const available=await Promise.all(
+        Array.from({length:14},(_,i)=>i+1).map(async week=>{
+          try{
+            await fetchRankingWeek(year,week);
+            return week;
+          }catch{
+            return null;
+          }
+        })
+      );
+
+      available.filter(Number.isInteger).forEach(week=>{
+        const option=document.createElement('option');
+        option.value=String(week);
+        option.textContent=`Week ${week}`;
+        els.rankWeek.appendChild(option);
+      });
+
+      els.rankWeek.value=[...els.rankWeek.options].some(o=>o.value===selected)?selected:"current";
+      APP.rankingsWeek=els.rankWeek.value;
+      els.rankWeek.disabled=false;
+    }
+    async function selectedRankingData(){
+      return fetchRankingWeek(APP.year,APP.rankingsWeek);
+    }
+
     async function fetchOptionalCSV(filename){try{const r=await fetch(dataUrl(filename),{cache:"no-store"});if(!r.ok)return [];return parseCSV(await r.text()).objects}catch{return []}}
     async function fetchSchedule(year){
       year=String(year);
@@ -709,7 +761,7 @@
       requestAnimationFrame(syncRankStickyHeader);
     }
 
-    async function setYear(year){APP.year=String(year);if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.scheduleCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
+    async function setYear(year){APP.year=String(year);APP.rankingsWeek="current";if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.scheduleCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
 
     function formatUpdatedAt(isoString){
       if(!isoString)return null;
@@ -750,6 +802,7 @@
         }
 
         populateSharedTeamPickers();
+        await populateRankWeekPicker();
         buildRankConferenceOptions();
         buildConferenceOptions();
       }catch(err){
@@ -850,20 +903,92 @@
     }
 
     async function renderRankings(){
-      if(!APP.rows.length)return;els.rankLoading.classList.add('hidden');const live=await fetchLive(APP.year);const liveSet=new Set((live.liveTeams||[]).map(t=>String(t).toLowerCase()));
-      const cols=rankColumns();const selected=selectedCheckboxValues(els.rankConfOptions),all=els.rankConfOptions.querySelectorAll('input').length;const searchTerms=teamSearchTerms(els.rankTeamSearch.value);const top=Number(els.rankTopN.value||0);
-      let rows=APP.rows.filter(r=>{if(!teamMatchesSearch(r.Team,searchTerms))return false;if(selected.length===0&&all>0)return false;if(selected.length&&selected.length<all&&!selected.includes(r.Conference))return false;if(top>0&&(n(r.Rk)??999)>top)return false;return true});
-      const thead=els.rankingsTable.tHead,tbody=els.rankingsTable.tBodies[0];thead.innerHTML='<tr>'+cols.map(c=>`<th class="${["Team","Conference"].includes(c)?'left':''}" data-col="${escapeHtml(c)}">${escapeHtml(c)}</th>`).join('')+'</tr>';tbody.innerHTML="";
-      const threeDecimalCols=new Set(["NetRtg","AdjRtg","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","SOS"]);
-      const statRankMaps=buildStatRankMaps(APP.rows);
-      const champ=APP.champions[APP.year];rows.forEach(r=>{const tr=document.createElement('tr');if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');cols.forEach(c=>{const td=document.createElement('td');if(["Team","Conference"].includes(c))td.classList.add('left');if(c==="Team"){const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};td.appendChild(a);if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}}else{const rawValue=r[c];td.dataset.sortValue=rawValue??"";if(threeDecimalCols.has(c)){td.appendChild(document.createTextNode(fmt(rawValue)));}else{td.appendChild(document.createTextNode(rawValue??""));}if(c!=="NetRtg"){appendStatRank(td,r,c,statRankMaps);}}tr.appendChild(td)});tbody.appendChild(tr)});
-      els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";els.rankNote.style.display=champ?'block':'none';applyStriping();
-      thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
-      requestAnimationFrame(syncRankStickyHeader);
+      if(!APP.rows.length)return;
+      els.rankLoading.classList.remove('hidden');
+      els.rankLoading.textContent=APP.rankingsWeek==="current"?'Loading current rankings…':`Loading Week ${APP.rankingsWeek} rankings…`;
+      try{
+        const rankingData=await selectedRankingData();
+        const rankingRows=rankingData.objects.map(r=>({...r}));
+        const rankingHeader=rankingData.header;
+        if(!rankingRows.length)throw new Error(APP.rankingsWeek==="current"?'Current rankings are unavailable.':`Week ${APP.rankingsWeek} rankings are not available for ${APP.year}.`);
+
+        const live=APP.rankingsWeek==="current"?await fetchLive(APP.year):{liveTeams:[]};
+        const liveSet=new Set((live.liveTeams||[]).map(t=>String(t).toLowerCase()));
+        const pref=["Rk","Team","Conference","W","L","NetRtg","AdjRtg","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","PF","PA","ODrives","DDrives","SOS"];
+        const cols=pref.filter(c=>rankingHeader.includes(c));
+        const selected=selectedCheckboxValues(els.rankConfOptions),all=els.rankConfOptions.querySelectorAll('input').length;
+        const searchTerms=teamSearchTerms(els.rankTeamSearch.value);
+        const top=Number(els.rankTopN.value||0);
+        const knownNames=new Set(rankingRows.map(r=>String(r.Team||'').trim().toLowerCase()).filter(Boolean));
+        const matchesWeekSearch=(team)=>{
+          if(!searchTerms.length)return true;
+          const name=String(team||'').trim().toLowerCase();
+          return searchTerms.some(term=>knownNames.has(term)?name===term:name.includes(term));
+        };
+        let rows=rankingRows.filter(r=>{
+          if(!matchesWeekSearch(r.Team))return false;
+          if(selected.length===0&&all>0)return false;
+          if(selected.length&&selected.length<all&&!selected.includes(r.Conference))return false;
+          if(top>0&&(n(r.Rk)??999)>top)return false;
+          return true;
+        });
+
+        // Archived weekly CSV files are not guaranteed to be physically stored
+        // in ranking order. Always render rankings by Rk ascending by default.
+        rows.sort((a,b)=>{
+          const ar=n(a.Rk)??Number.POSITIVE_INFINITY;
+          const br=n(b.Rk)??Number.POSITIVE_INFINITY;
+          return (ar-br)||String(a.Team||'').localeCompare(String(b.Team||''));
+        });
+
+        const thead=els.rankingsTable.tHead,tbody=els.rankingsTable.tBodies[0];
+        thead.innerHTML='<tr>'+cols.map(c=>`<th class="${["Team","Conference"].includes(c)?'left':''}" data-col="${escapeHtml(c)}">${escapeHtml(c)}</th>`).join('')+'</tr>';
+        tbody.innerHTML="";
+        const threeDecimalCols=new Set(["NetRtg","AdjRtg","Win %","PyW %","Luck","Luck Z","ORtg","Ortg","DRtg","SOS"]);
+        const statRankMaps=buildStatRankMaps(rankingRows);
+        const champ=APP.rankingsWeek==="current"?APP.champions[APP.year]:null;
+        rows.forEach(r=>{
+          const tr=document.createElement('tr');
+          if(champ&&String(r.Team).toLowerCase()===String(champ).toLowerCase())tr.classList.add('champion');
+          cols.forEach(c=>{
+            const td=document.createElement('td');
+            if(["Team","Conference"].includes(c))td.classList.add('left');
+            if(c==="Team"){
+              const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;
+              a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};
+              td.appendChild(a);
+              if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}
+            }else{
+              const rawValue=r[c];td.dataset.sortValue=rawValue??"";
+              if(threeDecimalCols.has(c))td.appendChild(document.createTextNode(fmt(rawValue)));
+              else td.appendChild(document.createTextNode(rawValue??""));
+              if(c!=="NetRtg")appendStatRank(td,r,c,statRankMaps);
+            }
+            tr.appendChild(td);
+          });
+          tbody.appendChild(tr);
+        });
+
+        if(APP.rankingsWeek==="current"){
+          els.rankNote.textContent=champ?`${champ} is highlighted as the national champion.`:"";
+          els.rankNote.style.display=champ?'block':'none';
+        }else{
+          els.rankNote.textContent=`Showing archived ${APP.year} rankings from Week ${APP.rankingsWeek}.`;
+          els.rankNote.style.display='block';
+        }
+        thead.querySelectorAll('th').forEach(th=>{th.classList.add('sortable');th.onclick=()=>sortRankingTable(cols.indexOf(th.dataset.col))});
+        requestAnimationFrame(syncRankStickyHeader);
+      }catch(err){
+        console.error(err);
+        els.rankingsTable.tHead.innerHTML='';
+        els.rankingsTable.tBodies[0].innerHTML='';
+        els.rankNote.textContent=err.message;
+        els.rankNote.style.display='block';
+      }finally{
+        els.rankLoading.classList.add('hidden');
+      }
     }
     let rankSort={index:0,dir:1};function sortRankingTable(index){rankSort.dir=rankSort.index===index?-rankSort.dir:1;rankSort.index=index;const tbody=els.rankingsTable.tBodies[0];const rows=[...tbody.rows];rows.sort((a,b)=>{const ac=a.cells[index],bc=b.cells[index];const av=(ac.dataset.sortValue??ac.innerText).trim(),bv=(bc.dataset.sortValue??bc.innerText).trim(),an=Number(av),bn=Number(bv);const cmp=Number.isFinite(an)&&Number.isFinite(bn)?an-bn:av.localeCompare(bv,undefined,{numeric:true});return cmp*rankSort.dir});rows.forEach(r=>tbody.appendChild(r))}
-    function applyStriping(){let st=$("dynamicStriping");if(els.rankStriping.value==='off'){if(!st){st=document.createElement('style');st.id='dynamicStriping';document.head.appendChild(st)}st.textContent='#rankingsTable tbody tr:nth-child(even){background:transparent!important}'}else st?.remove()}
-
     let rankStickyHeader=null;
     function ensureRankStickyHeader(){
       if(rankStickyHeader)return rankStickyHeader;
@@ -2132,7 +2257,7 @@
     document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>setView(b.dataset.route));
     document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
-    els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankStriping.onchange=applyStriping;
+    els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankWeek.onchange=async()=>{APP.rankingsWeek=els.rankWeek.value;await renderRankings()};
     els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;els.matchPublishButton.onclick=e=>{e.stopPropagation();if(!els.matchPublishButton.disabled)toggleMenu(els.matchPublishMenu,els.matchPublishButton)};els.matchPublishPdf.onclick=e=>{e.stopPropagation();publishMatchupPdf()};els.matchPublishPng.onclick=async e=>{e.stopPropagation();await publishMatchupPng()};
     els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;els.confLabels.onchange=renderConferenceChart;
     els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
