@@ -209,7 +209,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401856676,Charlotte,American Athletic,Ole Miss,SEC,Away,2026-09-12T23:45:00.000Z,True,False,9,41,L,50,24,58.725
 2026,3,401864574,Charlotte,American Athletic,App State,Sun Belt,Away,2026-09-19T22:00:00.000Z,True,False,21,26,L,79,101,-38.757
 2026,4,401862780,Charlotte,American Athletic,Louisiana,Sun Belt,Home,2026-09-26T22:30:00.000Z,True,False,7,34,L,54,64,3.112
-2026,5,401862787,Charlotte,American Athletic,Memphis,American Athletic,Home,2026-10-03T19:30:00.000Z,False,False,,,,58,69,-2.105
+2026,5,401862787,Charlotte,American Athletic,Memphis,American Athletic,Home,2026-10-03T15:00:00.000Z,False,False,,,,58,69,-2.105
 2026,6,401862796,Charlotte,American Athletic,North Texas,American Athletic,Away,2026-10-10T19:30:00.000Z,False,False,,,,81,90,-30.924
 2026,7,401862803,Charlotte,American Athletic,Temple,American Athletic,Away,2026-10-17T04:00:00.000Z,False,False,,,,98,80,-21.066
 2026,9,401862813,Charlotte,American Athletic,Tulane,American Athletic,Home,2026-10-30T23:00:00.000Z,False,False,,,,83,84,-25.775
@@ -274,7 +274,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401856684,Delaware,Conference USA,Vanderbilt,SEC,Away,2026-09-12T20:15:00.000Z,True,False,26,35,L,57,59,7.387
 2026,3,401869940,Delaware,Conference USA,Coastal Carolina,Sun Belt,Home,2026-09-19T15:30:00.000Z,True,False,22,14,W,96,99,-37.421
 2026,4,401858239,Delaware,Conference USA,Virginia,ACC,Away,2026-09-26T22:00:00.000Z,True,False,3,42,L,20,20,64.666
-2026,5,401871050,Delaware,Conference USA,Liberty,Conference USA,Home,2026-10-02T23:00:00.000Z,False,False,,,,22,42,41.211
+2026,5,401871050,Delaware,Conference USA,Liberty,Conference USA,Home,2026-10-02T23:00:00.000Z,False,True,0,0,,22,42,41.211
 2026,7,401871067,Delaware,Conference USA,Middle Tennessee,Conference USA,Away,2026-10-13T23:00:00.000Z,False,False,,,,69,76,-17.318
 2026,8,401871069,Delaware,Conference USA,Missouri State,Conference USA,Home,2026-10-20T23:00:00.000Z,False,False,,,,120,124,-81.104
 2026,9,401871071,Delaware,Conference USA,Western Kentucky,Conference USA,Away,2026-10-27T23:00:00.000Z,False,False,,,,134,135,-135.807
@@ -572,7 +572,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401869960,Liberty,Conference USA,James Madison,Sun Belt,Away,2026-09-05T16:00:00.000Z,True,False,13,20,L,27,39,46.124
 2026,3,401866422,Liberty,Conference USA,Ball State,Mid-American,Home,2026-09-19T20:00:00.000Z,True,False,51,15,W,136,137,-139.720
 2026,4,401869941,Liberty,Conference USA,Coastal Carolina,Sun Belt,Away,2026-09-24T23:30:00.000Z,True,False,34,17,W,96,99,-37.421
-2026,5,401871050,Liberty,Conference USA,Delaware,Conference USA,Away,2026-10-02T23:00:00.000Z,False,False,,,,111,108,-46.349
+2026,5,401871050,Liberty,Conference USA,Delaware,Conference USA,Away,2026-10-02T23:00:00.000Z,False,True,0,0,,111,108,-46.349
 2026,6,401870766,Liberty,Conference USA,Sam Houston,Conference USA,Home,2026-10-08T23:00:00.000Z,False,False,,,,112,114,-52.812
 2026,8,401871056,Liberty,Conference USA,Kennesaw State,Conference USA,Away,2026-10-22T23:00:00.000Z,False,False,,,,124,123,-80.644
 2026,9,401871059,Liberty,Conference USA,Florida International,Conference USA,Home,2026-10-31T19:30:00.000Z,False,False,,,,76,82,-25.521
@@ -648,7 +648,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401862693,Memphis,American Athletic,UNLV,Mountain West,Away,2026-08-30T02:00:00.000Z,True,False,27,21,W,72,87,-28.886
 2026,1,401862695,Memphis,American Athletic,Arkansas State,Sun Belt,Home,2026-09-05T23:00:00.000Z,True,False,42,24,W,114,120,-68.007
 2026,2,401860881,Memphis,American Athletic,Boise State,Pac-12,Away,2026-09-12T22:00:00.000Z,True,False,20,38,L,30,19,68.981
-2026,5,401862787,Memphis,American Athletic,Charlotte,American Athletic,Away,2026-10-03T19:30:00.000Z,False,False,,,,125,126,-87.647
+2026,5,401862787,Memphis,American Athletic,Charlotte,American Athletic,Away,2026-10-03T15:00:00.000Z,False,False,,,,125,126,-87.647
 2026,6,401862798,Memphis,American Athletic,UAB,American Athletic,Home,2026-10-10T04:00:00.000Z,False,False,,,,80,102,-40.656
 2026,7,401862801,Memphis,American Athletic,Tulane,American Athletic,Away,2026-10-16T23:30:00.000Z,False,False,,,,83,84,-25.775
 2026,8,401862807,Memphis,American Athletic,East Carolina,American Athletic,Home,2026-10-22T23:30:00.000Z,False,False,,,,107,109,-49.040
