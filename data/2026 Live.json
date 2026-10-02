@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-02T01:06:17.215564+00:00",
+  "updatedAt": "2026-10-02T01:11:16.095889+00:00",
   "liveGames": [
     {
       "id": 401871049,
@@ -12,14 +12,31 @@
       "homePoints": 13.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "07:31",
+      "clock": "05:19",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
+    },
+    {
+      "id": 401862786,
+      "status": "in_progress",
+      "homeTeam": "Tulsa",
+      "awayTeam": "North Texas",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:42",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "New Mexico State",
+    "North Texas",
+    "Tulsa",
     "Western Kentucky"
   ]
 }
