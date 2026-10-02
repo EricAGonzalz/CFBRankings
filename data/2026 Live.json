@@ -1,7 +1,22 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-02T23:06:18.956725+00:00",
+  "updatedAt": "2026-10-02T23:11:15.646294+00:00",
   "liveGames": [
+    {
+      "id": 401858245,
+      "status": "in_progress",
+      "homeTeam": "Virginia Tech",
+      "awayTeam": "Pittsburgh",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 6.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:44",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
     {
       "id": 401871050,
       "status": "in_progress",
@@ -10,16 +25,18 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "13:41",
-      "completedDrives": 0,
+      "clock": "09:00",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Delaware",
-    "Liberty"
+    "Liberty",
+    "Pittsburgh",
+    "Virginia Tech"
   ]
 }
