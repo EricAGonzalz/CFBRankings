@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-09-27T18:49:24.132914+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-02T00:06:21.830162+00:00",
+  "liveGames": [
+    {
+      "id": 401871049,
+      "status": "in_progress",
+      "homeTeam": "New Mexico State",
+      "awayTeam": "Western Kentucky",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:50",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "New Mexico State",
+    "Western Kentucky"
+  ]
 }
