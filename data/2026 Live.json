@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-02T23:21:17.702953+00:00",
+  "updatedAt": "2026-10-02T23:26:17.056585+00:00",
   "liveGames": [
     {
       "id": 401858245,
@@ -9,12 +9,12 @@
       "awayTeam": "Pittsburgh",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:50",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "10:09",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -25,12 +25,12 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 0.0,
-      "awayPoints": 3.0,
+      "awayPoints": 6.0,
       "period": 1,
-      "clock": "05:54",
-      "completedDrives": 2,
+      "clock": "01:47",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
