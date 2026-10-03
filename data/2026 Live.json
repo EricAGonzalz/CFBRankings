@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T01:11:20.282142+00:00",
+  "updatedAt": "2026-10-03T01:16:30.198171+00:00",
   "liveGames": [
     {
       "id": 401858245,
@@ -11,8 +11,8 @@
       "awayConference": "ACC",
       "homePoints": 24.0,
       "awayPoints": 21.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "13:04",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -27,10 +27,10 @@
       "homePoints": 0.0,
       "awayPoints": 20.0,
       "period": 3,
-      "clock": "07:36",
-      "completedDrives": 13,
+      "clock": "05:33",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858476,
@@ -42,9 +42,9 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "10:40",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "09:50",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     }
   ],
