@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T15:56:22.674941+00:00",
+  "updatedAt": "2026-10-03T16:03:55.104632+00:00",
   "liveGames": [
     {
       "id": 401862787,
@@ -12,14 +12,48 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "13:44",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "09:54",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401856819,
+      "status": "in_progress",
+      "homeTeam": "Houston",
+      "awayTeam": "UCF",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858251,
+      "status": "in_progress",
+      "homeTeam": "Wake Forest",
+      "awayTeam": "Stanford",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Charlotte",
-    "Memphis"
+    "Houston",
+    "Memphis",
+    "Stanford",
+    "UCF",
+    "Wake Forest"
   ]
 }
