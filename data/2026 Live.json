@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T23:46:38.089132+00:00",
+  "updatedAt": "2026-10-03T23:51:38.713848+00:00",
   "liveGames": [
     {
       "id": 401858475,
@@ -12,7 +12,7 @@
       "homePoints": 48.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "03:39",
+      "clock": "02:00",
       "completedDrives": 28,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 15
@@ -27,10 +27,10 @@
       "homePoints": 27.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "00:18",
-      "completedDrives": 23,
+      "clock": "00:00",
+      "completedDrives": 24,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401860899,
@@ -57,9 +57,9 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "13:31",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -72,9 +72,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "13:33",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "09:50",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -86,11 +86,11 @@
       "awayConference": "American Athletic",
       "homePoints": 7.0,
       "awayPoints": 6.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 5,
+      "period": 2,
+      "clock": "13:04",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401869942,
@@ -117,9 +117,9 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "13:38",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "10:31",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -132,10 +132,25 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:29",
+      "clock": "07:58",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858249,
+      "status": "in_progress",
+      "homeTeam": "Clemson",
+      "awayTeam": "Miami",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:19",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858478,
@@ -147,7 +162,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:35",
+      "clock": "07:18",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -162,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:44",
+      "clock": "10:16",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -178,9 +193,9 @@
       "awayPoints": 0.0,
       "period": 1,
       "clock": "09:06",
-      "completedDrives": 2,
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401869842,
@@ -192,10 +207,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:32",
-      "completedDrives": 1,
+      "clock": "06:52",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
@@ -203,6 +218,7 @@
     "Army",
     "BYU",
     "Boise State",
+    "Clemson",
     "Coastal Carolina",
     "Colorado",
     "Colorado State",
@@ -210,6 +226,7 @@
     "Kentucky",
     "Louisiana Tech",
     "Maryland",
+    "Miami",
     "Nebraska",
     "Oregon State",
     "Rice",
