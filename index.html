@@ -1608,7 +1608,14 @@
       els.teamTrendWrap.classList.remove('hidden');els.teamTrendEmpty.classList.add('hidden');
 
       const metrics=[['AdjRtg','Adjusted Rating','#0057b8'],['NetRtg','Net Rating','#d62728'],['Ortg','Offensive Rating','#2ca02c'],['DRtg','Defensive Rating','#9467bd'],['Rk','Overall Rank','#ff7f0e'],['SOS','Strength of Schedule','#8c564b'],['Win %','Win %','#111'],['PyW %','Pythagorean Win %','#e377c2']];
-      const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(n(r[k]))));
+      // Historical ranking files have used both "Ortg" and "ORtg" for
+      // offensive rating. Normalize that schema difference for the trend chart.
+      const trendMetricValue=(row,key)=>{
+        if(!row)return null;
+        if(key==='Ortg')return n(row.Ortg)??n(row.ORtg);
+        return n(row[key]);
+      };
+      const available=metrics.filter(([k])=>rows.some(r=>Number.isFinite(trendMetricValue(r,k))));
       const fbsTeams=new Set(APP.rows.map(r=>String(r.Team||'').toLowerCase()));
 
       // The regular-season frame is Weeks 1-14. A historical postseason snapshot
@@ -1714,7 +1721,7 @@
       const scales={x:{title:{display:true,text:'Week'}}};
       available.forEach(([k],i)=>{scales[`y${i}`]={display:false,reverse:k==='Rk'||k==='DRtg',min:["Win %","PyW %"].includes(k)?0:undefined,max:["Win %","PyW %"].includes(k)?1:undefined,grid:{drawOnChartArea:i===0}}});
       APP.teamTrendChart?.destroy();
-      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:graphWeekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({_metricKey:k,label,data:graphPlottedRows.map(r=>r?n(r[k]):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:graphPlottedRows.map(r=>r?(r._current?4:3):0),pointStyle:graphPlottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true,hidden:APP.teamTrendHidden.has(k)}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10},onClick(e,legendItem,legend){const chart=legend.chart,idx=legendItem.datasetIndex;if(!Number.isInteger(idx))return;const dataset=chart.data.datasets[idx],key=String(dataset?._metricKey||'');if(!key)return;if(chart.isDatasetVisible(idx)){chart.hide(idx);APP.teamTrendHidden.add(key)}else{chart.show(idx);APP.teamTrendHidden.delete(key)}saveTeamTrendVisibility()}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return graphPlottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
+      APP.teamTrendChart=new Chart(els.teamTrendChart,{type:'line',data:{labels:graphWeekSlots.map(w=>`Week ${w}`),datasets:available.map(([k,label,color],i)=>({_metricKey:k,label,data:graphPlottedRows.map(r=>r?trendMetricValue(r,k):null),borderColor:color,backgroundColor:color,yAxisID:`y${i}`,borderWidth:2,pointRadius:graphPlottedRows.map(r=>r?(r._current?4:3):0),pointStyle:graphPlottedRows.map(r=>r?(r._current?'rectRot':'circle'):'circle'),tension:.15,spanGaps:true,hidden:APP.teamTrendHidden.has(k)}))},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{position:'top',labels:{usePointStyle:true,boxWidth:10},onClick(e,legendItem,legend){const chart=legend.chart,idx=legendItem.datasetIndex;if(!Number.isInteger(idx))return;const dataset=chart.data.datasets[idx],key=String(dataset?._metricKey||'');if(!key)return;if(chart.isDatasetVisible(idx)){chart.hide(idx);APP.teamTrendHidden.add(key)}else{chart.show(idx);APP.teamTrendHidden.delete(key)}saveTeamTrendVisibility()}},tooltip:{callbacks:{afterTitle(items){const idx=items?.[0]?.dataIndex;return graphPlottedRows[idx]?._current?'Current ratings (not yet archived)':''}}}},scales}});
     }
     function boolish(v){const x=String(v??'').trim().toLowerCase();return v===true||x==='true'||x==='1'||x==='yes'||x==='y'}
     function scheduleFields(r){
