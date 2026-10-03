@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T20:02:56.606956+00:00",
+  "updatedAt": "2026-10-03T20:07:49.391984+00:00",
   "liveGames": [
-    {
-      "id": 401858252,
-      "status": "in_progress",
-      "homeTeam": "UConn",
-      "awayTeam": "Syracuse",
-      "homeConference": "FBS Independents",
-      "awayConference": "ACC",
-      "homePoints": 41.0,
-      "awayPoints": 34.0,
-      "period": 5,
-      "clock": "00:00",
-      "completedDrives": 27,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401866432,
       "status": "in_progress",
@@ -27,10 +12,10 @@
       "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "00:42",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "clock": "00:00",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401866431,
@@ -42,10 +27,10 @@
       "homePoints": 10.0,
       "awayPoints": 15.0,
       "period": 3,
-      "clock": "11:37",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "clock": "09:13",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856708,
@@ -55,12 +40,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "10:03",
-      "completedDrives": 0,
+      "clock": "08:06",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856710,
@@ -72,10 +57,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "06:16",
-      "completedDrives": 5,
+      "clock": "02:45",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858247,
@@ -87,10 +72,10 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "10:23",
-      "completedDrives": 4,
+      "clock": "07:04",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858248,
@@ -102,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:54",
+      "clock": "00:00",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -117,9 +102,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:04",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "04:07",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -132,7 +117,7 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "10:01",
+      "clock": "06:33",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -147,10 +132,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:51",
-      "completedDrives": 4,
+      "clock": "06:01",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401866430,
@@ -162,10 +147,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:37",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "clock": "00:11",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401866433,
@@ -177,7 +162,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:53",
+      "clock": "00:55",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -192,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "02:47",
+      "clock": "15:00",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -206,8 +191,8 @@
       "awayConference": "Mid-American",
       "homePoints": 0.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:29",
+      "period": 2,
+      "clock": "14:09",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -222,10 +207,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "05:40",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "clock": "03:10",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401869962,
@@ -240,6 +225,36 @@
       "clock": "12:51",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858475,
+      "status": "in_progress",
+      "homeTeam": "Nebraska",
+      "awayTeam": "Maryland",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:58",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401864514,
+      "status": "in_progress",
+      "homeTeam": "New Mexico",
+      "awayTeam": "UTEP",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:50",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
@@ -260,19 +275,21 @@
     "Kent State",
     "Louisville",
     "Marshall",
+    "Maryland",
     "Massachusetts",
     "Miami (OH)",
     "Missouri",
     "NC State",
+    "Nebraska",
+    "New Mexico",
     "North Dakota State",
     "Ohio",
     "Ohio State",
     "Old Dominion",
-    "Syracuse",
     "Tennessee",
     "Toledo",
-    "UConn",
     "UNLV",
+    "UTEP",
     "Virginia",
     "Western Michigan",
     "Wyoming"
