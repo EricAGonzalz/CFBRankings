@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T02:16:18.220210+00:00",
+  "updatedAt": "2026-10-03T02:21:27.118166+00:00",
   "liveGames": [
     {
       "id": 401858245,
@@ -12,10 +12,10 @@
       "homePoints": 33.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "08:44",
-      "completedDrives": 25,
+      "clock": "06:48",
+      "completedDrives": 26,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401871050,
@@ -24,12 +24,12 @@
       "awayTeam": "Liberty",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 6.0,
+      "homePoints": 14.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "01:44",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
+      "clock": "01:27",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 12
     },
     {
@@ -42,9 +42,9 @@
       "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "13:25",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "09:46",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     }
   ],
