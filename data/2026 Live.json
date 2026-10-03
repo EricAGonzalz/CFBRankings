@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T19:26:36.437456+00:00",
+  "updatedAt": "2026-10-03T19:32:46.990407+00:00",
   "liveGames": [
     {
       "id": 401856707,
@@ -12,7 +12,7 @@
       "homePoints": 23.0,
       "awayPoints": 56.0,
       "period": 4,
-      "clock": "02:16",
+      "clock": "01:08",
       "completedDrives": 23,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 10
@@ -24,43 +24,13 @@
       "awayTeam": "UCF",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 24.0,
+      "homePoints": 27.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "01:08",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401856822,
-      "status": "in_progress",
-      "homeTeam": "Iowa State",
-      "awayTeam": "West Virginia",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 45.0,
-      "awayPoints": 42.0,
-      "period": 4,
-      "clock": "00:35",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 13
-    },
-    {
-      "id": 401858246,
-      "status": "in_progress",
-      "homeTeam": "SMU",
-      "awayTeam": "Boston College",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 25.0,
-      "awayPoints": 16.0,
-      "period": 4,
-      "clock": "01:47",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
     },
     {
       "id": 401858252,
@@ -72,7 +42,7 @@
       "homePoints": 34.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "04:51",
+      "clock": "02:43",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -87,9 +57,9 @@
       "homePoints": 31.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "03:20",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "01:48",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -102,7 +72,7 @@
       "homePoints": 31.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "12:16",
+      "clock": "08:34",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -115,9 +85,9 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 17.0,
-      "awayPoints": 16.0,
+      "awayPoints": 17.0,
       "period": 4,
-      "clock": "06:44",
+      "clock": "05:22",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -132,29 +102,25 @@
       "homePoints": 10.0,
       "awayPoints": 8.0,
       "period": 2,
-      "clock": "01:29",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "00:11",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     }
   ],
   "liveTeams": [
     "Alabama",
     "Ball State",
-    "Boston College",
     "Buffalo",
     "Georgia",
     "Houston",
-    "Iowa State",
     "Michigan State",
     "Mississippi State",
-    "SMU",
     "Syracuse",
     "Toledo",
     "UCF",
     "UConn",
     "Vanderbilt",
-    "West Virginia",
     "Western Michigan",
     "Wisconsin"
   ]
