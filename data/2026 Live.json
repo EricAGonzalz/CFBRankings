@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T22:56:29.655043+00:00",
+  "updatedAt": "2026-10-03T23:02:19.191488+00:00",
   "liveGames": [
     {
       "id": 401856708,
@@ -12,7 +12,7 @@
       "homePoints": 45.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "02:39",
+      "clock": "01:24",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -27,10 +27,10 @@
       "homePoints": 24.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "01:23",
-      "completedDrives": 25,
+      "clock": "00:43",
+      "completedDrives": 26,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401858247,
@@ -39,12 +39,12 @@
       "awayTeam": "California",
       "homeConference": "Mountain West",
       "awayConference": "ACC",
-      "homePoints": 24.0,
+      "homePoints": 32.0,
       "awayPoints": 25.0,
       "period": 4,
-      "clock": "10:25",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 13,
+      "clock": "09:31",
+      "completedDrives": 29,
+      "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 15
     },
     {
@@ -57,25 +57,10 @@
       "homePoints": 31.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858253,
-      "status": "in_progress",
-      "homeTeam": "Florida State",
-      "awayTeam": "Virginia",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 38.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "01:38",
-      "completedDrives": 24,
+      "clock": "01:07",
+      "completedDrives": 23,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401869962,
@@ -87,9 +72,9 @@
       "homePoints": 38.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "13:36",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "11:05",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -102,10 +87,10 @@
       "homePoints": 28.0,
       "awayPoints": 23.0,
       "period": 3,
-      "clock": "06:00",
-      "completedDrives": 21,
+      "clock": "04:28",
+      "completedDrives": 22,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401864514,
@@ -114,13 +99,13 @@
       "awayTeam": "UTEP",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 51.0,
+      "homePoints": 54.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 21,
+      "clock": "00:53",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856709,
@@ -131,10 +116,10 @@
       "awayConference": "SEC",
       "homePoints": 20.0,
       "awayPoints": 24.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "period": 4,
+      "clock": "13:51",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -144,10 +129,10 @@
       "awayTeam": "Purdue",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "08:20",
+      "clock": "06:29",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -159,10 +144,10 @@
       "awayTeam": "Oregon State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 13.0,
+      "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "11:51",
+      "clock": "11:38",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -173,7 +158,6 @@
     "California",
     "Colorado State",
     "Florida",
-    "Florida State",
     "Illinois",
     "James Madison",
     "Kentucky",
@@ -189,7 +173,6 @@
     "South Carolina",
     "Tennessee",
     "UNLV",
-    "UTEP",
-    "Virginia"
+    "UTEP"
   ]
 }
