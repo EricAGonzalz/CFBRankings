@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T02:46:22.580617+00:00",
+  "updatedAt": "2026-10-03T02:51:25.620993+00:00",
   "liveGames": [
-    {
-      "id": 401858245,
-      "status": "in_progress",
-      "homeTeam": "Virginia Tech",
-      "awayTeam": "Pittsburgh",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 33.0,
-      "awayPoints": 35.0,
-      "period": 4,
-      "clock": "00:03",
-      "completedDrives": 29,
-      "homeOffensiveDrives": 15,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401858476,
       "status": "in_progress",
@@ -24,10 +9,10 @@
       "awayTeam": "Penn State",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 24.0,
+      "homePoints": 31.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "01:23",
+      "clock": "15:00",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -35,8 +20,6 @@
   ],
   "liveTeams": [
     "Northwestern",
-    "Penn State",
-    "Pittsburgh",
-    "Virginia Tech"
+    "Penn State"
   ]
 }
