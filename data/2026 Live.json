@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T16:11:44.290731+00:00",
+  "updatedAt": "2026-10-03T16:16:43.890209+00:00",
   "liveGames": [
     {
       "id": 401862787,
@@ -12,7 +12,7 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "06:38",
+      "clock": "05:16",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -27,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:11",
+      "clock": "10:35",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -42,10 +42,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:36",
-      "completedDrives": 0,
+      "clock": "10:12",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856819,
@@ -57,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "11:17",
+      "clock": "09:23",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -72,9 +72,24 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:27",
-      "completedDrives": 1,
+      "clock": "09:29",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858246,
+      "status": "in_progress",
+      "homeTeam": "SMU",
+      "awayTeam": "Boston College",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:10",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     },
     {
@@ -87,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:46",
-      "completedDrives": 0,
+      "clock": "09:57",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858251,
@@ -99,12 +114,12 @@
       "awayTeam": "Stanford",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:16",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 0,
+      "clock": "09:02",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
     },
     {
@@ -115,12 +130,27 @@
       "homeConference": "FBS Independents",
       "awayConference": "ACC",
       "homePoints": 0.0,
+      "awayPoints": 6.0,
+      "period": 1,
+      "clock": "11:45",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858474,
+      "status": "in_progress",
+      "homeTeam": "Minnesota",
+      "awayTeam": "Michigan",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:29",
+      "clock": "11:55",
       "completedDrives": 1,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862791,
@@ -132,25 +162,29 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:52",
-      "completedDrives": 0,
+      "clock": "10:49",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Air Force",
     "Alabama",
+    "Boston College",
     "Charlotte",
     "Houston",
     "Iowa State",
     "Kansas",
     "Memphis",
+    "Michigan",
     "Middle Tennessee",
+    "Minnesota",
     "Mississippi State",
     "Navy",
     "North Carolina",
     "Notre Dame",
+    "SMU",
     "Stanford",
     "Syracuse",
     "UCF",
