@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T00:21:29.120896+00:00",
+  "updatedAt": "2026-10-03T00:26:14.095721+00:00",
   "liveGames": [
     {
       "id": 401858245,
@@ -10,12 +10,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 17.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 2,
-      "clock": "06:17",
-      "completedDrives": 9,
+      "clock": "05:11",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401871050,
@@ -27,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 20.0,
       "period": 2,
-      "clock": "00:35",
+      "clock": "00:06",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -39,12 +39,12 @@
       "awayTeam": "Penn State",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:12",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "10:09",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     }
   ],
