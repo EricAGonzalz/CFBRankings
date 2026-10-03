@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T19:12:00.485433+00:00",
+  "updatedAt": "2026-10-03T19:16:39.230327+00:00",
   "liveGames": [
     {
       "id": 401856707,
@@ -12,10 +12,10 @@
       "homePoints": 23.0,
       "awayPoints": 49.0,
       "period": 4,
-      "clock": "08:47",
-      "completedDrives": 21,
+      "clock": "08:08",
+      "completedDrives": 22,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856807,
@@ -27,7 +27,7 @@
       "homePoints": 55.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "03:45",
+      "clock": "02:00",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -42,10 +42,10 @@
       "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "04:14",
-      "completedDrives": 20,
+      "clock": "03:06",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856822,
@@ -57,9 +57,9 @@
       "homePoints": 38.0,
       "awayPoints": 42.0,
       "period": 4,
-      "clock": "03:31",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
+      "clock": "02:00",
+      "completedDrives": 26,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 13
     },
     {
@@ -72,7 +72,7 @@
       "homePoints": 25.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "04:37",
+      "clock": "03:10",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -87,10 +87,10 @@
       "homePoints": 26.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 18,
+      "clock": "01:01",
+      "completedDrives": 19,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858251,
@@ -102,7 +102,7 @@
       "homePoints": 57.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "02:19",
+      "clock": "02:00",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -114,10 +114,10 @@
       "awayTeam": "Syracuse",
       "homeConference": "FBS Independents",
       "awayConference": "ACC",
-      "homePoints": 27.0,
+      "homePoints": 34.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "12:26",
+      "clock": "11:52",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -132,25 +132,10 @@
       "homePoints": 20.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
+      "clock": "01:35",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401862791,
-      "status": "in_progress",
-      "homeTeam": "Air Force",
-      "awayTeam": "Navy",
-      "homeConference": "Mountain West",
-      "awayConference": "American Athletic",
-      "homePoints": 14.0,
-      "awayPoints": 9.0,
-      "period": 4,
-      "clock": "01:49",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
     },
     {
       "id": 401858479,
@@ -159,12 +144,12 @@
       "awayTeam": "Michigan State",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 24.0,
+      "homePoints": 30.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "10:38",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "07:56",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -177,7 +162,7 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "01:15",
+      "clock": "00:00",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -191,10 +176,10 @@
       "awayConference": "Mid-American",
       "homePoints": 14.0,
       "awayPoints": 10.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "period": 4,
+      "clock": "13:03",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -207,14 +192,13 @@
       "homePoints": 10.0,
       "awayPoints": 8.0,
       "period": 2,
-      "clock": "07:14",
-      "completedDrives": 9,
+      "clock": "05:30",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     }
   ],
   "liveTeams": [
-    "Air Force",
     "Alabama",
     "Ball State",
     "Boston College",
@@ -228,7 +212,6 @@
     "Middle Tennessee",
     "Minnesota",
     "Mississippi State",
-    "Navy",
     "North Carolina",
     "Notre Dame",
     "SMU",
