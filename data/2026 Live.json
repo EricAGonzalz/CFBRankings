@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-03T16:07:08.063418+00:00",
+  "updatedAt": "2026-10-03T16:11:44.290731+00:00",
   "liveGames": [
     {
       "id": 401862787,
@@ -12,10 +12,40 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "08:41",
-      "completedDrives": 8,
+      "clock": "06:38",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
+    },
+    {
+      "id": 401856707,
+      "status": "in_progress",
+      "homeTeam": "Mississippi State",
+      "awayTeam": "Alabama",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:11",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401856807,
+      "status": "in_progress",
+      "homeTeam": "Kansas",
+      "awayTeam": "Middle Tennessee",
+      "homeConference": "Big 12",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:36",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401856819,
@@ -25,12 +55,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "13:01",
-      "completedDrives": 0,
+      "clock": "11:17",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856822,
@@ -42,7 +72,22 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:23",
+      "clock": "12:27",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858250,
+      "status": "in_progress",
+      "homeTeam": "North Carolina",
+      "awayTeam": "Notre Dame",
+      "homeConference": "ACC",
+      "awayConference": "FBS Independents",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:46",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -57,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:43",
-      "completedDrives": 1,
+      "clock": "11:16",
+      "completedDrives": 2,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858252,
@@ -72,17 +117,40 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:27",
+      "clock": "12:29",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401862791,
+      "status": "in_progress",
+      "homeTeam": "Air Force",
+      "awayTeam": "Navy",
+      "homeConference": "Mountain West",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:52",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Air Force",
+    "Alabama",
     "Charlotte",
     "Houston",
     "Iowa State",
+    "Kansas",
     "Memphis",
+    "Middle Tennessee",
+    "Mississippi State",
+    "Navy",
+    "North Carolina",
+    "Notre Dame",
     "Stanford",
     "Syracuse",
     "UCF",
