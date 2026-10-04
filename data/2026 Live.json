@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T03:41:36.567185+00:00",
+  "updatedAt": "2026-10-04T03:46:40.610903+00:00",
   "liveGames": [
     {
       "id": 401860921,
@@ -12,10 +12,10 @@
       "homePoints": 6.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "15:00",
-      "completedDrives": 13,
+      "clock": "10:59",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856817,
@@ -27,7 +27,7 @@
       "homePoints": 6.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "09:59",
+      "clock": "06:30",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -42,10 +42,10 @@
       "homePoints": 3.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "08:37",
-      "completedDrives": 6,
+      "clock": "04:35",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856820,
@@ -57,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:10",
-      "completedDrives": 4,
+      "clock": "00:00",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
