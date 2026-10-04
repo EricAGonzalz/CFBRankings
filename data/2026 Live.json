@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T06:07:07.040870+00:00",
+  "updatedAt": "2026-10-04T06:12:05.839066+00:00",
   "liveGames": [
-    {
-      "id": 401856817,
-      "status": "in_progress",
-      "homeTeam": "Arizona State",
-      "awayTeam": "Baylor",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 19.0,
-      "awayPoints": 55.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
-    },
     {
       "id": 401860900,
       "status": "in_progress",
@@ -27,9 +12,9 @@
       "homePoints": 31.0,
       "awayPoints": 29.0,
       "period": 4,
-      "clock": "01:40",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 11,
+      "clock": "00:54",
+      "completedDrives": 26,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 14
     },
     {
@@ -42,7 +27,7 @@
       "homePoints": 34.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "05:21",
+      "clock": "03:23",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -54,19 +39,17 @@
       "awayTeam": "San José State",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "08:15",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "05:14",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     }
   ],
   "liveTeams": [
     "Arizona",
-    "Arizona State",
-    "Baylor",
     "Cincinnati",
     "Hawai'i",
     "San Diego State",
