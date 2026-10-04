@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T02:11:35.099758+00:00",
+  "updatedAt": "2026-10-04T02:16:57.093442+00:00",
   "liveGames": [
-    {
-      "id": 401856711,
-      "status": "in_progress",
-      "homeTeam": "Texas A&M",
-      "awayTeam": "Arkansas",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 34.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "00:46",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
-    },
     {
       "id": 401862788,
       "status": "in_progress",
@@ -27,9 +12,9 @@
       "homePoints": 14.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "01:52",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "00:48",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -42,9 +27,9 @@
       "homePoints": 17.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "04:21",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 9,
+      "clock": "01:56",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
     },
     {
@@ -54,12 +39,12 @@
       "awayTeam": "UL Monroe",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 45.0,
+      "homePoints": 52.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "06:08",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "02:31",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -72,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 12.0,
       "period": 3,
-      "clock": "00:33",
+      "clock": "00:00",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -85,12 +70,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 6.0,
-      "awayPoints": 17.0,
+      "awayPoints": 23.0,
       "period": 3,
-      "clock": "05:16",
-      "completedDrives": 13,
+      "clock": "01:51",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858478,
@@ -102,7 +87,7 @@
       "homePoints": 22.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "02:35",
+      "clock": "01:47",
       "completedDrives": 18,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 10
@@ -117,7 +102,7 @@
       "homePoints": 31.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "13:00",
+      "clock": "10:13",
       "completedDrives": 14,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 8
@@ -132,9 +117,9 @@
       "homePoints": 13.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "11:14",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "08:32",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -144,12 +129,12 @@
       "awayTeam": "Army",
       "homeConference": "Sun Belt",
       "awayConference": "American Athletic",
-      "homePoints": 28.0,
+      "homePoints": 31.0,
       "awayPoints": 22.0,
       "period": 4,
-      "clock": "13:11",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "07:28",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 30.0,
       "period": 3,
-      "clock": "10:26",
+      "clock": "07:21",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -177,7 +162,7 @@
       "homePoints": 10.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "03:08",
+      "clock": "00:00",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -192,14 +177,13 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "06:31",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "04:22",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
-    "Arkansas",
     "Arkansas State",
     "Army",
     "Boise State",
@@ -217,7 +201,6 @@
     "South Alabama",
     "South Florida",
     "Temple",
-    "Texas A&M",
     "Texas Tech",
     "UL Monroe",
     "USC",
