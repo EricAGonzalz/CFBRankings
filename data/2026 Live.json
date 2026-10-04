@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T02:26:30.678898+00:00",
+  "updatedAt": "2026-10-04T02:31:56.645561+00:00",
   "liveGames": [
     {
       "id": 401869942,
@@ -9,25 +9,10 @@
       "awayTeam": "Georgia Southern",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "01:04",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401871089,
-      "status": "in_progress",
-      "homeTeam": "South Alabama",
-      "awayTeam": "UL Monroe",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 52.0,
-      "awayPoints": 35.0,
-      "period": 4,
-      "clock": "00:51",
+      "clock": "00:49",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -42,7 +27,7 @@
       "homePoints": 7.0,
       "awayPoints": 15.0,
       "period": 4,
-      "clock": "10:54",
+      "clock": "08:37",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -56,8 +41,8 @@
       "awayConference": "ACC",
       "homePoints": 6.0,
       "awayPoints": 24.0,
-      "period": 3,
-      "clock": "00:07",
+      "period": 4,
+      "clock": "14:52",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -69,12 +54,12 @@
       "awayTeam": "Washington",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 22.0,
+      "homePoints": 25.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "12:34",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 8,
+      "clock": "09:36",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
     },
     {
@@ -84,12 +69,12 @@
       "awayTeam": "Utah State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 31.0,
+      "homePoints": 37.0,
       "awayPoints": 18.0,
       "period": 4,
-      "clock": "09:31",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "07:49",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -103,8 +88,8 @@
       "awayPoints": 17.0,
       "period": 4,
       "clock": "03:08",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -117,7 +102,7 @@
       "homePoints": 31.0,
       "awayPoints": 22.0,
       "period": 4,
-      "clock": "05:13",
+      "clock": "03:52",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -129,13 +114,13 @@
       "awayTeam": "Indiana",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 6.0,
+      "homePoints": 7.0,
       "awayPoints": 37.0,
       "period": 3,
-      "clock": "03:52",
-      "completedDrives": 17,
+      "clock": "01:41",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401869932,
@@ -145,9 +130,9 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 17.0,
-      "awayPoints": 13.0,
+      "awayPoints": 20.0,
       "period": 4,
-      "clock": "12:17",
+      "clock": "11:37",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -161,11 +146,11 @@
       "awayConference": "Pac-12",
       "homePoints": 0.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 3
+      "period": 2,
+      "clock": "12:34",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 4
     }
   ],
   "liveTeams": [
@@ -182,11 +167,9 @@
     "Louisiana Tech",
     "Miami",
     "Rutgers",
-    "South Alabama",
     "South Florida",
     "Temple",
     "Texas Tech",
-    "UL Monroe",
     "USC",
     "Utah State",
     "Washington",
