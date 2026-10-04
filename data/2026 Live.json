@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T06:21:28.580020+00:00",
+  "updatedAt": "2026-10-04T06:26:23.041813+00:00",
   "liveGames": [
-    {
-      "id": 401856820,
-      "status": "in_progress",
-      "homeTeam": "Arizona",
-      "awayTeam": "Cincinnati",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 34.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "00:25",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401864513,
       "status": "in_progress",
@@ -27,15 +12,13 @@
       "homePoints": 13.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "03:20",
-      "completedDrives": 17,
+      "clock": "00:28",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     }
   ],
   "liveTeams": [
-    "Arizona",
-    "Cincinnati",
     "Hawai'i",
     "San José State"
   ]
