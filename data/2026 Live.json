@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T03:16:59.010329+00:00",
+  "updatedAt": "2026-10-04T03:21:21.594776+00:00",
   "liveGames": [
-    {
-      "id": 401858249,
-      "status": "in_progress",
-      "homeTeam": "Clemson",
-      "awayTeam": "Miami",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 13.0,
-      "awayPoints": 41.0,
-      "period": 4,
-      "clock": "01:20",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401860921,
       "status": "in_progress",
@@ -24,10 +9,10 @@
       "awayTeam": "Fresno State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "00:07",
+      "clock": "00:00",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -42,9 +27,9 @@
       "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "02:04",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "00:27",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -57,7 +42,7 @@
       "homePoints": 3.0,
       "awayPoints": 10.0,
       "period": 1,
-      "clock": "00:19",
+      "clock": "00:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -72,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:21",
-      "completedDrives": 1,
+      "clock": "08:33",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
@@ -83,9 +68,7 @@
     "Arizona State",
     "Baylor",
     "Cincinnati",
-    "Clemson",
     "Fresno State",
-    "Miami",
     "San Diego State",
     "Texas State",
     "Washington State"
