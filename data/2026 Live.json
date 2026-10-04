@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T04:26:24.943388+00:00",
+  "updatedAt": "2026-10-04T04:31:40.665874+00:00",
   "liveGames": [
     {
       "id": 401860921,
@@ -12,9 +12,9 @@
       "homePoints": 6.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "11:00",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "09:32",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -39,13 +39,13 @@
       "awayTeam": "Texas State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 17.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 10,
+      "period": 3,
+      "clock": "14:23",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401856820,
@@ -54,13 +54,13 @@
       "awayTeam": "Cincinnati",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "00:12",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 4
+      "clock": "00:00",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864513,
@@ -72,10 +72,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:36",
-      "completedDrives": 2,
+      "clock": "03:21",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
