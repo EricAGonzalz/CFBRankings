@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T03:03:42.908023+00:00",
+  "updatedAt": "2026-10-04T03:07:45.833866+00:00",
   "liveGames": [
-    {
-      "id": 401856821,
-      "status": "in_progress",
-      "homeTeam": "Colorado",
-      "awayTeam": "Texas Tech",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 7.0,
-      "awayPoints": 29.0,
-      "period": 4,
-      "clock": "00:14",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401858249,
       "status": "in_progress",
@@ -28,9 +13,9 @@
       "awayPoints": 34.0,
       "period": 4,
       "clock": "05:35",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858478,
@@ -42,10 +27,10 @@
       "homePoints": 25.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "01:17",
-      "completedDrives": 21,
+      "clock": "00:45",
+      "completedDrives": 22,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858477,
@@ -55,12 +40,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 15.0,
-      "awayPoints": 44.0,
+      "awayPoints": 47.0,
       "period": 4,
-      "clock": "04:37",
-      "completedDrives": 21,
+      "clock": "02:25",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401860921,
@@ -72,7 +57,7 @@
       "homePoints": 3.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "03:20",
+      "clock": "02:00",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -87,7 +72,7 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "07:13",
+      "clock": "06:11",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -100,26 +85,24 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 0.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 1,
-      "clock": "06:04",
-      "completedDrives": 2,
+      "clock": "04:21",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "Arizona State",
     "Baylor",
     "Clemson",
-    "Colorado",
     "Fresno State",
     "Indiana",
     "Miami",
     "Rutgers",
     "San Diego State",
     "Texas State",
-    "Texas Tech",
     "USC",
     "Washington",
     "Washington State"
