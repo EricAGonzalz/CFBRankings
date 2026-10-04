@@ -749,6 +749,26 @@
     function urlForState(){const u=new URL(location.href);u.search="";if(APP.view!=="rankings")u.searchParams.set("view",APP.view);u.searchParams.set("year",APP.year);if(APP.view==="team"&&APP.team)u.searchParams.set("team",APP.team);return u}
     function syncUrl(replace=false){history[replace?'replaceState':'pushState']({},"",urlForState())}
 
+    // Build a real, shareable URL for a team profile so browser-native
+    // Ctrl/Cmd-click and middle-click can open the profile in a new tab.
+    function teamUrl(team,year=APP.year){
+      const u=new URL(location.href);
+      u.search="";
+      u.searchParams.set("view","team");
+      u.searchParams.set("year",String(year));
+      u.searchParams.set("team",String(team));
+      return u.href;
+    }
+
+    // Only intercept an ordinary left click. Modified clicks are left to the
+    // browser so Ctrl/Cmd-click and middle-click keep their normal behavior.
+    function openTeamLink(e,team){
+      if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+      e.preventDefault();
+      APP.team=team;
+      setView("team",{team});
+    }
+
     function setView(view,{push=true,team=null}={}){
       if(!["rankings","matchup","conferences","team"].includes(view))view="rankings";
       APP.view=view;if(team!==null)APP.team=team;
@@ -954,12 +974,17 @@
             const td=document.createElement('td');
             if(["Team","Conference"].includes(c))td.classList.add('left');
             if(c==="Team"){
-              const a=document.createElement('a');a.href="#";a.className='team-link';a.textContent=r.Team;
-              a.onclick=e=>{e.preventDefault();APP.team=r.Team;setView('team',{team:r.Team})};
+              const a=document.createElement('a');a.href=teamUrl(r.Team);a.className='team-link';a.textContent=r.Team;
+              a.style.color=teamPrimaryColor(r.Team);
+              a.onclick=e=>openTeamLink(e,r.Team);
               td.appendChild(a);
               if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}
             }else{
               const rawValue=r[c];td.dataset.sortValue=rawValue??"";
+              if(c==="Conference"){
+                td.style.color=conferenceColor(rawValue);
+                td.style.fontWeight="650";
+              }
               if(threeDecimalCols.has(c))td.appendChild(document.createTextNode(fmt(rawValue)));
               else td.appendChild(document.createTextNode(rawValue??""));
               if(c!=="NetRtg")appendStatRank(td,r,c,statRankMaps);
@@ -2071,7 +2096,7 @@
         }
         const tr=document.createElement('tr');tr.className='schedule-game-row';
         const scheduleKey=`${s.week||''}|${s.opp||''}|${s.startDate||''}|${s.site||''}`;tr.dataset.scheduleKey=scheduleKey;
-        const oppCell=oppRow?`<a href="#" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);
+        const oppCell=oppRow?`<a href="${escapeHtml(teamUrl(oppRow.Team))}" class="opponent-link" data-team="${escapeHtml(oppRow.Team)}">${escapeHtml(s.opp)}</a>`:escapeHtml(s.opp);
         tr.innerHTML=`<td>${escapeHtml(s.week)}</td><td class="left schedule-opponent-cell">${oppCell}<button type="button" class="schedule-expand-button" aria-expanded="false" aria-label="Show ${escapeHtml(row.Team)} vs ${escapeHtml(s.opp)} comparison" title="Show matchup comparison">›</button></td><td>${escapeHtml(s.site)}</td><td>${escapeHtml(status)}</td><td>${escapeHtml(score)}</td><td>${escapeHtml(prob)}</td><td class="${result==='W'?'result-win':result==='L'?'result-loss':result==='T'?'result-tie':''}">${escapeHtml(result)}</td><td>${oppRow?fmt(oppRow.AdjRtg):'—'}</td>`;
         const detail=document.createElement('tr');detail.className='schedule-detail-row hidden';const td=document.createElement('td');td.colSpan=8;detail.appendChild(td);
         els.teamScheduleBody.append(tr,detail);
@@ -2086,7 +2111,10 @@
       const record=(actualRecord&&actualRecord.games)?actualRecord:{wins:(n(row.W)??0),losses:(n(row.L)??0),ties:0,games:(n(row.W)??0)+(n(row.L)??0)};
       els.teamRemaining.textContent=`${pw}-${pl}`;
       els.teamProjected.textContent=`${record.wins+pw}-${record.losses+pl}`;
-      els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>a.onclick=e=>{e.preventDefault();APP.team=a.dataset.team;setView('team',{team:APP.team})})
+      els.teamScheduleBody.querySelectorAll('[data-team]').forEach(a=>{
+        a.style.color=teamPrimaryColor(a.dataset.team);
+        a.onclick=e=>openTeamLink(e,a.dataset.team);
+      })
     }
 
     // ---------- Publishing ----------
