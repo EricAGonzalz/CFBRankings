@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T02:41:24.587347+00:00",
+  "updatedAt": "2026-10-04T02:46:55.042841+00:00",
   "liveGames": [
     {
       "id": 401856821,
@@ -12,9 +12,9 @@
       "homePoints": 7.0,
       "awayPoints": 22.0,
       "period": 4,
-      "clock": "07:10",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
+      "clock": "04:46",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 10
     },
     {
@@ -24,10 +24,10 @@
       "awayTeam": "Miami",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 12.0,
+      "homePoints": 13.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "12:09",
+      "clock": "12:01",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -42,9 +42,9 @@
       "homePoints": 25.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "06:35",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 9,
+      "clock": "05:24",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
     },
     {
@@ -57,25 +57,10 @@
       "homePoints": 37.0,
       "awayPoints": 18.0,
       "period": 4,
-      "clock": "04:19",
+      "clock": "02:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401862792,
-      "status": "in_progress",
-      "homeTeam": "South Florida",
-      "awayTeam": "Temple",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 13.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "00:51",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401869842,
@@ -87,7 +72,7 @@
       "homePoints": 31.0,
       "awayPoints": 22.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "01:11",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -99,10 +84,10 @@
       "awayTeam": "Indiana",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 7.0,
+      "homePoints": 15.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "11:41",
+      "clock": "11:11",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -117,10 +102,10 @@
       "homePoints": 20.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "05:38",
-      "completedDrives": 15,
+      "clock": "03:54",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401860921,
@@ -132,7 +117,7 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "09:27",
+      "clock": "08:30",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -147,9 +132,24 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:07",
-      "completedDrives": 1,
+      "clock": "12:49",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401860900,
+      "status": "in_progress",
+      "homeTeam": "San Diego State",
+      "awayTeam": "Texas State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:09",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
@@ -167,8 +167,8 @@
     "Louisiana Tech",
     "Miami",
     "Rutgers",
-    "South Florida",
-    "Temple",
+    "San Diego State",
+    "Texas State",
     "Texas Tech",
     "USC",
     "Utah State",
