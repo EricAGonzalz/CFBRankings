@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-04T02:06:36.995345+00:00",
+  "updatedAt": "2026-10-04T02:11:35.099758+00:00",
   "liveGames": [
     {
       "id": 401856711,
@@ -12,25 +12,10 @@
       "homePoints": 34.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "00:46",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401856818,
-      "status": "in_progress",
-      "homeTeam": "TCU",
-      "awayTeam": "BYU",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 10.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "00:32",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
     },
     {
       "id": 401862788,
@@ -42,10 +27,10 @@
       "homePoints": 14.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 18,
+      "clock": "01:52",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401869942,
@@ -57,7 +42,7 @@
       "homePoints": 17.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "04:57",
+      "clock": "04:21",
       "completedDrives": 20,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 11
@@ -72,10 +57,10 @@
       "homePoints": 45.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "06:13",
-      "completedDrives": 20,
+      "clock": "06:08",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856821,
@@ -87,9 +72,9 @@
       "homePoints": 7.0,
       "awayPoints": 12.0,
       "period": 3,
-      "clock": "03:01",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "00:33",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -102,7 +87,7 @@
       "homePoints": 6.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "06:33",
+      "clock": "05:16",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
@@ -117,10 +102,10 @@
       "homePoints": 22.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "04:40",
-      "completedDrives": 17,
+      "clock": "02:35",
+      "completedDrives": 18,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401860898,
@@ -131,11 +116,11 @@
       "awayConference": "Pac-12",
       "homePoints": 31.0,
       "awayPoints": 10.0,
-      "period": 3,
-      "clock": "01:25",
-      "completedDrives": 13,
+      "period": 4,
+      "clock": "13:00",
+      "completedDrives": 14,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401862792,
@@ -177,9 +162,9 @@
       "homePoints": 0.0,
       "awayPoints": 30.0,
       "period": 3,
-      "clock": "11:25",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "10:26",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -192,7 +177,7 @@
       "homePoints": 10.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "05:08",
+      "clock": "03:08",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -207,7 +192,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "07:01",
+      "clock": "06:31",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -217,7 +202,6 @@
     "Arkansas",
     "Arkansas State",
     "Army",
-    "BYU",
     "Boise State",
     "Clemson",
     "Coastal Carolina",
@@ -232,7 +216,6 @@
     "Rutgers",
     "South Alabama",
     "South Florida",
-    "TCU",
     "Temple",
     "Texas A&M",
     "Texas Tech",
