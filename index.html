@@ -981,10 +981,6 @@
               if(liveSet.has(String(r.Team).toLowerCase())){const dot=document.createElement('span');dot.className='live-dot';td.appendChild(dot)}
             }else{
               const rawValue=r[c];td.dataset.sortValue=rawValue??"";
-              if(c==="Conference"){
-                td.style.color=conferenceColor(rawValue);
-                td.style.fontWeight="650";
-              }
               if(threeDecimalCols.has(c))td.appendChild(document.createTextNode(fmt(rawValue)));
               else td.appendChild(document.createTextNode(rawValue??""));
               if(c!=="NetRtg")appendStatRank(td,r,c,statRankMaps);
