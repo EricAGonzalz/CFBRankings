@@ -1388,7 +1388,7 @@
           ctx.lineWidth=4;
           ctx.strokeStyle='rgba(255,255,255,.99)';
           ctx.strokeText(text,x,y);
-          ctx.fillStyle=isFocus?(pointColor||ds.borderColor):(ds._teamLabelColors?(pointColor||ds.borderColor):ds.borderColor);
+          ctx.fillStyle=pointColor||ds.borderColor;
           ctx.fillText(text,x,y);
         };
 
