@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-07T03:51:20.618257+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-07T23:06:41.336731+00:00",
+  "liveGames": [
+    {
+      "id": 401871051,
+      "status": "in_progress",
+      "homeTeam": "Kennesaw State",
+      "awayTeam": "Jacksonville State",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:10",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Jacksonville State",
+    "Kennesaw State"
+  ]
 }
