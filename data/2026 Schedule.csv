@@ -1126,7 +1126,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401856671,Southern Miss,Sun Belt,Auburn,SEC,Away,2026-09-12T23:45:00.000Z,True,False,8,43,L,49,36,49.157
 2026,3,401861963,Southern Miss,Sun Belt,UConn,FBS Independents,Home,2026-09-19T23:00:00.000Z,True,False,20,48,L,64,88,-32.630
 2026,4,401862784,Southern Miss,Sun Belt,Tulane,American Athletic,Away,2026-09-26T23:00:00.000Z,True,False,21,24,L,81,86,-30.366
-2026,6,401871090,Southern Miss,Sun Belt,Troy,Sun Belt,Away,2026-10-07T00:00:00.000Z,False,True,34,55,,65,68,-6.653
+2026,6,401871090,Southern Miss,Sun Belt,Troy,Sun Belt,Away,2026-10-07T00:00:00.000Z,True,False,34,55,L,65,68,-6.653
 2026,7,401869934,Southern Miss,Sun Belt,Arkansas State,Sun Belt,Home,2026-10-17T23:00:00.000Z,False,False,,,,103,110,-53.505
 2026,8,401869967,Southern Miss,Sun Belt,Louisiana,Sun Belt,Home,2026-10-24T04:00:00.000Z,False,False,,,,56,70,-11.761
 2026,9,401871095,Southern Miss,Sun Belt,UL Monroe,Sun Belt,Away,2026-10-31T04:00:00.000Z,False,False,,,,132,134,-129.939
@@ -1247,7 +1247,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401870763,Troy,Sun Belt,Sam Houston,Conference USA,Home,2026-09-05T23:00:00.000Z,True,False,24,21,W,109,101,-45.814
 2026,3,401856689,Troy,Sun Belt,Missouri,SEC,Away,2026-09-19T23:00:00.000Z,True,False,17,27,L,35,25,76.039
 2026,4,401860894,Troy,Sun Belt,Utah State,Pac-12,Away,2026-09-26T23:30:00.000Z,True,False,10,21,L,105,91,-36.417
-2026,6,401871090,Troy,Sun Belt,Southern Miss,Sun Belt,Home,2026-10-07T00:00:00.000Z,False,True,55,34,,126,129,-111.532
+2026,6,401871090,Troy,Sun Belt,Southern Miss,Sun Belt,Home,2026-10-07T00:00:00.000Z,True,False,55,34,W,126,129,-111.532
 2026,7,401869966,Troy,Sun Belt,Louisiana,Sun Belt,Away,2026-10-17T21:00:00.000Z,False,False,,,,56,70,-11.761
 2026,8,401871094,Troy,Sun Belt,UL Monroe,Sun Belt,Home,2026-10-24T04:00:00.000Z,False,False,,,,132,134,-129.939
 2026,9,401869963,Troy,Sun Belt,James Madison,Sun Belt,Away,2026-10-29T23:30:00.000Z,False,False,,,,14,30,60.322
