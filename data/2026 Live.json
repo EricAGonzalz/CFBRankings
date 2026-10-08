@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-08T23:36:20.292650+00:00",
+  "updatedAt": "2026-10-08T23:41:19.144854+00:00",
   "liveGames": [
     {
       "id": 401870766,
@@ -11,8 +11,8 @@
       "awayConference": "Conference USA",
       "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "01:17",
+      "period": 2,
+      "clock": "15:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -27,16 +27,50 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "02:16",
+      "clock": "00:00",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401862794,
+      "status": "in_progress",
+      "homeTeam": "UTSA",
+      "awayTeam": "South Florida",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:56",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401869933,
+      "status": "in_progress",
+      "homeTeam": "Arkansas State",
+      "awayTeam": "South Alabama",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:30",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Arkansas State",
     "Liberty",
     "Missouri State",
     "Sam Houston",
+    "South Alabama",
+    "South Florida",
+    "UTSA",
     "Western Kentucky"
   ]
 }
