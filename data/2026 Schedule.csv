@@ -340,7 +340,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401862699,Florida International,Conference USA,South Florida,American Athletic,Away,2026-09-05T23:00:00.000Z,True,False,9,19,L,53,65,0.075
 2026,2,401866414,Florida International,Conference USA,Buffalo,Mid-American,Home,2026-09-12T22:00:00.000Z,True,False,33,20,W,122,111,-56.825
 2026,3,401862771,Florida International,Conference USA,Florida Atlantic,American Athletic,Away,2026-09-19T22:00:00.000Z,True,False,10,16,L,73,74,-17.312
-2026,6,401871066,Florida International,Conference USA,New Mexico State,Conference USA,Home,2026-10-07T23:30:00.000Z,False,True,22,3,,99,116,-67.124
+2026,6,401871066,Florida International,Conference USA,New Mexico State,Conference USA,Home,2026-10-07T23:30:00.000Z,True,False,22,3,W,99,116,-67.124
 2026,7,401871053,Florida International,Conference USA,Jacksonville State,Conference USA,Away,2026-10-14T00:00:00.000Z,False,False,,,,86,98,-45.197
 2026,8,401871055,Florida International,Conference USA,Middle Tennessee,Conference USA,Home,2026-10-20T23:00:00.000Z,False,False,,,,117,124,-82.056
 2026,9,401871059,Florida International,Conference USA,Liberty,Conference USA,Away,2026-10-31T19:30:00.000Z,False,False,,,,20,39,47.218
@@ -816,7 +816,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401864578,New Mexico State,Conference USA,Hawai'i,Mountain West,Away,2026-09-13T03:59:00.000Z,True,False,19,29,L,94,125,-85.147
 2026,4,401864579,New Mexico State,Conference USA,New Mexico,Mountain West,Home,2026-09-26T19:30:00.000Z,True,False,18,42,L,8,12,97.229
 2026,5,401871049,New Mexico State,Conference USA,Western Kentucky,Conference USA,Home,2026-10-02T00:00:00.000Z,True,False,34,13,W,137,136,-133.536
-2026,6,401871066,New Mexico State,Conference USA,Florida International,Conference USA,Away,2026-10-07T23:30:00.000Z,False,True,3,22,,55,70,-10.949
+2026,6,401871066,New Mexico State,Conference USA,Florida International,Conference USA,Away,2026-10-07T23:30:00.000Z,True,False,3,22,L,55,70,-10.949
 2026,8,401871070,New Mexico State,Conference USA,Sam Houston,Conference USA,Away,2026-10-22T00:00:00.000Z,False,False,,,,109,101,-45.822
 2026,9,401871057,New Mexico State,Conference USA,Jacksonville State,Conference USA,Home,2026-10-29T00:00:00.000Z,False,False,,,,86,98,-45.197
 2026,10,401870795,New Mexico State,Conference USA,Liberty,Conference USA,Home,2026-11-07T22:00:00.000Z,False,False,,,,20,39,47.218
