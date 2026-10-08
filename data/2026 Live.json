@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-08T23:41:19.144854+00:00",
+  "updatedAt": "2026-10-08T23:46:22.062808+00:00",
   "liveGames": [
     {
       "id": 401870766,
@@ -9,12 +9,12 @@
       "awayTeam": "Sam Houston",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "14:15",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -26,8 +26,8 @@
       "awayConference": "Conference USA",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "14:53",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -40,12 +40,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "11:56",
-      "completedDrives": 0,
+      "clock": "10:27",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401869933,
@@ -57,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:30",
+      "clock": "10:35",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
