@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T02:11:26.156985+00:00",
+  "updatedAt": "2026-10-09T02:16:22.507957+00:00",
   "liveGames": [
-    {
-      "id": 401870766,
-      "status": "in_progress",
-      "homeTeam": "Liberty",
-      "awayTeam": "Sam Houston",
-      "homeConference": "Conference USA",
-      "awayConference": "Conference USA",
-      "homePoints": 35.0,
-      "awayPoints": 3.0,
-      "period": 4,
-      "clock": "00:28",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401862794,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 20.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "14:46",
+      "clock": "12:23",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -39,10 +24,10 @@
       "awayTeam": "South Alabama",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 49.0,
       "period": 3,
-      "clock": "01:10",
+      "clock": "00:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 8
@@ -50,8 +35,6 @@
   ],
   "liveTeams": [
     "Arkansas State",
-    "Liberty",
-    "Sam Houston",
     "South Alabama",
     "South Florida",
     "UTSA"
