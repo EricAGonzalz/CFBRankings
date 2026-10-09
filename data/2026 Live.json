@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T03:16:23.598819+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-09T23:11:29.143009+00:00",
+  "liveGames": [
+    {
+      "id": 401858254,
+      "status": "in_progress",
+      "homeTeam": "Louisville",
+      "awayTeam": "Florida State",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:44",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Florida State",
+    "Louisville"
+  ]
 }
