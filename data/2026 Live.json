@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-09T03:01:42.063410+00:00",
+  "updatedAt": "2026-10-09T03:06:34.414486+00:00",
   "liveGames": [
-    {
-      "id": 401862794,
-      "status": "in_progress",
-      "homeTeam": "UTSA",
-      "awayTeam": "South Florida",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 31.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401869933,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 49.0,
       "awayPoints": 56.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "01:44",
       "completedDrives": 24,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 11
@@ -35,8 +20,6 @@
   ],
   "liveTeams": [
     "Arkansas State",
-    "South Alabama",
-    "South Florida",
-    "UTSA"
+    "South Alabama"
   ]
 }
