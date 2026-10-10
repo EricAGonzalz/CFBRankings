@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T23:21:54.039197+00:00",
+  "updatedAt": "2026-10-10T23:26:24.360351+00:00",
   "liveGames": [
     {
       "id": 401856717,
@@ -12,25 +12,10 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "00:54",
-      "completedDrives": 27,
+      "clock": "00:19",
+      "completedDrives": 28,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 14
-    },
-    {
-      "id": 401858480,
-      "status": "in_progress",
-      "homeTeam": "Michigan State",
-      "awayTeam": "Illinois",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 37.0,
-      "awayPoints": 38.0,
-      "period": 5,
-      "clock": "00:00",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 15
     },
     {
       "id": 401856713,
@@ -40,11 +25,11 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 17.0,
-      "awayPoints": 23.0,
+      "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:57",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
+      "clock": "01:36",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 12
     },
     {
@@ -57,7 +42,7 @@
       "homePoints": 45.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "04:43",
+      "clock": "02:00",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -72,7 +57,7 @@
       "homePoints": 35.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "04:48",
+      "clock": "02:00",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -84,12 +69,12 @@
       "awayTeam": "LSU",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 0.0,
+      "homePoints": 6.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "08:45",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "08:09",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -99,12 +84,12 @@
       "awayTeam": "UAB",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 0.0,
+      "homePoints": 6.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "10:49",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "08:03",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -117,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:48",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "clock": "06:53",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401864518,
@@ -129,13 +114,13 @@
       "awayTeam": "North Dakota State",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 0.0,
+      "homePoints": 6.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:11",
-      "completedDrives": 2,
+      "clock": "09:39",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401869943,
@@ -147,22 +132,20 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "06:17",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "03:51",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "Arkansas",
     "Coastal Carolina",
-    "Illinois",
     "Kentucky",
     "LSU",
     "Marshall",
     "Maryland",
     "Memphis",
-    "Michigan State",
     "Nevada",
     "North Dakota State",
     "Ohio State",
