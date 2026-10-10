@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T01:06:24.930085+00:00",
+  "updatedAt": "2026-10-10T01:11:28.225437+00:00",
   "liveGames": [
     {
       "id": 401858254,
@@ -12,10 +12,25 @@
       "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "12:45",
-      "completedDrives": 11,
+      "clock": "10:25",
+      "completedDrives": 12,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
+    },
+    {
+      "id": 401858487,
+      "status": "in_progress",
+      "homeTeam": "Washington",
+      "awayTeam": "Iowa",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 3.0,
+      "period": 1,
+      "clock": "12:30",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401864519,
@@ -25,18 +40,20 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "13:54",
-      "completedDrives": 1,
+      "clock": "11:05",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Florida State",
+    "Iowa",
     "Louisville",
     "San José State",
+    "Washington",
     "Wyoming"
   ]
 }
