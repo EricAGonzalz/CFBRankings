@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T23:16:38.729163+00:00",
+  "updatedAt": "2026-10-10T23:21:54.039197+00:00",
   "liveGames": [
     {
       "id": 401856717,
@@ -12,9 +12,9 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:54",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 12,
+      "clock": "00:54",
+      "completedDrives": 27,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 14
     },
     {
@@ -24,28 +24,13 @@
       "awayTeam": "Illinois",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 31.0,
-      "awayPoints": 31.0,
+      "homePoints": 37.0,
+      "awayPoints": 38.0,
       "period": 5,
       "clock": "00:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401858484,
-      "status": "in_progress",
-      "homeTeam": "Oregon",
-      "awayTeam": "UCLA",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 15.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "00:10",
-      "completedDrives": 32,
-      "homeOffensiveDrives": 16,
-      "awayOffensiveDrives": 16
     },
     {
       "id": 401856713,
@@ -55,12 +40,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 17.0,
-      "awayPoints": 17.0,
+      "awayPoints": 23.0,
       "period": 4,
-      "clock": "03:09",
-      "completedDrives": 23,
+      "clock": "01:57",
+      "completedDrives": 24,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858483,
@@ -72,10 +57,10 @@
       "homePoints": 45.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "04:52",
-      "completedDrives": 21,
+      "clock": "04:43",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401860902,
@@ -87,10 +72,10 @@
       "homePoints": 35.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "05:53",
-      "completedDrives": 9,
+      "clock": "04:48",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856715,
@@ -100,12 +85,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "12:19",
-      "completedDrives": 0,
+      "clock": "08:45",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862798,
@@ -115,9 +100,9 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "12:07",
+      "clock": "10:49",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -132,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:51",
+      "clock": "09:48",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -147,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:02",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "11:11",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "08:58",
+      "clock": "06:17",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -182,13 +167,11 @@
     "North Dakota State",
     "Ohio State",
     "Oklahoma",
-    "Oregon",
     "Oregon State",
     "San Diego State",
     "Tennessee",
     "Texas",
     "UAB",
-    "UCLA",
     "UNLV",
     "UTEP"
   ]
