@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T23:51:28.132175+00:00",
+  "updatedAt": "2026-10-10T23:56:32.881776+00:00",
   "liveGames": [
     {
       "id": 401860902,
@@ -24,13 +24,13 @@
       "awayTeam": "LSU",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 10.0,
-      "period": 1,
-      "clock": "01:39",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 2
+      "period": 2,
+      "clock": "13:06",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401862798,
@@ -39,13 +39,13 @@
       "awayTeam": "UAB",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "14:54",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "clock": "10:42",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401864517,
@@ -56,8 +56,8 @@
       "awayConference": "Mountain West",
       "homePoints": 0.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "00:14",
+      "period": 2,
+      "clock": "13:37",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -71,8 +71,8 @@
       "awayConference": "Mountain West",
       "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:12",
+      "period": 2,
+      "clock": "15:00",
       "completedDrives": 6,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 4
@@ -87,10 +87,25 @@
       "homePoints": 0.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "12:09",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "08:37",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401856712,
+      "status": "in_progress",
+      "homeTeam": "Alabama",
+      "awayTeam": "Georgia",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:06",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858258,
@@ -100,12 +115,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "07:13",
-      "completedDrives": 1,
+      "clock": "04:02",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858485,
@@ -132,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "04:48",
+      "clock": "00:00",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -147,15 +162,17 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "06:54",
-      "completedDrives": 2,
+      "clock": "04:38",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "Air Force",
+    "Alabama",
     "Coastal Carolina",
+    "Georgia",
     "Kentucky",
     "LSU",
     "Louisiana",
