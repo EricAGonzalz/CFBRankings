@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T02:31:31.566469+00:00",
+  "updatedAt": "2026-10-10T02:36:24.145563+00:00",
   "liveGames": [
     {
       "id": 401858254,
@@ -9,12 +9,12 @@
       "awayTeam": "Florida State",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 41.0,
+      "homePoints": 44.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "04:29",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "02:59",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -27,10 +27,10 @@
       "homePoints": 3.0,
       "awayPoints": 27.0,
       "period": 2,
-      "clock": "01:30",
-      "completedDrives": 12,
+      "clock": "00:24",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401860922,
@@ -40,12 +40,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 3.0,
-      "awayPoints": 9.0,
+      "awayPoints": 16.0,
       "period": 2,
-      "clock": "04:03",
-      "completedDrives": 8,
+      "clock": "03:24",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864519,
@@ -57,15 +57,32 @@
       "homePoints": 7.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "00:16",
+      "clock": "01:42",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401856826,
+      "status": "in_progress",
+      "homeTeam": "BYU",
+      "awayTeam": "Iowa State",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "BYU",
     "Florida State",
     "Iowa",
+    "Iowa State",
     "Louisville",
     "San José State",
     "Utah State",
