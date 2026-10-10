@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T16:26:41.095459+00:00",
+  "updatedAt": "2026-10-10T16:32:31.447299+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -12,10 +12,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:19",
-      "completedDrives": 4,
+      "clock": "05:21",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856823,
@@ -25,11 +25,11 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 3.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 1,
-      "clock": "05:35",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "05:03",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -40,12 +40,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 1,
-      "clock": "06:17",
-      "completedDrives": 3,
+      "clock": "02:37",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858256,
@@ -57,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:36",
-      "completedDrives": 1,
+      "clock": "05:27",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858260,
@@ -69,10 +69,10 @@
       "awayTeam": "Wake Forest",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 6.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:17",
+      "clock": "06:45",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -87,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:57",
+      "clock": "07:02",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -99,13 +99,13 @@
       "awayTeam": "Tulane",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:19",
-      "completedDrives": 3,
+      "clock": "01:42",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401866436,
@@ -117,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "03:48",
+      "clock": "02:19",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
