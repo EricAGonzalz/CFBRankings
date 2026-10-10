@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T23:11:53.015654+00:00",
+  "updatedAt": "2026-10-10T23:16:38.729163+00:00",
   "liveGames": [
     {
       "id": 401856717,
@@ -12,25 +12,10 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "04:36",
-      "completedDrives": 25,
+      "clock": "01:54",
+      "completedDrives": 26,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
-    },
-    {
-      "id": 401856718,
-      "status": "in_progress",
-      "homeTeam": "Vanderbilt",
-      "awayTeam": "Ole Miss",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 17.0,
-      "awayPoints": 52.0,
-      "period": 4,
-      "clock": "00:40",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401858480,
@@ -41,11 +26,11 @@
       "awayConference": "Big Ten",
       "homePoints": 31.0,
       "awayPoints": 31.0,
-      "period": 4,
+      "period": 5,
       "clock": "00:00",
-      "completedDrives": 18,
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858484,
@@ -57,7 +42,7 @@
       "homePoints": 15.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "00:59",
+      "clock": "00:10",
       "completedDrives": 32,
       "homeOffensiveDrives": 16,
       "awayOffensiveDrives": 16
@@ -72,9 +57,9 @@
       "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "05:33",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
+      "clock": "03:09",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
     },
     {
@@ -84,12 +69,12 @@
       "awayTeam": "Maryland",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 38.0,
+      "homePoints": 45.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "05:55",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "04:52",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -99,13 +84,43 @@
       "awayTeam": "San Diego State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "05:56",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "05:53",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401856715,
+      "status": "in_progress",
+      "homeTeam": "Kentucky",
+      "awayTeam": "LSU",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:19",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401862798,
+      "status": "in_progress",
+      "homeTeam": "Memphis",
+      "awayTeam": "UAB",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:07",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401864517,
@@ -117,10 +132,25 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:09",
-      "completedDrives": 1,
+      "clock": "10:51",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401864518,
+      "status": "in_progress",
+      "homeTeam": "UNLV",
+      "awayTeam": "North Dakota State",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:02",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401869943,
@@ -130,32 +160,36 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "10:57",
-      "completedDrives": 3,
+      "clock": "08:58",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "Arkansas",
     "Coastal Carolina",
     "Illinois",
+    "Kentucky",
+    "LSU",
     "Marshall",
     "Maryland",
+    "Memphis",
     "Michigan State",
     "Nevada",
+    "North Dakota State",
     "Ohio State",
     "Oklahoma",
-    "Ole Miss",
     "Oregon",
     "Oregon State",
     "San Diego State",
     "Tennessee",
     "Texas",
+    "UAB",
     "UCLA",
-    "UTEP",
-    "Vanderbilt"
+    "UNLV",
+    "UTEP"
   ]
 }
