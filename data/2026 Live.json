@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T01:01:55.166295+00:00",
+  "updatedAt": "2026-10-10T01:06:24.930085+00:00",
   "liveGames": [
     {
       "id": 401858254,
@@ -9,17 +9,34 @@
       "awayTeam": "Florida State",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "14:35",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "12:45",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
+    },
+    {
+      "id": 401864519,
+      "status": "in_progress",
+      "homeTeam": "San José State",
+      "awayTeam": "Wyoming",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:54",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Florida State",
-    "Louisville"
+    "Louisville",
+    "San José State",
+    "Wyoming"
   ]
 }
