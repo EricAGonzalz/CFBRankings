@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T16:46:40.594989+00:00",
+  "updatedAt": "2026-10-10T16:51:27.183268+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -11,8 +11,8 @@
       "awayConference": "SEC",
       "homePoints": 0.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "15:00",
+      "period": 2,
+      "clock": "13:49",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -24,13 +24,13 @@
       "awayTeam": "Arizona",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "14:35",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 1
+      "clock": "12:59",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401856824,
@@ -39,10 +39,10 @@
       "awayTeam": "UCF",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "13:34",
+      "clock": "13:02",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -57,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:34",
+      "clock": "12:01",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -71,8 +71,8 @@
       "awayConference": "ACC",
       "homePoints": 7.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "15:00",
+      "period": 2,
+      "clock": "13:07",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -84,12 +84,12 @@
       "awayTeam": "Indiana",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "02:24",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "00:47",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -102,9 +102,9 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "09:08",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -114,12 +114,12 @@
       "awayTeam": "Sacramento State",
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "10:21",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "09:36",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -132,9 +132,24 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:24",
+      "clock": "06:37",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856714,
+      "status": "in_progress",
+      "homeTeam": "Florida",
+      "awayTeam": "South Carolina",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:05",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
     }
   ],
@@ -143,6 +158,7 @@
     "Army",
     "Ball State",
     "Bowling Green",
+    "Florida",
     "Indiana",
     "Missouri",
     "NC State",
@@ -152,6 +168,7 @@
     "Oklahoma State",
     "Pittsburgh",
     "Sacramento State",
+    "South Carolina",
     "Texas A&M",
     "Tulane",
     "UCF",
