@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T16:11:34.271561+00:00",
+  "updatedAt": "2026-10-10T16:16:44.891650+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -12,10 +12,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:50",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "09:53",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856823,
@@ -27,7 +27,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:12",
+      "clock": "09:41",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -40,9 +40,9 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "10:41",
+      "clock": "09:27",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -57,7 +57,37 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:34",
+      "clock": "11:19",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858260,
+      "status": "in_progress",
+      "homeTeam": "NC State",
+      "awayTeam": "Wake Forest",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 7.0,
+      "period": 1,
+      "clock": "13:03",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858481,
+      "status": "in_progress",
+      "homeTeam": "Nebraska",
+      "awayTeam": "Indiana",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:34",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -72,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:53",
-      "completedDrives": 1,
+      "clock": "08:19",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401866436,
@@ -85,19 +115,22 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "09:58",
-      "completedDrives": 1,
+      "clock": "07:04",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Arizona",
     "Army",
     "Bowling Green",
+    "Indiana",
     "Missouri",
+    "NC State",
+    "Nebraska",
     "North Carolina",
     "Oklahoma State",
     "Pittsburgh",
@@ -105,6 +138,7 @@
     "Texas A&M",
     "Tulane",
     "UCF",
+    "Wake Forest",
     "West Virginia"
   ]
 }
