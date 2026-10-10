@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T19:41:47.693103+00:00",
+  "updatedAt": "2026-10-10T19:46:31.230168+00:00",
   "liveGames": [
     {
       "id": 401858482,
@@ -12,7 +12,7 @@
       "homePoints": 45.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "02:42",
+      "clock": "01:54",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -25,12 +25,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 13.0,
-      "awayPoints": 30.0,
+      "awayPoints": 31.0,
       "period": 3,
-      "clock": "01:12",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "clock": "00:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401862797,
@@ -42,10 +42,10 @@
       "homePoints": 28.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "12:47",
-      "completedDrives": 23,
+      "clock": "10:05",
+      "completedDrives": 24,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401869843,
@@ -57,7 +57,7 @@
       "homePoints": 3.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "09:30",
+      "clock": "07:45",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -87,10 +87,25 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:51",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "12:37",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856825,
+      "status": "in_progress",
+      "homeTeam": "Kansas State",
+      "awayTeam": "Houston",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:36",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858255,
@@ -102,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:20",
+      "clock": "10:11",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -114,10 +129,10 @@
       "awayTeam": "Stanford",
       "homeConference": "FBS Independents",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:07",
+      "clock": "12:59",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -132,10 +147,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:11",
-      "completedDrives": 1,
+      "clock": "09:38",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858480,
@@ -145,9 +160,9 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "15:00",
+      "clock": "11:46",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -160,12 +175,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "14:43",
-      "completedDrives": 0,
+      "clock": "10:47",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862796,
@@ -174,12 +189,12 @@
       "awayTeam": "Charlotte",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 3.0,
+      "homePoints": 9.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:52",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 1,
+      "clock": "09:01",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     },
     {
@@ -192,7 +207,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:42",
+      "clock": "10:25",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -205,9 +220,9 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "10:18",
+      "clock": "09:26",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -220,12 +235,12 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "11:08",
-      "completedDrives": 0,
+      "clock": "10:24",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401866438,
@@ -234,10 +249,10 @@
       "awayTeam": "Central Michigan",
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:55",
+      "clock": "11:01",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -252,7 +267,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:59",
+      "clock": "07:52",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -271,7 +286,9 @@
     "Eastern Michigan",
     "Florida",
     "Georgia Tech",
+    "Houston",
     "Illinois",
+    "Kansas State",
     "Kent State",
     "Massachusetts",
     "Miami (OH)",
