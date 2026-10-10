@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T19:26:35.973037+00:00",
+  "updatedAt": "2026-10-10T19:32:18.346935+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -27,25 +27,10 @@
       "homePoints": 31.0,
       "awayPoints": 52.0,
       "period": 4,
-      "clock": "01:20",
-      "completedDrives": 26,
+      "clock": "00:00",
+      "completedDrives": 27,
       "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401856824,
-      "status": "in_progress",
-      "homeTeam": "Oklahoma State",
-      "awayTeam": "UCF",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 42.0,
-      "awayPoints": 28.0,
-      "period": 4,
-      "clock": "00:15",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401858481,
@@ -57,7 +42,7 @@
       "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "01:20",
+      "clock": "01:00",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -72,7 +57,7 @@
       "homePoints": 45.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "08:18",
+      "clock": "06:27",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -87,9 +72,9 @@
       "homePoints": 13.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "06:04",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "05:22",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -102,10 +87,10 @@
       "homePoints": 14.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "clock": "14:15",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401869843,
@@ -117,10 +102,10 @@
       "homePoints": 3.0,
       "awayPoints": 2.0,
       "period": 4,
-      "clock": "14:18",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "clock": "13:23",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401866440,
@@ -132,9 +117,9 @@
       "homePoints": 10.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "01:11",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "00:00",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     }
   ],
@@ -150,12 +135,10 @@
     "Missouri",
     "Nebraska",
     "Northwestern",
-    "Oklahoma State",
     "Old Dominion",
     "Rice",
     "South Carolina",
     "Texas A&M",
-    "UCF",
     "West Virginia"
   ]
 }
