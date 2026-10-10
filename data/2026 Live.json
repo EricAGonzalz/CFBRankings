@@ -1,6 +1,76 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T05:56:25.185347+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-10T16:06:45.974993+00:00",
+  "liveGames": [
+    {
+      "id": 401856823,
+      "status": "in_progress",
+      "homeTeam": "West Virginia",
+      "awayTeam": "Arizona",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:09",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401856824,
+      "status": "in_progress",
+      "homeTeam": "Oklahoma State",
+      "awayTeam": "UCF",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:30",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401862795,
+      "status": "in_progress",
+      "homeTeam": "Army",
+      "awayTeam": "Tulane",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866436,
+      "status": "in_progress",
+      "homeTeam": "Bowling Green",
+      "awayTeam": "Sacramento State",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:24",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Arizona",
+    "Army",
+    "Bowling Green",
+    "Oklahoma State",
+    "Sacramento State",
+    "Tulane",
+    "UCF",
+    "West Virginia"
+  ]
 }
