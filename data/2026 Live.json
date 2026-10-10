@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T02:41:23.964773+00:00",
+  "updatedAt": "2026-10-10T02:46:19.265919+00:00",
   "liveGames": [
-    {
-      "id": 401858254,
-      "status": "in_progress",
-      "homeTeam": "Louisville",
-      "awayTeam": "Florida State",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 44.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "02:59",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401858487,
       "status": "in_progress",
@@ -42,7 +27,7 @@
       "homePoints": 3.0,
       "awayPoints": 16.0,
       "period": 2,
-      "clock": "02:44",
+      "clock": "01:48",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -72,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:52",
+      "clock": "08:03",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -80,10 +65,8 @@
   ],
   "liveTeams": [
     "BYU",
-    "Florida State",
     "Iowa",
     "Iowa State",
-    "Louisville",
     "San José State",
     "Utah State",
     "Washington",
