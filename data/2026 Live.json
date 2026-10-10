@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T01:11:28.225437+00:00",
+  "updatedAt": "2026-10-10T01:16:24.138975+00:00",
   "liveGames": [
     {
       "id": 401858254,
@@ -9,12 +9,12 @@
       "awayTeam": "Florida State",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "10:25",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "08:06",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -27,7 +27,22 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "12:30",
+      "clock": "11:07",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401860922,
+      "status": "in_progress",
+      "homeTeam": "Utah State",
+      "awayTeam": "Washington State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
+      "homePoints": 0.0,
+      "awayPoints": 3.0,
+      "period": 1,
+      "clock": "13:27",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -42,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "11:05",
+      "clock": "10:22",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -53,7 +68,9 @@
     "Iowa",
     "Louisville",
     "San José State",
+    "Utah State",
     "Washington",
+    "Washington State",
     "Wyoming"
   ]
 }
