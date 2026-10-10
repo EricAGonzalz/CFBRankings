@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T16:32:31.447299+00:00",
+  "updatedAt": "2026-10-10T16:36:27.472124+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -10,9 +10,9 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "05:21",
+      "clock": "04:46",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -27,7 +27,7 @@
       "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "05:03",
+      "clock": "03:07",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -57,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:27",
+      "clock": "03:38",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -72,7 +72,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:45",
+      "clock": "05:16",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -85,12 +85,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 3.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "07:02",
-      "completedDrives": 1,
+      "clock": "06:21",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862795,
@@ -102,7 +102,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:42",
+      "clock": "00:09",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -117,21 +117,38 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "02:19",
+      "clock": "00:00",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858482,
+      "status": "in_progress",
+      "homeTeam": "Northwestern",
+      "awayTeam": "Ball State",
+      "homeConference": "Big Ten",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:40",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Arizona",
     "Army",
+    "Ball State",
     "Bowling Green",
     "Indiana",
     "Missouri",
     "NC State",
     "Nebraska",
     "North Carolina",
+    "Northwestern",
     "Oklahoma State",
     "Pittsburgh",
     "Sacramento State",
