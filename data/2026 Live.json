@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T19:16:43.417582+00:00",
+  "updatedAt": "2026-10-10T19:21:54.257306+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -9,10 +9,10 @@
       "awayTeam": "Texas A&M",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 20.0,
+      "homePoints": 27.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "03:30",
+      "clock": "02:49",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -27,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 52.0,
       "period": 4,
-      "clock": "02:49",
+      "clock": "01:59",
       "completedDrives": 25,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 12
@@ -42,7 +42,7 @@
       "homePoints": 42.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "02:58",
+      "clock": "02:00",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -57,25 +57,10 @@
       "homePoints": 17.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "01:59",
-      "completedDrives": 22,
+      "clock": "01:08",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858260,
-      "status": "in_progress",
-      "homeTeam": "NC State",
-      "awayTeam": "Wake Forest",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 14.0,
-      "awayPoints": 38.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858481,
@@ -87,7 +72,7 @@
       "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "03:21",
+      "clock": "02:03",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -102,10 +87,10 @@
       "homePoints": 45.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "12:59",
-      "completedDrives": 16,
+      "clock": "12:00",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856714,
@@ -115,12 +100,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 13.0,
-      "awayPoints": 17.0,
+      "awayPoints": 24.0,
       "period": 3,
-      "clock": "10:41",
-      "completedDrives": 13,
+      "clock": "08:36",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401862797,
@@ -132,9 +117,9 @@
       "homePoints": 14.0,
       "awayPoints": 9.0,
       "period": 3,
-      "clock": "03:23",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "01:49",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -147,10 +132,10 @@
       "homePoints": 3.0,
       "awayPoints": 2.0,
       "period": 3,
-      "clock": "03:22",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
+      "clock": "00:38",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 10,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401866440,
@@ -162,10 +147,10 @@
       "homePoints": 10.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "04:43",
-      "completedDrives": 9,
+      "clock": "02:00",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     }
   ],
   "liveTeams": [
@@ -178,7 +163,6 @@
     "Massachusetts",
     "Miami (OH)",
     "Missouri",
-    "NC State",
     "Nebraska",
     "North Carolina",
     "Northwestern",
@@ -189,7 +173,6 @@
     "South Carolina",
     "Texas A&M",
     "UCF",
-    "Wake Forest",
     "West Virginia"
   ]
 }
