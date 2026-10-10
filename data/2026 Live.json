@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T21:21:53.402645+00:00",
+  "updatedAt": "2026-10-10T21:26:37.010105+00:00",
   "liveGames": [
-    {
-      "id": 401866440,
-      "status": "in_progress",
-      "homeTeam": "Massachusetts",
-      "awayTeam": "Miami (OH)",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 19.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "00:01",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401856717,
       "status": "in_progress",
@@ -25,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 7.0,
-      "awayPoints": 14.0,
+      "awayPoints": 17.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 12,
+      "clock": "00:12",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856718,
@@ -40,12 +25,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 3.0,
-      "awayPoints": 35.0,
+      "awayPoints": 42.0,
       "period": 2,
-      "clock": "00:27",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "clock": "00:00",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856825,
@@ -116,8 +101,8 @@
       "awayConference": "Big Ten",
       "homePoints": 7.0,
       "awayPoints": 20.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "12:54",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -160,12 +145,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 14.0,
-      "awayPoints": 20.0,
+      "awayPoints": 26.0,
       "period": 3,
-      "clock": "13:45",
-      "completedDrives": 12,
+      "clock": "10:23",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401866435,
@@ -177,9 +162,9 @@
       "homePoints": 14.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "12:31",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "11:00",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -207,9 +192,9 @@
       "homePoints": 31.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "14:54",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "10:42",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -222,7 +207,7 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "14:55",
+      "clock": "13:20",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -237,7 +222,7 @@
       "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 2,
-      "clock": "00:02",
+      "clock": "00:00",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -252,9 +237,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "05:37",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "03:05",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -267,7 +252,7 @@
       "homePoints": 21.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "08:32",
+      "clock": "07:45",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -288,8 +273,6 @@
     "Kansas State",
     "Kent State",
     "Maryland",
-    "Massachusetts",
-    "Miami (OH)",
     "Michigan State",
     "Navy",
     "North Texas",
