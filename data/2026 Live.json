@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T03:41:24.889202+00:00",
+  "updatedAt": "2026-10-10T03:46:25.614066+00:00",
   "liveGames": [
     {
       "id": 401858487,
@@ -11,8 +11,8 @@
       "awayConference": "Big Ten",
       "homePoints": 18.0,
       "awayPoints": 34.0,
-      "period": 3,
-      "clock": "15:00",
+      "period": 4,
+      "clock": "12:49",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -27,10 +27,10 @@
       "homePoints": 10.0,
       "awayPoints": 16.0,
       "period": 3,
-      "clock": "05:15",
-      "completedDrives": 17,
+      "clock": "03:17",
+      "completedDrives": 18,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401864519,
@@ -40,12 +40,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 13.0,
-      "awayPoints": 6.0,
+      "awayPoints": 12.0,
       "period": 4,
-      "clock": "07:40",
-      "completedDrives": 13,
+      "clock": "06:25",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856826,
@@ -54,12 +54,12 @@
       "awayTeam": "Iowa State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "01:51",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     }
   ],
