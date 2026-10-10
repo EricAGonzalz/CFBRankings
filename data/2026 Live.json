@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T04:46:24.435633+00:00",
+  "updatedAt": "2026-10-10T04:51:21.701442+00:00",
   "liveGames": [
-    {
-      "id": 401860922,
-      "status": "in_progress",
-      "homeTeam": "Utah State",
-      "awayTeam": "Washington State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 17.0,
-      "awayPoints": 16.0,
-      "period": 4,
-      "clock": "00:35",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401856826,
       "status": "in_progress",
@@ -24,10 +9,10 @@
       "awayTeam": "Iowa State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "01:50",
+      "clock": "01:01",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -35,8 +20,6 @@
   ],
   "liveTeams": [
     "BYU",
-    "Iowa State",
-    "Utah State",
-    "Washington State"
+    "Iowa State"
   ]
 }
