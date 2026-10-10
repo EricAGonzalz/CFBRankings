@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-10T17:02:52.064878+00:00",
+  "updatedAt": "2026-10-10T17:06:28.027712+00:00",
   "liveGames": [
     {
       "id": 401856716,
@@ -12,9 +12,9 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "11:01",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "10:11",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -25,9 +25,9 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 10.0,
-      "awayPoints": 14.0,
+      "awayPoints": 17.0,
       "period": 2,
-      "clock": "09:58",
+      "clock": "09:43",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -42,7 +42,7 @@
       "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "09:12",
+      "clock": "06:50",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -55,12 +55,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 10.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 2,
-      "clock": "05:50",
-      "completedDrives": 5,
+      "clock": "05:32",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858260,
@@ -72,10 +72,10 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "08:19",
-      "completedDrives": 5,
+      "clock": "06:54",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858481,
@@ -87,7 +87,7 @@
       "homePoints": 10.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "12:39",
+      "clock": "11:06",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -117,9 +117,9 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "06:38",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "03:33",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -132,7 +132,7 @@
       "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:53",
+      "clock": "15:00",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -147,17 +147,49 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:25",
+      "clock": "10:13",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401862797,
+      "status": "in_progress",
+      "homeTeam": "East Carolina",
+      "awayTeam": "Rice",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:44",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401869843,
+      "status": "in_progress",
+      "homeTeam": "App State",
+      "awayTeam": "Old Dominion",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:10",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "App State",
     "Arizona",
     "Army",
     "Ball State",
     "Bowling Green",
+    "East Carolina",
     "Florida",
     "Indiana",
     "Missouri",
@@ -166,7 +198,9 @@
     "North Carolina",
     "Northwestern",
     "Oklahoma State",
+    "Old Dominion",
     "Pittsburgh",
+    "Rice",
     "Sacramento State",
     "South Carolina",
     "Texas A&M",
