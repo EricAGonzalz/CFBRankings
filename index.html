@@ -46,8 +46,17 @@
       padding:7px 13px;font-size:13px;font-weight:650;cursor:pointer;display:inline-flex;align-items:center;gap:8px
     }
     .page-menu-button:hover,.print-button:hover{background:var(--link-hover)}
-    .caret{font-size:9px;transition:transform .15s ease}
-    .page-menu.open .caret,.publish-menu.open .caret{transform:rotate(180deg)}
+    /* Consistent down chevron across Explore, Publish, and conference filters. */
+    .caret{display:inline-block;width:7px;height:7px;flex:0 0 7px;border-right:1.8px solid currentColor;border-bottom:1.8px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .18s ease;vertical-align:middle;font-size:0}
+    .page-menu.open .caret,.publish-menu.open .caret,.conference-menu.open .caret{transform:translateY(2px) rotate(225deg)}
+    /* Subtle menu reveal rather than an animated text triangle. */
+    .page-menu.open .page-menu-list,.publish-menu.open .publish-menu-list,.conference-menu.open .conference-menu-list{animation:menuReveal .17s ease-out both}
+    @keyframes menuReveal{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.caret{transition:none}.page-menu.open .page-menu-list,.publish-menu.open .publish-menu-list,.conference-menu.open .conference-menu-list{animation:none}}
+    /* Home/title is a real hyperlink to preserve Ctrl/Cmd-click and middle-click. */
+    .brand-home{color:inherit;text-decoration:none;display:inline-flex;align-items:center;cursor:pointer}
+    .brand-home:hover,.brand-home:focus-visible{color:inherit;text-decoration:none}
+    .brand-home:focus-visible{outline:2px solid currentColor;outline-offset:4px}
     .page-menu-list,.publish-menu-list{
       display:none;position:absolute;right:0;top:calc(100% + 8px);z-index:50;min-width:270px;padding:6px;
       background:var(--card);border:1px solid var(--chip-border);border-radius:12px;box-shadow:0 8px 25px rgba(0,0,0,.16)
@@ -82,6 +91,10 @@
 
     .conference-menu{position:relative;display:inline-block}
     .conference-menu-button{border:0;background:transparent;color:var(--text);padding:0;min-width:140px;text-align:left;cursor:pointer;display:inline-flex;justify-content:space-between;align-items:center;gap:8px}
+    /* Match the solid native select arrow used by Filter and Week. */
+    /* Match the select dropdowns: a bold V-shaped chevron, not a solid triangle. */
+    /* Reuse the browser-native select arrow used by Filter and Week. */
+    .control .conference-menu-button .conference-native-arrow{appearance:auto;-webkit-appearance:menulist;display:block;flex:0 0 25px;width:25px;min-width:0;height:21px;padding:0;margin:0;border:0;border-radius:0;background:transparent;color:var(--text);pointer-events:none;outline:none}
     .conference-menu-list{display:none;position:absolute;left:0;top:calc(100% + 10px);z-index:40;min-width:240px;max-height:360px;overflow-y:auto;padding:8px;background:var(--card);border:1px solid var(--chip-border);border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.16)}
     .conference-menu.open .conference-menu-list{display:block}
     .conference-menu-actions{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:7px;margin-bottom:5px;border-bottom:1px solid #e8e8e8}
@@ -310,13 +323,13 @@
     <header class="topbar">
       <div class="brandrow">
         <div>
-          <h1 id="pageTitle" role="link" tabindex="0" aria-label="Back to rankings">CFB Rankings</h1>
+          <a id="brandHomeLink" class="brand-home" href="?year=2026" aria-label="Open rankings"><h1 id="pageTitle">CFB Rankings</h1></a>
           <p class="subtitle" id="pageSubtitle">Only FBS vs FBS games are used in calculations.</p>
           <p class="statusline" id="statusLine"></p>
         </div>
         <div class="spacer"></div>
         <div class="page-menu" id="pageMenu">
-          <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret">▼</span></button>
+          <button id="pageMenuButton" class="page-menu-button" type="button" aria-haspopup="true" aria-expanded="false">Explore <span class="caret" aria-hidden="true"></span></button>
           <div class="page-menu-list" role="menu">
             <div class="page-menu-title">Tools & views</div>
             <button data-route="rankings"><span class="page-menu-item-title">Rankings</span><span class="page-menu-item-subtitle">Full FBS efficiency rankings and filters</span></button>
@@ -334,11 +347,11 @@
         <div class="view-toolbar">
           <div class="controls">
             <div class="control"><label for="rankTeamSearch">Team</label><input id="rankTeamSearch" placeholder="Search teams..." /></div>
-            <div class="control"><label>Conf</label><div class="conference-menu" id="rankConfMenu"><button class="conference-menu-button" id="rankConfButton" type="button"><span id="rankConfText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="rankConfAll" type="button">Select all</button><button id="rankConfClear" type="button">Clear</button></div><div id="rankConfOptions"></div></div></div></div>
+            <div class="control"><label>Conf</label><div class="conference-menu" id="rankConfMenu"><button class="conference-menu-button" id="rankConfButton" type="button"><span id="rankConfText">All conferences</span><select class="conference-native-arrow" tabindex="-1" aria-hidden="true"><option value=""></option></select></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="rankConfAll" type="button">Select all</button><button id="rankConfClear" type="button">Clear</button></div><div id="rankConfOptions"></div></div></div></div>
             <div class="control"><label for="rankTopN">Filter</label><select id="rankTopN"><option value="0">All</option><option value="25">Top 25</option><option value="50">Top 50</option><option value="100">Top 100</option></select></div>
             <div class="control"><label for="rankWeek">Week</label><select id="rankWeek"><option value="current">Current</option></select></div>
           </div>
-          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish PNGs as ZIP</button></div></div>
+          <div class="publish-menu" id="rankPublishMenu"><button class="print-button" id="rankPublishButton">Publish <span class="caret" aria-hidden="true"></span></button><div class="publish-menu-list"><button id="rankPublishPdf">Publish to PDF</button><button id="rankPublishPng">Publish PNGs as ZIP</button></div></div>
         </div>
         <section class="legacy-rank-print-header" aria-hidden="true"><h1>College Football Efficiency Rankings</h1><p class="report-season" id="legacyRankPrintSeason"></p><p class="report-meta" id="legacyRankPrintMeta"></p></section>
         <div class="table-wrap" id="rankingsCapture"><table id="rankingsTable"><thead></thead><tbody></tbody></table><div id="rankLoading" class="loading">Loading…</div><div id="rankNote" class="note"></div></div>
@@ -368,7 +381,7 @@
                 <div class="control column"><label for="matchTeam2">Choose Team 2</label><select id="matchTeam2"></select></div>
               </div>
             </div>
-            <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button><div class="publish-menu" id="matchPublishMenu"><button class="print-button" id="matchPublishButton" type="button" disabled aria-haspopup="true" aria-expanded="false">Publish <span class="caret">▼</span></button><div class="publish-menu-list" role="menu"><button id="matchPublishPdf" type="button">Publish to PDF</button><button id="matchPublishPng" type="button">Publish to PNG</button></div></div></div>
+            <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button><div class="publish-menu" id="matchPublishMenu"><button class="print-button" id="matchPublishButton" type="button" disabled aria-haspopup="true" aria-expanded="false">Publish <span class="caret" aria-hidden="true"></span></button><div class="publish-menu-list" role="menu"><button id="matchPublishPdf" type="button">Publish to PDF</button><button id="matchPublishPng" type="button">Publish to PNG</button></div></div></div>
           </div>
         </div>
         <div id="matchError" class="error"></div>
@@ -393,11 +406,11 @@
         <div class="card chart-card">
           <div class="view-toolbar">
             <div class="controls">
-              <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><span class="caret">▼</span></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
+              <div class="control"><label>Conf</label><div class="conference-menu" id="confMenu"><button class="conference-menu-button" id="confMenuButton" type="button"><span id="confMenuText">All conferences</span><select class="conference-native-arrow" tabindex="-1" aria-hidden="true"><option value=""></option></select></button><div class="conference-menu-list"><div class="conference-menu-actions"><button id="confPower4">Power 4</button><button id="confGroup6">Group of 6</button><button id="confAll">Select all</button><button id="confClear">Clear</button></div><div id="confOptions"></div></div></div></div>
               <div class="control"><label for="confMetric">Rating</label><select id="confMetric"><option value="ModelRtg">Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg" selected>Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></div>
               <div class="control"><label for="confLabels">Labels</label><select id="confLabels"><option value="top3">Top 3 / conference</option><option value="top5">Top 5 / conference</option><option value="all" selected>All teams</option><option value="none">None</option></select></div>
             </div>
-            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret">▼</span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
+            <div class="publish-menu" id="confPublishMenu"><button class="print-button" id="confPublishButton">Publish <span class="caret" aria-hidden="true"></span></button><div class="publish-menu-list"><button id="confPublishPdf">Export graph to PDF</button><button id="confPublishPng">Export graph to PNG</button></div></div>
           </div>
           <div class="conference-summary"><div><span>Teams shown</span><strong id="confTeamsShown">—</strong></div><div><span>Conferences shown</span><strong id="confConfsShown">—</strong></div><div><span>Selected metric</span><strong id="confMetricSummary">—</strong></div></div>
           <div class="chart-wrap"><canvas id="conferenceChart"></canvas></div>
@@ -413,7 +426,7 @@
           <div class="view-toolbar team-publish-toolbar">
             <div></div>
             <div class="publish-menu" id="teamPublishMenu">
-              <button class="print-button" id="teamPublishButton" type="button" aria-haspopup="true" aria-expanded="false">Publish <span class="caret">▼</span></button>
+              <button class="print-button" id="teamPublishButton" type="button" aria-haspopup="true" aria-expanded="false">Publish <span class="caret" aria-hidden="true"></span></button>
               <div class="publish-menu-list team-publish-menu-list" role="menu" aria-label="Team publish options">
                 <div class="publish-section-title">Include in report</div>
                 <div class="team-print-options">
@@ -508,7 +521,7 @@
 
     const $ = id => document.getElementById(id);
     const els = {
-      pageTitle:$("pageTitle"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
+      pageTitle:$("pageTitle"),brandHomeLink:$("brandHomeLink"),pageSubtitle:$("pageSubtitle"),statusLine:$("statusLine"),pageMenu:$("pageMenu"),pageMenuButton:$("pageMenuButton"),seasonLinks:$("seasonLinks"),
       rankTeamSearch:$("rankTeamSearch"),rankConfMenu:$("rankConfMenu"),rankConfButton:$("rankConfButton"),rankConfText:$("rankConfText"),rankConfOptions:$("rankConfOptions"),rankConfAll:$("rankConfAll"),rankConfClear:$("rankConfClear"),rankTopN:$("rankTopN"),rankWeek:$("rankWeek"),rankingsTable:$("rankingsTable"),rankLoading:$("rankLoading"),rankNote:$("rankNote"),legacyRankPrintSeason:$("legacyRankPrintSeason"),legacyRankPrintMeta:$("legacyRankPrintMeta"),rankPublishMenu:$("rankPublishMenu"),rankPublishButton:$("rankPublishButton"),rankPublishPdf:$("rankPublishPdf"),rankPublishPng:$("rankPublishPng"),
       matchLocation:$("matchLocation"),matchTeam1:$("matchTeam1"),matchTeam2:$("matchTeam2"),matchPredict:$("matchPredict"),matchPublishMenu:$("matchPublishMenu"),matchPublishButton:$("matchPublishButton"),matchPublishPdf:$("matchPublishPdf"),matchPublishPng:$("matchPublishPng"),matchError:$("matchError"),matchResult:$("matchResult"),matchComparison:$("matchComparison"),matchDetails:$("matchDetails"),matchRow1:$("matchRow1"),matchRow2:$("matchRow2"),matchName1:$("matchName1"),matchName2:$("matchName2"),matchMeta1:$("matchMeta1"),matchMeta2:$("matchMeta2"),matchScore1:$("matchScore1"),matchScore2:$("matchScore2"),matchHeadline:$("matchHeadline"),matchSubheadline:$("matchSubheadline"),matchDrives:$("matchDrives"),matchEff1:$("matchEff1"),matchEff2:$("matchEff2"),matchWinProb:$("matchWinProb"),matchConfidence:$("matchConfidence"),
       confMenu:$("confMenu"),confMenuButton:$("confMenuButton"),confMenuText:$("confMenuText"),confOptions:$("confOptions"),confPower4:$("confPower4"),confGroup6:$("confGroup6"),confAll:$("confAll"),confClear:$("confClear"),confMetric:$("confMetric"),confLabels:$("confLabels"),confTeamsShown:$("confTeamsShown"),confConfsShown:$("confConfsShown"),confMetricSummary:$("confMetricSummary"),conferenceChart:$("conferenceChart"),confPublishMenu:$("confPublishMenu"),confPublishButton:$("confPublishButton"),confPublishPdf:$("confPublishPdf"),confPublishPng:$("confPublishPng"),
@@ -748,6 +761,8 @@
 
     function urlForState(){const u=new URL(location.href);u.search="";if(APP.view!=="rankings")u.searchParams.set("view",APP.view);u.searchParams.set("year",APP.year);if(APP.view==="team"&&APP.team)u.searchParams.set("team",APP.team);return u}
     function syncUrl(replace=false){history[replace?'replaceState':'pushState']({},"",urlForState())}
+    function rankingsHomeUrl(){const u=new URL(location.href);u.search="";u.searchParams.set("year",APP.year);u.hash="";return u.href}
+    function updateBrandHomeLink(){els.brandHomeLink.href=rankingsHomeUrl()}
 
     // Build a real, shareable URL for a team profile so browser-native
     // Ctrl/Cmd-click and middle-click can open the profile in a new tab.
@@ -775,13 +790,13 @@
       document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===`view-${view}`));
       document.querySelectorAll('.page-menu-list [data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===view));
       const info={rankings:[`CFB Rankings ${APP.year}`,"Only FBS vs FBS games are used in calculations."],matchup:["CFB Matchup Predictor","Projects scores from opponent-adjusted offense, opponent-adjusted defense, and expected drives."],conferences:["Conference Comparison","Compare current efficiency ratings across conferences."],team:[APP.team?`${APP.team} — ${APP.year}`:"Team Profile","Current team efficiency, weekly trends, and schedule projections."]}[view];
-      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];closeMenus();if(push)syncUrl(false);
+      els.pageTitle.textContent=info[0];els.pageSubtitle.textContent=info[1];updateBrandHomeLink();closeMenus();if(push)syncUrl(false);
       if(view==="rankings"&&APP.rankingsUpdatePendingYears.has(String(APP.year)))refreshRankingsData(APP.year);
       else renderCurrentView();
       requestAnimationFrame(syncRankStickyHeader);
     }
 
-    async function setYear(year){APP.year=String(year);APP.rankingsWeek="current";if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.scheduleCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
+    async function setYear(year){APP.year=String(year);updateBrandHomeLink();APP.rankingsWeek="current";if(APP.rankingsUpdatePendingYears.has(APP.year)){APP.masterCache.delete(APP.year);APP.scheduleCache.delete(APP.year);APP.liveCache.delete(APP.year);APP.rankingsUpdatePendingYears.delete(APP.year)}buildSeasonLinks();syncUrl(false);await loadCurrentYear();renderCurrentView();checkForRankingUpdate();checkForLiveUpdate()}
 
     function formatUpdatedAt(isoString){
       if(!isoString)return null;
@@ -2297,8 +2312,11 @@
     async function renderCurrentView(){if(!APP.rows.length)return;switch(APP.view){case'rankings':await renderRankings();break;case'matchup':if(!els.matchResult.classList.contains('hidden'))renderMatchup();else updateMatchButton();break;case'conferences':renderConferenceChart();break;case'team':await renderTeam();break}}
 
     // ---------- Events ----------
-    els.pageTitle.onclick=()=>setView('rankings');
-    els.pageTitle.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();setView('rankings')}};
+    els.brandHomeLink.addEventListener('click',e=>{
+      // Let the browser handle modified clicks, middle clicks, and new-tab actions.
+      if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
+      e.preventDefault();setView('rankings');
+    });
     els.pageMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.pageMenu,els.pageMenuButton)};
     document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>setView(b.dataset.route));
     document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
