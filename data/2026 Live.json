@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-11T04:06:22.666340+00:00",
+  "updatedAt": "2026-10-11T04:11:24.461377+00:00",
   "liveGames": [
     {
       "id": 401856808,
@@ -9,13 +9,13 @@
       "awayTeam": "Hawai'i",
       "homeConference": "Big 12",
       "awayConference": "Mountain West",
-      "homePoints": 14.0,
+      "homePoints": 17.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "00:30",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 5
+      "clock": "00:00",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 5,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401860901,
@@ -27,9 +27,9 @@
       "homePoints": 13.0,
       "awayPoints": 22.0,
       "period": 2,
-      "clock": "07:42",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "05:06",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     }
   ],
