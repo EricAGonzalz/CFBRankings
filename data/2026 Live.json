@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-11T03:06:29.556688+00:00",
+  "updatedAt": "2026-10-11T03:11:27.924982+00:00",
   "liveGames": [
-    {
-      "id": 401856712,
-      "status": "in_progress",
-      "homeTeam": "Alabama",
-      "awayTeam": "Georgia",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 17.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401858258,
-      "status": "in_progress",
-      "homeTeam": "Virginia",
-      "awayTeam": "Syracuse",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 28.0,
-      "awayPoints": 25.0,
-      "period": 4,
-      "clock": "00:48",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401869949,
       "status": "in_progress",
@@ -42,7 +12,7 @@
       "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "12:41",
+      "clock": "07:21",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -55,12 +25,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 34.0,
-      "awayPoints": 24.0,
+      "awayPoints": 30.0,
       "period": 4,
-      "clock": "10:45",
-      "completedDrives": 20,
+      "clock": "08:43",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858486,
@@ -72,10 +42,10 @@
       "homePoints": 41.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "07:35",
-      "completedDrives": 20,
+      "clock": "04:21",
+      "completedDrives": 21,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856808,
@@ -87,9 +57,9 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "02:49",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "00:00",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -102,26 +72,22 @@
       "homePoints": 7.0,
       "awayPoints": 8.0,
       "period": 1,
-      "clock": "08:39",
+      "clock": "06:32",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
-    "Alabama",
     "Arizona State",
     "Boise State",
     "Fresno State",
-    "Georgia",
     "Georgia Southern",
     "Hawai'i",
     "James Madison",
     "Kansas",
     "Minnesota",
     "Purdue",
-    "Syracuse",
-    "Utah",
-    "Virginia"
+    "Utah"
   ]
 }
