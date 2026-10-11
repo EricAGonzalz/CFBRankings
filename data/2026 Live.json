@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-11T05:46:25.997801+00:00",
+  "updatedAt": "2026-10-11T05:51:25.010752+00:00",
   "liveGames": [
     {
       "id": 401856808,
@@ -10,12 +10,12 @@
       "homeConference": "Big 12",
       "awayConference": "Mountain West",
       "homePoints": 24.0,
-      "awayPoints": 6.0,
+      "awayPoints": 12.0,
       "period": 4,
-      "clock": "14:25",
-      "completedDrives": 18,
+      "clock": "12:35",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401860901,
@@ -24,12 +24,12 @@
       "awayTeam": "Boise State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 20.0,
+      "homePoints": 28.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "14:43",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 6,
+      "clock": "09:14",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
     }
   ],
