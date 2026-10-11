@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-11T02:31:49.252415+00:00",
+  "updatedAt": "2026-10-11T02:36:22.728667+00:00",
   "liveGames": [
     {
       "id": 401856715,
@@ -24,28 +24,13 @@
       "awayTeam": "Nevada",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "01:14",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401864518,
-      "status": "in_progress",
-      "homeTeam": "UNLV",
-      "awayTeam": "North Dakota State",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 13.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "00:31",
+      "clock": "01:07",
       "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856712,
@@ -57,9 +42,9 @@
       "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "10:47",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "10:44",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -69,12 +54,12 @@
       "awayTeam": "Syracuse",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "08:06",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "05:20",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -102,7 +87,7 @@
       "homePoints": 10.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "10:17",
+      "clock": "07:55",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -117,7 +102,7 @@
       "homePoints": 26.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "01:56",
+      "clock": "01:47",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -129,12 +114,12 @@
       "awayTeam": "Kansas",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 21.0,
+      "homePoints": 27.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "07:44",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "05:13",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -147,7 +132,7 @@
       "homePoints": 27.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "01:49",
+      "clock": "15:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -165,11 +150,9 @@
     "Louisiana Tech",
     "Minnesota",
     "Nevada",
-    "North Dakota State",
     "Penn State",
     "Purdue",
     "Syracuse",
-    "UNLV",
     "USC",
     "UTEP",
     "Utah",
