@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-11T03:16:17.949866+00:00",
+  "updatedAt": "2026-10-11T03:21:38.461931+00:00",
   "liveGames": [
     {
       "id": 401869949,
@@ -10,12 +10,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 17.0,
-      "awayPoints": 20.0,
+      "awayPoints": 27.0,
       "period": 4,
-      "clock": "05:52",
-      "completedDrives": 16,
+      "clock": "05:27",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856827,
@@ -24,28 +24,13 @@
       "awayTeam": "Kansas",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 34.0,
+      "homePoints": 41.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "08:22",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858486,
-      "status": "in_progress",
-      "homeTeam": "Purdue",
-      "awayTeam": "Minnesota",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 41.0,
-      "awayPoints": 13.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 21,
+      "clock": "07:13",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856808,
@@ -57,10 +42,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "14:14",
-      "completedDrives": 4,
+      "clock": "11:32",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401860901,
@@ -70,12 +55,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 7.0,
-      "awayPoints": 8.0,
+      "awayPoints": 15.0,
       "period": 1,
-      "clock": "02:04",
-      "completedDrives": 3,
+      "clock": "01:12",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
@@ -86,8 +71,6 @@
     "Hawai'i",
     "James Madison",
     "Kansas",
-    "Minnesota",
-    "Purdue",
     "Utah"
   ]
 }
