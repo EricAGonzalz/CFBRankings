@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-11T03:03:15.320731+00:00",
+  "updatedAt": "2026-10-11T03:06:29.556688+00:00",
   "liveGames": [
     {
       "id": 401856712,
@@ -12,7 +12,7 @@
       "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "02:27",
+      "clock": "02:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -27,7 +27,7 @@
       "homePoints": 28.0,
       "awayPoints": 25.0,
       "period": 4,
-      "clock": "01:16",
+      "clock": "00:48",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -39,10 +39,10 @@
       "awayTeam": "James Madison",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 16.0,
+      "homePoints": 17.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "12:50",
+      "clock": "12:41",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -54,12 +54,12 @@
       "awayTeam": "Kansas",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 27.0,
+      "homePoints": 34.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "12:50",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "10:45",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -69,7 +69,7 @@
       "awayTeam": "Minnesota",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 40.0,
+      "homePoints": 41.0,
       "awayPoints": 13.0,
       "period": 4,
       "clock": "07:35",
@@ -87,7 +87,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "04:46",
+      "clock": "02:49",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -102,9 +102,9 @@
       "homePoints": 7.0,
       "awayPoints": 8.0,
       "period": 1,
-      "clock": "10:08",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "08:39",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
