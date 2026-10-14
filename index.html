@@ -370,7 +370,7 @@
         </div>
         <section class="legacy-rank-print-header" aria-hidden="true"><h1>College Football Efficiency Rankings</h1><p class="report-season" id="legacyRankPrintSeason"></p><p class="report-meta" id="legacyRankPrintMeta"></p></section>
         <div class="table-wrap" id="rankingsCapture"><table id="rankingsTable"><thead></thead><tbody></tbody></table><div id="rankLoading" class="loading">Loading…</div><div id="rankNote" class="note"></div></div>
-        <footer class="legacy-rank-print-footer" aria-hidden="true">Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.</footer>
+        <footer class="legacy-rank-print-footer" aria-hidden="true">Rankings use FBS-vs-FBS games only. Generated from CFBEfficiency.com for publication.</footer>
       </section>
 
       <!-- Matchup -->
@@ -2222,7 +2222,7 @@
       const page=document.createElement('section');page.className='legacy-rank-png-page';
       const header=document.createElement('header');header.className='legacy-rank-png-header';header.innerHTML='<h1>College Football Efficiency Rankings</h1><p class="legacy-rank-png-season"></p><p class="legacy-rank-png-meta"></p>';header.querySelector('.legacy-rank-png-season').textContent=seasonText;header.querySelector('.legacy-rank-png-meta').textContent=metaText;page.appendChild(header);
       const table=document.createElement('table');table.innerHTML=`<thead>${els.rankingsTable.tHead.innerHTML}</thead><tbody></tbody>`;const tb=table.querySelector('tbody');rows.forEach(row=>tb.appendChild(row.cloneNode(true)));page.appendChild(table);
-      const footer=document.createElement('footer');footer.className='legacy-rank-png-footer';footer.innerHTML=`<span>Rankings use FBS-vs-FBS games only. Generated from the CFB Rankings dataset for publication.</span><span>Page ${pageNumber} of ${pageCount}</span>`;page.appendChild(footer);return page;
+      const footer=document.createElement('footer');footer.className='legacy-rank-png-footer';footer.innerHTML=`<span>Rankings use FBS-vs-FBS games only. Generated from CFBEfficiency.com for publication.</span><span>Page ${pageNumber} of ${pageCount}</span>`;page.appendChild(footer);return page;
     }
     async function publishRankingsPng(){
       closeMenus();if(typeof html2canvas!=='function')throw new Error('PNG export library failed to load.');const rows=[...els.rankingsTable.tBodies[0].rows];if(!rows.length)return;
