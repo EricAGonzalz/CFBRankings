@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-14T00:02:06.852530+00:00",
+  "updatedAt": "2026-10-14T00:06:42.138097+00:00",
   "liveGames": [
     {
       "id": 401871067,
@@ -13,6 +13,21 @@
       "awayPoints": 10.0,
       "period": 2,
       "clock": "07:20",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401871053,
+      "status": "in_progress",
+      "homeTeam": "Jacksonville State",
+      "awayTeam": "Florida International",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:53",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -20,6 +35,8 @@
   ],
   "liveTeams": [
     "Delaware",
+    "Florida International",
+    "Jacksonville State",
     "Middle Tennessee"
   ]
 }
