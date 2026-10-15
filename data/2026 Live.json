@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-15T00:21:29.333074+00:00",
+  "updatedAt": "2026-10-15T00:26:28.243867+00:00",
   "liveGames": [
     {
       "id": 401871054,
@@ -9,13 +9,13 @@
       "awayTeam": "Kennesaw State",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "11:58",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "clock": "08:54",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401871068,
@@ -27,9 +27,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:42",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "07:36",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
