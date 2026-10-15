@@ -297,7 +297,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401864571,East Carolina,American Athletic,App State,Sun Belt,Home,2026-09-12T16:00:00.000Z,True,False,24,27,L,79,110,-60.405
 2026,3,401862710,East Carolina,American Athletic,Old Dominion,Sun Belt,Away,2026-09-19T22:00:00.000Z,True,False,20,17,W,116,116,-76.189
 2026,6,401862797,East Carolina,American Athletic,Rice,American Athletic,Home,2026-10-10T17:00:00.000Z,True,False,28,12,W,125,119,-77.041
-2026,7,401862800,East Carolina,American Athletic,UAB,American Athletic,Away,2026-10-15T23:30:00.000Z,False,False,,,,100,109,-60.247
+2026,7,401862800,East Carolina,American Athletic,UAB,American Athletic,Away,2026-10-15T23:30:00.000Z,False,True,0,0,,100,109,-60.247
 2026,8,401862807,East Carolina,American Athletic,Memphis,American Athletic,Away,2026-10-22T23:30:00.000Z,False,False,,,,18,36,56.075
 2026,9,401862815,East Carolina,American Athletic,Temple,American Athletic,Home,2026-10-31T04:00:00.000Z,False,False,,,,93,96,-38.538
 2026,10,401862818,East Carolina,American Athletic,South Florida,American Athletic,Home,2026-11-07T00:30:00.000Z,False,False,,,,63,69,-9.290
@@ -386,7 +386,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401856806,Georgia Southern,Sun Belt,Houston,Big 12,Home,2026-09-26T20:00:00.000Z,True,False,28,42,L,25,15,93.898
 2026,5,401869942,Georgia Southern,Sun Belt,Coastal Carolina,Sun Belt,Away,2026-10-03T23:00:00.000Z,True,False,31,24,W,85,102,-42.474
 2026,6,401869949,Georgia Southern,Sun Belt,James Madison,Sun Belt,Home,2026-10-10T23:30:00.000Z,True,False,24,27,L,20,40,45.992
-2026,7,401869950,Georgia Southern,Sun Belt,Old Dominion,Sun Belt,Away,2026-10-15T23:30:00.000Z,False,False,,,,116,116,-76.189
+2026,7,401869950,Georgia Southern,Sun Belt,Old Dominion,Sun Belt,Away,2026-10-15T23:30:00.000Z,False,True,0,0,,116,116,-76.189
 2026,9,401869846,Georgia Southern,Sun Belt,App State,Sun Belt,Home,2026-10-31T04:00:00.000Z,False,False,,,,79,110,-60.405
 2026,10,401869951,Georgia Southern,Sun Belt,Marshall,Sun Belt,Home,2026-11-07T05:00:00.000Z,False,False,,,,122,126,-93.769
 2026,11,401869952,Georgia Southern,Sun Belt,Georgia State,Sun Belt,Away,2026-11-14T05:00:00.000Z,False,False,,,,36,57,11.453
@@ -941,7 +941,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401869961,Old Dominion,Sun Belt,James Madison,Sun Belt,Home,2026-09-26T22:00:00.000Z,True,False,20,46,L,20,40,45.992
 2026,5,401869956,Old Dominion,Sun Belt,Georgia State,Sun Belt,Away,2026-10-03T19:30:00.000Z,True,False,10,42,L,36,57,11.453
 2026,6,401869843,Old Dominion,Sun Belt,App State,Sun Belt,Away,2026-10-10T17:00:00.000Z,True,False,10,3,W,79,110,-60.405
-2026,7,401869950,Old Dominion,Sun Belt,Georgia Southern,Sun Belt,Home,2026-10-15T23:30:00.000Z,False,False,,,,90,90,-34.872
+2026,7,401869950,Old Dominion,Sun Belt,Georgia Southern,Sun Belt,Home,2026-10-15T23:30:00.000Z,False,True,0,0,,90,90,-34.872
 2026,8,401871093,Old Dominion,Sun Belt,Louisiana Tech,Sun Belt,Away,2026-10-24T21:00:00.000Z,False,False,,,,112,88,-32.083
 2026,9,401871096,Old Dominion,Sun Belt,Marshall,Sun Belt,Home,2026-10-31T04:00:00.000Z,False,False,,,,122,126,-93.769
 2026,10,401869945,Old Dominion,Sun Belt,Coastal Carolina,Sun Belt,Away,2026-11-07T05:00:00.000Z,False,False,,,,85,102,-42.474
@@ -1283,7 +1283,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,3,401862776,UAB,American Athletic,Louisiana,Sun Belt,Away,2026-09-20T00:00:00.000Z,True,False,14,21,L,58,75,-14.994
 2026,4,401862778,UAB,American Athletic,Navy,American Athletic,Home,2026-09-25T23:00:00.000Z,True,False,24,20,W,74,79,-21.027
 2026,6,401862798,UAB,American Athletic,Memphis,American Athletic,Away,2026-10-10T23:00:00.000Z,True,False,13,38,L,18,36,56.075
-2026,7,401862800,UAB,American Athletic,East Carolina,American Athletic,Home,2026-10-15T23:30:00.000Z,False,False,,,,89,98,-38.649
+2026,7,401862800,UAB,American Athletic,East Carolina,American Athletic,Home,2026-10-15T23:30:00.000Z,False,True,0,0,,89,98,-38.649
 2026,9,401862816,UAB,American Athletic,South Florida,American Athletic,Away,2026-10-31T04:00:00.000Z,False,False,,,,63,69,-9.290
 2026,10,401862819,UAB,American Athletic,Charlotte,American Athletic,Home,2026-11-07T05:00:00.000Z,False,False,,,,134,136,-148.768
 2026,11,401862829,UAB,American Athletic,Temple,American Athletic,Away,2026-11-14T05:00:00.000Z,False,False,,,,93,96,-38.538
