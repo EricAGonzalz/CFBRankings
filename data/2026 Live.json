@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-16T03:06:34.163020+00:00",
+  "updatedAt": "2026-10-16T03:11:34.690519+00:00",
   "liveGames": [
     {
       "id": 401862800,
@@ -13,24 +13,9 @@
       "awayPoints": 17.0,
       "period": 5,
       "clock": "00:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401869950,
-      "status": "in_progress",
-      "homeTeam": "Old Dominion",
-      "awayTeam": "Georgia Southern",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 15.0,
-      "awayPoints": 23.0,
-      "period": 4,
-      "clock": "01:02",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401860923,
@@ -42,7 +27,7 @@
       "homePoints": 66.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "08:30",
+      "clock": "07:12",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
@@ -51,8 +36,6 @@
   "liveTeams": [
     "Colorado State",
     "East Carolina",
-    "Georgia Southern",
-    "Old Dominion",
     "Texas State",
     "UAB"
   ]
