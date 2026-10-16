@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-16T00:02:11.246873+00:00",
+  "updatedAt": "2026-10-16T00:06:38.239061+00:00",
   "liveGames": [
     {
       "id": 401862800,
@@ -12,7 +12,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "04:18",
+      "clock": "04:08",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -27,16 +27,33 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:57",
+      "clock": "02:50",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401860923,
+      "status": "in_progress",
+      "homeTeam": "Texas State",
+      "awayTeam": "Colorado State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:34",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Colorado State",
     "East Carolina",
     "Georgia Southern",
     "Old Dominion",
+    "Texas State",
     "UAB"
   ]
 }
