@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-16T01:36:29.934311+00:00",
+  "updatedAt": "2026-10-16T01:41:30.079560+00:00",
   "liveGames": [
     {
       "id": 401862800,
@@ -12,10 +12,10 @@
       "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "10:20",
-      "completedDrives": 14,
+      "clock": "02:19",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401869950,
@@ -27,10 +27,10 @@
       "homePoints": 7.0,
       "awayPoints": 16.0,
       "period": 3,
-      "clock": "14:13",
-      "completedDrives": 9,
+      "clock": "12:18",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401860923,
@@ -40,12 +40,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 42.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 2,
-      "clock": "00:39",
-      "completedDrives": 14,
+      "clock": "00:20",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     }
   ],
   "liveTeams": [
