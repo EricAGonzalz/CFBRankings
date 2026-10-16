@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-16T03:36:26.846042+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-16T23:41:23.507114+00:00",
+  "liveGames": [
+    {
+      "id": 401862801,
+      "status": "in_progress",
+      "homeTeam": "Tulane",
+      "awayTeam": "Memphis",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:46",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Memphis",
+    "Tulane"
+  ]
 }
