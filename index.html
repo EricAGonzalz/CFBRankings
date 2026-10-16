@@ -168,6 +168,30 @@
     .matchup-team-card .control.column label{font-size:11px;color:var(--muted)}
     .matchup-team-card .control.column select{width:100%;min-width:0;font-size:13px;font-weight:650;background-color:#fff}
     .matchup-vs{align-self:center;justify-self:center;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#fff;color:#555;border:1px solid var(--grid);box-shadow:none;font-size:11px;font-weight:850;letter-spacing:.7px}
+    .outlier-panel{margin-top:18px;border:1px solid var(--grid);border-radius:10px;background:#fafafa;overflow:hidden}
+    .outlier-panel>summary{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:13px;font-weight:800;user-select:none}
+    .outlier-panel>summary::-webkit-details-marker{display:none}
+    .outlier-panel>summary:hover{background:#f0f0f0}
+    .outlier-panel>summary:focus-visible{outline:2px solid var(--link);outline-offset:-3px}
+    .outlier-panel>summary::after{content:'';width:8px;height:8px;flex:none;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s ease}
+    .outlier-panel[open]>summary::after{transform:rotate(225deg) translateY(-2px)}
+    .outlier-body{padding:0 15px 15px;border-top:1px solid var(--grid)}
+    @media(prefers-reduced-motion:reduce){.outlier-panel>summary::after{transition:none}}
+    .outlier-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .outlier-heading h3{font-size:13px;margin:0;font-weight:800}
+    .outlier-heading button{border:1px solid var(--grid);border-radius:999px;background:white;padding:5px 12px;cursor:pointer;font-size:12px}
+    .outlier-help{font-size:12px;line-height:1.5;color:var(--muted);margin:8px 0 12px}
+    .outlier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .outlier-team{min-width:0;background:white;border:1px solid var(--grid);border-radius:8px;padding:12px}
+    .outlier-team h4{font-size:12px;margin:0 0 8px}
+    .outlier-games{display:grid;gap:5px;max-height:215px;overflow:auto}
+    .outlier-game{display:flex;align-items:center;gap:9px;padding:7px 5px;font-size:12px;border-radius:5px;cursor:pointer}
+    .outlier-game:hover{background:var(--link-hover)}
+    .outlier-game input{accent-color:#111;flex:0 0 auto}
+    .outlier-empty{font-size:12px;color:var(--muted)}
+    .outlier-comparison{margin-top:12px;padding:12px;background:#fff;border:1px solid var(--grid);border-radius:8px;font-size:12px;line-height:1.6}
+    .outlier-comparison strong{font-size:13px}
+    @media(max-width:720px){.outlier-grid{grid-template-columns:1fr}}
     .matchup-actions{display:flex;justify-content:flex-start;gap:8px;margin-top:18px}
     .primary{border:1px solid #111;background:#111;color:#fff;border-radius:999px;padding:9px 17px;font-size:13px;font-weight:800;cursor:pointer}
     .matchup-actions .primary{min-width:0;padding:9px 18px;letter-spacing:0;box-shadow:none;transition:background .15s ease}
@@ -396,6 +420,15 @@
                 <div class="control column"><label for="matchTeam2">Choose Team 2</label><select id="matchTeam2"></select></div>
               </div>
             </div>
+            <details class="outlier-panel" aria-label="Game exclusion sensitivity analysis">
+              <summary>Exclude games · What-if analysis <span id="matchExclusionCount" aria-live="polite" style="margin-right:auto;color:var(--muted);font-size:11px;font-weight:600"></span></summary>
+              <div class="outlier-body">
+              <div class="outlier-heading" style="padding-top:13px"><h3>Game exclusions</h3><button id="matchExclusionReset" type="button">Reset games</button></div>
+              <p class="outlier-help">Select completed FBS games to exclude from each team's scoring profile. This estimates the impact on the prediction while holding the original schedule-strength adjustments and drive pace constant. It is not a full rerun of the season ratings.</p>
+              <div class="outlier-grid"><div class="outlier-team"><h4 id="matchExclusionTitle1">Side A</h4><div class="outlier-games" id="matchExclusionGames1"><span class="outlier-empty">Choose Team 1</span></div></div><div class="outlier-team"><h4 id="matchExclusionTitle2">Side B</h4><div class="outlier-games" id="matchExclusionGames2"><span class="outlier-empty">Choose Team 2</span></div></div></div>
+              <div id="matchExclusionComparison" class="outlier-comparison hidden" aria-live="polite"></div>
+              </div>
+            </details>
             <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button><div class="publish-menu" id="matchPublishMenu"><button class="print-button" id="matchPublishButton" type="button" disabled aria-haspopup="true" aria-expanded="false">Publish <span class="caret" aria-hidden="true"></span></button><div class="publish-menu-list" role="menu"><button id="matchPublishPdf" type="button">Publish to PDF</button><button id="matchPublishPng" type="button">Publish to PNG</button></div></div></div>
           </div>
         </div>
@@ -502,6 +535,7 @@
       rankingWeekCache:new Map(),
       rankingsWeek:"current",
       scheduleCache:new Map(),
+      matchExclusions:new Set(),
       liveCache:new Map(),
       champions:{},
       colors:{conferences:{},teams:{}},
@@ -865,7 +899,7 @@
       const teams=APP.rows.map(r=>r.Team).filter(Boolean).sort((a,b)=>a.localeCompare(b));
       [els.matchTeam1,els.matchTeam2,els.teamPicker].forEach(sel=>{const prev=sel.value;sel.innerHTML='<option value="">Select a team...</option>';teams.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t;sel.appendChild(o)});if(teams.includes(prev))sel.value=prev});
       if(APP.team&&teams.includes(APP.team))els.teamPicker.value=APP.team;
-      updateMatchButton();
+      updateMatchButton();refreshMatchExclusionLists();
     }
 
     // ---------- Rankings ----------
@@ -1164,13 +1198,105 @@
         adj1:n(r1.AdjRtg),adj2:n(r2.AdjRtg)
       };
     }
+    // Outlier sensitivity: remove games from team PPG. Because Schedule.csv has no
+    // individual offensive/defensive drive counts or per-game SOS inputs, retain
+    // original adjusted-rating offsets and tempo. Not an exact autostat.py rerun.
+    function matchGameKey(s){return `${String(s.team).toLowerCase()}|${s.gameId||`${s.week}|${s.opp}|${s.startDate}`}`}
+    function completedMatchGames(name){
+      const fbs=new Set(APP.rows.map(r=>String(r.Team).toLowerCase()));
+      return (APP.scheduleCache.get(String(APP.year))||[]).map(scheduleFields)
+        .filter(s=>String(s.team).toLowerCase()===String(name).toLowerCase()&&fbs.has(String(s.opp).toLowerCase())&&isCompletedScheduleGame(s)&&Number.isFinite(s.teamPoints)&&Number.isFinite(s.oppPoints));
+    }
+    function matchWhatIfTeam(row){
+      const base=teamObject(row);if(!base)return null;
+      const games=completedMatchGames(row.Team),removed=games.filter(g=>APP.matchExclusions.has(matchGameKey(g)));
+      if(!removed.length)return {team:base,row,removed:0};
+      // Only adjust when the completed scored FBS games match Master.csv totals.
+      // Otherwise the per-game average cannot safely be reconciled to the ratings.
+      if(games.length!==base.games)return {error:`${row.Team}: schedule scores (${games.length}) do not match rated FBS games (${base.games}).`};
+      const remaining=games.filter(g=>!APP.matchExclusions.has(matchGameKey(g)));
+      if(!remaining.length)return {error:`${row.Team}: keep at least one completed FBS game included.`};
+      const sum=(arr,key)=>arr.reduce((total,g)=>total+g[key],0);
+      const od=n(row.ODrives),dd=n(row.DDrives);
+      if(!(od>0&&dd>0))return {error:`${row.Team}: drive totals are unavailable.`};
+      const offDelta=100*((sum(remaining,'teamPoints')/remaining.length)-(sum(games,'teamPoints')/games.length))/(od/base.games);
+      const defDelta=100*((sum(remaining,'oppPoints')/remaining.length)-(sum(games,'oppPoints')/games.length))/(dd/base.games);
+      const newRow={...row};
+      // Adjust the baseline raw and adjusted offense/defense consistently.
+      for(const key of ['AdjO','AdjORtg','ORtg','Ortg'])if(Number.isFinite(n(row[key])))newRow[key]=String(n(row[key])+offDelta);
+      for(const key of ['AdjD','AdjDRtg','DRtg'])if(Number.isFinite(n(row[key])))newRow[key]=String(n(row[key])+defDelta);
+      for(const key of ['NetRtg','AdjRtg'])if(Number.isFinite(n(row[key])))newRow[key]=String(n(row[key])+offDelta-defDelta);
+      newRow.W=String(remaining.filter(g=>g.teamPoints>g.oppPoints).length);
+      newRow.L=String(remaining.filter(g=>g.teamPoints<g.oppPoints).length);
+      // Maintain original tempo based on full-season drives / full-season games.
+      newRow.ODrives=String((od/base.games)*remaining.length);
+      newRow.DDrives=String((dd/base.games)*remaining.length);
+      return {team:teamObject(newRow),row:newRow,removed:removed.length};
+    }
+    function predictMatchExcludingGames(){
+      const name1=els.matchTeam1.value,name2=els.matchTeam2.value,location=els.matchLocation.value;
+      const original=predictTeams(name1,name2,location);if(!original)return null;
+      const r1=APP.rows.find(r=>r.Team===name1),r2=APP.rows.find(r=>r.Team===name2);
+      const c1=matchWhatIfTeam(r1),c2=matchWhatIfTeam(r2);
+      if(c1.error||c2.error)return {original,error:c1.error||c2.error};
+      if(!c1.removed&&!c2.removed)return {original,modified:original,removed:0};
+      const l=league(),a=c1.team,b=c2.team;
+      // Use the original league baseline so exclusions are local to selected teams.
+      const drives=expectedDrives(a,b,l),ra=expectedRating(a,b,l),rb=expectedRating(b,a,l);
+      const total=Math.max(0,drives*(ra+rb)/100);
+      const model1=modelRating(c1.row),model2=modelRating(c2.row);
+      let s1,s2;
+      if(Number.isFinite(model1)&&Number.isFinite(model2)){
+        let margin=drives*(model1-model2)/100;
+        if(location==='team1')margin+=HOME_FIELD_POINTS;
+        if(location==='team2')margin-=HOME_FIELD_POINTS;
+        s1=(total+margin)/2;s2=(total-margin)/2;
+      }else{
+        s1=drives*ra/100;s2=drives*rb/100;
+        if(location==='team1')s1+=HOME_FIELD_POINTS;
+        if(location==='team2')s2+=HOME_FIELD_POINTS;
+      }
+      s1=Math.max(0,s1);s2=Math.max(0,s2);
+      const conf=confidence(a,b);
+      const modified={a,b,drives,ra,rb,s1,s2,conf,p1:winProb(s1,s2,conf),otP1:overtimeWinProb(model1,model2,location,conf),model1,model2,net1:n(c1.row.NetRtg),net2:n(c2.row.NetRtg),adj1:n(c1.row.AdjRtg),adj2:n(c2.row.AdjRtg)};
+      return {original,modified,removed:c1.removed+c2.removed};
+    }
+    function fillMatchGameList(name,titleId,listId){
+      $(titleId).textContent=name|| (titleId.endsWith('1')?'Side A':'Side B');
+      const list=$(listId);list.replaceChildren();
+      const games=completedMatchGames(name);
+      if(!games.length){const msg=document.createElement('span');msg.className='outlier-empty';msg.textContent=name?'No completed FBS games with scores found.':'Select a team to see its completed games.';list.appendChild(msg);return}
+      for(const s of sortScheduleChronologically(games)){
+        const label=document.createElement('label');label.className='outlier-game';
+        const cb=document.createElement('input');cb.type='checkbox';const key=matchGameKey(s);cb.checked=APP.matchExclusions.has(key);
+        cb.onchange=()=>{if(cb.checked)APP.matchExclusions.add(key);else APP.matchExclusions.delete(key);renderMatchup();};
+        const span=document.createElement('span');span.textContent=`Week ${s.week} · ${s.opp} (${s.teamPoints}–${s.oppPoints})`;
+        label.append(cb,span);list.appendChild(label);
+      }
+    }
+    function refreshMatchExclusionLists(){
+      fillMatchGameList(els.matchTeam1.value,'matchExclusionTitle1','matchExclusionGames1');
+      fillMatchGameList(els.matchTeam2.value,'matchExclusionTitle2','matchExclusionGames2');
+    }
+    function updateMatchExclusionComparison(result){
+      const e=$('matchExclusionComparison');
+      const count=$('matchExclusionCount');if(count)count.textContent=APP.matchExclusions.size?`(${APP.matchExclusions.size} selected)`:'';
+      if(!result||!result.removed&&!result.error){e.classList.add('hidden');e.textContent='';return}
+      e.classList.remove('hidden');
+      if(result.error){e.textContent=result.error+' No what-if calculation was applied.';return}
+      const display=p=>{const a=Math.round(p.s1),b=Math.round(p.s2);const ot=a===b?projectedOvertimeFinal(a,b,p.otP1):null;return `${ot?ot.score1:a}–${ot?ot.score2:b}${ot?' (OT)':''}`};
+      e.replaceChildren();
+      const heading=document.createElement('strong');heading.textContent=`${result.removed} game${result.removed===1?'':'s'} excluded · sensitivity estimate`;
+      const details=document.createElement('div');details.textContent=`Original prediction: ${display(result.original)}  →  Without selected games: ${display(result.modified)} · Team 1 win probability: ${result.original.p1.toFixed(1)}% → ${result.modified.p1.toFixed(1)}%`;
+      e.append(heading,details);
+    }
     function projectedOvertimeFinal(reg1,reg2,otP1){
       if(reg1!==reg2)return {score1:reg1,score2:reg2,team1Wins:reg1>reg2};
       const team1Wins=otP1>=50;
       return team1Wins?{score1:reg1+3,score2:reg2,team1Wins:true}:{score1:reg1,score2:reg2+3,team1Wins:false};
     }
     function updateMatchButton(){const ready=!!(els.matchTeam1.value&&els.matchTeam2.value&&els.matchTeam1.value!==els.matchTeam2.value);els.matchPredict.disabled=!ready;if(els.matchPublishButton)els.matchPublishButton.disabled=true;if(!ready){APP.matchComparisonChart?.destroy();APP.matchComparisonChart=null;els.matchComparison?.classList.add('hidden');els.matchComparison&&(els.matchComparison.innerHTML='')}}
-    function renderMatchup(){const p=predictTeams(els.matchTeam1.value,els.matchTeam2.value,els.matchLocation.value);if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2),isRegTie=d1===d2,displayP1=isRegTie?p.otP1:p.p1,otFinal=projectedOvertimeFinal(d1,d2,p.otP1);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=isRegTie?otFinal.score1:d1;els.matchScore2.textContent=isRegTie?otFinal.score2:d2;const team1Wins=isRegTie?otFinal.team1Wins:d1>d2,team2Wins=isRegTie?!otFinal.team1Wins:d2>d1;els.matchRow1.classList.toggle('winner',team1Wins);els.matchRow2.classList.toggle('winner',team2Wins);els.matchHeadline.textContent=isRegTie?`${team1Wins?p.a.name:p.b.name} projected to win in OT`:`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchSubheadline.textContent=isRegTie?`Regulation projection ${d1}-${d2} • projected final ${otFinal.score1}-${otFinal.score2} (OT) • OT: ${p.a.name} ${p.otP1.toFixed(1)}% • ${p.b.name} ${(100-p.otP1).toFixed(1)}%`:`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${displayP1.toFixed(1)}%${isRegTie?' OT':''}`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${displayP1}%`;bar2.style.width=`${100-displayP1}%`}renderMatchupComparison(p.a.name,p.b.name);if(els.matchPublishButton)els.matchPublishButton.disabled=false}
+    function renderMatchup(){const whatIf=predictMatchExcludingGames();if(!whatIf)return;updateMatchExclusionComparison(whatIf);const p=whatIf.modified||whatIf.original;if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2),isRegTie=d1===d2,displayP1=isRegTie?p.otP1:p.p1,otFinal=projectedOvertimeFinal(d1,d2,p.otP1);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=isRegTie?otFinal.score1:d1;els.matchScore2.textContent=isRegTie?otFinal.score2:d2;const team1Wins=isRegTie?otFinal.team1Wins:d1>d2,team2Wins=isRegTie?!otFinal.team1Wins:d2>d1;els.matchRow1.classList.toggle('winner',team1Wins);els.matchRow2.classList.toggle('winner',team2Wins);els.matchHeadline.textContent=isRegTie?`${team1Wins?p.a.name:p.b.name} projected to win in OT`:`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchSubheadline.textContent=isRegTie?`Regulation projection ${d1}-${d2} • projected final ${otFinal.score1}-${otFinal.score2} (OT) • OT: ${p.a.name} ${p.otP1.toFixed(1)}% • ${p.b.name} ${(100-p.otP1).toFixed(1)}%`:`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${displayP1.toFixed(1)}%${isRegTie?' OT':''}`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${displayP1}%`;bar2.style.width=`${100-displayP1}%`}renderMatchupComparison(p.a.name,p.b.name);if(els.matchPublishButton)els.matchPublishButton.disabled=false}
 
     // ---------- Conference chart ----------
     const CONF_COLORS=["#0057b8","#d62728","#2ca02c","#9467bd","#ff7f0e","#17becf","#8c564b","#e377c2","#7f7f7f","#bcbd22","#1f77b4","#c51b8a","#238b45","#6a51a3"];
@@ -2337,7 +2463,9 @@
     document.addEventListener('click',e=>{if(!e.target.closest('.page-menu,.conference-menu,.publish-menu'))closeMenus()});
     document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus()});
     els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankWeek.onchange=async()=>{APP.rankingsWeek=els.rankWeek.value;await renderRankings()};
-    els.matchTeam1.onchange=updateMatchButton;els.matchTeam2.onchange=updateMatchButton;els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;els.matchPublishButton.onclick=e=>{e.stopPropagation();if(!els.matchPublishButton.disabled)toggleMenu(els.matchPublishMenu,els.matchPublishButton)};els.matchPublishPdf.onclick=e=>{e.stopPropagation();publishMatchupPdf()};els.matchPublishPng.onclick=async e=>{e.stopPropagation();await publishMatchupPng()};
+    els.matchTeam1.onchange=()=>{APP.matchExclusions.clear();updateMatchButton();refreshMatchExclusionLists();updateMatchExclusionComparison(null)};els.matchTeam2.onchange=()=>{APP.matchExclusions.clear();updateMatchButton();refreshMatchExclusionLists();updateMatchExclusionComparison(null)};
+    $('matchExclusionReset').onclick=()=>{APP.matchExclusions.clear();refreshMatchExclusionLists();if(!els.matchPredict.disabled)renderMatchup();else updateMatchExclusionComparison(null)};
+    els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;els.matchPublishButton.onclick=e=>{e.stopPropagation();if(!els.matchPublishButton.disabled)toggleMenu(els.matchPublishMenu,els.matchPublishButton)};els.matchPublishPdf.onclick=e=>{e.stopPropagation();publishMatchupPdf()};els.matchPublishPng.onclick=async e=>{e.stopPropagation();await publishMatchupPng()};
     els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;els.confLabels.onchange=renderConferenceChart;
     els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
     els.teamPublishButton.onclick=e=>{e.stopPropagation();toggleMenu(els.teamPublishMenu,els.teamPublishButton)};
