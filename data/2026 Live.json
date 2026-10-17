@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T21:02:46.210629+00:00",
+  "updatedAt": "2026-10-17T21:06:32.794672+00:00",
   "liveGames": [
     {
       "id": 401856719,
@@ -10,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 14.0,
-      "awayPoints": 14.0,
+      "awayPoints": 17.0,
       "period": 2,
-      "clock": "01:30",
-      "completedDrives": 9,
+      "clock": "01:20",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856721,
@@ -27,7 +27,7 @@
       "homePoints": 21.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "01:21",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -39,10 +39,10 @@
       "awayTeam": "Alabama",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 9.0,
+      "homePoints": 12.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "06:04",
+      "clock": "05:19",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
@@ -57,10 +57,10 @@
       "homePoints": 27.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "06:23",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "clock": "04:16",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858264,
@@ -87,10 +87,10 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "01:57",
-      "completedDrives": 9,
+      "clock": "01:40",
+      "completedDrives": 10,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858490,
@@ -102,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "01:32",
-      "completedDrives": 8,
+      "clock": "01:07",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864522,
@@ -117,10 +117,10 @@
       "homePoints": 17.0,
       "awayPoints": 6.0,
       "period": 2,
-      "clock": "01:11",
-      "completedDrives": 9,
+      "clock": "00:30",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864524,
@@ -147,9 +147,9 @@
       "homePoints": 7.0,
       "awayPoints": 31.0,
       "period": 2,
-      "clock": "00:38",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "00:20",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -162,10 +162,10 @@
       "homePoints": 17.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:22",
-      "completedDrives": 13,
+      "clock": "00:00",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401862805,
@@ -178,9 +178,24 @@
       "awayPoints": 0.0,
       "period": 1,
       "clock": "00:00",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401869966,
+      "status": "in_progress",
+      "homeTeam": "Louisiana",
+      "awayTeam": "Troy",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:46",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -193,6 +208,7 @@
     "Eastern Michigan",
     "Georgia",
     "Georgia Tech",
+    "Louisiana",
     "Miami (OH)",
     "Michigan",
     "Missouri",
@@ -204,6 +220,7 @@
     "Tennessee",
     "Texas Tech",
     "Toledo",
+    "Troy",
     "Tulsa",
     "UNLV",
     "Virginia Tech",
