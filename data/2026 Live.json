@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T23:12:49.701489+00:00",
+  "updatedAt": "2026-10-17T23:16:48.004282+00:00",
   "liveGames": [
     {
       "id": 401856723,
@@ -12,40 +12,10 @@
       "homePoints": 26.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "00:57",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401856828,
-      "status": "in_progress",
-      "homeTeam": "Texas Tech",
-      "awayTeam": "Arizona State",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 53.0,
-      "awayPoints": 25.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
+      "clock": "00:11",
+      "completedDrives": 26,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 13
-    },
-    {
-      "id": 401858266,
-      "status": "in_progress",
-      "homeTeam": "Duke",
-      "awayTeam": "North Carolina",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 20.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:14",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
     },
     {
       "id": 401862805,
@@ -57,7 +27,7 @@
       "homePoints": 17.0,
       "awayPoints": 30.0,
       "period": 4,
-      "clock": "09:34",
+      "clock": "06:58",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -72,7 +42,7 @@
       "homePoints": 19.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "05:38",
+      "clock": "05:09",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -87,7 +57,7 @@
       "homePoints": 20.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "07:38",
+      "clock": "07:27",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -102,10 +72,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:36",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "10:16",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856832,
@@ -117,10 +87,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:20",
-      "completedDrives": 1,
+      "clock": "10:54",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858263,
@@ -132,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:03",
-      "completedDrives": 1,
+      "clock": "08:50",
+      "completedDrives": 0,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401862806,
@@ -147,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:49",
+      "clock": "07:56",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -162,10 +132,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:47",
-      "completedDrives": 2,
+      "clock": "08:54",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401869934,
@@ -175,27 +145,24 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "11:03",
-      "completedDrives": 0,
+      "clock": "09:16",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Alabama",
-    "Arizona State",
     "Arkansas",
     "Arkansas State",
     "Baylor",
-    "Duke",
     "Florida State",
     "Kent State",
     "Louisiana",
     "Miami",
     "Nevada",
-    "North Carolina",
     "North Dakota State",
     "Oregon State",
     "Rice",
@@ -203,7 +170,6 @@
     "Southern Miss",
     "TCU",
     "Tennessee",
-    "Texas Tech",
     "Troy",
     "Tulsa",
     "Vanderbilt",
