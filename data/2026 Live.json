@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T20:46:30.802835+00:00",
+  "updatedAt": "2026-10-17T20:51:36.775640+00:00",
   "liveGames": [
-    {
-      "id": 401866443,
-      "status": "in_progress",
-      "homeTeam": "Central Michigan",
-      "awayTeam": "Western Michigan",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 14.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "00:09",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
-    },
     {
       "id": 401856719,
       "status": "in_progress",
@@ -27,9 +12,9 @@
       "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "06:32",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "04:24",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -42,10 +27,10 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "06:24",
-      "completedDrives": 7,
+      "clock": "05:15",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856723,
@@ -57,10 +42,10 @@
       "homePoints": 9.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "11:46",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "clock": "10:18",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401856828,
@@ -72,10 +57,10 @@
       "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "11:51",
-      "completedDrives": 8,
+      "clock": "08:28",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858264,
@@ -87,7 +72,7 @@
       "homePoints": 24.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "02:53",
+      "clock": "01:47",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -102,10 +87,10 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "08:37",
-      "completedDrives": 7,
+      "clock": "06:16",
+      "completedDrives": 8,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858490,
@@ -117,10 +102,10 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "05:32",
-      "completedDrives": 6,
+      "clock": "02:58",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401864522,
@@ -130,12 +115,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 17.0,
-      "awayPoints": 3.0,
+      "awayPoints": 6.0,
       "period": 2,
-      "clock": "09:35",
-      "completedDrives": 7,
+      "clock": "02:41",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401864524,
@@ -144,12 +129,12 @@
       "awayTeam": "UNLV",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 10.0,
+      "homePoints": 13.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "01:08",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "00:49",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 2,
-      "clock": "03:48",
+      "clock": "01:59",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -177,10 +162,10 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:25",
-      "completedDrives": 9,
+      "clock": "01:49",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401862805,
@@ -192,10 +177,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:26",
-      "completedDrives": 1,
+      "clock": "05:56",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
@@ -204,7 +189,6 @@
     "Alabama",
     "Arizona State",
     "Auburn",
-    "Central Michigan",
     "Duke",
     "Eastern Michigan",
     "Georgia",
@@ -223,7 +207,6 @@
     "Tulsa",
     "UNLV",
     "Virginia Tech",
-    "Western Michigan",
     "Wyoming"
   ]
 }
