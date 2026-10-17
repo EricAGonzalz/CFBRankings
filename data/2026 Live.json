@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T22:36:36.111973+00:00",
+  "updatedAt": "2026-10-17T22:42:21.665703+00:00",
   "liveGames": [
     {
       "id": 401856719,
@@ -9,12 +9,12 @@
       "awayTeam": "Auburn",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "06:01",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "02:58",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -27,7 +27,7 @@
       "homePoints": 28.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "07:51",
+      "clock": "03:54",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -42,7 +42,7 @@
       "homePoints": 19.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "12:49",
+      "clock": "09:44",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -54,12 +54,12 @@
       "awayTeam": "Arizona State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 46.0,
+      "homePoints": 52.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "12:02",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "09:27",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -72,9 +72,9 @@
       "homePoints": 34.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "02:06",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "00:35",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -87,10 +87,10 @@
       "homePoints": 13.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "08:47",
-      "completedDrives": 16,
+      "clock": "07:00",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858490,
@@ -102,10 +102,10 @@
       "homePoints": 14.0,
       "awayPoints": 11.0,
       "period": 4,
-      "clock": "10:04",
-      "completedDrives": 18,
+      "clock": "09:20",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401864522,
@@ -114,12 +114,12 @@
       "awayTeam": "Northern Illinois",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 34.0,
+      "homePoints": 41.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "13:26",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "06:48",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -130,12 +130,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 41.0,
-      "awayPoints": 24.0,
+      "awayPoints": 31.0,
       "period": 4,
-      "clock": "01:38",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "clock": "00:32",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401866444,
@@ -147,7 +147,7 @@
       "homePoints": 14.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "12:40",
+      "clock": "11:15",
       "completedDrives": 20,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 11
@@ -162,10 +162,10 @@
       "homePoints": 34.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "06:30",
-      "completedDrives": 22,
+      "clock": "02:00",
+      "completedDrives": 23,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401862805,
@@ -175,12 +175,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 17.0,
-      "awayPoints": 21.0,
+      "awayPoints": 24.0,
       "period": 3,
-      "clock": "11:26",
-      "completedDrives": 13,
+      "clock": "08:21",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401869966,
@@ -204,12 +204,12 @@
       "awayTeam": "Washington State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:36",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "04:31",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     }
   ],
