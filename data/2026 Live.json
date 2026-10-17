@@ -1,6 +1,76 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T03:46:13.874358+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-17T16:06:27.034560+00:00",
+  "liveGames": [
+    {
+      "id": 401856829,
+      "status": "in_progress",
+      "homeTeam": "West Virginia",
+      "awayTeam": "Cincinnati",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:42",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401856830,
+      "status": "in_progress",
+      "homeTeam": "Kansas State",
+      "awayTeam": "Kansas",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:54",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858267,
+      "status": "in_progress",
+      "homeTeam": "Boston College",
+      "awayTeam": "Pittsburgh",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 7.0,
+      "period": 1,
+      "clock": "14:42",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401866441,
+      "status": "in_progress",
+      "homeTeam": "Bowling Green",
+      "awayTeam": "Ball State",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:15",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Ball State",
+    "Boston College",
+    "Bowling Green",
+    "Cincinnati",
+    "Kansas",
+    "Kansas State",
+    "Pittsburgh",
+    "West Virginia"
+  ]
 }
