@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T03:06:19.578609+00:00",
+  "updatedAt": "2026-10-17T03:11:14.631212+00:00",
   "liveGames": [
-    {
-      "id": 401862801,
-      "status": "in_progress",
-      "homeTeam": "Tulane",
-      "awayTeam": "Memphis",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 31.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "00:34",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 15
-    },
     {
       "id": 401858493,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 26.0,
       "awayPoints": 38.0,
       "period": 4,
-      "clock": "10:30",
+      "clock": "09:44",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -39,21 +24,19 @@
       "awayTeam": "App State",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 24.0,
+      "homePoints": 32.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "05:13",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "03:10",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     }
   ],
   "liveTeams": [
     "App State",
     "Coastal Carolina",
-    "Memphis",
     "Purdue",
-    "Tulane",
     "Washington"
   ]
 }
