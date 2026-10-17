@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T03:21:23.554826+00:00",
+  "updatedAt": "2026-10-17T03:26:20.334769+00:00",
   "liveGames": [
     {
       "id": 401858493,
@@ -12,30 +12,13 @@
       "homePoints": 26.0,
       "awayPoints": 38.0,
       "period": 4,
-      "clock": "04:40",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401869844,
-      "status": "in_progress",
-      "homeTeam": "Coastal Carolina",
-      "awayTeam": "App State",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 32.0,
-      "awayPoints": 35.0,
-      "period": 4,
-      "clock": "01:10",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "clock": "04:14",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 13,
+      "awayOffensiveDrives": 11
     }
   ],
   "liveTeams": [
-    "App State",
-    "Coastal Carolina",
     "Purdue",
     "Washington"
   ]
