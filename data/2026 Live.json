@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T22:52:05.452269+00:00",
+  "updatedAt": "2026-10-17T22:56:31.563920+00:00",
   "liveGames": [
     {
       "id": 401856719,
@@ -12,25 +12,10 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:21",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401856721,
-      "status": "in_progress",
-      "homeTeam": "Ole Miss",
-      "awayTeam": "Missouri",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 31.0,
-      "awayPoints": 3.0,
-      "period": 4,
-      "clock": "01:17",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "clock": "00:58",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856723,
@@ -42,7 +27,7 @@
       "homePoints": 19.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "06:26",
+      "clock": "03:22",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -55,12 +40,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 53.0,
-      "awayPoints": 17.0,
+      "awayPoints": 25.0,
       "period": 4,
-      "clock": "06:37",
-      "completedDrives": 22,
+      "clock": "06:31",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858266,
@@ -72,7 +57,7 @@
       "homePoints": 20.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "04:34",
+      "clock": "03:17",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -84,10 +69,10 @@
       "awayTeam": "Penn State",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 11.0,
       "period": 4,
-      "clock": "03:28",
+      "clock": "02:28",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -117,9 +102,9 @@
       "homePoints": 14.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "07:43",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 10,
+      "clock": "04:34",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
     },
     {
@@ -132,9 +117,9 @@
       "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "02:39",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "01:06",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -161,8 +146,8 @@
       "awayConference": "Pac-12",
       "homePoints": 17.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "14:31",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -177,10 +162,8 @@
     "Georgia",
     "Louisiana",
     "Michigan",
-    "Missouri",
     "North Carolina",
     "Northern Illinois",
-    "Ole Miss",
     "Oregon State",
     "Penn State",
     "Rice",
