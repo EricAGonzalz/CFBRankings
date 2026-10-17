@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T22:11:42.116538+00:00",
+  "updatedAt": "2026-10-17T22:16:28.704057+00:00",
   "liveGames": [
     {
       "id": 401856719,
@@ -12,7 +12,7 @@
       "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "14:15",
+      "clock": "13:38",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -27,7 +27,7 @@
       "homePoints": 21.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "00:28",
+      "clock": "15:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -39,7 +39,7 @@
       "awayTeam": "Alabama",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 18.0,
+      "homePoints": 19.0,
       "awayPoints": 10.0,
       "period": 3,
       "clock": "05:05",
@@ -57,7 +57,7 @@
       "homePoints": 43.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "05:12",
+      "clock": "04:40",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -72,7 +72,7 @@
       "homePoints": 34.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "10:24",
+      "clock": "07:52",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -87,9 +87,9 @@
       "homePoints": 10.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "02:06",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "00:00",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -102,7 +102,7 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "02:08",
+      "clock": "00:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -114,12 +114,12 @@
       "awayTeam": "Northern Illinois",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 27.0,
+      "homePoints": 34.0,
       "awayPoints": 17.0,
-      "period": 3,
-      "clock": "03:58",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "period": 4,
+      "clock": "14:54",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -132,7 +132,7 @@
       "homePoints": 34.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "09:11",
+      "clock": "08:23",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -147,7 +147,7 @@
       "homePoints": 14.0,
       "awayPoints": 34.0,
       "period": 3,
-      "clock": "03:57",
+      "clock": "02:00",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -159,13 +159,13 @@
       "awayTeam": "Akron",
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
-      "homePoints": 27.0,
+      "homePoints": 34.0,
       "awayPoints": 14.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 10
+      "period": 4,
+      "clock": "13:57",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401862805,
@@ -189,12 +189,12 @@
       "awayTeam": "Troy",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "02:38",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
+      "clock": "02:11",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 4
     },
     {
@@ -207,9 +207,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:12",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "13:27",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     }
   ],
