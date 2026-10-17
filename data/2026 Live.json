@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T22:42:21.665703+00:00",
+  "updatedAt": "2026-10-17T22:46:35.529730+00:00",
   "liveGames": [
     {
       "id": 401856719,
@@ -12,7 +12,7 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "02:58",
+      "clock": "02:00",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -24,12 +24,12 @@
       "awayTeam": "Missouri",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 28.0,
+      "homePoints": 31.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "03:54",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "03:39",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -42,7 +42,7 @@
       "homePoints": 19.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "09:44",
+      "clock": "08:21",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -54,28 +54,13 @@
       "awayTeam": "Arizona State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 52.0,
+      "homePoints": 53.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "09:27",
+      "clock": "02:31",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858264,
-      "status": "in_progress",
-      "homeTeam": "Virginia Tech",
-      "awayTeam": "Georgia Tech",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 34.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:35",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
     },
     {
       "id": 401858266,
@@ -84,12 +69,12 @@
       "awayTeam": "North Carolina",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 13.0,
+      "homePoints": 20.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "07:00",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "04:39",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -102,9 +87,9 @@
       "homePoints": 14.0,
       "awayPoints": 11.0,
       "period": 4,
-      "clock": "09:20",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "06:23",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -115,24 +100,9 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 41.0,
-      "awayPoints": 17.0,
+      "awayPoints": 23.0,
       "period": 4,
-      "clock": "06:48",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
-    },
-    {
-      "id": 401864524,
-      "status": "in_progress",
-      "homeTeam": "Air Force",
-      "awayTeam": "UNLV",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 41.0,
-      "awayPoints": 31.0,
-      "period": 4,
-      "clock": "00:32",
+      "clock": "03:53",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -147,9 +117,9 @@
       "homePoints": 14.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "11:15",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 9,
+      "clock": "10:11",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
     },
     {
@@ -162,10 +132,10 @@
       "homePoints": 34.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 13
+      "clock": "01:11",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401862805,
@@ -177,7 +147,7 @@
       "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "08:21",
+      "clock": "07:41",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -207,14 +177,13 @@
       "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:31",
-      "completedDrives": 6,
+      "clock": "02:13",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     }
   ],
   "liveTeams": [
-    "Air Force",
     "Akron",
     "Alabama",
     "Arizona State",
@@ -222,7 +191,6 @@
     "Duke",
     "Eastern Michigan",
     "Georgia",
-    "Georgia Tech",
     "Louisiana",
     "Miami (OH)",
     "Michigan",
@@ -238,8 +206,6 @@
     "Toledo",
     "Troy",
     "Tulsa",
-    "UNLV",
-    "Virginia Tech",
     "Washington State",
     "Wyoming"
   ]
