@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-17T00:21:23.927876+00:00",
+  "updatedAt": "2026-10-17T00:26:17.553213+00:00",
   "liveGames": [
     {
       "id": 401862801,
@@ -10,12 +10,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 3.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "14:48",
-      "completedDrives": 7,
+      "clock": "14:08",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401858493,
@@ -25,9 +25,9 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "07:31",
+      "clock": "06:19",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -40,9 +40,9 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "09:18",
+      "clock": "07:30",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
