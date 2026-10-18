@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T00:46:30.351881+00:00",
+  "updatedAt": "2026-10-18T00:51:45.905204+00:00",
   "liveGames": [
     {
       "id": 401860903,
@@ -9,12 +9,12 @@
       "awayTeam": "Washington State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 34.0,
+      "homePoints": 40.0,
       "awayPoints": 16.0,
-      "period": 3,
-      "clock": "15:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "period": 4,
+      "clock": "14:11",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -57,10 +57,10 @@
       "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "00:25",
-      "completedDrives": 12,
+      "clock": "00:00",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401862806,
@@ -103,8 +103,8 @@
       "awayPoints": 16.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -114,12 +114,12 @@
       "awayTeam": "Kentucky",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "00:30",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -132,10 +132,10 @@
       "homePoints": 14.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "05:52",
-      "completedDrives": 5,
+      "clock": "04:19",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856831,
@@ -144,12 +144,12 @@
       "awayTeam": "Oklahoma State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "03:43",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "02:22",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -162,7 +162,7 @@
       "homePoints": 16.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "05:46",
+      "clock": "03:41",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -177,7 +177,7 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "01:28",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -193,9 +193,9 @@
       "awayPoints": 7.0,
       "period": 2,
       "clock": "15:00",
-      "completedDrives": 4,
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401871091,
@@ -207,7 +207,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:08",
+      "clock": "11:41",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
