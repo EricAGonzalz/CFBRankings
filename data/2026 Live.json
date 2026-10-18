@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T06:11:36.215820+00:00",
+  "updatedAt": "2026-10-18T06:16:35.981391+00:00",
   "liveGames": [
-    {
-      "id": 401856833,
-      "status": "in_progress",
-      "homeTeam": "Colorado",
-      "awayTeam": "Utah",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 24.0,
-      "awayPoints": 27.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401858492,
       "status": "in_progress",
@@ -27,16 +12,14 @@
       "homePoints": 9.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "07:18",
-      "completedDrives": 24,
+      "clock": "06:21",
+      "completedDrives": 25,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     }
   ],
   "liveTeams": [
-    "Colorado",
     "Nebraska",
-    "Oregon",
-    "Utah"
+    "Oregon"
   ]
 }
