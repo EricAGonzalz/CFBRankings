@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T02:03:42.586204+00:00",
+  "updatedAt": "2026-10-18T02:06:42.123190+00:00",
   "liveGames": [
     {
       "id": 401856726,
@@ -12,9 +12,9 @@
       "homePoints": 21.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "06:49",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
+      "clock": "03:46",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
     },
     {
@@ -27,7 +27,7 @@
       "homePoints": 6.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "10:07",
+      "clock": "09:38",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -57,10 +57,10 @@
       "homePoints": 24.0,
       "awayPoints": 2.0,
       "period": 4,
-      "clock": "07:06",
-      "completedDrives": 17,
+      "clock": "06:06",
+      "completedDrives": 18,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401864520,
@@ -72,7 +72,7 @@
       "homePoints": 31.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "11:12",
+      "clock": "10:00",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -102,9 +102,9 @@
       "homePoints": 13.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "12:10",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "10:53",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -129,12 +129,12 @@
       "awayTeam": "Oklahoma State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 21.0,
+      "homePoints": 27.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "04:45",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "02:00",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -147,7 +147,7 @@
       "homePoints": 23.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "04:16",
+      "clock": "02:49",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -161,8 +161,8 @@
       "awayConference": "Big Ten",
       "homePoints": 10.0,
       "awayPoints": 7.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "13:31",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -176,8 +176,8 @@
       "awayConference": "American Athletic",
       "homePoints": 21.0,
       "awayPoints": 20.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "12:46",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -192,7 +192,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "09:26",
+      "clock": "05:19",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
@@ -207,10 +207,25 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "06:02",
-      "completedDrives": 7,
+      "clock": "04:17",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401866445,
+      "status": "in_progress",
+      "homeTeam": "Sacramento State",
+      "awayTeam": "Ohio",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:57",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -229,8 +244,10 @@
     "Nevada",
     "North Dakota State",
     "Notre Dame",
+    "Ohio",
     "Oklahoma",
     "Oklahoma State",
+    "Sacramento State",
     "San José State",
     "South Florida",
     "Southern Miss",
