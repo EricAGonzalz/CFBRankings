@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T02:46:23.223892+00:00",
+  "updatedAt": "2026-10-18T02:51:29.073394+00:00",
   "liveGames": [
     {
       "id": 401858263,
@@ -9,12 +9,12 @@
       "awayTeam": "Florida State",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 35.0,
+      "homePoints": 43.0,
       "awayPoints": 35.0,
       "period": 6,
       "clock": "00:00",
-      "completedDrives": 27,
-      "homeOffensiveDrives": 13,
+      "completedDrives": 28,
+      "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 14
     },
     {
@@ -27,10 +27,10 @@
       "homePoints": 21.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "08:05",
-      "completedDrives": 18,
+      "clock": "05:43",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856831,
@@ -42,10 +42,10 @@
       "homePoints": 35.0,
       "awayPoints": 25.0,
       "period": 4,
-      "clock": "09:45",
-      "completedDrives": 17,
+      "clock": "06:03",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858265,
@@ -57,25 +57,10 @@
       "homePoints": 26.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "07:34",
+      "clock": "05:41",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401858494,
-      "status": "in_progress",
-      "homeTeam": "UCLA",
-      "awayTeam": "Wisconsin",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 17.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "01:54",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
     },
     {
       "id": 401862804,
@@ -85,9 +70,9 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 24.0,
-      "awayPoints": 20.0,
+      "awayPoints": 27.0,
       "period": 4,
-      "clock": "13:32",
+      "clock": "12:47",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -102,10 +87,10 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "06:00",
-      "completedDrives": 19,
+      "clock": "04:47",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401864523,
@@ -132,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "14:56",
+      "clock": "12:26",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -147,7 +132,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "09:39",
+      "clock": "08:58",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:08",
+      "clock": "10:04",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -177,10 +162,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:20",
-      "completedDrives": 2,
+      "clock": "09:36",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401864521,
@@ -192,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:06",
+      "clock": "09:12",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -218,12 +203,10 @@
     "San Diego State",
     "San José State",
     "Syracuse",
-    "UCLA",
     "UL Monroe",
     "UTEP",
     "UTSA",
     "Utah",
-    "Wake Forest",
-    "Wisconsin"
+    "Wake Forest"
   ]
 }
