@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T03:36:27.821919+00:00",
+  "updatedAt": "2026-10-18T03:41:32.546473+00:00",
   "liveGames": [
-    {
-      "id": 401862804,
-      "status": "in_progress",
-      "homeTeam": "UTSA",
-      "awayTeam": "Navy",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 38.0,
-      "awayPoints": 34.0,
-      "period": 4,
-      "clock": "01:42",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401864523,
       "status": "in_progress",
@@ -25,12 +10,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 3.0,
-      "awayPoints": 21.0,
-      "period": 3,
-      "clock": "15:00",
-      "completedDrives": 15,
+      "awayPoints": 24.0,
+      "period": 4,
+      "clock": "13:48",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401866445,
@@ -42,10 +27,10 @@
       "homePoints": 0.0,
       "awayPoints": 27.0,
       "period": 2,
-      "clock": "00:40",
-      "completedDrives": 11,
+      "clock": "00:00",
+      "completedDrives": 12,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401856833,
@@ -57,9 +42,9 @@
       "homePoints": 0.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "08:50",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "07:07",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -70,12 +55,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 0.0,
-      "awayPoints": 21.0,
+      "awayPoints": 27.0,
       "period": 2,
-      "clock": "10:17",
-      "completedDrives": 7,
+      "clock": "08:54",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401860904,
@@ -87,7 +72,7 @@
       "homePoints": 13.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "07:48",
+      "clock": "06:41",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -102,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "09:00",
+      "clock": "07:22",
       "completedDrives": 6,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 2
@@ -117,7 +102,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:42",
+      "clock": "03:01",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -128,7 +113,6 @@
     "Colorado",
     "Fresno State",
     "Hawai'i",
-    "Navy",
     "Nebraska",
     "New Mexico",
     "Ohio",
@@ -137,7 +121,6 @@
     "San Diego State",
     "San José State",
     "UTEP",
-    "UTSA",
     "Utah",
     "Wake Forest"
   ]
