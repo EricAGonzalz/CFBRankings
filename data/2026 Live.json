@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T03:16:30.389746+00:00",
+  "updatedAt": "2026-10-18T03:21:24.803796+00:00",
   "liveGames": [
-    {
-      "id": 401856809,
-      "status": "in_progress",
-      "homeTeam": "BYU",
-      "awayTeam": "Notre Dame",
-      "homeConference": "Big 12",
-      "awayConference": "FBS Independents",
-      "homePoints": 28.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:10",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401862804,
       "status": "in_progress",
@@ -27,9 +12,9 @@
       "homePoints": 31.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "04:50",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "03:28",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -42,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "04:21",
+      "clock": "03:47",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -57,7 +42,7 @@
       "homePoints": 0.0,
       "awayPoints": 20.0,
       "period": 2,
-      "clock": "06:21",
+      "clock": "02:00",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -72,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "01:41",
+      "clock": "00:00",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -87,7 +72,7 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "02:35",
+      "clock": "15:00",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -101,8 +86,8 @@
       "awayConference": "Pac-12",
       "homePoints": 10.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "13:10",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -117,7 +102,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:22",
+      "clock": "13:13",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -132,14 +117,13 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:07",
+      "clock": "10:07",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
-    "BYU",
     "California",
     "Colorado",
     "Fresno State",
@@ -147,7 +131,6 @@
     "Navy",
     "Nebraska",
     "New Mexico",
-    "Notre Dame",
     "Ohio",
     "Oregon",
     "Sacramento State",
