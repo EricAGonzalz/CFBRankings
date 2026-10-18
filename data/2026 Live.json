@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T03:06:31.540879+00:00",
+  "updatedAt": "2026-10-18T03:11:39.311613+00:00",
   "liveGames": [
     {
       "id": 401856809,
@@ -12,25 +12,10 @@
       "homePoints": 28.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:47",
+      "clock": "00:44",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401856831,
-      "status": "in_progress",
-      "homeTeam": "Houston",
-      "awayTeam": "Oklahoma State",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 35.0,
-      "awayPoints": 32.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401858265,
@@ -42,10 +27,10 @@
       "homePoints": 26.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "01:15",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 13
+      "clock": "00:45",
+      "completedDrives": 28,
+      "homeOffensiveDrives": 14,
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401862804,
@@ -57,25 +42,10 @@
       "homePoints": 31.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "08:17",
+      "clock": "06:11",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401871091,
-      "status": "in_progress",
-      "homeTeam": "UL Monroe",
-      "awayTeam": "Louisiana Tech",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 0.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:48",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
     },
     {
       "id": 401864523,
@@ -85,12 +55,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 0.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 3,
-      "clock": "06:43",
-      "completedDrives": 13,
+      "clock": "05:25",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401866445,
@@ -100,12 +70,12 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
-      "awayPoints": 17.0,
+      "awayPoints": 20.0,
       "period": 2,
-      "clock": "09:24",
-      "completedDrives": 7,
+      "clock": "07:54",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856833,
@@ -117,9 +87,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:51",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "03:10",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -132,7 +102,7 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "06:15",
+      "clock": "06:05",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -144,12 +114,12 @@
       "awayTeam": "Fresno State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:38",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "01:58",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -162,10 +132,25 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:55",
+      "clock": "01:13",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401858492,
+      "status": "in_progress",
+      "homeTeam": "Oregon",
+      "awayTeam": "Nebraska",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:44",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
@@ -174,19 +159,17 @@
     "Colorado",
     "Fresno State",
     "Hawai'i",
-    "Houston",
-    "Louisiana Tech",
     "Louisville",
     "Navy",
+    "Nebraska",
     "New Mexico",
     "Notre Dame",
     "Ohio",
-    "Oklahoma State",
+    "Oregon",
     "Sacramento State",
     "San Diego State",
     "San José State",
     "Syracuse",
-    "UL Monroe",
     "UTEP",
     "UTSA",
     "Utah",
