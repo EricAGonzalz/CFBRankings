@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-18T03:11:39.311613+00:00",
+  "updatedAt": "2026-10-18T03:16:30.389746+00:00",
   "liveGames": [
     {
       "id": 401856809,
@@ -12,25 +12,10 @@
       "homePoints": 28.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "00:44",
+      "clock": "00:10",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401858265,
-      "status": "in_progress",
-      "homeTeam": "Syracuse",
-      "awayTeam": "Louisville",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 26.0,
-      "awayPoints": 34.0,
-      "period": 4,
-      "clock": "00:45",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 14
     },
     {
       "id": 401862804,
@@ -40,12 +25,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 31.0,
-      "awayPoints": 27.0,
+      "awayPoints": 34.0,
       "period": 4,
-      "clock": "06:11",
-      "completedDrives": 19,
+      "clock": "04:50",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401864523,
@@ -57,7 +42,7 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "05:25",
+      "clock": "04:21",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -72,9 +57,9 @@
       "homePoints": 0.0,
       "awayPoints": 20.0,
       "period": 2,
-      "clock": "07:54",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "06:21",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -87,7 +72,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:10",
+      "clock": "01:41",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -102,9 +87,9 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "06:05",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "02:35",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -117,10 +102,10 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:58",
-      "completedDrives": 6,
+      "clock": "00:00",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401864521,
@@ -131,10 +116,10 @@
       "awayConference": "Mountain West",
       "homePoints": 3.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "01:13",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "14:22",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -147,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:44",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "11:07",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
@@ -159,7 +144,6 @@
     "Colorado",
     "Fresno State",
     "Hawai'i",
-    "Louisville",
     "Navy",
     "Nebraska",
     "New Mexico",
@@ -169,7 +153,6 @@
     "Sacramento State",
     "San Diego State",
     "San José State",
-    "Syracuse",
     "UTEP",
     "UTSA",
     "Utah",
