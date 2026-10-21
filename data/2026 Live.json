@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-21T01:15:50.331449+00:00",
+  "updatedAt": "2026-10-21T01:20:49.535733+00:00",
   "liveGames": [
     {
       "id": 401871055,
@@ -10,12 +10,12 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 8.0,
-      "awayPoints": 13.0,
+      "awayPoints": 16.0,
       "period": 3,
-      "clock": "11:40",
-      "completedDrives": 17,
+      "clock": "09:09",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401871069,
@@ -24,12 +24,12 @@
       "awayTeam": "Missouri State",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 31.0,
+      "homePoints": 38.0,
       "awayPoints": 35.0,
       "period": 3,
-      "clock": "10:12",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 7,
+      "clock": "07:50",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 6
     },
     {
@@ -43,9 +43,9 @@
       "awayPoints": 6.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     }
   ],
   "liveTeams": [
