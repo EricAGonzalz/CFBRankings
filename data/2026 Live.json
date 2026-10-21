@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-21T02:31:08.584736+00:00",
+  "updatedAt": "2026-10-21T02:35:48.806749+00:00",
   "liveGames": [
-    {
-      "id": 401871055,
-      "status": "in_progress",
-      "homeTeam": "Florida International",
-      "awayTeam": "Middle Tennessee",
-      "homeConference": "Conference USA",
-      "awayConference": "Conference USA",
-      "homePoints": 23.0,
-      "awayPoints": 26.0,
-      "period": 4,
-      "clock": "00:28",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401871069,
-      "status": "in_progress",
-      "homeTeam": "Delaware",
-      "awayTeam": "Missouri State",
-      "homeConference": "Conference USA",
-      "awayConference": "Conference USA",
-      "homePoints": 61.0,
-      "awayPoints": 38.0,
-      "period": 4,
-      "clock": "00:46",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401871092,
       "status": "in_progress",
@@ -40,20 +10,16 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 13.0,
-      "awayPoints": 6.0,
+      "awayPoints": 13.0,
       "period": 4,
-      "clock": "06:54",
-      "completedDrives": 18,
+      "clock": "04:38",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     }
   ],
   "liveTeams": [
-    "Delaware",
-    "Florida International",
     "Marshall",
-    "Middle Tennessee",
-    "Missouri State",
     "South Alabama"
   ]
 }
