@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-22T23:51:12.248660+00:00",
+  "updatedAt": "2026-10-22T23:56:12.393011+00:00",
   "liveGames": [
     {
       "id": 401869845,
@@ -9,12 +9,12 @@
       "awayTeam": "James Madison",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "period": 2,
+      "clock": "12:41",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -26,11 +26,11 @@
       "awayConference": "Conference USA",
       "homePoints": 0.0,
       "awayPoints": 14.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 7,
+      "period": 2,
+      "clock": "11:31",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401862807,
@@ -40,9 +40,9 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "10:26",
+      "clock": "10:13",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
