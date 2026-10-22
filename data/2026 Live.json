@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-21T03:10:46.848630+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-22T00:12:10.037087+00:00",
+  "liveGames": [
+    {
+      "id": 401871070,
+      "status": "in_progress",
+      "homeTeam": "Sam Houston",
+      "awayTeam": "New Mexico State",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:40",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    }
+  ],
+  "liveTeams": [
+    "New Mexico State",
+    "Sam Houston"
+  ]
 }
