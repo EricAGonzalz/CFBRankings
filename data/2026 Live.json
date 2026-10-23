@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-23T03:46:19.079149+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-23T23:06:16.410255+00:00",
+  "liveGames": [
+    {
+      "id": 401861965,
+      "status": "in_progress",
+      "homeTeam": "UConn",
+      "awayTeam": "Massachusetts",
+      "homeConference": "FBS Independents",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Massachusetts",
+    "UConn"
+  ]
 }
