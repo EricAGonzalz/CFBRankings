@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-23T02:11:23.556315+00:00",
+  "updatedAt": "2026-10-23T02:16:18.242084+00:00",
   "liveGames": [
     {
       "id": 401869845,
@@ -12,10 +12,10 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "06:16",
-      "completedDrives": 23,
+      "clock": "05:58",
+      "completedDrives": 24,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401871056,
@@ -24,13 +24,13 @@
       "awayTeam": "Liberty",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "01:16",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "clock": "00:00",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401862807,
@@ -39,7 +39,7 @@
       "awayTeam": "East Carolina",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 16.0,
+      "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 3,
       "clock": "06:31",
