@@ -1,7 +1,22 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-23T23:06:16.410255+00:00",
+  "updatedAt": "2026-10-23T23:11:13.152794+00:00",
   "liveGames": [
+    {
+      "id": 401858271,
+      "status": "in_progress",
+      "homeTeam": "Virginia",
+      "awayTeam": "Duke",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:39",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
     {
       "id": 401861965,
       "status": "in_progress",
@@ -12,14 +27,16 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
+      "clock": "13:00",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Duke",
     "Massachusetts",
-    "UConn"
+    "UConn",
+    "Virginia"
   ]
 }
