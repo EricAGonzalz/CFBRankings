@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-23T23:36:12.598495+00:00",
+  "updatedAt": "2026-10-23T23:41:15.250987+00:00",
   "liveGames": [
     {
       "id": 401858271,
@@ -9,13 +9,13 @@
       "awayTeam": "Duke",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "04:32",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "clock": "02:54",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401861965,
@@ -26,11 +26,11 @@
       "awayConference": "Mid-American",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 2,
+      "period": 2,
+      "clock": "14:17",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
