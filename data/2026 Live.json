@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T02:22:07.832918+00:00",
+  "updatedAt": "2026-10-24T02:26:24.445575+00:00",
   "liveGames": [
-    {
-      "id": 401861965,
-      "status": "in_progress",
-      "homeTeam": "UConn",
-      "awayTeam": "Massachusetts",
-      "homeConference": "FBS Independents",
-      "awayConference": "Mid-American",
-      "homePoints": 35.0,
-      "awayPoints": 16.0,
-      "period": 4,
-      "clock": "00:21",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 13
-    },
     {
       "id": 401862808,
       "status": "in_progress",
@@ -43,17 +28,15 @@
       "awayPoints": 6.0,
       "period": 2,
       "clock": "02:00",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
     "Air Force",
     "Army",
-    "Massachusetts",
     "Tulsa",
-    "UConn",
     "Wyoming"
   ]
 }
