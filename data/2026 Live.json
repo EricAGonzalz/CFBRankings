@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T23:46:46.506287+00:00",
+  "updatedAt": "2026-10-24T23:51:26.104907+00:00",
   "liveGames": [
     {
       "id": 401864528,
@@ -12,9 +12,9 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "09:25",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
+      "clock": "08:57",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 11
     },
     {
@@ -27,9 +27,9 @@
       "homePoints": 21.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "14:19",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "12:10",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -42,10 +42,10 @@
       "homePoints": 26.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "07:51",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
+      "clock": "05:35",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401860907,
@@ -72,9 +72,9 @@
       "homePoints": 21.0,
       "awayPoints": 24.0,
       "period": 2,
-      "clock": "08:20",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "05:54",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -86,8 +86,8 @@
       "awayConference": "Big 12",
       "homePoints": 7.0,
       "awayPoints": 14.0,
-      "period": 1,
-      "clock": "15:00",
+      "period": 2,
+      "clock": "14:05",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -99,12 +99,12 @@
       "awayTeam": "Virginia Tech",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "14:05",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "12:20",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -117,7 +117,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "12:10",
+      "clock": "11:28",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -132,7 +132,22 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:16",
+      "clock": "08:33",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856732,
+      "status": "in_progress",
+      "homeTeam": "Texas",
+      "awayTeam": "Ole Miss",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -147,7 +162,7 @@
       "homePoints": 8.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:35",
+      "clock": "09:50",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -162,10 +177,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:33",
-      "completedDrives": 1,
+      "clock": "08:42",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858500,
@@ -177,7 +192,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:08",
+      "clock": "09:00",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -192,7 +207,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "10:47",
+      "clock": "08:06",
       "completedDrives": 2,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 2
@@ -214,10 +229,12 @@
     "North Carolina",
     "Oklahoma State",
     "Old Dominion",
+    "Ole Miss",
     "San Diego State",
     "San José State",
     "Southern Miss",
     "Syracuse",
+    "Texas",
     "Texas State",
     "USC",
     "Utah State",
