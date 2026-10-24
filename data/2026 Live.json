@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T20:17:47.905192+00:00",
+  "updatedAt": "2026-10-24T20:23:36.008294+00:00",
   "liveGames": [
     {
       "id": 401856834,
@@ -12,7 +12,7 @@
       "homePoints": 25.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "01:13",
+      "clock": "00:23",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -27,7 +27,7 @@
       "homePoints": 35.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "03:02",
+      "clock": "01:54",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -40,11 +40,11 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 27.0,
-      "awayPoints": 21.0,
+      "awayPoints": 28.0,
       "period": 4,
-      "clock": "01:44",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "01:09",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -57,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 12,
+      "clock": "00:46",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856727,
@@ -70,12 +70,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:35",
-      "completedDrives": 4,
+      "clock": "01:20",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856730,
@@ -87,7 +87,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "13:21",
+      "clock": "10:37",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -100,9 +100,9 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 14.0,
-      "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
+      "awayPoints": 7.0,
+      "period": 2,
+      "clock": "14:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -114,10 +114,10 @@
       "awayTeam": "BYU",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "13:38",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -132,10 +132,10 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "00:09",
-      "completedDrives": 3,
+      "clock": "00:00",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858497,
@@ -146,10 +146,10 @@
       "awayConference": "Big Ten",
       "homePoints": 3.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "13:23",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -162,7 +162,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "00:25",
+      "clock": "00:00",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -174,12 +174,12 @@
       "awayTeam": "North Texas",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 14.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "11:21",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -189,12 +189,12 @@
       "awayTeam": "Hawai'i",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 14.0,
-      "period": 1,
-      "clock": "15:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "13:46",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -206,8 +206,8 @@
       "awayConference": "Mid-American",
       "homePoints": 0.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "13:26",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -220,12 +220,12 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 7.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 2,
-      "clock": "10:23",
-      "completedDrives": 5,
+      "clock": "09:03",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856839,
@@ -264,10 +264,10 @@
       "awayTeam": "UL Monroe",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:02",
+      "clock": "04:16",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
