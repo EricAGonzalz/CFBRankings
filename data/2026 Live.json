@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T03:17:01.673789+00:00",
+  "updatedAt": "2026-10-24T03:21:38.677026+00:00",
   "liveGames": [
     {
       "id": 401862808,
@@ -9,12 +9,12 @@
       "awayTeam": "Army",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "13:35",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "13:25",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -26,8 +26,8 @@
       "awayConference": "Mountain West",
       "homePoints": 21.0,
       "awayPoints": 14.0,
-      "period": 3,
-      "clock": "04:53",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -41,10 +41,10 @@
       "awayConference": "ACC",
       "homePoints": 14.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "15:00",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "14:45",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     }
   ],
