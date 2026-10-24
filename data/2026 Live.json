@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T02:36:16.069246+00:00",
+  "updatedAt": "2026-10-24T02:41:14.395702+00:00",
   "liveGames": [
     {
       "id": 401862808,
@@ -9,13 +9,13 @@
       "awayTeam": "Army",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 14.0,
-      "awayPoints": 26.0,
+      "homePoints": 20.0,
+      "awayPoints": 28.0,
       "period": 3,
-      "clock": "12:10",
-      "completedDrives": 12,
+      "clock": "11:58",
+      "completedDrives": 13,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401864525,
@@ -31,11 +31,28 @@
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401858272,
+      "status": "in_progress",
+      "homeTeam": "Stanford",
+      "awayTeam": "NC State",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:49",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Air Force",
     "Army",
+    "NC State",
+    "Stanford",
     "Tulsa",
     "Wyoming"
   ]
