@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T00:36:25.293536+00:00",
+  "updatedAt": "2026-10-24T00:41:20.239210+00:00",
   "liveGames": [
     {
       "id": 401858271,
@@ -31,11 +31,28 @@
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
+    },
+    {
+      "id": 401862808,
+      "status": "in_progress",
+      "homeTeam": "Tulsa",
+      "awayTeam": "Army",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:51",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Army",
     "Duke",
     "Massachusetts",
+    "Tulsa",
     "UConn",
     "Virginia"
   ]

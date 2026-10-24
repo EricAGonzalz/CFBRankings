@@ -92,7 +92,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401869842,Army,American Athletic,Louisiana Tech,Sun Belt,Away,2026-10-03T23:30:00.000Z,True,False,29,31,L,92,72,-7.112
 2026,6,401862795,Army,American Athletic,Tulane,American Athletic,Home,2026-10-10T16:00:00.000Z,True,False,20,17,W,71,76,-12.222
 2026,7,401862802,Army,American Athletic,Florida Atlantic,American Athletic,Home,2026-10-17T16:00:00.000Z,True,False,56,24,W,101,110,-61.143
-2026,8,401862808,Army,American Athletic,Tulsa,American Athletic,Away,2026-10-24T00:30:00.000Z,False,False,,,,65,74,-9.518
+2026,8,401862808,Army,American Athletic,Tulsa,American Athletic,Away,2026-10-24T00:30:00.000Z,False,True,0,0,,65,74,-9.518
 2026,9,401862814,Army,American Athletic,Memphis,American Athletic,Away,2026-11-01T00:00:00.000Z,False,False,,,,31,46,34.653
 2026,10,401862823,Army,American Athletic,Air Force,Mountain West,Home,2026-11-08T00:30:00.000Z,False,False,,,,33,41,43.232
 2026,12,401862831,Army,American Athletic,East Carolina,American Athletic,Home,2026-11-21T17:00:00.000Z,False,False,,,,98,108,-53.580
@@ -1273,7 +1273,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401862786,Tulsa,American Athletic,North Texas,American Athletic,Home,2026-10-02T01:00:00.000Z,True,False,44,45,L,50,61,8.138
 2026,6,401862799,Tulsa,American Athletic,Navy,American Athletic,Away,2026-10-10T19:30:00.000Z,True,False,26,34,L,79,83,-22.996
 2026,7,401862805,Tulsa,American Athletic,Rice,American Athletic,Away,2026-10-17T20:30:00.000Z,True,False,38,17,W,129,126,-98.609
-2026,8,401862808,Tulsa,American Athletic,Army,American Athletic,Home,2026-10-24T00:30:00.000Z,False,False,,,,32,45,36.475
+2026,8,401862808,Tulsa,American Athletic,Army,American Athletic,Home,2026-10-24T00:30:00.000Z,False,True,0,0,,32,45,36.475
 2026,10,401862822,Tulsa,American Athletic,Tulane,American Athletic,Away,2026-11-07T05:00:00.000Z,False,False,,,,71,76,-12.222
 2026,11,401862826,Tulsa,American Athletic,Florida Atlantic,American Athletic,Home,2026-11-14T05:00:00.000Z,False,False,,,,101,110,-61.143
 2026,12,401862832,Tulsa,American Athletic,Charlotte,American Athletic,Home,2026-11-21T05:00:00.000Z,False,False,,,,131,131,-125.441
