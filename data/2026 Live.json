@@ -1,6 +1,59 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T06:11:21.073476+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-24T16:06:41.092246+00:00",
+  "liveGames": [
+    {
+      "id": 401856840,
+      "status": "in_progress",
+      "homeTeam": "Cincinnati",
+      "awayTeam": "Texas Tech",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:23",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401856841,
+      "status": "in_progress",
+      "homeTeam": "TCU",
+      "awayTeam": "West Virginia",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:08",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866450,
+      "status": "in_progress",
+      "homeTeam": "Toledo",
+      "awayTeam": "Western Michigan",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:37",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Cincinnati",
+    "TCU",
+    "Texas Tech",
+    "Toledo",
+    "West Virginia",
+    "Western Michigan"
+  ]
 }

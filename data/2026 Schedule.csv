@@ -222,7 +222,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401856814,Cincinnati,Big 12,Kansas State,Big 12,Home,2026-09-26T23:00:00.000Z,True,False,31,26,W,56,55,18.313
 2026,5,401856820,Cincinnati,Big 12,Arizona,Big 12,Away,2026-10-04T03:00:00.000Z,True,False,7,34,L,19,31,63.038
 2026,7,401856829,Cincinnati,Big 12,West Virginia,Big 12,Away,2026-10-17T16:00:00.000Z,True,False,42,45,L,84,72,-5.844
-2026,8,401856840,Cincinnati,Big 12,Texas Tech,Big 12,Home,2026-10-24T16:00:00.000Z,False,False,,,,13,13,100.314
+2026,8,401856840,Cincinnati,Big 12,Texas Tech,Big 12,Home,2026-10-24T16:00:00.000Z,False,True,0,0,,13,13,100.314
 2026,9,401856848,Cincinnati,Big 12,Utah,Big 12,Home,2026-10-31T19:45:00.000Z,False,False,,,,9,11,104.608
 2026,10,401856851,Cincinnati,Big 12,Houston,Big 12,Away,2026-11-07T05:00:00.000Z,False,False,,,,26,19,91.773
 2026,11,401856859,Cincinnati,Big 12,Iowa State,Big 12,Away,2026-11-14T05:00:00.000Z,False,False,,,,51,43,37.588
@@ -1161,7 +1161,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401856815,TCU,Big 12,UCF,Big 12,Away,2026-09-26T19:30:00.000Z,True,False,13,21,L,73,54,18.978
 2026,5,401856818,TCU,Big 12,BYU,Big 12,Home,2026-10-03T23:00:00.000Z,True,False,10,17,L,25,18,91.828
 2026,7,401856832,TCU,Big 12,Baylor,Big 12,Away,2026-10-17T23:00:00.000Z,True,False,17,6,W,33,42,41.840
-2026,8,401856841,TCU,Big 12,West Virginia,Big 12,Home,2026-10-24T16:00:00.000Z,False,False,,,,84,72,-5.844
+2026,8,401856841,TCU,Big 12,West Virginia,Big 12,Home,2026-10-24T16:00:00.000Z,False,True,0,0,,84,72,-5.844
 2026,9,401856845,TCU,Big 12,Kansas,Big 12,Home,2026-10-31T19:30:00.000Z,False,False,,,,66,53,20.228
 2026,10,401856855,TCU,Big 12,Arizona,Big 12,Away,2026-11-07T03:15:00.000Z,False,False,,,,19,31,63.038
 2026,11,401856862,TCU,Big 12,Kansas State,Big 12,Home,2026-11-14T05:00:00.000Z,False,False,,,,56,55,18.313
@@ -1227,7 +1227,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401856805,Texas Tech,Big 12,Sam Houston,Conference USA,Home,2026-09-26T16:00:00.000Z,True,False,49,14,W,122,124,-89.440
 2026,5,401856821,Texas Tech,Big 12,Colorado,Big 12,Away,2026-10-03T23:30:00.000Z,True,False,29,7,W,117,83,-25.467
 2026,7,401856828,Texas Tech,Big 12,Arizona State,Big 12,Home,2026-10-17T19:30:00.000Z,True,False,53,25,W,114,101,-44.799
-2026,8,401856840,Texas Tech,Big 12,Cincinnati,Big 12,Away,2026-10-24T16:00:00.000Z,False,False,,,,79,78,-14.994
+2026,8,401856840,Texas Tech,Big 12,Cincinnati,Big 12,Away,2026-10-24T16:00:00.000Z,False,True,0,0,,79,78,-14.994
 2026,9,401856842,Texas Tech,Big 12,Arizona,Big 12,Home,2026-10-31T16:00:00.000Z,False,False,,,,19,31,63.038
 2026,10,401856856,Texas Tech,Big 12,West Virginia,Big 12,Home,2026-11-07T05:00:00.000Z,False,False,,,,84,72,-5.844
 2026,11,401856863,Texas Tech,Big 12,Oklahoma State,Big 12,Away,2026-11-14T05:00:00.000Z,False,False,,,,53,39,47.526
@@ -1239,7 +1239,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401866431,Toledo,Mid-American,Ball State,Mid-American,Away,2026-10-03T18:00:00.000Z,True,False,39,24,W,135,134,-145.869
 2026,6,401866437,Toledo,Mid-American,Buffalo,Mid-American,Home,2026-10-10T19:30:00.000Z,True,False,8,23,L,100,87,-32.453
 2026,7,401866444,Toledo,Mid-American,Eastern Michigan,Mid-American,Away,2026-10-17T19:30:00.000Z,True,False,34,14,W,108,128,-98.455
-2026,8,401866450,Toledo,Mid-American,Western Michigan,Mid-American,Home,2026-10-24T16:00:00.000Z,False,False,,,,48,61,5.501
+2026,8,401866450,Toledo,Mid-American,Western Michigan,Mid-American,Home,2026-10-24T16:00:00.000Z,False,True,0,0,,48,61,5.501
 2026,10,401866457,Toledo,Mid-American,Sacramento State,Mid-American,Away,2026-11-04T05:00:00.000Z,False,False,,,,137,138,-199.589
 2026,11,401866463,Toledo,Mid-American,Massachusetts,Mid-American,Home,2026-11-11T05:00:00.000Z,False,False,,,,69,108,-50.732
 2026,12,401866468,Toledo,Mid-American,Bowling Green,Mid-American,Home,2026-11-21T00:30:00.000Z,False,False,,,,116,121,-82.151
@@ -1472,7 +1472,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401856822,West Virginia,Big 12,Iowa State,Big 12,Away,2026-10-03T16:00:00.000Z,True,False,42,45,L,51,43,37.588
 2026,6,401856823,West Virginia,Big 12,Arizona,Big 12,Home,2026-10-10T16:00:00.000Z,True,False,31,52,L,19,31,63.038
 2026,7,401856829,West Virginia,Big 12,Cincinnati,Big 12,Home,2026-10-17T16:00:00.000Z,True,False,45,42,W,79,78,-14.994
-2026,8,401856841,West Virginia,Big 12,TCU,Big 12,Away,2026-10-24T16:00:00.000Z,False,False,,,,57,47,30.104
+2026,8,401856841,West Virginia,Big 12,TCU,Big 12,Away,2026-10-24T16:00:00.000Z,False,True,0,0,,57,47,30.104
 2026,10,401856856,West Virginia,Big 12,Texas Tech,Big 12,Away,2026-11-07T05:00:00.000Z,False,False,,,,13,13,100.314
 2026,11,401856861,West Virginia,Big 12,Kansas,Big 12,Home,2026-11-14T05:00:00.000Z,False,False,,,,66,53,20.228
 2026,12,401856868,West Virginia,Big 12,Houston,Big 12,Home,2026-11-21T05:00:00.000Z,False,False,,,,26,19,91.773
@@ -1494,7 +1494,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401866432,Western Michigan,Mid-American,Buffalo,Mid-American,Away,2026-10-03T17:00:00.000Z,True,False,20,17,W,100,87,-32.453
 2026,6,401866439,Western Michigan,Mid-American,Kent State,Mid-American,Home,2026-10-10T19:30:00.000Z,True,False,38,7,W,136,135,-151.222
 2026,7,401866443,Western Michigan,Mid-American,Central Michigan,Mid-American,Away,2026-10-17T17:30:00.000Z,True,False,21,14,W,120,118,-73.033
-2026,8,401866450,Western Michigan,Mid-American,Toledo,Mid-American,Away,2026-10-24T16:00:00.000Z,False,False,,,,38,69,-5.095
+2026,8,401866450,Western Michigan,Mid-American,Toledo,Mid-American,Away,2026-10-24T16:00:00.000Z,False,True,0,0,,38,69,-5.095
 2026,9,401866452,Western Michigan,Mid-American,Bowling Green,Mid-American,Home,2026-10-31T16:00:00.000Z,False,False,,,,116,121,-82.151
 2026,11,401866458,Western Michigan,Mid-American,Akron,Mid-American,Away,2026-11-11T00:00:00.000Z,False,False,,,,131,133,-145.497
 2026,12,401866465,Western Michigan,Mid-American,Eastern Michigan,Mid-American,Home,2026-11-18T00:00:00.000Z,False,False,,,,108,128,-98.455
