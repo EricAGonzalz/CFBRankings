@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T01:16:15.568493+00:00",
+  "updatedAt": "2026-10-24T01:21:19.021407+00:00",
   "liveGames": [
     {
       "id": 401858271,
@@ -12,9 +12,9 @@
       "homePoints": 13.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "06:45",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "04:08",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -24,13 +24,13 @@
       "awayTeam": "Massachusetts",
       "homeConference": "FBS Independents",
       "awayConference": "Mid-American",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "08:08",
-      "completedDrives": 16,
+      "clock": "06:44",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401862808,
@@ -41,8 +41,8 @@
       "awayConference": "American Athletic",
       "homePoints": 7.0,
       "awayPoints": 10.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "12:57",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -57,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:10",
-      "completedDrives": 1,
+      "clock": "11:00",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
