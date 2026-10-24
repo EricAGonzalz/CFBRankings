@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T01:11:27.209476+00:00",
+  "updatedAt": "2026-10-24T01:16:15.568493+00:00",
   "liveGames": [
     {
       "id": 401858271,
@@ -12,7 +12,7 @@
       "homePoints": 13.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "09:32",
+      "clock": "06:45",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -27,9 +27,9 @@
       "homePoints": 21.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "10:54",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "08:08",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -42,18 +42,35 @@
       "homePoints": 7.0,
       "awayPoints": 10.0,
       "period": 1,
-      "clock": "01:28",
+      "clock": "00:00",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401864525,
+      "status": "in_progress",
+      "homeTeam": "Wyoming",
+      "awayTeam": "Air Force",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:10",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Air Force",
     "Army",
     "Duke",
     "Massachusetts",
     "Tulsa",
     "UConn",
-    "Virginia"
+    "Virginia",
+    "Wyoming"
   ]
 }
