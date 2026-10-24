@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T23:23:07.075777+00:00",
+  "updatedAt": "2026-10-24T23:26:10.826224+00:00",
   "liveGames": [
     {
       "id": 401856835,
@@ -10,12 +10,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 24.0,
-      "awayPoints": 24.0,
+      "awayPoints": 31.0,
       "period": 5,
       "clock": "00:00",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856839,
@@ -28,39 +28,9 @@
       "awayPoints": 17.0,
       "period": 4,
       "clock": "01:45",
-      "completedDrives": 24,
+      "completedDrives": 25,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401866449,
-      "status": "in_progress",
-      "homeTeam": "Ohio",
-      "awayTeam": "Eastern Michigan",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 24.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "03:40",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 13
-    },
-    {
-      "id": 401871094,
-      "status": "in_progress",
-      "homeTeam": "Troy",
-      "awayTeam": "UL Monroe",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 14.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
     },
     {
       "id": 401864528,
@@ -72,9 +42,9 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "02:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
+      "clock": "00:32",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
     },
     {
@@ -87,9 +57,9 @@
       "homePoints": 21.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "07:32",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "05:39",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -102,7 +72,7 @@
       "homePoints": 23.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "14:12",
+      "clock": "13:07",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -117,7 +87,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:57",
+      "clock": "00:16",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -145,9 +115,9 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "07:26",
+      "clock": "07:23",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -162,7 +132,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:43",
+      "clock": "07:12",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -177,7 +147,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:27",
+      "clock": "05:16",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -191,21 +161,17 @@
     "Clemson",
     "Colorado",
     "Colorado State",
-    "Eastern Michigan",
     "Georgia State",
     "Kansas State",
     "Louisiana",
     "Louisiana Tech",
     "Nevada",
-    "Ohio",
     "Oklahoma State",
     "Old Dominion",
     "San Diego State",
     "San José State",
     "Southern Miss",
-    "Troy",
     "UCF",
-    "UL Monroe",
     "Virginia Tech",
     "Washington State"
   ]
