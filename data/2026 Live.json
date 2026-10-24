@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T23:36:13.115056+00:00",
+  "updatedAt": "2026-10-24T23:41:20.028597+00:00",
   "liveGames": [
     {
       "id": 401856835,
@@ -9,7 +9,7 @@
       "awayTeam": "BYU",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 37.0,
+      "homePoints": 39.0,
       "awayPoints": 31.0,
       "period": 6,
       "clock": "00:00",
@@ -27,9 +27,9 @@
       "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "14:05",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
+      "clock": "11:55",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 10
     },
     {
@@ -42,9 +42,9 @@
       "homePoints": 21.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "01:13",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "00:00",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -54,12 +54,12 @@
       "awayTeam": "Old Dominion",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 23.0,
+      "homePoints": 26.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "11:31",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "09:06",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -70,12 +70,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 7.0,
-      "awayPoints": 7.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "00:09",
-      "completedDrives": 8,
+      "clock": "00:00",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401860905,
@@ -84,12 +84,12 @@
       "awayTeam": "San Diego State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "12:21",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "10:19",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -100,12 +100,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 7.0,
+      "awayPoints": 13.0,
       "period": 1,
-      "clock": "02:55",
-      "completedDrives": 3,
+      "clock": "00:03",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858276,
@@ -117,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "01:20",
+      "clock": "00:31",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -131,11 +131,56 @@
       "awayConference": "Sun Belt",
       "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "01:19",
+      "period": 2,
+      "clock": "14:50",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401856838,
+      "status": "in_progress",
+      "homeTeam": "Arizona",
+      "awayTeam": "Iowa State",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 8.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:24",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858275,
+      "status": "in_progress",
+      "homeTeam": "North Carolina",
+      "awayTeam": "Syracuse",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:30",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858500,
+      "status": "in_progress",
+      "homeTeam": "Wisconsin",
+      "awayTeam": "USC",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:44",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401860906,
@@ -145,15 +190,16 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "14:56",
-      "completedDrives": 0,
+      "clock": "11:12",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
+    "Arizona",
     "Arkansas State",
     "BYU",
     "Boise State",
@@ -161,18 +207,23 @@
     "Colorado",
     "Colorado State",
     "Georgia State",
+    "Iowa State",
     "Louisiana",
     "Louisiana Tech",
     "Nevada",
+    "North Carolina",
     "Oklahoma State",
     "Old Dominion",
     "San Diego State",
     "San José State",
     "Southern Miss",
+    "Syracuse",
     "Texas State",
     "UCF",
+    "USC",
     "Utah State",
     "Virginia Tech",
-    "Washington State"
+    "Washington State",
+    "Wisconsin"
   ]
 }
