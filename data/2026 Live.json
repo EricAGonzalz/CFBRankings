@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-24T22:46:35.919749+00:00",
+  "updatedAt": "2026-10-24T22:51:31.634911+00:00",
   "liveGames": [
     {
       "id": 401856727,
@@ -12,7 +12,7 @@
       "homePoints": 31.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "06:05",
+      "clock": "04:17",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -27,7 +27,7 @@
       "homePoints": 15.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "01:12",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -42,10 +42,10 @@
       "homePoints": 17.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "03:38",
-      "completedDrives": 16,
+      "clock": "02:37",
+      "completedDrives": 17,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856835,
@@ -57,7 +57,7 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "02:32",
+      "clock": "01:49",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -72,9 +72,9 @@
       "homePoints": 27.0,
       "awayPoints": 49.0,
       "period": 4,
-      "clock": "03:14",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
+      "clock": "02:00",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 10
     },
     {
@@ -87,7 +87,7 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "03:06",
+      "clock": "01:54",
       "completedDrives": 25,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 12
@@ -102,7 +102,7 @@
       "homePoints": 28.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "06:18",
+      "clock": "04:51",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -123,21 +123,6 @@
       "awayOffensiveDrives": 10
     },
     {
-      "id": 401866447,
-      "status": "in_progress",
-      "homeTeam": "Ball State",
-      "awayTeam": "Sacramento State",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 34.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
-    },
-    {
       "id": 401856839,
       "status": "in_progress",
       "homeTeam": "Arizona State",
@@ -147,9 +132,9 @@
       "homePoints": 21.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "11:21",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "09:52",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -174,10 +159,10 @@
       "awayTeam": "UL Monroe",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 13.0,
+      "homePoints": 14.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "06:16",
+      "clock": "06:02",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -191,10 +176,10 @@
       "awayConference": "Mountain West",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "period": 3,
+      "clock": "11:26",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -219,12 +204,12 @@
       "awayTeam": "Old Dominion",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 17.0,
+      "homePoints": 23.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "09:41",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "07:56",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -237,7 +222,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "12:49",
+      "clock": "05:12",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -249,12 +234,12 @@
       "awayTeam": "San Diego State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:22",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "10:17",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     }
   ],
@@ -262,7 +247,6 @@
     "Alabama",
     "Arizona State",
     "BYU",
-    "Ball State",
     "Boise State",
     "Boston College",
     "Colorado State",
@@ -281,7 +265,6 @@
     "Ohio",
     "Oklahoma",
     "Old Dominion",
-    "Sacramento State",
     "San Diego State",
     "San José State",
     "South Carolina",
