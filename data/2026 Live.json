@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-25T00:26:41.164652+00:00",
+  "updatedAt": "2026-10-25T00:32:33.245314+00:00",
   "liveGames": [
-    {
-      "id": 401869967,
-      "status": "in_progress",
-      "homeTeam": "Southern Miss",
-      "awayTeam": "Louisiana",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 35.0,
-      "awayPoints": 31.0,
-      "period": 4,
-      "clock": "00:32",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 15
-    },
     {
       "id": 401860907,
       "status": "in_progress",
@@ -26,8 +11,8 @@
       "awayConference": "Pac-12",
       "homePoints": 10.0,
       "awayPoints": 10.0,
-      "period": 3,
-      "clock": "01:39",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -55,12 +40,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 20.0,
-      "awayPoints": 21.0,
+      "awayPoints": 24.0,
       "period": 2,
-      "clock": "03:51",
-      "completedDrives": 9,
+      "clock": "02:23",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858276,
@@ -100,9 +85,9 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "09:47",
+      "clock": "08:50",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -114,12 +99,12 @@
       "awayTeam": "Ole Miss",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 3.0,
+      "homePoints": 10.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "01:40",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "00:55",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -132,7 +117,7 @@
       "homePoints": 18.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "12:54",
+      "clock": "12:42",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -147,9 +132,9 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "09:26",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "08:30",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -160,12 +145,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 3.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 6,
+      "clock": "00:40",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401860906,
@@ -177,9 +162,9 @@
       "homePoints": 7.0,
       "awayPoints": 9.0,
       "period": 2,
-      "clock": "11:07",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 2,
+      "clock": "09:47",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 5
     },
     {
@@ -192,7 +177,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:00",
+      "clock": "04:20",
       "completedDrives": 4,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 3
@@ -208,12 +193,10 @@
     "Georgia State",
     "Iowa State",
     "Kentucky",
-    "Louisiana",
     "North Carolina",
     "Oklahoma State",
     "Ole Miss",
     "San Diego State",
-    "Southern Miss",
     "Syracuse",
     "Texas",
     "Texas State",
