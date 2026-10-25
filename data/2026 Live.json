@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-25T03:02:35.192625+00:00",
+  "updatedAt": "2026-10-25T03:06:26.184650+00:00",
   "liveGames": [
     {
       "id": 401856732,
@@ -12,25 +12,10 @@
       "homePoints": 31.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "07:59",
+      "clock": "06:26",
       "completedDrives": 26,
       "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401856838,
-      "status": "in_progress",
-      "homeTeam": "Arizona",
-      "awayTeam": "Iowa State",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 39.0,
-      "awayPoints": 3.0,
-      "period": 4,
-      "clock": "01:49",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401858275,
@@ -54,13 +39,13 @@
       "awayTeam": "UTSA",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 13.0,
+      "homePoints": 19.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "09:34",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 10
+      "clock": "07:37",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401864527,
@@ -72,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 5,
+      "clock": "14:04",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401856837,
@@ -87,16 +72,14 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:48",
+      "clock": "15:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
-    "Arizona",
     "Houston",
-    "Iowa State",
     "New Mexico",
     "North Carolina",
     "North Dakota State",
