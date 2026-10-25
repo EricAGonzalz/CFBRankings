@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-25T03:31:44.295630+00:00",
+  "updatedAt": "2026-10-25T03:36:18.541663+00:00",
   "liveGames": [
-    {
-      "id": 401856732,
-      "status": "in_progress",
-      "homeTeam": "Texas",
-      "awayTeam": "Ole Miss",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 34.0,
-      "awayPoints": 27.0,
-      "period": 4,
-      "clock": "00:14",
-      "completedDrives": 29,
-      "homeOffensiveDrives": 15,
-      "awayOffensiveDrives": 14
-    },
-    {
-      "id": 401862811,
-      "status": "in_progress",
-      "homeTeam": "Tulane",
-      "awayTeam": "UTSA",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 19.0,
-      "awayPoints": 42.0,
-      "period": 4,
-      "clock": "01:04",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 13
-    },
     {
       "id": 401864527,
       "status": "in_progress",
@@ -42,7 +12,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "03:52",
+      "clock": "01:58",
       "completedDrives": 11,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
@@ -57,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "03:44",
+      "clock": "02:05",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -67,10 +37,6 @@
     "Houston",
     "New Mexico",
     "North Dakota State",
-    "Ole Miss",
-    "Texas",
-    "Tulane",
-    "UTSA",
     "Utah"
   ]
 }
