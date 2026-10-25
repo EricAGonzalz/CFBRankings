@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-25T03:11:04.387680+00:00",
+  "updatedAt": "2026-10-25T03:16:16.025189+00:00",
   "liveGames": [
     {
       "id": 401856732,
@@ -9,12 +9,12 @@
       "awayTeam": "Ole Miss",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 31.0,
+      "homePoints": 34.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "04:14",
-      "completedDrives": 27,
-      "homeOffensiveDrives": 14,
+      "clock": "02:25",
+      "completedDrives": 28,
+      "homeOffensiveDrives": 15,
       "awayOffensiveDrives": 13
     },
     {
@@ -27,10 +27,10 @@
       "homePoints": 19.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "07:30",
-      "completedDrives": 20,
+      "clock": "05:17",
+      "completedDrives": 21,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401864527,
@@ -42,10 +42,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "12:24",
-      "completedDrives": 7,
+      "clock": "11:11",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856837,
@@ -57,9 +57,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "13:27",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "11:28",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     }
   ],
