@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-25T04:57:44.426717+00:00",
+  "updatedAt": "2026-10-25T05:07:09.691529+00:00",
   "liveGames": [
     {
       "id": 401864527,
@@ -9,13 +9,13 @@
       "awayTeam": "North Dakota State",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 14.0,
+      "homePoints": 21.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "12:10",
-      "completedDrives": 20,
+      "clock": "10:49",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856837,
@@ -24,13 +24,13 @@
       "awayTeam": "Houston",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "11:57",
-      "completedDrives": 13,
+      "clock": "10:29",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     }
   ],
   "liveTeams": [
