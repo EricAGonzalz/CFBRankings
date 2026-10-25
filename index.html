@@ -192,6 +192,17 @@
     .outlier-comparison{margin-top:12px;padding:12px;background:#fff;border:1px solid var(--grid);border-radius:8px;font-size:12px;line-height:1.6}
     .outlier-comparison strong{font-size:13px}
     @media(max-width:720px){.outlier-grid{grid-template-columns:1fr}}
+    .prediction-mode{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:16px;padding:10px 12px;background:#fafafa;border:1px solid var(--grid);border-radius:8px;font-size:12px}
+    .prediction-mode select{border:1px solid var(--chip-border);border-radius:999px;background:white;padding:7px 12px;font-size:12px;max-width:100%}
+    .prediction-mode small{color:var(--muted);line-height:1.4}
+    .quality-section{border-top:1px solid var(--grid);margin-top:14px;padding-top:15px;min-width:0;width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+    .quality-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+    .quality-head h4{margin:0;font-size:13px}
+    .quality-chart{height:260px;position:relative;margin-top:12px}
+    .quality-notes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px;width:100%;min-width:0;white-space:normal}
+    .quality-team-note{border:1px solid var(--grid);background:white;border-radius:7px;padding:10px;font-size:11px;line-height:1.55;min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;text-align:left}
+    .quality-team-note strong{font-size:12px;display:block;margin-bottom:5px}.quality-team-note>div{white-space:normal;overflow-wrap:anywhere}.quality-output{min-width:0;max-width:100%;white-space:normal}.quality-output>.note{white-space:normal;max-width:100%;line-height:1.5}
+    @media(max-width:720px){.quality-notes{grid-template-columns:1fr}}
     .matchup-actions{display:flex;justify-content:flex-start;gap:8px;margin-top:18px}
     .primary{border:1px solid #111;background:#111;color:#fff;border-radius:999px;padding:9px 17px;font-size:13px;font-weight:800;cursor:pointer}
     .matchup-actions .primary{min-width:0;padding:9px 18px;letter-spacing:0;box-shadow:none;transition:background .15s ease}
@@ -429,6 +440,7 @@
               <div id="matchExclusionComparison" class="outlier-comparison hidden" aria-live="polite"></div>
               </div>
             </details>
+            <div class="prediction-mode"><label for="matchPredictionMode"><strong>Prediction model</strong></label><select id="matchPredictionMode"><option value="baseline">Standard · existing model</option><option value="form">Experimental · game performance</option></select><small id="matchFormNote">Keeps Net and Adjusted Efficiency unchanged. Experimental mode adjusts the projected margin using recent game results.</small></div>
             <div class="matchup-actions"><button id="matchPredict" class="primary" disabled>Run Prediction</button><div class="publish-menu" id="matchPublishMenu"><button class="print-button" id="matchPublishButton" type="button" disabled aria-haspopup="true" aria-expanded="false">Publish <span class="caret" aria-hidden="true"></span></button><div class="publish-menu-list" role="menu"><button id="matchPublishPdf" type="button">Publish to PDF</button><button id="matchPublishPng" type="button">Publish to PNG</button></div></div></div>
           </div>
         </div>
@@ -1296,7 +1308,46 @@
       return team1Wins?{score1:reg1+3,score2:reg2,team1Wins:true}:{score1:reg1,score2:reg2+3,team1Wins:false};
     }
     function updateMatchButton(){const ready=!!(els.matchTeam1.value&&els.matchTeam2.value&&els.matchTeam1.value!==els.matchTeam2.value);els.matchPredict.disabled=!ready;if(els.matchPublishButton)els.matchPublishButton.disabled=true;if(!ready){APP.matchComparisonChart?.destroy();APP.matchComparisonChart=null;els.matchComparison?.classList.add('hidden');els.matchComparison&&(els.matchComparison.innerHTML='')}}
-    function renderMatchup(){const whatIf=predictMatchExcludingGames();if(!whatIf)return;updateMatchExclusionComparison(whatIf);const p=whatIf.modified||whatIf.original;if(!p)return;els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2),isRegTie=d1===d2,displayP1=isRegTie?p.otP1:p.p1,otFinal=projectedOvertimeFinal(d1,d2,p.otP1);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=isRegTie?otFinal.score1:d1;els.matchScore2.textContent=isRegTie?otFinal.score2:d2;const team1Wins=isRegTie?otFinal.team1Wins:d1>d2,team2Wins=isRegTie?!otFinal.team1Wins:d2>d1;els.matchRow1.classList.toggle('winner',team1Wins);els.matchRow2.classList.toggle('winner',team2Wins);els.matchHeadline.textContent=isRegTie?`${team1Wins?p.a.name:p.b.name} projected to win in OT`:`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchSubheadline.textContent=isRegTie?`Regulation projection ${d1}-${d2} • projected final ${otFinal.score1}-${otFinal.score2} (OT) • OT: ${p.a.name} ${p.otP1.toFixed(1)}% • ${p.b.name} ${(100-p.otP1).toFixed(1)}%`:`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${displayP1.toFixed(1)}%${isRegTie?' OT':''}`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${displayP1}%`;bar2.style.width=`${100-displayP1}%`}renderMatchupComparison(p.a.name,p.b.name);if(els.matchPublishButton)els.matchPublishButton.disabled=false}
+    // Experimental game-performance calibration. Current-season opponent ratings are used
+    // as a proxy, NOT true archived pregame expectations. Unvalidated; opt-in only.
+    function resultResiduals(teamName){
+      const games=completedMatchGames(teamName);
+      if(!games.length)return [];
+      const own=APP.rows.find(r=>r.Team===teamName),ownRating=modelRating(own);
+      if(!Number.isFinite(ownRating))return [];
+      return games.filter(g=>!APP.matchExclusions.has(matchGameKey(g))).map(g=>{
+        const opponent=APP.rows.find(r=>String(r.Team).toLowerCase()===String(g.opp).toLowerCase());
+        const oppRating=modelRating(opponent);if(!Number.isFinite(oppRating))return null;
+        const ownTeam=teamObject(own),oppTeam=teamObject(opponent),l=league();
+        if(!ownTeam||!oppTeam||!l)return null;
+        const d=expectedDrives(ownTeam,oppTeam,l);
+        const home=String(g.site||'').toLowerCase();
+        // Site encodings can vary; don't assume unknown means home.
+        const h=/^(home|h)$/.test(home)?HOME_FIELD_POINTS:/^(away|a)$/.test(home)?-HOME_FIELD_POINTS:0;
+        const expected=d*(ownRating-oppRating)/100+h;
+        const actual=g.teamPoints-g.oppPoints;
+        const week=Number(g.week)||0;
+        return {residual:Math.max(-28,Math.min(28,actual-expected)),week};
+      }).filter(Boolean);
+    }
+    function recentGameCorrection(teamName){
+      const g=resultResiduals(teamName);if(g.length<3)return null;
+      const latest=Math.max(...g.map(x=>x.week));
+      let total=0,weight=0;
+      for(const item of g){const w=Math.pow(.92,Math.max(0,latest-item.week));weight+=w;total+=w*item.residual}
+      return {offset:total/(5+weight),count:g.length};
+    }
+    function applyGameFormPrediction(p){
+      if($('matchPredictionMode')?.value!=='form')return {prediction:p,note:''};
+      const a=recentGameCorrection(p.a.name),b=recentGameCorrection(p.b.name);
+      if(!a||!b)return {prediction:p,note:'Experimental mode needs at least three scored FBS games with usable opponent ratings for both teams; showing standard prediction.'};
+      const marginChange=.35*(a.offset-b.offset);
+      const total=p.s1+p.s2;
+      const adjustedMargin=p.s1-p.s2+marginChange;
+      const s1=Math.max(0,(total+adjustedMargin)/2),s2=Math.max(0,(total-adjustedMargin)/2);
+      return {prediction:{...p,s1,s2,p1:winProb(s1,s2,p.conf)},note:`Experimental correction: ${marginChange>=0?'+':''}${marginChange.toFixed(2)} points to ${p.a.name}'s margin (${a.count} and ${b.count} completed games). Not historically calibrated.`};
+    }
+    function renderMatchup(){const whatIf=predictMatchExcludingGames();if(!whatIf)return;updateMatchExclusionComparison(whatIf);const selected=whatIf.modified||whatIf.original;if(!selected)return;const form=applyGameFormPrediction(selected);const p=form.prediction;const formNote=$('matchFormNote');if(formNote)formNote.textContent=form.note||'Keeps Net and Adjusted Efficiency unchanged. Experimental mode adjusts the projected margin using recent game results.';els.matchError.classList.remove('visible');els.matchResult.classList.remove('hidden');els.matchDetails.classList.remove('hidden');const d1=Math.round(p.s1),d2=Math.round(p.s2),isRegTie=d1===d2,displayP1=isRegTie?p.otP1:p.p1,otFinal=projectedOvertimeFinal(d1,d2,p.otP1);els.matchName1.textContent=p.a.name;els.matchName2.textContent=p.b.name;els.matchMeta1.textContent=`${p.a.conference} • ${p.a.wins}-${p.a.losses}`;els.matchMeta2.textContent=`${p.b.conference} • ${p.b.wins}-${p.b.losses}`;els.matchScore1.textContent=isRegTie?otFinal.score1:d1;els.matchScore2.textContent=isRegTie?otFinal.score2:d2;const team1Wins=isRegTie?otFinal.team1Wins:d1>d2,team2Wins=isRegTie?!otFinal.team1Wins:d2>d1;els.matchRow1.classList.toggle('winner',team1Wins);els.matchRow2.classList.toggle('winner',team2Wins);els.matchHeadline.textContent=isRegTie?`${team1Wins?p.a.name:p.b.name} projected to win in OT`:`${d1>d2?p.a.name:p.b.name} projected to win`;els.matchSubheadline.textContent=isRegTie?`Regulation projection ${d1}-${d2} • projected final ${otFinal.score1}-${otFinal.score2} (OT) • OT: ${p.a.name} ${p.otP1.toFixed(1)}% • ${p.b.name} ${(100-p.otP1).toFixed(1)}%`:`${p.a.name} ${p.p1.toFixed(1)}% • ${p.b.name} ${(100-p.p1).toFixed(1)}%`;els.matchDrives.textContent=p.drives.toFixed(2);els.matchEff1.textContent=(p.ra/100).toFixed(3);els.matchEff2.textContent=(p.rb/100).toFixed(3);els.matchWinProb.textContent=`${displayP1.toFixed(1)}%${isRegTie?' OT':''}`;els.matchConfidence.textContent=`${p.conf.toFixed(1)}%`;const bar1=document.getElementById("matchProbBar1"),bar2=document.getElementById("matchProbBar2");if(bar1&&bar2){bar1.style.width=`${displayP1}%`;bar2.style.width=`${100-displayP1}%`}renderMatchupComparison(p.a.name,p.b.name);if(els.matchPublishButton)els.matchPublishButton.disabled=false}
 
     // ---------- Conference chart ----------
     const CONF_COLORS=["#0057b8","#d62728","#2ca02c","#9467bd","#ff7f0e","#17becf","#8c564b","#e377c2","#7f7f7f","#bcbd22","#1f77b4","#c51b8a","#238b45","#6a51a3"];
@@ -2062,7 +2113,7 @@
       });
     }
 
-    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='ModelRtg',awayTeamName=null,previousPositions=null){
+    function buildScheduleComparisonChart(canvas,teamRow,oppRow,metric='ModelRtg',awayTeamName=null,previousPositions=null,includeQualityRange=false){
       const wantedConfs=new Set([teamRow.Conference||'Independent',oppRow.Conference||'Independent']);
       const teams=APP.rows.map(scheduleComparisonTeamData).filter(t=>t.team&&wantedConfs.has(t.conference)&&Number.isFinite(t[metric]));
       const groups=new Map();teams.forEach(t=>{if(!groups.has(t.conference))groups.set(t.conference,[]);groups.get(t.conference).push(t)});
@@ -2101,14 +2152,61 @@
           pointBackgroundColor:pointColors,
           pointBorderColor:arr.map((t,i)=>teamDotOutline(t.team,pointColors[i])),
           pointBorderWidth:arr.map((t,i)=>focusIndexes.includes(i)?1.5:1),
-          pointRadius:arr.map(()=>3),
-          pointHoverRadius:arr.map(()=>5),
+          pointRadius:arr.map((t,i)=>focusIndexes.includes(i)?5:3),
+          pointHoverRadius:arr.map((t,i)=>focusIndexes.includes(i)?7:5),
           borderWidth:1.25,tension:0,showLine:true,order:3,_focusIndexes:focusIndexes,_teamLabelColors:true
         });
         focusIndexes.forEach(pointIndex=>focusRefs.push({datasetIndex,pointIndex}));
       }
 
-      const chart=new Chart(canvas,{type:'scatter',data:{datasets},options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',onClick:()=>{},labels:{usePointStyle:true,boxWidth:9,font:{size:10},generateLabels:()=>[{text:teamRow.Team,fillStyle:focusColors.team1,strokeStyle:teamDotOutline(teamRow.Team,focusColors.team1),lineWidth:1,pointStyle:'circle'},{text:oppRow.Team,fillStyle:focusColors.team2,strokeStyle:teamDotOutline(oppRow.Team,focusColors.team2),lineWidth:1,pointStyle:'circle'}]}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:1,max:Math.max(2,maxRank),ticks:{stepSize:1,font:{size:10}},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
+      const qualityEntries=[];
+      if(includeQualityRange){
+        for(const focus of [{row:teamRow,key:team1Key,color:focusColors.team1},{row:oppRow,key:team2Key,color:focusColors.team2}]){
+          const sourceDataset=datasets.find(ds=>(ds._targetData||[]).some(p=>String(p.team).toLowerCase()===focus.key));
+          const point=sourceDataset?((sourceDataset._targetData||[]).find(p=>String(p.team).toLowerCase()===focus.key)):null;
+          const quality=qualityResults(focus.row.Team,metric);
+          if(point&&quality){
+            qualityEntries.push({team:focus.row.Team,x:point.x,teamRating:point.y,color:focus.color,data:quality});
+          }
+        }
+      }
+      const qualityOverlayPlugin={id:'qualityOverlay',beforeDatasetsDraw(chart){
+        if(!includeQualityRange||!qualityEntries.length)return;
+        const {ctx,scales}=chart,yy=scales.y,xx=scales.x;
+        ctx.save();
+        for(const entry of qualityEntries){
+          const d=entry.data;if(!d)continue;
+          const x=xx.getPixelForValue(entry.x);
+          const teamY=yy.getPixelForValue(entry.teamRating);
+          const showWin=Number.isFinite(d.win?.rating) && d.win.rating>entry.teamRating;
+          const showLoss=Number.isFinite(d.loss?.rating) && d.loss.rating<entry.teamRating;
+          const barHalf=14;
+          ctx.lineWidth=1.6;
+          if(showWin){
+            const winY=yy.getPixelForValue(d.win.rating);
+            ctx.strokeStyle='#17963f';
+            ctx.beginPath();ctx.moveTo(x,teamY);ctx.lineTo(x,winY);ctx.stroke();
+            ctx.beginPath();ctx.moveTo(x-barHalf,winY);ctx.lineTo(x+barHalf,winY);ctx.stroke();
+          }
+          if(showLoss){
+            const lossY=yy.getPixelForValue(d.loss.rating);
+            ctx.strokeStyle='#cf2338';
+            ctx.beginPath();ctx.moveTo(x,teamY);ctx.lineTo(x,lossY);ctx.stroke();
+            ctx.beginPath();ctx.moveTo(x-barHalf,lossY);ctx.lineTo(x+barHalf,lossY);ctx.stroke();
+          }
+          // Midpoint of both qualifying endpoints, or the one endpoint and
+          // the team's own rating. Do not show a midpoint without an endpoint.
+          if(showWin||showLoss){
+            const upper=showWin?d.win.rating:entry.teamRating;
+            const lower=showLoss?d.loss.rating:entry.teamRating;
+            const middleY=yy.getPixelForValue((upper+lower)/2);
+            ctx.strokeStyle='#687484';ctx.lineWidth=2.5;
+            ctx.beginPath();ctx.moveTo(x-barHalf-3,middleY);ctx.lineTo(x+barHalf+3,middleY);ctx.stroke();
+          }
+        }
+        ctx.restore();
+      }};
+      const chart=new Chart(canvas,{type:'scatter',data:{datasets},plugins:[qualityOverlayPlugin],options:{responsive:true,maintainAspectRatio:false,animation:false,onClick(e,active){if(!active.length)return;const h=active[0],p=this.data.datasets[h.datasetIndex].data[h.index];if(p?.team){APP.team=p.team;setView('team',{team:p.team})}},plugins:{separateOverlappingPoints:{enabled:false},title:{display:true,text:`${APP.year} ${METRIC_LABELS[metric]} by Rank Within Conference`,font:{size:15,weight:'700'}},legend:{position:'top',onClick:()=>{},labels:{usePointStyle:true,boxWidth:9,font:{size:10},generateLabels:()=>[{text:teamRow.Team,fillStyle:focusColors.team1,strokeStyle:teamDotOutline(teamRow.Team,focusColors.team1),lineWidth:1,pointStyle:'circle'},{text:oppRow.Team,fillStyle:focusColors.team2,strokeStyle:teamDotOutline(oppRow.Team,focusColors.team2),lineWidth:1,pointStyle:'circle'}]}},tooltip:{filter:(item,index)=>index===0,callbacks:{title:i=>i[0]?.raw?.team||'',label:c=>{const r=c.raw;if(!r)return'';return [`Conference: ${r.conference}`,`Conference rank: ${r.conferenceRank}`,`${METRIC_LABELS[metric]}: ${Number(r[metric]).toFixed(3)}`]}}}},scales:{x:{min:.6,max:Math.max(2,maxRank)+.4,ticks:{stepSize:1,font:{size:10},callback:value=>Number.isInteger(value)&&value>=1?value:''},title:{display:true,text:'Rank Within Conference'}},y:{reverse:metric==='DRtg',ticks:{font:{size:10}},title:{display:true,text:METRIC_LABELS[metric]}}}}});
       if(previousPositions?.size){
         requestAnimationFrame(()=>animateComparisonToTargets(chart));
       }else{
@@ -2203,13 +2301,88 @@
       if(!oppRow){wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(gameLabel)} comparison</h3><p class="schedule-comparison-subtitle">Current season ratings</p></div></div><div class="schedule-comparison-empty">${escapeHtml(gameLabel)} is not present in the ${escapeHtml(APP.year)} FBS rankings dataset, so a two-team conference comparison is not available for this game.</div>`;detailCell.appendChild(wrap);return}
       const id=`schedule-chart-${Math.random().toString(36).slice(2)}`;
       const headingColors=matchupTeamColors(teamRow.Team,oppRow.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label class="schedule-metric-control"><span class="schedule-metric-label">Comparison metric</span><select class="schedule-metric-select"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(teamRow.Team)} vs. ${escapeHtml(oppRow.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label class="schedule-metric-control"><span class="schedule-metric-label">Comparison metric</span><select class="schedule-metric-select"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label><label class="schedule-metric-control"><input type="checkbox" class="quality-toggle" checked><span class="schedule-metric-label">Show opponent-quality bars</span></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(teamRow.Team)} • ${escapeHtml(teamRow.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(oppRow.Team)} • ${escapeHtml(oppRow.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas id="${id}"></canvas></div><div class="schedule-comparison-actions"><button type="button" class="schedule-export-btn">Export PNG</button></div><div class="quality-section"><div class="quality-output"></div></div>`;
       detailCell.appendChild(wrap);
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select'),exportBtn=wrap.querySelector('.schedule-export-btn');
       if([...select.options].some(o=>o.value===initialMetric))select.value=initialMetric;
-      let chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName,previousPositions);APP.scheduleComparisonCharts.set(id,chart);
-      select.onchange=()=>{chart?.destroy();chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName);APP.scheduleComparisonCharts.set(id,chart)};
+      const toggle=wrap.querySelector('.quality-toggle'),output=wrap.querySelector('.quality-output');
+      let chart=null;
+      const redraw=(previous=null)=>{
+        chart?.destroy();
+        chart=buildScheduleComparisonChart(canvas,teamRow,oppRow,select.value,awayTeamName,previous,toggle.checked);
+        APP.scheduleComparisonCharts.set(id,chart);
+        output.classList.toggle('hidden',!toggle.checked);
+        if(toggle.checked)renderQualitySummary(output,teamRow,oppRow,select.value);
+        else output.replaceChildren();
+      };
+      redraw(previousPositions);
+      select.onchange=()=>redraw();
+      toggle.onchange=()=>redraw();
       exportBtn.onclick=async()=>{try{await exportScheduleComparisonPng(teamRow,oppRow,gameContext||{},select.value,awayTeamName,chart)}catch(err){alert(err?.message||'Could not create PNG export.')}};
+    }
+    // Quality of Results uses CURRENT opponent ratings. These are NOT historical
+    // ratings at the time of each game. The box contains Q1–Q3 of ALL opponent ratings.
+    function qualityQuantile(sorted,f){
+      if(!sorted.length)return null;
+      const index=(sorted.length-1)*f,lo=Math.floor(index),hi=Math.ceil(index);
+      return sorted[lo]+(sorted[hi]-sorted[lo])*(index-lo);
+    }
+    function qualityResults(teamName,metric){
+      const games=completedMatchGames(teamName),points=[];
+      for(const g of games){
+        // Game exclusions are also respected by the optional display.
+        if(APP.matchExclusions.has(matchGameKey(g)))continue;
+        const row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(g.opp).toLowerCase());
+        if(!row)continue;
+        const rating=metric==='ModelRtg'?modelRating(row):n(row[metric]??(metric==='Ortg'?row.ORtg:null));
+        if(!Number.isFinite(rating))continue;
+        points.push({rating,opponent:g.opp,week:g.week,score:`${g.teamPoints}–${g.oppPoints}`,won:g.teamPoints>g.oppPoints,lost:g.teamPoints<g.oppPoints});
+      }
+      if(!points.length)return null;
+      const ordered=points.map(x=>x.rating).sort((a,b)=>a-b);
+      const wins=points.filter(x=>x.won).sort((a,b)=>b.rating-a.rating);
+      const losses=points.filter(x=>x.lost).sort((a,b)=>a.rating-b.rating);
+      return {q1:qualityQuantile(ordered,.25),median:qualityQuantile(ordered,.5),q3:qualityQuantile(ordered,.75),win:wins[0]||null,loss:losses[0]||null,count:points.length};
+    }
+    function renderQualitySummary(holder,team1,team2,metric){
+      holder.replaceChildren();
+      const rowsByName=new Map(APP.rows.map(r=>[String(r.Team).toLowerCase(),r]));
+      const entries=[{row:team1,data:qualityResults(team1.Team,metric),color:teamPrimaryColor(team1.Team)},{row:team2,data:qualityResults(team2.Team,metric),color:teamPrimaryColor(team2.Team)}];
+      const description=document.createElement('p');description.className='note';description.textContent='Green: win against a higher-rated team. Red: loss to a lower-rated team. Gray: midpoint of both qualifying bars, or between the team rating and the sole qualifying bar. The team dot stays at its actual rating.';
+      holder.append(description);
+      if(!entries.some(e=>e.data)){const empty=document.createElement('p');empty.className='note';empty.textContent='Completed FBS game results are not available for this comparison.';holder.append(empty);return}
+      const notes=document.createElement('div');notes.className='quality-notes';
+      for(const e of entries){
+        const item=document.createElement('div');item.className='quality-team-note';item.style.borderLeft=`4px solid ${e.color}`;
+        const h=document.createElement('strong');h.textContent=e.row.Team;item.append(h);
+        const currentRow=rowsByName.get(String(e.row.Team).toLowerCase());
+        const teamRating=metric==='ModelRtg'?modelRating(currentRow):n(currentRow?.[metric]??(metric==='Ortg'?currentRow?.ORtg:null));
+        const best=e.data?.win;
+        const low=e.data?.loss;
+        const bestDiv=document.createElement('div');
+        if(best){
+          const shown=Number.isFinite(teamRating) && best.rating>teamRating;
+          bestDiv.textContent=`Strongest win: ${best.opponent} (${best.score}) · ${best.rating.toFixed(1)}${shown?' · shown on graph':' · not above current rating'}`;
+        }else bestDiv.textContent='Strongest win: none recorded';
+        item.append(bestDiv);
+        const lowDiv=document.createElement('div');
+        if(low){
+          const shown=Number.isFinite(teamRating) && low.rating<teamRating;
+          lowDiv.textContent=`Lowest-rated loss: ${low.opponent} (${low.score}) · ${low.rating.toFixed(1)}${shown?' · shown on graph':' · no lower-rated loss bar'}`;
+        }else lowDiv.textContent='Lowest-rated loss: none recorded';
+        item.append(lowDiv);
+        const qualifyingWin=Number.isFinite(teamRating)&&Number.isFinite(best?.rating)&&best.rating>teamRating;
+        const qualifyingLoss=Number.isFinite(teamRating)&&Number.isFinite(low?.rating)&&low.rating<teamRating;
+        if(qualifyingWin||qualifyingLoss){
+          const upper=qualifyingWin?best.rating:teamRating;
+          const lower=qualifyingLoss?low.rating:teamRating;
+          const midpoint=document.createElement('div');
+          midpoint.textContent=`Midpoint (${qualifyingWin&&qualifyingLoss?'best win to lowest loss':'team rating to '+(qualifyingWin?'best win':'lowest loss')}): ${((upper+lower)/2).toFixed(1)}`;
+          item.append(midpoint);
+        }
+        notes.append(item)
+      }
+      holder.append(notes);
     }
     function renderMatchupComparison(team1Name,team2Name){
       const team1Row=APP.rows.find(r=>String(r.Team).toLowerCase()===String(team1Name).toLowerCase());
@@ -2221,11 +2394,20 @@
       const location=els.matchLocation.value;
       const awayTeamName=location==='team2'?team1Row.Team:team2Row.Team;
       const headingColors=matchupTeamColors(team1Row.Team,team2Row.Team,awayTeamName);
-      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(team1Row.Team)} vs. ${escapeHtml(team2Row.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><label class="schedule-metric-control"><span class="schedule-metric-label">Comparison metric</span><select class="schedule-metric-select"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(team1Row.Team)} • ${escapeHtml(team1Row.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(team2Row.Team)} • ${escapeHtml(team2Row.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas></canvas></div>`;
+      wrap.innerHTML=`<div class="schedule-comparison-head"><div><h3 class="schedule-comparison-title">${escapeHtml(team1Row.Team)} vs. ${escapeHtml(team2Row.Team)}</h3><p class="schedule-comparison-subtitle">Conference-position comparison using current ${escapeHtml(APP.year)} ratings</p></div><div style="display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap"><label class="schedule-metric-control"><span class="schedule-metric-label">Comparison metric</span><select class="schedule-metric-select"><option value="ModelRtg" selected>Model Rating</option><option value="AdjRtg">Adjusted Rating</option><option value="NetRtg">Net Rating</option><option value="Ortg">Offensive Rating</option><option value="DRtg">Defensive Rating</option><option value="SOS">Strength of Schedule</option></select></label><label class="schedule-metric-control"><input type="checkbox" class="quality-toggle" checked> <span class="schedule-metric-label" style="font-size:12px;color:#111">Show opponent-quality range</span></label></div></div><div class="schedule-comparison-teams"><span class="schedule-team-chip current" style="border-left-color:${headingColors.team1}">${escapeHtml(team1Row.Team)} • ${escapeHtml(team1Row.Conference||'Independent')}</span><span class="schedule-team-chip opponent" style="border-left-color:${headingColors.team2}">${escapeHtml(team2Row.Team)} • ${escapeHtml(team2Row.Conference||'Independent')}</span></div><div class="schedule-comparison-chart"><canvas></canvas></div><div class="quality-section"><div class="quality-head"><h4>Quality of Results Range</h4></div><div class="quality-output"></div></div>`;
       els.matchComparison.appendChild(wrap);els.matchComparison.classList.remove('hidden');
       const canvas=wrap.querySelector('canvas'),select=wrap.querySelector('select');
-      APP.matchComparisonChart=buildScheduleComparisonChart(canvas,team1Row,team2Row,select.value,awayTeamName);
-      select.onchange=()=>{APP.matchComparisonChart?.destroy();APP.matchComparisonChart=buildScheduleComparisonChart(canvas,team1Row,team2Row,select.value,awayTeamName)};
+      const toggle=wrap.querySelector('.quality-toggle'),output=wrap.querySelector('.quality-output');
+      const redrawQuality=()=>{
+        APP.matchComparisonChart?.destroy();
+        APP.matchComparisonChart=buildScheduleComparisonChart(canvas,team1Row,team2Row,select.value,awayTeamName,null,toggle.checked);
+        output.classList.toggle('hidden',!toggle.checked);
+        if(toggle.checked)renderQualitySummary(output,team1Row,team2Row,select.value);
+        else output.replaceChildren();
+      };
+      redrawQuality();
+      toggle.onchange=redrawQuality;
+      select.onchange=redrawQuality;
     }
 
     function completedFbsRecord(schedule,teamName){
@@ -2481,6 +2663,7 @@
     els.rankConfButton.onclick=e=>{e.stopPropagation();toggleMenu(els.rankConfMenu,els.rankConfButton)};els.rankConfAll.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankConfClear.onclick=()=>{els.rankConfOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.rankConfOptions,els.rankConfText);renderRankings()};els.rankTeamSearch.oninput=renderRankings;els.rankTopN.onchange=renderRankings;els.rankWeek.onchange=async()=>{APP.rankingsWeek=els.rankWeek.value;await renderRankings()};
     els.matchTeam1.onchange=()=>{APP.matchExclusions.clear();updateMatchButton();refreshMatchExclusionLists();updateMatchExclusionComparison(null)};els.matchTeam2.onchange=()=>{APP.matchExclusions.clear();updateMatchButton();refreshMatchExclusionLists();updateMatchExclusionComparison(null)};
     $('matchExclusionReset').onclick=()=>{APP.matchExclusions.clear();refreshMatchExclusionLists();if(!els.matchPredict.disabled)renderMatchup();else updateMatchExclusionComparison(null)};
+    $('matchPredictionMode').onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};
     els.matchLocation.onchange=()=>{if(!els.matchPredict.disabled)renderMatchup()};els.matchPredict.onclick=renderMatchup;els.matchPublishButton.onclick=e=>{e.stopPropagation();if(!els.matchPublishButton.disabled)toggleMenu(els.matchPublishMenu,els.matchPublishButton)};els.matchPublishPdf.onclick=e=>{e.stopPropagation();publishMatchupPdf()};els.matchPublishPng.onclick=async e=>{e.stopPropagation();await publishMatchupPng()};
     els.confMenuButton.onclick=e=>{e.stopPropagation();toggleMenu(els.confMenu,els.confMenuButton)};els.confAll.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=true);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confClear.onclick=()=>{els.confOptions.querySelectorAll('input').forEach(i=>i.checked=false);updateMultiText(els.confOptions,els.confMenuText);renderConferenceChart()};els.confPower4.onclick=()=>applyConferencePreset('p4');els.confGroup6.onclick=()=>applyConferencePreset('g6');els.confMetric.onchange=renderConferenceChart;els.confLabels.onchange=renderConferenceChart;
     els.teamPicker.onchange=()=>{if(!els.teamPicker.value)return;APP.team=els.teamPicker.value;setView('team',{team:APP.team})};
