@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-25T02:41:19.091385+00:00",
+  "updatedAt": "2026-10-25T02:51:17.876443+00:00",
   "liveGames": [
-    {
-      "id": 401856836,
-      "status": "in_progress",
-      "homeTeam": "Oklahoma State",
-      "awayTeam": "Colorado",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 50.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
-    },
-    {
-      "id": 401856729,
-      "status": "in_progress",
-      "homeTeam": "Kentucky",
-      "awayTeam": "Vanderbilt",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 34.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "03:37",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401856732,
       "status": "in_progress",
@@ -40,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 24.0,
-      "awayPoints": 17.0,
+      "awayPoints": 24.0,
       "period": 4,
-      "clock": "13:57",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
+      "clock": "12:03",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 13,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401856838,
@@ -57,10 +27,10 @@
       "homePoints": 32.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "06:41",
-      "completedDrives": 17,
+      "clock": "03:58",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858275,
@@ -71,11 +41,11 @@
       "awayConference": "ACC",
       "homePoints": 23.0,
       "awayPoints": 23.0,
-      "period": 4,
-      "clock": "00:59",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "period": 5,
+      "clock": "00:00",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858500,
@@ -87,10 +57,10 @@
       "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "01:48",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "clock": "00:00",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401860906,
@@ -99,12 +69,12 @@
       "awayTeam": "Utah State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 17.0,
+      "homePoints": 20.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "02:20",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 8,
+      "clock": "00:48",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
     },
     {
@@ -116,10 +86,10 @@
       "awayConference": "American Athletic",
       "homePoints": 13.0,
       "awayPoints": 35.0,
-      "period": 3,
-      "clock": "02:41",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "period": 4,
+      "clock": "15:00",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -132,7 +102,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:58",
+      "clock": "05:45",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -147,22 +117,19 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:14",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "06:03",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Arizona",
-    "Colorado",
     "Houston",
     "Iowa State",
-    "Kentucky",
     "New Mexico",
     "North Carolina",
     "North Dakota State",
-    "Oklahoma State",
     "Ole Miss",
     "Syracuse",
     "Texas",
@@ -172,7 +139,6 @@
     "UTSA",
     "Utah",
     "Utah State",
-    "Vanderbilt",
     "Wisconsin"
   ]
 }
