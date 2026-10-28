@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-28T00:05:58.965372+00:00",
+  "updatedAt": "2026-10-28T00:11:03.477424+00:00",
   "liveGames": [
     {
       "id": 401871071,
@@ -12,14 +12,31 @@
       "homePoints": 21.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "07:24",
+      "clock": "03:44",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401871072,
+      "status": "in_progress",
+      "homeTeam": "Missouri State",
+      "awayTeam": "Sam Houston",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:50",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Delaware",
+    "Missouri State",
+    "Sam Houston",
     "Western Kentucky"
   ]
 }
