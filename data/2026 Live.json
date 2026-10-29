@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-29T02:45:50.877109+00:00",
+  "updatedAt": "2026-10-29T02:51:33.040229+00:00",
   "liveGames": [
-    {
-      "id": 401871058,
-      "status": "in_progress",
-      "homeTeam": "Middle Tennessee",
-      "awayTeam": "Kennesaw State",
-      "homeConference": "Conference USA",
-      "awayConference": "Conference USA",
-      "homePoints": 28.0,
-      "awayPoints": 44.0,
-      "period": 4,
-      "clock": "01:18",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401871057,
       "status": "in_progress",
@@ -24,19 +9,17 @@
       "awayTeam": "Jacksonville State",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 0.0,
+      "homePoints": 6.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "09:35",
-      "completedDrives": 15,
+      "clock": "04:48",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     }
   ],
   "liveTeams": [
     "Jacksonville State",
-    "Kennesaw State",
-    "Middle Tennessee",
     "New Mexico State"
   ]
 }
