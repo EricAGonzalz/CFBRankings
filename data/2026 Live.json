@@ -1,6 +1,42 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-29T20:29:26.823636+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-29T23:41:30.231784+00:00",
+  "liveGames": [
+    {
+      "id": 401862812,
+      "status": "in_progress",
+      "homeTeam": "North Texas",
+      "awayTeam": "Florida Atlantic",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:10",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401869963,
+      "status": "in_progress",
+      "homeTeam": "James Madison",
+      "awayTeam": "Troy",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:57",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    }
+  ],
+  "liveTeams": [
+    "Florida Atlantic",
+    "James Madison",
+    "North Texas",
+    "Troy"
+  ]
 }
