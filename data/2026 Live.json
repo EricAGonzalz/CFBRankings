@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T03:36:22.483987+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-10-30T23:11:28.952416+00:00",
+  "liveGames": [
+    {
+      "id": 401862813,
+      "status": "in_progress",
+      "homeTeam": "Charlotte",
+      "awayTeam": "Tulane",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:18",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Charlotte",
+    "Tulane"
+  ]
 }

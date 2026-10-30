@@ -212,7 +212,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401862787,Charlotte,American Athletic,Memphis,American Athletic,Home,2026-10-03T15:00:00.000Z,True,False,8,59,L,27,46,33.550
 2026,6,401862796,Charlotte,American Athletic,North Texas,American Athletic,Away,2026-10-10T19:30:00.000Z,True,False,10,50,L,40,56,15.244
 2026,7,401862803,Charlotte,American Athletic,Temple,American Athletic,Away,2026-10-17T17:00:00.000Z,True,False,38,31,W,100,95,-44.064
-2026,9,401862813,Charlotte,American Athletic,Tulane,American Athletic,Home,2026-10-30T23:00:00.000Z,False,False,,,,86,82,-23.351
+2026,9,401862813,Charlotte,American Athletic,Tulane,American Athletic,Home,2026-10-30T23:00:00.000Z,False,True,0,0,,86,82,-23.351
 2026,10,401862819,Charlotte,American Athletic,UAB,American Athletic,Away,2026-11-07T20:30:00.000Z,False,False,,,,93,97,-46.588
 2026,11,401862825,Charlotte,American Athletic,East Carolina,American Athletic,Home,2026-11-14T05:00:00.000Z,False,False,,,,101,110,-55.864
 2026,12,401862832,Charlotte,American Athletic,Tulsa,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,61,74,-3.650
@@ -1262,7 +1262,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401862795,Tulane,American Athletic,Army,American Athletic,Away,2026-10-10T16:00:00.000Z,True,False,17,20,L,36,48,30.465
 2026,7,401862801,Tulane,American Athletic,Memphis,American Athletic,Home,2026-10-16T23:30:00.000Z,True,False,31,17,W,27,46,33.550
 2026,8,401862811,Tulane,American Athletic,UTSA,American Athletic,Home,2026-10-25T00:00:00.000Z,True,False,19,42,L,52,57,14.029
-2026,9,401862813,Tulane,American Athletic,Charlotte,American Athletic,Away,2026-10-30T23:00:00.000Z,False,False,,,,134,131,-127.377
+2026,9,401862813,Tulane,American Athletic,Charlotte,American Athletic,Away,2026-10-30T23:00:00.000Z,False,True,0,0,,134,131,-127.377
 2026,10,401862822,Tulane,American Athletic,Tulsa,American Athletic,Home,2026-11-07T17:00:00.000Z,False,False,,,,61,74,-3.650
 2026,11,401862828,Tulane,American Athletic,Rice,American Athletic,Away,2026-11-14T05:00:00.000Z,False,False,,,,127,124,-97.004
 2026,12,401862835,Tulane,American Athletic,North Texas,American Athletic,Home,2026-11-21T05:00:00.000Z,False,False,,,,40,56,15.244
