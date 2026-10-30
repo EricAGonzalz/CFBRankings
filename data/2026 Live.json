@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-30T00:51:27.583861+00:00",
+  "updatedAt": "2026-10-30T00:56:22.806072+00:00",
   "liveGames": [
     {
       "id": 401862812,
@@ -9,13 +9,13 @@
       "awayTeam": "Florida Atlantic",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "04:11",
-      "completedDrives": 8,
+      "clock": "02:46",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401869963,
@@ -27,9 +27,9 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "04:04",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "02:44",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     }
   ],
