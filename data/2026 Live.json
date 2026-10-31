@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T22:11:48.499392+00:00",
+  "updatedAt": "2026-10-31T22:16:27.334362+00:00",
   "liveGames": [
-    {
-      "id": 401861966,
-      "status": "in_progress",
-      "homeTeam": "Air Force",
-      "awayTeam": "UConn",
-      "homeConference": "Mountain West",
-      "awayConference": "FBS Independents",
-      "homePoints": 35.0,
-      "awayPoints": 26.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401862815,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 17.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "03:45",
+      "clock": "02:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -42,7 +27,7 @@
       "homePoints": 20.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "02:47",
+      "clock": "02:00",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -57,7 +42,7 @@
       "homePoints": 45.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "00:27",
+      "clock": "00:00",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -71,8 +56,8 @@
       "awayConference": "SEC",
       "homePoints": 24.0,
       "awayPoints": 0.0,
-      "period": 3,
-      "clock": "01:11",
+      "period": 4,
+      "clock": "14:59",
       "completedDrives": 16,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 9
@@ -87,10 +72,10 @@
       "homePoints": 17.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "03:26",
-      "completedDrives": 17,
+      "clock": "01:47",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856845,
@@ -99,10 +84,10 @@
       "awayTeam": "Kansas",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "01:10",
+      "clock": "00:00",
       "completedDrives": 20,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 11
@@ -117,7 +102,7 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "02:13",
+      "clock": "15:00",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -129,12 +114,12 @@
       "awayTeam": "Northwestern",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 20.0,
+      "homePoints": 27.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "14:19",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -147,9 +132,9 @@
       "homePoints": 24.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "11:24",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "08:18",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 17.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "07:15",
+      "clock": "05:43",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -174,12 +159,12 @@
       "awayTeam": "Florida International",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 42.0,
+      "homePoints": 48.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "09:07",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "06:40",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -191,8 +176,8 @@
       "awayConference": "Sun Belt",
       "homePoints": 7.0,
       "awayPoints": 27.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "12:18",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -204,13 +189,13 @@
       "awayTeam": "Utah",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 6.0,
+      "homePoints": 13.0,
       "awayPoints": 42.0,
       "period": 3,
-      "clock": "07:14",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "06:19",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858284,
@@ -219,12 +204,12 @@
       "awayTeam": "Virginia",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 37.0,
+      "homePoints": 43.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "03:31",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "01:57",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -236,8 +221,8 @@
       "awayConference": "Mountain West",
       "homePoints": 9.0,
       "awayPoints": 21.0,
-      "period": 3,
-      "clock": "15:00",
+      "period": 4,
+      "clock": "12:59",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -253,9 +238,9 @@
       "awayPoints": 28.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "completedDrives": 13,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858506,
@@ -266,11 +251,11 @@
       "awayConference": "Big Ten",
       "homePoints": 21.0,
       "awayPoints": 14.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 10,
+      "period": 3,
+      "clock": "11:01",
+      "completedDrives": 11,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858508,
@@ -281,15 +266,14 @@
       "awayConference": "Mountain West",
       "homePoints": 17.0,
       "awayPoints": 0.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "10:47",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
     }
   ],
   "liveTeams": [
-    "Air Force",
     "Arizona State",
     "BYU",
     "Cincinnati",
@@ -320,7 +304,6 @@
     "TCU",
     "Temple",
     "UCLA",
-    "UConn",
     "UL Monroe",
     "UTEP",
     "Utah",
