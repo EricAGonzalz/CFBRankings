@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T19:16:28.440853+00:00",
+  "updatedAt": "2026-10-31T19:21:32.507918+00:00",
   "liveGames": [
     {
       "id": 401856842,
@@ -12,10 +12,10 @@
       "homePoints": 27.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "04:28",
-      "completedDrives": 22,
+      "clock": "02:58",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858277,
@@ -27,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "01:55",
+      "clock": "01:19",
       "completedDrives": 26,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 13
@@ -42,10 +42,10 @@
       "homePoints": 23.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "05:15",
-      "completedDrives": 20,
+      "clock": "02:40",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858279,
@@ -54,28 +54,13 @@
       "awayTeam": "Boston College",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 44.0,
+      "homePoints": 47.0,
       "awayPoints": 2.0,
       "period": 4,
-      "clock": "02:58",
+      "clock": "02:00",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858502,
-      "status": "in_progress",
-      "homeTeam": "Iowa",
-      "awayTeam": "Wisconsin",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 30.0,
-      "awayPoints": 0.0,
-      "period": 4,
-      "clock": "01:30",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401862816,
@@ -102,7 +87,7 @@
       "homePoints": 21.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "11:42",
+      "clock": "08:29",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -117,10 +102,10 @@
       "homePoints": 24.0,
       "awayPoints": 15.0,
       "period": 3,
-      "clock": "02:38",
-      "completedDrives": 13,
+      "clock": "00:35",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401871096,
@@ -132,10 +117,10 @@
       "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "12:55",
-      "completedDrives": 16,
+      "clock": "11:22",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856846,
@@ -147,10 +132,10 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:53",
-      "completedDrives": 10,
+      "clock": "00:00",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401869944,
@@ -160,12 +145,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 3.0,
-      "awayPoints": 10.0,
+      "awayPoints": 17.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 8,
+      "clock": "01:51",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401861966,
@@ -177,7 +162,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:43",
+      "clock": "08:11",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -192,10 +177,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:28",
-      "completedDrives": 2,
+      "clock": "07:24",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401871097,
@@ -207,7 +192,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:33",
+      "clock": "09:20",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -224,7 +209,6 @@
     "Duke",
     "East Carolina",
     "Georgia State",
-    "Iowa",
     "Kansas State",
     "Louisiana Tech",
     "Marshall",
@@ -240,7 +224,6 @@
     "Temple",
     "Texas Tech",
     "UAB",
-    "UConn",
-    "Wisconsin"
+    "UConn"
   ]
 }
