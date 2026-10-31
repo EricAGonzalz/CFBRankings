@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T02:41:27.363464+00:00",
+  "updatedAt": "2026-10-31T02:46:27.789194+00:00",
   "liveGames": [
     {
       "id": 401862813,
@@ -27,15 +27,32 @@
       "homePoints": 9.0,
       "awayPoints": 41.0,
       "period": 4,
-      "clock": "11:03",
-      "completedDrives": 25,
+      "clock": "08:12",
+      "completedDrives": 26,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
+    },
+    {
+      "id": 401866451,
+      "status": "in_progress",
+      "homeTeam": "Sacramento State",
+      "awayTeam": "Kent State",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:42",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Baylor",
     "Charlotte",
+    "Kent State",
+    "Sacramento State",
     "Tulane",
     "UCF"
   ]
