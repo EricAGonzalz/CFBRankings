@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T02:06:29.339189+00:00",
+  "updatedAt": "2026-10-31T02:11:25.572229+00:00",
   "liveGames": [
     {
       "id": 401862813,
@@ -10,12 +10,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 31.0,
-      "awayPoints": 21.0,
+      "awayPoints": 24.0,
       "period": 4,
-      "clock": "10:28",
-      "completedDrives": 17,
+      "clock": "06:29",
+      "completedDrives": 18,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856844,
@@ -24,12 +24,12 @@
       "awayTeam": "Baylor",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 6.0,
+      "homePoints": 9.0,
       "awayPoints": 34.0,
       "period": 3,
-      "clock": "07:50",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "06:19",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     }
   ],
