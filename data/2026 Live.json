@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T19:06:36.775414+00:00",
+  "updatedAt": "2026-10-31T19:11:35.349694+00:00",
   "liveGames": [
     {
       "id": 401856842,
@@ -12,10 +12,10 @@
       "homePoints": 27.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "07:09",
-      "completedDrives": 20,
+      "clock": "06:08",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858277,
@@ -27,10 +27,10 @@
       "homePoints": 31.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "05:38",
-      "completedDrives": 24,
+      "clock": "03:35",
+      "completedDrives": 25,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401858278,
@@ -42,7 +42,7 @@
       "homePoints": 20.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "09:03",
+      "clock": "05:30",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -57,7 +57,7 @@
       "homePoints": 44.0,
       "awayPoints": 2.0,
       "period": 4,
-      "clock": "09:10",
+      "clock": "06:03",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -72,7 +72,7 @@
       "homePoints": 30.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "04:01",
+      "clock": "01:54",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -87,25 +87,10 @@
       "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "01:41",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401859185,
-      "status": "in_progress",
-      "homeTeam": "Navy",
-      "awayTeam": "Notre Dame",
-      "homeConference": "American Athletic",
-      "awayConference": "FBS Independents",
-      "homePoints": 13.0,
-      "awayPoints": 35.0,
-      "period": 4,
-      "clock": "01:50",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
     },
     {
       "id": 401862816,
@@ -117,7 +102,7 @@
       "homePoints": 27.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "12:28",
+      "clock": "08:01",
       "completedDrives": 19,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 11
@@ -129,12 +114,12 @@
       "awayTeam": "Bowling Green",
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
-      "homePoints": 20.0,
+      "homePoints": 23.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "01:48",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "00:13",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -144,12 +129,12 @@
       "awayTeam": "Michigan",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 13.0,
+      "homePoints": 19.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "13:08",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "11:41",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 17.0,
       "awayPoints": 15.0,
       "period": 3,
-      "clock": "06:20",
+      "clock": "03:35",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -176,11 +161,11 @@
       "awayConference": "Sun Belt",
       "homePoints": 10.0,
       "awayPoints": 27.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 15,
+      "period": 3,
+      "clock": "13:03",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856846,
@@ -192,7 +177,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:25",
+      "clock": "02:00",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -207,9 +192,9 @@
       "homePoints": 3.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "06:58",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "05:40",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -222,10 +207,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
-      "completedDrives": 0,
+      "clock": "12:56",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862815,
@@ -237,10 +222,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:37",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "10:55",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401871097,
@@ -252,7 +237,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:08",
+      "clock": "12:09",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -278,8 +263,6 @@
     "Maryland",
     "Michigan",
     "NC State",
-    "Navy",
-    "Notre Dame",
     "Old Dominion",
     "Ole Miss",
     "Rutgers",
