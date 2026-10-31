@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T19:31:45.285316+00:00",
+  "updatedAt": "2026-10-31T19:36:32.078777+00:00",
   "liveGames": [
     {
       "id": 401856842,
@@ -12,7 +12,7 @@
       "homePoints": 34.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "01:53",
+      "clock": "00:29",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
@@ -24,10 +24,10 @@
       "awayTeam": "SMU",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 23.0,
+      "homePoints": 30.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "00:19",
+      "clock": "00:02",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -42,9 +42,9 @@
       "homePoints": 21.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "04:11",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "02:18",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -54,10 +54,10 @@
       "awayTeam": "Auburn",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 30.0,
+      "homePoints": 31.0,
       "awayPoints": 15.0,
       "period": 4,
-      "clock": "12:53",
+      "clock": "12:17",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -70,9 +70,9 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 17.0,
-      "awayPoints": 27.0,
+      "awayPoints": 30.0,
       "period": 3,
-      "clock": "07:55",
+      "clock": "06:46",
       "completedDrives": 20,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 11
@@ -99,12 +99,12 @@
       "awayTeam": "Coastal Carolina",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "00:38",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "00:00",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -117,10 +117,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:45",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "clock": "02:06",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401862815,
@@ -129,12 +129,12 @@
       "awayTeam": "Temple",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:38",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "01:19",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -147,10 +147,10 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "07:06",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "04:08",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858283,
@@ -159,12 +159,57 @@
       "awayTeam": "Stanford",
       "homeConference": "ACC",
       "awayConference": "ACC",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:25",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401860910,
+      "status": "in_progress",
+      "homeTeam": "Utah State",
+      "awayTeam": "Colorado State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:55",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 1,
+      "clock": "14:55",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401871059,
+      "status": "in_progress",
+      "homeTeam": "Liberty",
+      "awayTeam": "Florida International",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:40",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401871095,
+      "status": "in_progress",
+      "homeTeam": "UL Monroe",
+      "awayTeam": "Southern Miss",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:33",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
@@ -174,9 +219,12 @@
     "Auburn",
     "Coastal Carolina",
     "Colorado",
+    "Colorado State",
     "East Carolina",
+    "Florida International",
     "Georgia State",
     "Kansas State",
+    "Liberty",
     "Louisiana Tech",
     "Louisville",
     "Marshall",
@@ -186,10 +234,13 @@
     "Rutgers",
     "SMU",
     "South Alabama",
+    "Southern Miss",
     "Stanford",
     "Syracuse",
     "Temple",
     "Texas Tech",
-    "UConn"
+    "UConn",
+    "UL Monroe",
+    "Utah State"
   ]
 }
