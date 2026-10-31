@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T23:31:42.843133+00:00",
+  "updatedAt": "2026-10-31T23:36:32.161819+00:00",
   "liveGames": [
     {
       "id": 401856736,
@@ -12,7 +12,7 @@
       "homePoints": 19.0,
       "awayPoints": 42.0,
       "period": 4,
-      "clock": "05:58",
+      "clock": "05:07",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -24,10 +24,10 @@
       "awayTeam": "App State",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 9.0,
+      "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "07:14",
+      "clock": "05:59",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -42,7 +42,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:14",
+      "clock": "06:10",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -57,10 +57,10 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "09:22",
-      "completedDrives": 5,
+      "clock": "07:48",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401860909,
@@ -72,10 +72,25 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:19",
+      "clock": "01:08",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401858509,
+      "status": "in_progress",
+      "homeTeam": "USC",
+      "awayTeam": "Ohio State",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:21",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -84,10 +99,12 @@
     "Florida State",
     "Georgia Southern",
     "Iowa State",
+    "Ohio State",
     "Oklahoma",
     "Oklahoma State",
     "San Diego State",
     "South Carolina",
+    "USC",
     "Washington State"
   ]
 }
