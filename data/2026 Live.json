@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T16:11:36.281496+00:00",
+  "updatedAt": "2026-10-31T16:16:38.093299+00:00",
   "liveGames": [
     {
       "id": 401856842,
@@ -10,12 +10,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "13:33",
-      "completedDrives": 0,
+      "clock": "11:35",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858277,
@@ -27,9 +27,9 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:29",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "10:42",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -39,13 +39,43 @@
       "awayTeam": "SMU",
       "homeConference": "ACC",
       "awayConference": "ACC",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "10:04",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858279,
+      "status": "in_progress",
+      "homeTeam": "Duke",
+      "awayTeam": "Boston College",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:24",
+      "clock": "13:05",
       "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858502,
+      "status": "in_progress",
+      "homeTeam": "Iowa",
+      "awayTeam": "Wisconsin",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:46",
+      "completedDrives": 0,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858503,
@@ -57,10 +87,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:28",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 1
+      "clock": "10:31",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401859185,
@@ -72,7 +102,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:19",
+      "clock": "08:49",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -85,12 +115,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "15:00",
-      "completedDrives": 0,
+      "clock": "00:00",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401866452,
@@ -100,19 +130,22 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "10:18",
-      "completedDrives": 1,
+      "clock": "07:00",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Arizona",
+    "Boston College",
     "Bowling Green",
     "California",
+    "Duke",
     "Illinois",
+    "Iowa",
     "Maryland",
     "NC State",
     "Navy",
@@ -122,6 +155,7 @@
     "Syracuse",
     "Texas Tech",
     "UAB",
-    "Western Michigan"
+    "Western Michigan",
+    "Wisconsin"
   ]
 }
