@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T19:11:35.349694+00:00",
+  "updatedAt": "2026-10-31T19:16:28.440853+00:00",
   "liveGames": [
     {
       "id": 401856842,
@@ -12,9 +12,9 @@
       "homePoints": 27.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "06:08",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "04:28",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -27,9 +27,9 @@
       "homePoints": 31.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "03:35",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
+      "clock": "01:55",
+      "completedDrives": 26,
+      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 13
     },
     {
@@ -39,12 +39,12 @@
       "awayTeam": "SMU",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 20.0,
+      "homePoints": 23.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "05:30",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "05:15",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -57,9 +57,9 @@
       "homePoints": 44.0,
       "awayPoints": 2.0,
       "period": 4,
-      "clock": "06:03",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
+      "clock": "02:58",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
     },
     {
@@ -72,25 +72,10 @@
       "homePoints": 30.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "01:54",
+      "clock": "01:30",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401858503,
-      "status": "in_progress",
-      "homeTeam": "Maryland",
-      "awayTeam": "Illinois",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 17.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "01:41",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
     },
     {
       "id": 401862816,
@@ -102,24 +87,9 @@
       "homePoints": 27.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "08:01",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401866452,
-      "status": "in_progress",
-      "homeTeam": "Western Michigan",
-      "awayTeam": "Bowling Green",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 23.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "00:13",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
+      "clock": "04:36",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 12
     },
     {
@@ -129,10 +99,10 @@
       "awayTeam": "Michigan",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 19.0,
+      "homePoints": 21.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "11:41",
+      "clock": "11:42",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -144,12 +114,12 @@
       "awayTeam": "Auburn",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 15.0,
       "period": 3,
-      "clock": "03:35",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "02:38",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -159,10 +129,10 @@
       "awayTeam": "Marshall",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "13:03",
+      "clock": "12:55",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -177,9 +147,9 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "00:53",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -192,7 +162,7 @@
       "homePoints": 3.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "05:40",
+      "clock": "02:00",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -204,12 +174,12 @@
       "awayTeam": "UConn",
       "homeConference": "Mountain West",
       "awayConference": "FBS Independents",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:56",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "08:43",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -222,7 +192,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:55",
+      "clock": "09:28",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -234,12 +204,12 @@
       "awayTeam": "Louisiana Tech",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:09",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "09:33",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     }
   ],
@@ -248,19 +218,16 @@
     "Arizona",
     "Auburn",
     "Boston College",
-    "Bowling Green",
     "California",
     "Coastal Carolina",
     "Colorado",
     "Duke",
     "East Carolina",
     "Georgia State",
-    "Illinois",
     "Iowa",
     "Kansas State",
     "Louisiana Tech",
     "Marshall",
-    "Maryland",
     "Michigan",
     "NC State",
     "Old Dominion",
@@ -274,7 +241,6 @@
     "Texas Tech",
     "UAB",
     "UConn",
-    "Western Michigan",
     "Wisconsin"
   ]
 }
