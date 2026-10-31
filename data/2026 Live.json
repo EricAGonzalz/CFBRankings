@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T02:56:24.684399+00:00",
+  "updatedAt": "2026-10-31T03:01:43.911665+00:00",
   "liveGames": [
-    {
-      "id": 401862813,
-      "status": "in_progress",
-      "homeTeam": "Charlotte",
-      "awayTeam": "Tulane",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 31.0,
-      "awayPoints": 38.0,
-      "period": 5,
-      "clock": "00:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401856844,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 9.0,
       "awayPoints": 41.0,
       "period": 4,
-      "clock": "02:25",
+      "clock": "01:14",
       "completedDrives": 27,
       "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 13
@@ -40,20 +25,18 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:16",
-      "completedDrives": 3,
+      "clock": "07:25",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "Baylor",
-    "Charlotte",
     "Kent State",
     "Sacramento State",
-    "Tulane",
     "UCF"
   ]
 }
