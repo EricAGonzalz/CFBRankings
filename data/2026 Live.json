@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T18:56:25.676585+00:00",
+  "updatedAt": "2026-10-31T19:02:36.329335+00:00",
   "liveGames": [
     {
       "id": 401856842,
@@ -12,10 +12,10 @@
       "homePoints": 27.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "10:28",
-      "completedDrives": 18,
+      "clock": "09:03",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858277,
@@ -27,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "07:38",
+      "clock": "05:55",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -40,12 +40,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 20.0,
-      "awayPoints": 19.0,
+      "awayPoints": 27.0,
       "period": 4,
-      "clock": "10:06",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "clock": "09:03",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858279,
@@ -57,7 +57,7 @@
       "homePoints": 44.0,
       "awayPoints": 2.0,
       "period": 4,
-      "clock": "11:55",
+      "clock": "10:22",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -72,10 +72,10 @@
       "homePoints": 30.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "08:26",
-      "completedDrives": 17,
+      "clock": "06:17",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858503,
@@ -87,9 +87,9 @@
       "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "06:31",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "05:05",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -102,10 +102,10 @@
       "homePoints": 13.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "05:19",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "clock": "02:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401862816,
@@ -132,10 +132,10 @@
       "homePoints": 20.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "03:09",
-      "completedDrives": 22,
+      "clock": "01:58",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858507,
@@ -146,8 +146,8 @@
       "awayConference": "Big Ten",
       "homePoints": 13.0,
       "awayPoints": 21.0,
-      "period": 3,
-      "clock": "01:02",
+      "period": 4,
+      "clock": "14:04",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -160,12 +160,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 17.0,
-      "awayPoints": 9.0,
+      "awayPoints": 15.0,
       "period": 3,
-      "clock": "08:28",
-      "completedDrives": 11,
+      "clock": "06:20",
+      "completedDrives": 12,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401871096,
@@ -192,7 +192,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "08:04",
+      "clock": "02:47",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -207,9 +207,9 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "10:03",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "07:45",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     }
   ],
