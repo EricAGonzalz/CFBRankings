@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-01T02:06:31.421901+00:00",
+  "updatedAt": "2026-11-01T02:11:45.989187+00:00",
   "liveGames": [
     {
       "id": 401856847,
@@ -12,7 +12,7 @@
       "homePoints": 45.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "11:08",
+      "clock": "10:29",
       "completedDrives": 20,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
@@ -25,27 +25,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 10.0,
-      "awayPoints": 26.0,
+      "awayPoints": 29.0,
       "period": 4,
-      "clock": "11:15",
-      "completedDrives": 20,
+      "clock": "10:56",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401860909,
-      "status": "in_progress",
-      "homeTeam": "San Diego State",
-      "awayTeam": "Washington State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 26.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "00:38",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856737,
@@ -56,8 +41,8 @@
       "awayConference": "SEC",
       "homePoints": 24.0,
       "awayPoints": 3.0,
-      "period": 3,
-      "clock": "00:40",
+      "period": 4,
+      "clock": "14:43",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -72,7 +57,7 @@
       "homePoints": 17.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "04:58",
+      "clock": "02:06",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -86,10 +71,10 @@
       "awayConference": "ACC",
       "homePoints": 21.0,
       "awayPoints": 24.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "period": 4,
+      "clock": "12:46",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -102,7 +87,7 @@
       "homePoints": 27.0,
       "awayPoints": 9.0,
       "period": 3,
-      "clock": "02:14",
+      "clock": "02:28",
       "completedDrives": 16,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 7
@@ -117,7 +102,7 @@
       "homePoints": 7.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "09:11",
+      "clock": "04:09",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -132,9 +117,9 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "07:43",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "05:06",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -144,12 +129,12 @@
       "awayTeam": "Army",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "09:47",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "07:25",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     }
   ],
@@ -169,10 +154,8 @@
     "Ohio State",
     "Oklahoma State",
     "Pittsburgh",
-    "San Diego State",
     "Texas",
     "USC",
-    "Washington",
-    "Washington State"
+    "Washington"
   ]
 }
