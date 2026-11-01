@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-01T03:26:29.116976+00:00",
+  "updatedAt": "2026-11-01T03:32:55.881328+00:00",
   "liveGames": [
-    {
-      "id": 401858281,
-      "status": "in_progress",
-      "homeTeam": "Pittsburgh",
-      "awayTeam": "Georgia Tech",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 34.0,
-      "awayPoints": 11.0,
-      "period": 4,
-      "clock": "00:54",
-      "completedDrives": 31,
-      "homeOffensiveDrives": 16,
-      "awayOffensiveDrives": 15
-    },
-    {
-      "id": 401858504,
-      "status": "in_progress",
-      "homeTeam": "Nebraska",
-      "awayTeam": "Washington",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 7.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "00:35",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401860908,
       "status": "in_progress",
@@ -42,7 +12,7 @@
       "homePoints": 21.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "04:06",
+      "clock": "02:00",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -57,7 +27,7 @@
       "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "07:04",
+      "clock": "05:46",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -72,22 +42,18 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:20",
-      "completedDrives": 3,
+      "clock": "06:41",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "Boise State",
     "Fresno State",
-    "Georgia Tech",
-    "Nebraska",
     "Northern Illinois",
     "Oregon State",
-    "Pittsburgh",
     "Texas State",
-    "UNLV",
-    "Washington"
+    "UNLV"
   ]
 }
