@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-01T05:56:28.270899+00:00",
+  "updatedAt": "2026-11-01T06:02:55.303945+00:00",
   "liveGames": [
     {
       "id": 401860908,
@@ -12,25 +12,10 @@
       "homePoints": 46.0,
       "awayPoints": 45.0,
       "period": 4,
-      "clock": "02:40",
+      "clock": "02:00",
       "completedDrives": 25,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401864530,
-      "status": "in_progress",
-      "homeTeam": "UNLV",
-      "awayTeam": "Northern Illinois",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 31.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
     },
     {
       "id": 401860924,
@@ -42,18 +27,16 @@
       "homePoints": 38.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "09:21",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "07:42",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     }
   ],
   "liveTeams": [
     "Boise State",
     "Fresno State",
-    "Northern Illinois",
     "Oregon State",
-    "Texas State",
-    "UNLV"
+    "Texas State"
   ]
 }
