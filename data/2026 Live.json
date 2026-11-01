@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-01T03:51:37.586433+00:00",
+  "updatedAt": "2026-11-01T03:56:25.063422+00:00",
   "liveGames": [
     {
       "id": 401860908,
@@ -24,13 +24,13 @@
       "awayTeam": "Northern Illinois",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "00:25",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "clock": "00:00",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401860924,
@@ -40,12 +40,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 7.0,
-      "awayPoints": 3.0,
+      "awayPoints": 6.0,
       "period": 2,
-      "clock": "13:28",
-      "completedDrives": 5,
+      "clock": "06:41",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
