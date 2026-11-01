@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-10-31T23:56:28.075138+00:00",
+  "updatedAt": "2026-11-01T00:02:44.493415+00:00",
   "liveGames": [
     {
       "id": 401856736,
@@ -12,9 +12,9 @@
       "homePoints": 25.0,
       "awayPoints": 42.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "01:32",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -39,12 +39,12 @@
       "awayTeam": "Oklahoma State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "12:17",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -54,12 +54,12 @@
       "awayTeam": "Clemson",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "12:54",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -70,9 +70,9 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 14.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 2,
-      "clock": "06:23",
+      "clock": "06:12",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -87,9 +87,9 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:39",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "03:58",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -102,10 +102,10 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:31",
-      "completedDrives": 3,
+      "clock": "05:24",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858282,
@@ -115,9 +115,9 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 0.0,
-      "awayPoints": 6.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:33",
+      "clock": "08:16",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -132,14 +132,30 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "07:44",
-      "completedDrives": 3,
+      "clock": "04:23",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401856733,
+      "status": "in_progress",
+      "homeTeam": "Arkansas",
+      "awayTeam": "Missouri",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:59",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "App State",
+    "Arkansas",
     "Clemson",
     "Florida State",
     "Georgia Southern",
@@ -147,6 +163,7 @@
     "Iowa State",
     "Miami",
     "Mississippi State",
+    "Missouri",
     "North Carolina",
     "Ohio State",
     "Oklahoma",
