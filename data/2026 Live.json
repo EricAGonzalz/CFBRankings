@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-01T00:02:44.493415+00:00",
+  "updatedAt": "2026-11-01T00:06:45.111142+00:00",
   "liveGames": [
     {
       "id": 401856736,
@@ -12,7 +12,7 @@
       "homePoints": 25.0,
       "awayPoints": 42.0,
       "period": 4,
-      "clock": "01:32",
+      "clock": "00:50",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
@@ -57,7 +57,7 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "12:54",
+      "clock": "12:09",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -72,7 +72,7 @@
       "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "06:12",
+      "clock": "04:43",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -87,7 +87,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:58",
+      "clock": "03:50",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -102,7 +102,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:24",
+      "clock": "02:56",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -117,9 +117,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:16",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "05:05",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -132,7 +132,7 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "04:23",
+      "clock": "04:08",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -147,9 +147,24 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:59",
-      "completedDrives": 1,
+      "clock": "10:11",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858504,
+      "status": "in_progress",
+      "homeTeam": "Nebraska",
+      "awayTeam": "Washington",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:56",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
@@ -164,6 +179,7 @@
     "Miami",
     "Mississippi State",
     "Missouri",
+    "Nebraska",
     "North Carolina",
     "Ohio State",
     "Oklahoma",
@@ -173,6 +189,7 @@
     "South Carolina",
     "Texas",
     "USC",
+    "Washington",
     "Washington State"
   ]
 }
