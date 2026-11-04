@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-04T03:25:59.589981+00:00",
+  "updatedAt": "2026-11-04T03:31:14.696285+00:00",
   "liveGames": [
-    {
-      "id": 401866453,
-      "status": "in_progress",
-      "homeTeam": "Akron",
-      "awayTeam": "Ohio",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 20.0,
-      "awayPoints": 28.0,
-      "period": 4,
-      "clock": "01:46",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401866454,
       "status": "in_progress",
@@ -27,16 +12,14 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "09:36",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "06:04",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     }
   ],
   "liveTeams": [
-    "Akron",
     "Buffalo",
-    "Miami (OH)",
-    "Ohio"
+    "Miami (OH)"
   ]
 }
