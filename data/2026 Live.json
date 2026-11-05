@@ -1,6 +1,42 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-04T05:02:07.978218+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-05T00:06:09.589984+00:00",
+  "liveGames": [
+    {
+      "id": 401866455,
+      "status": "in_progress",
+      "homeTeam": "Massachusetts",
+      "awayTeam": "Ball State",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:02",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866457,
+      "status": "in_progress",
+      "homeTeam": "Sacramento State",
+      "awayTeam": "Toledo",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:52",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Ball State",
+    "Massachusetts",
+    "Sacramento State",
+    "Toledo"
+  ]
 }

@@ -127,7 +127,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401858482,Ball State,Mid-American,Northwestern,Big Ten,Away,2026-10-10T16:30:00.000Z,True,False,14,45,L,14,15,98.231
 2026,7,401866441,Ball State,Mid-American,Bowling Green,Mid-American,Away,2026-10-17T16:00:00.000Z,True,False,32,31,W,117,122,-88.657
 2026,8,401866447,Ball State,Mid-American,Sacramento State,Mid-American,Home,2026-10-24T19:30:00.000Z,True,False,34,17,W,133,138,-187.331
-2026,10,401866455,Ball State,Mid-American,Massachusetts,Mid-American,Away,2026-11-05T00:00:00.000Z,False,False,,,,67,104,-52.236
+2026,10,401866455,Ball State,Mid-American,Massachusetts,Mid-American,Away,2026-11-05T00:00:00.000Z,False,True,0,0,,67,104,-52.236
 2026,11,401866461,Ball State,Mid-American,Buffalo,Mid-American,Home,2026-11-11T05:00:00.000Z,False,False,,,,91,91,-35.638
 2026,12,401866464,Ball State,Mid-American,Ohio,Mid-American,Away,2026-11-18T00:00:00.000Z,False,False,,,,43,83,-22.429
 2026,13,401866474,Ball State,Mid-American,Central Michigan,Mid-American,Home,2026-11-28T17:00:00.000Z,False,False,,,,113,116,-70.639
@@ -641,7 +641,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401866440,Massachusetts,Mid-American,Miami (OH),Mid-American,Home,2026-10-10T18:00:00.000Z,True,False,19,20,L,77,99,-48.192
 2026,7,401866442,Massachusetts,Mid-American,Buffalo,Mid-American,Away,2026-10-17T17:00:00.000Z,True,False,18,25,L,91,91,-35.638
 2026,8,401861965,Massachusetts,Mid-American,UConn,FBS Independents,Away,2026-10-23T23:00:00.000Z,True,False,16,35,L,52,72,-9.420
-2026,10,401866455,Massachusetts,Mid-American,Ball State,Mid-American,Home,2026-11-05T00:00:00.000Z,False,False,,,,132,132,-135.495
+2026,10,401866455,Massachusetts,Mid-American,Ball State,Mid-American,Home,2026-11-05T00:00:00.000Z,False,True,0,0,,132,132,-135.495
 2026,11,401866463,Massachusetts,Mid-American,Toledo,Mid-American,Away,2026-11-11T05:00:00.000Z,False,False,,,,41,70,-4.199
 2026,12,401866467,Massachusetts,Mid-American,Akron,Mid-American,Home,2026-11-18T05:00:00.000Z,False,False,,,,131,135,-150.852
 2026,13,401866475,Massachusetts,Mid-American,Bowling Green,Mid-American,Away,2026-11-28T17:00:00.000Z,False,False,,,,117,122,-88.657
@@ -1054,7 +1054,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401866445,Sacramento State,Mid-American,Ohio,Mid-American,Home,2026-10-18T02:00:00.000Z,True,False,7,48,L,43,83,-22.429
 2026,8,401866447,Sacramento State,Mid-American,Ball State,Mid-American,Away,2026-10-24T19:30:00.000Z,True,False,17,34,L,132,132,-135.495
 2026,9,401866451,Sacramento State,Mid-American,Kent State,Mid-American,Home,2026-10-31T02:30:00.000Z,True,False,31,10,W,136,136,-157.138
-2026,10,401866457,Sacramento State,Mid-American,Toledo,Mid-American,Home,2026-11-05T00:00:00.000Z,False,False,,,,41,70,-4.199
+2026,10,401866457,Sacramento State,Mid-American,Toledo,Mid-American,Home,2026-11-05T00:00:00.000Z,False,True,0,0,,41,70,-4.199
 2026,11,401866462,Sacramento State,Mid-American,Central Michigan,Mid-American,Away,2026-11-12T00:30:00.000Z,False,False,,,,113,116,-70.639
 2026,13,401864547,Sacramento State,Mid-American,Hawai'i,Mountain West,Away,2026-11-29T04:00:00.000Z,False,False,,,,89,112,-67.838
 2026,1,401870763,Sam Houston,Conference USA,Troy,Sun Belt,Away,2026-09-05T23:00:00.000Z,True,False,21,24,L,85,98,-45.532
@@ -1240,7 +1240,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401866437,Toledo,Mid-American,Buffalo,Mid-American,Home,2026-10-10T19:30:00.000Z,True,False,8,23,L,91,91,-35.638
 2026,7,401866444,Toledo,Mid-American,Eastern Michigan,Mid-American,Away,2026-10-17T19:30:00.000Z,True,False,34,14,W,110,127,-99.645
 2026,8,401866450,Toledo,Mid-American,Western Michigan,Mid-American,Home,2026-10-24T16:00:00.000Z,True,False,45,38,W,47,65,3.677
-2026,10,401866457,Toledo,Mid-American,Sacramento State,Mid-American,Away,2026-11-05T00:00:00.000Z,False,False,,,,133,138,-187.331
+2026,10,401866457,Toledo,Mid-American,Sacramento State,Mid-American,Away,2026-11-05T00:00:00.000Z,False,True,0,0,,133,138,-187.331
 2026,11,401866463,Toledo,Mid-American,Massachusetts,Mid-American,Home,2026-11-11T05:00:00.000Z,False,False,,,,67,104,-52.236
 2026,12,401866468,Toledo,Mid-American,Bowling Green,Mid-American,Home,2026-11-21T00:30:00.000Z,False,False,,,,117,122,-88.657
 2026,13,401866473,Toledo,Mid-American,Ohio,Mid-American,Away,2026-11-27T17:00:00.000Z,False,False,,,,43,83,-22.429
