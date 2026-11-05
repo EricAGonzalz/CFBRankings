@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-05T00:35:57.252430+00:00",
+  "updatedAt": "2026-11-05T00:40:55.111548+00:00",
   "liveGames": [
     {
       "id": 401866455,
@@ -12,7 +12,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:10",
+      "clock": "00:03",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -27,14 +27,31 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:46",
+      "clock": "15:00",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401866456,
+      "status": "in_progress",
+      "homeTeam": "Eastern Michigan",
+      "awayTeam": "Central Michigan",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:53",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Ball State",
+    "Central Michigan",
+    "Eastern Michigan",
     "Massachusetts",
     "Sacramento State",
     "Toledo"

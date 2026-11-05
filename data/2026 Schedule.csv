@@ -202,7 +202,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401866438,Central Michigan,Mid-American,Ohio,Mid-American,Away,2026-10-10T19:30:00.000Z,True,False,14,31,L,43,83,-22.011
 2026,7,401866443,Central Michigan,Mid-American,Western Michigan,Mid-American,Home,2026-10-17T17:30:00.000Z,True,False,14,21,L,47,65,3.756
 2026,8,401866476,Central Michigan,Mid-American,Miami (OH),Mid-American,Home,2026-10-24T17:00:00.000Z,True,False,27,28,L,77,103,-52.671
-2026,10,401866456,Central Michigan,Mid-American,Eastern Michigan,Mid-American,Away,2026-11-05T00:30:00.000Z,False,False,,,,110,129,-103.228
+2026,10,401866456,Central Michigan,Mid-American,Eastern Michigan,Mid-American,Away,2026-11-05T00:30:00.000Z,False,True,0,0,,110,129,-103.228
 2026,11,401866462,Central Michigan,Mid-American,Sacramento State,Mid-American,Home,2026-11-12T00:30:00.000Z,False,False,,,,133,138,-183.207
 2026,12,401866469,Central Michigan,Mid-American,Buffalo,Mid-American,Away,2026-11-18T05:00:00.000Z,False,False,,,,91,96,-40.058
 2026,13,401866474,Central Michigan,Mid-American,Ball State,Mid-American,Away,2026-11-28T17:00:00.000Z,False,False,,,,131,127,-97.920
@@ -312,7 +312,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401866435,Eastern Michigan,Mid-American,Akron,Mid-American,Away,2026-10-10T19:30:00.000Z,True,False,25,23,W,132,135,-151.210
 2026,7,401866444,Eastern Michigan,Mid-American,Toledo,Mid-American,Home,2026-10-17T19:30:00.000Z,True,False,14,34,L,40,70,-5.725
 2026,8,401866449,Eastern Michigan,Mid-American,Ohio,Mid-American,Away,2026-10-24T20:00:00.000Z,True,False,20,24,L,43,83,-22.011
-2026,10,401866456,Eastern Michigan,Mid-American,Central Michigan,Mid-American,Home,2026-11-05T00:30:00.000Z,False,False,,,,113,115,-71.100
+2026,10,401866456,Eastern Michigan,Mid-American,Central Michigan,Mid-American,Home,2026-11-05T00:30:00.000Z,False,True,0,0,,113,115,-71.100
 2026,12,401866465,Eastern Michigan,Mid-American,Western Michigan,Mid-American,Away,2026-11-18T00:00:00.000Z,False,False,,,,47,65,3.756
 2026,13,401866470,Eastern Michigan,Mid-American,Kent State,Mid-American,Home,2026-11-25T00:00:00.000Z,False,False,,,,136,136,-152.871
 2026,1,401856637,Florida,SEC,Florida Atlantic,American Athletic,Home,2026-09-05T23:45:00.000Z,True,False,66,21,W,99,110,-65.166
