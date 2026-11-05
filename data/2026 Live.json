@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-05T03:20:58.151109+00:00",
+  "updatedAt": "2026-11-05T03:25:57.441662+00:00",
   "liveGames": [
     {
       "id": 401866455,
@@ -11,25 +11,10 @@
       "awayConference": "Mid-American",
       "homePoints": 24.0,
       "awayPoints": 24.0,
-      "period": 4,
+      "period": 5,
       "clock": "00:00",
-      "completedDrives": 23,
+      "completedDrives": 24,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401866457,
-      "status": "in_progress",
-      "homeTeam": "Sacramento State",
-      "awayTeam": "Toledo",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 17.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "00:11",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 13
     },
     {
@@ -42,7 +27,7 @@
       "homePoints": 0.0,
       "awayPoints": 35.0,
       "period": 4,
-      "clock": "09:08",
+      "clock": "07:27",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
@@ -52,8 +37,6 @@
     "Ball State",
     "Central Michigan",
     "Eastern Michigan",
-    "Massachusetts",
-    "Sacramento State",
-    "Toledo"
+    "Massachusetts"
   ]
 }
