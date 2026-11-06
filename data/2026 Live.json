@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-06T04:31:12.203924+00:00",
+  "updatedAt": "2026-11-06T04:35:58.461203+00:00",
   "liveGames": [
-    {
-      "id": 401862817,
-      "status": "in_progress",
-      "homeTeam": "Florida Atlantic",
-      "awayTeam": "UTSA",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 60.0,
-      "awayPoints": 29.0,
-      "period": 4,
-      "clock": "00:36",
-      "completedDrives": 27,
-      "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 14
-    },
     {
       "id": 401869964,
       "status": "in_progress",
@@ -24,19 +9,17 @@
       "awayTeam": "James Madison",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 20.0,
+      "homePoints": 23.0,
       "awayPoints": 51.0,
       "period": 4,
-      "clock": "06:57",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "04:48",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     }
   ],
   "liveTeams": [
-    "Florida Atlantic",
     "James Madison",
-    "Southern Miss",
-    "UTSA"
+    "Southern Miss"
   ]
 }
