@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-05T04:01:31.923072+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-06T00:40:59.116363+00:00",
+  "liveGames": [
+    {
+      "id": 401862817,
+      "status": "in_progress",
+      "homeTeam": "Florida Atlantic",
+      "awayTeam": "UTSA",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:09",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Florida Atlantic",
+    "UTSA"
+  ]
 }
