@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-06T03:35:57.781111+00:00",
+  "updatedAt": "2026-11-06T03:41:03.047950+00:00",
   "liveGames": [
     {
       "id": 401862817,
@@ -9,12 +9,12 @@
       "awayTeam": "UTSA",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 43.0,
+      "homePoints": 50.0,
       "awayPoints": 29.0,
       "period": 3,
-      "clock": "02:08",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "01:13",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -27,9 +27,9 @@
       "homePoints": 14.0,
       "awayPoints": 30.0,
       "period": 3,
-      "clock": "05:56",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "05:41",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     }
   ],
