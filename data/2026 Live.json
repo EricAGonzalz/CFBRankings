@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-06T02:30:58.990108+00:00",
+  "updatedAt": "2026-11-06T02:35:56.902733+00:00",
   "liveGames": [
     {
       "id": 401862817,
@@ -10,12 +10,12 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 35.0,
-      "awayPoints": 19.0,
+      "awayPoints": 22.0,
       "period": 2,
-      "clock": "00:02",
-      "completedDrives": 13,
+      "clock": "00:00",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401869964,
@@ -27,9 +27,9 @@
       "homePoints": 7.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "00:37",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     }
   ],
