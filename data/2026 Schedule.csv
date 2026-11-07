@@ -797,7 +797,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401864520,Nevada,Mountain West,North Dakota State,Mountain West,Away,2026-10-17T23:00:00.000Z,True,False,17,31,L,14,36,59.592
 2026,8,401864528,Nevada,Mountain West,San José State,Mountain West,Home,2026-10-24T21:00:00.000Z,True,False,28,13,W,83,94,-37.923
 2026,9,401858508,Nevada,Mountain West,UCLA,Big Ten,Away,2026-10-31T20:15:00.000Z,True,False,0,27,L,10,12,110.155
-2026,10,401864533,Nevada,Mountain West,New Mexico,Mountain West,Home,2026-11-07T02:00:00.000Z,False,True,3,31,,9,17,88.295
+2026,10,401864533,Nevada,Mountain West,New Mexico,Mountain West,Home,2026-11-07T02:00:00.000Z,True,False,3,31,L,9,17,88.295
 2026,11,401864536,Nevada,Mountain West,Northern Illinois,Mountain West,Away,2026-11-14T20:30:00.000Z,False,False,,,,137,134,-148.505
 2026,12,401864541,Nevada,Mountain West,Hawai'i,Mountain West,Home,2026-11-21T05:00:00.000Z,False,False,,,,91,113,-66.427
 2026,13,401864548,Nevada,Mountain West,UNLV,Mountain West,Away,2026-11-29T02:00:00.000Z,False,False,,,,58,79,-19.265
@@ -808,7 +808,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401864521,New Mexico,Mountain West,Hawai'i,Mountain West,Away,2026-10-18T02:30:00.000Z,True,False,21,10,W,91,113,-66.427
 2026,8,401864527,New Mexico,Mountain West,North Dakota State,Mountain West,Home,2026-10-25T02:00:00.000Z,True,False,21,16,W,14,36,59.592
 2026,9,401864529,New Mexico,Mountain West,San José State,Mountain West,Away,2026-10-31T20:00:00.000Z,True,False,21,16,W,83,94,-37.923
-2026,10,401864533,New Mexico,Mountain West,Nevada,Mountain West,Away,2026-11-07T02:00:00.000Z,False,True,31,3,,72,84,-24.913
+2026,10,401864533,New Mexico,Mountain West,Nevada,Mountain West,Away,2026-11-07T02:00:00.000Z,True,False,31,3,W,72,84,-24.913
 2026,11,401864539,New Mexico,Mountain West,UNLV,Mountain West,Home,2026-11-15T00:30:00.000Z,False,False,,,,58,79,-19.265
 2026,12,401864542,New Mexico,Mountain West,Wyoming,Mountain West,Away,2026-11-21T02:00:00.000Z,False,False,,,,79,87,-30.373
 2026,13,401864546,New Mexico,Mountain West,Air Force,Mountain West,Home,2026-11-27T21:30:00.000Z,False,False,,,,47,58,10.445
