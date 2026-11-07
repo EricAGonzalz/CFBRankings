@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T01:01:44.630048+00:00",
+  "updatedAt": "2026-11-07T01:06:26.184944+00:00",
   "liveGames": [
     {
       "id": 401858288,
@@ -12,10 +12,10 @@
       "homePoints": 13.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "08:23",
-      "completedDrives": 5,
+      "clock": "06:16",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401862818,
@@ -27,14 +27,31 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:56",
+      "clock": "04:47",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858510,
+      "status": "in_progress",
+      "homeTeam": "Illinois",
+      "awayTeam": "Nebraska",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "East Carolina",
+    "Illinois",
+    "Nebraska",
     "SMU",
     "South Florida",
     "Virginia Tech"
