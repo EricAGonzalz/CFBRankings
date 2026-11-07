@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T04:56:25.506457+00:00",
+  "updatedAt": "2026-11-07T05:01:40.052373+00:00",
   "liveGames": [
     {
       "id": 401864533,
@@ -10,12 +10,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 3.0,
-      "awayPoints": 28.0,
+      "awayPoints": 31.0,
       "period": 4,
-      "clock": "05:59",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "clock": "04:26",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401856855,
@@ -27,9 +27,9 @@
       "homePoints": 10.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
+      "clock": "01:24",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 4
     }
   ],
