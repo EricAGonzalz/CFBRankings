@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T04:06:27.522522+00:00",
+  "updatedAt": "2026-11-07T04:11:28.746552+00:00",
   "liveGames": [
     {
       "id": 401858510,
@@ -9,12 +9,12 @@
       "awayTeam": "Nebraska",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 21.0,
+      "homePoints": 24.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "09:03",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "07:51",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -25,12 +25,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 3.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 3,
-      "clock": "09:55",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
+      "clock": "08:45",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856855,
@@ -42,9 +42,9 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:56",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "00:16",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     }
   ],
