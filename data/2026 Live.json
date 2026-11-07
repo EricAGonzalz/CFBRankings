@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T17:31:43.595634+00:00",
+  "updatedAt": "2026-11-07T17:35:50.346129+00:00",
   "liveGames": [
     {
       "id": 401856743,
@@ -10,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:49",
-      "completedDrives": 2,
+      "clock": "05:19",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401856849,
@@ -25,12 +25,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 14.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "07:07",
-      "completedDrives": 3,
+      "clock": "06:04",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401856853,
@@ -42,7 +42,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:39",
+      "clock": "04:12",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -57,9 +57,9 @@
       "homePoints": 3.0,
       "awayPoints": 6.0,
       "period": 1,
-      "clock": "04:13",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "02:49",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -72,10 +72,10 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:44",
-      "completedDrives": 3,
+      "clock": "01:40",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858292,
@@ -85,7 +85,7 @@
       "homeConference": "FBS Independents",
       "awayConference": "ACC",
       "homePoints": 0.0,
-      "awayPoints": 6.0,
+      "awayPoints": 7.0,
       "period": 1,
       "clock": "05:29",
       "completedDrives": 5,
@@ -102,9 +102,9 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "08:22",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "07:49",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -117,10 +117,25 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "01:43",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "00:00",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401858515,
+      "status": "in_progress",
+      "homeTeam": "Purdue",
+      "awayTeam": "Maryland",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:33",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -130,9 +145,11 @@
     "Clemson",
     "Florida State",
     "Iowa State",
+    "Maryland",
     "Minnesota",
     "Missouri",
     "North Carolina",
+    "Purdue",
     "Syracuse",
     "Texas",
     "Tulane",
