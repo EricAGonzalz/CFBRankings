@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T22:31:53.351292+00:00",
+  "updatedAt": "2026-11-07T22:35:49.372877+00:00",
   "liveGames": [
     {
       "id": 401869927,
@@ -10,12 +10,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 23.0,
-      "awayPoints": 36.0,
+      "awayPoints": 39.0,
       "period": 4,
-      "clock": "04:43",
-      "completedDrives": 20,
+      "clock": "03:43",
+      "completedDrives": 21,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856744,
@@ -27,10 +27,10 @@
       "homePoints": 7.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "14:54",
-      "completedDrives": 14,
+      "clock": "13:04",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401869936,
@@ -39,12 +39,12 @@
       "awayTeam": "UL Monroe",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 14.0,
+      "homePoints": 17.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "08:26",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 6,
+      "clock": "05:42",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
     },
     {
@@ -57,10 +57,10 @@
       "homePoints": 33.0,
       "awayPoints": 31.0,
       "period": 3,
-      "clock": "06:01",
-      "completedDrives": 15,
+      "clock": "04:35",
+      "completedDrives": 16,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856740,
@@ -71,8 +71,8 @@
       "awayConference": "SEC",
       "homePoints": 3.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "15:00",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -117,10 +117,10 @@
       "homePoints": 6.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "14:49",
-      "completedDrives": 12,
+      "clock": "13:44",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401862819,
@@ -132,7 +132,7 @@
       "homePoints": 3.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "07:24",
+      "clock": "06:39",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -147,7 +147,7 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "11:53",
+      "clock": "11:52",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
@@ -162,10 +162,10 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "05:59",
-      "completedDrives": 16,
+      "clock": "12:18",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401871076,
@@ -175,12 +175,12 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 28.0,
-      "awayPoints": 13.0,
+      "awayPoints": 20.0,
       "period": 3,
-      "clock": "13:59",
-      "completedDrives": 14,
+      "clock": "12:37",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856850,
@@ -207,9 +207,9 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "01:03",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "00:30",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -219,12 +219,12 @@
       "awayTeam": "Northern Illinois",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 13.0,
+      "homePoints": 16.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "01:44",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "00:58",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -237,10 +237,10 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "00:45",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "clock": "00:00",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401871098,
@@ -252,10 +252,10 @@
       "homePoints": 10.0,
       "awayPoints": 20.0,
       "period": 2,
-      "clock": "00:17",
-      "completedDrives": 12,
+      "clock": "00:00",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856742,
@@ -265,12 +265,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 10.0,
+      "awayPoints": 13.0,
       "period": 2,
-      "clock": "01:54",
-      "completedDrives": 9,
+      "clock": "01:43",
+      "completedDrives": 10,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401858517,
@@ -279,12 +279,12 @@
       "awayTeam": "Rutgers",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 10.0,
+      "homePoints": 13.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "00:30",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "00:24",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -297,7 +297,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:11",
+      "clock": "02:06",
       "completedDrives": 4,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 3
