@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T22:40:55.560220+00:00",
+  "updatedAt": "2026-11-07T22:46:19.873168+00:00",
   "liveGames": [
-    {
-      "id": 401869927,
-      "status": "in_progress",
-      "homeTeam": "App State",
-      "awayTeam": "Georgia State",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 23.0,
-      "awayPoints": 39.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401856744,
       "status": "in_progress",
@@ -24,12 +9,12 @@
       "awayTeam": "Texas A&M",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "09:27",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "08:14",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -42,7 +27,7 @@
       "homePoints": 17.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "05:42",
+      "clock": "03:16",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -55,12 +40,12 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 33.0,
-      "awayPoints": 31.0,
+      "awayPoints": 34.0,
       "period": 3,
-      "clock": "03:18",
-      "completedDrives": 17,
+      "clock": "00:55",
+      "completedDrives": 18,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856740,
@@ -69,10 +54,10 @@
       "awayTeam": "Alabama",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "11:48",
+      "clock": "11:35",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -86,8 +71,8 @@
       "awayConference": "Big 12",
       "homePoints": 21.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:44",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -117,7 +102,7 @@
       "homePoints": 9.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "10:27",
+      "clock": "09:06",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -129,12 +114,12 @@
       "awayTeam": "Charlotte",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "05:10",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "03:37",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -147,10 +132,10 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "09:11",
-      "completedDrives": 14,
+      "clock": "07:45",
+      "completedDrives": 15,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401869951,
@@ -159,12 +144,12 @@
       "awayTeam": "Marshall",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "10:17",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "08:31",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -177,10 +162,10 @@
       "homePoints": 28.0,
       "awayPoints": 20.0,
       "period": 3,
-      "clock": "11:34",
-      "completedDrives": 16,
+      "clock": "09:52",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856850,
@@ -190,12 +175,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 12.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 13,
+      "awayPoints": 19.0,
+      "period": 3,
+      "clock": "11:56",
+      "completedDrives": 14,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401862821,
@@ -222,10 +207,10 @@
       "homePoints": 16.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "00:20",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 6
+      "clock": "00:21",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401871074,
@@ -265,12 +250,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 13.0,
+      "awayPoints": 16.0,
       "period": 2,
-      "clock": "00:16",
-      "completedDrives": 11,
+      "clock": "00:00",
+      "completedDrives": 12,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858517,
@@ -294,10 +279,10 @@
       "awayTeam": "South Alabama",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "15:00",
+      "clock": "14:44",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -305,14 +290,12 @@
   ],
   "liveTeams": [
     "Alabama",
-    "App State",
     "Arkansas State",
     "Charlotte",
     "Cincinnati",
     "Delaware",
     "Florida International",
     "Georgia Southern",
-    "Georgia State",
     "Houston",
     "Kansas",
     "Kennesaw State",
