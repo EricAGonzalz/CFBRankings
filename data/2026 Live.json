@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T02:01:56.122189+00:00",
+  "updatedAt": "2026-11-07T02:06:39.598663+00:00",
   "liveGames": [
     {
       "id": 401858288,
@@ -12,10 +12,10 @@
       "homePoints": 23.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "14:59",
-      "completedDrives": 10,
+      "clock": "11:57",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401862818,
@@ -25,11 +25,11 @@
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
       "homePoints": 3.0,
-      "awayPoints": 7.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "01:15",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "00:31",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -42,16 +42,33 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "09:29",
+      "clock": "07:30",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401864533,
+      "status": "in_progress",
+      "homeTeam": "Nevada",
+      "awayTeam": "New Mexico",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:49",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "East Carolina",
     "Illinois",
     "Nebraska",
+    "Nevada",
+    "New Mexico",
     "SMU",
     "South Florida",
     "Virginia Tech"
