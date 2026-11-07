@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-06T04:56:01.361781+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-07T00:11:33.100134+00:00",
+  "liveGames": [
+    {
+      "id": 401858288,
+      "status": "in_progress",
+      "homeTeam": "SMU",
+      "awayTeam": "Virginia Tech",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 6.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:24",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "SMU",
+    "Virginia Tech"
+  ]
 }

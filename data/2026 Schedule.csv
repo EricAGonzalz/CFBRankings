@@ -9,7 +9,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401862823,Air Force,Mountain West,Army,American Athletic,Away,2026-11-08T00:30:00.000Z,False,False,,,,64,62,7.776
 2026,11,401864538,Air Force,Mountain West,San José State,Mountain West,Home,2026-11-15T00:00:00.000Z,False,False,,,,83,95,-37.931
 2026,12,401864545,Air Force,Mountain West,UTEP,Mountain West,Home,2026-11-21T01:00:00.000Z,False,False,,,,138,138,-181.867
-2026,13,401864546,Air Force,Mountain West,New Mexico,Mountain West,Away,2026-11-28T21:30:00.000Z,False,False,,,,11,23,77.903
+2026,13,401864546,Air Force,Mountain West,New Mexico,Mountain West,Away,2026-11-27T21:30:00.000Z,False,False,,,,11,23,77.903
 2026,1,401858204,Akron,Mid-American,Wake Forest,ACC,Away,2026-09-03T23:00:00.000Z,True,False,16,38,L,3,7,141.210
 2026,3,401858451,Akron,Mid-American,Minnesota,Big Ten,Away,2026-09-19T16:00:00.000Z,True,False,7,41,L,81,71,-10.826
 2026,4,401864512,Akron,Mid-American,UNLV,Mountain West,Home,2026-09-26T16:00:00.000Z,True,False,10,38,L,58,80,-19.121
@@ -154,9 +154,9 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401860925,Boise State,Pac-12,San Diego State,Pac-12,Home,2026-11-22T02:30:00.000Z,False,False,,,,119,114,-69.526
 2026,1,401856777,Boston College,ACC,Cincinnati,Big 12,Away,2026-09-05T19:30:00.000Z,True,False,15,34,L,99,75,-13.973
 2026,2,401858214,Boston College,ACC,Rutgers,Big Ten,Home,2026-09-11T23:30:00.000Z,True,False,28,21,W,122,110,-58.802
-2026,4,401858242,Boston College,ACC,Virginia Tech,ACC,Home,2026-09-26T16:00:00.000Z,True,False,14,21,L,39,56,14.440
+2026,4,401858242,Boston College,ACC,Virginia Tech,ACC,Home,2026-09-26T16:00:00.000Z,True,False,14,21,L,41,56,14.440
 2026,5,401858246,Boston College,ACC,SMU,ACC,Away,2026-10-03T16:00:00.000Z,True,False,16,25,L,38,47,27.835
-2026,7,401858267,Boston College,ACC,Pittsburgh,ACC,Home,2026-10-17T16:00:00.000Z,True,False,27,21,W,41,42,44.590
+2026,7,401858267,Boston College,ACC,Pittsburgh,ACC,Home,2026-10-17T16:00:00.000Z,True,False,27,21,W,40,42,44.590
 2026,8,401858273,Boston College,ACC,Georgia Tech,ACC,Away,2026-10-24T19:30:00.000Z,True,False,49,27,W,112,109,-58.116
 2026,9,401858279,Boston College,ACC,Duke,ACC,Away,2026-10-31T16:00:00.000Z,True,False,2,47,L,22,40,50.533
 2026,10,401858289,Boston College,ACC,Florida State,ACC,Home,2026-11-07T17:00:00.000Z,False,False,,,,74,49,21.821
@@ -188,13 +188,13 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401858216,California,ACC,Syracuse,ACC,Away,2026-09-12T19:30:00.000Z,True,False,21,18,W,89,78,-16.198
 2026,4,401858234,California,ACC,Clemson,ACC,Home,2026-09-26T02:30:00.000Z,True,False,10,24,L,95,65,0.694
 2026,5,401858247,California,ACC,UNLV,Mountain West,Away,2026-10-03T19:30:00.000Z,True,False,31,39,L,58,80,-19.121
-2026,6,401858259,California,ACC,Virginia Tech,ACC,Home,2026-10-10T19:30:00.000Z,True,False,25,20,W,39,56,14.440
+2026,6,401858259,California,ACC,Virginia Tech,ACC,Home,2026-10-10T19:30:00.000Z,True,False,25,20,W,41,56,14.440
 2026,7,401858269,California,ACC,Wake Forest,ACC,Home,2026-10-18T02:30:00.000Z,True,False,7,41,L,3,7,141.210
 2026,8,401858270,California,ACC,SMU,ACC,Away,2026-10-24T16:00:00.000Z,True,False,20,59,L,38,47,27.835
 2026,9,401858277,California,ACC,NC State,ACC,Away,2026-10-31T16:00:00.000Z,True,False,10,31,L,87,93,-37.461
 2026,11,401858295,California,ACC,Virginia,ACC,Away,2026-11-14T20:30:00.000Z,False,False,,,,94,79,-18.433
 2026,12,401858308,California,ACC,Stanford,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,135,125,-97.269
-2026,13,401858315,California,ACC,Pittsburgh,ACC,Home,2026-11-28T05:00:00.000Z,False,False,,,,41,42,44.590
+2026,13,401858315,California,ACC,Pittsburgh,ACC,Home,2026-11-28T05:00:00.000Z,False,False,,,,40,42,44.590
 2026,1,401864498,Central Michigan,Mid-American,New Mexico,Mountain West,Away,2026-09-06T02:00:00.000Z,True,False,7,38,L,11,23,77.903
 2026,3,401864508,Central Michigan,Mid-American,Wyoming,Mountain West,Home,2026-09-19T17:00:00.000Z,True,False,24,10,W,79,87,-30.190
 2026,4,401858238,Central Michigan,Mid-American,Miami,ACC,Away,2026-09-26T22:30:00.000Z,True,False,3,52,L,2,2,167.507
@@ -210,7 +210,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,3,401864574,Charlotte,American Athletic,App State,Sun Belt,Away,2026-09-19T22:00:00.000Z,True,False,21,26,L,84,107,-55.120
 2026,4,401862780,Charlotte,American Athletic,Louisiana,Sun Belt,Home,2026-09-26T22:30:00.000Z,True,False,7,34,L,50,67,-0.952
 2026,5,401862787,Charlotte,American Athletic,Memphis,American Athletic,Home,2026-10-03T15:00:00.000Z,True,False,8,59,L,24,37,53.420
-2026,6,401862796,Charlotte,American Athletic,North Texas,American Athletic,Away,2026-10-10T19:30:00.000Z,True,False,10,50,L,40,55,15.265
+2026,6,401862796,Charlotte,American Athletic,North Texas,American Athletic,Away,2026-10-10T19:30:00.000Z,True,False,10,50,L,39,55,15.265
 2026,7,401862803,Charlotte,American Athletic,Temple,American Athletic,Away,2026-10-17T17:00:00.000Z,True,False,38,31,W,103,108,-57.313
 2026,9,401862813,Charlotte,American Athletic,Tulane,American Athletic,Home,2026-10-30T23:00:00.000Z,True,False,31,38,L,72,83,-22.130
 2026,10,401862819,Charlotte,American Athletic,UAB,American Athletic,Away,2026-11-07T20:30:00.000Z,False,False,,,,105,112,-62.110
@@ -233,7 +233,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,3,401858229,Clemson,ACC,North Carolina,ACC,Home,2026-09-19T16:00:00.000Z,True,False,28,20,W,73,44,37.133
 2026,4,401858234,Clemson,ACC,California,ACC,Away,2026-09-26T02:30:00.000Z,True,False,24,10,W,126,120,-79.504
 2026,5,401858249,Clemson,ACC,Miami,ACC,Home,2026-10-03T23:30:00.000Z,True,False,13,41,L,2,2,167.507
-2026,8,401858276,Clemson,ACC,Virginia Tech,ACC,Home,2026-10-24T23:00:00.000Z,True,False,16,20,L,39,56,14.440
+2026,8,401858276,Clemson,ACC,Virginia Tech,ACC,Home,2026-10-24T23:00:00.000Z,True,False,16,20,L,41,56,14.440
 2026,9,401858280,Clemson,ACC,Florida State,ACC,Away,2026-10-31T23:00:00.000Z,True,False,36,24,W,74,49,21.821
 2026,10,401858285,Clemson,ACC,Syracuse,ACC,Away,2026-11-07T17:00:00.000Z,False,False,,,,89,78,-16.198
 2026,11,401858297,Clemson,ACC,Georgia Tech,ACC,Home,2026-11-14T17:30:00.000Z,False,False,,,,112,109,-58.116
@@ -332,7 +332,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401862782,Florida Atlantic,American Athletic,UL Monroe,Sun Belt,Away,2026-09-27T00:00:00.000Z,True,False,45,17,W,131,133,-137.267
 2026,7,401862802,Florida Atlantic,American Athletic,Army,American Athletic,Away,2026-10-17T16:00:00.000Z,True,False,24,56,L,64,62,7.776
 2026,8,401862809,Florida Atlantic,American Athletic,Rice,American Athletic,Home,2026-10-24T16:00:00.000Z,True,False,51,49,W,128,124,-95.284
-2026,9,401862812,Florida Atlantic,American Athletic,North Texas,American Athletic,Away,2026-10-29T23:30:00.000Z,True,False,41,48,L,40,55,15.265
+2026,9,401862812,Florida Atlantic,American Athletic,North Texas,American Athletic,Away,2026-10-29T23:30:00.000Z,True,False,41,48,L,39,55,15.265
 2026,10,401862817,Florida Atlantic,American Athletic,UTSA,American Athletic,Home,2026-11-06T00:30:00.000Z,True,False,60,29,W,67,70,-10.417
 2026,11,401862826,Florida Atlantic,American Athletic,Tulsa,American Athletic,Away,2026-11-14T20:30:00.000Z,False,False,,,,56,69,-7.913
 2026,12,401862833,Florida Atlantic,American Athletic,South Florida,American Athletic,Home,2026-11-21T05:00:00.000Z,False,False,,,,29,57,12.643
@@ -356,7 +356,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401858263,Florida State,ACC,Miami,ACC,Away,2026-10-17T23:00:00.000Z,True,False,35,43,L,2,2,167.507
 2026,9,401858280,Florida State,ACC,Clemson,ACC,Home,2026-10-31T23:00:00.000Z,True,False,24,36,L,95,65,0.694
 2026,10,401858289,Florida State,ACC,Boston College,ACC,Away,2026-11-07T17:00:00.000Z,False,False,,,,101,89,-32.070
-2026,11,401858293,Florida State,ACC,Pittsburgh,ACC,Away,2026-11-14T00:00:00.000Z,False,False,,,,41,42,44.590
+2026,11,401858293,Florida State,ACC,Pittsburgh,ACC,Away,2026-11-14T00:00:00.000Z,False,False,,,,40,42,44.590
 2026,12,401858304,Florida State,ACC,NC State,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,87,93,-37.461
 2026,13,401856759,Florida State,ACC,Florida,SEC,Home,2026-11-27T20:30:00.000Z,False,False,,,,60,32,65.401
 2026,1,401858436,Fresno State,Pac-12,USC,Big Ten,Away,2026-09-05T01:00:00.000Z,True,False,0,39,L,30,17,86.632
@@ -407,9 +407,9 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,2,401856681,Georgia Tech,ACC,Tennessee,SEC,Home,2026-09-12T23:00:00.000Z,True,False,24,45,L,25,16,97.937
 2026,4,401858240,Georgia Tech,ACC,Stanford,ACC,Away,2026-09-27T02:30:00.000Z,True,False,27,34,L,135,125,-97.269
 2026,6,401858255,Georgia Tech,ACC,Duke,ACC,Home,2026-10-10T19:30:00.000Z,True,False,28,25,W,22,40,50.533
-2026,7,401858264,Georgia Tech,ACC,Virginia Tech,ACC,Away,2026-10-17T19:30:00.000Z,True,False,24,34,L,39,56,14.440
+2026,7,401858264,Georgia Tech,ACC,Virginia Tech,ACC,Away,2026-10-17T19:30:00.000Z,True,False,24,34,L,41,56,14.440
 2026,8,401858273,Georgia Tech,ACC,Boston College,ACC,Home,2026-10-24T19:30:00.000Z,True,False,27,49,L,101,89,-32.070
-2026,9,401858281,Georgia Tech,ACC,Pittsburgh,ACC,Away,2026-10-31T23:30:00.000Z,True,False,11,34,L,41,42,44.590
+2026,9,401858281,Georgia Tech,ACC,Pittsburgh,ACC,Away,2026-10-31T23:30:00.000Z,True,False,11,34,L,40,42,44.590
 2026,10,401858287,Georgia Tech,ACC,Louisville,ACC,Home,2026-11-08T00:30:00.000Z,False,False,,,,34,34,63.415
 2026,11,401858297,Georgia Tech,ACC,Clemson,ACC,Away,2026-11-14T17:30:00.000Z,False,False,,,,95,65,0.694
 2026,12,401858310,Georgia Tech,ACC,Wake Forest,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,3,7,141.210
@@ -448,7 +448,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,11,401858526,Illinois,Big Ten,UCLA,Big Ten,Away,2026-11-14T02:00:00.000Z,False,False,,,,9,12,111.248
 2026,12,401858527,Illinois,Big Ten,Iowa,Big Ten,Home,2026-11-21T05:00:00.000Z,False,False,,,,26,26,72.863
 2026,13,401858537,Illinois,Big Ten,Northwestern,Big Ten,Away,2026-11-28T05:00:00.000Z,False,False,,,,14,15,98.293
-2026,1,401858425,Indiana,Big Ten,North Texas,American Athletic,Home,2026-09-05T16:00:00.000Z,True,False,52,16,W,40,55,15.265
+2026,1,401858425,Indiana,Big Ten,North Texas,American Athletic,Home,2026-09-05T16:00:00.000Z,True,False,52,16,W,39,55,15.265
 2026,3,401858449,Indiana,Big Ten,Western Kentucky,Conference USA,Home,2026-09-19T20:00:00.000Z,True,False,38,0,W,129,127,-104.428
 2026,4,401858461,Indiana,Big Ten,Northwestern,Big Ten,Home,2026-09-26T00:00:00.000Z,True,False,29,23,W,14,15,98.293
 2026,5,401858477,Indiana,Big Ten,Rutgers,Big Ten,Away,2026-10-04T00:00:00.000Z,True,False,47,15,W,122,110,-58.802
@@ -611,7 +611,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401858283,Louisville,ACC,Stanford,ACC,Home,2026-10-31T19:15:00.000Z,True,False,52,24,W,135,125,-97.269
 2026,10,401858287,Louisville,ACC,Georgia Tech,ACC,Away,2026-11-08T00:30:00.000Z,False,False,,,,112,109,-58.116
 2026,11,401858298,Louisville,ACC,North Carolina,ACC,Away,2026-11-14T05:00:00.000Z,False,False,,,,73,44,37.133
-2026,12,401858306,Louisville,ACC,Pittsburgh,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,41,42,44.590
+2026,12,401858306,Louisville,ACC,Pittsburgh,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,40,42,44.590
 2026,13,401856761,Louisville,ACC,Kentucky,SEC,Away,2026-11-28T05:00:00.000Z,False,False,,,,46,24,77.662
 2026,1,401858434,Marshall,Sun Belt,Penn State,Big Ten,Away,2026-09-05T19:30:00.000Z,True,False,0,45,L,27,27,71.405
 2026,2,401871045,Marshall,Sun Belt,Middle Tennessee,Conference USA,Home,2026-09-12T23:00:00.000Z,True,False,28,26,W,108,119,-78.436
@@ -625,7 +625,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,12,401869958,Marshall,Sun Belt,Georgia State,Sun Belt,Home,2026-11-21T05:00:00.000Z,False,False,,,,65,86,-28.268
 2026,13,401871102,Marshall,Sun Belt,UL Monroe,Sun Belt,Away,2026-11-28T05:00:00.000Z,False,False,,,,131,133,-137.267
 2026,2,401858444,Maryland,Big Ten,UConn,FBS Independents,Away,2026-09-12T19:30:00.000Z,True,False,38,14,W,51,72,-11.438
-2026,3,401858232,Maryland,Big Ten,Virginia Tech,ACC,Home,2026-09-19T23:30:00.000Z,True,False,26,35,L,39,56,14.440
+2026,3,401858232,Maryland,Big Ten,Virginia Tech,ACC,Home,2026-09-19T23:30:00.000Z,True,False,26,35,L,41,56,14.440
 2026,4,401858462,Maryland,Big Ten,UCLA,Big Ten,Home,2026-09-26T17:30:00.000Z,True,False,3,54,L,9,12,111.248
 2026,5,401858475,Maryland,Big Ten,Nebraska,Big Ten,Away,2026-10-03T20:00:00.000Z,True,False,23,48,L,13,13,106.568
 2026,6,401858483,Maryland,Big Ten,Ohio State,Big Ten,Away,2026-10-10T20:15:00.000Z,True,False,16,45,L,5,5,143.334
@@ -661,13 +661,13 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,4,401858238,Miami,ACC,Central Michigan,Mid-American,Home,2026-09-26T22:30:00.000Z,True,False,52,3,W,102,100,-46.887
 2026,5,401858249,Miami,ACC,Clemson,ACC,Away,2026-10-03T23:30:00.000Z,True,False,41,13,W,95,65,0.694
 2026,7,401858263,Miami,ACC,Florida State,ACC,Home,2026-10-17T23:00:00.000Z,True,False,43,35,W,74,49,21.821
-2026,8,401858274,Miami,ACC,Pittsburgh,ACC,Home,2026-10-24T16:00:00.000Z,True,False,52,23,W,41,42,44.590
+2026,8,401858274,Miami,ACC,Pittsburgh,ACC,Home,2026-10-24T16:00:00.000Z,True,False,52,23,W,40,42,44.590
 2026,9,401858282,Miami,ACC,North Carolina,ACC,Away,2026-10-31T23:30:00.000Z,True,False,38,35,W,73,44,37.133
 2026,10,401858291,Miami,ACC,Notre Dame,FBS Independents,Away,2026-11-08T00:30:00.000Z,False,False,,,,1,1,181.113
 2026,11,401858296,Miami,ACC,Duke,ACC,Home,2026-11-14T17:00:00.000Z,False,False,,,,22,40,50.533
-2026,12,401858302,Miami,ACC,Virginia Tech,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,39,56,14.440
+2026,12,401858302,Miami,ACC,Virginia Tech,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,41,56,14.440
 2026,13,401858311,Miami,ACC,Boston College,ACC,Home,2026-11-28T05:00:00.000Z,False,False,,,,101,89,-32.070
-2026,1,401858207,Miami (OH),Mid-American,Pittsburgh,ACC,Away,2026-09-05T16:30:00.000Z,True,False,14,59,L,41,42,44.590
+2026,1,401858207,Miami (OH),Mid-American,Pittsburgh,ACC,Away,2026-09-05T16:30:00.000Z,True,False,14,59,L,40,42,44.590
 2026,3,401856797,Miami (OH),Mid-American,Cincinnati,Big 12,Away,2026-09-19T19:30:00.000Z,True,False,31,35,L,99,75,-13.973
 2026,4,401861970,Miami (OH),Mid-American,UConn,FBS Independents,Home,2026-09-26T19:30:00.000Z,True,False,24,21,W,51,72,-11.438
 2026,5,401866477,Miami (OH),Mid-American,Bowling Green,Mid-American,Home,2026-10-03T19:30:00.000Z,True,False,20,24,L,116,121,-87.333
@@ -773,7 +773,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,5,401862791,Navy,American Athletic,Air Force,Mountain West,Away,2026-10-03T16:00:00.000Z,True,False,9,14,L,48,58,11.737
 2026,6,401862799,Navy,American Athletic,Tulsa,American Athletic,Home,2026-10-10T19:30:00.000Z,True,False,34,26,W,56,69,-7.913
 2026,7,401862804,Navy,American Athletic,UTSA,American Athletic,Away,2026-10-18T00:00:00.000Z,True,False,34,38,L,67,70,-10.417
-2026,8,401862810,Navy,American Athletic,North Texas,American Athletic,Home,2026-10-24T19:30:00.000Z,True,False,39,49,L,40,55,15.265
+2026,8,401862810,Navy,American Athletic,North Texas,American Athletic,Home,2026-10-24T19:30:00.000Z,True,False,39,49,L,39,55,15.265
 2026,9,401859185,Navy,American Athletic,Notre Dame,FBS Independents,Home,2026-10-31T16:00:00.000Z,True,False,13,35,L,1,1,181.113
 2026,10,401862820,Navy,American Athletic,Temple,American Athletic,Home,2026-11-07T20:30:00.000Z,False,False,,,,103,108,-57.313
 2026,12,401862834,Navy,American Athletic,Memphis,American Athletic,Home,2026-11-21T17:00:00.000Z,False,False,,,,24,37,53.420
@@ -810,8 +810,8 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401864529,New Mexico,Mountain West,San José State,Mountain West,Away,2026-10-31T20:00:00.000Z,True,False,21,16,W,83,95,-37.931
 2026,10,401864533,New Mexico,Mountain West,Nevada,Mountain West,Away,2026-11-07T02:00:00.000Z,False,False,,,,54,77,-14.453
 2026,11,401864539,New Mexico,Mountain West,UNLV,Mountain West,Home,2026-11-15T00:30:00.000Z,False,False,,,,58,80,-19.121
-2026,12,401864542,New Mexico,Mountain West,Wyoming,Mountain West,Away,2026-11-22T02:00:00.000Z,False,False,,,,79,87,-30.190
-2026,13,401864546,New Mexico,Mountain West,Air Force,Mountain West,Home,2026-11-28T21:30:00.000Z,False,False,,,,48,58,11.737
+2026,12,401864542,New Mexico,Mountain West,Wyoming,Mountain West,Away,2026-11-21T02:00:00.000Z,False,False,,,,79,87,-30.190
+2026,13,401864546,New Mexico,Mountain West,Air Force,Mountain West,Home,2026-11-27T21:30:00.000Z,False,False,,,,48,58,11.737
 2026,1,401864570,New Mexico State,Conference USA,Florida State,ACC,Away,2026-08-29T23:00:00.000Z,True,False,17,34,L,74,49,21.821
 2026,2,401864578,New Mexico State,Conference USA,Hawai'i,Mountain West,Away,2026-09-13T03:59:00.000Z,True,False,19,29,L,90,113,-67.370
 2026,4,401864579,New Mexico State,Conference USA,New Mexico,Mountain West,Home,2026-09-26T19:30:00.000Z,True,False,18,42,L,11,23,77.903
@@ -826,7 +826,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401856766,North Carolina,ACC,TCU,Big 12,Away,2026-08-29T16:00:00.000Z,True,False,15,10,W,52,45,33.077
 2026,3,401858229,North Carolina,ACC,Clemson,ACC,Away,2026-09-19T16:00:00.000Z,True,False,20,28,L,95,65,0.694
 2026,5,401858250,North Carolina,ACC,Notre Dame,FBS Independents,Home,2026-10-03T16:00:00.000Z,True,False,26,37,L,1,1,181.113
-2026,6,401858256,North Carolina,ACC,Pittsburgh,ACC,Away,2026-10-10T16:00:00.000Z,True,False,21,17,W,41,42,44.590
+2026,6,401858256,North Carolina,ACC,Pittsburgh,ACC,Away,2026-10-10T16:00:00.000Z,True,False,21,17,W,40,42,44.590
 2026,7,401858266,North Carolina,ACC,Duke,ACC,Away,2026-10-17T19:30:00.000Z,True,False,24,20,W,22,40,50.533
 2026,8,401858275,North Carolina,ACC,Syracuse,ACC,Home,2026-10-24T23:30:00.000Z,True,False,30,31,L,89,78,-16.198
 2026,9,401858282,North Carolina,ACC,Miami,ACC,Home,2026-10-31T23:30:00.000Z,True,False,35,38,L,2,2,167.507
@@ -936,7 +936,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,11,401856863,Oklahoma State,Big 12,Texas Tech,Big 12,Home,2026-11-14T05:00:00.000Z,False,False,,,,16,21,84.117
 2026,12,401856870,Oklahoma State,Big 12,Arizona State,Big 12,Away,2026-11-21T05:00:00.000Z,False,False,,,,106,84,-24.655
 2026,13,401856877,Oklahoma State,Big 12,Kansas,Big 12,Home,2026-11-28T05:00:00.000Z,False,False,,,,70,53,18.051
-2026,2,401858221,Old Dominion,Sun Belt,Virginia Tech,ACC,Away,2026-09-12T16:00:00.000Z,True,False,21,44,L,39,56,14.440
+2026,2,401858221,Old Dominion,Sun Belt,Virginia Tech,ACC,Away,2026-09-12T16:00:00.000Z,True,False,21,44,L,41,56,14.440
 2026,3,401862710,Old Dominion,Sun Belt,East Carolina,American Athletic,Home,2026-09-19T22:00:00.000Z,True,False,17,20,L,96,103,-48.430
 2026,4,401869961,Old Dominion,Sun Belt,James Madison,Sun Belt,Home,2026-09-26T22:00:00.000Z,True,False,20,46,L,20,41,49.922
 2026,5,401869956,Old Dominion,Sun Belt,Georgia State,Sun Belt,Away,2026-10-03T19:30:00.000Z,True,False,10,42,L,65,86,-28.268
@@ -994,7 +994,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,1,401858207,Pittsburgh,ACC,Miami (OH),Mid-American,Home,2026-09-05T16:30:00.000Z,True,False,59,14,W,78,101,-46.942
 2026,2,401856790,Pittsburgh,ACC,UCF,Big 12,Home,2026-09-12T19:30:00.000Z,True,False,12,7,W,93,60,9.772
 2026,3,401858225,Pittsburgh,ACC,Syracuse,ACC,Home,2026-09-17T23:30:00.000Z,True,False,27,13,W,89,78,-16.198
-2026,5,401858245,Pittsburgh,ACC,Virginia Tech,ACC,Away,2026-10-02T23:00:00.000Z,True,False,35,33,W,39,56,14.440
+2026,5,401858245,Pittsburgh,ACC,Virginia Tech,ACC,Away,2026-10-02T23:00:00.000Z,True,False,35,33,W,41,56,14.440
 2026,6,401858256,Pittsburgh,ACC,North Carolina,ACC,Home,2026-10-10T16:00:00.000Z,True,False,17,21,L,73,44,37.133
 2026,7,401858267,Pittsburgh,ACC,Boston College,ACC,Away,2026-10-17T16:00:00.000Z,True,False,21,27,L,101,89,-32.070
 2026,8,401858274,Pittsburgh,ACC,Miami,ACC,Away,2026-10-24T16:00:00.000Z,True,False,23,52,L,2,2,167.507
@@ -1020,7 +1020,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401862797,Rice,American Athletic,East Carolina,American Athletic,Away,2026-10-10T17:00:00.000Z,True,False,12,28,L,96,103,-48.430
 2026,7,401862805,Rice,American Athletic,Tulsa,American Athletic,Home,2026-10-17T20:30:00.000Z,True,False,17,38,L,56,69,-7.913
 2026,8,401862809,Rice,American Athletic,Florida Atlantic,American Athletic,Away,2026-10-24T16:00:00.000Z,True,False,49,51,L,68,96,-39.063
-2026,10,401862821,Rice,American Athletic,North Texas,American Athletic,Away,2026-11-07T21:00:00.000Z,False,False,,,,40,55,15.265
+2026,10,401862821,Rice,American Athletic,North Texas,American Athletic,Away,2026-11-07T21:00:00.000Z,False,False,,,,39,55,15.265
 2026,11,401862828,Rice,American Athletic,Tulane,American Athletic,Home,2026-11-14T19:00:00.000Z,False,False,,,,72,83,-22.130
 2026,12,401862830,Rice,American Athletic,Temple,American Athletic,Away,2026-11-20T00:30:00.000Z,False,False,,,,103,108,-57.313
 2026,13,401862841,Rice,American Athletic,Army,American Athletic,Home,2026-11-28T05:00:00.000Z,False,False,,,,64,62,7.776
@@ -1042,7 +1042,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401858268,SMU,ACC,Virginia,ACC,Home,2026-10-17T16:00:00.000Z,True,False,23,13,W,94,79,-18.433
 2026,8,401858270,SMU,ACC,California,ACC,Home,2026-10-24T16:00:00.000Z,True,False,59,20,W,126,120,-79.504
 2026,9,401858278,SMU,ACC,Syracuse,ACC,Away,2026-10-31T16:00:00.000Z,True,False,27,30,L,89,78,-16.198
-2026,10,401858288,SMU,ACC,Virginia Tech,ACC,Home,2026-11-07T00:00:00.000Z,False,False,,,,39,56,14.440
+2026,10,401858288,SMU,ACC,Virginia Tech,ACC,Home,2026-11-07T00:00:00.000Z,False,True,6,0,,41,56,14.440
 2026,11,401858301,SMU,ACC,Wake Forest,ACC,Home,2026-11-14T17:00:00.000Z,False,False,,,,3,7,141.210
 2026,12,401858307,SMU,ACC,Notre Dame,FBS Independents,Away,2026-11-22T00:30:00.000Z,False,False,,,,1,1,181.113
 2026,13,401858316,SMU,ACC,Stanford,ACC,Away,2026-11-28T05:00:00.000Z,False,False,,,,135,125,-97.269
@@ -1142,11 +1142,11 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,6,401858257,Stanford,ACC,Notre Dame,FBS Independents,Away,2026-10-10T19:30:00.000Z,True,False,7,58,L,1,1,181.113
 2026,8,401858272,Stanford,ACC,NC State,ACC,Home,2026-10-24T02:30:00.000Z,True,False,31,28,W,87,93,-37.461
 2026,9,401858283,Stanford,ACC,Louisville,ACC,Away,2026-10-31T19:15:00.000Z,True,False,24,52,L,34,34,63.415
-2026,11,401858299,Stanford,ACC,Virginia Tech,ACC,Away,2026-11-14T05:00:00.000Z,False,False,,,,39,56,14.440
+2026,11,401858299,Stanford,ACC,Virginia Tech,ACC,Away,2026-11-14T05:00:00.000Z,False,False,,,,41,56,14.440
 2026,12,401858308,Stanford,ACC,California,ACC,Away,2026-11-21T05:00:00.000Z,False,False,,,,126,120,-79.504
 2026,13,401858316,Stanford,ACC,SMU,ACC,Home,2026-11-28T05:00:00.000Z,False,False,,,,38,47,27.835
 2026,2,401858216,Syracuse,ACC,California,ACC,Home,2026-09-12T19:30:00.000Z,True,False,18,21,L,126,120,-79.504
-2026,3,401858225,Syracuse,ACC,Pittsburgh,ACC,Away,2026-09-17T23:30:00.000Z,True,False,13,27,L,41,42,44.590
+2026,3,401858225,Syracuse,ACC,Pittsburgh,ACC,Away,2026-09-17T23:30:00.000Z,True,False,13,27,L,40,42,44.590
 2026,5,401858252,Syracuse,ACC,UConn,FBS Independents,Away,2026-10-03T16:00:00.000Z,True,False,42,41,W,51,72,-11.438
 2026,6,401858258,Syracuse,ACC,Virginia,ACC,Away,2026-10-10T23:30:00.000Z,True,False,25,28,L,94,79,-18.433
 2026,7,401858265,Syracuse,ACC,Louisville,ACC,Home,2026-10-17T23:30:00.000Z,True,False,26,34,L,34,34,63.415
@@ -1214,7 +1214,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,13,401856756,Texas A&M,SEC,Texas,SEC,Home,2026-11-28T00:30:00.000Z,False,False,,,,18,6,141.515
 2026,1,401856667,Texas State,Pac-12,Texas,SEC,Away,2026-09-05T19:30:00.000Z,True,False,7,59,L,18,6,141.515
 2026,2,401860884,Texas State,Pac-12,UTSA,American Athletic,Home,2026-09-12T19:30:00.000Z,True,False,26,31,L,67,70,-10.417
-2026,3,401860889,Texas State,Pac-12,North Texas,American Athletic,Home,2026-09-19T16:00:00.000Z,True,False,49,35,W,40,55,15.265
+2026,3,401860889,Texas State,Pac-12,North Texas,American Athletic,Home,2026-09-19T16:00:00.000Z,True,False,49,35,W,39,55,15.265
 2026,5,401860900,Texas State,Pac-12,San Diego State,Pac-12,Away,2026-10-04T02:30:00.000Z,True,False,29,31,L,119,114,-69.526
 2026,7,401860923,Texas State,Pac-12,Colorado State,Pac-12,Home,2026-10-16T00:00:00.000Z,True,False,66,27,W,115,117,-74.622
 2026,8,401860906,Texas State,Pac-12,Utah State,Pac-12,Home,2026-10-24T23:30:00.000Z,True,False,20,17,W,97,88,-30.506
@@ -1265,12 +1265,12 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401862813,Tulane,American Athletic,Charlotte,American Athletic,Away,2026-10-30T23:00:00.000Z,True,False,38,31,W,134,131,-129.183
 2026,10,401862822,Tulane,American Athletic,Tulsa,American Athletic,Home,2026-11-07T17:00:00.000Z,False,False,,,,56,69,-7.913
 2026,11,401862828,Tulane,American Athletic,Rice,American Athletic,Away,2026-11-14T19:00:00.000Z,False,False,,,,128,124,-95.284
-2026,12,401862835,Tulane,American Athletic,North Texas,American Athletic,Home,2026-11-21T05:00:00.000Z,False,False,,,,40,55,15.265
+2026,12,401862835,Tulane,American Athletic,North Texas,American Athletic,Home,2026-11-21T05:00:00.000Z,False,False,,,,39,55,15.265
 2026,13,401862839,Tulane,American Athletic,South Florida,American Athletic,Away,2026-11-27T05:00:00.000Z,False,False,,,,29,57,12.643
 2026,1,401856772,Tulsa,American Athletic,Oklahoma State,Big 12,Home,2026-09-05T19:45:00.000Z,True,False,24,10,W,33,33,63.537
 2026,2,401862707,Tulsa,American Athletic,Sam Houston,Conference USA,Away,2026-09-12T23:00:00.000Z,True,False,23,17,W,125,129,-111.728
 2026,4,401856697,Tulsa,American Athletic,Arkansas,SEC,Away,2026-09-27T00:00:00.000Z,True,False,6,34,L,117,90,-34.758
-2026,5,401862786,Tulsa,American Athletic,North Texas,American Athletic,Home,2026-10-02T01:00:00.000Z,True,False,44,45,L,40,55,15.265
+2026,5,401862786,Tulsa,American Athletic,North Texas,American Athletic,Home,2026-10-02T01:00:00.000Z,True,False,44,45,L,39,55,15.265
 2026,6,401862799,Tulsa,American Athletic,Navy,American Athletic,Away,2026-10-10T19:30:00.000Z,True,False,26,34,L,104,98,-41.593
 2026,7,401862805,Tulsa,American Athletic,Rice,American Athletic,Away,2026-10-17T20:30:00.000Z,True,False,38,17,W,128,124,-95.284
 2026,8,401862808,Tulsa,American Athletic,Army,American Athletic,Home,2026-10-24T00:30:00.000Z,True,False,35,38,L,64,62,7.776
@@ -1288,8 +1288,8 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401862819,UAB,American Athletic,Charlotte,American Athletic,Home,2026-11-07T20:30:00.000Z,False,False,,,,134,131,-129.183
 2026,11,401862829,UAB,American Athletic,Temple,American Athletic,Away,2026-11-14T18:00:00.000Z,False,False,,,,103,108,-57.313
 2026,12,401862836,UAB,American Athletic,UTSA,American Athletic,Home,2026-11-21T05:00:00.000Z,False,False,,,,67,70,-10.417
-2026,13,401862843,UAB,American Athletic,North Texas,American Athletic,Away,2026-11-28T05:00:00.000Z,False,False,,,,40,55,15.265
-2026,2,401856790,UCF,Big 12,Pittsburgh,ACC,Away,2026-09-12T19:30:00.000Z,True,False,7,12,L,41,42,44.590
+2026,13,401862843,UAB,American Athletic,North Texas,American Athletic,Away,2026-11-28T05:00:00.000Z,False,False,,,,39,55,15.265
+2026,2,401856790,UCF,Big 12,Pittsburgh,ACC,Away,2026-09-12T19:30:00.000Z,True,False,7,12,L,40,42,44.590
 2026,3,401856800,UCF,Big 12,Georgia State,Sun Belt,Home,2026-09-19T23:00:00.000Z,True,False,44,30,W,65,86,-28.268
 2026,4,401856815,UCF,Big 12,TCU,Big 12,Home,2026-09-26T19:30:00.000Z,True,False,21,13,W,52,45,33.077
 2026,5,401856819,UCF,Big 12,Houston,Big 12,Away,2026-10-03T16:00:00.000Z,True,False,17,27,L,31,19,84.712
@@ -1336,7 +1336,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,13,401871102,UL Monroe,Sun Belt,Marshall,Sun Belt,Home,2026-11-28T05:00:00.000Z,False,False,,,,109,118,-75.050
 2026,1,401862693,UNLV,Mountain West,Memphis,American Athletic,Home,2026-08-30T02:00:00.000Z,True,False,21,27,L,24,37,53.420
 2026,1,401864497,UNLV,Mountain West,Hawai'i,Mountain West,Away,2026-09-06T02:00:00.000Z,True,False,21,6,W,90,113,-67.370
-2026,2,401862705,UNLV,Mountain West,North Texas,American Athletic,Away,2026-09-12T19:45:00.000Z,True,False,6,44,L,40,55,15.265
+2026,2,401862705,UNLV,Mountain West,North Texas,American Athletic,Away,2026-09-12T19:45:00.000Z,True,False,6,44,L,39,55,15.265
 2026,4,401864512,UNLV,Mountain West,Akron,Mid-American,Away,2026-09-26T16:00:00.000Z,True,False,38,10,W,133,135,-150.268
 2026,5,401858247,UNLV,Mountain West,California,ACC,Home,2026-10-03T19:30:00.000Z,True,False,39,31,W,126,120,-79.504
 2026,6,401864518,UNLV,Mountain West,North Dakota State,Mountain West,Home,2026-10-10T23:00:00.000Z,True,False,13,7,W,15,36,59.814
@@ -1377,7 +1377,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401862804,UTSA,American Athletic,Navy,American Athletic,Home,2026-10-18T00:00:00.000Z,True,False,38,34,W,104,98,-41.593
 2026,8,401862811,UTSA,American Athletic,Tulane,American Athletic,Away,2026-10-25T00:00:00.000Z,True,False,42,19,W,72,83,-22.130
 2026,10,401862817,UTSA,American Athletic,Florida Atlantic,American Athletic,Away,2026-11-06T00:30:00.000Z,True,False,29,60,L,68,96,-39.063
-2026,11,401862827,UTSA,American Athletic,North Texas,American Athletic,Home,2026-11-15T02:00:00.000Z,False,False,,,,40,55,15.265
+2026,11,401862827,UTSA,American Athletic,North Texas,American Athletic,Home,2026-11-15T02:00:00.000Z,False,False,,,,39,55,15.265
 2026,12,401862836,UTSA,American Athletic,UAB,American Athletic,Away,2026-11-21T05:00:00.000Z,False,False,,,,105,112,-62.110
 2026,13,401862840,UTSA,American Athletic,Tulsa,American Athletic,Home,2026-11-27T05:00:00.000Z,False,False,,,,56,69,-7.913
 2026,2,401856670,Utah,Big 12,Arkansas,SEC,Home,2026-09-13T02:15:00.000Z,True,False,43,10,W,117,90,-34.758
@@ -1422,15 +1422,15 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401858284,Virginia,ACC,Wake Forest,ACC,Away,2026-10-31T19:45:00.000Z,True,False,7,51,L,3,7,141.210
 2026,11,401858295,Virginia,ACC,California,ACC,Home,2026-11-14T20:30:00.000Z,False,False,,,,126,120,-79.504
 2026,12,401858305,Virginia,ACC,North Carolina,ACC,Home,2026-11-21T05:00:00.000Z,False,False,,,,73,44,37.133
-2026,13,401858317,Virginia,ACC,Virginia Tech,ACC,Away,2026-11-28T05:00:00.000Z,False,False,,,,39,56,14.440
+2026,13,401858317,Virginia,ACC,Virginia Tech,ACC,Away,2026-11-28T05:00:00.000Z,False,False,,,,41,56,14.440
 2026,2,401858221,Virginia Tech,ACC,Old Dominion,Sun Belt,Home,2026-09-12T16:00:00.000Z,True,False,44,21,W,124,126,-101.640
 2026,3,401858232,Virginia Tech,ACC,Maryland,Big Ten,Away,2026-09-19T23:30:00.000Z,True,False,35,26,W,127,104,-50.955
 2026,4,401858242,Virginia Tech,ACC,Boston College,ACC,Away,2026-09-26T16:00:00.000Z,True,False,21,14,W,101,89,-32.070
-2026,5,401858245,Virginia Tech,ACC,Pittsburgh,ACC,Home,2026-10-02T23:00:00.000Z,True,False,33,35,L,41,42,44.590
+2026,5,401858245,Virginia Tech,ACC,Pittsburgh,ACC,Home,2026-10-02T23:00:00.000Z,True,False,33,35,L,40,42,44.590
 2026,6,401858259,Virginia Tech,ACC,California,ACC,Away,2026-10-10T19:30:00.000Z,True,False,20,25,L,126,120,-79.504
 2026,7,401858264,Virginia Tech,ACC,Georgia Tech,ACC,Home,2026-10-17T19:30:00.000Z,True,False,34,24,W,112,109,-58.116
 2026,8,401858276,Virginia Tech,ACC,Clemson,ACC,Away,2026-10-24T23:00:00.000Z,True,False,20,16,W,95,65,0.694
-2026,10,401858288,Virginia Tech,ACC,SMU,ACC,Away,2026-11-07T00:00:00.000Z,False,False,,,,38,47,27.835
+2026,10,401858288,Virginia Tech,ACC,SMU,ACC,Away,2026-11-07T00:00:00.000Z,False,True,0,6,,38,47,27.835
 2026,11,401858299,Virginia Tech,ACC,Stanford,ACC,Home,2026-11-14T05:00:00.000Z,False,False,,,,135,125,-97.269
 2026,12,401858302,Virginia Tech,ACC,Miami,ACC,Away,2026-11-21T05:00:00.000Z,False,False,,,,2,2,167.507
 2026,13,401858317,Virginia Tech,ACC,Virginia,ACC,Home,2026-11-28T05:00:00.000Z,False,False,,,,94,79,-18.433
@@ -1519,5 +1519,5 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,8,401864525,Wyoming,Mountain West,Air Force,Mountain West,Home,2026-10-24T01:00:00.000Z,True,False,28,14,W,48,58,11.737
 2026,10,401864535,Wyoming,Mountain West,UNLV,Mountain West,Away,2026-11-08T03:30:00.000Z,False,False,,,,58,80,-19.121
 2026,11,401864540,Wyoming,Mountain West,UTEP,Mountain West,Away,2026-11-15T03:00:00.000Z,False,False,,,,138,138,-181.867
-2026,12,401864542,Wyoming,Mountain West,New Mexico,Mountain West,Home,2026-11-22T02:00:00.000Z,False,False,,,,11,23,77.903
+2026,12,401864542,Wyoming,Mountain West,New Mexico,Mountain West,Home,2026-11-21T02:00:00.000Z,False,False,,,,11,23,77.903
 2026,13,401861969,Wyoming,Mountain West,UConn,FBS Independents,Home,2026-11-28T05:00:00.000Z,False,False,,,,51,72,-11.438
