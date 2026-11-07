@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-07T22:46:19.873168+00:00",
+  "updatedAt": "2026-11-07T22:51:32.472875+00:00",
   "liveGames": [
     {
       "id": 401856744,
@@ -12,7 +12,7 @@
       "homePoints": 10.0,
       "awayPoints": 9.0,
       "period": 4,
-      "clock": "08:14",
+      "clock": "07:49",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -27,7 +27,7 @@
       "homePoints": 17.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "03:16",
+      "clock": "01:53",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -42,7 +42,7 @@
       "homePoints": 33.0,
       "awayPoints": 34.0,
       "period": 3,
-      "clock": "00:55",
+      "clock": "00:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 10
@@ -57,7 +57,7 @@
       "homePoints": 6.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "11:35",
+      "clock": "08:20",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -72,7 +72,7 @@
       "homePoints": 21.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "14:44",
+      "clock": "11:50",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -86,8 +86,8 @@
       "awayConference": "Big Ten",
       "homePoints": 14.0,
       "awayPoints": 17.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "15:00",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -102,10 +102,10 @@
       "homePoints": 9.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "09:06",
-      "completedDrives": 14,
+      "clock": "07:34",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401862819,
@@ -117,10 +117,10 @@
       "homePoints": 6.0,
       "awayPoints": 6.0,
       "period": 3,
-      "clock": "03:37",
-      "completedDrives": 17,
+      "clock": "00:26",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401862820,
@@ -129,12 +129,12 @@
       "awayTeam": "Temple",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 28.0,
+      "homePoints": 34.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "07:45",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
+      "clock": "05:01",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 7
     },
     {
@@ -147,7 +147,7 @@
       "homePoints": 28.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "08:31",
+      "clock": "07:47",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -162,7 +162,7 @@
       "homePoints": 28.0,
       "awayPoints": 20.0,
       "period": 3,
-      "clock": "09:52",
+      "clock": "08:46",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -177,9 +177,9 @@
       "homePoints": 7.0,
       "awayPoints": 19.0,
       "period": 3,
-      "clock": "11:56",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 6,
+      "clock": "10:41",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
     },
     {
@@ -207,7 +207,7 @@
       "homePoints": 16.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "00:21",
+      "clock": "00:00",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
@@ -266,8 +266,8 @@
       "awayConference": "Big Ten",
       "homePoints": 13.0,
       "awayPoints": 10.0,
-      "period": 3,
-      "clock": "15:00",
+      "period": 2,
+      "clock": "00:00",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -282,10 +282,10 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "14:44",
-      "completedDrives": 5,
+      "clock": "12:36",
+      "completedDrives": 6,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     }
   ],
   "liveTeams": [
