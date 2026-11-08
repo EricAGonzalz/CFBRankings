@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T01:02:47.891213+00:00",
+  "updatedAt": "2026-11-08T01:06:12.771668+00:00",
   "liveGames": [
-    {
-      "id": 401871074,
-      "status": "in_progress",
-      "homeTeam": "Florida International",
-      "awayTeam": "Missouri State",
-      "homeConference": "Conference USA",
-      "awayConference": "Conference USA",
-      "homePoints": 20.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401869968,
       "status": "in_progress",
@@ -42,7 +27,7 @@
       "homePoints": 10.0,
       "awayPoints": 29.0,
       "period": 3,
-      "clock": "12:49",
+      "clock": "11:30",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -87,7 +72,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:29",
+      "clock": "07:09",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -102,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:36",
+      "clock": "03:53",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -115,9 +100,9 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 3.0,
-      "awayPoints": 3.0,
+      "awayPoints": 10.0,
       "period": 1,
-      "clock": "04:57",
+      "clock": "03:26",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -132,10 +117,10 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:38",
-      "completedDrives": 3,
+      "clock": "00:15",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858511,
@@ -147,7 +132,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:02",
+      "clock": "07:43",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "06:08",
+      "clock": "05:53",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -177,7 +162,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:54",
+      "clock": "02:31",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -192,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:58",
+      "clock": "09:31",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -206,7 +191,6 @@
     "Colorado",
     "Colorado State",
     "Florida",
-    "Florida International",
     "Georgia",
     "Georgia Tech",
     "Iowa",
@@ -217,7 +201,6 @@
     "Miami",
     "Michigan",
     "Michigan State",
-    "Missouri State",
     "Northwestern",
     "Notre Dame",
     "Oklahoma",
