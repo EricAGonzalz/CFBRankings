@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T05:45:42.267727+00:00",
+  "updatedAt": "2026-11-08T05:50:52.390103+00:00",
   "liveGames": [
     {
       "id": 401856856,
@@ -12,25 +12,10 @@
       "homePoints": 44.0,
       "awayPoints": 48.0,
       "period": 4,
-      "clock": "07:07",
-      "completedDrives": 25,
+      "clock": "05:22",
+      "completedDrives": 26,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401860913,
-      "status": "in_progress",
-      "homeTeam": "Utah State",
-      "awayTeam": "Fresno State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 17.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "00:45",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401864532,
@@ -42,10 +27,10 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "02:12",
-      "completedDrives": 19,
+      "clock": "00:34",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401860912,
@@ -57,9 +42,9 @@
       "homePoints": 7.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "12:59",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "11:46",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -72,21 +57,19 @@
       "homePoints": 21.0,
       "awayPoints": 34.0,
       "period": 3,
-      "clock": "12:10",
+      "clock": "10:07",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     }
   ],
   "liveTeams": [
-    "Fresno State",
     "Hawai'i",
     "Oregon State",
     "Texas State",
     "Texas Tech",
     "UNLV",
     "UTEP",
-    "Utah State",
     "West Virginia",
     "Wyoming"
   ]
