@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T03:16:23.730389+00:00",
+  "updatedAt": "2026-11-08T03:21:26.984669+00:00",
   "liveGames": [
-    {
-      "id": 401871075,
-      "status": "in_progress",
-      "homeTeam": "Jacksonville State",
-      "awayTeam": "Sam Houston",
-      "homeConference": "Conference USA",
-      "awayConference": "Conference USA",
-      "homePoints": 40.0,
-      "awayPoints": 14.0,
-      "period": 4,
-      "clock": "07:21",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401856741,
       "status": "in_progress",
@@ -25,7 +10,7 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 34.0,
+      "awayPoints": 35.0,
       "period": 3,
       "clock": "01:37",
       "completedDrives": 16,
@@ -40,12 +25,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 20.0,
-      "awayPoints": 3.0,
+      "awayPoints": 9.0,
       "period": 4,
-      "clock": "12:09",
-      "completedDrives": 18,
+      "clock": "08:21",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858287,
@@ -57,7 +42,7 @@
       "homePoints": 10.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "11:58",
+      "clock": "10:24",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -72,7 +57,7 @@
       "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "14:48",
+      "clock": "13:06",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -86,8 +71,8 @@
       "awayConference": "Big Ten",
       "homePoints": 0.0,
       "awayPoints": 9.0,
-      "period": 3,
-      "clock": "00:01",
+      "period": 4,
+      "clock": "14:14",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -102,7 +87,7 @@
       "homePoints": 3.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "11:11",
+      "clock": "08:51",
       "completedDrives": 18,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 8
@@ -117,7 +102,7 @@
       "homePoints": 21.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "11:16",
+      "clock": "09:26",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -131,8 +116,8 @@
       "awayConference": "SEC",
       "homePoints": 7.0,
       "awayPoints": 13.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "13:37",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -147,7 +132,7 @@
       "homePoints": 7.0,
       "awayPoints": 16.0,
       "period": 3,
-      "clock": "07:50",
+      "clock": "05:05",
       "completedDrives": 13,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
@@ -162,7 +147,7 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 1,
-      "clock": "00:58",
+      "clock": "00:00",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -192,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "15:00",
+      "clock": "12:12",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -209,7 +194,6 @@
     "Georgia Tech",
     "Hawai'i",
     "Iowa",
-    "Jacksonville State",
     "Liberty",
     "Louisville",
     "Miami",
@@ -220,7 +204,6 @@
     "Notre Dame",
     "Oklahoma",
     "Ole Miss",
-    "Sam Houston",
     "Texas Tech",
     "UTEP",
     "Utah State",
