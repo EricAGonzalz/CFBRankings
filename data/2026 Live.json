@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T06:55:33.752844+00:00",
+  "updatedAt": "2026-11-08T07:01:57.861263+00:00",
   "liveGames": [
     {
       "id": 401860912,
@@ -9,13 +9,13 @@
       "awayTeam": "Texas State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 14.0,
+      "homePoints": 20.0,
       "awayPoints": 42.0,
       "period": 4,
-      "clock": "08:05",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "clock": "03:48",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401864535,
@@ -27,9 +27,9 @@
       "homePoints": 35.0,
       "awayPoints": 41.0,
       "period": 4,
-      "clock": "03:01",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 11,
+      "clock": "01:32",
+      "completedDrives": 25,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 13
     }
   ],
