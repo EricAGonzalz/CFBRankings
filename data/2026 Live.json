@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T02:25:33.739296+00:00",
+  "updatedAt": "2026-11-08T02:31:56.617351+00:00",
   "liveGames": [
-    {
-      "id": 401860911,
-      "status": "in_progress",
-      "homeTeam": "Colorado State",
-      "awayTeam": "Boise State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 31.0,
-      "awayPoints": 64.0,
-      "period": 4,
-      "clock": "01:28",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401856745,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 27.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "06:33",
+      "clock": "03:03",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -42,10 +27,10 @@
       "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "05:53",
-      "completedDrives": 17,
+      "clock": "03:13",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856741,
@@ -72,9 +57,9 @@
       "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "14:22",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "09:55",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -86,8 +71,8 @@
       "awayConference": "ACC",
       "homePoints": 10.0,
       "awayPoints": 27.0,
-      "period": 2,
-      "clock": "07:13",
+      "period": 3,
+      "clock": "14:52",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -101,11 +86,11 @@
       "awayConference": "ACC",
       "homePoints": 17.0,
       "awayPoints": 3.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "period": 3,
+      "clock": "12:05",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401858511,
@@ -131,10 +116,10 @@
       "awayConference": "Big Ten",
       "homePoints": 0.0,
       "awayPoints": 14.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "period": 3,
+      "clock": "12:37",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -147,10 +132,10 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "13:36",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "clock": "11:13",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856739,
@@ -177,7 +162,7 @@
       "homePoints": 7.0,
       "awayPoints": 9.0,
       "period": 2,
-      "clock": "00:50",
+      "clock": "00:18",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -187,9 +172,7 @@
     "Air Force",
     "Arizona State",
     "Army",
-    "Boise State",
     "Colorado",
-    "Colorado State",
     "Florida",
     "Georgia",
     "Georgia Tech",
