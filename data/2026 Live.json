@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T06:15:43.391337+00:00",
+  "updatedAt": "2026-11-08T06:20:45.510026+00:00",
   "liveGames": [
     {
       "id": 401856856,
@@ -9,13 +9,13 @@
       "awayTeam": "West Virginia",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 51.0,
+      "homePoints": 53.0,
       "awayPoints": 48.0,
       "period": 4,
-      "clock": "01:30",
-      "completedDrives": 29,
+      "clock": "01:24",
+      "completedDrives": 30,
       "homeOffensiveDrives": 15,
-      "awayOffensiveDrives": 14
+      "awayOffensiveDrives": 15
     },
     {
       "id": 401860912,
@@ -27,9 +27,9 @@
       "homePoints": 7.0,
       "awayPoints": 28.0,
       "period": 3,
-      "clock": "01:12",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "00:33",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -39,12 +39,12 @@
       "awayTeam": "Wyoming",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 41.0,
       "period": 3,
-      "clock": "02:45",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 9,
+      "clock": "00:22",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
     }
   ],
