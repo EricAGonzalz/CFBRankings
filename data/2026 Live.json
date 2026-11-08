@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T02:41:33.359330+00:00",
+  "updatedAt": "2026-11-08T02:45:56.259802+00:00",
   "liveGames": [
-    {
-      "id": 401856745,
-      "status": "in_progress",
-      "homeTeam": "Tennessee",
-      "awayTeam": "Kentucky",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 34.0,
-      "awayPoints": 6.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401871075,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 31.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "14:10",
+      "clock": "14:03",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -41,8 +26,8 @@
       "awayConference": "SEC",
       "homePoints": 0.0,
       "awayPoints": 28.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "13:40",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
@@ -57,9 +42,9 @@
       "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "07:50",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "06:29",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -70,12 +55,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 10.0,
-      "awayPoints": 27.0,
+      "awayPoints": 30.0,
       "period": 3,
-      "clock": "11:13",
-      "completedDrives": 13,
+      "clock": "07:17",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858291,
@@ -85,12 +70,12 @@
       "homeConference": "FBS Independents",
       "awayConference": "ACC",
       "homePoints": 24.0,
-      "awayPoints": 3.0,
+      "awayPoints": 9.0,
       "period": 3,
-      "clock": "10:09",
-      "completedDrives": 13,
+      "clock": "08:26",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858511,
@@ -103,8 +88,8 @@
       "awayPoints": 6.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -117,9 +102,9 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "08:10",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "04:41",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -129,12 +114,12 @@
       "awayTeam": "Air Force",
       "homeConference": "American Athletic",
       "awayConference": "Mountain West",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "08:16",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
+      "clock": "06:07",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
     },
     {
@@ -147,7 +132,7 @@
       "homePoints": 7.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "13:02",
+      "clock": "12:15",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -174,12 +159,27 @@
       "awayTeam": "West Virginia",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:35",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401860913,
+      "status": "in_progress",
+      "homeTeam": "Utah State",
+      "awayTeam": "Fresno State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:30",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 1,
+      "clock": "12:15",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     },
     {
@@ -192,7 +192,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:19",
+      "clock": "09:50",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -204,12 +204,12 @@
     "Army",
     "Colorado",
     "Florida",
+    "Fresno State",
     "Georgia",
     "Georgia Tech",
     "Hawai'i",
     "Iowa",
     "Jacksonville State",
-    "Kentucky",
     "Liberty",
     "Louisville",
     "Miami",
@@ -221,9 +221,9 @@
     "Oklahoma",
     "Ole Miss",
     "Sam Houston",
-    "Tennessee",
     "Texas Tech",
     "UTEP",
+    "Utah State",
     "West Virginia"
   ]
 }
