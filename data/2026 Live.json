@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-08T01:06:12.771668+00:00",
+  "updatedAt": "2026-11-08T01:11:16.737711+00:00",
   "liveGames": [
     {
       "id": 401869968,
@@ -12,9 +12,9 @@
       "homePoints": 28.0,
       "awayPoints": 26.0,
       "period": 4,
-      "clock": "10:22",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 8,
+      "clock": "04:02",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
     },
     {
@@ -25,12 +25,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 10.0,
-      "awayPoints": 29.0,
+      "awayPoints": 36.0,
       "period": 3,
-      "clock": "11:30",
-      "completedDrives": 12,
+      "clock": "09:37",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856745,
@@ -57,10 +57,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "08:35",
-      "completedDrives": 7,
+      "clock": "06:24",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856741,
@@ -70,12 +70,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 1,
-      "clock": "07:09",
-      "completedDrives": 3,
+      "clock": "05:20",
+      "completedDrives": 4,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401856852,
@@ -87,10 +87,10 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:53",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "00:00",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401858287,
@@ -102,9 +102,9 @@
       "homePoints": 3.0,
       "awayPoints": 10.0,
       "period": 1,
-      "clock": "03:26",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "01:49",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -116,10 +116,10 @@
       "awayConference": "ACC",
       "homePoints": 3.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:15",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "14:44",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -132,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:43",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "05:17",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -147,9 +147,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:53",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "02:35",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -161,8 +161,8 @@
       "awayConference": "Mountain West",
       "homePoints": 0.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "02:31",
+      "period": 2,
+      "clock": "15:00",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -175,9 +175,24 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
+      "awayPoints": 3.0,
+      "period": 1,
+      "clock": "07:36",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401870795,
+      "status": "in_progress",
+      "homeTeam": "New Mexico State",
+      "awayTeam": "Liberty",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:31",
+      "clock": "12:09",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -196,11 +211,13 @@
     "Iowa",
     "Jacksonville State",
     "Kentucky",
+    "Liberty",
     "Louisiana",
     "Louisville",
     "Miami",
     "Michigan",
     "Michigan State",
+    "New Mexico State",
     "Northwestern",
     "Notre Dame",
     "Oklahoma",
