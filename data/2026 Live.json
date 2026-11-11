@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T02:06:13.764169+00:00",
+  "updatedAt": "2026-11-11T02:11:14.098104+00:00",
   "liveGames": [
     {
       "id": 401866458,
@@ -10,12 +10,12 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 7.0,
-      "awayPoints": 21.0,
+      "awayPoints": 28.0,
       "period": 3,
-      "clock": "07:04",
-      "completedDrives": 13,
+      "clock": "05:04",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401866459,
@@ -24,12 +24,12 @@
       "awayTeam": "Kent State",
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
-      "homePoints": 17.0,
+      "homePoints": 24.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "10:18",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
+      "clock": "08:49",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 7
     },
     {
@@ -42,9 +42,9 @@
       "homePoints": 0.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "13:41",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 3,
+      "clock": "12:20",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
     }
   ],
