@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-11T03:01:29.500682+00:00",
+  "updatedAt": "2026-11-11T03:06:14.650331+00:00",
   "liveGames": [
-    {
-      "id": 401866458,
-      "status": "in_progress",
-      "homeTeam": "Akron",
-      "awayTeam": "Western Michigan",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 14.0,
-      "awayPoints": 42.0,
-      "period": 4,
-      "clock": "01:54",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401866459,
       "status": "in_progress",
@@ -25,12 +10,12 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 27.0,
-      "awayPoints": 14.0,
+      "awayPoints": 21.0,
       "period": 4,
-      "clock": "08:57",
-      "completedDrives": 22,
+      "clock": "06:37",
+      "completedDrives": 23,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401866460,
@@ -49,11 +34,9 @@
     }
   ],
   "liveTeams": [
-    "Akron",
     "Bowling Green",
     "Kent State",
     "Miami (OH)",
-    "Ohio",
-    "Western Michigan"
+    "Ohio"
   ]
 }
