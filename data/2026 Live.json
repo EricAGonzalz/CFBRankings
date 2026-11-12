@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-12T03:51:09.577674+00:00",
+  "updatedAt": "2026-11-12T03:56:10.960328+00:00",
   "liveGames": [
     {
       "id": 401866461,
@@ -12,31 +12,14 @@
       "homePoints": 7.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "01:57",
+      "clock": "01:52",
       "completedDrives": 21,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401866463,
-      "status": "in_progress",
-      "homeTeam": "Toledo",
-      "awayTeam": "Massachusetts",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 24.0,
-      "awayPoints": 0.0,
-      "period": 4,
-      "clock": "01:59",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 12
     }
   ],
   "liveTeams": [
     "Ball State",
-    "Buffalo",
-    "Massachusetts",
-    "Toledo"
+    "Buffalo"
   ]
 }
