@@ -1,7 +1,22 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-12T00:46:07.348221+00:00",
+  "updatedAt": "2026-11-12T00:51:09.291508+00:00",
   "liveGames": [
+    {
+      "id": 401866461,
+      "status": "in_progress",
+      "homeTeam": "Ball State",
+      "awayTeam": "Buffalo",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:10",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
     {
       "id": 401866462,
       "status": "in_progress",
@@ -12,14 +27,33 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:27",
-      "completedDrives": 1,
+      "clock": "06:11",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401866463,
+      "status": "in_progress",
+      "homeTeam": "Toledo",
+      "awayTeam": "Massachusetts",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:34",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
+    "Ball State",
+    "Buffalo",
     "Central Michigan",
-    "Sacramento State"
+    "Massachusetts",
+    "Sacramento State",
+    "Toledo"
   ]
 }
