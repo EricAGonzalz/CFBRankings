@@ -203,7 +203,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,7,401866443,Central Michigan,Mid-American,Western Michigan,Mid-American,Home,2026-10-17T17:30:00.000Z,True,False,14,21,L,36,58,13.084
 2026,8,401866476,Central Michigan,Mid-American,Miami (OH),Mid-American,Home,2026-10-24T17:00:00.000Z,True,False,27,28,L,64,88,-34.782
 2026,10,401866456,Central Michigan,Mid-American,Eastern Michigan,Mid-American,Away,2026-11-05T00:30:00.000Z,True,False,35,7,W,116,129,-123.100
-2026,11,401866462,Central Michigan,Mid-American,Sacramento State,Mid-American,Home,2026-11-12T00:30:00.000Z,False,False,,,,132,138,-179.405
+2026,11,401866462,Central Michigan,Mid-American,Sacramento State,Mid-American,Home,2026-11-12T00:30:00.000Z,False,True,0,0,,132,138,-179.405
 2026,12,401866469,Central Michigan,Mid-American,Buffalo,Mid-American,Away,2026-11-19T00:30:00.000Z,False,False,,,,93,91,-36.854
 2026,13,401866474,Central Michigan,Mid-American,Ball State,Mid-American,Away,2026-11-28T17:00:00.000Z,False,False,,,,130,132,-132.382
 2026,2,401856676,Charlotte,American Athletic,Ole Miss,SEC,Away,2026-09-12T23:45:00.000Z,True,False,9,41,L,35,14,93.940
@@ -989,7 +989,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401858506,Penn State,Big Ten,Purdue,Big Ten,Home,2026-10-31T20:15:00.000Z,True,False,31,17,W,108,71,-6.197
 2026,10,401858516,Penn State,Big Ten,Washington,Big Ten,Away,2026-11-07T20:30:00.000Z,True,False,28,25,W,62,53,24.231
 2026,11,401858524,Penn State,Big Ten,Minnesota,Big Ten,Home,2026-11-15T00:00:00.000Z,False,False,,,,89,73,-11.148
-2026,12,401858532,Penn State,Big Ten,Rutgers,Big Ten,Home,2026-11-21T05:00:00.000Z,False,False,,,,125,111,-66.973
+2026,12,401858532,Penn State,Big Ten,Rutgers,Big Ten,Home,2026-11-21T20:30:00.000Z,False,False,,,,125,111,-66.973
 2026,13,401858539,Penn State,Big Ten,Maryland,Big Ten,Away,2026-11-28T05:00:00.000Z,False,False,,,,122,97,-43.090
 2026,1,401858207,Pittsburgh,ACC,Miami (OH),Mid-American,Home,2026-09-05T16:30:00.000Z,True,False,59,14,W,64,88,-34.782
 2026,2,401856790,Pittsburgh,ACC,UCF,Big 12,Home,2026-09-12T19:30:00.000Z,True,False,12,7,W,91,59,11.385
@@ -1033,7 +1033,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401858507,Rutgers,Big Ten,Michigan,Big Ten,Home,2026-10-31T16:30:00.000Z,True,False,21,28,L,50,46,36.006
 2026,10,401858517,Rutgers,Big Ten,Wisconsin,Big Ten,Away,2026-11-07T21:15:00.000Z,True,False,10,31,L,37,24,82.894
 2026,11,401858525,Rutgers,Big Ten,Nebraska,Big Ten,Home,2026-11-14T17:30:00.000Z,False,False,,,,18,16,92.740
-2026,12,401858532,Rutgers,Big Ten,Penn State,Big Ten,Away,2026-11-21T05:00:00.000Z,False,False,,,,30,32,64.380
+2026,12,401858532,Rutgers,Big Ten,Penn State,Big Ten,Away,2026-11-21T20:30:00.000Z,False,False,,,,30,32,64.380
 2026,13,401858542,Rutgers,Big Ten,Michigan State,Big Ten,Home,2026-11-28T05:00:00.000Z,False,False,,,,88,54,21.121
 2026,1,401858212,SMU,ACC,Florida State,ACC,Away,2026-09-07T23:30:00.000Z,True,False,27,24,W,72,52,25.008
 2026,3,401858230,SMU,ACC,Louisville,ACC,Away,2026-09-19T19:30:00.000Z,True,False,31,41,L,26,30,68.168
@@ -1055,7 +1055,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,8,401866447,Sacramento State,Mid-American,Ball State,Mid-American,Away,2026-10-24T19:30:00.000Z,True,False,17,34,L,130,132,-132.382
 2026,9,401866451,Sacramento State,Mid-American,Kent State,Mid-American,Home,2026-10-31T02:30:00.000Z,True,False,31,10,W,133,135,-153.255
 2026,10,401866457,Sacramento State,Mid-American,Toledo,Mid-American,Home,2026-11-05T00:00:00.000Z,True,False,17,20,L,43,78,-19.122
-2026,11,401866462,Sacramento State,Mid-American,Central Michigan,Mid-American,Away,2026-11-12T00:30:00.000Z,False,False,,,,103,99,-46.223
+2026,11,401866462,Sacramento State,Mid-American,Central Michigan,Mid-American,Away,2026-11-12T00:30:00.000Z,False,True,0,0,,103,99,-46.223
 2026,13,401864547,Sacramento State,Mid-American,Hawai'i,Mountain West,Away,2026-11-29T04:00:00.000Z,False,False,,,,82,114,-72.244
 2026,1,401870763,Sam Houston,Conference USA,Troy,Sun Belt,Away,2026-09-05T23:00:00.000Z,True,False,21,24,L,99,105,-57.591
 2026,2,401862707,Sam Houston,Conference USA,Tulsa,American Athletic,Home,2026-09-12T23:00:00.000Z,True,False,17,23,L,39,49,27.691
