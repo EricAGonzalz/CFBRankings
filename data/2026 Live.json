@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-13T02:05:37.461486+00:00",
+  "updatedAt": "2026-11-13T02:10:48.791006+00:00",
   "liveGames": [
     {
       "id": 401862824,
@@ -12,14 +12,31 @@
       "homePoints": 0.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "11:28",
-      "completedDrives": 7,
+      "clock": "09:22",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401869969,
+      "status": "in_progress",
+      "homeTeam": "UL Monroe",
+      "awayTeam": "Louisiana",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:24",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Louisiana",
     "Memphis",
-    "South Florida"
+    "South Florida",
+    "UL Monroe"
   ]
 }
