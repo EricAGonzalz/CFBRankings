@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-14T20:03:44.328803+00:00",
+  "updatedAt": "2026-11-14T20:06:34.697181+00:00",
   "liveGames": [
     {
       "id": 401856859,
@@ -9,12 +9,12 @@
       "awayTeam": "Cincinnati",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 34.0,
+      "homePoints": 40.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "01:54",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
+      "clock": "01:40",
+      "completedDrives": 23,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
     },
     {
@@ -42,7 +42,7 @@
       "homePoints": 31.0,
       "awayPoints": 26.0,
       "period": 4,
-      "clock": "04:19",
+      "clock": "02:55",
       "completedDrives": 22,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 10
@@ -72,9 +72,9 @@
       "homePoints": 14.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "06:55",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
+      "clock": "05:16",
+      "completedDrives": 22,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
     },
     {
@@ -84,10 +84,10 @@
       "awayTeam": "Northwestern",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "07:25",
+      "clock": "06:33",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -102,9 +102,9 @@
       "homePoints": 33.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "07:36",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "05:46",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -114,10 +114,10 @@
       "awayTeam": "Georgia Tech",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 20.0,
       "period": 3,
-      "clock": "03:52",
+      "clock": "03:01",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -132,7 +132,7 @@
       "homePoints": 0.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "13:01",
+      "clock": "12:53",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -147,10 +147,10 @@
       "homePoints": 6.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "05:38",
-      "completedDrives": 17,
+      "clock": "04:31",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401862825,
@@ -177,9 +177,9 @@
       "homePoints": 10.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "11:19",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "09:50",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -192,10 +192,10 @@
       "homePoints": 14.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "10:00",
-      "completedDrives": 14,
+      "clock": "09:02",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856862,
@@ -207,7 +207,7 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "09:17",
+      "clock": "07:10",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -222,10 +222,55 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "08:29",
+      "clock": "07:46",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401856888,
+      "status": "in_progress",
+      "homeTeam": "Texas A&M",
+      "awayTeam": "Tennessee",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:51",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401870796,
+      "status": "in_progress",
+      "homeTeam": "Missouri State",
+      "awayTeam": "New Mexico State",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:47",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401871060,
+      "status": "in_progress",
+      "homeTeam": "Delaware",
+      "awayTeam": "Florida International",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:43",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -235,8 +280,10 @@
     "Cincinnati",
     "Clemson",
     "Coastal Carolina",
+    "Delaware",
     "Duke",
     "East Carolina",
+    "Florida International",
     "Georgia Tech",
     "Iowa State",
     "James Madison",
@@ -244,8 +291,10 @@
     "Kennesaw State",
     "Maryland",
     "Miami",
+    "Missouri State",
     "NC State",
     "Nebraska",
+    "New Mexico State",
     "Northwestern",
     "Ohio State",
     "Rutgers",
@@ -254,6 +303,8 @@
     "Syracuse",
     "TCU",
     "Temple",
+    "Tennessee",
+    "Texas A&M",
     "UAB",
     "UConn",
     "Vanderbilt",
