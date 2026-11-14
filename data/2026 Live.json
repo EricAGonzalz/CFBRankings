@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-14T20:32:43.316076+00:00",
+  "updatedAt": "2026-11-14T20:36:29.221774+00:00",
   "liveGames": [
     {
       "id": 401858296,
@@ -10,9 +10,9 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 36.0,
-      "awayPoints": 17.0,
+      "awayPoints": 23.0,
       "period": 4,
-      "clock": "01:14",
+      "clock": "00:21",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -27,25 +27,10 @@
       "homePoints": 6.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "07:28",
+      "clock": "06:15",
       "completedDrives": 22,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401858525,
-      "status": "in_progress",
-      "homeTeam": "Rutgers",
-      "awayTeam": "Nebraska",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 0.0,
-      "awayPoints": 31.0,
-      "period": 4,
-      "clock": "01:16",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
     },
     {
       "id": 401856889,
@@ -57,10 +42,10 @@
       "homePoints": 6.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "07:43",
-      "completedDrives": 21,
+      "clock": "06:39",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401862825,
@@ -72,9 +57,9 @@
       "homePoints": 16.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "08:43",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 9,
+      "clock": "05:59",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 8
     },
     {
@@ -86,8 +71,8 @@
       "awayConference": "American Athletic",
       "homePoints": 10.0,
       "awayPoints": 20.0,
-      "period": 3,
-      "clock": "15:00",
+      "period": 4,
+      "clock": "12:44",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
@@ -101,8 +86,8 @@
       "awayConference": "Sun Belt",
       "homePoints": 21.0,
       "awayPoints": 14.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "14:17",
       "completedDrives": 18,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 10
@@ -147,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "01:56",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "00:04",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "00:53",
+      "clock": "00:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -177,10 +162,55 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "01:40",
+      "clock": "00:00",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401864536,
+      "status": "in_progress",
+      "homeTeam": "Northern Illinois",
+      "awayTeam": "Nevada",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401869952,
+      "status": "in_progress",
+      "homeTeam": "Georgia State",
+      "awayTeam": "Georgia Southern",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:16",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401870752,
+      "status": "in_progress",
+      "homeTeam": "Western Kentucky",
+      "awayTeam": "Jacksonville State",
+      "homeConference": "Conference USA",
+      "awayConference": "Conference USA",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:07",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
@@ -193,20 +223,24 @@
     "Duke",
     "East Carolina",
     "Florida International",
+    "Georgia Southern",
+    "Georgia State",
     "Georgia Tech",
+    "Jacksonville State",
     "Kansas State",
     "Kennesaw State",
     "Miami",
     "Missouri State",
-    "Nebraska",
+    "Nevada",
     "New Mexico State",
-    "Rutgers",
+    "Northern Illinois",
     "Sam Houston",
     "TCU",
     "Temple",
     "Tennessee",
     "Texas A&M",
     "UAB",
-    "Vanderbilt"
+    "Vanderbilt",
+    "Western Kentucky"
   ]
 }
