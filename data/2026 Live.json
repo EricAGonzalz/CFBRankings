@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-14T17:06:44.124992+00:00",
+  "updatedAt": "2026-11-14T17:12:03.130262+00:00",
   "liveGames": [
     {
       "id": 401856859,
@@ -12,10 +12,25 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "13:31",
+      "clock": "10:35",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858296,
+      "status": "in_progress",
+      "homeTeam": "Miami",
+      "awayTeam": "Duke",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:41",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858300,
@@ -27,10 +42,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:33",
-      "completedDrives": 0,
+      "clock": "08:18",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858301,
@@ -40,12 +55,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 6.0,
       "period": 1,
-      "clock": "14:45",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "11:05",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858520,
@@ -55,9 +70,24 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
+      "awayPoints": 6.0,
+      "period": 1,
+      "clock": "11:01",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858522,
+      "status": "in_progress",
+      "homeTeam": "Ohio State",
+      "awayTeam": "Northwestern",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:49",
+      "clock": "15:00",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -72,7 +102,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:11",
+      "clock": "12:05",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -80,10 +110,14 @@
   ],
   "liveTeams": [
     "Cincinnati",
+    "Duke",
     "Iowa State",
     "James Madison",
     "Maryland",
+    "Miami",
     "NC State",
+    "Northwestern",
+    "Ohio State",
     "SMU",
     "Syracuse",
     "UConn",
