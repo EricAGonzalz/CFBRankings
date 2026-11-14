@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-14T23:42:45.613964+00:00",
+  "updatedAt": "2026-11-14T23:46:35.391347+00:00",
   "liveGames": [
     {
       "id": 401856861,
@@ -12,10 +12,10 @@
       "homePoints": 14.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "03:19",
-      "completedDrives": 21,
+      "clock": "02:12",
+      "completedDrives": 22,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401856883,
@@ -27,7 +27,7 @@
       "homePoints": 48.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "05:15",
+      "clock": "04:31",
       "completedDrives": 20,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 11
@@ -42,25 +42,10 @@
       "homePoints": 41.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "07:29",
-      "completedDrives": 21,
+      "clock": "05:07",
+      "completedDrives": 22,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401858295,
-      "status": "in_progress",
-      "homeTeam": "Virginia",
-      "awayTeam": "California",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 36.0,
-      "awayPoints": 7.0,
-      "period": 4,
-      "clock": "00:17",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858518,
@@ -72,7 +57,7 @@
       "homePoints": 20.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "06:35",
+      "clock": "05:42",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -87,10 +72,10 @@
       "homePoints": 28.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "04:03",
-      "completedDrives": 22,
+      "clock": "03:26",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401870752,
@@ -99,10 +84,10 @@
       "awayTeam": "Jacksonville State",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 21.0,
+      "homePoints": 28.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "00:41",
+      "clock": "00:02",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -117,7 +102,7 @@
       "homePoints": 28.0,
       "awayPoints": 23.0,
       "period": 4,
-      "clock": "04:36",
+      "clock": "02:31",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -131,10 +116,10 @@
       "awayConference": "Pac-12",
       "homePoints": 31.0,
       "awayPoints": 28.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 8,
+      "period": 4,
+      "clock": "13:45",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 6
     },
     {
@@ -145,12 +130,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 7.0,
-      "awayPoints": 27.0,
+      "awayPoints": 33.0,
       "period": 3,
-      "clock": "10:10",
-      "completedDrives": 22,
+      "clock": "09:16",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401862828,
@@ -162,7 +147,7 @@
       "homePoints": 17.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "03:08",
+      "clock": "01:40",
       "completedDrives": 10,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 6
@@ -192,7 +177,7 @@
       "homePoints": 0.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "03:07",
+      "clock": "02:00",
       "completedDrives": 7,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
@@ -207,7 +192,7 @@
       "homePoints": 7.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "07:52",
+      "clock": "07:46",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -219,10 +204,10 @@
       "awayTeam": "Oregon State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 6.0,
+      "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:52",
+      "clock": "02:58",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -237,7 +222,7 @@
       "homePoints": 3.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "02:25",
+      "clock": "00:00",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -249,10 +234,10 @@
       "awayTeam": "Florida",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:06",
+      "clock": "01:32",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -264,7 +249,6 @@
     "Auburn",
     "Boise State",
     "Boston College",
-    "California",
     "Florida",
     "Fresno State",
     "Georgia",
@@ -289,7 +273,6 @@
     "Tulane",
     "UCF",
     "USC",
-    "Virginia",
     "Washington",
     "West Virginia",
     "Western Kentucky"
