@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-14T02:06:21.309688+00:00",
+  "updatedAt": "2026-11-14T02:11:20.551947+00:00",
   "liveGames": [
     {
       "id": 401858293,
@@ -12,14 +12,31 @@
       "homePoints": 7.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "10:49",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 6,
+      "clock": "09:20",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 5
+    },
+    {
+      "id": 401858526,
+      "status": "in_progress",
+      "homeTeam": "UCLA",
+      "awayTeam": "Illinois",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 6.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:37",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Florida State",
-    "Pittsburgh"
+    "Illinois",
+    "Pittsburgh",
+    "UCLA"
   ]
 }
