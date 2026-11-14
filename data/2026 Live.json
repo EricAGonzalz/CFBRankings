@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-14T22:56:23.220693+00:00",
+  "updatedAt": "2026-11-14T23:04:27.500954+00:00",
   "liveGames": [
     {
       "id": 401856888,
@@ -10,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 7.0,
-      "awayPoints": 19.0,
+      "awayPoints": 22.0,
       "period": 4,
-      "clock": "05:25",
-      "completedDrives": 22,
+      "clock": "02:44",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401870796,
@@ -27,9 +27,9 @@
       "homePoints": 14.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "06:17",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "05:02",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -42,9 +42,9 @@
       "homePoints": 24.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "01:51",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "clock": "00:00",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -57,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 30.0,
       "period": 3,
-      "clock": "03:21",
+      "clock": "00:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -69,12 +69,12 @@
       "awayTeam": "Missouri",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 34.0,
+      "homePoints": 40.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "09:44",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "06:15",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -87,10 +87,10 @@
       "homePoints": 38.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "09:30",
-      "completedDrives": 15,
+      "clock": "07:05",
+      "completedDrives": 16,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401858295,
@@ -101,11 +101,11 @@
       "awayConference": "ACC",
       "homePoints": 26.0,
       "awayPoints": 7.0,
-      "period": 3,
-      "clock": "00:00",
-      "completedDrives": 13,
+      "period": 4,
+      "clock": "13:06",
+      "completedDrives": 14,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401858518,
@@ -114,12 +114,12 @@
       "awayTeam": "USC",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 13.0,
+      "homePoints": 19.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "04:27",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
+      "clock": "02:48",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 7
     },
     {
@@ -132,7 +132,7 @@
       "homePoints": 21.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "03:12",
+      "clock": "15:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -147,10 +147,10 @@
       "homePoints": 0.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 16,
+      "clock": "11:34",
+      "completedDrives": 17,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401869952,
@@ -162,9 +162,9 @@
       "homePoints": 17.0,
       "awayPoints": 27.0,
       "period": 3,
-      "clock": "01:40",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
+      "clock": "00:00",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
     },
     {
@@ -177,10 +177,10 @@
       "homePoints": 21.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "03:32",
-      "completedDrives": 17,
+      "clock": "00:12",
+      "completedDrives": 18,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401871061,
@@ -190,9 +190,9 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 21.0,
-      "awayPoints": 10.0,
+      "awayPoints": 17.0,
       "period": 3,
-      "clock": "06:08",
+      "clock": "05:11",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -222,10 +222,10 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 8
+      "clock": "01:18",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401862828,
@@ -250,12 +250,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 21.0,
-      "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:58",
-      "completedDrives": 8,
+      "awayPoints": 9.0,
+      "period": 2,
+      "clock": "14:21",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401856857,
@@ -267,9 +267,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:40",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "05:33",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -282,9 +282,9 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "06:00",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "03:45",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     }
   ],
