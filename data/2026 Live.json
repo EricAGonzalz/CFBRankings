@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T02:36:11.011618+00:00",
+  "updatedAt": "2026-11-15T02:41:39.766703+00:00",
   "liveGames": [
-    {
-      "id": 401860914,
-      "status": "in_progress",
-      "homeTeam": "Boise State",
-      "awayTeam": "Oregon State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 46.0,
-      "awayPoints": 41.0,
-      "period": 4,
-      "clock": "01:54",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401856884,
-      "status": "in_progress",
-      "homeTeam": "Kentucky",
-      "awayTeam": "Florida",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 14.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "01:39",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401856858,
       "status": "in_progress",
@@ -42,7 +12,7 @@
       "homePoints": 21.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "01:12",
+      "clock": "15:00",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
@@ -57,7 +27,7 @@
       "homePoints": 7.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "14:43",
+      "clock": "12:50",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -72,7 +42,7 @@
       "homePoints": 35.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "01:40",
+      "clock": "00:00",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -87,7 +57,7 @@
       "homePoints": 17.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "02:17",
+      "clock": "15:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -102,7 +72,7 @@
       "homePoints": 27.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "12:31",
+      "clock": "10:20",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -116,11 +86,11 @@
       "awayConference": "American Athletic",
       "homePoints": 21.0,
       "awayPoints": 14.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 19,
+      "period": 3,
+      "clock": "10:43",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401856885,
@@ -146,8 +116,8 @@
       "awayConference": "ACC",
       "homePoints": 7.0,
       "awayPoints": 24.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "13:41",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -162,7 +132,7 @@
       "homePoints": 28.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "08:22",
+      "clock": "04:31",
       "completedDrives": 11,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 5
@@ -177,7 +147,7 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "12:30",
+      "clock": "10:17",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -207,9 +177,9 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:23",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "04:07",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     }
   ],
@@ -218,18 +188,14 @@
     "Arkansas",
     "BYU",
     "Baylor",
-    "Boise State",
-    "Florida",
     "Florida Atlantic",
     "Iowa",
-    "Kentucky",
     "LSU",
     "Louisville",
     "Minnesota",
     "New Mexico",
     "North Carolina",
     "North Texas",
-    "Oregon State",
     "Penn State",
     "Purdue",
     "San José State",
