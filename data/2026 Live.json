@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T06:21:25.939025+00:00",
+  "updatedAt": "2026-11-15T06:25:59.467273+00:00",
   "liveGames": [
-    {
-      "id": 401856863,
-      "status": "in_progress",
-      "homeTeam": "Oklahoma State",
-      "awayTeam": "Texas Tech",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 27.0,
-      "awayPoints": 52.0,
-      "period": 4,
-      "clock": "00:53",
-      "completedDrives": 34,
-      "homeOffensiveDrives": 18,
-      "awayOffensiveDrives": 16
-    },
     {
       "id": 401864540,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 15.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "04:05",
+      "clock": "02:22",
       "completedDrives": 23,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 11
@@ -41,8 +26,8 @@
       "awayConference": "Big 12",
       "homePoints": 28.0,
       "awayPoints": 24.0,
-      "period": 3,
-      "clock": "15:00",
+      "period": 4,
+      "clock": "14:19",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -56,8 +41,8 @@
       "awayConference": "Pac-12",
       "homePoints": 59.0,
       "awayPoints": 7.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "14:14",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -72,7 +57,7 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "06:06",
+      "clock": "04:07",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -83,8 +68,6 @@
     "Colorado State",
     "Hawai'i",
     "North Dakota State",
-    "Oklahoma State",
-    "Texas Tech",
     "UTEP",
     "Utah",
     "Washington State",
