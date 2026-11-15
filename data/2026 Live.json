@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T07:35:57.890654+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-15T18:11:04.519160+00:00",
+  "liveGames": [
+    {
+      "id": 401856887,
+      "status": "in_progress",
+      "homeTeam": "Oklahoma",
+      "awayTeam": "Ole Miss",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:44",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    }
+  ],
+  "liveTeams": [
+    "Oklahoma",
+    "Ole Miss"
+  ]
 }
