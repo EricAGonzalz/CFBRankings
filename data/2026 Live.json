@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T04:11:20.723279+00:00",
+  "updatedAt": "2026-11-15T04:16:08.270163+00:00",
   "liveGames": [
-    {
-      "id": 401862826,
-      "status": "in_progress",
-      "homeTeam": "Tulsa",
-      "awayTeam": "Florida Atlantic",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 38.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 32,
-      "homeOffensiveDrives": 16,
-      "awayOffensiveDrives": 16
-    },
     {
       "id": 401856885,
       "status": "in_progress",
@@ -27,10 +12,10 @@
       "homePoints": 21.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "00:32",
-      "completedDrives": 21,
+      "clock": "00:13",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856882,
@@ -42,7 +27,7 @@
       "homePoints": 27.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "03:17",
+      "clock": "01:54",
       "completedDrives": 22,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 12
@@ -57,7 +42,7 @@
       "homePoints": 21.0,
       "awayPoints": 3.0,
       "period": 3,
-      "clock": "14:22",
+      "clock": "10:24",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
@@ -72,7 +57,7 @@
       "homePoints": 17.0,
       "awayPoints": 28.0,
       "period": 2,
-      "clock": "03:38",
+      "clock": "02:21",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -87,9 +72,9 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:23",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "00:00",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -102,7 +87,7 @@
       "homePoints": 6.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "13:45",
+      "clock": "09:38",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -117,10 +102,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:54",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "clock": "01:26",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401860917,
@@ -132,25 +117,40 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "05:51",
-      "completedDrives": 2,
+      "clock": "01:09",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401864537,
+      "status": "in_progress",
+      "homeTeam": "Hawai'i",
+      "awayTeam": "North Dakota State",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:19",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Arizona",
     "Arkansas",
     "Colorado State",
-    "Florida Atlantic",
+    "Hawai'i",
     "LSU",
+    "North Dakota State",
     "North Texas",
     "Oklahoma State",
     "San Diego State",
     "South Carolina",
     "Texas",
     "Texas Tech",
-    "Tulsa",
     "UTEP",
     "UTSA",
     "Utah",
