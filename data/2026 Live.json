@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T00:04:33.256124+00:00",
+  "updatedAt": "2026-11-15T00:06:53.679139+00:00",
   "liveGames": [
-    {
-      "id": 401858518,
-      "status": "in_progress",
-      "homeTeam": "Indiana",
-      "awayTeam": "USC",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 27.0,
-      "awayPoints": 13.0,
-      "period": 4,
-      "clock": "01:15",
-      "completedDrives": 21,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401860916,
       "status": "in_progress",
@@ -42,7 +27,7 @@
       "homePoints": 7.0,
       "awayPoints": 41.0,
       "period": 3,
-      "clock": "05:08",
+      "clock": "03:33",
       "completedDrives": 26,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 13
@@ -57,7 +42,7 @@
       "homePoints": 17.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "13:22",
+      "clock": "13:17",
       "completedDrives": 12,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 7
@@ -72,7 +57,7 @@
       "homePoints": 42.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "14:53",
+      "clock": "13:08",
       "completedDrives": 17,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 10
@@ -87,7 +72,7 @@
       "homePoints": 7.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "00:36",
+      "clock": "00:31",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -99,10 +84,10 @@
       "awayTeam": "Washington",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 7.0,
+      "homePoints": 13.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "01:55",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -132,7 +117,7 @@
       "homePoints": 13.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "09:25",
+      "clock": "09:17",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:53",
+      "clock": "13:55",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -175,7 +160,6 @@
     "Boise State",
     "Florida",
     "Fresno State",
-    "Indiana",
     "Kentucky",
     "Louisiana Tech",
     "Marshall",
@@ -189,7 +173,6 @@
     "Troy",
     "Tulane",
     "UCF",
-    "USC",
     "Washington"
   ]
 }
