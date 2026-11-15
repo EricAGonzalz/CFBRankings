@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T06:31:38.551429+00:00",
+  "updatedAt": "2026-11-15T06:36:01.345223+00:00",
   "liveGames": [
-    {
-      "id": 401864540,
-      "status": "in_progress",
-      "homeTeam": "UTEP",
-      "awayTeam": "Wyoming",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 15.0,
-      "awayPoints": 27.0,
-      "period": 4,
-      "clock": "01:54",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401856864,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 28.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "14:10",
+      "clock": "12:38",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -42,7 +27,7 @@
       "homePoints": 66.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "12:12",
+      "clock": "11:51",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -57,7 +42,7 @@
       "homePoints": 13.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "02:16",
+      "clock": "00:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 8
@@ -68,9 +53,7 @@
     "Colorado State",
     "Hawai'i",
     "North Dakota State",
-    "UTEP",
     "Utah",
-    "Washington State",
-    "Wyoming"
+    "Washington State"
   ]
 }
