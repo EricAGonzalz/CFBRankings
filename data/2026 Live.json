@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T02:46:47.329377+00:00",
+  "updatedAt": "2026-11-15T02:51:22.537075+00:00",
   "liveGames": [
     {
       "id": 401856858,
@@ -12,10 +12,10 @@
       "homePoints": 21.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "13:28",
-      "completedDrives": 14,
+      "clock": "11:52",
+      "completedDrives": 15,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401858298,
@@ -27,7 +27,7 @@
       "homePoints": 7.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "10:30",
+      "clock": "08:55",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -42,9 +42,9 @@
       "homePoints": 35.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 17,
-      "homeOffensiveDrives": 8,
+      "clock": "13:27",
+      "completedDrives": 18,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
     },
     {
@@ -57,7 +57,7 @@
       "homePoints": 17.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "12:54",
+      "clock": "11:53",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -72,9 +72,9 @@
       "homePoints": 27.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "08:47",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "06:31",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -87,7 +87,7 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "10:27",
+      "clock": "09:40",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -101,8 +101,8 @@
       "awayConference": "SEC",
       "homePoints": 14.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "12:38",
       "completedDrives": 10,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
@@ -117,7 +117,7 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "11:06",
+      "clock": "08:40",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -132,7 +132,7 @@
       "homePoints": 28.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "04:26",
+      "clock": "03:06",
       "completedDrives": 12,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 5
@@ -147,7 +147,7 @@
       "homePoints": 17.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "05:36",
+      "clock": "04:48",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -162,7 +162,7 @@
       "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "14:57",
+      "clock": "12:41",
       "completedDrives": 9,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 5
@@ -177,10 +177,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:22",
-      "completedDrives": 6,
+      "clock": "00:10",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856863,
@@ -192,9 +192,24 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "14:07",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 1,
+      "clock": "12:34",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401860915,
+      "status": "in_progress",
+      "homeTeam": "San Diego State",
+      "awayTeam": "Utah State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:28",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
     }
   ],
@@ -214,6 +229,7 @@
     "Oklahoma State",
     "Penn State",
     "Purdue",
+    "San Diego State",
     "San José State",
     "South Alabama",
     "South Carolina",
@@ -224,6 +240,7 @@
     "Tulsa",
     "UNLV",
     "UTSA",
+    "Utah State",
     "Virginia Tech"
   ]
 }
