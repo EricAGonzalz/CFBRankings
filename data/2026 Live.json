@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T03:55:58.425780+00:00",
+  "updatedAt": "2026-11-15T04:03:58.181486+00:00",
   "liveGames": [
     {
       "id": 401862826,
@@ -12,10 +12,10 @@
       "homePoints": 38.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "03:42",
-      "completedDrives": 28,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 14
+      "clock": "02:00",
+      "completedDrives": 30,
+      "homeOffensiveDrives": 15,
+      "awayOffensiveDrives": 15
     },
     {
       "id": 401856885,
@@ -27,9 +27,9 @@
       "homePoints": 21.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "05:44",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
+      "clock": "03:04",
+      "completedDrives": 21,
+      "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
     },
     {
@@ -40,27 +40,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 22.0,
-      "awayPoints": 37.0,
+      "awayPoints": 40.0,
       "period": 4,
-      "clock": "02:57",
-      "completedDrives": 23,
+      "clock": "02:00",
+      "completedDrives": 24,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 11
-    },
-    {
-      "id": 401864539,
-      "status": "in_progress",
-      "homeTeam": "New Mexico",
-      "awayTeam": "UNLV",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 17.0,
-      "awayPoints": 21.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401856882,
@@ -69,13 +54,13 @@
       "awayTeam": "South Carolina",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 24.0,
+      "homePoints": 27.0,
       "awayPoints": 6.0,
       "period": 4,
-      "clock": "07:17",
-      "completedDrives": 19,
+      "clock": "06:03",
+      "completedDrives": 20,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401862827,
@@ -102,10 +87,10 @@
       "homePoints": 10.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "07:33",
-      "completedDrives": 14,
+      "clock": "06:14",
+      "completedDrives": 15,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401860915,
@@ -117,9 +102,9 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "04:50",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "02:00",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -132,9 +117,9 @@
       "homePoints": 6.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "01:26",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "00:00",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -147,9 +132,9 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "07:53",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "05:13",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -162,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:27",
+      "clock": "06:55",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -174,7 +159,6 @@
     "Colorado State",
     "Florida Atlantic",
     "LSU",
-    "New Mexico",
     "North Texas",
     "Oklahoma State",
     "San Diego State",
@@ -183,7 +167,6 @@
     "Texas",
     "Texas Tech",
     "Tulsa",
-    "UNLV",
     "UTEP",
     "UTSA",
     "Utah",
