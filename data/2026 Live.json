@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T06:06:20.931571+00:00",
+  "updatedAt": "2026-11-15T06:11:13.433891+00:00",
   "liveGames": [
     {
       "id": 401856863,
@@ -12,25 +12,10 @@
       "homePoints": 20.0,
       "awayPoints": 52.0,
       "period": 4,
-      "clock": "07:24",
-      "completedDrives": 31,
-      "homeOffensiveDrives": 16,
-      "awayOffensiveDrives": 15
-    },
-    {
-      "id": 401860915,
-      "status": "in_progress",
-      "homeTeam": "San Diego State",
-      "awayTeam": "Utah State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 30.0,
-      "awayPoints": 13.0,
-      "period": 4,
-      "clock": "01:10",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
+      "clock": "03:27",
+      "completedDrives": 33,
+      "homeOffensiveDrives": 17,
+      "awayOffensiveDrives": 16
     },
     {
       "id": 401864540,
@@ -40,12 +25,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 15.0,
-      "awayPoints": 24.0,
+      "awayPoints": 27.0,
       "period": 4,
-      "clock": "08:54",
-      "completedDrives": 21,
+      "clock": "06:40",
+      "completedDrives": 22,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401856864,
@@ -54,12 +39,12 @@
       "awayTeam": "Utah",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 21.0,
+      "homePoints": 27.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "05:47",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 8,
+      "clock": "03:22",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
     },
     {
@@ -72,10 +57,10 @@
       "homePoints": 52.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "06:59",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "clock": "04:26",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 9,
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401864537,
@@ -87,7 +72,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "11:01",
+      "clock": "08:32",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -99,11 +84,9 @@
     "Hawai'i",
     "North Dakota State",
     "Oklahoma State",
-    "San Diego State",
     "Texas Tech",
     "UTEP",
     "Utah",
-    "Utah State",
     "Washington State",
     "Wyoming"
   ]
