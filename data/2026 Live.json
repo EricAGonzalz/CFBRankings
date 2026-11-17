@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-15T21:20:56.776394+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-17T23:05:54.118649+00:00",
+  "liveGames": [
+    {
+      "id": 401866465,
+      "status": "in_progress",
+      "homeTeam": "Western Michigan",
+      "awayTeam": "Eastern Michigan",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:36",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Eastern Michigan",
+    "Western Michigan"
+  ]
 }
