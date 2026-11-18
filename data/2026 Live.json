@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-18T00:40:57.981425+00:00",
+  "updatedAt": "2026-11-18T00:45:55.776436+00:00",
   "liveGames": [
     {
       "id": 401866465,
@@ -26,10 +26,10 @@
       "awayConference": "Mid-American",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "13:34",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -42,9 +42,9 @@
       "homePoints": 3.0,
       "awayPoints": 13.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "12:54",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
