@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-18T00:01:28.265673+00:00",
+  "updatedAt": "2026-11-18T00:06:03.228540+00:00",
   "liveGames": [
     {
       "id": 401866465,
@@ -12,14 +12,48 @@
       "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "09:00",
+      "clock": "07:42",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401866464,
+      "status": "in_progress",
+      "homeTeam": "Ohio",
+      "awayTeam": "Ball State",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:55",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866466,
+      "status": "in_progress",
+      "homeTeam": "Kent State",
+      "awayTeam": "Miami (OH)",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:33",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Ball State",
     "Eastern Michigan",
+    "Kent State",
+    "Miami (OH)",
+    "Ohio",
     "Western Michigan"
   ]
 }
