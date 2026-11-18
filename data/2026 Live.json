@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-18T02:51:03.660284+00:00",
+  "updatedAt": "2026-11-18T02:55:57.771195+00:00",
   "liveGames": [
     {
       "id": 401866464,
@@ -12,31 +12,14 @@
       "homePoints": 28.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "07:15",
+      "clock": "07:08",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401866466,
-      "status": "in_progress",
-      "homeTeam": "Kent State",
-      "awayTeam": "Miami (OH)",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 3.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
     }
   ],
   "liveTeams": [
     "Ball State",
-    "Kent State",
-    "Miami (OH)",
     "Ohio"
   ]
 }
