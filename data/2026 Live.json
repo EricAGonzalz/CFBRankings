@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-19T00:30:54.930204+00:00",
+  "updatedAt": "2026-11-19T00:35:51.741949+00:00",
   "liveGames": [
     {
       "id": 401866467,
@@ -12,14 +12,31 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:13",
+      "clock": "05:04",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401866469,
+      "status": "in_progress",
+      "homeTeam": "Buffalo",
+      "awayTeam": "Central Michigan",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:28",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Akron",
+    "Buffalo",
+    "Central Michigan",
     "Massachusetts"
   ]
 }

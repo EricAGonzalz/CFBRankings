@@ -182,7 +182,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,8,401866448,Buffalo,Mid-American,Bowling Green,Mid-American,Home,2026-10-24T19:30:00.000Z,True,False,31,24,W,116,121,-92.532
 2026,10,401866454,Buffalo,Mid-American,Miami (OH),Mid-American,Away,2026-11-04T01:00:00.000Z,True,False,34,31,W,55,84,-28.433
 2026,11,401866461,Buffalo,Mid-American,Ball State,Mid-American,Away,2026-11-12T00:30:00.000Z,True,False,28,7,W,126,132,-140.419
-2026,12,401866469,Buffalo,Mid-American,Central Michigan,Mid-American,Home,2026-11-19T00:30:00.000Z,False,False,,,,83,96,-38.455
+2026,12,401866469,Buffalo,Mid-American,Central Michigan,Mid-American,Home,2026-11-19T00:30:00.000Z,False,True,0,0,,83,96,-38.455
 2026,13,401866472,Buffalo,Mid-American,Akron,Mid-American,Away,2026-11-27T17:00:00.000Z,False,False,,,,136,135,-164.162
 2026,1,401858210,California,ACC,UCLA,Big Ten,Home,2026-09-06T02:30:00.000Z,True,False,24,45,L,8,12,110.372
 2026,2,401858216,California,ACC,Syracuse,ACC,Away,2026-09-12T19:30:00.000Z,True,False,21,18,W,84,79,-19.502
@@ -204,7 +204,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,8,401866476,Central Michigan,Mid-American,Miami (OH),Mid-American,Home,2026-10-24T17:00:00.000Z,True,False,27,28,L,55,84,-28.433
 2026,10,401866456,Central Michigan,Mid-American,Eastern Michigan,Mid-American,Away,2026-11-05T00:30:00.000Z,True,False,35,7,W,122,128,-119.682
 2026,11,401866462,Central Michigan,Mid-American,Sacramento State,Mid-American,Home,2026-11-12T00:30:00.000Z,True,False,28,7,W,134,138,-187.601
-2026,12,401866469,Central Michigan,Mid-American,Buffalo,Mid-American,Away,2026-11-19T00:30:00.000Z,False,False,,,,78,89,-32.172
+2026,12,401866469,Central Michigan,Mid-American,Buffalo,Mid-American,Away,2026-11-19T00:30:00.000Z,False,True,0,0,,78,89,-32.172
 2026,13,401866474,Central Michigan,Mid-American,Ball State,Mid-American,Away,2026-11-28T17:00:00.000Z,False,False,,,,126,132,-140.419
 2026,2,401856676,Charlotte,American Athletic,Ole Miss,SEC,Away,2026-09-12T23:45:00.000Z,True,False,9,41,L,39,18,85.721
 2026,3,401864574,Charlotte,American Athletic,App State,Sun Belt,Away,2026-09-19T22:00:00.000Z,True,False,21,26,L,89,116,-70.839
