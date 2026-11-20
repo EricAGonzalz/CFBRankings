@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-20T04:01:56.977948+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-20T23:11:03.065926+00:00",
+  "liveGames": [
+    {
+      "id": 401856869,
+      "status": "in_progress",
+      "homeTeam": "UCF",
+      "awayTeam": "Iowa State",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Iowa State",
+    "UCF"
+  ]
 }
