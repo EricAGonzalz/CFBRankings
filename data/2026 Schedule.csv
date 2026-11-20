@@ -479,7 +479,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401856847,Iowa State,Big 12,Oklahoma State,Big 12,Home,2026-10-31T23:00:00.000Z,True,False,51,49,W,32,28,71.986
 2026,10,401856853,Iowa State,Big 12,Baylor,Big 12,Away,2026-11-07T17:00:00.000Z,True,False,31,42,L,37,37,53.606
 2026,11,401856859,Iowa State,Big 12,Cincinnati,Big 12,Home,2026-11-14T17:00:00.000Z,True,False,41,13,W,108,84,-28.070
-2026,12,401856869,Iowa State,Big 12,UCF,Big 12,Away,2026-11-20T23:00:00.000Z,False,True,0,0,,100,69,-2.369
+2026,12,401856869,Iowa State,Big 12,UCF,Big 12,Away,2026-11-20T23:00:00.000Z,False,True,3,0,,100,69,-2.369
 2026,13,401856878,Iowa State,Big 12,Kansas State,Big 12,Home,2026-11-28T19:00:00.000Z,False,False,,,,93,81,-19.848
 2026,1,401864577,Jacksonville State,Conference USA,North Dakota State,Mountain West,Away,2026-08-29T21:30:00.000Z,True,False,7,33,L,15,33,57.967
 2026,2,401866418,Jacksonville State,Conference USA,Ohio,Mid-American,Away,2026-09-12T22:00:00.000Z,True,False,27,29,L,53,91,-33.907
@@ -1298,7 +1298,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401856844,UCF,Big 12,Baylor,Big 12,Home,2026-10-30T23:30:00.000Z,True,False,9,41,L,37,37,53.606
 2026,10,401856850,UCF,Big 12,Kansas,Big 12,Away,2026-11-07T20:45:00.000Z,True,False,33,32,W,58,48,31.720
 2026,11,401856857,UCF,Big 12,Arizona State,Big 12,Home,2026-11-14T22:30:00.000Z,True,False,13,26,L,86,73,-6.502
-2026,12,401856869,UCF,Big 12,Iowa State,Big 12,Home,2026-11-20T23:00:00.000Z,False,True,0,0,,66,52,26.795
+2026,12,401856869,UCF,Big 12,Iowa State,Big 12,Home,2026-11-20T23:00:00.000Z,False,True,0,3,,66,52,26.795
 2026,13,401856875,UCF,Big 12,Colorado,Big 12,Away,2026-11-28T19:00:00.000Z,False,False,,,,117,87,-30.443
 2026,1,401858210,UCLA,Big Ten,California,ACC,Away,2026-09-06T02:30:00.000Z,True,False,45,24,W,129,126,-102.883
 2026,2,401858443,UCLA,Big Ten,San Diego State,Pac-12,Home,2026-09-12T23:15:00.000Z,True,False,28,10,W,113,109,-58.422
