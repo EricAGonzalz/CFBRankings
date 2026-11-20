@@ -1022,7 +1022,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,8,401862809,Rice,American Athletic,Florida Atlantic,American Athletic,Away,2026-10-24T16:00:00.000Z,True,False,49,51,L,80,98,-43.152
 2026,10,401862821,Rice,American Athletic,North Texas,American Athletic,Away,2026-11-07T21:00:00.000Z,True,False,23,52,L,43,56,17.763
 2026,11,401862828,Rice,American Athletic,Tulane,American Athletic,Home,2026-11-14T21:30:00.000Z,True,False,17,20,L,101,107,-54.292
-2026,12,401862830,Rice,American Athletic,Temple,American Athletic,Away,2026-11-20T00:30:00.000Z,False,False,,,,109,113,-68.936
+2026,12,401862830,Rice,American Athletic,Temple,American Athletic,Away,2026-11-20T00:30:00.000Z,False,True,0,0,,109,113,-68.936
 2026,13,401862841,Rice,American Athletic,Army,American Athletic,Home,2026-11-28T19:00:00.000Z,False,False,,,,73,63,6.074
 2026,1,401858423,Rutgers,Big Ten,Massachusetts,Mid-American,Home,2026-09-03T22:00:00.000Z,True,False,21,37,L,82,119,-85.424
 2026,2,401858214,Rutgers,Big Ten,Boston College,ACC,Away,2026-09-11T23:30:00.000Z,True,False,21,28,L,111,97,-41.186
@@ -1176,7 +1176,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,9,401862815,Temple,American Athletic,East Carolina,American Athletic,Away,2026-10-31T19:00:00.000Z,True,False,9,17,L,84,101,-48.039
 2026,10,401862820,Temple,American Athletic,Navy,American Athletic,Away,2026-11-07T20:30:00.000Z,True,False,35,42,L,103,93,-34.841
 2026,11,401862829,Temple,American Athletic,UAB,American Athletic,Home,2026-11-14T18:00:00.000Z,True,False,10,36,L,78,100,-44.930
-2026,12,401862830,Temple,American Athletic,Rice,American Athletic,Home,2026-11-20T00:30:00.000Z,False,False,,,,125,125,-101.629
+2026,12,401862830,Temple,American Athletic,Rice,American Athletic,Home,2026-11-20T00:30:00.000Z,False,True,0,0,,125,125,-101.629
 2026,13,401862838,Temple,American Athletic,Memphis,American Athletic,Away,2026-11-27T20:30:00.000Z,False,False,,,,21,35,55.663
 2026,2,401856681,Tennessee,SEC,Georgia Tech,ACC,Away,2026-09-12T23:00:00.000Z,True,False,45,24,W,114,103,-50.429
 2026,3,401856692,Tennessee,SEC,Kennesaw State,Conference USA,Home,2026-09-19T23:45:00.000Z,True,False,42,9,W,94,106,-53.910

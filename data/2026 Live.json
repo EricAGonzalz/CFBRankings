@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-19T03:40:55.023605+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-20T00:40:48.238046+00:00",
+  "liveGames": [
+    {
+      "id": 401862830,
+      "status": "in_progress",
+      "homeTeam": "Temple",
+      "awayTeam": "Rice",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:18",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Rice",
+    "Temple"
+  ]
 }
