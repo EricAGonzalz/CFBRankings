@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T00:36:05.009490+00:00",
+  "updatedAt": "2026-11-21T00:41:05.195151+00:00",
   "liveGames": [
     {
       "id": 401856869,
@@ -12,14 +12,48 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "00:35",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "00:00",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
+    },
+    {
+      "id": 401858303,
+      "status": "in_progress",
+      "homeTeam": "Duke",
+      "awayTeam": "Clemson",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:48",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866468,
+      "status": "in_progress",
+      "homeTeam": "Toledo",
+      "awayTeam": "Bowling Green",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:04",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Bowling Green",
+    "Clemson",
+    "Duke",
     "Iowa State",
+    "Toledo",
     "UCF"
   ]
 }
