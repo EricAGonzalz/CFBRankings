@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T03:40:54.638465+00:00",
+  "updatedAt": "2026-11-21T03:45:57.643026+00:00",
   "liveGames": [
     {
       "id": 401858303,
@@ -9,10 +9,10 @@
       "awayTeam": "Clemson",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "07:04",
+      "clock": "06:49",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -27,10 +27,10 @@
       "homePoints": 19.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "03:16",
-      "completedDrives": 24,
+      "clock": "02:00",
+      "completedDrives": 25,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401858529,
@@ -42,10 +42,10 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 3,
-      "clock": "02:50",
-      "completedDrives": 14,
+      "clock": "00:55",
+      "completedDrives": 15,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401864545,
@@ -57,7 +57,7 @@
       "homePoints": 45.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "13:39",
+      "clock": "10:49",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -72,9 +72,9 @@
       "homePoints": 7.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "01:20",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
+      "clock": "00:47",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 4
     }
   ],
