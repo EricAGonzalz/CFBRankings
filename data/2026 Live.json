@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T01:06:06.855097+00:00",
+  "updatedAt": "2026-11-21T01:10:58.631888+00:00",
   "liveGames": [
     {
       "id": 401856869,
@@ -12,9 +12,9 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "13:25",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "11:11",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -27,9 +27,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:12",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "00:55",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
     },
     {
@@ -46,6 +46,21 @@
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401858529,
+      "status": "in_progress",
+      "homeTeam": "Michigan State",
+      "awayTeam": "Oregon",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:56",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -53,6 +68,8 @@
     "Clemson",
     "Duke",
     "Iowa State",
+    "Michigan State",
+    "Oregon",
     "Toledo",
     "UCF"
   ]
