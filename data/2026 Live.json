@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T20:32:36.929529+00:00",
+  "updatedAt": "2026-11-21T20:36:12.833701+00:00",
   "liveGames": [
-    {
-      "id": 401856748,
-      "status": "in_progress",
-      "homeTeam": "Florida",
-      "awayTeam": "Vanderbilt",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 34.0,
-      "awayPoints": 27.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
-    },
     {
       "id": 401856866,
       "status": "in_progress",
@@ -25,12 +10,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 23.0,
-      "awayPoints": 16.0,
+      "awayPoints": 22.0,
       "period": 5,
       "clock": "00:00",
-      "completedDrives": 19,
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858309,
@@ -42,25 +27,10 @@
       "homePoints": 27.0,
       "awayPoints": 15.0,
       "period": 4,
-      "clock": "02:21",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401858310,
-      "status": "in_progress",
-      "homeTeam": "Georgia Tech",
-      "awayTeam": "Wake Forest",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 29.0,
-      "awayPoints": 50.0,
-      "period": 4,
       "clock": "02:00",
-      "completedDrives": 22,
+      "completedDrives": 21,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858531,
@@ -72,7 +42,7 @@
       "homePoints": 31.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "02:51",
+      "clock": "02:00",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -84,10 +54,10 @@
       "awayTeam": "Memphis",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 31.0,
+      "homePoints": 38.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "00:19",
+      "clock": "00:15",
       "completedDrives": 28,
       "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 14
@@ -102,7 +72,7 @@
       "homePoints": 34.0,
       "awayPoints": 18.0,
       "period": 4,
-      "clock": "06:55",
+      "clock": "05:55",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -117,10 +87,10 @@
       "homePoints": 31.0,
       "awayPoints": 21.0,
       "period": 3,
-      "clock": "02:09",
-      "completedDrives": 20,
+      "clock": "00:45",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401871080,
@@ -174,13 +144,13 @@
       "awayTeam": "Middle Tennessee",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 13.0,
+      "homePoints": 14.0,
       "awayPoints": 21.0,
       "period": 2,
-      "clock": "00:10",
-      "completedDrives": 12,
+      "clock": "00:00",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858527,
@@ -192,10 +162,10 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "11:54",
-      "completedDrives": 6,
+      "clock": "10:57",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401862833,
@@ -204,12 +174,12 @@
       "awayTeam": "South Florida",
       "homeConference": "American Athletic",
       "awayConference": "American Athletic",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "08:11",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "07:34",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -222,9 +192,9 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "03:15",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "02:35",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -238,9 +208,9 @@
       "awayPoints": 0.0,
       "period": 1,
       "clock": "08:22",
-      "completedDrives": 5,
+      "completedDrives": 6,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401871077,
@@ -252,9 +222,9 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "04:17",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "03:18",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     },
     {
@@ -267,10 +237,25 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:05",
-      "completedDrives": 4,
-      "homeOffensiveDrives": 2,
+      "clock": "03:29",
+      "completedDrives": 5,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401861968,
+      "status": "in_progress",
+      "homeTeam": "UConn",
+      "awayTeam": "Old Dominion",
+      "homeConference": "FBS Independents",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
@@ -280,10 +265,8 @@
     "Charlotte",
     "Coastal Carolina",
     "Delaware",
-    "Florida",
     "Florida Atlantic",
     "Florida International",
-    "Georgia Tech",
     "Houston",
     "Illinois",
     "Iowa",
@@ -300,14 +283,14 @@
     "New Mexico State",
     "North Carolina",
     "Ohio State",
+    "Old Dominion",
     "Sam Houston",
     "South Florida",
     "Syracuse",
     "Tulsa",
+    "UConn",
     "UL Monroe",
-    "Vanderbilt",
     "Virginia",
-    "Wake Forest",
     "West Virginia",
     "Western Kentucky"
   ]
