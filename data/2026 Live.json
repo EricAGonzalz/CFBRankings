@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T20:46:45.637954+00:00",
+  "updatedAt": "2026-11-21T20:52:22.042987+00:00",
   "liveGames": [
-    {
-      "id": 401856866,
-      "status": "in_progress",
-      "homeTeam": "Kansas",
-      "awayTeam": "BYU",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 29.0,
-      "awayPoints": 29.0,
-      "period": 6,
-      "clock": "00:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401858305,
       "status": "in_progress",
@@ -27,9 +12,9 @@
       "homePoints": 41.0,
       "awayPoints": 18.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "00:15",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -42,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "11:29",
+      "clock": "09:11",
       "completedDrives": 22,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 11
@@ -54,13 +39,13 @@
       "awayTeam": "Western Kentucky",
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
-      "homePoints": 35.0,
+      "homePoints": 38.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "09:35",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "08:42",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401862832,
@@ -71,8 +56,8 @@
       "awayConference": "American Athletic",
       "homePoints": 7.0,
       "awayPoints": 7.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "15:00",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -88,9 +73,9 @@
       "awayPoints": 13.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401871081,
@@ -103,9 +88,9 @@
       "awayPoints": 21.0,
       "period": 2,
       "clock": "00:00",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 7
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401858527,
@@ -117,7 +102,7 @@
       "homePoints": 10.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "04:28",
+      "clock": "02:17",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
@@ -132,10 +117,10 @@
       "homePoints": 17.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "03:52",
-      "completedDrives": 10,
+      "clock": "02:00",
+      "completedDrives": 11,
       "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401869929,
@@ -147,10 +132,10 @@
       "homePoints": 7.0,
       "awayPoints": 3.0,
       "period": 2,
-      "clock": "01:08",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 4
+      "clock": "00:00",
+      "completedDrives": 11,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401869946,
@@ -159,12 +144,12 @@
       "awayTeam": "Coastal Carolina",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "15:00",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 2,
+      "clock": "11:14",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 4
     },
     {
@@ -177,7 +162,7 @@
       "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "14:33",
+      "clock": "13:17",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -190,12 +175,27 @@
       "homeConference": "Conference USA",
       "awayConference": "Conference USA",
       "homePoints": 7.0,
-      "awayPoints": 7.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "13:31",
-      "completedDrives": 5,
+      "clock": "09:37",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401856754,
+      "status": "in_progress",
+      "homeTeam": "Tennessee",
+      "awayTeam": "LSU",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:55",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856755,
@@ -204,12 +204,12 @@
       "awayTeam": "Arkansas",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:47",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "10:24",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -222,9 +222,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:26",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "09:55",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -235,12 +235,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "11:00",
-      "completedDrives": 1,
+      "clock": "06:50",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858528,
@@ -252,9 +252,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:42",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "11:51",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -264,13 +264,13 @@
       "awayTeam": "Rutgers",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:29",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "10:22",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858535,
@@ -280,11 +280,11 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "13:20",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
+      "clock": "10:51",
+      "completedDrives": 3,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
     },
     {
@@ -294,10 +294,10 @@
       "awayTeam": "Old Dominion",
       "homeConference": "FBS Independents",
       "awayConference": "Sun Belt",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:55",
+      "clock": "07:43",
       "completedDrives": 3,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 1
@@ -306,7 +306,6 @@
   "liveTeams": [
     "App State",
     "Arkansas",
-    "BYU",
     "Baylor",
     "Charlotte",
     "Coastal Carolina",
@@ -319,8 +318,8 @@
     "Indiana",
     "Iowa",
     "Jacksonville State",
-    "Kansas",
     "Kennesaw State",
+    "LSU",
     "Liberty",
     "Louisiana",
     "Michigan",
@@ -334,6 +333,7 @@
     "Rutgers",
     "Sam Houston",
     "South Florida",
+    "Tennessee",
     "Texas",
     "Texas Tech",
     "Tulsa",
