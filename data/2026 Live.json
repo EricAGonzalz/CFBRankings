@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T17:11:10.914680+00:00",
+  "updatedAt": "2026-11-21T17:16:52.709003+00:00",
   "liveGames": [
     {
       "id": 401856748,
@@ -12,7 +12,7 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "10:24",
+      "clock": "07:27",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -27,9 +27,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:17",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "09:45",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -39,10 +39,10 @@
       "awayTeam": "Colorado",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:55",
+      "clock": "09:24",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -57,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "00:00",
+      "clock": "11:35",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -72,9 +72,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:52",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "12:37",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -87,16 +87,16 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:23",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "10:12",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
-      "id": 401858533,
+      "id": 401858531,
       "status": "in_progress",
-      "homeTeam": "Purdue",
-      "awayTeam": "Wisconsin",
+      "homeTeam": "Nebraska",
+      "awayTeam": "Ohio State",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
@@ -108,6 +108,21 @@
       "awayOffensiveDrives": 0
     },
     {
+      "id": 401858533,
+      "status": "in_progress",
+      "homeTeam": "Purdue",
+      "awayTeam": "Wisconsin",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "08:39",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
       "id": 401862831,
       "status": "in_progress",
       "homeTeam": "Army",
@@ -117,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:58",
-      "completedDrives": 1,
-      "homeOffensiveDrives": 0,
+      "clock": "10:47",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     },
     {
@@ -132,7 +147,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:48",
+      "clock": "11:46",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
@@ -147,7 +162,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "11:40",
+      "clock": "09:06",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
@@ -166,8 +181,10 @@
     "Memphis",
     "Minnesota",
     "Navy",
+    "Nebraska",
     "North Texas",
     "Northwestern",
+    "Ohio State",
     "Purdue",
     "Syracuse",
     "Tulane",
