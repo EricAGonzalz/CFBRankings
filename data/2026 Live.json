@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-21T17:06:16.819302+00:00",
+  "updatedAt": "2026-11-21T17:11:10.914680+00:00",
   "liveGames": [
     {
       "id": 401856748,
@@ -10,9 +10,24 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
+      "awayPoints": 3.0,
+      "period": 1,
+      "clock": "10:24",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401856866,
+      "status": "in_progress",
+      "homeTeam": "Kansas",
+      "awayTeam": "BYU",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:37",
+      "clock": "14:17",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -27,10 +42,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:52",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "09:55",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858309,
@@ -39,10 +54,25 @@
       "awayTeam": "Syracuse",
       "homeConference": "ACC",
       "awayConference": "ACC",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "00:00",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858310,
+      "status": "in_progress",
+      "homeTeam": "Georgia Tech",
+      "awayTeam": "Wake Forest",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
+      "clock": "14:52",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -57,7 +87,22 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:27",
+      "clock": "12:23",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
+    },
+    {
+      "id": 401858533,
+      "status": "in_progress",
+      "homeTeam": "Purdue",
+      "awayTeam": "Wisconsin",
+      "homeConference": "Big Ten",
+      "awayConference": "Big Ten",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:48",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 0
@@ -72,10 +117,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:47",
-      "completedDrives": 0,
+      "clock": "12:58",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862834,
@@ -87,10 +132,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "15:00",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "clock": "12:48",
+      "completedDrives": 2,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862835,
@@ -102,26 +147,32 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:30",
-      "completedDrives": 0,
-      "homeOffensiveDrives": 0,
+      "clock": "11:40",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Army",
+    "BYU",
     "Boston College",
     "Cincinnati",
     "Colorado",
     "East Carolina",
     "Florida",
+    "Georgia Tech",
+    "Kansas",
     "Memphis",
     "Minnesota",
     "Navy",
     "North Texas",
     "Northwestern",
+    "Purdue",
     "Syracuse",
     "Tulane",
-    "Vanderbilt"
+    "Vanderbilt",
+    "Wake Forest",
+    "Wisconsin"
   ]
 }
