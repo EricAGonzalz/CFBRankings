@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T03:16:20.349710+00:00",
+  "updatedAt": "2026-11-22T03:21:27.533884+00:00",
   "liveGames": [
     {
       "id": 401856865,
@@ -10,9 +10,9 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 28.0,
-      "awayPoints": 17.0,
+      "awayPoints": 20.0,
       "period": 4,
-      "clock": "08:36",
+      "clock": "06:03",
       "completedDrives": 24,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 13
@@ -24,28 +24,13 @@
       "awayTeam": "Virginia Tech",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 21.0,
+      "homePoints": 27.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "06:45",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "02:08",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401864544,
-      "status": "in_progress",
-      "homeTeam": "San José State",
-      "awayTeam": "UNLV",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 22.0,
-      "awayPoints": 24.0,
-      "period": 4,
-      "clock": "00:45",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
     },
     {
       "id": 401856751,
@@ -57,10 +42,10 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "07:59",
-      "completedDrives": 15,
+      "clock": "05:26",
+      "completedDrives": 16,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401856753,
@@ -71,8 +56,8 @@
       "awayConference": "SEC",
       "homePoints": 6.0,
       "awayPoints": 20.0,
-      "period": 3,
-      "clock": "00:00",
+      "period": 4,
+      "clock": "11:03",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
@@ -87,10 +72,10 @@
       "homePoints": 28.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "05:13",
-      "completedDrives": 22,
+      "clock": "02:06",
+      "completedDrives": 23,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858307,
@@ -102,7 +87,7 @@
       "homePoints": 24.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "15:00",
+      "clock": "12:21",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -117,7 +102,7 @@
       "homePoints": 14.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "14:20",
+      "clock": "12:45",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -131,8 +116,8 @@
       "awayConference": "Pac-12",
       "homePoints": 42.0,
       "awayPoints": 27.0,
-      "period": 3,
-      "clock": "01:27",
+      "period": 4,
+      "clock": "05:48",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -147,7 +132,7 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "07:50",
+      "clock": "06:07",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -161,8 +146,8 @@
       "awayConference": "Big 12",
       "homePoints": 0.0,
       "awayPoints": 10.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "12:43",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -177,10 +162,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:57",
-      "completedDrives": 4,
+      "clock": "13:57",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     }
   ],
   "liveTeams": [
@@ -199,12 +184,10 @@
     "Pittsburgh",
     "SMU",
     "San Diego State",
-    "San José State",
     "South Carolina",
     "Stanford",
     "TCU",
     "UAB",
-    "UNLV",
     "UTSA",
     "Utah",
     "Virginia Tech"
