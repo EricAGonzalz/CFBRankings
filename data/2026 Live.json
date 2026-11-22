@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T03:11:27.137327+00:00",
+  "updatedAt": "2026-11-22T03:16:20.349710+00:00",
   "liveGames": [
     {
       "id": 401856865,
@@ -12,10 +12,10 @@
       "homePoints": 28.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "10:47",
-      "completedDrives": 23,
+      "clock": "08:36",
+      "completedDrives": 24,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401858302,
@@ -27,7 +27,7 @@
       "homePoints": 21.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "07:31",
+      "clock": "06:45",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -39,12 +39,12 @@
       "awayTeam": "UNLV",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 16.0,
+      "homePoints": 22.0,
       "awayPoints": 24.0,
       "period": 4,
       "clock": "00:45",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -57,9 +57,9 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "10:17",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "clock": "07:59",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -84,7 +84,7 @@
       "awayTeam": "Pittsburgh",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 27.0,
+      "homePoints": 28.0,
       "awayPoints": 10.0,
       "period": 3,
       "clock": "05:13",
@@ -101,10 +101,10 @@
       "awayConference": "ACC",
       "homePoints": 24.0,
       "awayPoints": 3.0,
-      "period": 3,
-      "clock": "00:42",
-      "completedDrives": 15,
-      "homeOffensiveDrives": 7,
+      "period": 4,
+      "clock": "15:00",
+      "completedDrives": 16,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
     },
     {
@@ -117,7 +117,7 @@
       "homePoints": 14.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "14:47",
+      "clock": "14:20",
       "completedDrives": 17,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
@@ -130,12 +130,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 42.0,
-      "awayPoints": 20.0,
+      "awayPoints": 27.0,
       "period": 3,
-      "clock": "02:38",
-      "completedDrives": 13,
+      "clock": "01:27",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401862836,
@@ -147,9 +147,9 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "09:31",
-      "completedDrives": 16,
-      "homeOffensiveDrives": 7,
+      "clock": "07:50",
+      "completedDrives": 17,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 9
     },
     {
@@ -162,7 +162,7 @@
       "homePoints": 0.0,
       "awayPoints": 10.0,
       "period": 1,
-      "clock": "00:17",
+      "clock": "00:00",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -174,12 +174,12 @@
       "awayTeam": "San Diego State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 0.0,
+      "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "period": 2,
+      "clock": "14:57",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
