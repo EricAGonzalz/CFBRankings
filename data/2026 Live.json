@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T00:36:18.797795+00:00",
+  "updatedAt": "2026-11-22T00:41:59.782237+00:00",
   "liveGames": [
     {
       "id": 401862833,
@@ -27,10 +27,10 @@
       "homePoints": 27.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 31,
-      "homeOffensiveDrives": 15,
-      "awayOffensiveDrives": 16
+      "clock": "00:19",
+      "completedDrives": 33,
+      "homeOffensiveDrives": 16,
+      "awayOffensiveDrives": 17
     },
     {
       "id": 401860920,
@@ -57,7 +57,7 @@
       "homePoints": 13.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:18",
+      "clock": "01:18",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
@@ -72,7 +72,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "03:16",
+      "clock": "01:34",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -84,10 +84,10 @@
       "awayTeam": "Virginia Tech",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 14.0,
       "period": 1,
-      "clock": "01:51",
+      "clock": "01:44",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -102,10 +102,10 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "05:22",
-      "completedDrives": 5,
+      "clock": "03:25",
+      "completedDrives": 6,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401869938,
@@ -117,23 +117,74 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:43",
+      "clock": "00:00",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858306,
+      "status": "in_progress",
+      "homeTeam": "Louisville",
+      "awayTeam": "Pittsburgh",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:20",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858307,
+      "status": "in_progress",
+      "homeTeam": "Notre Dame",
+      "awayTeam": "SMU",
+      "homeConference": "FBS Independents",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:13",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858308,
+      "status": "in_progress",
+      "homeTeam": "California",
+      "awayTeam": "Stanford",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:12",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Arizona",
     "Arkansas State",
+    "California",
     "Florida Atlantic",
     "Kansas State",
     "LSU",
     "Louisiana Tech",
+    "Louisville",
     "Maryland",
     "Miami",
+    "Notre Dame",
+    "Pittsburgh",
+    "SMU",
     "San José State",
     "South Florida",
+    "Stanford",
     "Tennessee",
     "Texas State",
     "UNLV",
