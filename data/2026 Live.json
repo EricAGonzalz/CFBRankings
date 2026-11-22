@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T04:03:59.044797+00:00",
+  "updatedAt": "2026-11-22T04:06:13.394086+00:00",
   "liveGames": [
     {
       "id": 401856865,
@@ -13,8 +13,8 @@
       "awayPoints": 35.0,
       "period": 5,
       "clock": "00:00",
-      "completedDrives": 29,
-      "homeOffensiveDrives": 13,
+      "completedDrives": 30,
+      "homeOffensiveDrives": 14,
       "awayOffensiveDrives": 16
     },
     {
@@ -27,24 +27,9 @@
       "homePoints": 42.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "03:14",
+      "clock": "02:00",
       "completedDrives": 26,
       "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 12
-    },
-    {
-      "id": 401858308,
-      "status": "in_progress",
-      "homeTeam": "California",
-      "awayTeam": "Stanford",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 28.0,
-      "awayPoints": 44.0,
-      "period": 4,
-      "clock": "01:40",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -57,9 +42,9 @@
       "homePoints": 49.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "01:48",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "01:23",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -72,7 +57,7 @@
       "homePoints": 17.0,
       "awayPoints": 19.0,
       "period": 4,
-      "clock": "09:21",
+      "clock": "06:28",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
@@ -102,10 +87,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "01:03",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "clock": "00:44",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401856870,
@@ -117,7 +102,7 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "02:49",
+      "clock": "00:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -132,7 +117,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:32",
+      "clock": "08:10",
       "completedDrives": 5,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 3
@@ -147,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:17",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "01:42",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
@@ -157,7 +142,6 @@
     "Arizona",
     "Arizona State",
     "Boise State",
-    "California",
     "Colorado State",
     "Fresno State",
     "Hawai'i",
@@ -168,7 +152,6 @@
     "Oregon State",
     "Pittsburgh",
     "San Diego State",
-    "Stanford",
     "TCU",
     "UAB",
     "UTSA",
