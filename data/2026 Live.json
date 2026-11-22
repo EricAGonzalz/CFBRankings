@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T06:11:07.640560+00:00",
+  "updatedAt": "2026-11-22T06:16:06.538890+00:00",
   "liveGames": [
-    {
-      "id": 401860925,
-      "status": "in_progress",
-      "homeTeam": "Boise State",
-      "awayTeam": "San Diego State",
-      "homeConference": "Pac-12",
-      "awayConference": "Pac-12",
-      "homePoints": 20.0,
-      "awayPoints": 22.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401856870,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 24.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "02:44",
+      "clock": "15:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -42,7 +27,7 @@
       "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "02:58",
+      "clock": "00:00",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -57,20 +42,18 @@
       "homePoints": 13.0,
       "awayPoints": 0.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 15,
+      "clock": "00:06",
+      "completedDrives": 16,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     }
   ],
   "liveTeams": [
     "Arizona State",
-    "Boise State",
     "Hawai'i",
     "Nevada",
     "Oklahoma State",
     "Oregon State",
-    "San Diego State",
     "Utah State"
   ]
 }
