@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T05:02:20.409009+00:00",
+  "updatedAt": "2026-11-22T05:06:10.935436+00:00",
   "liveGames": [
     {
       "id": 401856872,
@@ -11,11 +11,11 @@
       "awayConference": "Big 12",
       "homePoints": 14.0,
       "awayPoints": 17.0,
-      "period": 3,
-      "clock": "00:43",
-      "completedDrives": 18,
+      "period": 4,
+      "clock": "15:00",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401860925,
@@ -27,7 +27,7 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 3,
-      "clock": "02:53",
+      "clock": "02:11",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -39,12 +39,12 @@
       "awayTeam": "Oklahoma State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 21.0,
+      "homePoints": 24.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "00:18",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 5,
+      "clock": "00:00",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
     },
     {
@@ -57,7 +57,7 @@
       "homePoints": 10.0,
       "awayPoints": 14.0,
       "period": 2,
-      "clock": "02:00",
+      "clock": "01:30",
       "completedDrives": 12,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 6
