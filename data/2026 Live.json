@@ -1,37 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T04:06:13.394086+00:00",
+  "updatedAt": "2026-11-22T04:11:09.983655+00:00",
   "liveGames": [
-    {
-      "id": 401856865,
-      "status": "in_progress",
-      "homeTeam": "Kansas State",
-      "awayTeam": "Arizona",
-      "homeConference": "Big 12",
-      "awayConference": "Big 12",
-      "homePoints": 28.0,
-      "awayPoints": 35.0,
-      "period": 5,
-      "clock": "00:00",
-      "completedDrives": 30,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 16
-    },
-    {
-      "id": 401858306,
-      "status": "in_progress",
-      "homeTeam": "Louisville",
-      "awayTeam": "Pittsburgh",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 42.0,
-      "awayPoints": 10.0,
-      "period": 4,
-      "clock": "02:00",
-      "completedDrives": 26,
-      "homeOffensiveDrives": 14,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401860918,
       "status": "in_progress",
@@ -42,7 +12,7 @@
       "homePoints": 49.0,
       "awayPoints": 34.0,
       "period": 4,
-      "clock": "01:23",
+      "clock": "01:02",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -57,7 +27,7 @@
       "homePoints": 17.0,
       "awayPoints": 19.0,
       "period": 4,
-      "clock": "06:28",
+      "clock": "03:48",
       "completedDrives": 24,
       "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
@@ -87,7 +57,7 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "00:44",
+      "clock": "00:00",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -101,11 +71,11 @@
       "awayConference": "Big 12",
       "homePoints": 7.0,
       "awayPoints": 7.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 4,
+      "period": 2,
+      "clock": "14:50",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401860919,
@@ -117,9 +87,9 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "08:10",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "clock": "05:52",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     },
     {
@@ -132,25 +102,21 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:42",
+      "clock": "00:57",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
-    "Arizona",
     "Arizona State",
     "Boise State",
     "Colorado State",
     "Fresno State",
     "Hawai'i",
-    "Kansas State",
-    "Louisville",
     "Nevada",
     "Oklahoma State",
     "Oregon State",
-    "Pittsburgh",
     "San Diego State",
     "TCU",
     "UAB",
