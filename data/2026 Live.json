@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T00:41:59.782237+00:00",
+  "updatedAt": "2026-11-22T00:46:20.738538+00:00",
   "liveGames": [
     {
       "id": 401862833,
@@ -16,21 +16,6 @@
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
-    },
-    {
-      "id": 401856754,
-      "status": "in_progress",
-      "homeTeam": "Tennessee",
-      "awayTeam": "LSU",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 27.0,
-      "awayPoints": 13.0,
-      "period": 4,
-      "clock": "00:19",
-      "completedDrives": 33,
-      "homeOffensiveDrives": 16,
-      "awayOffensiveDrives": 17
     },
     {
       "id": 401860920,
@@ -55,12 +40,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 13.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 2,
-      "clock": "01:18",
-      "completedDrives": 7,
+      "clock": "00:26",
+      "completedDrives": 8,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     },
     {
       "id": 401856865,
@@ -72,7 +57,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "01:34",
+      "clock": "00:00",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
@@ -86,8 +71,8 @@
       "awayConference": "ACC",
       "homePoints": 3.0,
       "awayPoints": 14.0,
-      "period": 1,
-      "clock": "01:44",
+      "period": 2,
+      "clock": "15:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -99,12 +84,12 @@
       "awayTeam": "UNLV",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "03:25",
-      "completedDrives": 6,
-      "homeOffensiveDrives": 3,
+      "clock": "00:51",
+      "completedDrives": 7,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
     },
     {
@@ -116,10 +101,25 @@
       "awayConference": "Sun Belt",
       "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "12:00",
       "completedDrives": 0,
       "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401856751,
+      "status": "in_progress",
+      "homeTeam": "Missouri",
+      "awayTeam": "Kentucky",
+      "homeConference": "SEC",
+      "awayConference": "SEC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:31",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
     },
     {
@@ -132,10 +132,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:20",
-      "completedDrives": 1,
+      "clock": "11:44",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858307,
@@ -147,10 +147,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "13:13",
-      "completedDrives": 0,
+      "clock": "13:04",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858308,
@@ -162,30 +162,47 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:12",
+      "clock": "07:30",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401860918,
+      "status": "in_progress",
+      "homeTeam": "Fresno State",
+      "awayTeam": "Colorado State",
+      "homeConference": "Pac-12",
+      "awayConference": "Pac-12",
+      "homePoints": 6.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:52",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Arizona",
     "Arkansas State",
     "California",
+    "Colorado State",
     "Florida Atlantic",
+    "Fresno State",
     "Kansas State",
-    "LSU",
+    "Kentucky",
     "Louisiana Tech",
     "Louisville",
     "Maryland",
     "Miami",
+    "Missouri",
     "Notre Dame",
     "Pittsburgh",
     "SMU",
     "San José State",
     "South Florida",
     "Stanford",
-    "Tennessee",
     "Texas State",
     "UNLV",
     "USC",
