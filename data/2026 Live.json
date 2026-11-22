@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T04:26:08.626279+00:00",
+  "updatedAt": "2026-11-22T04:31:59.908737+00:00",
   "liveGames": [
-    {
-      "id": 401862836,
-      "status": "in_progress",
-      "homeTeam": "UAB",
-      "awayTeam": "UTSA",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 17.0,
-      "awayPoints": 19.0,
-      "period": 4,
-      "clock": "00:33",
-      "completedDrives": 25,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
-    },
     {
       "id": 401856872,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 0.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "12:48",
+      "clock": "10:25",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -41,10 +26,10 @@
       "awayConference": "Pac-12",
       "homePoints": 7.0,
       "awayPoints": 0.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 14,
-      "homeOffensiveDrives": 7,
+      "period": 3,
+      "clock": "13:27",
+      "completedDrives": 15,
+      "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
     },
     {
@@ -54,12 +39,12 @@
       "awayTeam": "Oklahoma State",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 7.0,
+      "homePoints": 14.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "08:26",
-      "completedDrives": 7,
-      "homeOffensiveDrives": 3,
+      "clock": "07:04",
+      "completedDrives": 8,
+      "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
     },
     {
@@ -70,12 +55,12 @@
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
       "homePoints": 0.0,
-      "awayPoints": 7.0,
+      "awayPoints": 14.0,
       "period": 2,
-      "clock": "14:03",
-      "completedDrives": 8,
+      "clock": "12:33",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864541,
@@ -87,7 +72,7 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "08:56",
+      "clock": "06:30",
       "completedDrives": 6,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
@@ -102,8 +87,6 @@
     "Oregon State",
     "San Diego State",
     "TCU",
-    "UAB",
-    "UTSA",
     "Utah",
     "Utah State"
   ]
