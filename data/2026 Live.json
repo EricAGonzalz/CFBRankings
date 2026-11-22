@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T05:45:55.732569+00:00",
+  "updatedAt": "2026-11-22T05:50:58.220102+00:00",
   "liveGames": [
     {
       "id": 401856872,
@@ -12,10 +12,10 @@
       "homePoints": 17.0,
       "awayPoints": 31.0,
       "period": 4,
-      "clock": "02:48",
-      "completedDrives": 24,
+      "clock": "02:00",
+      "completedDrives": 25,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
+      "awayOffensiveDrives": 13
     },
     {
       "id": 401860925,
@@ -27,7 +27,7 @@
       "homePoints": 20.0,
       "awayPoints": 13.0,
       "period": 4,
-      "clock": "03:53",
+      "clock": "03:05",
       "completedDrives": 21,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 10
@@ -42,7 +42,7 @@
       "homePoints": 24.0,
       "awayPoints": 14.0,
       "period": 3,
-      "clock": "08:48",
+      "clock": "08:32",
       "completedDrives": 14,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
@@ -54,12 +54,12 @@
       "awayTeam": "Utah State",
       "homeConference": "Pac-12",
       "awayConference": "Pac-12",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "11:53",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "11:14",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -72,10 +72,10 @@
       "homePoints": 13.0,
       "awayPoints": 0.0,
       "period": 3,
-      "clock": "10:54",
-      "completedDrives": 12,
+      "clock": "08:13",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     }
   ],
   "liveTeams": [
