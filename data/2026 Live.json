@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T03:31:50.926349+00:00",
+  "updatedAt": "2026-11-22T03:36:18.401177+00:00",
   "liveGames": [
     {
       "id": 401856865,
@@ -12,25 +12,10 @@
       "homePoints": 28.0,
       "awayPoints": 20.0,
       "period": 4,
-      "clock": "02:17",
-      "completedDrives": 25,
+      "clock": "01:59",
+      "completedDrives": 26,
       "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 13
-    },
-    {
-      "id": 401858302,
-      "status": "in_progress",
-      "homeTeam": "Miami",
-      "awayTeam": "Virginia Tech",
-      "homeConference": "ACC",
-      "awayConference": "ACC",
-      "homePoints": 28.0,
-      "awayPoints": 20.0,
-      "period": 4,
-      "clock": "01:20",
-      "completedDrives": 20,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 14
     },
     {
       "id": 401856751,
@@ -42,7 +27,7 @@
       "homePoints": 28.0,
       "awayPoints": 14.0,
       "period": 4,
-      "clock": "04:05",
+      "clock": "02:07",
       "completedDrives": 18,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 9
@@ -57,7 +42,7 @@
       "homePoints": 6.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "08:11",
+      "clock": "05:53",
       "completedDrives": 15,
       "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 8
@@ -69,13 +54,13 @@
       "awayTeam": "Pittsburgh",
       "homeConference": "ACC",
       "awayConference": "ACC",
-      "homePoints": 28.0,
+      "homePoints": 35.0,
       "awayPoints": 10.0,
       "period": 4,
-      "clock": "15:00",
-      "completedDrives": 24,
+      "clock": "14:16",
+      "completedDrives": 25,
       "homeOffensiveDrives": 13,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401858307,
@@ -87,10 +72,10 @@
       "homePoints": 24.0,
       "awayPoints": 3.0,
       "period": 4,
-      "clock": "09:15",
-      "completedDrives": 18,
+      "clock": "06:47",
+      "completedDrives": 19,
       "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401858308,
@@ -102,9 +87,9 @@
       "homePoints": 20.0,
       "awayPoints": 37.0,
       "period": 4,
-      "clock": "09:43",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
+      "clock": "08:43",
+      "completedDrives": 20,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
     },
     {
@@ -117,7 +102,7 @@
       "homePoints": 49.0,
       "awayPoints": 27.0,
       "period": 4,
-      "clock": "13:16",
+      "clock": "08:28",
       "completedDrives": 15,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 7
@@ -132,7 +117,7 @@
       "homePoints": 14.0,
       "awayPoints": 17.0,
       "period": 3,
-      "clock": "01:59",
+      "clock": "15:00",
       "completedDrives": 19,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 10
@@ -147,9 +132,9 @@
       "homePoints": 0.0,
       "awayPoints": 10.0,
       "period": 2,
-      "clock": "07:33",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "05:39",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
     },
     {
@@ -162,14 +147,30 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "09:42",
+      "clock": "09:09",
       "completedDrives": 8,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401856870,
+      "status": "in_progress",
+      "homeTeam": "Arizona State",
+      "awayTeam": "Oklahoma State",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:33",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "Arizona",
+    "Arizona State",
     "Boise State",
     "California",
     "Colorado State",
@@ -178,9 +179,9 @@
     "Kansas State",
     "Kentucky",
     "Louisville",
-    "Miami",
     "Missouri",
     "Notre Dame",
+    "Oklahoma State",
     "Pittsburgh",
     "SMU",
     "San Diego State",
@@ -189,7 +190,6 @@
     "TCU",
     "UAB",
     "UTSA",
-    "Utah",
-    "Virginia Tech"
+    "Utah"
   ]
 }
