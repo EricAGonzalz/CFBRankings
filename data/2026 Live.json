@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-22T07:26:02.822187+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-25T00:06:44.335101+00:00",
+  "liveGames": [
+    {
+      "id": 401866470,
+      "status": "in_progress",
+      "homeTeam": "Eastern Michigan",
+      "awayTeam": "Kent State",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 7.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:14",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Eastern Michigan",
+    "Kent State"
+  ]
 }
