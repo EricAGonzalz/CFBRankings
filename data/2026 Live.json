@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-25T00:06:44.335101+00:00",
+  "updatedAt": "2026-11-25T00:11:21.305773+00:00",
   "liveGames": [
     {
       "id": 401866470,
@@ -12,14 +12,31 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "14:14",
+      "clock": "14:00",
       "completedDrives": 1,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866471,
+      "status": "in_progress",
+      "homeTeam": "Western Michigan",
+      "awayTeam": "Miami (OH)",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 6.0,
+      "period": 1,
+      "clock": "12:35",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "Eastern Michigan",
-    "Kent State"
+    "Kent State",
+    "Miami (OH)",
+    "Western Michigan"
   ]
 }
