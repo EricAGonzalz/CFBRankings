@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T23:41:07.786729+00:00",
+  "updatedAt": "2026-11-27T23:46:18.824313+00:00",
   "liveGames": [
     {
       "id": 401856759,
@@ -10,12 +10,12 @@
       "homeConference": "ACC",
       "awayConference": "SEC",
       "homePoints": 10.0,
-      "awayPoints": 20.0,
+      "awayPoints": 23.0,
       "period": 4,
-      "clock": "04:39",
-      "completedDrives": 22,
+      "clock": "04:24",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401862838,
@@ -27,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 28.0,
       "period": 4,
-      "clock": "02:00",
+      "clock": "00:49",
       "completedDrives": 20,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 9
@@ -39,10 +39,10 @@
       "awayTeam": "North Dakota State",
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
-      "homePoints": 24.0,
+      "homePoints": 31.0,
       "awayPoints": 38.0,
       "period": 4,
-      "clock": "10:04",
+      "clock": "09:42",
       "completedDrives": 24,
       "homeOffensiveDrives": 13,
       "awayOffensiveDrives": 11
@@ -55,12 +55,12 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 21.0,
-      "awayPoints": 13.0,
+      "awayPoints": 19.0,
       "period": 3,
-      "clock": "11:02",
-      "completedDrives": 13,
+      "clock": "06:23",
+      "completedDrives": 14,
       "homeOffensiveDrives": 7,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     }
   ],
   "liveTeams": [
