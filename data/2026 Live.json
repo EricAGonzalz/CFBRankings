@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T18:21:20.731146+00:00",
+  "updatedAt": "2026-11-27T18:26:08.480040+00:00",
   "liveGames": [
     {
       "id": 401856762,
@@ -10,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 6.0,
-      "awayPoints": 7.0,
+      "awayPoints": 10.0,
       "period": 2,
-      "clock": "02:00",
-      "completedDrives": 8,
+      "clock": "01:48",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401862840,
@@ -27,9 +27,9 @@
       "homePoints": 18.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "05:17",
-      "completedDrives": 12,
-      "homeOffensiveDrives": 6,
+      "clock": "03:19",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 6
     },
     {
@@ -54,12 +54,12 @@
       "awayTeam": "Toledo",
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
-      "homePoints": 0.0,
+      "homePoints": 3.0,
       "awayPoints": 17.0,
       "period": 2,
-      "clock": "09:20",
-      "completedDrives": 9,
-      "homeOffensiveDrives": 4,
+      "clock": "03:11",
+      "completedDrives": 10,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 5
     },
     {
@@ -72,7 +72,7 @@
       "homePoints": 10.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "02:09",
+      "clock": "02:00",
       "completedDrives": 7,
       "homeOffensiveDrives": 4,
       "awayOffensiveDrives": 3
