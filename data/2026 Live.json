@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T20:31:47.251932+00:00",
+  "updatedAt": "2026-11-27T20:36:12.231745+00:00",
   "liveGames": [
-    {
-      "id": 401862840,
-      "status": "in_progress",
-      "homeTeam": "UTSA",
-      "awayTeam": "Tulsa",
-      "homeConference": "American Athletic",
-      "awayConference": "American Athletic",
-      "homePoints": 28.0,
-      "awayPoints": 22.0,
-      "period": 4,
-      "clock": "01:47",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401866473,
       "status": "in_progress",
@@ -42,18 +27,33 @@
       "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "02:46",
+      "clock": "00:00",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401864549,
+      "status": "in_progress",
+      "homeTeam": "San José State",
+      "awayTeam": "North Dakota State",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:26",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
     "App State",
+    "North Dakota State",
     "Ohio",
+    "San José State",
     "South Alabama",
-    "Toledo",
-    "Tulsa",
-    "UTSA"
+    "Toledo"
   ]
 }
