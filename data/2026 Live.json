@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T20:02:20.495457+00:00",
+  "updatedAt": "2026-11-27T20:06:31.770092+00:00",
   "liveGames": [
     {
       "id": 401856762,
@@ -9,12 +9,12 @@
       "awayTeam": "Mississippi State",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 27.0,
+      "homePoints": 34.0,
       "awayPoints": 17.0,
       "period": 4,
-      "clock": "08:11",
-      "completedDrives": 18,
-      "homeOffensiveDrives": 9,
+      "clock": "06:16",
+      "completedDrives": 19,
+      "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
     },
     {
@@ -27,7 +27,7 @@
       "homePoints": 25.0,
       "awayPoints": 15.0,
       "period": 4,
-      "clock": "09:30",
+      "clock": "06:19",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -42,10 +42,10 @@
       "homePoints": 24.0,
       "awayPoints": 24.0,
       "period": 4,
-      "clock": "09:42",
-      "completedDrives": 20,
+      "clock": "08:08",
+      "completedDrives": 21,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 10
+      "awayOffensiveDrives": 11
     },
     {
       "id": 401858536,
@@ -54,21 +54,38 @@
       "awayTeam": "Nebraska",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 30.0,
+      "homePoints": 31.0,
       "awayPoints": 7.0,
       "period": 4,
-      "clock": "04:02",
+      "clock": "03:57",
       "completedDrives": 20,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 10
+    },
+    {
+      "id": 401869930,
+      "status": "in_progress",
+      "homeTeam": "South Alabama",
+      "awayTeam": "App State",
+      "homeConference": "Sun Belt",
+      "awayConference": "Sun Belt",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:01",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
+    "App State",
     "Iowa",
     "Mississippi State",
     "Nebraska",
     "Ohio",
     "Ole Miss",
+    "South Alabama",
     "Toledo",
     "Tulsa",
     "UTSA"
