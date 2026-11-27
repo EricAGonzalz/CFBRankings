@@ -1,6 +1,59 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T04:36:26.192782+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-27T17:06:13.235675+00:00",
+  "liveGames": [
+    {
+      "id": 401862840,
+      "status": "in_progress",
+      "homeTeam": "UTSA",
+      "awayTeam": "Tulsa",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 6.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:14",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 1,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866472,
+      "status": "in_progress",
+      "homeTeam": "Akron",
+      "awayTeam": "Buffalo",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866473,
+      "status": "in_progress",
+      "homeTeam": "Ohio",
+      "awayTeam": "Toledo",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "15:00",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Akron",
+    "Buffalo",
+    "Ohio",
+    "Toledo",
+    "Tulsa",
+    "UTSA"
+  ]
 }
