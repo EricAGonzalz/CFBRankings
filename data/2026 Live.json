@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T20:26:13.640562+00:00",
+  "updatedAt": "2026-11-27T20:31:47.251932+00:00",
   "liveGames": [
-    {
-      "id": 401856762,
-      "status": "in_progress",
-      "homeTeam": "Ole Miss",
-      "awayTeam": "Mississippi State",
-      "homeConference": "SEC",
-      "awayConference": "SEC",
-      "homePoints": 41.0,
-      "awayPoints": 17.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 22,
-      "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
-    },
     {
       "id": 401862840,
       "status": "in_progress",
@@ -27,7 +12,7 @@
       "homePoints": 28.0,
       "awayPoints": 22.0,
       "period": 4,
-      "clock": "02:28",
+      "clock": "01:47",
       "completedDrives": 23,
       "homeOffensiveDrives": 11,
       "awayOffensiveDrives": 12
@@ -40,11 +25,11 @@
       "homeConference": "Mid-American",
       "awayConference": "Mid-American",
       "homePoints": 31.0,
-      "awayPoints": 24.0,
+      "awayPoints": 31.0,
       "period": 4,
-      "clock": "02:00",
-      "completedDrives": 23,
-      "homeOffensiveDrives": 11,
+      "clock": "00:44",
+      "completedDrives": 24,
+      "homeOffensiveDrives": 12,
       "awayOffensiveDrives": 12
     },
     {
@@ -54,20 +39,18 @@
       "awayTeam": "App State",
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
-      "homePoints": 7.0,
+      "homePoints": 10.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "04:32",
-      "completedDrives": 3,
-      "homeOffensiveDrives": 1,
+      "clock": "02:46",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
     "App State",
-    "Mississippi State",
     "Ohio",
-    "Ole Miss",
     "South Alabama",
     "Toledo",
     "Tulsa",
