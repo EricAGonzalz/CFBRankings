@@ -1,6 +1,25 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-25T03:36:20.518910+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-27T01:16:16.913479+00:00",
+  "liveGames": [
+    {
+      "id": 401856879,
+      "status": "in_progress",
+      "homeTeam": "Texas Tech",
+      "awayTeam": "TCU",
+      "homeConference": "Big 12",
+      "awayConference": "Big 12",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:31",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "TCU",
+    "Texas Tech"
+  ]
 }

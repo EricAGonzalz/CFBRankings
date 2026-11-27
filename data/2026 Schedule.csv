@@ -1176,7 +1176,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401856855,TCU,Big 12,Arizona,Big 12,Away,2026-11-07T03:15:00.000Z,True,False,28,29,L,33,28,72.676
 2026,11,401856862,TCU,Big 12,Kansas State,Big 12,Home,2026-11-14T19:00:00.000Z,True,False,20,10,W,92,75,-15.012
 2026,12,401856872,TCU,Big 12,Utah,Big 12,Home,2026-11-22T02:00:00.000Z,True,False,17,38,L,9,10,123.257
-2026,13,401856879,TCU,Big 12,Texas Tech,Big 12,Away,2026-11-27T01:00:00.000Z,False,False,,,,17,19,86.163
+2026,13,401856879,TCU,Big 12,Texas Tech,Big 12,Away,2026-11-27T01:00:00.000Z,False,True,0,0,,17,19,86.163
 2026,2,401858442,Temple,American Athletic,Penn State,Big Ten,Home,2026-09-12T16:00:00.000Z,True,False,9,27,L,24,30,66.526
 2026,3,401862774,Temple,American Athletic,Toledo,Mid-American,Away,2026-09-19T19:00:00.000Z,True,False,48,49,L,30,72,-5.425
 2026,4,401862779,Temple,American Athletic,Army,American Athletic,Home,2026-09-25T20:00:00.000Z,True,False,17,21,L,68,67,0.895
@@ -1243,7 +1243,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401856856,Texas Tech,Big 12,West Virginia,Big 12,Home,2026-11-08T02:30:00.000Z,True,False,53,48,W,88,68,0.138
 2026,11,401856863,Texas Tech,Big 12,Oklahoma State,Big 12,Away,2026-11-15T02:30:00.000Z,True,False,52,27,W,38,29,69.616
 2026,12,401856871,Texas Tech,Big 12,Baylor,Big 12,Away,2026-11-21T20:30:00.000Z,True,False,20,10,W,44,35,51.596
-2026,13,401856879,Texas Tech,Big 12,TCU,Big 12,Home,2026-11-27T01:00:00.000Z,False,False,,,,55,44,38.858
+2026,13,401856879,Texas Tech,Big 12,TCU,Big 12,Home,2026-11-27T01:00:00.000Z,False,True,0,0,,55,44,38.858
 2026,1,401858429,Toledo,Mid-American,Michigan State,Big Ten,Away,2026-09-05T00:00:00.000Z,True,False,20,30,L,106,65,4.353
 2026,3,401862774,Toledo,Mid-American,Temple,American Athletic,Home,2026-09-19T19:00:00.000Z,True,False,49,48,W,108,116,-79.278
 2026,4,401860893,Toledo,Mid-American,San Diego State,Pac-12,Home,2026-09-26T16:00:00.000Z,True,False,41,16,W,109,103,-46.612
