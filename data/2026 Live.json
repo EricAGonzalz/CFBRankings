@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T20:36:12.231745+00:00",
+  "updatedAt": "2026-11-27T20:41:15.922125+00:00",
   "liveGames": [
-    {
-      "id": 401866473,
-      "status": "in_progress",
-      "homeTeam": "Ohio",
-      "awayTeam": "Toledo",
-      "homeConference": "Mid-American",
-      "awayConference": "Mid-American",
-      "homePoints": 31.0,
-      "awayPoints": 31.0,
-      "period": 4,
-      "clock": "00:44",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401869930,
       "status": "in_progress",
@@ -26,11 +11,26 @@
       "awayConference": "Sun Belt",
       "homePoints": 10.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 4,
+      "period": 2,
+      "clock": "14:10",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
+    },
+    {
+      "id": 401862838,
+      "status": "in_progress",
+      "homeTeam": "Memphis",
+      "awayTeam": "Temple",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:56",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     },
     {
       "id": 401864549,
@@ -40,20 +40,20 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "14:26",
-      "completedDrives": 1,
+      "clock": "11:40",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
     "App State",
+    "Memphis",
     "North Dakota State",
-    "Ohio",
     "San José State",
     "South Alabama",
-    "Toledo"
+    "Temple"
   ]
 }
