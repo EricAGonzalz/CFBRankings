@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T21:41:11.482933+00:00",
+  "updatedAt": "2026-11-27T21:46:11.264090+00:00",
   "liveGames": [
     {
       "id": 401869930,
@@ -11,10 +11,10 @@
       "awayConference": "Sun Belt",
       "homePoints": 10.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "period": 3,
+      "clock": "13:02",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -27,7 +27,7 @@
       "homePoints": 3.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "10:08",
+      "clock": "07:53",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -42,10 +42,10 @@
       "homePoints": 17.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "04:00",
-      "completedDrives": 8,
+      "clock": "02:00",
+      "completedDrives": 9,
       "homeOffensiveDrives": 4,
-      "awayOffensiveDrives": 4
+      "awayOffensiveDrives": 5
     },
     {
       "id": 401864549,
@@ -57,17 +57,34 @@
       "homePoints": 7.0,
       "awayPoints": 24.0,
       "period": 2,
-      "clock": "11:31",
-      "completedDrives": 8,
-      "homeOffensiveDrives": 4,
+      "clock": "10:00",
+      "completedDrives": 9,
+      "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
+    },
+    {
+      "id": 401864546,
+      "status": "in_progress",
+      "homeTeam": "New Mexico",
+      "awayTeam": "Air Force",
+      "homeConference": "Mountain West",
+      "awayConference": "Mountain West",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "12:12",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
     }
   ],
   "liveTeams": [
+    "Air Force",
     "App State",
     "Florida",
     "Florida State",
     "Memphis",
+    "New Mexico",
     "North Dakota State",
     "San José State",
     "South Alabama",
