@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-27T23:06:29.931158+00:00",
+  "updatedAt": "2026-11-27T23:11:08.931057+00:00",
   "liveGames": [
-    {
-      "id": 401869930,
-      "status": "in_progress",
-      "homeTeam": "South Alabama",
-      "awayTeam": "App State",
-      "homeConference": "Sun Belt",
-      "awayConference": "Sun Belt",
-      "homePoints": 20.0,
-      "awayPoints": 13.0,
-      "period": 4,
-      "clock": "00:00",
-      "completedDrives": 24,
-      "homeOffensiveDrives": 12,
-      "awayOffensiveDrives": 12
-    },
     {
       "id": 401856759,
       "status": "in_progress",
@@ -26,8 +11,8 @@
       "awayConference": "SEC",
       "homePoints": 10.0,
       "awayPoints": 17.0,
-      "period": 3,
-      "clock": "00:46",
+      "period": 4,
+      "clock": "15:00",
       "completedDrives": 16,
       "homeOffensiveDrives": 8,
       "awayOffensiveDrives": 8
@@ -42,7 +27,7 @@
       "homePoints": 31.0,
       "awayPoints": 21.0,
       "period": 4,
-      "clock": "13:59",
+      "clock": "13:54",
       "completedDrives": 17,
       "homeOffensiveDrives": 9,
       "awayOffensiveDrives": 8
@@ -57,7 +42,7 @@
       "homePoints": 14.0,
       "awayPoints": 31.0,
       "period": 3,
-      "clock": "06:45",
+      "clock": "05:01",
       "completedDrives": 19,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 9
@@ -70,24 +55,22 @@
       "homeConference": "Mountain West",
       "awayConference": "Mountain West",
       "homePoints": 21.0,
-      "awayPoints": 10.0,
+      "awayPoints": 13.0,
       "period": 2,
-      "clock": "00:04",
-      "completedDrives": 10,
-      "homeOffensiveDrives": 5,
-      "awayOffensiveDrives": 5
+      "clock": "00:00",
+      "completedDrives": 12,
+      "homeOffensiveDrives": 6,
+      "awayOffensiveDrives": 6
     }
   ],
   "liveTeams": [
     "Air Force",
-    "App State",
     "Florida",
     "Florida State",
     "Memphis",
     "New Mexico",
     "North Dakota State",
     "San José State",
-    "South Alabama",
     "Temple"
   ]
 }
