@@ -1,22 +1,7 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-28T00:51:09.941374+00:00",
+  "updatedAt": "2026-11-28T00:56:00.689976+00:00",
   "liveGames": [
-    {
-      "id": 401864546,
-      "status": "in_progress",
-      "homeTeam": "New Mexico",
-      "awayTeam": "Air Force",
-      "homeConference": "Mountain West",
-      "awayConference": "Mountain West",
-      "homePoints": 42.0,
-      "awayPoints": 19.0,
-      "period": 4,
-      "clock": "00:21",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
-    },
     {
       "id": 401856756,
       "status": "in_progress",
@@ -25,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "11:40",
-      "completedDrives": 1,
+      "clock": "09:49",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858544,
@@ -42,16 +27,14 @@
       "homePoints": 0.0,
       "awayPoints": 3.0,
       "period": 1,
-      "clock": "09:23",
+      "clock": "08:03",
       "completedDrives": 2,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 1
     }
   ],
   "liveTeams": [
-    "Air Force",
     "Minnesota",
-    "New Mexico",
     "Texas",
     "Texas A&M",
     "Wisconsin"
