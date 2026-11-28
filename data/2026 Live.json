@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-28T03:56:12.107725+00:00",
+  "updatedAt": "2026-11-28T04:02:37.810271+00:00",
   "liveGames": [
     {
       "id": 401856756,
@@ -12,22 +12,7 @@
       "homePoints": 6.0,
       "awayPoints": 16.0,
       "period": 4,
-      "clock": "02:39",
-      "completedDrives": 19,
-      "homeOffensiveDrives": 9,
-      "awayOffensiveDrives": 10
-    },
-    {
-      "id": 401858544,
-      "status": "in_progress",
-      "homeTeam": "Wisconsin",
-      "awayTeam": "Minnesota",
-      "homeConference": "Big Ten",
-      "awayConference": "Big Ten",
-      "homePoints": 28.0,
-      "awayPoints": 5.0,
-      "period": 4,
-      "clock": "00:00",
+      "clock": "01:14",
       "completedDrives": 21,
       "homeOffensiveDrives": 10,
       "awayOffensiveDrives": 11
@@ -49,11 +34,9 @@
     }
   ],
   "liveTeams": [
-    "Minnesota",
     "Texas",
     "Texas A&M",
     "Utah",
-    "West Virginia",
-    "Wisconsin"
+    "West Virginia"
   ]
 }
