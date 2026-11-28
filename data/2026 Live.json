@@ -1,6 +1,93 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-28T05:46:06.361191+00:00",
-  "liveGames": [],
-  "liveTeams": []
+  "updatedAt": "2026-11-28T17:06:11.425750+00:00",
+  "liveGames": [
+    {
+      "id": 401856761,
+      "status": "in_progress",
+      "homeTeam": "Kentucky",
+      "awayTeam": "Louisville",
+      "homeConference": "SEC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:53",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401858313,
+      "status": "in_progress",
+      "homeTeam": "North Carolina",
+      "awayTeam": "NC State",
+      "homeConference": "ACC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:15",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401861969,
+      "status": "in_progress",
+      "homeTeam": "Wyoming",
+      "awayTeam": "UConn",
+      "homeConference": "Mountain West",
+      "awayConference": "FBS Independents",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:27",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401862842,
+      "status": "in_progress",
+      "homeTeam": "Charlotte",
+      "awayTeam": "Navy",
+      "homeConference": "American Athletic",
+      "awayConference": "American Athletic",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "13:38",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    },
+    {
+      "id": 401866474,
+      "status": "in_progress",
+      "homeTeam": "Ball State",
+      "awayTeam": "Central Michigan",
+      "homeConference": "Mid-American",
+      "awayConference": "Mid-American",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "14:05",
+      "completedDrives": 0,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 0
+    }
+  ],
+  "liveTeams": [
+    "Ball State",
+    "Central Michigan",
+    "Charlotte",
+    "Kentucky",
+    "Louisville",
+    "NC State",
+    "Navy",
+    "North Carolina",
+    "UConn",
+    "Wyoming"
+  ]
 }
