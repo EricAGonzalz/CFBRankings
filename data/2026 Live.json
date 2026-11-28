@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-28T02:56:03.296367+00:00",
+  "updatedAt": "2026-11-28T03:02:25.430287+00:00",
   "liveGames": [
     {
       "id": 401856756,
@@ -10,12 +10,12 @@
       "homeConference": "SEC",
       "awayConference": "SEC",
       "homePoints": 3.0,
-      "awayPoints": 10.0,
+      "awayPoints": 13.0,
       "period": 3,
-      "clock": "09:09",
-      "completedDrives": 12,
+      "clock": "07:17",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401858544,
@@ -24,12 +24,12 @@
       "awayTeam": "Minnesota",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 21.0,
+      "homePoints": 27.0,
       "awayPoints": 5.0,
       "period": 3,
-      "clock": "06:18",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "01:00",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -39,12 +39,12 @@
       "awayTeam": "West Virginia",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 10.0,
+      "homePoints": 17.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
-      "completedDrives": 5,
-      "homeOffensiveDrives": 2,
+      "period": 2,
+      "clock": "14:50",
+      "completedDrives": 6,
+      "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 3
     }
   ],
