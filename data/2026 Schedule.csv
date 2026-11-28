@@ -1402,7 +1402,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401856849,Utah,Big 12,BYU,Big 12,Home,2026-11-07T17:00:00.000Z,True,False,28,20,W,38,24,80.977
 2026,11,401856864,Utah,Big 12,Arizona,Big 12,Away,2026-11-15T03:30:00.000Z,True,False,40,39,W,31,28,72.714
 2026,12,401856872,Utah,Big 12,TCU,Big 12,Away,2026-11-22T02:00:00.000Z,True,False,38,17,W,68,50,28.794
-2026,13,401856880,Utah,Big 12,West Virginia,Big 12,Home,2026-11-28T02:00:00.000Z,False,True,52,28,,98,70,-3.976
+2026,13,401856880,Utah,Big 12,West Virginia,Big 12,Home,2026-11-28T02:00:00.000Z,True,False,52,28,W,98,70,-3.976
 2026,14,401869533,Utah,Big 12,Texas Tech,Big 12,Home,2026-12-05T01:00:00.000Z,False,False,,,,15,17,95.902
 2026,2,401858446,Utah State,Pac-12,Washington,Big Ten,Away,2026-09-12T19:30:00.000Z,True,False,14,16,L,54,41,39.700
 2026,3,401856801,Utah State,Pac-12,Utah,Big 12,Away,2026-09-19T19:30:00.000Z,True,False,0,33,L,8,10,126.885
@@ -1492,7 +1492,7 @@ Season,Week,GameId,Team,Conference,Opponent,OpponentConference,Location,StartDat
 2026,10,401856856,West Virginia,Big 12,Texas Tech,Big 12,Away,2026-11-08T02:30:00.000Z,True,False,48,53,L,15,17,95.902
 2026,11,401856861,West Virginia,Big 12,Kansas,Big 12,Home,2026-11-14T20:30:00.000Z,True,False,14,37,L,59,42,35.402
 2026,12,401856868,West Virginia,Big 12,Houston,Big 12,Home,2026-11-21T18:00:00.000Z,True,False,31,34,L,43,33,60.914
-2026,13,401856880,West Virginia,Big 12,Utah,Big 12,Away,2026-11-28T02:00:00.000Z,False,True,28,52,,8,10,126.885
+2026,13,401856880,West Virginia,Big 12,Utah,Big 12,Away,2026-11-28T02:00:00.000Z,True,False,28,52,L,8,10,126.885
 2026,1,401864432,Western Kentucky,Conference USA,Nevada,Mountain West,Away,2026-09-06T02:30:00.000Z,True,False,14,49,L,56,79,-17.300
 2026,2,401856673,Western Kentucky,Conference USA,Georgia,SEC,Away,2026-09-12T16:45:00.000Z,True,False,20,70,L,3,2,191.706
 2026,3,401858449,Western Kentucky,Conference USA,Indiana,Big Ten,Away,2026-09-19T20:00:00.000Z,True,False,0,38,L,13,11,115.498
