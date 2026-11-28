@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-28T20:46:32.244002+00:00",
+  "updatedAt": "2026-11-28T20:51:46.061734+00:00",
   "liveGames": [
     {
       "id": 401856758,
@@ -12,10 +12,10 @@
       "homePoints": 10.0,
       "awayPoints": 25.0,
       "period": 4,
-      "clock": "08:44",
-      "completedDrives": 17,
+      "clock": "06:57",
+      "completedDrives": 18,
       "homeOffensiveDrives": 8,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401862837,
@@ -27,10 +27,10 @@
       "homePoints": 16.0,
       "awayPoints": 42.0,
       "period": 3,
-      "clock": "05:49",
-      "completedDrives": 18,
+      "clock": "02:42",
+      "completedDrives": 19,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 7
+      "awayOffensiveDrives": 8
     },
     {
       "id": 401870804,
@@ -41,11 +41,11 @@
       "awayConference": "Conference USA",
       "homePoints": 24.0,
       "awayPoints": 20.0,
-      "period": 3,
-      "clock": "00:01",
-      "completedDrives": 22,
+      "period": 4,
+      "clock": "12:19",
+      "completedDrives": 23,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 11
+      "awayOffensiveDrives": 12
     },
     {
       "id": 401871102,
@@ -55,12 +55,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 17.0,
-      "awayPoints": 24.0,
+      "awayPoints": 27.0,
       "period": 4,
-      "clock": "04:33",
-      "completedDrives": 19,
+      "clock": "03:04",
+      "completedDrives": 20,
       "homeOffensiveDrives": 10,
-      "awayOffensiveDrives": 9
+      "awayOffensiveDrives": 10
     },
     {
       "id": 401871103,
@@ -70,12 +70,12 @@
       "homeConference": "Sun Belt",
       "awayConference": "Sun Belt",
       "homePoints": 10.0,
-      "awayPoints": 24.0,
+      "awayPoints": 27.0,
       "period": 4,
-      "clock": "08:47",
-      "completedDrives": 19,
+      "clock": "07:08",
+      "completedDrives": 20,
       "homeOffensiveDrives": 11,
-      "awayOffensiveDrives": 8
+      "awayOffensiveDrives": 9
     },
     {
       "id": 401856875,
@@ -101,8 +101,8 @@
       "awayConference": "Big 12",
       "homePoints": 17.0,
       "awayPoints": 10.0,
-      "period": 2,
-      "clock": "00:00",
+      "period": 3,
+      "clock": "14:54",
       "completedDrives": 13,
       "homeOffensiveDrives": 6,
       "awayOffensiveDrives": 7
@@ -116,11 +116,11 @@
       "awayConference": "American Athletic",
       "homePoints": 10.0,
       "awayPoints": 21.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 11,
-      "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 5
+      "period": 3,
+      "clock": "12:48",
+      "completedDrives": 13,
+      "homeOffensiveDrives": 7,
+      "awayOffensiveDrives": 6
     },
     {
       "id": 401869947,
@@ -147,7 +147,7 @@
       "homePoints": 24.0,
       "awayPoints": 10.0,
       "period": 3,
-      "clock": "12:23",
+      "clock": "09:32",
       "completedDrives": 9,
       "homeOffensiveDrives": 5,
       "awayOffensiveDrives": 4
@@ -176,11 +176,11 @@
       "awayConference": "Conference USA",
       "homePoints": 7.0,
       "awayPoints": 3.0,
-      "period": 2,
-      "clock": "00:00",
-      "completedDrives": 12,
+      "period": 3,
+      "clock": "14:24",
+      "completedDrives": 13,
       "homeOffensiveDrives": 6,
-      "awayOffensiveDrives": 6
+      "awayOffensiveDrives": 7
     },
     {
       "id": 401871083,
@@ -206,8 +206,8 @@
       "awayConference": "SEC",
       "homePoints": 0.0,
       "awayPoints": 0.0,
-      "period": 1,
-      "clock": "00:00",
+      "period": 2,
+      "clock": "13:46",
       "completedDrives": 4,
       "homeOffensiveDrives": 2,
       "awayOffensiveDrives": 2
@@ -220,12 +220,12 @@
       "homeConference": "ACC",
       "awayConference": "ACC",
       "homePoints": 0.0,
-      "awayPoints": 3.0,
+      "awayPoints": 6.0,
       "period": 1,
-      "clock": "02:12",
-      "completedDrives": 4,
+      "clock": "00:34",
+      "completedDrives": 5,
       "homeOffensiveDrives": 2,
-      "awayOffensiveDrives": 2
+      "awayOffensiveDrives": 3
     },
     {
       "id": 401869939,
@@ -237,10 +237,25 @@
       "homePoints": 7.0,
       "awayPoints": 7.0,
       "period": 2,
-      "clock": "08:57",
+      "clock": "06:25",
       "completedDrives": 5,
       "homeOffensiveDrives": 3,
       "awayOffensiveDrives": 2
+    },
+    {
+      "id": 401856760,
+      "status": "in_progress",
+      "homeTeam": "Georgia",
+      "awayTeam": "Georgia Tech",
+      "homeConference": "SEC",
+      "awayConference": "ACC",
+      "homePoints": 0.0,
+      "awayPoints": 0.0,
+      "period": 1,
+      "clock": "11:58",
+      "completedDrives": 1,
+      "homeOffensiveDrives": 0,
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401856876,
@@ -250,12 +265,12 @@
       "homeConference": "Big 12",
       "awayConference": "Big 12",
       "homePoints": 7.0,
-      "awayPoints": 0.0,
+      "awayPoints": 3.0,
       "period": 1,
-      "clock": "11:51",
-      "completedDrives": 1,
+      "clock": "07:21",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858312,
@@ -267,10 +282,10 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:57",
-      "completedDrives": 2,
+      "clock": "08:33",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401858316,
@@ -282,7 +297,7 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "12:37",
+      "clock": "07:36",
       "completedDrives": 1,
       "homeOffensiveDrives": 0,
       "awayOffensiveDrives": 1
@@ -297,10 +312,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "12:53",
-      "completedDrives": 1,
+      "clock": "11:23",
+      "completedDrives": 2,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401858543,
@@ -310,12 +325,12 @@
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
       "homePoints": 0.0,
-      "awayPoints": 0.0,
+      "awayPoints": 7.0,
       "period": 1,
-      "clock": "11:00",
-      "completedDrives": 0,
+      "clock": "10:06",
+      "completedDrives": 1,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 1
     },
     {
       "id": 401862839,
@@ -327,10 +342,10 @@
       "homePoints": 3.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "09:41",
-      "completedDrives": 2,
-      "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "clock": "07:54",
+      "completedDrives": 4,
+      "homeOffensiveDrives": 2,
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401864550,
@@ -342,7 +357,7 @@
       "homePoints": 0.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "10:37",
+      "clock": "08:42",
       "completedDrives": 3,
       "homeOffensiveDrives": 1,
       "awayOffensiveDrives": 2
@@ -357,10 +372,10 @@
       "homePoints": 7.0,
       "awayPoints": 0.0,
       "period": 1,
-      "clock": "08:53",
-      "completedDrives": 0,
+      "clock": "06:42",
+      "completedDrives": 2,
       "homeOffensiveDrives": 0,
-      "awayOffensiveDrives": 0
+      "awayOffensiveDrives": 2
     },
     {
       "id": 401871062,
@@ -372,10 +387,10 @@
       "homePoints": 0.0,
       "awayPoints": 7.0,
       "period": 1,
-      "clock": "09:31",
-      "completedDrives": 2,
+      "clock": "08:35",
+      "completedDrives": 3,
       "homeOffensiveDrives": 1,
-      "awayOffensiveDrives": 1
+      "awayOffensiveDrives": 2
     }
   ],
   "liveTeams": [
@@ -393,7 +408,9 @@
     "East Carolina",
     "Florida Atlantic",
     "Florida International",
+    "Georgia",
     "Georgia State",
+    "Georgia Tech",
     "Iowa State",
     "Jacksonville State",
     "James Madison",
