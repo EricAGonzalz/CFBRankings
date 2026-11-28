@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updatedAt": "2026-11-28T03:02:25.430287+00:00",
+  "updatedAt": "2026-11-28T03:06:10.443756+00:00",
   "liveGames": [
     {
       "id": 401856756,
@@ -9,12 +9,12 @@
       "awayTeam": "Texas",
       "homeConference": "SEC",
       "awayConference": "SEC",
-      "homePoints": 3.0,
+      "homePoints": 6.0,
       "awayPoints": 13.0,
       "period": 3,
-      "clock": "07:17",
-      "completedDrives": 13,
-      "homeOffensiveDrives": 6,
+      "clock": "04:02",
+      "completedDrives": 14,
+      "homeOffensiveDrives": 7,
       "awayOffensiveDrives": 7
     },
     {
@@ -24,7 +24,7 @@
       "awayTeam": "Minnesota",
       "homeConference": "Big Ten",
       "awayConference": "Big Ten",
-      "homePoints": 27.0,
+      "homePoints": 28.0,
       "awayPoints": 5.0,
       "period": 3,
       "clock": "01:00",
@@ -39,13 +39,13 @@
       "awayTeam": "West Virginia",
       "homeConference": "Big 12",
       "awayConference": "Big 12",
-      "homePoints": 17.0,
+      "homePoints": 23.0,
       "awayPoints": 0.0,
       "period": 2,
-      "clock": "14:50",
-      "completedDrives": 6,
+      "clock": "13:08",
+      "completedDrives": 7,
       "homeOffensiveDrives": 3,
-      "awayOffensiveDrives": 3
+      "awayOffensiveDrives": 4
     }
   ],
   "liveTeams": [
